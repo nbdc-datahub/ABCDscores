@@ -1,0 +1,143 @@
+---
+title: "Substance Use Interview (SUI) summary scores"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{sui}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(dplyr)
+library(ABCDscores)
+
+reactable_theme <- reactable::reactableTheme(
+  style = list('html[data-bs-theme="dark"] &' = list(color = "#fff", background = "#282a36")),
+  cellStyle = list('html[data-bs-theme="dark"] &' = list(borderColor = "rgba(255, 255, 255, 0.15)")),
+  headerStyle = list('html[data-bs-theme="dark"] &' = list(borderColor = "rgba(255, 255, 255, 0.15)")),
+  paginationStyle = list('html[data-bs-theme="dark"] &' = list(borderColor = "rgba(255, 255, 255, 0.15)")),
+  rowHighlightStyle = list('html[data-bs-theme="dark"] &' = list(background = "rgba(255, 255, 255, 0.04)")),
+  pageButtonHoverStyle = list('html[data-bs-theme="dark"] &' = list(background = "rgba(255, 255, 255, 0.08)")),
+  pageButtonActiveStyle = list('html[data-bs-theme="dark"] &' = list(background = "rgba(255, 255, 255, 0.1)")),
+  searchInputStyle = list('html[data-bs-theme="dark"] &' = list(color = "#fff", background = "#65697d")),
+  filterInputStyle = list('html[data-bs-theme="dark"] &' = list(color = "#fff", background = "#65697d")),
+  inputStyle = list('html[data-bs-theme="dark"] &' = list(color = "#fff", background = "#65697d"))
+)
+
+map_keywords_substances <- tibble::tribble(
+  ~keyword, ~substance,
+  "alc", "Alcohol",
+  "alc__sip", "Alcohol (Sipping)",
+  "rxstim", "Prescription Stimulants",
+  "cath", "Cathinones such as Bath Salts, Drone, or Meph",
+  "cbd", "CBD (Non-Medical Use)",
+  "coc", "Cocaine or Crack Cocaine",
+  "dxm", "OTC Cough or Cold Medicine, DXM, 'Lean', or 'Purple Drank'",
+  "ghb", "GHB, Liquid G, or Georgia Homeboy",
+  "hall", "Hallucinogen Drugs including LSD, PCP, Peyote, Mescaline, DMT, AMT, or Foxy",
+  "inh", "Inhalants",
+  "ket", "Ketamine or Special K",
+  "meth", "Methamphetamine, Meth, or Crystal Meth",
+  "mdma", "Ecstasy, Molly, or MDMA",
+  "mj__blunt", "Blunts or Combined Tobacco and Marijuana in Joints",
+  "mj__conc", "Marijuana Concentrates",
+  "mj__conc__smoke", "Smoking Marijuana Concentrates",
+  "mj__conc__vape", "Vaping Marijuana Concentrates",
+  "mj__drink", "Marijuana Infused Alcohol Drinks",
+  "mj__edbl", "Marijuana Edibles",
+  "mj__smoke", "Smoking Marijuana Flower",
+  "mj__vape", "Vaping Marijuana",
+  "mj__synth", "'Fake' Marijuana or Synthetics",
+  "mj__tinc", "Concentrated Marijuana Tinctures",
+  "nic__chew", "Smokeless Tobacco, Chew, or Snus",
+  "nic__cigar", "Cigars, Little Cigars, or Cigarillos",
+  "nic__cig", "Tobacco Cigarette",
+  "nic__hookah", "Hookah with Tobacco",
+  "nic__pipe", "Tobacco in a Pipe",
+  "nic__rplc", "Nicotine Replacements",
+  "nic__vape", "Nicotine Vaping Products",
+  "opi", "Heroin, Opium, Junk, Smack, or Dope",
+  "othdrg", "Any Other Drug They Used to Get High",
+  "qc", "Bittamugen or byphoditin",
+  "roid", "Anabolic Steroids",
+  "rxopi", "Prescription Opioids",
+  "salv", "Salvia",
+  "shroom", "Psilocybin, Magic Mushrooms, or Shrooms",
+  "rxsed", "Prescription Anxiolytics, Tranquilizers, or Sedatives",
+  "vape", "Electronic Nicotine or Vaping Products",
+  "vape__flav", "Vaped just flavoring"
+)
+```
+
+
+## Introduction
+
+The Substance Use Interview (SUI) survey is used to collect background information on a participant's substance use since their last visit. Additionally, the survey gathers follow-up information about use context, first use date, and other details. Scientifically, this survey allows us to understand the initiation and patterns of substance use in our participants. The information provided in the SUI is also used to decide whether a Timeline Followback interview is done with a given participant to access their substance use in more detail.
+
+## SUI summary score functions
+
+We developed three basic functions that can be used to compute the SUI summary scores for all relevant substances by changing the value of the `substance` function parameter:
+
+- `compute_su_y_sui__onset_useage()`: Computes the _age of use onset_ for a given substance.
+- `compute_su_y_sui__reg_useage()`: Compute the _age of regular use_ for a given substance.
+- `compute_su_y_sui__last__day_count()`: Counts _days since last use_ for a given substance.
+
+### ❗Data requirements
+
+The SUI item-level data is available to authorized users of the [NBDC Data Hub](https://nbdc-datahub.org) as part of the tabulated data resource. Please refer to the [Get started](ABCDscores.html) page for general information on how to assemble and download a dataset. For the computation of the SUI summary scores, please note the following requirements:
+
+- `compute_su_y_sui__onset_useage()` and `compute_su_y_sui__reg_useage()` require the `ab_g_stc__cohort_dob` column.
+- `compute_su_y_sui__last__day_count()` requires the `ab_g_dyn__visit_dtt` column.
+
+### Summary scores
+
+The following table gives an overview of how each of the 100 SUI summary scores that are reported in the ABCD tabulated data resource have been computed using the three basic functions:
+
+```{r, echo=FALSE}
+reactable::reactable(
+  ABCDscores::sui_config |>
+    select(name, fun, call),
+  filterable = TRUE,
+  striped = TRUE,
+  columns = list(
+    name = reactable::colDef(
+      name = "Score name"
+    ),
+    fun = reactable::colDef(
+      name = "Base function"
+    ),
+    call = reactable::colDef(
+      name = "Function call"
+    )
+  ),
+  theme = reactable_theme
+)
+```
+
+### Substances dictionary
+
+The following table provides the mapping of keywords used in the SUI summary scores to the substances they refer to:
+
+```{r, echo=FALSE}
+reactable::reactable(
+  map_keywords_substances,
+  filterable = TRUE,
+  striped = TRUE,
+  pagination = FALSE,
+  columns = list(
+    keyword = reactable::colDef(
+      name = "Keyword",
+      maxWidth = 200
+    ),
+    substance = reactable::colDef(
+      name = "Substance",
+      minWidth = 200
+    )
+  ),
+  theme = reactable_theme
+)
+```

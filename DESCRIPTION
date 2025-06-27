@@ -1,0 +1,74 @@
+Package: ABCDscores
+Title: Summary Scores of the Adolescent Brain Cognitive Development (ABCD) Study
+Description: This package provides functions to compute summary scores
+  (besides proprietary ones) reported in the tabulated data resource that is
+  released by the Adolescent Brain Cognitive Development (ABCD) study.
+URL: https://software.nbdc-datahub.org/ABCDscores/
+Version: 6.0.0
+Authors@R: c(
+  person(given = "Janosch",
+         family = "Linkersdoerfer",
+         email = "linkersdoerfer@gmail.com",
+         role = c("aut", "cre"),
+         comment = c(ORCID = "0000-0002-1577-1233")), 
+  person(given = "Le",
+         family = "Zhang",
+         email = "lezhang100@gmail.com",
+         role = c("aut"),
+         comment = c(ORCID = "0009-0008-0205-2150")), 
+  person(given = "Olivier",
+         family = "Celhay",
+         email = "olivier.celhay@gmail.com",
+         role = c("aut"),
+         comment = c(ORCID = "0000-0002-2971-9110")), 
+  person(given = "Biplabendu",
+         family = "Das",
+         email = "biplabendu.das@gmail.com",
+         role = c("aut"),
+         comment = c(ORCID = "0000-0003-0855-262X")),
+  person(given = "Sammy",
+         family = "Berman",
+         email = "sammyberman@gmail.com",
+         role = c("aut"),
+         comment = c(ORCID = "0000-0002-9803-019X")), 
+  person(given = "Laura",
+         family = "Ziemer",
+         email = "lrziemer@gmail.com",
+         role = c("aut"),
+         comment = c(ORCID = "0000-0003-0026-3823")))
+Depends:
+  R (>= 4.3.0)
+Imports:
+    chk,
+    cli,
+    dplyr,
+    glue,
+    lubridate,
+    magrittr,
+    purrr,
+    rlang,
+    stringr,
+    tibble,
+    tidyr,
+    stats,
+    utils
+Suggests: 
+    arrow,
+    rmarkdown,
+    roxyglobals,
+    testthat (>= 3.0.0),
+    knitr,
+    reactable,
+    readr,
+    usethis
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE, roclets = c("collate", "namespace", "rd",
+    "roxyglobals::global_roclet"))
+RoxygenNote: 7.3.2
+Config/testthat/edition: 3
+Config/Needs/website: rmarkdown
+VignetteBuilder: knitr
+LazyData: true
+Config/roxyglobals/filename: globals.R
+Config/roxyglobals/unique: TRUE

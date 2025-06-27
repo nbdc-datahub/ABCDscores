@@ -1,0 +1,332 @@
+url: https://software.nbdc-datahub.org/ABCDscores/
+repo:
+  url:
+    home: https://github.com/nbdc-datahub/ABCDscores/
+    source: https://github.com/nbdc-datahub/ABCDscores/blob/main/
+    issue: https://github.com/nbdc-datahub/ABCDscores/issues/
+template:
+  bootstrap: 5
+  light-switch: true
+
+reference:
+- title: ABCD (General)
+  desc: Summary scores in the ABCD core domain "ABCD (General)"
+- subtitle: ABCD Dynamic Variables [General]
+  contents:
+  - matches("^compute_ab_g_dyn_")
+  - matches("^vars_ab_g_dyn_")
+- subtitle: ABCD Static Variables [General]
+  contents:
+  - matches("^compute_ab_g_stc_")
+  - matches("^vars_ab_g_stc_")
+
+- title: Friends, Family, & Community
+  desc: Summary scores in the ABCD core domain "Friends, Family, & Community"
+- subtitle: Activity Space [Youth]
+  contents:
+  - matches("^compute_fc_y_as_")
+  - matches("^vars_fc_y_as_")
+- subtitle: "Children's Report of Parental Behavioral Inventory [Youth]"
+  contents:
+  - matches("^compute_fc_y_crpbi_")
+  - matches("^vars_fc_y_crpbi_")
+- subtitle: Experiences with Unfair Treatment [Youth]
+  contents:
+  - matches("^compute_fc_y_eut_")
+  - matches("^vars_fc_y_eut_")
+- subtitle: Family Environment Scale [Parent]
+  contents:
+  - matches("^compute_fc_p_fes_")
+  - matches("^vars_fc_p_fes_")
+- subtitle: Family Environment Scale [Youth]
+  contents:
+  - matches("^compute_fc_y_fes_")
+  - matches("^vars_fc_y_fes_")
+- subtitle: Values Scale [Parent]
+  contents:
+  - matches("^compute_fc_p_vs_")
+  - matches("^vars_fc_p_vs_")
+- subtitle: Values Scale [Youth]
+  contents:
+  - matches("^compute_fc_y_vs_")
+  - matches("^vars_fc_y_vs_")
+- subtitle: Multi-Group Ethnic Identity Measure [Parent]
+  contents:
+  - matches("^compute_fc_p_meim_")
+  - matches("^vars_fc_p_meim_")
+- subtitle: Multi-Group Ethnic Identity Measure [Youth]
+  contents:
+  - matches("^compute_fc_y_meim_")
+  - matches("^vars_fc_y_meim_")
+- subtitle: Multidimensional Neglectful Behavior Scale [Youth]
+  contents:
+  - matches("^compute_fc_y_mnbs_")
+  - matches("^vars_fc_y_mnbs_")
+- subtitle: Neighborhood Collective Efficacy [Parent]
+  contents:
+  - matches("^compute_fc_p_nce_")
+  - matches("^vars_fc_p_nce_")
+- subtitle: Neighborhood Safety & Crime [Parent]
+  contents:
+  - matches("^compute_fc_p_nsc_")
+  - matches("^vars_fc_p_nsc_")
+- subtitle: Parental Knowledge Scale [Parent]
+  contents:
+  - matches("^compute_fc_p_pk_")
+  - matches("^vars_fc_p_pk_")
+- subtitle: Parental Monitoring [Youth]
+  contents:
+  - matches("^compute_fc_y_pm_")
+  - matches("^vars_fc_y_pm_")
+- subtitle: Peer Network Health [Youth]
+  contents:
+  - matches("^compute_fc_y_pnh_")
+  - matches("^vars_fc_y_pnh_")
+- subtitle: Prosocial Behavior [Parent]
+  contents:
+  - matches("^compute_fc_p_psb_")
+  - matches("^vars_fc_p_psb_")
+- subtitle: Prosocial Behavior [Youth]
+  contents:
+  - matches("^compute_fc_y_psb_")
+  - matches("^vars_fc_y_psb_")
+- subtitle: Resistance to Peer Influence [Youth]
+  contents:
+  - matches("^compute_fc_y_rpi_")
+  - matches("^vars_fc_y_rpi_")
+- subtitle: School Risk & Protective Factors [Youth]
+  contents:
+  - matches("^compute_fc_y_srpf_")
+  - matches("^vars_fc_y_srpf_")
+- subtitle: Wills Problem Solving Scale [Youth]
+  contents:
+  - matches("^compute_fc_y_wpss_")
+  - matches("^vars_fc_y_wpss_")
+
+- title: Mental Health
+  desc: Summary scores in the ABCD core domain "Mental Health"
+- subtitle: 7-Up Mania Inventory [Youth]
+  contents:
+  - matches("^compute_mh_y_sup_")
+  - matches("^vars_mh_y_sup_")
+- subtitle: Difficulty in Emotion Regulation [Parent]
+  contents:
+  - matches("^compute_mh_p_ders_")
+  - matches("^vars_mh_p_ders_")
+- subtitle: Early Adolescent Temperament Questionnaire [Parent]
+  contents:
+  - matches("^compute_mh_p_eatq_")
+  - matches("^vars_mh_p_eatq_")
+- subtitle: Emotion Regulation Questionnaire [Youth]
+  contents:
+  - matches("^compute_mh_y_erq_")
+  - matches("^vars_mh_y_erq_")
+- subtitle: General Behavior Inventory - Mania [Parent]
+  contents:
+  - matches("^compute_mh_p_gbi_")
+  - matches("^vars_mh_p_gbi_")
+- subtitle: Life Events [Parent]
+  contents:
+  - matches("^compute_mh_p_ple_")
+  - matches("^vars_mh_p_ple_")
+- subtitle: Life Events [Youth]
+  contents:
+  - matches("^compute_mh_y_ple_")
+  - matches("^vars_mh_y_ple_")
+- subtitle: NIH Toolbox - Positive Affect Items [Youth]
+  contents:
+  - matches("^compute_mh_y_pai_")
+  - matches("^vars_mh_y_pai_")
+- subtitle: Peer Experiences Questionnaire [Youth]
+  contents:
+  - matches("^compute_mh_y_peq_")
+  - matches("^vars_mh_y_peq_")
+- subtitle: Prodromal Psychosis Scale [Youth]
+  contents:
+  - matches("^compute_mh_y_pps_")
+  - matches("^vars_mh_y_pps_")
+- subtitle: Short Social Responsiveness Scale [Parent]
+  contents:
+  - matches("^compute_mh_p_ssrs_")
+  - matches("^vars_mh_p_ssrs_")
+- subtitle: The Behavioral Inhibition System/Behavioral Activation System Scales [Youth]
+  contents:
+  - matches("^compute_mh_y_bisbas_")
+  - matches("^vars_mh_y_bisbas_")
+- subtitle: Urgency, Premeditation, Perseverance, Sensation Seeking, Positive Urgency,
+    Impulsive Behavior Scale (Short Version) [Youth]
+  contents:
+  - matches("^compute_mh_y_upps_")
+  - matches("^vars_mh_y_upps_")
+
+- title: Mental Health (ASEBA)
+  desc: Summary scores in the ABCD core domain "Mental Health" (ASEBA)
+- subtitle: Adult Behavior Checklist [Parent]
+  contents:
+  - matches("^compute_mh_p_abcl_")
+  - matches("^vars_mh_p_abcl_")
+- subtitle: Adult Self Report [Parent]
+  contents:
+  - matches("^compute_mh_p_asr_")
+  - matches("^vars_mh_p_asr_")
+- subtitle: Brief Problem Monitor [Teacher]
+  contents:
+  - matches("^compute_mh_t_bpm_")
+  - matches("^vars_mh_t_bpm_")
+- subtitle: Brief Problem Monitor [Youth]
+  contents:
+  - matches("^compute_mh_y_bpm_")
+  - matches("^vars_mh_y_bpm_")
+- subtitle: Child Behavior Checklist [Parent]
+  contents:
+  - matches("^compute_mh_p_cbcl_")
+  - matches("^vars_mh_p_cbcl_")
+- subtitle: Youth Self Report [Youth]
+  contents:
+  - matches("^compute_mh_y_ysr_")
+  - matches("^vars_mh_y_ysr_")
+
+- title: Neurocognition
+  desc: Summary scores in the ABCD core domain "Neurocognition"
+- subtitle: Barkley Deficits in Executive Functioning Scale [Parent]
+  contents:
+  - matches("^compute_nc_p_bdefs_")
+  - matches("^vars_nc_p_bdefs_")
+- subtitle: Edinburgh Handedness Inventory (Short Form) [Youth]
+  contents:
+  - matches("^compute_nc_y_ehis_")
+  - matches("^vars_nc_y_ehis_")
+
+- title: Novel Technologies
+  desc: Summary scores in the ABCD core domain "Novel Technologies"
+- subtitle: Screen Time Questionnaire [Parent]
+  contents:
+  - matches("^compute_nt_p_yst_")
+  - matches("^vars_nt_p_yst_")
+- subtitle: Screen Time Questionnaire [Youth]
+  contents:
+  - matches("^compute_nt_y_stq_")
+  - matches("^vars_nt_y_stq_")
+
+- title: Physical Health
+  desc: Summary scores in the ABCD core domain "Physical Health"
+- subtitle: Anthropometrics [Youth]
+  contents:
+  - matches("^compute_ph_y_anthr_")
+  - matches("^vars_ph_y_anthr_")
+- subtitle: Blood Pressure [Youth]
+  contents:
+  - matches("^compute_ph_y_bp_")
+  - matches("^vars_ph_y_bp_")
+- subtitle: Child Nutrition Assessment [Parent]
+  contents:
+  - matches("^compute_ph_p_cna_")
+  - matches("^vars_ph_p_cna_")
+- subtitle: Developmental History [Parent]
+  contents:
+  - matches("^compute_ph_p_dhx_")
+  - matches("^vars_ph_p_dhx_")
+- subtitle: Munich Chronotype Questionnaire [Youth]
+  contents:
+  - matches("^compute_ph_y_mctq_")
+  - matches("^vars_ph_y_mctq_")
+- subtitle: Ohio State Traumatic Brain Injury Screen (Baseline) [Parent]
+  contents:
+  - matches("^compute_ph_p_otbi_")
+  - matches("^vars_ph_p_otbi_")
+- subtitle: Pubertal Development Scale & Menstrual Cycle Survey History [Parent]
+  contents:
+  - matches("^compute_ph_p_pds_")
+  - matches("^vars_ph_p_pds_")
+- subtitle: Pubertal Development Scale & Menstrual Cycle Survey History [Youth]
+  contents:
+  - matches("^compute_ph_y_pds_")
+  - matches("^vars_ph_y_pds_")
+
+- title: Substance Use
+  desc: Summary scores in the ABCD core domain "Substance Use"
+- subtitle: Alcohol Expectancies (AEQ-AB) [Youth]
+  contents:
+  - matches("^compute_su_y_alcexp_")
+  - matches("^vars_su_y_alcexp_")
+- subtitle: Alcohol Hangover Symptom Scale (HSS) [Youth]
+  contents:
+  - matches("^compute_su_y_alchss_")
+  - matches("^vars_su_y_alchss_")
+- subtitle: Alcohol Problem Index (RAPI) [Youth]
+  contents:
+  - matches("^compute_su_y_alcprob_")
+  - matches("^vars_su_y_alcprob_")
+- subtitle: Alcohol Subjective Response and Effects (SRE) [Youth]
+  contents:
+  - matches("^compute_su_y_alcsre_")
+  - matches("^vars_su_y_alcsre_")
+- subtitle: Cigarette Expectancies (ASCQ) [Youth]
+  contents:
+  - matches("^compute_su_y_cigexp_")
+  - matches("^vars_su_y_cigexp_")
+- subtitle: Drug Problem Index (DAPI) [Youth]
+  contents:
+  - matches("^compute_su_y_drgprob_")
+  - matches("^vars_su_y_drgprob_")
+- subtitle: ENDS Expectancies (CEQ) [Youth]
+  contents:
+  - matches("^compute_su_y_nicvapeexp_")
+  - matches("^vars_su_y_nicvapeexp_")
+- subtitle: Marijuana Expectancies (MEEQ-B) [Youth]
+  contents:
+  - matches("^compute_su_y_mjexp_")
+  - matches("^vars_su_y_mjexp_")
+- subtitle: Marijuana Problem Index (MAPI) [Youth]
+  contents:
+  - matches("^compute_su_y_mjprob_")
+  - matches("^vars_su_y_mjprob_")
+- subtitle: Marijuana Subjective Response and Effects [Youth]
+  contents:
+  - matches("^compute_su_y_mjsre_")
+  - matches("^vars_su_y_mjsre_")
+- subtitle: Nicotine Subjective Response and Effects [Youth]
+  contents:
+  - matches("^compute_su_y_nicsre_")
+  - matches("^vars_su_y_nicsre_")
+- subtitle: Caffeine Use Questionnaire [Youth]
+  contents:
+  - matches("^compute_su_y_caff__")
+  - matches("^vars_su_y_caff__")
+
+- title: Substance Use (SUI/TLFB)
+  desc: Summary scores in the ABCD core domain "Substance Use" (SUI/TLFB)
+- subtitle: Substance Use Interview [Youth]
+  contents:
+  - sui_substances
+  - matches("^compute_su_y_sui_")
+  - matches("^vars_su_y_sui_")
+- subtitle: Timeline Followback Interview Results [Youth]
+  contents:
+  - tlfb_substances
+  - matches("^compute_tlfb_")
+  - filter_tlfb
+  - check_args_tlfb
+
+- title: Utility functions
+  desc:  Low-level functions for computing summary scores
+  contents:
+  - matches("^ss_")
+  - recode_levels
+  - combine_levels
+  - combine_cols
+  - make_static
+
+- title: internal
+  contents:
+  - add_combined_substances
+  - check_args_tlfb
+  - check_col_names
+  - get_tscore_tbl
+  - md_bullet
+  - check_assign_na
+  - check_col_names
+  - compute_age
+  - convert_time_mctq
+  - filter_tlfb
+  - insert_reference
