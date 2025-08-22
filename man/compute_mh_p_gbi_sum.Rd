@@ -47,6 +47,8 @@ Parent General Behavior Inventory [Parent]: Sum
 \item \code{mh_p_gbi_009}
 \item \code{mh_p_gbi_010}
 }
+\item \emph{Excluded values:} none
+\item \emph{Validation criterion:} none of 10 items missing
 }
 }
 \examples{

@@ -230,6 +230,10 @@ reference:
   contents:
   - matches("^compute_ph_y_mctq_")
   - matches("^vars_ph_y_mctq_")
+- subtitle: Sleep Disturbance Scale [Parent]
+  contents:
+  - matches("^compute_ph_p_sds_")
+  - matches("^vars_ph_p_sds_")
 - subtitle: Ohio State Traumatic Brain Injury Screen (Baseline) [Parent]
   contents:
   - matches("^compute_ph_p_otbi_")

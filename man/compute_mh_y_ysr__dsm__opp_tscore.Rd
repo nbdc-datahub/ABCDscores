@@ -53,6 +53,12 @@ problems): T-score
 \item \code{mh_y_ysr__aggr__opp_004}
 \item \code{mh_y_ysr__aggr__opp_005}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 5 items missing
 }
 }
 \examples{

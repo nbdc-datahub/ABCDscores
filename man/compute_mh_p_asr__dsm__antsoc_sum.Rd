@@ -58,6 +58,12 @@ personality problems): Sum
 \item \code{mh_p_asr__rule__antsoc_008}
 \item \code{mh_p_asr__rule__antsoc_009}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 1 of 20 items missing
 }
 }
 \examples{

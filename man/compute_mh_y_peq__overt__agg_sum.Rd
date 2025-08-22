@@ -40,6 +40,8 @@ Peer Experiences Questionnaire [Youth] (Overt Aggression): Sum
 \item \code{mh_y_peq__overt__agg_002}
 \item \code{mh_y_peq__overt__agg_003}
 }
+\item \emph{Excluded values:} none
+\item \emph{Validation criterion:} none of 3 items missing
 }
 }
 \examples{

@@ -47,6 +47,12 @@ Adult Behavior Checklist [Parent] (Days Drunk): T-score
 \itemize{
 \item \code{mh_p_abcl__drunk_001}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 1 items missing
 }
 }
 \examples{

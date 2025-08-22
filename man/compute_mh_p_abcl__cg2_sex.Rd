@@ -34,6 +34,11 @@ Adult Behavior Checklist [Parent] Sex Assignment
 \itemize{
 \item \code{mh_p_abcl__cg2_001}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

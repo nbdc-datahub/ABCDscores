@@ -75,6 +75,12 @@ Adult Self Report [Parent] (Syndrome Scale - Internalizing): Sum
 \item \code{mh_p_asr__wthdr__avoid_004}
 \item \code{mh_p_asr__wthdr__dep_001}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 2 of 39 items missing
 }
 }
 \examples{

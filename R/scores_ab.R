@@ -29,12 +29,18 @@ vars_ab_g_stc__cohort_ethnrace__meim <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ab_g_stc__cohort_ethnrace__meim |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character, Name of the new column to be created. Default is
 #'    the name in description, but users can change it.
 #' @param combine logical, If `TRUE`, the summary score will be appended to
 #'    the input data frame. If `FALSE`, the summary score for each participant
 #'    will be returned as a separate data frame. (Default: FALSE)
+#' @param exclude character vector. Values to be excluded from the summary
+#'    score calculation.
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'    a new column (default). If `combine == FALSE`, a data frame with two
@@ -45,6 +51,7 @@ vars_ab_g_stc__cohort_ethnrace__meim <- c(
 compute_ab_g_stc__cohort_ethnrace__meim <- function(
     data,
     name = "ab_g_stc__cohort_ethnrace__meim",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -55,7 +62,7 @@ compute_ab_g_stc__cohort_ethnrace__meim <- function(
     make_static(
       var_in  = "fc_p_meim_001",
       var_out = name,
-      exclude = c("777", "999")
+      exclude = exclude
     ) |>
     mutate(
       across(name, ~ as.character(.x))
@@ -94,6 +101,19 @@ vars_ab_g_stc__cohort_ethn <- c(
 #'   vars_ab_g_stc__cohort_ethn |> md_bullet(2, TRUE)
 #'   ```
 #'
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
+#' - *Notes:*
+#'   - Values in `ab_p_demo__ethn_001__v01` were recoded:
+#'      - "0" --> "2",
+#'      - "2" --> "1"
+#'      - "3" --> "1"
+#'      - "4" --> "1"
+#'   - Values in `ab_p_demo__ethn_001` were recoded:
+#'      - "0" --> "2"
+#'
 #' @inheritParams compute_ab_g_stc__cohort_ethnrace__meim
 #'
 #' @return tbl. The input data frame with the summary score appended as
@@ -105,6 +125,7 @@ vars_ab_g_stc__cohort_ethn <- c(
 compute_ab_g_stc__cohort_ethn <- function(
     data,
     name = "ab_g_stc__cohort_ethn",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -142,7 +163,7 @@ compute_ab_g_stc__cohort_ethn <- function(
     make_static(
       var_in  = "ab_p_demo__ethn_001",
       var_out = name,
-      exclude = c("777", "999")
+      exclude = exclude
     ) |>
     mutate(
       across(name, ~ as.character(.x))
@@ -716,8 +737,8 @@ compute_ab_g_dyn__cohort_income__hhold__6lvl <- function(
         baseline == "8" ~ "4", # 75k to 100k
         baseline == "9" ~ "5", # 100k to 200k
         baseline == "10" ~ "6", # > 200k
-        baseline == "777" ~ "777", # Don't know
-        baseline == "999" ~ "999", # Decline to answer
+        baseline == "777" ~ "777", # Decline to answer
+        baseline == "999" ~ "999", # Don't know
         .default = NA_character_
       )
     )
@@ -765,7 +786,7 @@ compute_ab_g_dyn__cohort_income__hhold__3lvl <- function(
         tmp_income %in% c("1", "2") ~ "1", # < 50k
         tmp_income %in% c("3", "4") ~ "2", # 50k to 100k
         tmp_income %in% c("5", "6") ~ "3", # > 100k
-        .default = tmp_income # 777, Don't know | 999, Decline to answer
+        .default = tmp_income # 777, Decline to answer | 999, Don't know
       )
     )
 
@@ -810,6 +831,10 @@ vars_ab_g_dyn__cohort_edu__cgs <- c(
 #'   vars_ab_g_dyn__cohort_edu__cgs |> md_bullet(2, TRUE)
 #'   ```
 #'
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
 #' @inheritParams compute_ab_g_stc__cohort_ethnrace__meim
 #'
 #' @return tbl. The input data frame with the summary score appended as
@@ -820,6 +845,7 @@ vars_ab_g_dyn__cohort_edu__cgs <- c(
 compute_ab_g_dyn__cohort_edu__cgs <- function(
     data,
     name = "ab_g_dyn__cohort_edu__cgs",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -853,7 +879,7 @@ compute_ab_g_dyn__cohort_edu__cgs <- function(
     ss_max(
       name    = "tmp_education",
       vars    = c("tmp_cg1", "tmp_cg2"),
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     # create summary score
@@ -909,6 +935,10 @@ vars_ab_g_dyn__cohort_prtnrshp__employ <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ab_g_dyn__cohort_prtnrshp__employ |> md_bullet(2, TRUE)
 #'   ```
+#'
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams compute_ab_g_stc__cohort_ethnrace__meim
 #'

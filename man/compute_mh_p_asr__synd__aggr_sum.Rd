@@ -52,6 +52,12 @@ Adult Self Report [Parent] (Syndrome Scale - Aggressive Behavior): Sum
 \item \code{mh_p_asr__aggr__antsoc_007}
 \item \code{mh_p_asr__aggr__antsoc_008}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 1 of 15 items missing
 }
 }
 \examples{

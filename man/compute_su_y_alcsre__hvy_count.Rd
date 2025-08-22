@@ -2,8 +2,8 @@
 % Please edit documentation in R/scores_su.R
 \name{compute_su_y_alcsre__hvy_count}
 \alias{compute_su_y_alcsre__hvy_count}
-\title{Compute "Alcohol Subject Response and Effects [Youth] (Last 6 months):
-Count [Validation: None missing or declined]"}
+\title{Compute "Alcohol Subject Response and Effects [Youth] (Heaviest drinking
+period): Count [Validation: None missing or declined]"}
 \usage{
 compute_su_y_alcsre__hvy_count(
   data,
@@ -30,8 +30,8 @@ a new column.
 }
 \description{
 Computes the summary score \code{su_y_alcsre__hvy_count}
-Alcohol Subject Response and Effects [Youth] (Last 6 months): Count
-[Validation: None missing or declined]
+Alcohol Subject Response and Effects [Youth] (Heaviest drinking
+period): Count [Validation: None missing or declined]
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{
@@ -41,6 +41,6 @@ Alcohol Subject Response and Effects [Youth] (Last 6 months): Count
 \item \code{su_y_alcsre__hvy_004}
 }
 \item \emph{Excluded values:} none
-\item \emph{Validation criterion:} none of 4 items missing
+\item \emph{Validation criterion:} maximally 0 of 4 items missing
 }
 }

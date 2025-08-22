@@ -46,6 +46,7 @@ Number missing
 \item \code{mh_y_peq__rep__vict_002}
 \item \code{mh_y_peq__rep__vict_003}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

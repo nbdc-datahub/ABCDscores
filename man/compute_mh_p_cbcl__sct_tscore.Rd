@@ -51,6 +51,12 @@ Child Behavior Checklist [Parent] (Sluggish Cognitive Tempo): T-score
 \item \code{mh_p_cbcl__attn_003}
 \item \code{mh_p_cbcl__attn_005}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 4 items missing
 }
 }
 \examples{

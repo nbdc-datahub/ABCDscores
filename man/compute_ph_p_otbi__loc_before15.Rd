@@ -86,7 +86,11 @@ consciousness): LOC before the age of 15
 \item \code{ph_p_otbi__rpt__loc_001__l}
 \item \code{ph_p_otbi__rpt__age_001a__l}
 }
-\item \emph{Excluded values:} c("777", "999")
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \seealso{

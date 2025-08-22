@@ -55,6 +55,11 @@ missing
 \item \code{mh_y_ysr__anxdep__dep_004}
 \item \code{mh_y_ysr__anxdep__anx_007}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

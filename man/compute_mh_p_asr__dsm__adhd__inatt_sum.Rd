@@ -45,6 +45,12 @@ Sum
 \item \code{mh_p_asr__attn__inatt_006}
 \item \code{mh_p_asr__attn__inatt_007}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 7 items missing
 }
 }
 \examples{

@@ -77,6 +77,11 @@ missing
 \item \code{mh_p_abcl__intru_005}
 \item \code{mh_p_abcl__intru_006}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

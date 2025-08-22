@@ -60,6 +60,12 @@ Youth Self Report [Youth] (Positive): T-score
 \item \code{mh_y_ysr__pos_013}
 \item \code{mh_y_ysr__pos_014}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 14 items missing
 }
 }
 \examples{

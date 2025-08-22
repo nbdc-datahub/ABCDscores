@@ -64,6 +64,12 @@ Brief Problem Monitor [Teacher]: T-score
 \item \code{mh_t_bpm__int_005}
 \item \code{mh_t_bpm__int_006}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 1 of 18 items missing
 }
 }
 \examples{

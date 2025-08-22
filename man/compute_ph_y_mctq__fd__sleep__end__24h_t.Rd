@@ -35,6 +35,7 @@ Munich Chronotype Questionnaire [Youth] (Free Day - Sleep end): Time
 \item \code{ph_y_mctq__fd_005__01a}
 \item \code{ph_y_mctq__fd_005__01b}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

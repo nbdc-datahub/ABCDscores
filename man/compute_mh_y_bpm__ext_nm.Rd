@@ -47,6 +47,11 @@ Brief Problem Monitor [Youth] (Externalizing): Number missing
 \item \code{mh_y_bpm__ext_006}
 \item \code{mh_y_bpm__ext_007}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

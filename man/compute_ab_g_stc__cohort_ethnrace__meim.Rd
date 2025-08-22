@@ -18,6 +18,7 @@ vars_ab_g_stc__cohort_ethnrace__meim
 compute_ab_g_stc__cohort_ethnrace__meim(
   data,
   name = "ab_g_stc__cohort_ethnrace__meim",
+  exclude = c("777", "999"),
   combine = TRUE
 )
 }
@@ -26,6 +27,9 @@ compute_ab_g_stc__cohort_ethnrace__meim(
 
 \item{name}{character, Name of the new column to be created. Default is
 the name in description, but users can change it.}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical, If \code{TRUE}, the summary score will be appended to
 the input data frame. If \code{FALSE}, the summary score for each participant
@@ -45,6 +49,11 @@ longitudinal responses]
 \item \emph{Summarized variables:}
 \itemize{
 \item \code{fc_p_meim_001}
+}
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
 }
 }
 }

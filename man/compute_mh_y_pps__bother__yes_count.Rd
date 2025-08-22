@@ -52,6 +52,8 @@ Prodromal Psychosis Scale [Youth] (Bother
 \item \code{mh_y_pps__bother_020}
 \item \code{mh_y_pps__bother_021}
 }
+\item \emph{Excluded values:} none
+\item \emph{Validation criterion:} 0 of 21 items missing
 }
 }
 \details{

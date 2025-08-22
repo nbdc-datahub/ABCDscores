@@ -38,6 +38,7 @@ missing
 \item \code{mh_p_eatq__surg_008}
 \item \code{mh_p_eatq__surg_009}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

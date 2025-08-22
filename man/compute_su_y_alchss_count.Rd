@@ -63,6 +63,8 @@ Alcohol Hangover Symptoms Scale (HSS) [Youth]: Count
 \item \code{su_y_alchss_013__l}
 \item \code{su_y_alchss_014__l}
 }
+\item \emph{Excluded values:} none
+\item \emph{Validation criterion:} maximally 0 of 2 items missing
 }
 }
 \examples{

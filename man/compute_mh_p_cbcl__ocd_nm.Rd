@@ -50,6 +50,11 @@ Number missing
 \item \code{mh_p_cbcl__tho_010}
 \item \code{mh_p_cbcl__tho_011}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

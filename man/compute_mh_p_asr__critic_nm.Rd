@@ -59,6 +59,11 @@ Adult Self Report [Parent] (Critical Items): Number missing
 \item \code{mh_p_asr__tho_007}
 \item \code{mh_p_asr__tho__dep_001}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

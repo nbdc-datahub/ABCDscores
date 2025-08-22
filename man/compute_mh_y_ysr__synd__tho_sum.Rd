@@ -49,6 +49,12 @@ Youth Self Report [Youth] (Syndrome Scale - Thought problems): Sum
 \item \code{mh_y_ysr__tho_009}
 \item \code{mh_y_ysr__tho__dep_003}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 12 items missing
 }
 }
 \examples{

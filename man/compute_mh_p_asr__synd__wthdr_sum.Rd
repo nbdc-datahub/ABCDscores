@@ -45,6 +45,12 @@ Adult Self Report [Parent] (Syndrome Scale - Withdrawn): Sum
 \item \code{mh_p_asr__wthdr__avoid_004}
 \item \code{mh_p_asr__wthdr__dep_001}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 9 items missing
 }
 }
 \examples{

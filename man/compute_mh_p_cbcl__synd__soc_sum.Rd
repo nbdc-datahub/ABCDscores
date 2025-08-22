@@ -47,6 +47,12 @@ Child Behavior Checklist [Parent] (Syndrome Scale -Social): Sum
 \item \code{mh_p_cbcl__soc_009}
 \item \code{mh_p_cbcl__soc_010}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 11 items missing
 }
 }
 \examples{

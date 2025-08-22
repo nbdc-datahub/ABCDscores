@@ -18,6 +18,7 @@ compute_ph_y_pds__m_categ(
   data,
   name = "ph_y_pds__m_categ",
   combine = TRUE,
+  exclude = c("777", "999"),
   max_na = 0
 )
 }
@@ -30,6 +31,9 @@ compute_ph_y_pds__m_categ(
 is appended as a new column to the input data frame. If \code{FALSE}, the
 summary score is returned as a separate one-column data frame.}
 
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
+
 \item{max_na}{numeric, positive whole number. Number of missing items
 allowed. \code{NULL} means no limit.}
 }
@@ -40,7 +44,8 @@ a new column.
 \description{
 Computes the summary score \code{ph_y_pds__m_categ}
 Pubertal Development Scale & Menstrual Cycle Survey History [Youth]
-(Male): Approximate tanner stages
+(Male): Approximate tanner stages [Validation: No more than 0
+missing or declined]
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{
@@ -48,7 +53,11 @@ Pubertal Development Scale & Menstrual Cycle Survey History [Youth]
 \item \code{ph_y_pds__m_001}
 \item \code{ph_y_pds__m_002}
 }
-\item \emph{Excluded values:} c("777", "999")
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 \item \emph{Validation criterion:} maximally 0 items missing
 }
 }

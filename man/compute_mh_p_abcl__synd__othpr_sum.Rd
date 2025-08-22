@@ -63,6 +63,12 @@ Sum
 \item \code{mh_p_abcl__othpr__dep_002}
 \item \code{mh_p_abcl__othpr__dep_003}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 1 of 25 items missing
 }
 }
 \examples{

@@ -34,6 +34,7 @@ Munich Chronotype Questionnaire [Youth] (School Day - Sleep mid): Time
 \item \code{ph_y_mctq__sd__sleep__onset__24h_t} (intermediate score)
 \item \code{ph_y_mctq__sd__sleep_dur} (intermediate score)
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

@@ -37,6 +37,7 @@ scales): Mean
 \item \code{mh_p_eatq__depm_mean}
 \item \code{mh_p_eatq__aggr_mean}
 }
+\item \emph{Excluded values:} none
 }
 }
 \details{

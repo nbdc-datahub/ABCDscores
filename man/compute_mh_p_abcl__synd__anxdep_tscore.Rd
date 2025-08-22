@@ -62,6 +62,12 @@ Anxious/Depressed): T-score
 \item \code{mh_p_abcl__anxdep__dep_004}
 \item \code{mh_p_abcl__anxdep__dep_005}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 14 items missing
 }
 }
 \examples{

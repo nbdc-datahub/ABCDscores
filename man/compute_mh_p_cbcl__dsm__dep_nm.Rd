@@ -55,6 +55,11 @@ problems): Number missing
 \item \code{mh_p_cbcl__othpr__dep_002}
 \item \code{mh_p_cbcl__anxdep__dep_004}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

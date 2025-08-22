@@ -50,6 +50,12 @@ Difficulties in Emotion Regulation Scale [Parent] (Distracted): Mean
 \item \code{mh_p_ders__distract_003}
 \item \code{mh_p_ders__distract_004}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 999
+\item 777
+}
+\item \emph{Validation criterion:} none of 4 items missing
 }
 }
 \examples{

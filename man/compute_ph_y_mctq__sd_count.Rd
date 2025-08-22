@@ -30,6 +30,7 @@ Munich Chronotype Questionnaire [Youth] (School Day): Count
 \item \code{ph_y_mctq__school_001__v01}
 \item \code{ph_y_mctq__school_001__01__v1}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

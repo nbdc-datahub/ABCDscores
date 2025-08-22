@@ -51,6 +51,11 @@ complaints): Number missing
 \item \code{mh_p_asr__som__somat_008}
 \item \code{mh_p_asr__som__somat_009}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

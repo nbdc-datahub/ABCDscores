@@ -47,6 +47,12 @@ Youth Self Report [Youth] (Syndrome Scale -Social problems): Sum
 \item \code{mh_y_ysr__soc_009}
 \item \code{mh_y_ysr__soc_010}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 11 items missing
 }
 }
 \examples{

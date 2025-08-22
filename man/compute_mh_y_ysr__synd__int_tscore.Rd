@@ -77,6 +77,12 @@ Youth Self Report [Youth] (Syndrome Scale - Internaling): T-score
 \item \code{mh_y_ysr__som__somat_006}
 \item \code{mh_y_ysr__som__somat_007}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 2 of 31 items missing
 }
 }
 \examples{

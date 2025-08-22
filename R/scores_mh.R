@@ -1,3 +1,5 @@
+# fmt: skip file
+
 #' Dummy function for all MH summary score functions.
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score column.
@@ -40,6 +42,10 @@ vars_mh_p_ders__attun <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_ders__attun |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 999
+#'   - 777
+#' - *Validation criterion:* maximally 1 of 6 items missing
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -96,6 +102,9 @@ compute_mh_p_ders__attun_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_ders__attun |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 999
+#'   - 777
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_p_ders__attun_mean()]
@@ -159,6 +168,10 @@ vars_mh_p_ders__catast <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_ders__catast |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 999
+#'   - 777
+#' - *Validation criterion:* maximally 2 of 12 items missing
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -216,6 +229,9 @@ compute_mh_p_ders__catast_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_ders__catast |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 999
+#'   - 777
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_p_ders__catast_mean()]
@@ -270,6 +286,10 @@ vars_mh_p_ders__distract <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_ders__distract |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 999
+#'   - 777
+#' - *Validation criterion:* none of 4 items missing
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -313,6 +333,9 @@ compute_mh_p_ders__distract_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_ders__distract |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 999
+#'   - 777
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_p_ders__distract_mean()]
@@ -371,6 +394,10 @@ vars_mh_p_ders__negscnd <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_ders__negscnd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 999
+#'   - 777
+#' - *Validation criterion:* maximally 1 of 7 items missing
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -414,6 +441,9 @@ compute_mh_p_ders__negscnd_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_ders__negscnd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 999
+#'   - 777
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_p_ders__negscnd_mean()]
@@ -498,6 +528,7 @@ vars_mh_p_gbi <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_gbi |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -537,6 +568,8 @@ compute_mh_p_gbi_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_gbi |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 10 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_p_gbi_nm()]
@@ -618,6 +651,7 @@ vars_mh_p_ssrs <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_ssrs |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -657,6 +691,8 @@ compute_mh_p_ssrs_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_ssrs |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 11 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_p_ssrs_nm()]
@@ -733,6 +769,7 @@ vars_mh_y_bisbas__bas__dr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bisbas__bas__dr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -774,6 +811,8 @@ compute_mh_y_bisbas__bas__dr_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bisbas__bas__dr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 4 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_bisbas__bas__dr_nm()]
@@ -831,6 +870,7 @@ vars_mh_y_bisbas__bas__fs <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bisbas__bas__fs |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -872,6 +912,8 @@ compute_mh_y_bisbas__bas__fs_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bisbas__bas__fs |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 4 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_bisbas__bas__fs_nm()]
@@ -930,6 +972,7 @@ vars_mh_y_bisbas__bas__rr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bisbas__bas__rr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -971,6 +1014,8 @@ compute_mh_y_bisbas__bas__rr_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bisbas__bas__rr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 5 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_bisbas__bas__rr_nm()]
@@ -1028,6 +1073,7 @@ vars_mh_y_bisbas__bas__rr__v01 <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bisbas__bas__rr__v01 |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -1069,6 +1115,8 @@ compute_mh_y_bisbas__bas__rr_nm__v01 <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bisbas__bas__rr__v01 |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 4 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_bisbas__bas__rr_nm__v01()]
@@ -1129,6 +1177,7 @@ vars_mh_y_bisbas__bis <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bisbas__bis |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -1170,6 +1219,8 @@ compute_mh_y_bisbas__bis_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bisbas__bis |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 7 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_bisbas__bis_nm()]
@@ -1227,6 +1278,7 @@ vars_mh_y_bisbas__bis__v01 <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bisbas__bis__v01 |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -1268,6 +1320,8 @@ compute_mh_y_bisbas__bis_nm__v01 <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bisbas__bis__v01 |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 4 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_bisbas__bis_nm__v01()]
@@ -1342,7 +1396,6 @@ vars_mh_y_erq__reapp <- c(
   "mh_y_erq__reapp_003"
 )
 
-
 #' Compute "Emotion Regulation Questionnaire \[Youth\] (Reappraisal): Mean"
 #'
 #' @description
@@ -1353,6 +1406,9 @@ vars_mh_y_erq__reapp <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_erq__reapp |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#' - *Validation criterion:* none of 3 items missing
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -1395,6 +1451,8 @@ compute_mh_y_erq__reapp_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_erq__reapp |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_erq__reapp_mean()]
@@ -1447,6 +1505,9 @@ vars_mh_y_erq__suppr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_erq__suppr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#' - *Validation criterion:* none of 3 items missing
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -1489,6 +1550,8 @@ compute_mh_y_erq__suppr_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_erq__suppr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_erq__suppr_mean()]
@@ -1564,6 +1627,7 @@ vars_mh_y_peq__overt__agg <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__overt__agg |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -1603,6 +1667,8 @@ compute_mh_y_peq__overt__agg_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__overt__agg |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 3 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_peq__overt__agg_nm()]
@@ -1659,6 +1725,7 @@ vars_mh_y_peq__overt__vict <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__overt__vict |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -1698,6 +1765,8 @@ compute_mh_y_peq__overt__vict_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__overt__vict |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 3 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_peq__overt__vict_nm()]
@@ -1754,6 +1823,7 @@ vars_mh_y_peq__rel__agg <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rel__agg |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -1794,6 +1864,8 @@ compute_mh_y_peq__rel__agg_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rel__agg |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 3 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_peq__rel__agg_nm()]
@@ -1850,6 +1922,7 @@ vars_mh_y_peq__rel__vict <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rel__vict |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -1890,6 +1963,8 @@ compute_mh_y_peq__rel__vict_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rel__vict |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 3 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_peq__rel__vict_nm()]
@@ -1946,6 +2021,7 @@ vars_mh_y_peq__rep__agg <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rep__agg |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -1986,6 +2062,8 @@ compute_mh_y_peq__rep__agg_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rep__agg |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 3 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_peq__rep__agg_nm()]
@@ -2042,6 +2120,7 @@ vars_mh_y_peq__rep__vict <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rep__vict |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -2083,6 +2162,8 @@ compute_mh_y_peq__rep__vict_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rep__vict |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 3 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_peq__rep__vict_nm()]
@@ -2170,6 +2251,7 @@ vars_mh_y_sup <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_sup |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -2209,6 +2291,8 @@ compute_mh_y_sup_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_sup |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 7 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_sup_nm()]
@@ -2287,6 +2371,7 @@ vars_mh_y_upps__nurg <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_upps__nurg |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -2330,6 +2415,8 @@ compute_mh_y_upps__nurg_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_upps__nurg |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 4 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_upps__nurg_nm()]
@@ -2389,6 +2476,7 @@ vars_mh_y_upps__pers <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_upps__pers |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -2432,6 +2520,8 @@ compute_mh_y_upps__pers_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_upps__pers |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 4 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_upps__pers_nm()]
@@ -2491,6 +2581,7 @@ vars_mh_y_upps__plan <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_upps__plan |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -2534,6 +2625,8 @@ compute_mh_y_upps__plan_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_upps__plan |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 4 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_upps__plan_nm()]
@@ -2593,6 +2686,7 @@ vars_mh_y_upps__purg <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_upps__purg |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -2636,6 +2730,8 @@ compute_mh_y_upps__purg_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_upps__purg |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 4 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_upps__purg_nm()]
@@ -2695,6 +2791,7 @@ vars_mh_y_upps__sens <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_upps__sens |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -2738,6 +2835,8 @@ compute_mh_y_upps__sens_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_upps__sens |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 4 items missing
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_upps__sens_nm()]
@@ -2964,6 +3063,8 @@ vars_mh_p_eatq__surg <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_eatq__surg |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* maximally 1 of 9 items missing
 #'
 #'
 #' @param data tbl, Dataframe containing the columns to be summarized.
@@ -3038,6 +3139,7 @@ compute_mh_p_eatq__surg_mean <- function(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__surg |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -3096,6 +3198,8 @@ vars_mh_p_eatq__actv <- c(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__actv |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* maximally 1 of 7 items missing
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -3161,6 +3265,7 @@ compute_mh_p_eatq__actv_mean <- function(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__actv |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -3220,6 +3325,8 @@ vars_mh_p_eatq__affl <- c(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__affl |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* maximally 1 of 6 items missing
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -3280,6 +3387,7 @@ compute_mh_p_eatq__affl_mean <- function(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__affl |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -3338,6 +3446,8 @@ vars_mh_p_eatq__depm <- c(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__depm |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* maximally 1 of 5 items missing
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -3403,6 +3513,7 @@ compute_mh_p_eatq__depm_mean <- function(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__depm |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -3462,6 +3573,8 @@ vars_mh_p_eatq__aggr <- c(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__aggr |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* maximally 1 of 7 items missing
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -3527,6 +3640,7 @@ compute_mh_p_eatq__aggr_mean <- function(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__aggr |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -3585,6 +3699,8 @@ vars_mh_p_eatq__attn <- c(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__attn |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* maximally 1 of 6 items missing
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #'
@@ -3651,6 +3767,7 @@ compute_mh_p_eatq__attn_mean <- function(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__attn |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -3708,6 +3825,8 @@ vars_mh_p_eatq__fear <- c(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__fear |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* maximally 1 of 6 items missing
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -3772,6 +3891,7 @@ compute_mh_p_eatq__fear_mean <- function(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__fear |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -3829,6 +3949,8 @@ vars_mh_p_eatq__inhib <- c(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__inhib |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* maximally 1 of 5 items missing
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -3894,6 +4016,7 @@ compute_mh_p_eatq__inhib_mean <- function(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__inhib |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -3951,6 +4074,8 @@ vars_mh_p_eatq__shy <- c(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__shy |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* maximally 1 of 5 items missing
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -4019,6 +4144,7 @@ compute_mh_p_eatq__shy_mean <- function(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__shy |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -4078,6 +4204,8 @@ vars_mh_p_eatq__frust <- c(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__frust |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* maximally 1 of 6 items missing
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -4139,6 +4267,7 @@ compute_mh_p_eatq__frust_mean <- function(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_p_eatq__frust |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -4186,6 +4315,7 @@ compute_mh_p_eatq__frust_nm <- function(
 #'    - `mh_p_eatq__attn_mean`
 #'    - `mh_p_eatq__inhib_mean`
 #'    - `mh_p_eatq__actv_mean`
+#' - *Excluded values:* none
 #'
 #' @param data tbl, Dataframe containing the columns to be summarized.
 #' @param name character, Name of the new column to be created. Default is
@@ -4253,6 +4383,7 @@ compute_mh_p_eatq__ss__efcon_mean <- function(
 #'    c(vars_mh_p_eatq__attn, vars_mh_p_eatq__inhib, vars_mh_p_eatq__actv) |>
 #'      md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -4302,6 +4433,7 @@ compute_mh_p_eatq__ss__efcon_nm <- function(
 #'    - `mh_p_eatq__frust_mean`
 #'    - `mh_p_eatq__depm_mean`
 #'    - `mh_p_eatq__aggr_mean`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__ss__efcon_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -4366,6 +4498,7 @@ compute_mh_p_eatq__ss__negaff_mean <- function(
 #'    c(vars_mh_p_eatq__frust, vars_mh_p_eatq__depm, vars_mh_p_eatq__aggr) |>
 #'      md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -4414,6 +4547,7 @@ compute_mh_p_eatq__ss__negaff_nm <- function(
 #'    - `mh_p_eatq__surg_mean`
 #'    - `mh_p_eatq__fear_mean` (revert)
 #'    - `mh_p_eatq__shy_mean` (revert)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__ss__efcon_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -4477,6 +4611,7 @@ compute_mh_p_eatq__ss__surg_mean <- function(
 #'    c(vars_mh_p_eatq__surg, vars_mh_p_eatq__fear, vars_mh_p_eatq__shy) |>
 #'      md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_mh_p_eatq__surg_mean
 #' @return tbl. The input data frame with the summary score appended as
@@ -13564,6 +13699,9 @@ vars_mh_y_pps_count <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_pps_count |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* maximally 4 of 21 items missing
+#'
 #' @param data tbl, Dataframe containing the columns to be summarized.
 #' @param name character, Name of the new column to be created. Default is
 #' the name in description, but users can change it.
@@ -13743,6 +13881,9 @@ compute_mh_y_pps__bother_nm <- function(
 #'  ```{r, echo=FALSE, results='asis'}
 #'  vars_mh_y_pps__bother |> md_bullet(2, TRUE)
 #'  ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* 0 of 21 items missing
+#'
 #' @inherit compute_mh_y_pps_count references params
 #' @details
 #' The bother count is depend on the `mh_y_pps__bother_nm` score. If the
@@ -13820,6 +13961,9 @@ compute_mh_y_pps__bother__yes_count <- function(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_y_pps__bother |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* 0 of 21 items missing
+#'
 #' @inherit  compute_mh_y_pps_count references params
 #' @details
 #' The bother count is depend on the `mh_y_pps__bother_nm` score. If the
@@ -13925,6 +14069,8 @@ vars_mh_y_pps__severity <- c(
 #'  ```{r, echo=FALSE, results='asis'}
 #'  vars_mh_y_pps__severity |> md_bullet(2, TRUE)
 #'  ```
+#' - *Excluded values:* none
+#'
 #' @inherit compute_mh_y_pps_count references params
 #' @details
 #' The number of missing values in the `mh_y_pps__severity` score is
@@ -13988,6 +14134,8 @@ compute_mh_y_pps__severity_nm <- function(
 #'    ```{r, echo=FALSE, results='asis'}
 #'    vars_mh_y_pps__severity |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 21 items missing
 #'
 #' @inherit  dummy_mh params references return
 #' @export
@@ -14076,6 +14224,9 @@ compute_mh_y_pps__severity_score <- function(data,
 #'    ```{r, echo=FALSE, results='asis'}
 #'    c(vars_mh_y_pps_count, vars_mh_y_pps__severity) |> md_bullet(2, TRUE)
 #'    ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* none of 21 items missing
+#'
 #' @inherit compute_mh_y_pps_count references params
 #' @export
 #' @autoglobal

@@ -33,6 +33,7 @@ Munich Chronotype Questionnaire [Youth] (Sleep): Duration
 \item \code{ph_y_mctq__sd__sleep_dur} (intermediate score)
 \item \code{ph_y_mctq__fd__sleep_dur} (intermediate score)
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

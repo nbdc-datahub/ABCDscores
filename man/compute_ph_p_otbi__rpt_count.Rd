@@ -16,6 +16,7 @@ vars_ph_p_otbi__rpt_count
 compute_ph_p_otbi__rpt_count(
   data,
   name = "ph_p_otbi__rpt_count",
+  exclude = c("777", "999"),
   combine = TRUE,
   max_na = 2
 )
@@ -24,6 +25,9 @@ compute_ph_p_otbi__rpt_count(
 \item{data}{tbl. Data frame containing the columns to be summarized.}
 
 \item{name}{character. Name of the summary score column.}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical. If \code{TRUE} (default), the summary score is
 is appended as a new column to the input data frame. If \code{FALSE}, the
@@ -39,7 +43,8 @@ a new column.
 \description{
 Computes the summary score \code{ph_p_otbi__rpt_count}
 Ohio State Traumatic Brain Injury Screen [Parent] (Repeated injuries):
-Count
+Count [Validation: No more than 2 missing or declined at baseline
+and no more than 0 missing or declined at non-baseline events]
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{
@@ -48,7 +53,16 @@ Count
 \item \code{ph_p_otbi__rpt_003}
 \item \code{ph_p_otbi__rpt_001__l}
 }
-\item \emph{Excluded values:} c("777", "999")
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:}
+\itemize{
+\item maximally 2 item missing at baseline event
+\item maximally 0 item missing at non-baseline events
+}
 }
 }
 \keyword{datasets}

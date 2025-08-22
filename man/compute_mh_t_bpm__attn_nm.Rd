@@ -46,6 +46,11 @@ Brief Problem Monitor [Teacher] (Attention): Number missing
 \item \code{mh_t_bpm__attn_005}
 \item \code{mh_t_bpm__attn_006}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

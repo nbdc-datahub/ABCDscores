@@ -41,7 +41,7 @@ a new column.
 \description{
 Computes the summary score \code{su_y_nicvapeexp__pos_prsum}
 ENDS Expectancies [Youth] (Strength of positive expectancies):
-Prorated sum
+Prorated sum [Validation: No more than 2 missing or declined]
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{

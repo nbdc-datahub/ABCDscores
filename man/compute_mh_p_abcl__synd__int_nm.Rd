@@ -72,6 +72,11 @@ Adult Behavior Checklist [Parent] (Internalizing): Number missing
 \item \code{mh_p_abcl__som__somat_006}
 \item \code{mh_p_abcl__som__somat_007}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

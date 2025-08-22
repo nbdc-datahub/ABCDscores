@@ -49,6 +49,7 @@ Planning): Number missing
 \item \code{mh_y_upps__plan_003}
 \item \code{mh_y_upps__plan_004}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

@@ -1,3 +1,5 @@
+# fmt: skip file
+
 #' @export
 #' @autoglobal
 #' @rdname compute_su_y_alchss_sum
@@ -56,6 +58,8 @@ combine_cols_alchss <- function(data, vars) {
 #'     ```{r, echo=FALSE, results='asis'}
 #'     vars_su_y_alchss |> unlist() |> md_bullet(2, TRUE)
 #'     ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* maximally 0 of 2 items missing
 #' @param data tbl, Dataframe containing the columns to be summarized.
 #' @param name character, Name of the new column to be created. Default is
 #' the name in description, but users can change it.
@@ -106,6 +110,8 @@ compute_su_y_alchss_sum <- function(data,
 #'     ```{r, echo=FALSE, results='asis'}
 #'     vars_su_y_alchss |> unlist() |> md_bullet(2, TRUE)
 #'     ```
+#' - *Excluded values:* none
+#' - *Validation criterion:* maximally 0 of 2 items missing
 #'
 #' @inherit compute_su_y_alchss_sum references params return
 #' @export
@@ -164,6 +170,8 @@ compute_su_y_alchss_count <- function(data,
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_su_y_alchss |> unlist() |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:* none
+#'
 #' @inherit compute_su_y_alchss_sum references params return
 #' @export
 #' @autoglobal
@@ -240,7 +248,7 @@ vars_su_y_alcsre__6mo <- c(
 #'   vars_su_y_alcsre__6mo |> md_bullet(2, TRUE)
 #'   ```
 #' - *Excluded values:* none
-#' - *Validation criterion:* none of 4 items missing
+#' - *Validation criterion:* maximally 0 of 4 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -289,7 +297,7 @@ compute_su_y_alcsre__6mo_mean <- function(
 #'   vars_su_y_alcsre__6mo |> md_bullet(2, TRUE)
 #'   ```
 #' - *Excluded values:* none
-#' - *Validation criterion:* none of 4 items missing
+#' - *Validation criterion:* maximally 0 of 4 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -396,7 +404,7 @@ vars_su_y_alcsre__first5 <- c(
 #'   vars_su_y_alcsre__first5 |> md_bullet(2, TRUE)
 #'   ```
 #' - *Excluded values:* none
-#' - *Validation criterion:* none of 4 items missing
+#' - *Validation criterion:* maximally 0 of 4 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -445,7 +453,7 @@ compute_su_y_alcsre__first5_mean <- function(
 #'   vars_su_y_alcsre__first5 |> md_bullet(2, TRUE)
 #'   ```
 #' - *Excluded values:* none
-#' - *Validation criterion:* none of 4 items missing
+#' - *Validation criterion:* maximally 0 of 4 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -549,10 +557,10 @@ vars_su_y_alcsre__hvy <- c(
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
-#'   vars_su_y_alcsre__first5 |> md_bullet(2, TRUE)
+#'   vars_su_y_alcsre__hvy |> md_bullet(2, TRUE)
 #'   ```
 #' - *Excluded values:* none
-#' - *Validation criterion:* none of 4 items missing
+#' - *Validation criterion:* maximally 0 of 4 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -587,20 +595,20 @@ compute_su_y_alcsre__hvy_mean <- function(
     )
 }
 
-#' Compute "Alcohol Subject Response and Effects \[Youth\] (Last 6 months):
-#' Count \[Validation: None missing or declined\]"
+#' Compute "Alcohol Subject Response and Effects \[Youth\] (Heaviest drinking
+#' period): Count \[Validation: None missing or declined\]"
 #'
 #' @description
 #' Computes the summary score `su_y_alcsre__hvy_count`
-#' Alcohol Subject Response and Effects \[Youth\] (Last 6 months): Count
-#' \[Validation: None missing or declined\]
+#' Alcohol Subject Response and Effects \[Youth\] (Heaviest drinking
+#' period): Count \[Validation: None missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_su_y_alcsre__hvy |> md_bullet(2, TRUE)
 #'   ```
 #' - *Excluded values:* none
-#' - *Validation criterion:* none of 4 items missing
+#' - *Validation criterion:* maximally 0 of 4 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -961,10 +969,14 @@ vars_su_y_cigexp__pos <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_su_y_cigexp__pos |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* 0
+#' - *Excluded values:*
+#'    - 0
+#'
 #' - *Validation criterion:* maximally 2 of 4 items missing
 #'
 #' @inheritParams compute_su_y_alcexp__neg_prsum
+#' @param exclude character vector. Values to be excluded from the summary
+#'    score calculation.
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'    a new column.
@@ -975,6 +987,7 @@ compute_su_y_cigexp__pos_prsum <- function(
     data,
     name = "su_y_cigexp__pos_prsum",
     combine = TRUE,
+    exclude = c("0"),
     max_na = 2) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -985,7 +998,7 @@ compute_su_y_cigexp__pos_prsum <- function(
       name    = name,
       vars    = vars_su_y_cigexp__pos,
       max_na  = max_na,
-      exclude = c("0"),
+      exclude = exclude,
       combine = combine
     )
 }
@@ -996,7 +1009,8 @@ compute_su_y_cigexp__pos_prsum <- function(
 #' @description
 #' Computes the summary score `su_y_cigexp__pos_prsum__v01`
 #' Cigarette Expectancies (ASCQ) \[Youth\] (Strength of positive
-#' expectancies): Prorated sum (v01)
+#' expectancies): Prorated sum (v01) \[Validation: No more than 2
+#' missing or declined\]
 #'
 #' Note: all 0s are changed to 1s prior to calculating pro-rated sum
 #'
@@ -1006,6 +1020,10 @@ compute_su_y_cigexp__pos_prsum <- function(
 #'   ```
 #' - *Excluded values:* none
 #' - *Validation criterion:* maximally 2 of 4 items missing
+#'
+#' - *Notes:*
+#'   - Values in all input variables were recoded:
+#'      - "0" --> "1"
 #'
 #' @inheritParams compute_su_y_alcexp__neg_prsum
 #'
@@ -1117,7 +1135,8 @@ vars_su_y_cigexp__neg <- c(
 #' @description
 #' Computes the summary score `su_y_cigexp__neg_prsum`
 #' Cigarette Expectancies (ASCQ) \[Youth\] (Strength of negative
-#' expectancies): Prorated sum
+#' expectancies): Prorated sum \[Validation: No more than 0
+#' missing or declined\]
 #'
 #' Note: all 0s are changed to NAs prior to calculating pro-rated sum
 #'
@@ -1125,10 +1144,14 @@ vars_su_y_cigexp__neg <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_su_y_cigexp__neg |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* 0
+#' - *Excluded values:*
+#'    - 0
+#'
 #' - *Validation criterion:* maximally 0 of 2 items missing
 #'
 #' @inheritParams compute_su_y_alcexp__neg_prsum
+#' @param exclude character vector. Values to be excluded from the summary
+#'    score calculation.
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'    a new column.
@@ -1139,6 +1162,7 @@ compute_su_y_cigexp__neg_prsum <- function(
     data,
     name = "su_y_cigexp__neg_prsum",
     combine = TRUE,
+    exclude = c("0"),
     max_na = 0) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -1149,7 +1173,7 @@ compute_su_y_cigexp__neg_prsum <- function(
       name    = name,
       vars    = vars_su_y_cigexp__neg,
       max_na  = max_na,
-      exclude = c("0"),
+      exclude = exclude,
       combine = combine
     )
 }
@@ -1314,7 +1338,7 @@ vars_su_y_nicvapeexp__pos <- c(
 #' @description
 #' Computes the summary score `su_y_nicvapeexp__pos_prsum`
 #' ENDS Expectancies \[Youth\] (Strength of positive expectancies):
-#' Prorated sum
+#' Prorated sum \[Validation: No more than 2 missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -1409,7 +1433,7 @@ vars_su_y_nicvapeexp__neg <- c(
 #' @description
 #' Computes the summary score `su_y_nicvapeexp__neg_prsum`
 #' ENDS Expectancies \[Youth\] (Strength of negative expectancies):
-#' Prorated sum
+#' Prorated sum \[Validation: No more than 2 missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -1532,8 +1556,8 @@ vars_su_y_mjexp__pos <- c(
 #' @description
 #' Computes the summary score `su_y_mjexp__pos_prsum`
 #' Marijuana Expectancies (MEEQ-B) \[Youth\] (Strength of positive
-#' expectancies): Prorated sum
-#' (Strength of positive expectancies): Prorated sum
+#' expectancies): Prorated sum \[Validation: No more than 1
+#' missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -1627,7 +1651,8 @@ vars_su_y_mjexp__neg <- c(
 #' @description
 #' Computes the summary score `su_y_mjexp__neg_prsum`
 #' Marijuana Expectancies (MEEQ-B) \[Youth\] (Strength of negative
-#' expectancies): Prorated sum
+#' expectancies): Prorated sum \[Validation: No more than 1
+#' missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -1787,7 +1812,7 @@ vars_su_y_mjsre <- c(
 #'   vars_su_y_mjsre |> md_bullet(2, TRUE)
 #'   ```
 #' - *Excluded values:* none
-#' - *Validation criterion:* none of 11 items missing
+#' - *Validation criterion:* maximally 0 of 11 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -1915,7 +1940,7 @@ vars_su_y_mjsre__pos <- c(
 #'   vars_su_y_mjsre__pos |> md_bullet(2, TRUE)
 #'   ```
 #' - *Excluded values:* none
-#' - *Validation criterion:* none of 3 items missing
+#' - *Validation criterion:* maximally 0 of 3 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -2024,7 +2049,7 @@ vars_su_y_mjsre__neg <- c(
 #'   vars_su_y_mjsre__neg |> md_bullet(2, TRUE)
 #'   ```
 #' - *Excluded values:* none
-#' - *Validation criterion:* none of 8 items missing
+#' - *Validation criterion:* maximally 0 of 8 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -2156,7 +2181,7 @@ vars_su_y_nicsre__chew <- c(
 #'   vars_su_y_nicsre__chew |> md_bullet(2, TRUE)
 #'   ```
 #' - *Excluded values:* none
-#' - *Validation criterion:* none of 2 items missing
+#' - *Validation criterion:* maximally 0 of 2 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -2279,7 +2304,7 @@ vars_su_y_nicsre__cig <- c(
 #'   vars_su_y_nicsre__cig |> md_bullet(2, TRUE)
 #'   ```
 #' - *Excluded values:* none
-#' - *Validation criterion:* none of 2 items missing
+#' - *Validation criterion:* maximally 0 of 2 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -2404,7 +2429,7 @@ vars_su_y_nicsre__vape <- c(
 #'   vars_su_y_nicsre__vape |> md_bullet(2, TRUE)
 #'   ```
 #' - *Excluded values:* none
-#' - *Validation criterion:* none of 2 items missing
+#' - *Validation criterion:* maximally 0 of 2 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -2595,7 +2620,8 @@ vars_su_y_alcprob <- tibble::tribble(
 #'
 #' @description
 #' Computes the summary score `su_y_alcprob_prsum`
-#' Alcohol Problem Index (RAPI) \[Youth\]: Prorated sum
+#' Alcohol Problem Index (RAPI) \[Youth\]: Prorated sum \[Validation: No more
+#' than 2 missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -2760,7 +2786,8 @@ vars_su_y_mjprob <- c(
 #'
 #' @description
 #' Computes the summary score `su_y_mjprob_prsum`
-#' Marijuana Problem Index (MAPI) \[Youth\]: Prorated sum
+#' Marijuana Problem Index (MAPI) \[Youth\]: Prorated sum \[Validation: No more
+#' than 3 missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -2891,7 +2918,8 @@ vars_su_y_drgprob <- c(
 #'
 #' @description
 #' Computes the summary score `su_y_drgprob_prsum`
-#' Drug Problem Index (DAPI) \[Youth\]: Prorated sum
+#' Drug Problem Index (DAPI) \[Youth\]: Prorated sum \[Validation: No more
+#' than 3 missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}

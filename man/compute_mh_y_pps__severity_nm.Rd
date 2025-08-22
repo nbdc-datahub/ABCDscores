@@ -57,6 +57,7 @@ Prodromal Psychosis Scale [Youth] (Severity Score): Number missing
 \item \code{mh_y_pps__severity_020}
 \item \code{mh_y_pps__severity_021}
 }
+\item \emph{Excluded values:} none
 }
 }
 \details{

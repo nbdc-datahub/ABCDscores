@@ -42,6 +42,11 @@ Adult Behavior Checklist [Parent] (Tobacco per day): Number missing
 \itemize{
 \item \code{mh_p_abcl__nic_001}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

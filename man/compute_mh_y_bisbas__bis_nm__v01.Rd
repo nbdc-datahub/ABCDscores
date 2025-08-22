@@ -47,6 +47,7 @@ The Behavioral Inhibition System/Behavioral Activation System Scales
 \item \code{mh_y_bisbas__bis_004}
 \item \code{mh_y_bisbas__bis_006}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

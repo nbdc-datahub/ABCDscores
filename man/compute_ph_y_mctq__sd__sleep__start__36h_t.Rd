@@ -35,6 +35,7 @@ Time [36 hour adjusted]
 \item \code{ph_y_mctq__sd_002__01a}
 \item \code{ph_y_mctq__sd_002__01b}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

@@ -57,6 +57,8 @@ Early Adolescent Temperament Questionnaire [Parent] (Surgency): Mean
 \item \code{mh_p_eatq__surg_008}
 \item \code{mh_p_eatq__surg_009}
 }
+\item \emph{Excluded values:} none
+\item \emph{Validation criterion:} maximally 1 of 9 items missing
 }
 }
 \examples{

@@ -90,7 +90,23 @@ Ohio State Traumatic Brain Injury Screen [Parent]: Worst injury overall
 \item \code{ph_p_otbi__loc__add_001__02__l}
 \item \code{ph_p_otbi__loc__add_001__03__l}
 }
-\item \emph{Excluded values:} c("777", "999")
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Notes:}
+\itemize{
+\item Computed using the following summary scores:
+\itemize{
+\item ph_p_otbi__tbi1a
+\item ph_p_otbi__tbi1b
+\item ph_p_otbi__tbi2
+\item ph_p_otbi__tbi3
+\item ph_p_otbi__tbi4
+\item ph_p_otbi__tbi5
+}
+}
 }
 }
 \keyword{datasets}

@@ -37,6 +37,10 @@ Emotion Regulation Questionnaire [Youth] (Suppression): Number missing
 \item \code{mh_y_erq__suppr_002}
 \item \code{mh_y_erq__suppr_003}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+}
 }
 }
 \examples{

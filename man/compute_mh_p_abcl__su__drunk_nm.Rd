@@ -41,6 +41,11 @@ Adult Behavior Checklist [Parent] (Days Drunk): Number missing
 \itemize{
 \item \code{mh_p_abcl__drunk_001}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

@@ -64,6 +64,12 @@ behavior): T-score
 \item \code{mh_p_abcl__aggr__antsoc_007}
 \item \code{mh_p_abcl__aggr__antsoc_008}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 1 of 16 items missing
 }
 }
 \examples{

@@ -39,7 +39,8 @@ a new column.
 }
 \description{
 Computes the summary score \code{su_y_mjprob_prsum}
-Marijuana Problem Index (MAPI) [Youth]: Prorated sum
+Marijuana Problem Index (MAPI) [Youth]: Prorated sum [Validation: No more
+than 3 missing or declined]
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{

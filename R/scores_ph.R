@@ -21,8 +21,10 @@ vars_ph_p_dhx_birthweight <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_p_dhx_birthweight |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'    - 999
+#'    - any value less than 0
 #'
-#' - *Excluded values:* c("999") and any value less than 0
 #' - *Notes:*
 #'   - Computed using only baseline (`ses-00A`) and four-year (`ses-04A`) data
 #'   - The following transformations were made prior to computing the score:
@@ -195,6 +197,10 @@ vars_ph_p_otbi <- list(
 #' Ohio State Traumatic Brain Injury Screen \[Parent\]: Number of missing
 #' gating items
 #'
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
 #' @inheritParams dummy_ph_p_otbi
 #'
 #' @return tbl. The input data frame with the summary score appended as
@@ -205,6 +211,7 @@ vars_ph_p_otbi <- list(
 compute_ph_p_otbi_nm <- function(
     data,
     name = "ph_p_otbi_nm",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -241,7 +248,7 @@ compute_ph_p_otbi_nm <- function(
       name    = "baseline",
       vars    = vars_ph_p_otbi[["baseline"]],
       cond    = conditions_baseline,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -256,7 +263,7 @@ compute_ph_p_otbi_nm <- function(
       vars = vars_ph_p_otbi[["longitudinal"]],
       vars_temp = "ph_p_otbi_005__l_present",
       cond = conditions_longitudinal,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     combine_cols(
@@ -328,8 +335,9 @@ vars_ph_p_otbi__loc__30m_count <- list(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   unlist(vars_ph_p_otbi__loc__30m_count) |> md_bullet(2, TRUE)
 #'   ```
-#'
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -341,6 +349,7 @@ vars_ph_p_otbi__loc__30m_count <- list(
 compute_ph_p_otbi__loc__30m_count <- function(
     data,
     name = "ph_p_otbi__loc__30m_count",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -375,7 +384,7 @@ compute_ph_p_otbi__loc__30m_count <- function(
       name    = "baseline",
       vars    = vars_ph_p_otbi__loc__30m_count[["baseline"]],
       cond    = conditions_baseline,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -390,7 +399,7 @@ compute_ph_p_otbi__loc__30m_count <- function(
       vars = vars_ph_p_otbi__loc__30m_count[["longitudinal"]],
       vars_temp = "ph_p_otbi_005__l_present",
       cond = conditions_longitudinal,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     combine_cols(
@@ -422,7 +431,9 @@ compute_ph_p_otbi__loc__30m_count <- function(
 #' Ohio State Traumatic Brain Injury Screen \[Parent\] (Loss of
 #' consciousness - Over 30 minutes): Number missing
 #'
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -436,6 +447,7 @@ compute_ph_p_otbi__loc__30m_count <- function(
 compute_ph_p_otbi__loc__30m_nm <- function(
     data,
     name = "ph_p_otbi__loc__30m_nm",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -471,7 +483,7 @@ compute_ph_p_otbi__loc__30m_nm <- function(
       name    = "baseline",
       vars    = vars_ph_p_otbi__loc__30m_count[["baseline"]],
       cond    = conditions_baseline,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -486,7 +498,7 @@ compute_ph_p_otbi__loc__30m_nm <- function(
       vars = vars_ph_p_otbi__loc__30m_count[["longitudinal"]],
       vars_temp = "ph_p_otbi_005__l_present",
       cond = conditions_longitudinal,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     combine_cols(
@@ -570,7 +582,9 @@ vars_ph_p_otbi__loc_count <- list(
 #'   unlist(vars_ph_p_otbi__loc_count) |> md_bullet(2, TRUE)
 #'   ```
 #'
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -582,6 +596,7 @@ vars_ph_p_otbi__loc_count <- list(
 compute_ph_p_otbi__loc_count <- function(
     data,
     name = "ph_p_otbi__loc_count",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -618,7 +633,7 @@ compute_ph_p_otbi__loc_count <- function(
       name    = "baseline",
       vars    = vars_ph_p_otbi__loc_count[["baseline"]],
       cond    = conditions_baseline,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -633,7 +648,7 @@ compute_ph_p_otbi__loc_count <- function(
       vars = vars_ph_p_otbi__loc_count[["longitudinal"]],
       vars_temp = "ph_p_otbi_005__l_present",
       cond = conditions_longitudinal,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     combine_cols(
@@ -665,7 +680,9 @@ compute_ph_p_otbi__loc_count <- function(
 #' Ohio State Traumatic Brain Injury Screen \[Parent\] (Loss of
 #' consciousness): Number missing
 #'
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -679,6 +696,7 @@ compute_ph_p_otbi__loc_count <- function(
 compute_ph_p_otbi__loc_nm <- function(
     data,
     name = "ph_p_otbi__loc_nm",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   chk::chk_logical(combine)
@@ -716,7 +734,7 @@ compute_ph_p_otbi__loc_nm <- function(
       name    = "baseline",
       vars    = vars_ph_p_otbi__loc_count[["baseline"]],
       cond    = conditions_baseline,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -731,7 +749,7 @@ compute_ph_p_otbi__loc_nm <- function(
       vars = vars_ph_p_otbi__loc_count[["longitudinal"]],
       vars_temp = "ph_p_otbi_005__l_present",
       cond = conditions_longitudinal,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     combine_cols(
@@ -780,13 +798,20 @@ vars_ph_p_otbi__rpt_count <- list(
 #' @description
 #' Computes the summary score `ph_p_otbi__rpt_count`
 #' Ohio State Traumatic Brain Injury Screen \[Parent\] (Repeated injuries):
-#' Count
+#' Count \[Validation: No more than 2 missing or declined at baseline
+#' and no more than 0 missing or declined at non-baseline events\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
 #'   unlist(vars_ph_p_otbi__rpt_count) |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
+#' - *Validation criterion:*
+#'    - maximally 2 item missing at baseline event
+#'    - maximally 0 item missing at non-baseline events
 #'
 #' @inheritParams dummy_ph_p_otbi
 #' @param max_na numeric, positive whole number. Number of missing items
@@ -800,6 +825,7 @@ vars_ph_p_otbi__rpt_count <- list(
 compute_ph_p_otbi__rpt_count <- function(
     data,
     name = "ph_p_otbi__rpt_count",
+    exclude = c("777", "999"),
     combine = TRUE,
     max_na = 2) {
   chk::chk_data(data)
@@ -812,14 +838,14 @@ compute_ph_p_otbi__rpt_count <- function(
       name    = "baseline",
       vars    = vars_ph_p_otbi__rpt_count[["baseline"]],
       max_na  = max_na,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     ss_sum(
       name    = "longitudinal",
       vars    = vars_ph_p_otbi__rpt_count[["longitudinal"]],
       max_na  = 0,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     combine_cols(
@@ -851,7 +877,9 @@ compute_ph_p_otbi__rpt_count <- function(
 #' Ohio State Traumatic Brain Injury Screen \[Parent\] (Repeated injuries):
 #' Number missing
 #'
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -865,6 +893,7 @@ compute_ph_p_otbi__rpt_count <- function(
 compute_ph_p_otbi__rpt_nm <- function(
     data,
     name = "ph_p_otbi__rpt_nm",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -880,13 +909,13 @@ compute_ph_p_otbi__rpt_nm <- function(
       name    = "baseline",
       vars    = vars_ph_p_otbi__rpt_count[["baseline"]],
       cond    = conditions_baseline,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     ss_nm(
       name    = "longitudinal",
       vars    = vars_ph_p_otbi__rpt_count[["longitudinal"]],
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     combine_cols(
@@ -983,8 +1012,11 @@ vars_ph_p_otbi__loc_tbiage <- list(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   unlist(vars_ph_p_otbi__loc_tbiage) |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'    - any reported age less than or equal to 0
 #'
-#' - *Excluded values:* c("777", "999") and any reported age ≤ 0
 #' - *Notes:*
 #'   - The output is set to `NA` for the following cases:
 #'     - minimum age is less than 0
@@ -1001,6 +1033,7 @@ vars_ph_p_otbi__loc_tbiage <- list(
 compute_ph_p_otbi__loc_tbiage <- function(
     data,
     name = "ph_p_otbi__loc_tbiage",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -1014,7 +1047,7 @@ compute_ph_p_otbi__loc_tbiage <- function(
       across(
         all_of(unlist(vars_ph_p_otbi__loc_tbiage)),
         ~ if_else(
-          .x %in% c("777", "999"),
+          .x %in% exclude,
           NA,
           .x
         )
@@ -1137,10 +1170,12 @@ compute_ph_p_otbi__loc_tbiage <- function(
 #' Ohio State Traumatic Brain Injury Screen \[Parent\] (Loss of
 #' consciousness): Age of first injury with LOC - Number missing
 #'
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
 #' - *Notes:*
-#'   - The output is set to `NA` for the following cases:
-#'     - no head or neck injury/impact is reported
+#'    - The output is set to `NA` when no head or neck injury/impact is reported
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -1154,6 +1189,7 @@ compute_ph_p_otbi__loc_tbiage <- function(
 compute_ph_p_otbi__loc__tbiage_nm <- function(
     data,
     name = "ph_p_otbi__loc__tbiage_nm",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -1184,14 +1220,14 @@ compute_ph_p_otbi__loc__tbiage_nm <- function(
       name    = "baseline",
       vars    = vars_ph_p_otbi__loc_tbiage[["baseline"]],
       cond    = conditions_baseline,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     ss_count(
       name    = "longitudinal",
       vars    = vars_ph_p_otbi__loc_tbiage[["longitudinal"]],
       cond    = conditions_longitudinal,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     combine_cols(
@@ -1237,7 +1273,9 @@ vars_ph_p_otbi__loc_before15 <- vars_ph_p_otbi__loc_tbiage
 #'   ```{r, echo=FALSE, results='asis'}
 #'   unlist(vars_ph_p_otbi__loc_before15) |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -1315,7 +1353,9 @@ vars_ph_p_otbi__tbi1a <- list(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   unlist(vars_ph_p_otbi__tbi1a) |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -1327,6 +1367,7 @@ vars_ph_p_otbi__tbi1a <- list(
 compute_ph_p_otbi__tbi1a <- function(
     data,
     name = "ph_p_otbi__tbi1a",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -1360,7 +1401,7 @@ compute_ph_p_otbi__tbi1a <- function(
       name    = "baseline",
       vars    = vars_ph_p_otbi__tbi1a[["baseline"]],
       cond    = conditions_baseline,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -1382,7 +1423,7 @@ compute_ph_p_otbi__tbi1a <- function(
       vars = vars_ph_p_otbi__tbi1a[["longitudinal"]],
       vars_temp = "ph_p_otbi_005__l_present",
       cond = conditions_longitudinal,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -1471,7 +1512,9 @@ vars_ph_p_otbi__tbi1b <- list(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   unlist(vars_ph_p_otbi__tbi1b) |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -1483,6 +1526,7 @@ vars_ph_p_otbi__tbi1b <- list(
 compute_ph_p_otbi__tbi1b <- function(
     data,
     name = "ph_p_otbi__tbi1b",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -1532,7 +1576,7 @@ compute_ph_p_otbi__tbi1b <- function(
       name    = "baseline",
       vars    = vars_ph_p_otbi__tbi1b[["baseline"]],
       cond    = conditions_baseline,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -1554,7 +1598,7 @@ compute_ph_p_otbi__tbi1b <- function(
       vars = vars_ph_p_otbi__tbi1b[["longitudinal"]],
       vars_temp = "ph_p_otbi_005__l_present",
       cond = conditions_longitudinal,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -1645,7 +1689,9 @@ vars_ph_p_otbi__tbi2 <- list(
 #'   unlist(vars_ph_p_otbi__tbi2) |> md_bullet(2, TRUE)
 #'   ```
 #'
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -1657,6 +1703,7 @@ vars_ph_p_otbi__tbi2 <- list(
 compute_ph_p_otbi__tbi2 <- function(
     data,
     name = "ph_p_otbi__tbi2",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -1703,7 +1750,7 @@ compute_ph_p_otbi__tbi2 <- function(
       name    = "baseline",
       vars    = vars_ph_p_otbi__tbi2[["baseline"]],
       cond    = conditions_baseline,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -1725,7 +1772,7 @@ compute_ph_p_otbi__tbi2 <- function(
       vars = vars_ph_p_otbi__tbi2[["longitudinal"]],
       vars_temp = "ph_p_otbi_005__l_present",
       cond = conditions_longitudinal,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -1805,7 +1852,9 @@ vars_ph_p_otbi__tbi3 <- list(
 #'   unlist(vars_ph_p_otbi__tbi3) |> md_bullet(2, TRUE)
 #'   ```
 #'
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -1817,6 +1866,7 @@ vars_ph_p_otbi__tbi3 <- list(
 compute_ph_p_otbi__tbi3 <- function(
     data,
     name = "ph_p_otbi__tbi3",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -1855,7 +1905,7 @@ compute_ph_p_otbi__tbi3 <- function(
       name    = "baseline",
       vars    = vars_ph_p_otbi__tbi3[["baseline"]],
       cond    = conditions_baseline,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -1877,7 +1927,7 @@ compute_ph_p_otbi__tbi3 <- function(
       vars = vars_ph_p_otbi__tbi3[["longitudinal"]],
       vars_temp = "ph_p_otbi_005__l_present",
       cond = conditions_longitudinal,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -1912,7 +1962,9 @@ compute_ph_p_otbi__tbi3 <- function(
 #'   unlist(vars_ph_p_otbi__tbi3) |> md_bullet(2, TRUE)
 #'   ```
 #'
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -1926,6 +1978,7 @@ compute_ph_p_otbi__tbi3 <- function(
 compute_ph_p_otbi__tbi4 <- function(
     data,
     name = "ph_p_otbi__tbi4",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -1964,7 +2017,7 @@ compute_ph_p_otbi__tbi4 <- function(
       name    = "baseline",
       vars    = vars_ph_p_otbi__tbi3[["baseline"]],
       cond    = conditions_baseline,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -1986,7 +2039,7 @@ compute_ph_p_otbi__tbi4 <- function(
       vars = vars_ph_p_otbi__tbi3[["longitudinal"]],
       vars_temp = "ph_p_otbi_005__l_present",
       cond = conditions_longitudinal,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -2021,7 +2074,9 @@ compute_ph_p_otbi__tbi4 <- function(
 #'   unlist(vars_ph_p_otbi__tbi3) |> md_bullet(2, TRUE)
 #'   ```
 #'
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -2035,6 +2090,7 @@ compute_ph_p_otbi__tbi4 <- function(
 compute_ph_p_otbi__tbi5 <- function(
     data,
     name = "ph_p_otbi__tbi5",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -2071,7 +2127,7 @@ compute_ph_p_otbi__tbi5 <- function(
       name    = "baseline",
       vars    = vars_ph_p_otbi__tbi3[["baseline"]],
       cond    = conditions_baseline,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -2093,7 +2149,7 @@ compute_ph_p_otbi__tbi5 <- function(
       vars = vars_ph_p_otbi__tbi3[["longitudinal"]],
       vars_temp = "ph_p_otbi_005__l_present",
       cond = conditions_longitudinal,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     mutate(
@@ -2146,7 +2202,18 @@ vars_ph_p_otbi_tbiworst <- unique(
 #'   vars_ph_p_otbi_tbiworst |> md_bullet(2, TRUE)
 #'   ```
 #'
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
+#' - *Notes:*
+#'   - Computed using the following summary scores:
+#'      - ph_p_otbi__tbi1a
+#'      - ph_p_otbi__tbi1b
+#'      - ph_p_otbi__tbi2
+#'      - ph_p_otbi__tbi3
+#'      - ph_p_otbi__tbi4
+#'      - ph_p_otbi__tbi5
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -2274,14 +2341,17 @@ vars_ph_y_pds__m <- c(
 #' @description
 #' Computes the summary score `ph_y_pds__m_mean`
 #' Pubertal Development Scale & Menstrual Cycle Survey History \[Youth\]
-#' (Male): Mean
+#' (Male): Mean \[Validation: No more than 1 missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_y_pds__m |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
-#' - *Validation criterion:* maximally 1 items missing
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
+#' - *Validation criterion:* maximally 1 item missing
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -2294,6 +2364,7 @@ compute_ph_y_pds__m_mean <- function(
     data,
     name = "ph_y_pds__m_mean",
     combine = TRUE,
+    exclude = c("777", "999"),
     max_na = 1) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -2304,7 +2375,7 @@ compute_ph_y_pds__m_mean <- function(
       name    = name,
       vars    = vars_ph_y_pds__m,
       max_na  = max_na,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = combine
     )
 }
@@ -2321,7 +2392,9 @@ compute_ph_y_pds__m_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_y_pds__m |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -2335,6 +2408,7 @@ compute_ph_y_pds__m_mean <- function(
 compute_ph_y_pds__m_nm <- function(
     data,
     name = "ph_y_pds__m_nm",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -2344,7 +2418,7 @@ compute_ph_y_pds__m_nm <- function(
     ss_nm(
       name    = name,
       vars    = vars_ph_y_pds__m,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = combine
     )
 }
@@ -2370,13 +2444,17 @@ vars_ph_y_pds__m_categ <- c(
 #' @description
 #' Computes the summary score `ph_y_pds__m_categ`
 #' Pubertal Development Scale & Menstrual Cycle Survey History \[Youth\]
-#' (Male): Approximate tanner stages
+#' (Male): Approximate tanner stages \[Validation: No more than 0
+#' missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_y_pds__m_categ |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
 #' - *Validation criterion:* maximally 0 items missing
 #'
 #' @inheritParams dummy_ph_p_otbi
@@ -2390,6 +2468,7 @@ compute_ph_y_pds__m_categ <- function(
     data,
     name = "ph_y_pds__m_categ",
     combine = TRUE,
+    exclude = c("777", "999"),
     max_na = 0) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -2401,14 +2480,14 @@ compute_ph_y_pds__m_categ <- function(
       name    = "tmp_sum",
       vars    = vars_ph_y_pds__m_categ,
       max_na  = max_na,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     ss_max(
       name    = "tmp_max",
       vars    = vars_ph_y_pds__m_categ,
       max_na  = max_na,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     transmute(
@@ -2441,7 +2520,9 @@ compute_ph_y_pds__m_categ <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_y_pds__m_categ |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -2455,6 +2536,7 @@ compute_ph_y_pds__m_categ <- function(
 compute_ph_y_pds__m__categ_nm <- function(
     data,
     name = "ph_y_pds__m__categ_nm",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -2464,7 +2546,7 @@ compute_ph_y_pds__m__categ_nm <- function(
     ss_nm(
       name    = name,
       vars    = vars_ph_y_pds__m_categ,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = combine
     )
 }
@@ -2492,14 +2574,17 @@ vars_ph_y_pds__f <- c(
 #' @description
 #' Computes the summary score `ph_y_pds__f_mean`
 #' Pubertal Development Scale & Menstrual Cycle Survey History \[Youth\]
-#' (Female): Mean
+#' (Female): Mean \[Validation: No more than 1 missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_y_pds__f |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
-#' - *Validation criterion:* maximally 1 items missing
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
+#' - *Validation criterion:* maximally 1 item missing
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -2511,6 +2596,7 @@ vars_ph_y_pds__f <- c(
 compute_ph_y_pds__f_mean <- function(
     data,
     name = "ph_y_pds__f_mean",
+    exclude = c("777", "999"),
     combine = TRUE,
     max_na = 1) {
   chk::chk_data(data)
@@ -2529,7 +2615,7 @@ compute_ph_y_pds__f_mean <- function(
       name    = name,
       vars    = vars_ph_y_pds__f,
       max_na  = max_na,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = FALSE
     )
 
@@ -2552,7 +2638,9 @@ compute_ph_y_pds__f_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_y_pds__f |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -2566,6 +2654,7 @@ compute_ph_y_pds__f_mean <- function(
 compute_ph_y_pds__f_nm <- function(
     data,
     name = "ph_y_pds__f_nm",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -2575,7 +2664,7 @@ compute_ph_y_pds__f_nm <- function(
     ss_nm(
       name    = name,
       vars    = vars_ph_y_pds__f,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = combine
     )
 }
@@ -2601,13 +2690,17 @@ vars_ph_y_pds__f_categ <- c(
 #' @description
 #' Computes the summary score `ph_y_pds__f_categ`
 #' Pubertal Development Scale & Menstrual Cycle Survey History \[Youth\]
-#' (Female): Approximate tanner stages
+#' (Female): Approximate tanner stages \[Validation: No more than 0
+#' missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_y_pds__f_categ |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
 #' - *Validation criterion:* maximally 0 items missing
 #'
 #' @inheritParams dummy_ph_p_otbi
@@ -2620,6 +2713,7 @@ vars_ph_y_pds__f_categ <- c(
 compute_ph_y_pds__f_categ <- function(
     data,
     name = "ph_y_pds__f_categ",
+    exclude = c("777", "999"),
     combine = TRUE,
     max_na = 0) {
   chk::chk_data(data)
@@ -2632,7 +2726,7 @@ compute_ph_y_pds__f_categ <- function(
       name    = "tmp_sum",
       vars    = c("ph_y_pds_002", "ph_y_pds__f_001"),
       max_na  = max_na,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     transmute(
@@ -2665,7 +2759,9 @@ compute_ph_y_pds__f_categ <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_y_pds__f_categ |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -2679,6 +2775,7 @@ compute_ph_y_pds__f_categ <- function(
 compute_ph_y_pds__f__categ_nm <- function(
     data,
     name = "ph_y_pds__f__categ_nm",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -2688,7 +2785,7 @@ compute_ph_y_pds__f__categ_nm <- function(
     ss_nm(
       name    = name,
       vars    = vars_ph_y_pds__f_categ,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = combine
     )
 }
@@ -2749,14 +2846,17 @@ vars_ph_p_pds__m <- c(
 #' @description
 #' Computes the summary score `ph_p_pds__m_mean`
 #' Pubertal Development Scale & Menstrual Cycle Survey History \[Parent\]
-#' (Male): Mean
+#' (Male): Mean \[Validation: No more than 1 missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_p_pds__m |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
-#' - *Validation criterion:* maximally 1 items missing
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
+#' - *Validation criterion:* maximally 1 item missing
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -2768,6 +2868,7 @@ vars_ph_p_pds__m <- c(
 compute_ph_p_pds__m_mean <- function(
     data,
     name = "ph_p_pds__m_mean",
+    exclude = c("777", "999"),
     combine = TRUE,
     max_na = 1) {
   chk::chk_data(data)
@@ -2779,7 +2880,7 @@ compute_ph_p_pds__m_mean <- function(
       name    = name,
       vars    = vars_ph_p_pds__m,
       max_na  = max_na,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = combine
     )
 }
@@ -2796,7 +2897,9 @@ compute_ph_p_pds__m_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_p_pds__m |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -2810,6 +2913,7 @@ compute_ph_p_pds__m_mean <- function(
 compute_ph_p_pds__m_nm <- function(
     data,
     name = "ph_p_pds__m_nm",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -2819,7 +2923,7 @@ compute_ph_p_pds__m_nm <- function(
     ss_nm(
       name    = name,
       vars    = vars_ph_p_pds__m,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = combine
     )
 }
@@ -2845,13 +2949,17 @@ vars_ph_p_pds__m_categ <- c(
 #' @description
 #' Computes the summary score `ph_p_pds__m_categ`
 #' Pubertal Development Scale & Menstrual Cycle Survey History \[Parent\]
-#' (Male): Approximate tanner stages
+#' (Male): Approximate tanner stages \[Validation: No more than 0
+#' missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_p_pds__m_categ |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
 #' - *Validation criterion:* maximally 0 items missing
 #'
 #' @inheritParams dummy_ph_p_otbi
@@ -2864,6 +2972,7 @@ vars_ph_p_pds__m_categ <- c(
 compute_ph_p_pds__m_categ <- function(
     data,
     name = "ph_p_pds__m_categ",
+    exclude = c("777", "999"),
     combine = TRUE,
     max_na = 0) {
   chk::chk_data(data)
@@ -2876,14 +2985,14 @@ compute_ph_p_pds__m_categ <- function(
       name    = "tmp_sum",
       vars    = vars_ph_p_pds__m_categ,
       max_na  = max_na,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     ss_max(
       name    = "tmp_max",
       vars    = vars_ph_p_pds__m_categ,
       max_na  = max_na,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     transmute(
@@ -2916,7 +3025,9 @@ compute_ph_p_pds__m_categ <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_p_pds__m_categ |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -2930,6 +3041,7 @@ compute_ph_p_pds__m_categ <- function(
 compute_ph_p_pds__m__categ_nm <- function(
     data,
     name = "ph_p_pds__m__categ_nm",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -2939,7 +3051,7 @@ compute_ph_p_pds__m__categ_nm <- function(
     ss_nm(
       name    = name,
       vars    = vars_ph_p_pds__m_categ,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = combine
     )
 }
@@ -2967,14 +3079,22 @@ vars_ph_p_pds__f <- c(
 #' @description
 #' Computes the summary score `ph_p_pds__f_mean`
 #' Pubertal Development Scale & Menstrual Cycle Survey History \[Parent\]
-#' (Female): Mean
+#' (Female): Mean \[Validation: No more than 1 missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_p_pds__f |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
-#' - *Validation criterion:* maximally 1 items missing
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
+#' - *Validation criterion:* maximally 1 item missing
+#'
+#' - *Notes:*
+#'   - Values in `ph_p_pds__f_002` were recoded:
+#'      - "0" --> "1",
+#'      - "1" --> "4"
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -2986,6 +3106,7 @@ vars_ph_p_pds__f <- c(
 compute_ph_p_pds__f_mean <- function(
     data,
     name = "ph_p_pds__f_mean",
+    exclude = c("777", "999"),
     combine = TRUE,
     max_na = 1) {
   chk::chk_data(data)
@@ -3004,7 +3125,7 @@ compute_ph_p_pds__f_mean <- function(
       name    = name,
       vars    = vars_ph_p_pds__f,
       max_na  = max_na,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = FALSE
     )
 
@@ -3027,7 +3148,9 @@ compute_ph_p_pds__f_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_p_pds__f |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -3041,6 +3164,7 @@ compute_ph_p_pds__f_mean <- function(
 compute_ph_p_pds__f_nm <- function(
     data,
     name = "ph_p_pds__f_nm",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -3050,7 +3174,7 @@ compute_ph_p_pds__f_nm <- function(
     ss_nm(
       name    = name,
       vars    = vars_ph_p_pds__f,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = combine
     )
 }
@@ -3076,13 +3200,17 @@ vars_ph_p_pds__f_categ <- c(
 #' @description
 #' Computes the summary score `ph_p_pds__f_categ`
 #' Pubertal Development Scale & Menstrual Cycle Survey History \[Parent\]
-#' (Female): Approximate tanner stages
+#' (Female): Approximate tanner stages \[Validation: No more than 0
+#' missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_p_pds__f_categ |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
 #' - *Validation criterion:* maximally 0 items missing
 #'
 #' @inheritParams dummy_ph_p_otbi
@@ -3095,6 +3223,7 @@ vars_ph_p_pds__f_categ <- c(
 compute_ph_p_pds__f_categ <- function(
     data,
     name = "ph_p_pds__f_categ",
+    exclude = c("777", "999"),
     combine = TRUE,
     max_na = 0) {
   chk::chk_data(data)
@@ -3107,7 +3236,7 @@ compute_ph_p_pds__f_categ <- function(
       name    = "tmp_sum",
       vars    = c("ph_p_pds_002", "ph_p_pds__f_001"),
       max_na  = max_na,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = TRUE
     ) |>
     transmute(
@@ -3140,7 +3269,9 @@ compute_ph_p_pds__f_categ <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_ph_p_pds__f_categ |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* c("777", "999")
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
 #'
 #' @inheritParams dummy_ph_p_otbi
 #'
@@ -3154,6 +3285,7 @@ compute_ph_p_pds__f_categ <- function(
 compute_ph_p_pds__f__categ_nm <- function(
     data,
     name = "ph_p_pds__f__categ_nm",
+    exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
@@ -3163,7 +3295,7 @@ compute_ph_p_pds__f__categ_nm <- function(
     ss_nm(
       name    = name,
       vars    = vars_ph_p_pds__f_categ,
-      exclude = c("777", "999"),
+      exclude = exclude,
       combine = combine
     )
 }
@@ -3227,6 +3359,7 @@ vars_ph_p_cna <- c(
 
 #' Compute "Child Nutrition Assessment \[Parent\]: Sum \[Validation: No more than
 #' 0 missing or declined\]"
+#'
 #' @description
 #' Computes the summary score `ph_p_cna_sum`
 #' Child Nutrition Assessment \[Parent\]: Sum \[Validation: No more than 0
@@ -3236,6 +3369,10 @@ vars_ph_p_cna <- c(
 #'  ```{r, echo=FALSE, results='asis'}
 #'  vars_ph_p_cna |> md_bullet(2, TRUE)
 #'  ```
+#' - *Excluded values:*
+#'   - 999
+#'   - 777
+#' - *Validation criterion:* maximally 0 of 14 items missing
 #'
 #' @param data tbl, Dataframe containing the columns to be summarized.
 #' @param name character, Name of the new column to be created. Default is
@@ -3289,6 +3426,9 @@ compute_ph_p_cna_sum <- function(
 #'  ```{r, echo=FALSE, results='asis'}
 #'  vars_ph_p_cna |> md_bullet(2, TRUE)
 #'  ```
+#' - *Excluded values:*
+#'   - 999
+#'   - 777
 #'
 #' @inherit compute_ph_p_cna_sum params return
 #' @export
@@ -3363,6 +3503,8 @@ vars_ph_y_anthr__height <- c(
 #'  ```{r, echo=FALSE, results='asis'}
 #'  vars_ph_y_anthr__height |> md_bullet(2, TRUE)
 #'  ```
+#' - *Excluded values:* none
+#'
 #' #### Calculation
 #' There are at most 3 possible measurements, and the calculation is as follows:
 #'
@@ -3436,6 +3578,7 @@ compute_ph_y_anthr__height_mean <- function(
 #'  ```{r, echo=FALSE, results='asis'}
 #'  vars_ph_y_anthr__height |> md_bullet(2, TRUE)
 #'  ```
+#' - *Excluded values:* none
 #'
 #' @inherit compute_ph_p_cna_sum params return
 #' @export
@@ -3486,6 +3629,7 @@ vars_ph_y_anthr__weight <- c(
 #' ```{r, echo=FALSE, results='asis'}
 #' vars_ph_y_anthr__weight |> md_bullet(2, TRUE)
 #' ```
+#' - *Excluded values:* none
 #'
 #' #### Calculation
 #' There are at most 3 possible measurements, and the calculation is as follows:
@@ -3560,6 +3704,7 @@ compute_ph_y_anthr__weight_mean <- function(
 #'  ```{r, echo=FALSE, results='asis'}
 #'  vars_ph_y_anthr__weight |> md_bullet(2, TRUE)
 #'  ```
+#' - *Excluded values:* none
 #'
 #' @inherit compute_ph_p_cna_sum params return
 #' @export
@@ -3637,6 +3782,7 @@ vars_ph_y_bp__sys <- c(
 #'  ```{r, echo=FALSE, results='asis'}
 #'  vars_ph_y_bp__sys |> md_bullet(2, TRUE)
 #'  ```
+#' - *Excluded values:* none
 #'
 #' @inherit compute_ph_p_cna_sum params return
 #' @export
@@ -3706,6 +3852,7 @@ compute_ph_y_bp__sys_mean <- function(
 #'  ```{r, echo=FALSE, results='asis'}
 #'  vars_ph_y_bp__sys |> md_bullet(2, TRUE)
 #'  ```
+#' - *Excluded values:* none
 #'
 #' #### Calculation
 #' There are at most 3 possible rounds of measurements,
@@ -3827,6 +3974,7 @@ vars_ph_y_bp__dia <- c(
 #'  ```{r, echo=FALSE, results='asis'}
 #'  vars_ph_y_bp__dia |> md_bullet(2, TRUE)
 #'  ```
+#' - *Excluded values:* none
 #'
 #' @inherit compute_ph_p_cna_sum params return
 #' @export
@@ -3895,6 +4043,7 @@ compute_ph_y_bp__dia_mean <- function(
 #'  ```{r, echo=FALSE, results='asis'}
 #'  vars_ph_y_bp__dia |> md_bullet(2, TRUE)
 #'  ```
+#' - *Excluded values:* none
 #'
 #' #### Calculation
 #' There are at most 3 possible rounds of measurements,
@@ -4016,6 +4165,7 @@ vars_ph_y_bp__hrate <- c(
 #'  ```{r, echo=FALSE, results='asis'}
 #'  vars_ph_y_bp__hrate |> md_bullet(2, TRUE)
 #'  ```
+#' - *Excluded values:* none
 #'
 #' @inherit compute_ph_p_cna_sum params return
 #' @export
@@ -4084,6 +4234,7 @@ compute_ph_y_bp__hrate_mean <- function(
 #'  ```{r, echo=FALSE, results='asis'}
 #'  vars_ph_y_bp__hrate |> md_bullet(2, TRUE)
 #'  ```
+#' - *Excluded values:* none
 #'
 #' #### Calculation
 #' There are at most 3 possible rounds of measurements,
@@ -4216,6 +4367,7 @@ compute_ph_y_bp_all <- function(data) {
 #'     - `ph_y_mctq__fd_001__02`
 #'     - `ph_y_mctq__fd_001__01a`
 #'     - `ph_y_mctq__fd_001__01b`
+#' - *Excluded values:* none
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -4274,6 +4426,7 @@ compute_ph_y_mctq__fd__bed__start__36h_t <- function(
 #'     - `ph_y_mctq__fd_001__02`
 #'     - `ph_y_mctq__fd_001__01a`
 #'     - `ph_y_mctq__fd_001__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -4325,6 +4478,7 @@ compute_ph_y_mctq__fd__bed__start__24h_t <- function(
 #'
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__fd_003`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -4387,6 +4541,7 @@ compute_ph_y_mctq__fd__sleep_latent <- function(
 #'
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__fd_006`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -4458,6 +4613,7 @@ compute_ph_y_mctq__fd__sleep_inertia <- function(
 #'     - `ph_y_mctq__fd_002__02`
 #'     - `ph_y_mctq__fd_002__01a`
 #'     - `ph_y_mctq__fd_002__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -4512,6 +4668,7 @@ compute_ph_y_mctq__fd__sleep__start__36h_t <- function(
 #'     - `ph_y_mctq__fd_005__02`
 #'     - `ph_y_mctq__fd_005__01a`
 #'     - `ph_y_mctq__fd_005__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -4566,6 +4723,7 @@ compute_ph_y_mctq__fd__sleep__end__36h_t <- function(
 #'     - `ph_y_mctq__fd_002__02`
 #'     - `ph_y_mctq__fd_002__01a`
 #'     - `ph_y_mctq__fd_002__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -4620,6 +4778,7 @@ compute_ph_y_mctq__fd__sleep__start__24h_t <- function(
 #'     - `ph_y_mctq__fd_005__02`
 #'     - `ph_y_mctq__fd_005__01a`
 #'     - `ph_y_mctq__fd_005__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -4673,6 +4832,7 @@ compute_ph_y_mctq__fd__sleep__end__24h_t <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__fd_004`
 #'     - `ph_y_mctq__fd_004__01`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -4747,6 +4907,7 @@ compute_ph_y_mctq__fd__sleep__waso_sum <- function(
 #'     - `ph_y_mctq__school_002__02`
 #'     - `ph_y_mctq__school_002__01a`
 #'     - `ph_y_mctq__school_002__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -4798,6 +4959,7 @@ compute_ph_y_mctq__school__start__36h_t <- function(
 #'     - `ph_y_mctq__school_003__02`
 #'     - `ph_y_mctq__school_003__01a`
 #'     - `ph_y_mctq__school_003__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -4852,6 +5014,7 @@ compute_ph_y_mctq__school__leave__36h_t <- function(
 #'     - `ph_y_mctq__school_002__02`
 #'     - `ph_y_mctq__school_002__01a`
 #'     - `ph_y_mctq__school_002__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -4906,6 +5069,7 @@ compute_ph_y_mctq__school__start__24h_t <- function(
 #'     - `ph_y_mctq__school_003__02`
 #'     - `ph_y_mctq__school_003__01a`
 #'     - `ph_y_mctq__school_003__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -4959,6 +5123,7 @@ compute_ph_y_mctq__school__leave__24h_t <- function(
 #'     - `ph_y_mctq__school_001__01`
 #'     - `ph_y_mctq__school_001__v01`
 #'     - `ph_y_mctq__school_001__01__v1`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5043,6 +5208,7 @@ compute_ph_y_mctq__sd_count <- function(
 #'     - `ph_y_mctq__sd_001__02`
 #'     - `ph_y_mctq__sd_001__01a`
 #'     - `ph_y_mctq__sd_001__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5097,6 +5263,7 @@ compute_ph_y_mctq__sd__bed__start__36h_t <- function(
 #'     - `ph_y_mctq__sd_001__02`
 #'     - `ph_y_mctq__sd_001__01a`
 #'     - `ph_y_mctq__sd_001__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5149,6 +5316,7 @@ compute_ph_y_mctq__sd__bed__start__24h_t <- function(
 #'
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__sd_006`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5214,6 +5382,7 @@ compute_ph_y_mctq__sd__sleep_inertia <- function(
 #'
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__sd_003`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5281,6 +5450,7 @@ compute_ph_y_mctq__sd__sleep_latent <- function(
 #'     - `ph_y_mctq__sd_002__02`
 #'     - `ph_y_mctq__sd_002__01a`
 #'     - `ph_y_mctq__sd_002__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5335,6 +5505,7 @@ compute_ph_y_mctq__sd__sleep__start__36h_t <- function(
 #'     - `ph_y_mctq__sd_005__02`
 #'     - `ph_y_mctq__sd_005__01a`
 #'     - `ph_y_mctq__sd_005__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5389,6 +5560,7 @@ compute_ph_y_mctq__sd__sleep__end__36h_t <- function(
 #'     - `ph_y_mctq__sd_002__02`
 #'     - `ph_y_mctq__sd_002__01a`
 #'     - `ph_y_mctq__sd_002__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5443,6 +5615,7 @@ compute_ph_y_mctq__sd__sleep__start__24h_t <- function(
 #'     - `ph_y_mctq__sd_005__02`
 #'     - `ph_y_mctq__sd_005__01a`
 #'     - `ph_y_mctq__sd_005__01b`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5496,6 +5669,7 @@ compute_ph_y_mctq__sd__sleep__end__24h_t <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__sd_004`
 #'     - `ph_y_mctq__sd_004__01`
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5568,6 +5742,7 @@ compute_ph_y_mctq__sd__sleep__waso_sum <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__fd__sleep__start__36h_t`(intermediate score)
 #'     - `ph_y_mctq__fd__sleep_latent` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5630,6 +5805,7 @@ compute_ph_y_mctq__fd__sleep__onset__36h_t <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__fd__sleep__end__36h_t` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep_inertia` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5692,6 +5868,7 @@ compute_ph_y_mctq__fd__bed__end__36h_t <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__fd__sleep__start__24h_t` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep_latent` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5754,6 +5931,7 @@ compute_ph_y_mctq__fd__sleep__onset__24h_t <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__fd__sleep__end__24h_t` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep_inertia` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5813,6 +5991,7 @@ compute_ph_y_mctq__fd__bed__end__24h_t <- function(
 #'
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__sd_count` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5862,6 +6041,7 @@ compute_ph_y_mctq__fd_count <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__sd__sleep__start__36h_t` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep_latent` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5924,6 +6104,7 @@ compute_ph_y_mctq__sd__sleep__onset__36h_t <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__sd__sleep__end__36h_t` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep_inertia` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5986,6 +6167,7 @@ compute_ph_y_mctq__sd__bed__end__36h_t <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__sd__sleep__start__24h_t` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep_latent` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6048,6 +6230,7 @@ compute_ph_y_mctq__sd__sleep__onset__24h_t <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__sd__sleep__end__24h_t` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep_inertia` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6110,6 +6293,7 @@ compute_ph_y_mctq__sd__bed__end__24h_t <- function(
 #'     - `ph_y_mctq__fd__sleep__end__36h_t` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep__onset__36h_t` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep__waso_sum` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6177,6 +6361,7 @@ compute_ph_y_mctq__fd__sleep_dur <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__fd__sleep__end__36h_t` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep__onset__36h_t` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6235,6 +6420,7 @@ compute_ph_y_mctq__fd__sleep_period <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__fd__bed__end__36h_t` (intermediate score)
 #'     - `ph_y_mctq__fd__bed__start__36h_t` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6295,6 +6481,7 @@ compute_ph_y_mctq__fd__bed_sum <- function(
 #'     - `ph_y_mctq__sd__sleep__end__36h_t` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep__onset__36h_t` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep__waso_sum` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6361,6 +6548,7 @@ compute_ph_y_mctq__sd__sleep_dur <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__sd__sleep__end__36h_t` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep__onset__36h_t` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6420,6 +6608,7 @@ compute_ph_y_mctq__sd__sleep_period <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__sd__bed__end__36h_t` (intermediate score)
 #'     - `ph_y_mctq__sd__bed__start__36h_t` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6480,6 +6669,7 @@ compute_ph_y_mctq__sd__bed_sum <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__fd__sleep__onset__24h_t` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep_dur` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6545,6 +6735,7 @@ compute_ph_y_mctq__fd__sleep__mid__24h_t <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__fd__sleep__onset__36h_t` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep_period` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6607,6 +6798,7 @@ compute_ph_y_mctq__fd__sleep__mid__36h_t <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__sd__sleep__onset__24h_t` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep_dur` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6671,6 +6863,7 @@ compute_ph_y_mctq__sd__sleep__mid__24h_t <- function(
 #'     - `ph_y_mctq__sd_count` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep_dur` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep_dur` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6729,6 +6922,7 @@ compute_ph_y_mctq__sleep_dur <- function(
 #'     - `ph_y_mctq__fd__sleep_dur` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep_dur` (intermediate score)
 #'     - `ph_y_mctq__sd_count` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6788,6 +6982,7 @@ compute_ph_y_mctq__sleep_loss <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__sd__sleep__onset__36h_t` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep_period` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6849,6 +7044,7 @@ compute_ph_y_mctq__sd__sleep__mid__36h_t <- function(
 #'     - `ph_y_mctq__sd_count` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep_period` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep_period` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6913,6 +7109,7 @@ compute_ph_y_mctq__sleep_period <- function(
 #'     - `ph_y_mctq__fd__sleep__mid__36h_t` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep__onset__36h_t` (intermediate score)
 #'     - `ph_y_mctq__sleep_dur` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -6991,6 +7188,7 @@ compute_ph_y_mctq__raw__36h_chrono <- function(
 #'     - `ph_y_mctq__fd__sleep__mid__36h_t` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep__onset__36h_t` (intermediate score)
 #'     - `ph_y_mctq__sleep_dur` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -7071,6 +7269,7 @@ compute_ph_y_mctq_chrono <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__fd__sleep__mid__36h_t` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep__mid__36h_t` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -7145,6 +7344,7 @@ compute_ph_y_mctq__socjl_rel <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__fd__sleep__mid__36h_t` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep__mid__36h_t` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -7213,6 +7413,7 @@ compute_ph_y_mctq__socjl_absl <- function(
 #'     - `ph_y_mctq__fd__sleep__mid__36h_t` (intermediate score)
 #'     - `ph_y_mctq__sd__sleep_dur` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep_dur` (intermediate score)
+#' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -7439,4 +7640,802 @@ convert_time_mctq <- function(
       )
   }
   data_out
+}
+
+#   ____________________________________________________________________________
+#   ph_p_sds                                                                ####
+
+#' @export
+#' @autoglobal
+#' @rdname compute_ph_p_sds_sum
+#' @format character vector of all column names
+#' used to compute summary scores of `ph_p_sds_sum` and `ph_p_sds_nm`.
+vars_ph_p_sds_sum <- c(
+  "ph_p_sds__dims_001",
+  "ph_p_sds__dims_002",
+  "ph_p_sds__dims_003",
+  "ph_p_sds__dims_004",
+  "ph_p_sds__dims_005",
+  "ph_p_sds__swtd_001",
+  "ph_p_sds__swtd_002",
+  "ph_p_sds__swtd_003",
+  "ph_p_sds__hyphy_001",
+  "ph_p_sds__dims_006",
+  "ph_p_sds__dims_007",
+  "ph_p_sds__swtd_004",
+  "ph_p_sds__sbd_001",
+  "ph_p_sds__sbd_002",
+  "ph_p_sds__sbd_003",
+  "ph_p_sds__hyphy_002",
+  "ph_p_sds__da_001",
+  "ph_p_sds__swtd_005",
+  "ph_p_sds__swtd_006",
+  "ph_p_sds__da_002",
+  "ph_p_sds__da_003",
+  "ph_p_sds__does_001",
+  "ph_p_sds__does_002",
+  "ph_p_sds__does_003",
+  "ph_p_sds__does_004",
+  "ph_p_sds__does_005"
+)
+
+#' Compute "Sleep Disturbance Scale \[Parent\] (Total): Sum \[Validation: No
+#' more than 0 missing or declined\]"
+#'
+#' @description
+#' Computes the summary score `ph_p_sds_sum`
+#' Sleep Disturbance Scale \[Parent\] (Total): Sum \[Validation: No more than 0
+#' missing or declined\]
+#'
+#' - *Summarized variables:*
+#'  ```{r, echo=FALSE, results='asis'}
+#'  vars_ph_p_sds_sum |> md_bullet(2, TRUE)
+#'  ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 items missing
+#'
+#' @param data tbl, Dataframe containing the columns to be summarized.
+#' @param name character, Name of the new column to be created. Default is
+#' the name in description, but users can change it.
+#' @param max_na integer, Maximum number of missing values allowed in the
+#' summary score. `NULL` means no limit.
+#' @param combine logical, If `TRUE`, the summary score will be appended to
+#' the input data frame. If `FALSE`, the summary score will be returned as a
+#' separate data frame.
+#' @param exclude character, Values to be excluded from the summary score.
+#' @return tbl. The input data frame with the summary score appended as
+#' a new column.
+#' @export
+#' @autoglobal
+#' @examples
+#' \dontrun{
+#' compute_ph_p_sds_sum(data) |>
+#'   select(
+#'     all_of(c("ph_p_sds_sum", vars_ph_p_sds_sum))
+#'   )
+#' }
+compute_ph_p_sds_sum <- function(
+    data,
+    name = "ph_p_sds_sum",
+    max_na = 0,
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  if (!is.null(max_na)) chk::chk_whole_number(max_na)
+  chk::chk_logical(combine)
+  check_col_names(data, name)
+
+  data |>
+    ss_sum(
+      combine = combine,
+      name    = name,
+      vars    = vars_ph_p_sds_sum,
+      max_na  = max_na,
+      exclude = exclude
+    )
+}
+
+#' Compute "Sleep Disturbance Scale \[Parent\] (Total) - Number missing"
+#'
+#' @description
+#' Computes the summary score `ph_p_sds_nm`
+#' Sleep Disturbance Scale \[Parent\] (Total) - Number missing
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_ph_p_sds_sum |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#'
+#' @seealso [compute_ph_p_sds_sum()]
+#'
+#' @return tbl. The input data frame with the summary score appended as
+#'    a new column.
+#'
+#' @export
+#' @autoglobal
+compute_ph_p_sds_nm <- function(
+    data,
+    name = "ph_p_sds_nm",
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+
+  data |>
+    ss_nm(
+      name    = name,
+      vars    = vars_ph_p_sds_sum,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_ph_p_sds__da_sum
+#' @format character vector of all column names
+#' used to compute summary scores of `ph_p_sds__da_sum` and `ph_p_sds__da_nm`.
+vars_ph_p_sds__da <- c(
+  "ph_p_sds__da_001",
+  "ph_p_sds__da_002",
+  "ph_p_sds__da_003"
+)
+
+#' Compute "Sleep Disturbance Scale \[Parent\] (Disorder of arousal): Sum
+#' \[Validation: No more than 0 missing or declined\]"
+#'
+#' @description
+#' Computes the summary score `ph_p_sds__da_sum`
+#' Sleep Disturbance Scale \[Parent\] (Disorder of arousal): Sum
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'  ```{r, echo=FALSE, results='asis'}
+#'  vars_ph_p_sds__da |> md_bullet(2, TRUE)
+#'  ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 items missing
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#'
+#' @export
+#' @autoglobal
+#' @examples
+#' \dontrun{
+#' compute_ph_p_sds__da_sum(data) |>
+#'   select(
+#'     all_of(c("ph_p_sds__da_sum", vars_ph_p_sds__da))
+#'   )
+#' }
+compute_ph_p_sds__da_sum <- function(
+    data,
+    name = "ph_p_sds__da_sum",
+    max_na = 0,
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  if (!is.null(max_na)) chk::chk_whole_number(max_na)
+  chk::chk_logical(combine)
+  check_col_names(data, name)
+
+  data |>
+    ss_sum(
+      combine = combine,
+      name    = name,
+      vars    = vars_ph_p_sds__da,
+      max_na  = max_na,
+      exclude = exclude
+    )
+}
+
+#' Compute "Sleep Disturbance Scale \[Parent\] (Disorder of arousal) - Number
+#' missing"
+#'
+#' @description
+#' Computes the summary score `ph_p_sds__da_nm`
+#' Sleep Disturbance Scale \[Parent\] (Disorder of arousal) - Number missing
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_ph_p_sds__da |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#'
+#' @seealso [compute_ph_p_sds__da_sum()]
+#'
+#' @return tbl. The input data frame with the summary score appended as
+#'    a new column.
+#'
+#' @export
+#' @autoglobal
+compute_ph_p_sds__da_nm <- function(
+    data,
+    name = "ph_p_sds__da_nm",
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+
+  data |>
+    ss_nm(
+      name    = name,
+      vars    = vars_ph_p_sds__da,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_ph_p_sds__does_sum
+#' @format character vector of all column names
+#' used to compute summary scores of `ph_p_sds__does_sum` and `ph_p_sds__does_nm`.
+vars_ph_p_sds__does <- c(
+  "ph_p_sds__does_001",
+  "ph_p_sds__does_002",
+  "ph_p_sds__does_003",
+  "ph_p_sds__does_004",
+  "ph_p_sds__does_005"
+)
+
+#' Compute "Sleep Disturbance Scale \[Parent\] (Disorders of excessive
+#' somnolence): Sum \[Validation: No more than 0 missing or declined\]"
+#'
+#' @description
+#' Computes the summary score `ph_p_sds__does_sum`
+#' Sleep Disturbance Scale \[Parent\] (Disorders of excessive somnolence): Sum
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'  ```{r, echo=FALSE, results='asis'}
+#'  vars_ph_p_sds__does |> md_bullet(2, TRUE)
+#'  ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 items missing
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#'
+#' @export
+#' @autoglobal
+#' @examples
+#' \dontrun{
+#' compute_ph_p_sds__does_sum(data) |>
+#'   select(
+#'     all_of(c("ph_p_sds__does_sum", vars_ph_p_sds__does))
+#'   )
+#' }
+compute_ph_p_sds__does_sum <- function(
+    data,
+    name = "ph_p_sds__does_sum",
+    max_na = 0,
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  if (!is.null(max_na)) chk::chk_whole_number(max_na)
+  chk::chk_logical(combine)
+  check_col_names(data, name)
+
+  data |>
+    ss_sum(
+      combine = combine,
+      name    = name,
+      vars    = vars_ph_p_sds__does,
+      max_na  = max_na,
+      exclude = exclude
+    )
+}
+
+#' Compute "Sleep Disturbance Scale \[Parent\] (Disorders of excessive
+#' somnolence) - Number missing"
+#'
+#' @description
+#' Computes the summary score `ph_p_sds__does_nm`
+#' Sleep Disturbance Scale \[Parent\] (Disorders of excessive somnolence) -
+#' Number missing
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_ph_p_sds__does |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#'
+#' @seealso [compute_ph_p_sds__does_sum()]
+#'
+#' @return tbl. The input data frame with the summary score appended as
+#'    a new column.
+#'
+#' @export
+#' @autoglobal
+compute_ph_p_sds__does_nm <- function(
+    data,
+    name = "ph_p_sds__does_nm",
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+
+  data |>
+    ss_nm(
+      name    = name,
+      vars    = vars_ph_p_sds__does,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_ph_p_sds__hyphy_sum
+#' @format character vector of all column names
+#' used to compute summary scores of `ph_p_sds__hyphy_sum` and `ph_p_sds__hyphy_nm`.
+vars_ph_p_sds__hyphy <- c(
+  "ph_p_sds__hyphy_001",
+  "ph_p_sds__hyphy_002"
+)
+
+#' Compute "Sleep Disturbance Scale \[Parent\] (Sleep hyperhydrosis): Sum
+#' \[Validation: No more than 0 missing or declined\]"
+#'
+#' @description
+#' Computes the summary score `ph_p_sds__hyphy_sum`
+#' Sleep Disturbance Scale \[Parent\] (Sleep hyperhydrosis): Sum
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'  ```{r, echo=FALSE, results='asis'}
+#'  vars_ph_p_sds__hyphy |> md_bullet(2, TRUE)
+#'  ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 items missing
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#'
+#' @export
+#' @autoglobal
+#' @examples
+#' \dontrun{
+#' compute_ph_p_sds__hyphy_sum(data) |>
+#'   select(
+#'     all_of(c("ph_p_sds__hyphy_sum", vars_ph_p_sds__hyphy))
+#'   )
+#' }
+compute_ph_p_sds__hyphy_sum <- function(
+    data,
+    name = "ph_p_sds__hyphy_sum",
+    max_na = 0,
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  if (!is.null(max_na)) chk::chk_whole_number(max_na)
+  chk::chk_logical(combine)
+  check_col_names(data, name)
+
+  data |>
+    ss_sum(
+      combine = combine,
+      name    = name,
+      vars    = vars_ph_p_sds__hyphy,
+      max_na  = max_na,
+      exclude = exclude
+    )
+}
+
+#' Compute "Sleep Disturbance Scale \[Parent\] (Sleep hyperhydrosis) - Number
+#' missing"
+#'
+#' @description
+#' Computes the summary score `ph_p_sds__hyphy_nm`
+#' Sleep Disturbance Scale \[Parent\] (Sleep hyperhydrosis) - Number missing
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_ph_p_sds__hyphy |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#'
+#' @seealso [compute_ph_p_sds__hyphy_sum()]
+#'
+#' @return tbl. The input data frame with the summary score appended as
+#'    a new column.
+#'
+#' @export
+#' @autoglobal
+compute_ph_p_sds__hyphy_nm <- function(
+    data,
+    name = "ph_p_sds__hyphy_nm",
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+
+  data |>
+    ss_nm(
+      name    = name,
+      vars    = vars_ph_p_sds__hyphy,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_ph_p_sds__sbd_sum
+#' @format character vector of all column names
+#' used to compute summary scores of `ph_p_sds__sbd_sum` and `ph_p_sds__sbd_nm`.
+vars_ph_p_sds__sbd <- c(
+  "ph_p_sds__sbd_001",
+  "ph_p_sds__sbd_002",
+  "ph_p_sds__sbd_003"
+)
+
+#' Compute "Sleep Disturbance Scale \[Parent\] (Sleep breathing disorders): Sum
+#' \[Validation: No more than 0 missing or declined\]"
+#'
+#' @description
+#' Computes the summary score `ph_p_sds__sbd_sum`
+#' Sleep Disturbance Scale \[Parent\] (Sleep breathing disorders): Sum
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'  ```{r, echo=FALSE, results='asis'}
+#'  vars_ph_p_sds__sbd |> md_bullet(2, TRUE)
+#'  ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 items missing
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#'
+#' @export
+#' @autoglobal
+#' @examples
+#' \dontrun{
+#' compute_ph_p_sds__sbd_sum(data) |>
+#'   select(
+#'     all_of(c("ph_p_sds__sbd_sum", vars_ph_p_sds__sbd))
+#'   )
+#' }
+compute_ph_p_sds__sbd_sum <- function(
+    data,
+    name = "ph_p_sds__sbd_sum",
+    max_na = 0,
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  if (!is.null(max_na)) chk::chk_whole_number(max_na)
+  chk::chk_logical(combine)
+  check_col_names(data, name)
+
+  data |>
+    ss_sum(
+      combine = combine,
+      name    = name,
+      vars    = vars_ph_p_sds__sbd,
+      max_na  = max_na,
+      exclude = exclude
+    )
+}
+
+#' Compute "Sleep Disturbance Scale \[Parent\] (Sleep breathing disorders) - Number
+#' missing"
+#'
+#' @description
+#' Computes the summary score `ph_p_sds__sbd_nm`
+#' Sleep Disturbance Scale \[Parent\] (Sleep breathing disorders) - Number missing
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_ph_p_sds__sbd |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#'
+#' @seealso [compute_ph_p_sds__sbd_sum()]
+#'
+#' @return tbl. The input data frame with the summary score appended as
+#'    a new column.
+#'
+#' @export
+#' @autoglobal
+compute_ph_p_sds__sbd_nm <- function(
+    data,
+    name = "ph_p_sds__sbd_nm",
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+
+  data |>
+    ss_nm(
+      name    = name,
+      vars    = vars_ph_p_sds__sbd,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_ph_p_sds__swtd_sum
+#' @format character vector of all column names
+#' used to compute summary scores of `ph_p_sds__swtd_sum` and `ph_p_sds__swtd_nm`.
+vars_ph_p_sds__swtd <- c(
+  "ph_p_sds__swtd_001",
+  "ph_p_sds__swtd_002",
+  "ph_p_sds__swtd_003",
+  "ph_p_sds__swtd_004",
+  "ph_p_sds__swtd_005",
+  "ph_p_sds__swtd_006"
+)
+
+#' Compute "Sleep Disturbance Scale \[Parent\] (Sleep-wake transition
+#' disorders): Sum \[Validation: No more than 0 missing or declined\]"
+#'
+#' @description
+#' Computes the summary score `ph_p_sds__swtd_sum`
+#' Sleep Disturbance Scale \[Parent\] (Sleep-wake transition disorders): Sum
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'  ```{r, echo=FALSE, results='asis'}
+#'  vars_ph_p_sds__swtd |> md_bullet(2, TRUE)
+#'  ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 items missing
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#'
+#' @export
+#' @autoglobal
+#' @examples
+#' \dontrun{
+#' compute_ph_p_sds__swtd_sum(data) |>
+#'   select(
+#'     all_of(c("ph_p_sds__swtd_sum", vars_ph_p_sds__swtd))
+#'   )
+#' }
+compute_ph_p_sds__swtd_sum <- function(
+    data,
+    name = "ph_p_sds__swtd_sum",
+    max_na = 0,
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  if (!is.null(max_na)) chk::chk_whole_number(max_na)
+  chk::chk_logical(combine)
+  check_col_names(data, name)
+
+  data |>
+    ss_sum(
+      combine = combine,
+      name    = name,
+      vars    = vars_ph_p_sds__swtd,
+      max_na  = max_na,
+      exclude = exclude
+    )
+}
+
+#' Compute "Sleep Disturbance Scale \[Parent\] (Sleep-wake transition
+#' disorders) - Number missing"
+#'
+#' @description
+#' Computes the summary score `ph_p_sds__swtd_nm`
+#' Sleep Disturbance Scale \[Parent\] (Sleep-wake transition disorders) - Number
+#' missing
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_ph_p_sds__swtd |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#'
+#' @seealso [compute_ph_p_sds__swtd_sum()]
+#'
+#' @return tbl. The input data frame with the summary score appended as
+#'    a new column.
+#'
+#' @export
+#' @autoglobal
+compute_ph_p_sds__swtd_nm <- function(
+    data,
+    name = "ph_p_sds__swtd_nm",
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+
+  data |>
+    ss_nm(
+      name    = name,
+      vars    = vars_ph_p_sds__swtd,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_ph_p_sds__dims_sum
+#' @format character vector of all column names
+#' used to compute summary scores of `ph_p_sds__dims_sum` and `ph_p_sds__dims_nm`.
+vars_ph_p_sds__dims <- c(
+  "ph_p_sds__dims_001",
+  "ph_p_sds__dims_002",
+  "ph_p_sds__dims_003",
+  "ph_p_sds__dims_004",
+  "ph_p_sds__dims_005",
+  "ph_p_sds__dims_006",
+  "ph_p_sds__dims_007"
+)
+
+#' Compute "Sleep Disturbance Scale \[Parent\] (Disorders of initiating and
+#' maintaining sleep): Sum \[Validation: No more than 0 missing or declined\]"
+#'
+#' @description
+#' Computes the summary score `ph_p_sds__dims_sum`
+#' Sleep Disturbance Scale \[Parent\] (Disorders of initiating and maintaining
+#' sleep): Sum \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'  ```{r, echo=FALSE, results='asis'}
+#'  vars_ph_p_sds__dims |> md_bullet(2, TRUE)
+#'  ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 items missing
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#'
+#' @export
+#' @autoglobal
+#' @examples
+#' \dontrun{
+#' compute_ph_p_sds__dims_sum(data) |>
+#'   select(
+#'     all_of(c("ph_p_sds__dims_sum", vars_ph_p_sds__dims))
+#'   )
+#' }
+compute_ph_p_sds__dims_sum <- function(
+    data,
+    name = "ph_p_sds__dims_sum",
+    max_na = 0,
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  if (!is.null(max_na)) chk::chk_whole_number(max_na)
+  chk::chk_logical(combine)
+  check_col_names(data, name)
+
+  data |>
+    ss_sum(
+      combine = combine,
+      name    = name,
+      vars    = vars_ph_p_sds__dims,
+      max_na  = max_na,
+      exclude = exclude
+    )
+}
+
+#' Compute "Sleep Disturbance Scale \[Parent\] (Disorders of initiating and
+#' maintaining sleep) - Number missing"
+#'
+#' @description
+#' Computes the summary score `ph_p_sds__dims_nm`
+#' Sleep Disturbance Scale \[Parent\] (Disorders of initiating and maintaining
+#' sleep) - Number missing
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_ph_p_sds__dims |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#'
+#' @seealso [compute_ph_p_sds__dims_sum()]
+#'
+#' @return tbl. The input data frame with the summary score appended as
+#'    a new column.
+#'
+#' @export
+#' @autoglobal
+compute_ph_p_sds__dims_nm <- function(
+    data,
+    name = "ph_p_sds__dims_nm",
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+
+  data |>
+    ss_nm(
+      name    = name,
+      vars    = vars_ph_p_sds__dims,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#   ____________________________________________________________________________
+#   (ALL) ph_p_sds                                                          ####
+
+#' Compute all the `ph_p_sds` summary scores
+#'
+#' @description
+#' This is a high-level function that computes all summary scores in this table.
+#' Make sure the `data` contains all the necessary columns.
+#'
+#' @param data tbl. Dataframe containing the columns to be summarized.
+#'
+#' @return tbl. The input data frame with the summary scores appended as
+#'  new columns.
+#'
+#' @export
+#' @autoglobal
+#'
+#' @examples
+#' \dontrun{
+#' compute_ph_p_sds_all(data)
+#' }
+compute_ph_p_sds_all <- function(data) {
+  data |>
+    compute_ph_p_sds_sum() |>
+    compute_ph_p_sds_nm() |>
+    compute_ph_p_sds__da_sum() |>
+    compute_ph_p_sds__da_nm() |>
+    compute_ph_p_sds__does_sum() |>
+    compute_ph_p_sds__does_nm() |>
+    compute_ph_p_sds__hyphy_sum() |>
+    compute_ph_p_sds__hyphy_nm() |>
+    compute_ph_p_sds__sbd_sum() |>
+    compute_ph_p_sds__sbd_nm() |>
+    compute_ph_p_sds__swtd_sum() |>
+    compute_ph_p_sds__swtd_nm() |>
+    compute_ph_p_sds__dims_sum() |>
+    compute_ph_p_sds__dims_nm()
 }

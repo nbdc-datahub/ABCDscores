@@ -34,6 +34,7 @@ Number missing
 \item \code{mh_p_eatq__inhib_004}
 \item \code{mh_p_eatq__inhib_005}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

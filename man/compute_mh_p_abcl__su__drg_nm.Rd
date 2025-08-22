@@ -41,6 +41,11 @@ Adult Behavior Checklist [Parent] (Days drug use): Number missing
 \itemize{
 \item \code{mh_p_abcl__drg_001}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

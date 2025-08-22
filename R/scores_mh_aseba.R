@@ -157,6 +157,9 @@ vars_mh_p_abcl <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -196,6 +199,10 @@ compute_mh_p_abcl_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 8 of 118 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl_nm()]
@@ -237,6 +244,10 @@ compute_mh_p_abcl_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 8 of 118 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl_nm()]
@@ -300,6 +311,9 @@ vars_mh_p_abcl__afs__frnd <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__afs__frnd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -341,6 +355,10 @@ compute_mh_p_abcl__afs__frnd_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__afs__frnd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 4 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__afs__frnd_nm()]
@@ -384,6 +402,10 @@ compute_mh_p_abcl__afs__frnd_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__afs__frnd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 4 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__afs__frnd_nm()]
@@ -442,6 +464,9 @@ vars_mh_p_abcl__cg2 <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__cg2 |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -562,6 +587,10 @@ compute_mh_p_abcl__critic_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__critic |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 19 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__critic_nm()]
@@ -603,6 +632,10 @@ compute_mh_p_abcl__critic_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__critic |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 19 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__critic_nm()]
@@ -675,6 +708,9 @@ vars_mh_p_abcl__dsm__adhd <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__adhd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -715,6 +751,10 @@ compute_mh_p_abcl__dsm__adhd_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__adhd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 13 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__dsm__adhd_nm()]
@@ -758,6 +798,10 @@ compute_mh_p_abcl__dsm__adhd_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__adhd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 13 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__dsm__adhd_nm()]
@@ -837,6 +881,9 @@ vars_mh_p_abcl__dsm__antsoc <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__antsoc |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -878,6 +925,10 @@ compute_mh_p_abcl__dsm__antsoc_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__antsoc |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 20 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__dsm__antsoc_nm()]
@@ -921,6 +972,10 @@ compute_mh_p_abcl__dsm__antsoc_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__antsoc |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 20 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__dsm__antsoc_nm()]
@@ -986,6 +1041,9 @@ vars_mh_p_abcl__dsm__anx <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__anx |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -1027,6 +1085,10 @@ compute_mh_p_abcl__dsm__anx_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__anx |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__dsm__anx_nm()]
@@ -1070,6 +1132,10 @@ compute_mh_p_abcl__dsm__anx_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__anx |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__dsm__anx_nm()]
@@ -1136,6 +1202,9 @@ vars_mh_p_abcl__dsm__avoid <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__avoid |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -1177,6 +1246,10 @@ compute_mh_p_abcl__dsm__avoid_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__avoid |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__dsm__avoid_nm()]
@@ -1220,6 +1293,10 @@ compute_mh_p_abcl__dsm__avoid_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__avoid |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__dsm__avoid_nm()]
@@ -1294,6 +1371,9 @@ vars_mh_p_abcl__dsm__dep <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__dep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -1335,6 +1415,10 @@ compute_mh_p_abcl__dsm__dep_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__dep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 15 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__dsm__dep_nm()]
@@ -1378,6 +1462,10 @@ compute_mh_p_abcl__dsm__dep_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__dep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 15 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__dsm__dep_nm()]
@@ -1444,6 +1532,9 @@ vars_mh_p_abcl__dsm__somat <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__somat |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -1485,6 +1576,10 @@ compute_mh_p_abcl__dsm__somat_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__somat |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__dsm__somat_nm()]
@@ -1528,6 +1623,10 @@ compute_mh_p_abcl__dsm__somat_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__dsm__somat |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__dsm__somat_nm()]
@@ -1588,6 +1687,9 @@ vars_mh_p_abcl__su <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__su |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -1627,6 +1729,10 @@ compute_mh_p_abcl__su_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__su |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 3 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__su_nm()]
@@ -1668,6 +1774,10 @@ compute_mh_p_abcl__su_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__su |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 3 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__su_nm()]
@@ -1726,6 +1836,9 @@ vars_mh_p_abcl__su__drg <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__su__drg |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -1765,6 +1878,10 @@ compute_mh_p_abcl__su__drg_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__su__drg |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 1 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__su__drg_nm()]
@@ -1806,6 +1923,10 @@ compute_mh_p_abcl__su__drg_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__su__drg |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 1 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__su__drg_nm()]
@@ -1864,6 +1985,9 @@ vars_mh_p_abcl__su__drunk <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__su__drunk |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -1903,6 +2027,10 @@ compute_mh_p_abcl__su__drunk_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__su__drunk |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 1 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__su__drunk_nm()]
@@ -1944,6 +2072,10 @@ compute_mh_p_abcl__su__drunk_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__su__drunk |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 1 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__su__drunk_nm()]
@@ -2003,6 +2135,9 @@ vars_mh_p_abcl__su__nic <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__su__nic |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -2042,6 +2177,10 @@ compute_mh_p_abcl__su__nic_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__su__nic |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 1 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__su__nic_nm()]
@@ -2083,6 +2222,10 @@ compute_mh_p_abcl__su__nic_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__su__nic |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 1 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__su__nic_nm()]
@@ -2158,6 +2301,9 @@ vars_mh_p_abcl__synd__aggr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__aggr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -2199,6 +2345,10 @@ compute_mh_p_abcl__synd__aggr_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__aggr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 16 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__aggr_nm()]
@@ -2242,6 +2392,10 @@ compute_mh_p_abcl__synd__aggr_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__aggr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 16 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__aggr_nm()]
@@ -2315,6 +2469,9 @@ vars_mh_p_abcl__synd__anxdep <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__anxdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -2356,6 +2513,10 @@ compute_mh_p_abcl__synd__anxdep_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__anxdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 14 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__anxdep_nm()]
@@ -2399,6 +2560,10 @@ compute_mh_p_abcl__synd__anxdep_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__anxdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 14 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__anxdep_nm()]
@@ -2475,6 +2640,9 @@ vars_mh_p_abcl__synd__attn <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -2516,6 +2684,10 @@ compute_mh_p_abcl__synd__attn_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 17 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__attn_nm()]
@@ -2559,6 +2731,10 @@ compute_mh_p_abcl__synd__attn_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 17 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__attn_nm()]
@@ -2653,6 +2829,9 @@ vars_mh_p_abcl__synd__ext <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -2693,6 +2872,10 @@ compute_mh_p_abcl__synd__ext_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 2 of 35 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__ext_nm()]
@@ -2735,6 +2918,10 @@ compute_mh_p_abcl__synd__ext_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 2 of 35 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__ext_nm()]
@@ -2824,6 +3011,9 @@ vars_mh_p_abcl__synd__int <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -2865,6 +3055,10 @@ compute_mh_p_abcl__synd__int_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 2 of 32 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__int_nm()]
@@ -2908,6 +3102,10 @@ compute_mh_p_abcl__synd__int_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 2 of 32 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__int_nm()]
@@ -2973,6 +3171,9 @@ vars_mh_p_abcl__synd__intru <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__intru |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -3013,6 +3214,10 @@ compute_mh_p_abcl__synd__intru_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__intru |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__intru_nm()]
@@ -3056,6 +3261,10 @@ compute_mh_p_abcl__synd__intru_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__intru |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__intru_nm()]
@@ -3140,6 +3349,9 @@ vars_mh_p_abcl__synd__othpr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__othpr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -3181,6 +3393,10 @@ compute_mh_p_abcl__synd__othpr_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__othpr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 25 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__othpr_nm()]
@@ -3247,6 +3463,9 @@ vars_mh_p_abcl__synd__rule <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__rule |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -3288,6 +3507,10 @@ compute_mh_p_abcl__synd__rule_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__rule |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 13 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__rule_nm()]
@@ -3331,6 +3554,10 @@ compute_mh_p_abcl__synd__rule_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__rule |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 13 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__rule_nm()]
@@ -3399,6 +3626,9 @@ vars_mh_p_abcl__synd__som <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__som |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -3440,6 +3670,10 @@ compute_mh_p_abcl__synd__som_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__som |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__som_nm()]
@@ -3483,6 +3717,10 @@ compute_mh_p_abcl__synd__som_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__som |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__som_nm()]
@@ -3551,6 +3789,9 @@ vars_mh_p_abcl__synd__tho <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__tho |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -3592,6 +3833,10 @@ compute_mh_p_abcl__synd__tho_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__tho |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__tho_nm()]
@@ -3635,6 +3880,10 @@ compute_mh_p_abcl__synd__tho_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__tho |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__tho_nm()]
@@ -3703,6 +3952,9 @@ vars_mh_p_abcl__synd__wthdr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__wthdr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -3743,6 +3995,10 @@ compute_mh_p_abcl__synd__wthdr_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__wthdr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__wthdr_nm()]
@@ -3786,6 +4042,10 @@ compute_mh_p_abcl__synd__wthdr_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_abcl__synd__wthdr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_abcl__synd__wthdr_nm()]
@@ -4054,6 +4314,9 @@ vars_mh_p_asr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -4093,6 +4356,10 @@ compute_mh_p_asr_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 8 of 120 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr_nm()]
@@ -4157,6 +4424,9 @@ vars_mh_p_asr__afs__strng <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__afs__strng |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -4198,6 +4468,10 @@ compute_mh_p_asr__afs__strng_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__afs__strng |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 11 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__afs__strng_nm()]
@@ -4268,6 +4542,9 @@ vars_mh_p_asr__critic <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__critic |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -4307,6 +4584,10 @@ compute_mh_p_asr__critic_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__critic |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 19 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__critic_nm()]
@@ -4373,6 +4654,9 @@ vars_mh_p_asr__dsm__adhd <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__adhd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -4412,6 +4696,10 @@ compute_mh_p_asr__dsm__adhd_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__adhd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 13 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__dsm__adhd_nm()]
@@ -4471,6 +4759,9 @@ vars_mh_p_asr__dsm__adhd__hypimp <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__adhd__hypimp |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -4512,6 +4803,10 @@ compute_mh_p_asr__dsm__adhd__hypimp_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__adhd__hypimp |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__dsm__adhd__hypimp_nm()]
@@ -4572,6 +4867,9 @@ vars_mh_p_asr__dsm__adhd__inatt <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__adhd__inatt |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -4613,6 +4911,10 @@ compute_mh_p_asr__dsm__adhd__inatt_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__adhd__inatt |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__dsm__adhd__inatt_nm()]
@@ -4686,6 +4988,9 @@ vars_mh_p_asr__dsm__antsoc <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__antsoc |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -4727,6 +5032,10 @@ compute_mh_p_asr__dsm__antsoc_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__antsoc |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 20 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__dsm__antsoc_nm()]
@@ -4786,6 +5095,9 @@ vars_mh_p_asr__dsm__anx <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__anx |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -4827,6 +5139,10 @@ compute_mh_p_asr__dsm__anx_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__anx |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__dsm__anx_nm()]
@@ -4887,6 +5203,9 @@ vars_mh_p_asr__dsm__avoid <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__avoid |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -4928,6 +5247,10 @@ compute_mh_p_asr__dsm__avoid_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__avoid |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__dsm__avoid_nm()]
@@ -4995,6 +5318,9 @@ vars_mh_p_asr__dsm__dep <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__dep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -5036,6 +5362,10 @@ compute_mh_p_asr__dsm__dep_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__dep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 14 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__dsm__dep_nm()]
@@ -5098,6 +5428,9 @@ vars_mh_p_asr__dsm__somat <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__somat |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -5139,6 +5472,10 @@ compute_mh_p_asr__dsm__somat_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__dsm__somat |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__dsm__somat_nm()]
@@ -5207,6 +5544,9 @@ vars_mh_p_asr__synd__aggr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__aggr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -5247,6 +5587,10 @@ compute_mh_p_asr__synd__aggr_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__aggr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 15 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__synd__aggr_nm()]
@@ -5318,6 +5662,9 @@ vars_mh_p_asr__synd__anxdep <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__anxdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -5358,6 +5705,10 @@ compute_mh_p_asr__synd__anxdep_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__anxdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 18 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__synd__anxdep_nm()]
@@ -5426,6 +5777,9 @@ vars_mh_p_asr__synd__attn <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -5466,6 +5820,10 @@ compute_mh_p_asr__synd__attn_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 15 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__synd__attn_nm()]
@@ -5554,6 +5912,9 @@ vars_mh_p_asr__synd__ext <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -5593,6 +5954,10 @@ compute_mh_p_asr__synd__ext_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 2 of 35 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__synd__ext_nm()]
@@ -5685,6 +6050,9 @@ vars_mh_p_asr__synd__int <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -5724,6 +6092,10 @@ compute_mh_p_asr__synd__int_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 2 of 39 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__synd__int_nm()]
@@ -5783,6 +6155,9 @@ vars_mh_p_asr__synd__intru <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__intru |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -5822,6 +6197,10 @@ compute_mh_p_asr__synd__intru_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__intru |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__synd__intru_nm()]
@@ -5896,6 +6275,9 @@ vars_mh_p_asr__synd__othpr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__othpr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -5935,6 +6317,10 @@ compute_mh_p_asr__synd__othpr_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__othpr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 21 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__synd__othpr_nm()]
@@ -6002,6 +6388,9 @@ vars_mh_p_asr__synd__rule <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__rule |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -6043,6 +6432,10 @@ compute_mh_p_asr__synd__rule_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__rule |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 14 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__synd__rule_nm()]
@@ -6108,6 +6501,9 @@ vars_mh_p_asr__synd__som <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__som |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -6148,6 +6544,10 @@ compute_mh_p_asr__synd__som_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__som |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 12 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__synd__som_nm()]
@@ -6211,6 +6611,9 @@ vars_mh_p_asr__synd__tho <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__tho |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -6251,6 +6654,10 @@ compute_mh_p_asr__synd__tho_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__tho |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 10 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__synd__tho_nm()]
@@ -6313,6 +6720,9 @@ vars_mh_p_asr__synd__wthdr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__wthdr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -6352,6 +6762,10 @@ compute_mh_p_asr__synd__wthdr_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_asr__synd__wthdr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_asr__synd__wthdr_nm()]
@@ -6484,6 +6898,9 @@ vars_mh_t_bpm <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_t_bpm |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -6523,6 +6940,10 @@ compute_mh_t_bpm_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_t_bpm |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 18 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_t_bpm_nm()]
@@ -6564,6 +6985,10 @@ compute_mh_t_bpm_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_t_bpm |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 18 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_t_bpm_nm()]
@@ -6627,6 +7052,9 @@ vars_mh_t_bpm__attn <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_t_bpm__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -6666,6 +7094,10 @@ compute_mh_t_bpm__attn_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_t_bpm__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_t_bpm__attn_nm()]
@@ -6707,6 +7139,10 @@ compute_mh_t_bpm__attn_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_t_bpm__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_t_bpm__attn_nm()]
@@ -6770,6 +7206,9 @@ vars_mh_t_bpm__ext <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_t_bpm__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -6809,6 +7248,10 @@ compute_mh_t_bpm__ext_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_t_bpm__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_t_bpm__ext_nm()]
@@ -6850,6 +7293,10 @@ compute_mh_t_bpm__ext_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_t_bpm__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_t_bpm__ext_nm()]
@@ -6913,6 +7360,9 @@ vars_mh_t_bpm__int <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_t_bpm__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -6952,6 +7402,10 @@ compute_mh_t_bpm__int_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_t_bpm__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_t_bpm__int_nm()]
@@ -6993,6 +7447,10 @@ compute_mh_t_bpm__int_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_t_bpm__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_t_bpm__int_nm()]
@@ -7098,6 +7556,9 @@ vars_mh_y_bpm <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bpm |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -7137,6 +7598,10 @@ compute_mh_y_bpm_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bpm |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 19 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_bpm_nm()]
@@ -7178,6 +7643,10 @@ compute_mh_y_bpm_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bpm |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 19 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_bpm_nm()]
@@ -7241,6 +7710,9 @@ vars_mh_y_bpm__attn <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bpm__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -7280,6 +7752,10 @@ compute_mh_y_bpm__attn_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bpm__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_bpm__attn_nm()]
@@ -7321,6 +7797,10 @@ compute_mh_y_bpm__attn_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bpm__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_bpm__attn_nm()]
@@ -7385,6 +7865,9 @@ vars_mh_y_bpm__ext <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bpm__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -7424,6 +7907,10 @@ compute_mh_y_bpm__ext_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bpm__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_bpm__ext_nm()]
@@ -7465,6 +7952,10 @@ compute_mh_y_bpm__ext_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bpm__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_bpm__ext_nm()]
@@ -7528,6 +8019,9 @@ vars_mh_y_bpm__int <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bpm__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -7567,6 +8061,10 @@ compute_mh_y_bpm__int_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bpm__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_bpm__int_nm()]
@@ -7608,6 +8106,10 @@ compute_mh_y_bpm__int_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_bpm__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 6 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_bpm__int_nm()]
@@ -7816,6 +8318,9 @@ vars_mh_p_cbcl <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -7855,6 +8360,10 @@ compute_mh_p_cbcl_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 8 of 119 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl_nm()]
@@ -7896,6 +8405,10 @@ compute_mh_p_cbcl_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 8 of 119 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl_nm()]
@@ -7962,6 +8475,9 @@ vars_mh_p_cbcl__dsm__adhd <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__adhd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -8002,6 +8518,10 @@ compute_mh_p_cbcl__dsm__adhd_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__adhd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__dsm__adhd_nm()]
@@ -8045,6 +8565,10 @@ compute_mh_p_cbcl__dsm__adhd_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__adhd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__dsm__adhd_nm()]
@@ -8113,6 +8637,9 @@ vars_mh_p_cbcl__dsm__anx <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__anx |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -8154,6 +8681,10 @@ compute_mh_p_cbcl__dsm__anx_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__anx |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__dsm__anx_nm()]
@@ -8197,6 +8728,10 @@ compute_mh_p_cbcl__dsm__anx_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__anx |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__dsm__anx_nm()]
@@ -8273,6 +8808,9 @@ vars_mh_p_cbcl__dsm__cond <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__cond |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -8314,6 +8852,10 @@ compute_mh_p_cbcl__dsm__cond_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__cond |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 17 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__dsm__cond_nm()]
@@ -8357,6 +8899,10 @@ compute_mh_p_cbcl__dsm__cond_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__cond |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 17 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__dsm__cond_nm()]
@@ -8429,6 +8975,9 @@ vars_mh_p_cbcl__dsm__dep <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__dep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -8470,6 +9019,10 @@ compute_mh_p_cbcl__dsm__dep_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__dep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 13 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__dsm__dep_nm()]
@@ -8513,6 +9066,10 @@ compute_mh_p_cbcl__dsm__dep_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__dep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 13 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__dsm__dep_nm()]
@@ -8577,6 +9134,9 @@ vars_mh_p_cbcl__dsm__opp <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__opp |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -8618,6 +9178,10 @@ compute_mh_p_cbcl__dsm__opp_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__opp |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 5 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__dsm__opp_nm()]
@@ -8661,6 +9225,10 @@ compute_mh_p_cbcl__dsm__opp_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__opp |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 5 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__dsm__opp_nm()]
@@ -8727,6 +9295,9 @@ vars_mh_p_cbcl__dsm__somat <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__somat |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -8768,6 +9339,10 @@ compute_mh_p_cbcl__dsm__somat_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__somat |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__dsm__somat_nm()]
@@ -8811,6 +9386,10 @@ compute_mh_p_cbcl__dsm__somat_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__dsm__somat |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__dsm__somat_nm()]
@@ -8878,6 +9457,9 @@ vars_mh_p_cbcl__ocd <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__ocd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -8918,6 +9500,10 @@ compute_mh_p_cbcl__ocd_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__ocd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 8 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__ocd_nm()]
@@ -8961,6 +9547,10 @@ compute_mh_p_cbcl__ocd_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__ocd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 8 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__ocd_nm()]
@@ -9024,6 +9614,9 @@ vars_mh_p_cbcl__sct <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__sct |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -9063,6 +9656,10 @@ compute_mh_p_cbcl__sct_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__sct |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 4 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__sct_nm()]
@@ -9105,6 +9702,10 @@ compute_mh_p_cbcl__sct_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__sct |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 4 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__sct_nm()]
@@ -9176,6 +9777,9 @@ vars_mh_p_cbcl__strs <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__strs |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -9215,6 +9819,10 @@ compute_mh_p_cbcl__strs_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__strs |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 14 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__strs_nm()]
@@ -9256,6 +9864,10 @@ compute_mh_p_cbcl__strs_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__strs |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 14 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__strs_nm()]
@@ -9333,6 +9945,9 @@ vars_mh_p_cbcl__synd__aggr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__aggr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -9374,6 +9989,10 @@ compute_mh_p_cbcl__synd__aggr_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__aggr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 18 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__aggr_nm()]
@@ -9417,6 +10036,10 @@ compute_mh_p_cbcl__synd__aggr_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__aggr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 18 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__aggr_nm()]
@@ -9489,6 +10112,9 @@ vars_mh_p_cbcl__synd__anxdep <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__anxdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -9530,6 +10156,10 @@ compute_mh_p_cbcl__synd__anxdep_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__anxdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 13 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__anxdep_nm()]
@@ -9573,6 +10203,10 @@ compute_mh_p_cbcl__synd__anxdep_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__anxdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 13 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__anxdep_nm()]
@@ -9642,6 +10276,9 @@ vars_mh_p_cbcl__synd__attn <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -9683,6 +10320,10 @@ compute_mh_p_cbcl__synd__attn_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 10 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__attn_nm()]
@@ -9726,6 +10367,10 @@ compute_mh_p_cbcl__synd__attn_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 10 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__attn_nm()]
@@ -9820,6 +10465,9 @@ vars_mh_p_cbcl__synd__ext <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -9861,6 +10509,10 @@ compute_mh_p_cbcl__synd__ext_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 2 of 35 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__ext_nm()]
@@ -9904,6 +10556,10 @@ compute_mh_p_cbcl__synd__ext_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 2 of 35 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__ext_nm()]
@@ -9995,6 +10651,9 @@ vars_mh_p_cbcl__synd__int <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -10036,6 +10695,10 @@ compute_mh_p_cbcl__synd__int_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 2 of 32 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__int_nm()]
@@ -10079,6 +10742,10 @@ compute_mh_p_cbcl__synd__int_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 2 of 32 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__int_nm()]
@@ -10154,6 +10821,9 @@ vars_mh_p_cbcl__synd__othpr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__othpr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -10195,6 +10865,10 @@ compute_mh_p_cbcl__synd__othpr_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__othpr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 16 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__othpr_nm()]
@@ -10265,6 +10939,9 @@ vars_mh_p_cbcl__synd__rule <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__rule |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -10306,6 +10983,10 @@ compute_mh_p_cbcl__synd__rule_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__rule |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 17 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__rule_nm()]
@@ -10349,6 +11030,10 @@ compute_mh_p_cbcl__synd__rule_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__rule |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 17 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__rule_nm()]
@@ -10419,6 +11104,9 @@ vars_mh_p_cbcl__synd__soc <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__soc |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -10458,6 +11146,10 @@ compute_mh_p_cbcl__synd__soc_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__soc |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 11 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__soc_nm()]
@@ -10500,6 +11192,10 @@ compute_mh_p_cbcl__synd__soc_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__soc |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 11 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__soc_nm()]
@@ -10570,6 +11266,9 @@ vars_mh_p_cbcl__synd__som <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__som |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -10611,6 +11310,10 @@ compute_mh_p_cbcl__synd__som_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__som |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 11 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__som_nm()]
@@ -10654,6 +11357,10 @@ compute_mh_p_cbcl__synd__som_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__som |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 11 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__som_nm()]
@@ -10728,6 +11435,9 @@ vars_mh_p_cbcl__synd__tho <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__tho |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -10769,6 +11479,10 @@ compute_mh_p_cbcl__synd__tho_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__tho |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 15 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__tho_nm()]
@@ -10812,6 +11526,10 @@ compute_mh_p_cbcl__synd__tho_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__tho |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 15 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__tho_nm()]
@@ -10879,6 +11597,9 @@ vars_mh_p_cbcl__synd__wthdep <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__wthdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -10920,6 +11641,10 @@ compute_mh_p_cbcl__synd__wthdep_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__wthdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 8 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__wthdep_nm()]
@@ -10963,6 +11688,10 @@ compute_mh_p_cbcl__synd__wthdep_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_p_cbcl__synd__wthdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 8 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_p_cbcl__synd__wthdep_nm()]
@@ -11206,6 +11935,9 @@ vars_mh_y_ysr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -11245,6 +11977,10 @@ compute_mh_y_ysr_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 7 of 105 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr_nm()]
@@ -11286,6 +12022,10 @@ compute_mh_y_ysr_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 7 of 105 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr_nm()]
@@ -11352,6 +12092,9 @@ vars_mh_y_ysr__dsm__adhd <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__adhd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -11391,6 +12134,10 @@ compute_mh_y_ysr__dsm__adhd_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__adhd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__adhd_nm()]
@@ -11432,6 +12179,10 @@ compute_mh_y_ysr__dsm__adhd_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__adhd |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__adhd_nm()]
@@ -11500,6 +12251,9 @@ vars_mh_y_ysr__dsm__anx <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__anx |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -11541,6 +12295,10 @@ compute_mh_y_ysr__dsm__anx_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__anx |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__anx_nm()]
@@ -11584,6 +12342,10 @@ compute_mh_y_ysr__dsm__anx_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__anx |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__anx_nm()]
@@ -11658,6 +12420,9 @@ vars_mh_y_ysr__dsm__cond <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__cond |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -11699,6 +12464,10 @@ compute_mh_y_ysr__dsm__cond_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__cond |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 15 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__cond_nm()]
@@ -11742,6 +12511,10 @@ compute_mh_y_ysr__dsm__cond_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__cond |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 15 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__cond_nm()]
@@ -11814,6 +12587,9 @@ vars_mh_y_ysr__dsm__dep <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__dep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -11855,6 +12631,10 @@ compute_mh_y_ysr__dsm__dep_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__dep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 13 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__dep_nm()]
@@ -11898,6 +12678,10 @@ compute_mh_y_ysr__dsm__dep_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__dep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 13 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__dep_nm()]
@@ -11962,6 +12746,9 @@ vars_mh_y_ysr__dsm__opp <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__opp |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -12003,6 +12790,10 @@ compute_mh_y_ysr__dsm__opp_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__opp |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 5 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__opp_nm()]
@@ -12046,6 +12837,10 @@ compute_mh_y_ysr__dsm__opp_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__opp |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 5 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__opp_nm()]
@@ -12112,6 +12907,9 @@ vars_mh_y_ysr__dsm__somat <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__somat |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -12153,6 +12951,10 @@ compute_mh_y_ysr__dsm__somat_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__somat |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__somat_nm()]
@@ -12196,6 +12998,10 @@ compute_mh_y_ysr__dsm__somat_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__dsm__somat |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__somat_nm()]
@@ -12267,6 +13073,9 @@ vars_mh_y_ysr__pos <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__pos |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -12306,6 +13115,10 @@ compute_mh_y_ysr__pos_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__pos |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 14 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__pos_nm()]
@@ -12347,6 +13160,10 @@ compute_mh_y_ysr__pos_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__pos |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 14 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__pos_nm()]
@@ -12423,6 +13240,9 @@ vars_mh_y_ysr__synd__aggr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__aggr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -12463,6 +13283,10 @@ compute_mh_y_ysr__synd__aggr_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__aggr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 17 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__aggr_nm()]
@@ -12504,6 +13328,10 @@ compute_mh_y_ysr__synd__aggr_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__aggr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 17 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__aggr_nm()]
@@ -12576,6 +13404,9 @@ vars_mh_y_ysr__synd__anxdep <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__anxdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -12616,6 +13447,10 @@ compute_mh_y_ysr__synd__anxdep_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__anxdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 13 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__anxdep_nm()]
@@ -12659,6 +13494,10 @@ compute_mh_y_ysr__synd__anxdep_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__anxdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 13 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__anxdep_nm()]
@@ -12727,6 +13566,9 @@ vars_mh_y_ysr__synd__attn <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -12767,6 +13609,10 @@ compute_mh_y_ysr__synd__attn_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__attn_nm()]
@@ -12810,6 +13656,10 @@ compute_mh_y_ysr__synd__attn_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__attn |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__attn_nm()]
@@ -12900,6 +13750,9 @@ vars_mh_y_ysr__synd__ext <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -12939,6 +13792,10 @@ compute_mh_y_ysr__synd__ext_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 2 of 32 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__ext_nm()]
@@ -12980,6 +13837,10 @@ compute_mh_y_ysr__synd__ext_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__ext |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 2 of 32 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__ext_nm()]
@@ -13070,6 +13931,9 @@ vars_mh_y_ysr__synd__int <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -13109,6 +13973,10 @@ compute_mh_y_ysr__synd__int_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 2 of 31 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__int_nm()]
@@ -13150,6 +14018,10 @@ compute_mh_y_ysr__synd__int_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__int |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 2 of 31 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__int_nm()]
@@ -13217,6 +14089,9 @@ vars_mh_y_ysr__synd__othpr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__othpr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -13256,6 +14131,10 @@ compute_mh_y_ysr__synd__othpr_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__othpr |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 10 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__othpr_nm()]
@@ -13324,6 +14203,9 @@ vars_mh_y_ysr__synd__rule <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__rule |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -13365,6 +14247,10 @@ compute_mh_y_ysr__synd__rule_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__rule |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 15 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__rule_nm()]
@@ -13408,6 +14294,10 @@ compute_mh_y_ysr__synd__rule_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__rule |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 15 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__rule_nm()]
@@ -13478,6 +14368,9 @@ vars_mh_y_ysr__synd__soc <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__soc |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -13517,6 +14410,10 @@ compute_mh_y_ysr__synd__soc_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__soc |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 11 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__soc_nm()]
@@ -13558,6 +14455,10 @@ compute_mh_y_ysr__synd__soc_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__soc |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 11 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__soc_nm()]
@@ -13627,6 +14528,9 @@ vars_mh_y_ysr__synd__som <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__som |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -13667,6 +14571,10 @@ compute_mh_y_ysr__synd__som_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__som |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 10 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__som_nm()]
@@ -13710,6 +14618,10 @@ compute_mh_y_ysr__synd__som_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__som |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 10 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__som_nm()]
@@ -13781,6 +14693,9 @@ vars_mh_y_ysr__synd__tho <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__tho |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -13821,6 +14736,10 @@ compute_mh_y_ysr__synd__tho_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__tho |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 12 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__tho_nm()]
@@ -13863,6 +14782,10 @@ compute_mh_y_ysr__synd__tho_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__tho |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 12 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__tho_nm()]
@@ -13930,6 +14853,9 @@ vars_mh_y_ysr__synd__wthdep <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__wthdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @inherit dummy_aseba params return references
 #'
@@ -13970,6 +14896,10 @@ compute_mh_y_ysr__synd__wthdep_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__wthdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 8 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__wthdep_nm()]
@@ -14013,6 +14943,10 @@ compute_mh_y_ysr__synd__wthdep_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_ysr__synd__wthdep |> md_bullet(2, TRUE)
 #'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 8 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__wthdep_nm()]

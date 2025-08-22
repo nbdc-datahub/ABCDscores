@@ -16,6 +16,7 @@ vars_ab_g_dyn__cohort_edu__cgs
 compute_ab_g_dyn__cohort_edu__cgs(
   data,
   name = "ab_g_dyn__cohort_edu__cgs",
+  exclude = c("777", "999"),
   combine = TRUE
 )
 }
@@ -24,6 +25,9 @@ compute_ab_g_dyn__cohort_edu__cgs(
 
 \item{name}{character, Name of the new column to be created. Default is
 the name in description, but users can change it.}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical, If \code{TRUE}, the summary score will be appended to
 the input data frame. If \code{FALSE}, the summary score for each participant
@@ -44,6 +48,11 @@ Cohort description: Highest education across caregivers
 \item \code{ab_p_demo__edu__slf_001__v02}
 \item \code{ab_p_demo__edu__prtnr_001}
 \item \code{ab_p_demo__edu__prtnr_001__v01}
+}
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
 }
 }
 }

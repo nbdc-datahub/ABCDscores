@@ -32,6 +32,7 @@ Munich Chronotype Questionnaire [Youth] (School Day - Sleep): Latency
 \itemize{
 \item \code{ph_y_mctq__sd_003}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

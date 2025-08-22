@@ -34,6 +34,7 @@ Munich Chronotype Questionnaire [Youth] (Free Day - Sleep onset): Time
 \item \code{ph_y_mctq__fd__sleep__start__24h_t} (intermediate score)
 \item \code{ph_y_mctq__fd__sleep_latent} (intermediate score)
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

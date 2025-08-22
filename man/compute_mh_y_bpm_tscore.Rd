@@ -65,6 +65,12 @@ Brief Problem Monitor [Youth]: T-score
 \item \code{mh_y_bpm__int_005}
 \item \code{mh_y_bpm__int_006}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 1 of 19 items missing
 }
 }
 \examples{

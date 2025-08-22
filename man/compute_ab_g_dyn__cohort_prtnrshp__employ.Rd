@@ -45,6 +45,11 @@ Cohort description: Caregivers' partnership and employment status
 \item \code{ab_p_demo__empl__prtnr_001}
 \item \code{ab_p_demo__empl__prtnr_001__v01}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \keyword{datasets}

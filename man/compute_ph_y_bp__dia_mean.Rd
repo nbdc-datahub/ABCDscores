@@ -42,6 +42,7 @@ Blood Pressure [Youth] (Diastolic): Mean
 \item \code{ph_y_bp__dia__r03_001}
 \item \code{ph_y_bp__dia__r03_002}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

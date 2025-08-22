@@ -35,6 +35,7 @@ Number missing
 \item \code{mh_p_eatq__frust_005}
 \item \code{mh_p_eatq__frust_006}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

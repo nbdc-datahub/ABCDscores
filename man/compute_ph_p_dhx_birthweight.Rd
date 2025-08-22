@@ -42,7 +42,11 @@ Developmental History [Parent]: Youth birth weight
 \item \code{ph_p_dhx_002__01}
 \item \code{ph_p_dhx_002__02}
 }
-\item \emph{Excluded values:} c("999") and any value less than 0
+\item \emph{Excluded values:}
+\itemize{
+\item 999
+\item any value less than 0
+}
 \item \emph{Notes:}
 \itemize{
 \item Computed using only baseline (\verb{ses-00A}) and four-year (\verb{ses-04A}) data

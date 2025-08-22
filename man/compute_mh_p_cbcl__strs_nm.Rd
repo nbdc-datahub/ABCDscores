@@ -54,6 +54,11 @@ Child Behavior Checklist [Parent] (Stress): Number missing
 \item \code{mh_p_cbcl__wthdep_003}
 \item \code{mh_p_cbcl__aggr_004}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

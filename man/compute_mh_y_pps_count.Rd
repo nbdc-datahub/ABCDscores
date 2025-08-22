@@ -65,6 +65,8 @@ Prodromal Psychosis Scale [Youth] (number of
 \item \code{mh_y_pps_020}
 \item \code{mh_y_pps_021}
 }
+\item \emph{Excluded values:} none
+\item \emph{Validation criterion:} maximally 4 of 21 items missing
 }
 }
 \details{

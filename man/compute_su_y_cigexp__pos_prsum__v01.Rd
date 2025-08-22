@@ -32,7 +32,8 @@ a new column.
 \description{
 Computes the summary score \code{su_y_cigexp__pos_prsum__v01}
 Cigarette Expectancies (ASCQ) [Youth] (Strength of positive
-expectancies): Prorated sum (v01)
+expectancies): Prorated sum (v01) [Validation: No more than 2
+missing or declined]
 
 Note: all 0s are changed to 1s prior to calculating pro-rated sum
 \itemize{
@@ -45,6 +46,13 @@ Note: all 0s are changed to 1s prior to calculating pro-rated sum
 }
 \item \emph{Excluded values:} none
 \item \emph{Validation criterion:} maximally 2 of 4 items missing
+\item \emph{Notes:}
+\itemize{
+\item Values in all input variables were recoded:
+\itemize{
+\item "0" --> "1"
+}
+}
 }
 }
 \seealso{

@@ -41,7 +41,8 @@ a new column.
 \description{
 Computes the summary score \code{su_y_mjexp__neg_prsum}
 Marijuana Expectancies (MEEQ-B) [Youth] (Strength of negative
-expectancies): Prorated sum
+expectancies): Prorated sum [Validation: No more than 1
+missing or declined]
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{

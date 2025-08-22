@@ -39,6 +39,11 @@ missing
 \item \code{mh_p_ders__distract_003}
 \item \code{mh_p_ders__distract_004}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 999
+\item 777
+}
 }
 }
 \examples{

@@ -45,6 +45,8 @@ Planning): Sum
 \item \code{mh_y_upps__plan_003}
 \item \code{mh_y_upps__plan_004}
 }
+\item \emph{Excluded values:} none
+\item \emph{Validation criterion:} none of 4 items missing
 }
 }
 \examples{

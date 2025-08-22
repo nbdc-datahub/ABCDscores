@@ -57,7 +57,7 @@ Positive score inverted [Validation: None missing or declined]
 \item \code{su_y_mjsre__neg_008}
 }
 \item \emph{Excluded values:} none
-\item \emph{Validation criterion:} none of 11 items missing
+\item \emph{Validation criterion:} maximally 0 of 11 items missing
 }
 }
 \keyword{datasets}

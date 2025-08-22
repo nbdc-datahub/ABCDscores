@@ -5,12 +5,20 @@
 \title{Compute "Pubertal Development Scale & Menstrual Cycle Survey History
 [Youth] (Female): Number missing"}
 \usage{
-compute_ph_y_pds__f_nm(data, name = "ph_y_pds__f_nm", combine = TRUE)
+compute_ph_y_pds__f_nm(
+  data,
+  name = "ph_y_pds__f_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+)
 }
 \arguments{
 \item{data}{tbl. Data frame containing the columns to be summarized.}
 
 \item{name}{character. Name of the summary score column.}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical. If \code{TRUE} (default), the summary score is
 is appended as a new column to the input data frame. If \code{FALSE}, the
@@ -33,7 +41,11 @@ Pubertal Development Scale & Menstrual Cycle Survey History [Youth]
 \item \code{ph_y_pds__f_001}
 \item \code{ph_y_pds__f_002}
 }
-\item \emph{Excluded values:} c("777", "999")
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \seealso{

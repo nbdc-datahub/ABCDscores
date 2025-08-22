@@ -49,6 +49,11 @@ personality problems): Number missing
 \item \code{mh_p_asr__wthdr__avoid_003}
 \item \code{mh_p_asr__wthdr__avoid_004}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

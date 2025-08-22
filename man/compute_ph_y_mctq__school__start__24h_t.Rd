@@ -35,6 +35,7 @@ Munich Chronotype Questionnaire [Youth] ( School Schedule start): Time
 \item \code{ph_y_mctq__school_002__01a}
 \item \code{ph_y_mctq__school_002__01b}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

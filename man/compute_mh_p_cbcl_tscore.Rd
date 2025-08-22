@@ -165,6 +165,12 @@ Child Behavior Checklist [Parent] (Syndrome Scale): T-score
 \item \code{mh_p_cbcl__tho_009}
 \item \code{mh_p_cbcl__tho_012}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 8 of 119 items missing
 }
 }
 \examples{

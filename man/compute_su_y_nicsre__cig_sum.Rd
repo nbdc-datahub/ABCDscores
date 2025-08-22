@@ -50,7 +50,7 @@ inverted [Validation: None missing or declined]
 \item \code{su_y_nicsre__cig__neg_001}
 }
 \item \emph{Excluded values:} none
-\item \emph{Validation criterion:} none of 2 items missing
+\item \emph{Validation criterion:} maximally 0 of 2 items missing
 }
 }
 \keyword{datasets}

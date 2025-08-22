@@ -160,6 +160,11 @@ Child Behavior Checklist [Parent] (Syndrome Scale): Number missing
 \item \code{mh_p_cbcl__tho_009}
 \item \code{mh_p_cbcl__tho_012}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

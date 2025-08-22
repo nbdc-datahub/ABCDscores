@@ -48,6 +48,8 @@ Short Social Responsiveness Scale [Parent]: Sum
 \item \code{mh_p_ssrs_010}
 \item \code{mh_p_ssrs_011}
 }
+\item \emph{Excluded values:} none
+\item \emph{Validation criterion:} none of 11 items missing
 }
 }
 \examples{

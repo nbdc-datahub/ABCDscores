@@ -54,6 +54,8 @@ Mean
 \item \code{mh_p_eatq__frust_005}
 \item \code{mh_p_eatq__frust_006}
 }
+\item \emph{Excluded values:} none
+\item \emph{Validation criterion:} maximally 1 of 6 items missing
 }
 }
 \examples{

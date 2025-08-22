@@ -37,6 +37,7 @@ Mean
 \item \code{mh_p_eatq__inhib_mean}
 \item \code{mh_p_eatq__actv_mean}
 }
+\item \emph{Excluded values:} none
 }
 }
 \details{

@@ -41,6 +41,8 @@ Peer Experiences Questionnaire [Youth] (Relational Aggression): Sum
 \item \code{mh_y_peq__rel__agg_002}
 \item \code{mh_y_peq__rel__agg_003}
 }
+\item \emph{Excluded values:} none
+\item \emph{Validation criterion:} none of 3 items missing
 }
 }
 \examples{

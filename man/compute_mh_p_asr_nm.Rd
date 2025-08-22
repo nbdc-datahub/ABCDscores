@@ -160,6 +160,11 @@ Adult Self Report [Parent]: Number missing
 \item \code{mh_p_asr__tho_004}
 \item \code{mh_p_asr__tho_008}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

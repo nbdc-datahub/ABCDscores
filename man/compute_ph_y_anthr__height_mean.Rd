@@ -42,6 +42,7 @@ Anthropometrics [Youth] (Height): Mean
 \item \code{ph_y_anthr__height__r02_001}
 \item \code{ph_y_anthr__height__r03_001}
 }
+\item \emph{Excluded values:} none
 }
 \subsection{Calculation}{
 

@@ -57,6 +57,11 @@ Number missing
 \item \code{mh_p_asr__aggr__antsoc_007}
 \item \code{mh_p_asr__aggr__antsoc_008}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

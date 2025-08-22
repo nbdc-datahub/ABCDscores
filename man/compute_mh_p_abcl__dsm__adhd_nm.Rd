@@ -55,6 +55,11 @@ Number missing
 \item \code{mh_p_abcl__othpr__adhd_004}
 \item \code{mh_p_abcl__rule__adhd_001}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

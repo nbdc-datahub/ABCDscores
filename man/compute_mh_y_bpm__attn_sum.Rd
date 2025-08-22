@@ -42,6 +42,12 @@ Brief Problem Monitor [Youth] (Attention): Sum
 \item \code{mh_y_bpm__attn_005}
 \item \code{mh_y_bpm__attn_006}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 6 items missing
 }
 }
 \examples{

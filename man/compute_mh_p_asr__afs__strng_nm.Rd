@@ -53,6 +53,11 @@ strength): Number missing
 \item \code{mh_p_asr__strng_010}
 \item \code{mh_p_asr__strng_011}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

@@ -32,6 +32,7 @@ Munich Chronotype Questionnaire [Youth] (Free Day - In bed): Sum
 \item \code{ph_y_mctq__fd__bed__end__36h_t} (intermediate score)
 \item \code{ph_y_mctq__fd__bed__start__36h_t} (intermediate score)
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

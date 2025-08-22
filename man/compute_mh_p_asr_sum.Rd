@@ -156,6 +156,12 @@ Adult Self Report [Parent]: Sum
 \item \code{mh_p_asr__tho_004}
 \item \code{mh_p_asr__tho_008}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 8 of 120 items missing
 }
 }
 \examples{

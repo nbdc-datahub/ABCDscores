@@ -44,6 +44,8 @@ Computes the summary score \code{mh_y_sup_sum}
 \item \code{mh_y_sup_006}
 \item \code{mh_y_sup_007}
 }
+\item \emph{Excluded values:} none
+\item \emph{Validation criterion:} none of 7 items missing
 }
 }
 \examples{

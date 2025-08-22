@@ -48,6 +48,11 @@ Emotion Regulation Questionnaire [Youth] (Reappraisal): Mean
 \item \code{mh_y_erq__reapp_002}
 \item \code{mh_y_erq__reapp_003}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+}
+\item \emph{Validation criterion:} none of 3 items missing
 }
 }
 \examples{

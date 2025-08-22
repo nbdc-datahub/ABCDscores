@@ -53,6 +53,11 @@ missing
 \item \code{mh_p_cbcl__soc_009}
 \item \code{mh_p_cbcl__soc_010}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

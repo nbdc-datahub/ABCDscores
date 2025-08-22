@@ -43,6 +43,7 @@ Computes the summary score \code{mh_y_sup_nm}
 \item \code{mh_y_sup_006}
 \item \code{mh_y_sup_007}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

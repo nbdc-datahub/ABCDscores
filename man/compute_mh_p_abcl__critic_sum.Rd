@@ -55,6 +55,12 @@ Adult Behavior Checklist [Parent] (Critical items): Sum
 \item \code{mh_p_abcl__aggr__antsoc_008}
 \item \code{mh_p_abcl__anxdep__dep_004}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 1 of 19 items missing
 }
 }
 \examples{

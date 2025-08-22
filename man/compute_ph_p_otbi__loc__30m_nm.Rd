@@ -8,6 +8,7 @@ consciousness - Over 30 minutes): Number missing"}
 compute_ph_p_otbi__loc__30m_nm(
   data,
   name = "ph_p_otbi__loc__30m_nm",
+  exclude = c("777", "999"),
   combine = TRUE
 )
 }
@@ -15,6 +16,9 @@ compute_ph_p_otbi__loc__30m_nm(
 \item{data}{tbl. Data frame containing the columns to be summarized.}
 
 \item{name}{character. Name of the summary score column.}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical. If \code{TRUE} (default), the summary score is
 is appended as a new column to the input data frame. If \code{FALSE}, the
@@ -29,7 +33,11 @@ Computes the summary score \code{ph_p_otbi__loc__30m_nm}
 Ohio State Traumatic Brain Injury Screen [Parent] (Loss of
 consciousness - Over 30 minutes): Number missing
 \itemize{
-\item \emph{Excluded values:} c("777", "999")
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \seealso{

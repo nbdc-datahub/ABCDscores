@@ -54,6 +54,12 @@ Youth Self Report [Youth] (Syndrome Scale - Aggressive behavior): Sum
 \item \code{mh_y_ysr__aggr__cond_005}
 \item \code{mh_y_ysr__aggr__adhd_001}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 1 of 17 items missing
 }
 }
 \examples{

@@ -56,6 +56,11 @@ Anxious/Depressed): Number missing
 \item \code{mh_p_abcl__anxdep__dep_004}
 \item \code{mh_p_abcl__anxdep__dep_005}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

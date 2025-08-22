@@ -35,6 +35,7 @@ missing
 \item \code{mh_p_eatq__fear_005}
 \item \code{mh_p_eatq__fear_006}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

@@ -41,6 +41,11 @@ missing
 \item \code{mh_p_ders__attun_005}
 \item \code{mh_p_ders__attun_006}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 999
+\item 777
+}
 }
 }
 \examples{

@@ -54,6 +54,8 @@ Early Adolescent Temperament Questionnaire [Parent] (Activation): Mean
 \item \code{mh_p_eatq__actv_006}
 \item \code{mh_p_eatq__actv_007}
 }
+\item \emph{Excluded values:} none
+\item \emph{Validation criterion:} maximally 1 of 7 items missing
 }
 }
 \examples{

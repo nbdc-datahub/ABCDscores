@@ -1,3 +1,5 @@
+# fmt: skip file
+
 #' @export
 #' @autoglobal
 #' @rdname compute_nc_p_bdefs_sum
@@ -334,24 +336,3 @@ compute_nc_y_ehis_all <- function(data) {
     compute_nc_y_ehis_score() |>
     compute_nc_y_ehis_nm()
 }
-
-
-#   ____________________________________________________________________________
-#   nt_p_yst__pmum                                                          ####
-
-#' @export
-#' @autoglobal
-#' @rdname compute_nt_p_yst__pmum_mean
-#' @format vars_nt_p_yst__pmum is a character vector of all column names
-#' used to compute summary score of `nt_p_yst__pmum_mean`.
-vars_nt_p_yst__pmum <- c(
-  "nt_p_yst__pmum_001",
-  "nt_p_yst__pmum_002",
-  "nt_p_yst__pmum_003",
-  "nt_p_yst__pmum_004",
-  "nt_p_yst__pmum_005",
-  "nt_p_yst__pmum_006",
-  "nt_p_yst__pmum_007",
-  "nt_p_yst__pmum_008",
-  "nt_p_yst__pmum_009"
-)

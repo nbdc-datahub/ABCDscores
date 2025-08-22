@@ -61,6 +61,12 @@ problems): T-score
 \item \code{mh_y_ysr__wthdep__dep_002}
 \item \code{mh_y_ysr__wthdep__dep_003}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 13 items missing
 }
 }
 \examples{

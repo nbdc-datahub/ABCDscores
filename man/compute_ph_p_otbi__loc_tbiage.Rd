@@ -16,6 +16,7 @@ vars_ph_p_otbi__loc_tbiage
 compute_ph_p_otbi__loc_tbiage(
   data,
   name = "ph_p_otbi__loc_tbiage",
+  exclude = c("777", "999"),
   combine = TRUE
 )
 }
@@ -23,6 +24,9 @@ compute_ph_p_otbi__loc_tbiage(
 \item{data}{tbl. Data frame containing the columns to be summarized.}
 
 \item{name}{character. Name of the summary score column.}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical. If \code{TRUE} (default), the summary score is
 is appended as a new column to the input data frame. If \code{FALSE}, the
@@ -86,7 +90,12 @@ consciousness): Age of first injury with LOC
 \item \code{ph_p_otbi__rpt__loc_001__l}
 \item \code{ph_p_otbi__rpt__age_001a__l}
 }
-\item \emph{Excluded values:} c("777", "999") and any reported age ≤ 0
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+\item any reported age less than or equal to 0
+}
 \item \emph{Notes:}
 \itemize{
 \item The output is set to \code{NA} for the following cases:

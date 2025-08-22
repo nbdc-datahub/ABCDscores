@@ -18,6 +18,7 @@ compute_su_y_cigexp__neg_prsum(
   data,
   name = "su_y_cigexp__neg_prsum",
   combine = TRUE,
+  exclude = c("0"),
   max_na = 0
 )
 }
@@ -31,6 +32,9 @@ the name in description, but users can change it.}
 the input data frame. If \code{FALSE}, the summary score for each participant
 will be returned as a separate data frame. (Default: TRUE)}
 
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
+
 \item{max_na}{numeric, positive whole number. Number of missing items
 allowed (Default: 1).}
 }
@@ -41,7 +45,8 @@ a new column.
 \description{
 Computes the summary score \code{su_y_cigexp__neg_prsum}
 Cigarette Expectancies (ASCQ) [Youth] (Strength of negative
-expectancies): Prorated sum
+expectancies): Prorated sum [Validation: No more than 0
+missing or declined]
 
 Note: all 0s are changed to NAs prior to calculating pro-rated sum
 \itemize{
@@ -50,7 +55,10 @@ Note: all 0s are changed to NAs prior to calculating pro-rated sum
 \item \code{su_y_cigexp__neg_001}
 \item \code{su_y_cigexp__neg_002}
 }
-\item \emph{Excluded values:} 0
+\item \emph{Excluded values:}
+\itemize{
+\item 0
+}
 \item \emph{Validation criterion:} maximally 0 of 2 items missing
 }
 }

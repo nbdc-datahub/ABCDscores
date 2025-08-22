@@ -39,7 +39,8 @@ a new column.
 }
 \description{
 Computes the summary score \code{su_y_alcprob_prsum}
-Alcohol Problem Index (RAPI) [Youth]: Prorated sum
+Alcohol Problem Index (RAPI) [Youth]: Prorated sum [Validation: No more
+than 2 missing or declined]
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{

@@ -50,6 +50,11 @@ Youth Self Report [Youth] (Other problems): Number missing
 \item \code{mh_y_ysr__othpr__adhd_001}
 \item \code{mh_y_ysr__othpr_007}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

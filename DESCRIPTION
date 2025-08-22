@@ -4,7 +4,7 @@ Description: This package provides functions to compute summary scores
   (besides proprietary ones) reported in the tabulated data resource that is
   released by the Adolescent Brain Cognitive Development (ABCD) study.
 URL: https://software.nbdc-datahub.org/ABCDscores/
-Version: 6.0.0
+Version: 6.0.1
 Authors@R: c(
   person(given = "Janosch",
          family = "Linkersdoerfer",

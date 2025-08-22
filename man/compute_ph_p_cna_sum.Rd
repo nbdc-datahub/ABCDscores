@@ -62,6 +62,12 @@ missing or declined]
 \item \code{ph_p_cna_013}
 \item \code{ph_p_cna_014}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 999
+\item 777
+}
+\item \emph{Validation criterion:} maximally 0 of 14 items missing
 }
 }
 \examples{

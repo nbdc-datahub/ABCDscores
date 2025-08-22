@@ -164,6 +164,12 @@ Adult Behavior Checklist [Parent]: T-score
 \item \code{mh_p_abcl__tho_005}
 \item \code{mh_p_abcl__tho_007}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 8 of 118 items missing
 }
 }
 \examples{

@@ -32,6 +32,7 @@ Munich Chronotype Questionnaire [Youth] (School Day - Sleep): Inertia
 \itemize{
 \item \code{ph_y_mctq__sd_006}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

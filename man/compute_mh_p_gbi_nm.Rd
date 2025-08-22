@@ -46,6 +46,7 @@ Parent General Behavior Inventory [Parent]: Number missing
 \item \code{mh_p_gbi_009}
 \item \code{mh_p_gbi_010}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

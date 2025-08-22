@@ -145,6 +145,11 @@ Youth Self Report [Youth]: Number missing
 \item \code{mh_y_ysr__tho_008}
 \item \code{mh_y_ysr__tho_009}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

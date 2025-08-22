@@ -52,6 +52,7 @@ Short Social Responsiveness Scale [Parent]: Number missing
 \item \code{mh_p_ssrs_010}
 \item \code{mh_p_ssrs_011}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

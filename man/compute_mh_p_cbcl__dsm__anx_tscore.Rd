@@ -57,6 +57,12 @@ T-score
 \item \code{mh_p_cbcl__anxdep__anx_005}
 \item \code{mh_p_cbcl__anxdep__anx_006}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 9 items missing
 }
 }
 \examples{

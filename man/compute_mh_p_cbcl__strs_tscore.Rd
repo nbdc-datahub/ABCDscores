@@ -60,6 +60,12 @@ Child Behavior Checklist [Parent] (Stress): T-score
 \item \code{mh_p_cbcl__wthdep_003}
 \item \code{mh_p_cbcl__aggr_004}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 14 items missing
 }
 }
 \examples{

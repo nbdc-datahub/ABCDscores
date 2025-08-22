@@ -73,6 +73,7 @@ Screen Time [Youth] (Weekend): Sum
 \item 777
 \item 999
 }
+\item \emph{Validation criterion:} none missing
 }
 }
 \keyword{datasets}

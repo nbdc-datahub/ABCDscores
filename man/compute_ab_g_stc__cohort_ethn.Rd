@@ -16,6 +16,7 @@ vars_ab_g_stc__cohort_ethn
 compute_ab_g_stc__cohort_ethn(
   data,
   name = "ab_g_stc__cohort_ethn",
+  exclude = c("777", "999"),
   combine = TRUE
 )
 }
@@ -24,6 +25,9 @@ compute_ab_g_stc__cohort_ethn(
 
 \item{name}{character, Name of the new column to be created. Default is
 the name in description, but users can change it.}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical, If \code{TRUE}, the summary score will be appended to
 the input data frame. If \code{FALSE}, the summary score for each participant
@@ -43,6 +47,25 @@ baseline response; missingness filled in from longitudinal responses]
 \itemize{
 \item \code{ab_p_demo__ethn_001}
 \item \code{ab_p_demo__ethn_001__v01}
+}
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Notes:}
+\itemize{
+\item Values in \code{ab_p_demo__ethn_001__v01} were recoded:
+\itemize{
+\item "0" --> "2",
+\item "2" --> "1"
+\item "3" --> "1"
+\item "4" --> "1"
+}
+\item Values in \code{ab_p_demo__ethn_001} were recoded:
+\itemize{
+\item "0" --> "2"
+}
 }
 }
 }

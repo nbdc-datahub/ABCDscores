@@ -17,6 +17,7 @@ vars_ph_y_pds__f
 compute_ph_y_pds__f_mean(
   data,
   name = "ph_y_pds__f_mean",
+  exclude = c("777", "999"),
   combine = TRUE,
   max_na = 1
 )
@@ -25,6 +26,9 @@ compute_ph_y_pds__f_mean(
 \item{data}{tbl. Data frame containing the columns to be summarized.}
 
 \item{name}{character. Name of the summary score column.}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical. If \code{TRUE} (default), the summary score is
 is appended as a new column to the input data frame. If \code{FALSE}, the
@@ -40,7 +44,7 @@ a new column.
 \description{
 Computes the summary score \code{ph_y_pds__f_mean}
 Pubertal Development Scale & Menstrual Cycle Survey History [Youth]
-(Female): Mean
+(Female): Mean [Validation: No more than 1 missing or declined]
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{
@@ -50,8 +54,12 @@ Pubertal Development Scale & Menstrual Cycle Survey History [Youth]
 \item \code{ph_y_pds__f_001}
 \item \code{ph_y_pds__f_002}
 }
-\item \emph{Excluded values:} c("777", "999")
-\item \emph{Validation criterion:} maximally 1 items missing
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 1 item missing
 }
 }
 \keyword{datasets}

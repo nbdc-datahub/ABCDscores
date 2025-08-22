@@ -34,6 +34,7 @@ missing
 \item \code{mh_p_eatq__shy_004}
 \item \code{mh_p_eatq__shy_005}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

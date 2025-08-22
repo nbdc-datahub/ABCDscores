@@ -1,3 +1,26 @@
+# fmt: skip file
+
+#   ____________________________________________________________________________
+#   nt_p_yst__pmum                                                          ####
+
+#' @export
+#' @autoglobal
+#' @rdname compute_nt_p_yst__pmum_mean
+#' @format vars_nt_p_yst__pmum is a character vector of all column names
+#' used to compute summary score of `nt_p_yst__pmum_mean`.
+vars_nt_p_yst__pmum <- c(
+  "nt_p_yst__pmum_001",
+  "nt_p_yst__pmum_002",
+  "nt_p_yst__pmum_003",
+  "nt_p_yst__pmum_004",
+  "nt_p_yst__pmum_005",
+  "nt_p_yst__pmum_006",
+  "nt_p_yst__pmum_007",
+  "nt_p_yst__pmum_008",
+  "nt_p_yst__pmum_009"
+)
+
+
 #' Compute "Youth Screen Time \[Parent\] (Problematic Media Use): Mean
 #' \[Validation: No more than 1 missing or declined\]"
 #'
@@ -181,6 +204,7 @@ compute_nt_p_yst__screen__wkdy_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
+#' - *Validation criterion:* maximally 0 of 1 item missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -342,6 +366,7 @@ compute_nt_p_yst__screen__wknd_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
+#' - *Validation criterion:* maximally 0 of 1 item missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -575,6 +600,7 @@ compute_nt_y_stq__screen__wkdy_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
+#' - *Validation criterion:* none missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -800,6 +826,7 @@ compute_nt_y_stq__screen__wknd_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
+#' - *Validation criterion:* none missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:

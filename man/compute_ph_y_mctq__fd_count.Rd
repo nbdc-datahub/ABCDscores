@@ -27,6 +27,7 @@ Munich Chronotype Questionnaire [Youth] (Free Day): Count
 \itemize{
 \item \code{ph_y_mctq__sd_count} (intermediate score)
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

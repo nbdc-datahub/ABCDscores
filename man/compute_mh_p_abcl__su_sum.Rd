@@ -39,6 +39,12 @@ Adult Behavior Checklist [Parent] (Substance use): Sum
 \item \code{mh_p_abcl__drunk_001}
 \item \code{mh_p_abcl__nic_001}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 3 items missing
 }
 }
 \examples{

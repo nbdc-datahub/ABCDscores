@@ -16,6 +16,7 @@ vars_ph_p_otbi__loc_count
 compute_ph_p_otbi__loc_count(
   data,
   name = "ph_p_otbi__loc_count",
+  exclude = c("777", "999"),
   combine = TRUE
 )
 }
@@ -23,6 +24,9 @@ compute_ph_p_otbi__loc_count(
 \item{data}{tbl. Data frame containing the columns to be summarized.}
 
 \item{name}{character. Name of the summary score column.}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical. If \code{TRUE} (default), the summary score is
 is appended as a new column to the input data frame. If \code{FALSE}, the
@@ -72,7 +76,11 @@ consciousness): Count
 \item \code{ph_p_otbi__rpt_001__l}
 \item \code{ph_p_otbi__rpt__loc_001__l}
 }
-\item \emph{Excluded values:} c("777", "999")
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \keyword{datasets}

@@ -158,6 +158,11 @@ Adult Behavior Checklist [Parent]: Number missing
 \item \code{mh_p_abcl__tho_005}
 \item \code{mh_p_abcl__tho_007}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \examples{

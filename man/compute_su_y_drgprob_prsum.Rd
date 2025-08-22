@@ -39,7 +39,8 @@ a new column.
 }
 \description{
 Computes the summary score \code{su_y_drgprob_prsum}
-Drug Problem Index (DAPI) [Youth]: Prorated sum
+Drug Problem Index (DAPI) [Youth]: Prorated sum [Validation: No more
+than 3 missing or declined]
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{

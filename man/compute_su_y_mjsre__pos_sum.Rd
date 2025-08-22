@@ -49,7 +49,7 @@ Marijuana Subjective Response and Effects [Youth] (Positive): Sum
 \item \code{su_y_mjsre__pos_003}
 }
 \item \emph{Excluded values:} none
-\item \emph{Validation criterion:} none of 3 items missing
+\item \emph{Validation criterion:} maximally 0 of 3 items missing
 }
 }
 \keyword{datasets}

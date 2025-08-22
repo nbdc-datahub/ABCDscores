@@ -44,13 +44,13 @@ period): Mean [Validation: None missing or declined]
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{
-\item \code{su_y_alcsre__first5_001}
-\item \code{su_y_alcsre__first5_002}
-\item \code{su_y_alcsre__first5_003}
-\item \code{su_y_alcsre__first5_004}
+\item \code{su_y_alcsre__hvy_001}
+\item \code{su_y_alcsre__hvy_002}
+\item \code{su_y_alcsre__hvy_003}
+\item \code{su_y_alcsre__hvy_004}
 }
 \item \emph{Excluded values:} none
-\item \emph{Validation criterion:} none of 4 items missing
+\item \emph{Validation criterion:} maximally 0 of 4 items missing
 }
 }
 \keyword{datasets}

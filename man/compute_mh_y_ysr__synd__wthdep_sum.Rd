@@ -45,6 +45,12 @@ Youth Self Report [Youth] (Syndrome Scale - Withdrawn/Depressed): Sum
 \item \code{mh_y_ysr__wthdep__dep_003}
 \item \code{mh_y_ysr__wthdep_005}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
+\item \emph{Validation criterion:} maximally 0 of 8 items missing
 }
 }
 \examples{

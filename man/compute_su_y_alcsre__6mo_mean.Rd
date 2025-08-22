@@ -50,7 +50,7 @@ Alcohol Subject Response and Effects [Youth] (Last 6 months): Mean
 \item \code{su_y_alcsre__6mo_004}
 }
 \item \emph{Excluded values:} none
-\item \emph{Validation criterion:} none of 4 items missing
+\item \emph{Validation criterion:} maximally 0 of 4 items missing
 }
 }
 \keyword{datasets}

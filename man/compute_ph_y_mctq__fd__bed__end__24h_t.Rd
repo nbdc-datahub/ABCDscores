@@ -34,6 +34,7 @@ Munich Chronotype Questionnaire [Youth] (Free Day - In bed end): Time
 \item \code{ph_y_mctq__fd__sleep__end__24h_t} (intermediate score)
 \item \code{ph_y_mctq__fd__sleep_inertia} (intermediate score)
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

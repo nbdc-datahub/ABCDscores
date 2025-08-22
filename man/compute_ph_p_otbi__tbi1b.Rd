@@ -12,12 +12,20 @@ used to compute summary score of \code{ph_p_otbi__tbi1b}.
 \usage{
 vars_ph_p_otbi__tbi1b
 
-compute_ph_p_otbi__tbi1b(data, name = "ph_p_otbi__tbi1b", combine = TRUE)
+compute_ph_p_otbi__tbi1b(
+  data,
+  name = "ph_p_otbi__tbi1b",
+  exclude = c("777", "999"),
+  combine = TRUE
+)
 }
 \arguments{
 \item{data}{tbl. Data frame containing the columns to be summarized.}
 
 \item{name}{character. Name of the summary score column.}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical. If \code{TRUE} (default), the summary score is
 is appended as a new column to the input data frame. If \code{FALSE}, the
@@ -74,7 +82,11 @@ Ohio State Traumatic Brain Injury Screen [Parent]: Improbable TBI
 \item \code{ph_p_otbi__rpt__loc_001__l}
 \item \code{ph_p_otbi__rpt__daz_001__l}
 }
-\item \emph{Excluded values:} c("777", "999")
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \keyword{datasets}

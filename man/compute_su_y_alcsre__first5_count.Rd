@@ -41,6 +41,6 @@ drank): Count [Validation: None missing or declined]
 \item \code{su_y_alcsre__first5_004}
 }
 \item \emph{Excluded values:} none
-\item \emph{Validation criterion:} none of 4 items missing
+\item \emph{Validation criterion:} maximally 0 of 4 items missing
 }
 }

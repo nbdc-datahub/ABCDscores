@@ -37,6 +37,7 @@ coded) scales): Mean [Validation: No more than 0 missing or declined]
 \item \code{mh_p_eatq__fear_mean} (revert)
 \item \code{mh_p_eatq__shy_mean} (revert)
 }
+\item \emph{Excluded values:} none
 }
 }
 \details{

@@ -15,9 +15,9 @@
 ^_pkgdown\.yml$
 ^data-raw$
 ^dev
-^dev
 ^docs$
 ^img
+^permissions$
 ^permissions.yml$
 ^pkgdown$
 ^renv$

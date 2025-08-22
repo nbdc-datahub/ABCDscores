@@ -34,6 +34,7 @@ after sleep onset): Sum
 \item \code{ph_y_mctq__fd_004}
 \item \code{ph_y_mctq__fd_004__01}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

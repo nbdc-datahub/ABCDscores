@@ -34,6 +34,7 @@ Time [36 hour adjusted]
 \item \code{ph_y_mctq__sd__sleep__start__36h_t} (intermediate score)
 \item \code{ph_y_mctq__sd__sleep_latent} (intermediate score)
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{

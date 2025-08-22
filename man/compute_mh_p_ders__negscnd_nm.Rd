@@ -42,6 +42,11 @@ Secondary): Number missing
 \item \code{mh_p_ders__negscnd_006}
 \item \code{mh_p_ders__negscnd_007}
 }
+\item \emph{Excluded values:}
+\itemize{
+\item 999
+\item 777
+}
 }
 }
 \examples{

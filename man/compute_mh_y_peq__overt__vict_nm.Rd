@@ -46,6 +46,7 @@ missing
 \item \code{mh_y_peq__overt__vict_002}
 \item \code{mh_y_peq__overt__vict_003}
 }
+\item \emph{Excluded values:} none
 }
 }
 \examples{
