@@ -8,6 +8,10 @@ ab_p_demo__edu__slf_001__v02
 ab_p_demo__edu__prtnr_001
 ab_p_demo__edu__prtnr_001__v01
 
+Excluded values:
+777
+999
+
 
 "><meta property="og:description" content="Computes the summary score ab_g_dyn__cohort_edu__cgs
 Cohort description: Highest education across caregivers
@@ -18,6 +22,10 @@ ab_p_demo__edu__slf_001__v02
 ab_p_demo__edu__prtnr_001
 ab_p_demo__edu__prtnr_001__v01
 
+Excluded values:
+777
+999
+
 
 "></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -27,7 +35,7 @@ ab_p_demo__edu__prtnr_001__v01
 
     <a class="navbar-brand me-2" href="../index.html">ABCDscores</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.0.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,6 +82,9 @@ Cohort description: Highest education across caregivers</p><ul><li><p><em>Summar
 <li><p><code>ab_p_demo__edu__prtnr_001</code></p></li>
 <li><p><code>ab_p_demo__edu__prtnr_001__v01</code></p></li>
 </ul></li>
+<li><p><em>Excluded values:</em></p><ul><li><p>777</p></li>
+<li><p>999</p></li>
+</ul></li>
 </ul></div>
 
     <div class="section level2">
@@ -83,6 +94,7 @@ Cohort description: Highest education across caregivers</p><ul><li><p><em>Summar
 <span><span class="fu">compute_ab_g_dyn__cohort_edu__cgs</span><span class="op">(</span></span>
 <span>  <span class="va">data</span>,</span>
 <span>  name <span class="op">=</span> <span class="st">"ab_g_dyn__cohort_edu__cgs"</span>,</span>
+<span>  exclude <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"777"</span>, <span class="st">"999"</span><span class="op">)</span>,</span>
 <span>  combine <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -104,6 +116,11 @@ of all column names used to compute summary score of
 <dt id="arg-name">name<a class="anchor" aria-label="anchor" href="#arg-name"></a></dt>
 <dd><p>character, Name of the new column to be created. Default is
 the name in description, but users can change it.</p></dd>
+
+
+<dt id="arg-exclude">exclude<a class="anchor" aria-label="anchor" href="#arg-exclude"></a></dt>
+<dd><p>character vector. Values to be excluded from the summary
+score calculation.</p></dd>
 
 
 <dt id="arg-combine">combine<a class="anchor" aria-label="anchor" href="#arg-combine"></a></dt>

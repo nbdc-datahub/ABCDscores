@@ -9,7 +9,9 @@ su_y_cigexp__pos_002
 su_y_cigexp__pos_003
 su_y_cigexp__pos_004
 
-Excluded values: 0
+Excluded values:
+0
+
 Validation criterion: maximally 2 of 4 items missing
 
 "><meta property="og:description" content="Computes the summary score su_y_cigexp__pos_prsum
@@ -22,7 +24,9 @@ su_y_cigexp__pos_002
 su_y_cigexp__pos_003
 su_y_cigexp__pos_004
 
-Excluded values: 0
+Excluded values:
+0
+
 Validation criterion: maximally 2 of 4 items missing
 
 "></head><body>
@@ -33,7 +37,7 @@ Validation criterion: maximally 2 of 4 items missing
 
     <a class="navbar-brand me-2" href="../index.html">ABCDscores</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.0.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,7 +85,8 @@ expectancies): Prorated sum</p>
 <li><p><code>su_y_cigexp__pos_003</code></p></li>
 <li><p><code>su_y_cigexp__pos_004</code></p></li>
 </ul></li>
-<li><p><em>Excluded values:</em> 0</p></li>
+<li><p><em>Excluded values:</em></p><ul><li><p>0</p></li>
+</ul></li>
 <li><p><em>Validation criterion:</em> maximally 2 of 4 items missing</p></li>
 </ul></div>
 
@@ -93,6 +98,7 @@ expectancies): Prorated sum</p>
 <span>  <span class="va">data</span>,</span>
 <span>  name <span class="op">=</span> <span class="st">"su_y_cigexp__pos_prsum"</span>,</span>
 <span>  combine <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  exclude <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"0"</span><span class="op">)</span>,</span>
 <span>  max_na <span class="op">=</span> <span class="fl">2</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -120,6 +126,11 @@ the name in description, but users can change it.</p></dd>
 <dd><p>logical, If <code>TRUE</code> (default), the summary score will be appended to
 the input data frame. If <code>FALSE</code>, the summary score for each participant
 will be returned as a separate data frame. (Default: TRUE)</p></dd>
+
+
+<dt id="arg-exclude">exclude<a class="anchor" aria-label="anchor" href="#arg-exclude"></a></dt>
+<dd><p>character vector. Values to be excluded from the summary
+score calculation.</p></dd>
 
 
 <dt id="arg-max-na">max_na<a class="anchor" aria-label="anchor" href="#arg-max-na"></a></dt>
