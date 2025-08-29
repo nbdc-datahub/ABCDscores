@@ -59,8 +59,8 @@ nomenclature of the functions in the package:
 `compute_<score_name>()`. For example, the function to compute the score
 `fc_p_psb_mean` is named `compute_fc_p_psb_mean()`.^[There are a few exceptions
 to this rule—the summary scores in the tables `su_y_sui` and `su_y_tlfb` are
-computed using higher level functions as explained in the [SUI](sui.html) and
-[TLFB](tlfb.html) vignettes.]
+computed using higher level functions as explained in the [SUI](https://software.nbdc-datahub.org/ABCDscores/articles/sui.html) and
+[TLFB](https://software.nbdc-datahub.org/ABCDscores/articles/tlfb.html) vignettes.]
 - For any given measure/table, there exists a high-level
 `compute_<table_name>_all()` function that computes all scores for that
 measure/table. For example, the function to compute all scores for the
@@ -74,7 +74,7 @@ character vector named `vars_<measure_name>`. For example, the vector with the
 columns that are summarized by the `fc_p_psb_mean` function is named
 `vars_fc_p_psb`.
 
-The [references page](../reference/index.html) provides a list of all available
+The [references page](https://software.nbdc-datahub.org/ABCDscores/reference/index.html) provides a list of all available
 functions and their parameters.
 
 ### Basic usage
@@ -247,9 +247,9 @@ compute_mh_p_abcl__afs__frnd_sum(data, exclude = c("777", "999", "4"))
 
 The `compute_<score_name>()` functions are the main functions to compute summary
 scores, with one summary score function for each score (besides a few exceptions
-that are documented in the other [vignettes](index.html)). However, to be more
+that are documented in the other [vignettes](https://software.nbdc-datahub.org/ABCDscores/articles/)). However, to be more
 concise, the main functions often use utility functions. These utility functions
 are not necessarily meant to be used directly by users of this package, but they
 are documented and exported for transparency and reproducibility. For the
 documentation of these functions, see the
-[reference page](../reference/index.html#utility-functions).
+[reference page](https://software.nbdc-datahub.org/ABCDscores/reference/index.html).

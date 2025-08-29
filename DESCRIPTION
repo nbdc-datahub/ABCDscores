@@ -8,7 +8,7 @@ Version: 6.0.1
 Authors@R: c(
   person(given = "Janosch",
          family = "Linkersdoerfer",
-         email = "linkersdoerfer@gmail.com",
+         email = "dairc.service@gmail.com",
          role = c("aut", "cre"),
          comment = c(ORCID = "0000-0002-1577-1233")), 
   person(given = "Le",
