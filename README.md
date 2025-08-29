@@ -25,7 +25,7 @@ To learn more about the study, visit the
   (DEAP)](https://abcd.deapscience.com/#/my-datasets/create-dataset) to
   explore the ABCD data dictionary
 - [NIH Brain Development Cohorts (NBDC) Data
-  Hub](https://nbdc-datahub.org) to apply for data access
+  Hub](https://www.nbdc-datahub.org) to apply for data access
 
 ## Versioning
 
@@ -83,8 +83,8 @@ If you encounter issues while using the package, please report them by
 submitting a [GitHub
 issue](https://github.com/nbdc-datahub/ABCDscores/issues). Please do not
 submit any issues related to the ABCD data resource itself (see [ABCD
-Data documentation](https://docs.abcdstudy.org/info/issues.html) for
-information on how to report issues with the data resource).
+Data documentation](https://docs.abcdstudy.org/latest/info/issues.html)
+for information on how to report issues with the data resource).
 
 ## Citation
 

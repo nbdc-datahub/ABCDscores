@@ -29,10 +29,10 @@ using `::`, e.g., `ABCDscores::name_of_function(...)`
 
 To compute summary scores, you'll need to have downloaded data from the ABCD
 Study<sup>®</sup>. To request access to the data, visit the
-[NIH Brain Development Cohorts (NBDC) Data Hub](https://nbdc-datahub.org/).
+[NIH Brain Development Cohorts (NBDC) Data Hub](https://www.nbdc-datahub.org/)
 Once you have access, you can use different tools to access and download the
 data; they are described in more detail in the
-[ABCD data documentation](https://docs.abcdstudy.org/latest/tools/data_tools.html).
+[ABCD data documentation](https://docs.abcdstudy.org/latest/tools/tools.html).
 
 Here we assume that you created a dataset containing the variables you want to
 summarize in [DEAP](https://abcd.deapscience.com/) and downloaded it in the

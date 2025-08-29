@@ -59,7 +59,7 @@ Developmental History [Parent]: Youth birth weight
 \item The following decisions were made based on discordance between baseline
 and four-year data:
 \itemize{
-\item if discordance is ≤ 1, take baseline weight
+\item if discordance is <= 1, take baseline weight
 \item if discordance is > 1 and baseline weight is > 4, take baseline weight
 \item else if discordance is > 1, take four-year weight
 \item else if baseline weight is missing, take four-year weight

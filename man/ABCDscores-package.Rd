@@ -4,9 +4,9 @@
 \name{ABCDscores-package}
 \alias{ABCDscores}
 \alias{ABCDscores-package}
-\title{ABCDscores: Summary Scores of the Adolescent Brain Cognitive Development (ABCD) Study}
+\title{ABCDscores: Summary Scores of the Adolescent Brain Cognitive Development Study}
 \description{
-This package provides functions to compute summary scores (besides proprietary ones) reported in the tabulated data resource that is released by the Adolescent Brain Cognitive Development (ABCD) study.
+Computes summary scores (besides proprietary ones) reported in the tabulated data resource that is released by the Adolescent Brain Cognitive Development study.
 }
 \seealso{
 Useful links:
@@ -16,7 +16,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Janosch Linkersdoerfer \email{linkersdoerfer@gmail.com} (\href{https://orcid.org/0000-0002-1577-1233}{ORCID})
+\strong{Maintainer}: Janosch Linkersdoerfer \email{dairc.service@gmail.com} (\href{https://orcid.org/0000-0002-1577-1233}{ORCID})
 
 Authors:
 \itemize{

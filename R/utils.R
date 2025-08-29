@@ -796,9 +796,9 @@ ss_prsum <- function(data,
 #'
 #' For example
 #' <pre>
-#' A tibble: xxx <U+00D7> 5
+#' A tibble: xxx  5
 #' sex   age_min age_max scale_r scale_t
-#' &#60;chr>   &#60;dbl>   &#60;dbl>   &#60;dbl>   &#60;dbl>
+#' [chr]   [dbl]   [dbl]   [dbl]   [dbl]
 #'  1       18      35    50        1
 #'  1       18      35    50.5      2
 #'  1       18      35    51        3

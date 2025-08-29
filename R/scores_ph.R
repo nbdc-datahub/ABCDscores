@@ -33,7 +33,7 @@ vars_ph_p_dhx_birthweight <- c(
 #'     - if `ph_p_dhx_002__02` > 15 / 16, set it to 15 / 16
 #'   - The following decisions were made based on discordance between baseline
 #'   and four-year data:
-#'     - if discordance is ≤ 1, take baseline weight
+#'     - if discordance is <= 1, take baseline weight
 #'     - if discordance is > 1 and baseline weight is > 4, take baseline weight
 #'     - else if discordance is > 1, take four-year weight
 #'     - else if baseline weight is missing, take four-year weight

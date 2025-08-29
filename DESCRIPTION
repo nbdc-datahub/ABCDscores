@@ -1,8 +1,8 @@
 Package: ABCDscores
-Title: Summary Scores of the Adolescent Brain Cognitive Development (ABCD) Study
-Description: This package provides functions to compute summary scores
-  (besides proprietary ones) reported in the tabulated data resource that is
-  released by the Adolescent Brain Cognitive Development (ABCD) study.
+Title: Summary Scores of the Adolescent Brain Cognitive Development Study
+Description: Computes summary scores (besides proprietary ones) reported in
+  the tabulated data resource that is released by the Adolescent Brain
+  Cognitive Development study.
 URL: https://software.nbdc-datahub.org/ABCDscores/
 Version: 6.0.1
 Authors@R: c(
