@@ -63,18 +63,17 @@ The values should be either "1" (male) or "2" (female).
 \item \code{scale_t}: numeric. The T-score of the scale.
 }
 
-For example\if{html}{\out{
-<pre>
-A tibble: xxx  5
-sex   age_min age_max scale_r scale_t
-[chr]   [dbl]   [dbl]   [dbl]   [dbl]
- 1       18      35    50        1
- 1       18      35    50.5      2
- 1       18      35    51        3
- 1       18      35    51.5      4
-...
-</pre>
-}}
+For example
+
+A tibble: n x 5\tabular{lllll}{
+   sex \tab age_min \tab age_max \tab scale_r \tab scale_t \cr
+   \verb{<chr>} \tab \verb{<dbl>} \tab \verb{<dbl>} \tab \verb{<dbl>} \tab \verb{<dbl>} \cr
+   1 \tab 18 \tab 35 \tab 50 \tab 1 \cr
+   1 \tab 18 \tab 35 \tab 50.5 \tab 2 \cr
+   1 \tab 18 \tab 35 \tab 51 \tab 3 \cr
+   1 \tab 18 \tab 35 \tab 51.5 \tab 4 \cr
+   ... \tab  \tab  \tab  \tab  \cr
+}
 
 }
 

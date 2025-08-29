@@ -795,16 +795,16 @@ ss_prsum <- function(data,
 #' - `scale_t`: numeric. The T-score of the scale.
 #'
 #' For example
-#' <pre>
-#' A tibble: xxx  5
-#' sex   age_min age_max scale_r scale_t
-#' [chr]   [dbl]   [dbl]   [dbl]   [dbl]
-#'  1       18      35    50        1
-#'  1       18      35    50.5      2
-#'  1       18      35    51        3
-#'  1       18      35    51.5      4
+#'
+#' A tibble: n x 5
+#' |sex     |age_min |age_max |scale_r |scale_t |
+#' |:-------|:-------|:-------|:-------|:-------|
+#' |`<chr>` |`<dbl>` |`<dbl>` |`<dbl>` |`<dbl>` |
+#' |1       |18      |35      |50      |1       |
+#' |1       |18      |35      |50.5    |2       |
+#' |1       |18      |35      |51      |3       |
+#' |1       |18      |35      |51.5    |4       |
 #' ...
-#' </pre>
 #'
 #' ### out-range values
 #' - If the age of the participant is out of the range of the T-score table,
