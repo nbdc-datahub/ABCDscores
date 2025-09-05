@@ -13756,7 +13756,7 @@ compute_mh_y_pps_count <- function(
 #'  ```{r, echo=FALSE, results='asis'}
 #'  vars_mh_y_pps_count |> md_bullet(2, TRUE)
 #'  ```
-#' @inherit compute_mh_y_pps_count references params
+#' @inherit compute_mh_y_pps_count references params return
 #' @seealso [compute_mh_y_pps_count()]
 #' @export
 #' @autoglobal
@@ -13884,7 +13884,7 @@ compute_mh_y_pps__bother_nm <- function(
 #' - *Excluded values:* none
 #' - *Validation criterion:* 0 of 21 items missing
 #'
-#' @inherit compute_mh_y_pps_count references params
+#' @inherit compute_mh_y_pps_count references params return
 #' @details
 #' The bother count is depend on the `mh_y_pps__bother_nm` score. If the
 #' `mh_y_pps__bother_nm` score is greater than `max_na`, the bother count
@@ -13964,7 +13964,7 @@ compute_mh_y_pps__bother__yes_count <- function(
 #' - *Excluded values:* none
 #' - *Validation criterion:* 0 of 21 items missing
 #'
-#' @inherit  compute_mh_y_pps_count references params
+#' @inherit  compute_mh_y_pps_count references params return
 #' @details
 #' The bother count is depend on the `mh_y_pps__bother_nm` score. If the
 #' `mh_y_pps__bother_nm` score is greater than `max_na`, the bother count
@@ -14227,7 +14227,7 @@ compute_mh_y_pps__severity_score <- function(data,
 #' - *Excluded values:* none
 #' - *Validation criterion:* none of 21 items missing
 #'
-#' @inherit compute_mh_y_pps_count references params
+#' @inherit compute_mh_y_pps_count references params return
 #' @export
 #' @autoglobal
 #' @details

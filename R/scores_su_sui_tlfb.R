@@ -447,6 +447,7 @@ compute_tlfb_ud <- function(data,
 #' either one of `"Marijuana (all forms)"` or `"Nicotine (all forms)"`, newly
 #' created combined substance(s) use days and quantities.
 #' @autoglobal
+#' @noRd
 #' @examples
 #' \dontrun{
 #' data <- tibble::tibble(
@@ -677,7 +678,8 @@ filter_binge <- function(data, binge) {
 #'   one of `"first"` or `"last"`. (Default: `NULL`, i.e., position is not
 #'   considered).
 #'
-#' @return NULL
+#' @return `NULL`. Invisibly returns `NULL` if all checks pass. Otherwise, an
+#'  error is raised.
 #' @export
 #' @autoglobal
 #' @keywords internal

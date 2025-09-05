@@ -11,6 +11,10 @@ check_col_names(data, names)
 
 \item{names}{character vector, The name(s) of the column to check for.}
 }
+\value{
+NULL. The function will abort with an error if the column name
+already exists.
+}
 \description{
 This function checks if a column name already exists in a data frame.
 If the column name already exists, the function will abort with an error.

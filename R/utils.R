@@ -1829,7 +1829,8 @@ get_tscore_tbl <- function(
 #'
 #' @param data tbl. Data frame to check for the column name.
 #' @param names character vector, The name(s) of the column to check for.
-#' @return NULL
+#' @return NULL. The function will abort with an error if the column name
+#' already exists.
 #' @export
 #' @autoglobal
 #' @keywords internal

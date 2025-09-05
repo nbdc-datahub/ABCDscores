@@ -323,7 +323,6 @@ reference:
 
 - title: internal
   contents:
-  - add_combined_substances
   - check_args_tlfb
   - check_col_names
   - get_tscore_tbl

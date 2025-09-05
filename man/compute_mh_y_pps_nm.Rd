@@ -17,6 +17,10 @@ the name in description, but users can change it.}
 the input data frame. If \code{FALSE}, the summary score will be returned as a
 separate data frame.}
 }
+\value{
+tbl. The input data frame with the summary score appended as
+a new column.
+}
 \description{
 Computes the summary score \code{mh_y_pps_nm}
 Prodromal Psychosis Scale [Youth] (number of responses): Number

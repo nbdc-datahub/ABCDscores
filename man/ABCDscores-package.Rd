@@ -6,7 +6,7 @@
 \alias{ABCDscores-package}
 \title{ABCDscores: Summary Scores of the Adolescent Brain Cognitive Development Study}
 \description{
-Computes summary scores (besides proprietary ones) reported in the tabulated data resource that is released by the Adolescent Brain Cognitive Development study.
+This package provides functions to compute summary scores (besides proprietary ones) reported in the tabulated data resource that is released by the Adolescent Brain Cognitive Development (ABCD) study. Feldstein Ewing and Luciana (2018) \url{https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32}.
 }
 \seealso{
 Useful links:

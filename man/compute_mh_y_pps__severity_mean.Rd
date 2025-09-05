@@ -24,6 +24,10 @@ summary score.}
 the input data frame. If \code{FALSE}, the summary score will be returned as a
 separate data frame.}
 }
+\value{
+tbl. The input data frame with the summary score appended as
+a new column.
+}
 \description{
 Computes the summary score \code{mh_y_pps__severity_mean}
 Prodromal Psychosis Scale [Youth] (Severity Score): Mean

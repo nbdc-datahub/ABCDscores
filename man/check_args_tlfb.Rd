@@ -98,6 +98,10 @@ binge behavior is not considered).}
 one of \code{"first"} or \code{"last"}. (Default: \code{NULL}, i.e., position is not
 considered).}
 }
+\value{
+\code{NULL}. Invisibly returns \code{NULL} if all checks pass. Otherwise, an
+error is raised.
+}
 \description{
 Validates the arguments to compute a TLFB substance use score.
 }
