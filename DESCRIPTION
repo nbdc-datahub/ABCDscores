@@ -1,6 +1,6 @@
 Package: ABCDscores
 Title: Summary Scores of the Adolescent Brain Cognitive Development (ABCD) Study
-Description: This package provides functions to compute summary scores
+Description: Provides functions to compute summary scores
   (besides proprietary ones) reported in the tabulated data resource that is
   released by the Adolescent Brain Cognitive Development (ABCD) study.
   Feldstein Ewing and Luciana (2018)
