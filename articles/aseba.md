@@ -1,0 +1,270 @@
+# Achenbach System of Empirically Based Assessment (ASEBA) T-scores
+
+## Introduction
+
+The Achenbach System of Empirically Based Assessment, ASEBA (Achenbach,
+2017; Achenbach, 2019), is a widely used, evidence-based tool designed
+to assess behavioral, emotional, social, and adaptive functioning in
+individuals aged 1½ to 90+ years. Developed by Thomas Achenbach in
+response to the limitations of early psychiatric classifications like
+the DSM-I, it employs a multi-informant approach to capture behavioral
+patterns across different settings (e.g., home, school) and perspectives
+(e.g., parents, teachers, self-reports).
+
+### T-score
+
+T-scores are standardized scores that indicate how an individual’s
+performance compares to an age and sex matched normative sample. These
+scores are derived by converting raw scores into a standardized format
+with a mean of 50 and a standard deviation of 10. To establish these
+norms, ASEBA collected data from large, representative samples across
+various societies, taking into account factors such as age, sex, and
+cultural background. This extensive normative data allows for the
+comparison of an individual’s scores to those of a relevant peer group,
+facilitating the identification of behavioral, emotional, social, and
+thought problems (Achenbach, 2019).
+
+### ABCD ASEBA forms
+
+The ABCD Study^(®) uses six ASEBA forms:
+
+- Child Behavior Checklist (CBCL)
+- Adult Behavior Checklist (ABCL)
+- Youth Self-Report (YSR)
+- Adult Self-Report (ASR)
+- Brief Problem Monitor (BPM; Youth)
+- Brief Problem Monitor (BPM; Teacher)
+
+> **Note:** For the 6.0 release, no T-scores are computed for the ASR
+> form (raw scores are available in the tabulated data). This may change
+> in future releases.
+
+### ABCD T-scores
+
+The following scales are available in the ABCD data resource:
+
+## Usage
+
+To calculate the T-scores for the ASEBA forms, one must obtain the
+norming tables. Since these tables are a proprietary product licensed by
+ASEBA, they are not included in the `ABCDscores` package. Therefore, we
+will demonstrate how to compute the T-scores using a simulated norming
+table. To use the code in a real-world setting, you would need to obtain
+the norming tables from ASEBA.
+
+### The norming table
+
+The ASEBA norm table needs to be organized as a dataframe with the
+following columns:
+
+- `sex`: character, either `"1"` for male or `"2"` for female.
+- `age_min`: numeric, the minimum age of the norm group.
+- `age_max`: numeric, the maximum age of the norm group.
+- `scale_r`: numeric, the raw score.
+- `scale_t`: numeric, the T-score.
+
+Here is an example for a simulated norming table:
+
+``` r
+data_norm <- tibble::tibble(
+  sex = c("1", "1", "1", "1", "1"),
+  age_min = 18,
+  age_max = 35,
+  scale_r = 0:4,
+  scale_t = 20:24
+)
+data_norm
+#> # A tibble: 5 × 5
+#>   sex   age_min age_max scale_r scale_t
+#>   <chr>   <dbl>   <dbl>   <int>   <int>
+#> 1 1          18      35       0      20
+#> 2 1          18      35       1      21
+#> 3 1          18      35       2      22
+#> 4 1          18      35       3      23
+#> 5 1          18      35       4      24
+```
+
+### Compute T-scores
+
+To compute the T-scores, we can use the `compute_<score_name>()`
+functions. The input and output and some important arguments of these
+functions are very similar to other score functions in the `ABCDscores`
+package. Please refer to the [Get
+started](https://software.nbdc-datahub.org/ABCDscores/articles/ABCDscores.md)
+page for an overview of how to use these functions.
+
+The T-score functions have the following additional arguments:
+
+- `data_norm`: tibble, the norming table (as the one generated above).
+- `col_age`: character, specifies the column name in the input data that
+  contains the age of the participants. This is required to match the
+  age of the participant to the age range in the norming table. For
+  example, for score `mh_p_abcl__afs__frnd_tscore`, the default value of
+  `col_age` is `"mh_p_abcl__cg2__age_001"`. Please refer to the
+  [reference
+  pages](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#mental-health-aseba-)
+  to see the default value of `col_age` for a given score.
+- `col_sex`: character, specifies the column name in the input data that
+  contains the participants’ age. Similarly, this information is
+  required to look up the respective T-score. For example, for score
+  `mh_p_abcl__afs__frnd_tscore`, the default value of `col_sex` is
+  `"mh_p_abcl__cg2_gi"`. Please refer to the [reference
+  pages](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#mental-health-aseba-)
+  to see the default value of `col_sex` for a given score.
+
+For data preparation, please also refer to the [Get
+started](https://software.nbdc-datahub.org/ABCDscores/articles/ABCDscores.md)
+page. After creating a dataset containing the needed columns,
+downloading it, and reading it into a data frame, the data should be
+ready for the T-score computation. For example, assuming a data frame
+containing all needed columns called `data` and the norming table called
+`data_norm`, we can execute
+
+``` r
+compute_mh_p_abcl__afs__frnd_tscore(data, data_norm)
+```
+
+to compute the T-score `mh_p_abcl__afs__frnd_tscore` for the ABCL.
+
+### Examples
+
+As we cannot provide the actual norming tables as part of this package,
+we cannot run the code above. Here we demonstrate how to compute
+T-scores using a simulated norming table and a simulated data table
+using the lower level function
+[`ss_tscore()`](https://software.nbdc-datahub.org/ABCDscores/reference/ss_tscore.md).
+
+All specific `compute...()` T-score functions use the lower level
+function
+[`ss_tscore()`](https://software.nbdc-datahub.org/ABCDscores/reference/ss_tscore.md).
+The only difference between scale-specific T-score functions are default
+values, such as `col_age` and `col_sex`.
+
+Create a simulated data table:
+
+``` r
+data <- tibble::tibble(
+  var1 = c(0, 1, NA, 1, 2, 3),
+  var2 = c(1, 2, 1, 2, 5, 3),
+  age = c(18, 20, 25, 99, 35, 30),
+  sex = c("1", "1", "1", "1", "1", "2")
+)
+data
+#> # A tibble: 6 × 4
+#>    var1  var2   age sex  
+#>   <dbl> <dbl> <dbl> <chr>
+#> 1     0     1    18 1    
+#> 2     1     2    20 1    
+#> 3    NA     1    25 1    
+#> 4     1     2    99 1    
+#> 5     2     5    35 1    
+#> 6     3     3    30 2
+```
+
+Compute T-scores using the simulated norm and data tables:
+
+``` r
+ss_tscore(
+  data = data,
+  data_norm = data_norm,
+  col_age = "age", # specify the age column
+  col_sex = "sex", # specify the sex column
+  vars = c("var1", "var2") # specify individual items summarized in the score
+)
+#> # A tibble: 6 × 5
+#>    var1  var2   age sex   tscore
+#>   <dbl> <dbl> <dbl> <chr>  <int>
+#> 1     0     1    18 1         21
+#> 2     1     2    20 1         23
+#> 3    NA     1    25 1         21
+#> 4     1     2    99 1         NA
+#> 5     2     5    35 1         NA
+#> 6     3     3    30 2         NA
+```
+
+If
+[`ss_tscore()`](https://software.nbdc-datahub.org/ABCDscores/reference/ss_tscore.md)
+cannot find a match in the norming table, it will return `NA` for the
+T-score. For example, in the above example, the scores for the following
+rows are `NA`:
+
+- *row 4:* because the age is 99, which is not in the age range \[18,
+  35\].
+- *row 5:* because the raw score is 5, which makes the raw score sum 7,
+  which is not in the raw score range \[0, 4\].
+- *row 6:* because the sex is “2”, which is not included in the
+  simulated norming table.
+
+#### Customize T-score computation
+
+We can use the `max_na` and `exclude` arguments to modify certain
+aspects of the T-score computation.
+
+- The `max_na` argument specifies the maximum number of missing values
+  that are allowed to still compute the T-score. For example, we can set
+  `max_na = 0` to allow no missing values in the summarized items (the
+  default for
+  [`ss_tscore()`](https://software.nbdc-datahub.org/ABCDscores/reference/ss_tscore.md)
+  is `NULL`, i.e., no limit, but the specific functions for the ASEBA
+  T-scores impose a limit). If we rerun the code above with this change,
+  `NA` is returned for row 3 because `var1` is `NA` in that row.
+
+  ``` r
+  ss_tscore(
+    data = data,
+    data_norm = data_norm,
+    col_age = "age",
+    col_sex = "sex",
+    vars = c("var1", "var2"),
+    max_na = 0 # specify maximum number of missing values
+  )
+  #> # A tibble: 6 × 5
+  #>    var1  var2   age sex   tscore
+  #>   <dbl> <dbl> <dbl> <chr>  <int>
+  #> 1     0     1    18 1         21
+  #> 2     1     2    20 1         23
+  #> 3    NA     1    25 1         NA
+  #> 4     1     2    99 1         NA
+  #> 5     2     5    35 1         NA
+  #> 6     3     3    30 2         NA
+  ```
+
+- The `exclude` argument excludes certain values, i.e, converts them to
+  `NA` before the score computation. For example, we can set
+  `exclude = "0"` to exclude any `"0"` values from the computation. If
+  we rerun the code above with this change, `NA` is returned for row 1
+  because `var1` is `"0"` in that row.
+
+  ``` r
+  ss_tscore(
+    data = data,
+    data_norm = data_norm,
+    col_age = "age",
+    col_sex = "sex",
+    vars = c("var1", "var2"),
+    max_na = 0,
+    exclude = c("0") # specify values to exclude from the computation
+  )
+  #> # A tibble: 6 × 5
+  #>    var1  var2   age sex   tscore
+  #>   <dbl> <dbl> <dbl> <chr>  <int>
+  #> 1     0     1    18 1         NA
+  #> 2     1     2    20 1         23
+  #> 3    NA     1    25 1         NA
+  #> 4     1     2    99 1         NA
+  #> 5     2     5    35 1         NA
+  #> 6     3     3    30 2         NA
+  ```
+
+## References
+
+Achenbach, T. M. (2017). Achenbach system of empirically based
+assessment (ASEBA). In J. Kreutzer, J. DeLuca, & B. Caplan (Eds.),
+*Encyclopedia of clinical neuropsychology* (pp. 1–7). Springer
+International Publishing.
+<https://doi.org/10.1007/978-3-319-56782-2_1529-3>
+
+Achenbach, T. M. (2019). International findings with the achenbach
+system of empirically based assessment (ASEBA): Applications to clinical
+services, research, and training. *Child and Adolescent Psychiatry and
+Mental Health*, *13*(1), 30.

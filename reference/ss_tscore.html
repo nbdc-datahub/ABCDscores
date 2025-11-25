@@ -9,7 +9,7 @@ and the provided T-score table."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">ABCDscores</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -132,18 +132,8 @@ The values should be either "1" (male) or "2" (female).</p></li>
 <li><p><code>age_max</code>: numeric. The maximum age of the participant.</p></li>
 <li><p><code>scale_r</code>: numeric. The raw score of the scale.</p></li>
 <li><p><code>scale_t</code>: numeric. The T-score of the scale.</p></li>
-</ul><p>For example
-</p><div class="sourceCode"><pre>
-A tibble: xxx <u> 5
-sex   age_min age_max scale_r scale_t
-&lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
- 1       18      35    50        1
- 1       18      35    50.5      2
- 1       18      35    51        3
- 1       18      35    51.5      4
-...
-</u></pre></div>
-</div>
+</ul><p>For example</p>
+<p>A tibble: n x 5</p><table class="table table"><tr><td>sex</td><td>age_min</td><td>age_max</td><td>scale_r</td><td>scale_t</td></tr><tr><td><code>&lt;chr&gt;</code></td><td><code>&lt;dbl&gt;</code></td><td><code>&lt;dbl&gt;</code></td><td><code>&lt;dbl&gt;</code></td><td><code>&lt;dbl&gt;</code></td></tr><tr><td>1</td><td>18</td><td>35</td><td>50</td><td>1</td></tr><tr><td>1</td><td>18</td><td>35</td><td>50.5</td><td>2</td></tr><tr><td>1</td><td>18</td><td>35</td><td>51</td><td>3</td></tr><tr><td>1</td><td>18</td><td>35</td><td>51.5</td><td>4</td></tr><tr><td>...</td><td></td><td></td><td></td><td></td></tr></table></div>
 
 <div class="section">
 <h3 id="out-range-values">out-range values<a class="anchor" aria-label="anchor" href="#out-range-values"></a></h3>
@@ -212,11 +202,11 @@ the <code>list_tscore</code>.</p></li>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Janosch Linkersdoerfer, Le Zhang, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer.</p>
+  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer></div>

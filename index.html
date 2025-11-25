@@ -11,8 +11,8 @@
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Summary Scores of the Adolescent Brain Cognitive Development (ABCD) Study">
-<meta name="description" content="This package provides functions to compute summary scores (besides proprietary ones) reported in the tabulated data resource that is released by the Adolescent Brain Cognitive Development (ABCD) study.">
-<meta property="og:description" content="This package provides functions to compute summary scores (besides proprietary ones) reported in the tabulated data resource that is released by the Adolescent Brain Cognitive Development (ABCD) study.">
+<meta name="description" content="Provides functions to compute summary scores (besides proprietary ones) reported in the tabulated data resource that is released by the Adolescent Brain Cognitive Development (ABCD) study. Feldstein Ewing and Luciana (2018) &lt;https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32&gt;. See Zhang et al. (2025) &lt;https://doi.org/10.1101/2025.09.04.674066&gt; for details about the package design and implementation.">
+<meta property="og:description" content="Provides functions to compute summary scores (besides proprietary ones) reported in the tabulated data resource that is released by the Adolescent Brain Cognitive Development (ABCD) study. Feldstein Ewing and Luciana (2018) &lt;https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32&gt;. See Zhang et al. (2025) &lt;https://doi.org/10.1101/2025.09.04.674066&gt; for details about the package design and implementation.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">ABCDscores</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,7 +78,7 @@
 <li>
 <a href="https://abcd.deapscience.com/#/my-datasets/create-dataset" class="external-link">Data Exploration and Analysis Portal (DEAP)</a> to explore the ABCD data dictionary</li>
 <li>
-<a href="https://nbdc-datahub.org" class="external-link">NIH Brain Development Cohorts (NBDC) Data Hub</a> to apply for data access</li>
+<a href="https://www.nbdc-datahub.org" class="external-link">NIH Brain Development Cohorts (NBDC) Data Hub</a> to apply for data access</li>
 </ul>
 <div class="section level2">
 <h2 id="versioning">Versioning<a class="anchor" aria-label="anchor" href="#versioning"></a>
@@ -90,24 +90,33 @@
 <th align="left">Release version</th>
 <th align="left">Package version</th>
 </tr></thead>
-<tbody><tr class="odd">
+<tbody>
+<tr class="odd">
 <td align="left">6.0</td>
 <td align="left">6.0.0</td>
-</tr></tbody>
+</tr>
+<tr class="even">
+<td align="left">6.1</td>
+<td align="left">6.1.0</td>
+</tr>
+</tbody>
 </table>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>To install the <em>latest version</em> of <code>ABCDscores</code> from <a href="https://github.com/nbdc-datahub/ABCDscores" class="external-link">GitHub</a>, use the following command:</p>
+<p>To install the <em>latest version</em> of <code>ABCDscores</code> from CRAN, use the following command:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ABCDscores"</span><span class="op">)</span></span></code></pre></div>
+<p>To install the <em>latest version</em> of <code>ABCDscores</code> from <a href="https://github.com/nbdc-datahub/ABCDscores" class="external-link">GitHub</a>, use the following command:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"remotes"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span>  </span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"nbdc-datahub/ABCDscores"</span><span class="op">)</span></span></code></pre></div>
 <p>To install a <em>specific version</em> of the package, specify the version number in the <code>remotes::install_github()</code> call. For example, to install version 6.0.0, use the following command:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"nbdc-datahub/ABCDscores@v6.0.0"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -118,19 +127,21 @@
 <div class="section level2">
 <h2 id="issues">Issues<a class="anchor" aria-label="anchor" href="#issues"></a>
 </h2>
-<p>If you encounter issues while using the package, please report them by submitting a <a href="https://github.com/nbdc-datahub/ABCDscores/issues" class="external-link">GitHub issue</a>. Please do not submit any issues related to the ABCD data resource itself (see <a href="https://docs.abcdstudy.org/info/issues.html" class="external-link">ABCD Data documentation</a> for information on how to report issues with the data resource).</p>
+<p>If you encounter issues while using the package, please report them by submitting a <a href="https://github.com/nbdc-datahub/ABCDscores/issues" class="external-link">GitHub issue</a>. Please do not submit any issues related to the ABCD data resource itself (see <a href="https://docs.abcdstudy.org/latest/info/issues.html" class="external-link">ABCD Data documentation</a> for information on how to report issues with the data resource).</p>
 </div>
 <div class="section level2">
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
 </h2>
-<!-- If you use any summary scores from ABCD data release or compute summary scores -->
-<!-- using this package, please kindly cite the following paper: -->
-<p><em>We are currently preparing a paper about <code>ABCDscores</code>. The reference will be added here once the paper is published.</em></p>
+<p>If you use any summary scores from ABCD data release or compute summary scores using this package, please kindly cite the following paper:</p>
+<blockquote>
+<p>Zhang, L., Celhay, O., Das, B., Berman, S., Ziemer, L. R., Smith, C. J., Dale, A. M., &amp; Linkersdörfer, J. (2025). <em>ABCDscores: An R package for computing summary scores in the ABCD Study®</em>. bioRxiv. <a href="https://doi.org/10.1101/2025.09.04.674066" class="external-link uri">https://doi.org/10.1101/2025.09.04.674066</a></p>
+</blockquote>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
+<li><a href="https://cloud.r-project.org/package=ABCDscores" class="external-link">View on CRAN</a></li>
 <li><a href="https://github.com/nbdc-datahub/ABCDscores/" class="external-link">Browse source code</a></li>
 </ul>
 </div>
@@ -153,8 +164,8 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Janosch Linkersdoerfer <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-1577-1233" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
-<li>Le Zhang <br><small class="roles"> Author </small> <a href="https://orcid.org/0009-0008-0205-2150" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
+<li>Le Zhang <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0009-0008-0205-2150" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
+<li>Janosch Linkersdoerfer <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-1577-1233" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 <li>Olivier Celhay <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-2971-9110" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 <li>Biplabendu Das <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0003-0855-262X" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 <li>Sammy Berman <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-9803-019X" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
@@ -169,11 +180,11 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Janosch Linkersdoerfer, Le Zhang, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer.</p>
+  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>

@@ -9,7 +9,6 @@
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/index.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/news/index.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/ABCDscores-package.html</loc></url>
-<url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/add_combined_substances.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/check_args_tlfb.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/check_assign_na.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/check_col_names.html</loc></url>
@@ -64,6 +63,10 @@
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_psb_all.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_psb_mean.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_psb_nm.html</loc></url>
+<url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_vs__famil_mean.html</loc></url>
+<url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_vs__famil_mean__v01.html</loc></url>
+<url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_vs__famil_nm.html</loc></url>
+<url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_vs__famil_nm__v01.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_vs__indselfrel_mean.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_vs__indselfrel_nm.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_vs__obl_mean.html</loc></url>
@@ -124,6 +127,10 @@
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_srpf__involv_mean.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_srpf__involv_nm.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_srpf_all.html</loc></url>
+<url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_vs__famil_mean.html</loc></url>
+<url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_vs__famil_mean__v01.html</loc></url>
+<url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_vs__famil_nm.html</loc></url>
+<url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_vs__famil_nm__v01.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_vs__indselfrel_mean.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_vs__indselfrel_nm.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_vs__obl_mean.html</loc></url>
@@ -829,6 +836,7 @@
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_tlfb_totdose.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_tlfb_ud.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/convert_time_mctq.html</loc></url>
+<url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/create_session_num.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/data_tlfb_sample.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/dummy_aseba.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/dummy_mh.html</loc></url>

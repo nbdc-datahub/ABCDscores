@@ -1,0 +1,393 @@
+# Timeline Followback (TLFB) summary scores
+
+## Introduction
+
+The Timeline Followback (TLFB) (Sobell, 1996) is a semi-structured
+interview method used to assess specific and quantified estimates of
+substance use over a specified period, approxiamtely the past 12 months
+in ABCD. It involves participants recalling their substance use while
+being guided by a Research Assistant (RA). The RA fills out a TLFB
+calendar, documenting all reports of substance use and helping
+participants ground their responses to specific dates and events,
+ensuring accurate reporting of substance use patterns.
+
+## TLFB raw data
+
+The TLFB raw data is available to authorized users of the [NBDC Data
+Hub](https://nbdc-datahub.org). It combines information from the
+logfiles of the old and new versions of the TLFB application used in the
+ABCD assessments (For additional information, please see documentation
+webpage). The raw data is a long-form data frame with one row per
+reported substance use instance and the following structure:
+
+``` r
+glimpse(data_tlfb_sample)
+#> Rows: 8
+#> Columns: 10
+#> $ participant_id <chr> "sub-XXXXXXXX", "sub-XXXXXXXX", "sub-XXXXXXXX", "sub-XX…
+#> $ session_id     <fct> ses-04A, ses-04A, ses-05A, ses-05A, ses-05A, ses-05A, s…
+#> $ sex            <fct> F, F, F, F, M, M, M, M
+#> $ dt_tlfb        <date> 2023-11-15, 2023-11-15, 2024-09-14, 2024-09-14, 2023-12…
+#> $ period         <chr> "detailed", "estimated", "detailed", "detailed", "deta…
+#> $ dt_use         <date> 2023-03-22, 2022-10-29, 2024-06-29, 2024-08-15, 2023-08…
+#> $ dt_use_day     <ord> Wed, Sat, Fri, Wed, Sat, Sun, Thu, Mon
+#> $ dt_use_wknd    <lgl> FALSE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE
+#> $ substance      <fct> "Electronic Nicotine or Vaping Products", "Electronic …
+#> $ quantity       <dbl> 2.0, 1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5
+```
+
+The TLFB interview records usage for the following substances:
+
+- *“‘Fake’ Marijuana or Synthetics”*
+- *“Alcohol”*
+- *“Anabolic Steroids”*
+- *“Any Other Drug They Used to Get High”*
+- *“Blunts or Combined Tobacco and Marijuana in Joints”*
+- *“CBD (Non-Medical Use)”*
+- *“Cathinones such as Bath Salts, Drone, or Meph”*
+- *“Cigars, Little Cigars, or Cigarillos”*
+- *“Cocaine or Crack Cocaine”*
+- *“Concentrated Marijuana Tinctures”*
+- *“Ecstasy, Molly, or MDMA”*
+- *“Electronic Nicotine or Vaping Products”*
+- *“GHB, Liquid G, or Georgia Homeboy”*
+- *“Hallucinogen Drugs including LSD, PCP, Peyote, Mescaline, DMT, AMT,
+  or Foxy”*
+- *“Heroin, Opium, Junk, Smack, or Dope”*
+- *“Hookah with Tobacco”*
+- *“Inhalants”*
+- *“Ketamine or Special K”*
+- *“Marijuana Edibles”*
+- *“Marijuana Infused Alcohol Drinks”*
+- *“Methamphetamine, Meth, or Crystal Meth”*
+- *“Nicotine Replacements”*
+- *“OTC Cough or Cold Medicine, DXM, ‘Lean’, or ‘Purple Drank’”*
+- *“Prescription Anxiolytics, Tranquilizers, or Sedatives”*
+- *“Prescription Pain Relievers or Opioids”*
+- *“Prescription Stimulants”*
+- *“Psilocybin, Magic Mushrooms, or Shrooms”*
+- *“Salvia”*
+- *“Smokeless Tobacco, Chew, or Snus”*
+- *“Smoking Marijuana Flower”*
+- *“Smoking Marijuana Oils or Concentrates”*
+- *“Tobacco Cigarette”*
+- *“Tobacco in a Pipe”*
+- *“Vaped Marijuana Flower”*
+- *“Vaped Marijuana Oils or Concentrates”*
+- *“Marijuana (all forms)”*
+- *“Nicotine (all forms)”*
+
+where *“Marijuana (all forms)”* and *“Nicotine (all forms)”* are
+aggregating over the different methods of consumption.
+
+## TLFB summary score functions
+
+The ABCD Study’s tabulated data resource includes summary scores for the
+TLFB interview. While the summary scores for other domains typically
+define one function per summary score, the TLFB summary scores are
+computed using a set of basic functions, with user-defined parameters.
+This allows for a more flexible and modular approach to computing the
+TLFB summary scores, e.g., computing the same score for different
+substances or time periods. This section describes the basic functions
+and how to use them to compute the ABCD summary scores using the
+`ABCDscores` R package. It also describes how users can use these
+functions to compute TLFB summary scores that are not reported in the
+ABCD data.
+
+The basic functions are:
+
+- [`compute_tlfb_abst()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_tlfb_abst.md):
+  Compute abstinence from substance use in days.
+- [`compute_tlfb_dt()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_tlfb_dt.md):
+  Compute first/last day of substance use.
+- [`compute_tlfb_maxdose()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_tlfb_maxdose.md):
+  Compute maximum dose of substance use.
+- [`compute_tlfb_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_tlfb_mean.md):
+  Compute mean dose of substance use.
+- [`compute_tlfb_totdose()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_tlfb_totdose.md):
+  Compute total dose of substance use.
+- [`compute_tlfb_ud()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_tlfb_ud.md):
+  Compute number of substance use days.
+
+The functions take the following parameters:
+
+- `substance` One or several substance(s) to compute the score for.
+- `period`: The period (detailed, estimated, or both) for which the
+  score is computed for.
+- `days`: Number of days before the TLFB interview to consider.
+- `wknd`: Whether the score should be computed only for weekends days,
+  only for week days, or all days
+- `co_use`: Only computes score for days on which the substance was
+  taken with specified other substance(s).
+- `binge`: Allows to specify binge thresholds to apply, either general
+  or by sex.
+- `position`: Whether to consider the first or last substance use
+
+Not all parameters are used by all functions and some parameters are
+mutally exclusive (see the function documentation for more details). The
+following gives an overview of which function can use which parameter:
+
+### ABCD summary scores
+
+The following table gives an overview of how the basic functions are
+used to compute the 905 summary scores that are reported in the ABCD
+data resource (you can use the filter boxes on top of the columns to
+filter the table):
+
+Note that the function calls expect the TLFB raw data to be read into a
+data frame `data_tlfb` in the global environment. For example, to
+compute the summary scores, one would run:
+
+``` r
+# read raw data
+data_tlfb <- arrow::read_parquet("tlfb_raw.parquet")
+
+# compute summary score `su_y_tlfb__alc__1mo__wknd_totdose`
+compute_tlfb_totdose(
+  data = data_tlfb,
+  name = "su_y_tlfb__alc__1mo__wknd_totdose",
+  substance = "Alcohol",
+  period = NULL,
+  days = 30,
+  wknd = TRUE,
+  co_use = NULL,
+  binge = NULL
+)
+
+# compute summary score `su_y_tlfb__alc__1mo__wknd_ud`
+compute_tlfb_ud(
+  data = data_tlfb,
+  name = "su_y_tlfb__alc__1mo__wknd_ud",
+  substance = "Alcohol",
+  period = NULL,
+  days = 30,
+  wknd = TRUE,
+  co_use = NULL,
+  binge = NULL
+)
+
+# compute all summary scores in the ABCD data resource
+data_tlfb_ss <- purrr::map(
+  tlfb_config$call,
+  ~ eval(parse(text = .x))
+) |>
+  purrr::reduce(
+    full_join,
+    by = join_by(
+      participant_id,
+      session_id
+    )
+  )
+```
+
+### Custom summary scores
+
+The basic functions can also be used to compute custom summary scores
+that are not reported in the ABCD data resource.
+
+#### Simple examples
+
+*Compute participants’ use days for all substances over all events*
+
+``` r
+compute_tlfb_ud(
+  data = data_tlfb,
+  name = "ud_all_subst",
+  period = "detailed"
+) |>
+  summarize(
+    ud_all_subst_all_events = sum(ud_all_subst),
+    .by = participant_id
+  ) |>
+  arrange(
+    desc(ud_all_subst_all_events)
+  )
+```
+
+*Compute participants’ marijuana or nicotine use days on week days*
+
+``` r
+compute_tlfb_ud(
+  data = data_tlfb,
+  name = "ud_mj_nic_wkdays",
+  substance = c("Marijuana (all forms)", "Nicotine (all forms)"),
+  period = "detailed",
+  wknd = FALSE
+)
+
+# ...
+```
+
+#### More complex examples
+
+*Compute age of first use for marijuana*
+
+``` r
+#' Add age of use
+#'
+#' @description
+#' Adds an `age_use` column to the TLFB raw data based on the anonymized date of
+#' birth and the date of use. Age is computed in years (with decimals) using
+#' an exact method taking into account leap years (using functions from the
+#' `lubridate` package).
+#'
+#' @param data tibble. The TLFB raw data.
+#' @param data_dob tibble. A data frame containing at least two columns, the
+#'   participant ID and the anonymized date of birth.
+#' @param col_dob character. The name of the column in `data_dob` that has the
+#'   anonymized date of birth.
+#'
+#' @return tibble. The TLFB raw data with an additional column `age_use`.
+add_age_use <- function(data, data_dob, col_dob) {
+  data_dob <- data_dob |>
+    select(
+      participant_id,
+      dob = {{ col_dob }}
+    )
+
+  data |>
+    left_join(
+      data_dob,
+      by = "participant_id"
+    ) |>
+    mutate(
+      age_use = lubridate::interval(dob, dt_use) / lubridate::years(1)
+    ) |>
+    select(
+      -dob
+    )
+}
+
+# expects that a data frame `data_dob` with a column `dob_anonymized`
+# to be available in the global environment; uses the `add_age_use()` function
+# to add a column with the age of the participant at each reported use and
+# finds the first use of marijuana for each participant
+data_tlfb |>
+  compute_tlfb_dt(
+    name      = "dt_use",
+    substance = "Marijuana (all forms)",
+    period    = "detailed",
+    position  = "first"
+  ) |>
+  summarize(
+    dt_use = min(dt_use),
+    .by = participant_id
+  ) |>
+  add_age_use(data_dob, "dob_anonymized") |>
+  select(
+    participant_id,
+    mj_age_first_use_tlfb = age_use
+  )
+```
+
+*Compute the longest streak of consecutive weeks with alcohol binge
+drinking*
+
+``` r
+#' Add week sequence
+#'
+#' @description
+#' Adds a `wk_seq` column to the TLFB raw data. The week sequence is computed
+#' based on the minimum and maximum dates of use in the data, with week 1 being
+#' the one that contains the minimum date of use and the maximum week number
+#' being the one that contains the maximum date of use. That is, the week
+#' sequence contains consecutive week numbers from the earliest to the latest
+#' possible date and works across all years contained in the data. Joining this
+#' week sequence to the data allows for the computation of weekly summaries and
+#' streaks of consecutive use weeks.
+#'
+#' @details
+#' The week sequence can be computed using either the `lubridate::isoweek()` or
+#' the `lubridate::epiweek()` command. The `lubridate::isoweek()` command uses
+#' the European standard for week numbering, where Monday is the first day and
+#' Sunday is the last day of the week. The `lubridate::epiweek()`command uses
+#' the US standard where Sunday is the first day of the week and Saturday is the
+#' last day. The default is to use the `lubridate::isoweek()` command as it does
+#' not break up a weekend into two different weeks.
+#'
+#' @param data tibble. The TLFB raw data.
+#' @param standard character. The standard to use for week numbering. One of
+#'   `"iso"` or `"epi"` (Default: `"iso"`; see details).
+#'
+#' @return tibble. The TLFB raw data with an additional column `wk_seq`.
+add_wk_seq <- function(data, standard = c("iso", "epi")) {
+  standard <- match.arg(standard)
+
+  week_command <- switch(standard,
+    iso = lubridate::isoweek,
+    epi = lubridate::epiweek
+  )
+
+  data_weeks <- tibble(
+    dt = seq(
+      min(data$dt_use),
+      max(data$dt_use),
+      by = 1
+    )
+  ) |>
+    mutate(
+      yr_use = lubridate::year(dt),
+      wk_use = week_command(dt)
+    ) |>
+    distinct(
+      yr_use,
+      wk_use
+    ) |>
+    arrange(
+      yr_use,
+      wk_use
+    ) |>
+    mutate(
+      wk_seq = row_number()
+    )
+
+  data |>
+    mutate(
+      yr_use = lubridate::year(dt_use),
+      wk_use = week_command(dt_use)
+    ) |>
+    left_join(
+      data_weeks,
+      by = join_by(yr_use, wk_use)
+    ) |>
+    select(
+      -yr_use,
+      -wk_use
+    )
+}
+
+data_tlfb |>
+  ABCDscores::filter_tlfb(
+    substance = "Alcohol",
+    binge = list("M" = 5, "F" = 4),
+    period = "detailed"
+  ) |>
+  add_wk_seq(standard = "iso") |>
+  summarize(
+    alc_binge = n_distinct(dt_use),
+    .by = c(participant_id, session_id, wk_seq)
+  ) |>
+  arrange(
+    participant_id,
+    session_id,
+    wk_seq
+  ) |>
+  mutate(
+    streak = cumsum(c(TRUE, diff(wk_seq) != 1)),
+    .by = c(participant_id, session_id)
+  ) |>
+  mutate(
+    n_wks = row_number(),
+    .by = c(participant_id, session_id, streak)
+  ) |>
+  summarize(
+    alc_wks_binge = max(n_wks),
+    .by = c(participant_id)
+  ) |>
+  arrange(
+    desc(alc_wks_binge)
+  )
+```
+
+Sobell, &. S., L. C. (1996). Timeline followback: User’s guide.
+*Addiction Research Foundation*.

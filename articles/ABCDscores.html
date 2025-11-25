@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">ABCDscores</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,7 +81,11 @@
 </h2>
 <p>After installing the package, you can load it with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://software.nbdc-datahub.org/ABCDscores/">ABCDscores</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://software.nbdc-datahub.org/ABCDscores/">ABCDscores</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; Welcome to the `ABCDscores` package! For more information, visit: https://software.nbdc-datahub.org/ABCDscores/</span></span>
+<span><span class="co">#&gt; This package is developed by the ABCD Data Analysis, Informatics &amp; Resource Center (DAIRC) at the J. Craig Venter Institute (JCVI).</span></span>
+<span><span class="co">#&gt; If `ABCDscores` is helpful to your research, please cite:</span></span>
+<span><span class="co">#&gt; Zhang, L., Celhay, O., Das, B., Berman, S., Ziemer, L. R., Smith, C. J., Dale, A. M., &amp; Linkersdörfer, J. (2025). ABCDscores: An R package for computing summary scores in the ABCD Study. bioRxiv. https://doi.org/10.1101/2025.09.04.674066</span></span></code></pre></div>
 <p>Alternatively you can call functions directly, without loading the
 package, using <code>::</code>, e.g.,
 <code>ABCDscores::name_of_function(...)</code></p>
@@ -89,11 +93,11 @@ package, using <code>::</code>, e.g.,
 <h3 id="data-preparation">Data preparation<a class="anchor" aria-label="anchor" href="#data-preparation"></a>
 </h3>
 <p>To compute summary scores, you’ll need to have downloaded data from
-the ABCD Study<sup>®</sup>. To request access to the data, visit the <a href="https://nbdc-datahub.org/" class="external-link">NIH Brain Development Cohorts (NBDC)
-Data Hub</a>. Once you have access, you can use different tools to
+the ABCD Study<sup>®</sup>. To request access to the data, visit the <a href="https://www.nbdc-datahub.org/" class="external-link">NIH Brain Development Cohorts
+(NBDC) Data Hub</a> Once you have access, you can use different tools to
 access and download the data; they are described in more detail in the
-<a href="https://docs.abcdstudy.org/latest/tools/data_tools.html" class="external-link">ABCD
-data documentation</a>.</p>
+<a href="https://docs.abcdstudy.org/latest/tools/tools.html" class="external-link">ABCD data
+documentation</a>.</p>
 <p>Here we assume that you created a dataset containing the variables
 you want to summarize in <a href="https://abcd.deapscience.com/" class="external-link">DEAP</a> and downloaded it in the
 <code>rds</code> format. Afterwards, unzip the
@@ -121,7 +125,9 @@ structure and nomenclature of the functions in the package:</p>
 compute the score <code>fc_p_psb_mean</code> is named
 <code><a href="../reference/compute_fc_p_psb_mean.html">compute_fc_p_psb_mean()</a></code>.<a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content='&lt;p&gt;There are a few exceptions to this rule—the summary
 scores in the tables &lt;code&gt;su_y_sui&lt;/code&gt; and &lt;code&gt;su_y_tlfb&lt;/code&gt;
-are computed using higher level functions as explained in the &lt;a href="sui.html"&gt;SUI&lt;/a&gt; and &lt;a href="tlfb.html"&gt;TLFB&lt;/a&gt; vignettes.&lt;/p&gt;'><sup>1</sup></a>
+are computed using higher level functions as explained in the &lt;a href="https://software.nbdc-datahub.org/ABCDscores/articles/sui.html"&gt;SUI&lt;/a&gt;
+and &lt;a href="https://software.nbdc-datahub.org/ABCDscores/articles/tlfb.html"&gt;TLFB&lt;/a&gt;
+vignettes.&lt;/p&gt;'><sup>1</sup></a>
 </li>
 <li>For any given measure/table, there exists a high-level
 <code>compute_&lt;table_name&gt;_all()</code> function that computes all
@@ -138,8 +144,9 @@ summarizes are typically provided as a character vector named
 columns that are summarized by the <code>fc_p_psb_mean</code> function
 is named <code>vars_fc_p_psb</code>.</li>
 </ul>
-<p>The <a href="../reference/index.html">references page</a> provides a
-list of all available functions and their parameters.</p>
+<p>The <a href="https://software.nbdc-datahub.org/ABCDscores/reference/index.html">references
+page</a> provides a list of all available functions and their
+parameters.</p>
 </div>
 <div class="section level3">
 <h3 id="basic-usage">Basic usage<a class="anchor" aria-label="anchor" href="#basic-usage"></a>
@@ -408,11 +415,13 @@ other rows contain <code>777</code> or <code>999</code> or
 </h3>
 <p>The <code>compute_&lt;score_name&gt;()</code> functions are the main
 functions to compute summary scores, with one summary score function for
-each score (besides a few exceptions that are documented in the other <a href="index.html">vignettes</a>). However, to be more concise, the main
-functions often use utility functions. These utility functions are not
-necessarily meant to be used directly by users of this package, but they
-are documented and exported for transparency and reproducibility. For
-the documentation of these functions, see the <a href="../reference/index.html#utility-functions">reference page</a>.</p>
+each score (besides a few exceptions that are documented in the other <a href="https://software.nbdc-datahub.org/ABCDscores/articles/">vignettes</a>).
+However, to be more concise, the main functions often use utility
+functions. These utility functions are not necessarily meant to be used
+directly by users of this package, but they are documented and exported
+for transparency and reproducibility. For the documentation of these
+functions, see the <a href="https://software.nbdc-datahub.org/ABCDscores/reference/index.html">reference
+page</a>.</p>
 </div>
 </div>
 
@@ -423,11 +432,11 @@ the documentation of these functions, see the <a href="../reference/index.html#u
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Janosch Linkersdoerfer, Le Zhang, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer.</p>
+  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>

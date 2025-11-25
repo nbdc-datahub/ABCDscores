@@ -1,0 +1,72 @@
+# Compute "Pubertal Development Scale & Menstrual Cycle Survey History \[Youth\] (Male): Approximate tanner stages"
+
+Computes the summary score `ph_y_pds__m_categ` Pubertal Development
+Scale & Menstrual Cycle Survey History \[Youth\] (Male): Approximate
+tanner stages \[Validation: No more than 0 missing or declined\]
+
+- *Summarized variables:*
+
+  - `ph_y_pds_002`
+
+  - `ph_y_pds__m_001`
+
+  - `ph_y_pds__m_002`
+
+- *Excluded values:*
+
+  - 777
+
+  - 999
+
+- *Validation criterion:* maximally 0 items missing
+
+## Usage
+
+``` r
+vars_ph_y_pds__m_categ
+
+compute_ph_y_pds__m_categ(
+  data,
+  name = "ph_y_pds__m_categ",
+  combine = TRUE,
+  exclude = c("777", "999"),
+  max_na = 0
+)
+```
+
+## Format
+
+vars_ph_y_pds\_\_m is a character vector of all column names used to
+compute summary score of `ph_y_pds__m_categ` and
+`ph_y_pds__m__categ_nm`.
+
+## Arguments
+
+- data:
+
+  tbl. Data frame containing the columns to be summarized.
+
+- name:
+
+  character. Name of the summary score column.
+
+- combine:
+
+  logical. If `TRUE` (default), the summary score is is appended as a
+  new column to the input data frame. If `FALSE`, the summary score is
+  returned as a separate one-column data frame.
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
+
+- max_na:
+
+  numeric, positive whole number. Number of missing items allowed.
+  `NULL` means no limit.
+
+## Value
+
+tbl. The input data frame with the summary score appended as a new
+column.
