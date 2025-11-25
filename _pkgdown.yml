@@ -328,6 +328,7 @@ reference:
   - get_tscore_tbl
   - md_bullet
   - check_assign_na
+  - create_session_num
   - check_col_names
   - compute_age
   - convert_time_mctq

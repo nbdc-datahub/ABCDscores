@@ -26,11 +26,11 @@ Munich Chronotype Questionnaire [Youth] (Chronotype): Time
 \item \emph{Summarized variables:}
 \itemize{
 \item \code{ph_y_mctq__fd_007}
-\item \code{ph_y_mctq__fd__sleep_dur} (intermediate score)
-\item \code{ph_y_mctq__sd__sleep_dur} (intermediate score)
+\item \code{ph_y_mctq__fd__sleep_period} (intermediate score)
+\item \code{ph_y_mctq__sd__sleep_period} (intermediate score)
 \item \code{ph_y_mctq__fd__sleep__mid__36h_t} (intermediate score)
 \item \code{ph_y_mctq__fd__sleep__onset__36h_t} (intermediate score)
-\item \code{ph_y_mctq__sleep_dur} (intermediate score)
+\item \code{ph_y_mctq__sleep_period} (intermediate score)
 }
 \item \emph{Excluded values:} none
 }

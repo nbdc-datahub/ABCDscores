@@ -18,7 +18,7 @@ This super function computes all scores in PPS using all the
 \strong{default} arguments.
 }
 \details{
-Make sure the \code{data} is the full set of all variables from MCTQ.
+Make sure the \code{data} is the full set of all variables from PPS
 }
 \examples{
 \dontrun{

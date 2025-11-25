@@ -5121,9 +5121,17 @@ compute_ph_y_mctq__school__leave__24h_t <- function(
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__school_001`
 #'     - `ph_y_mctq__school_001__01`
-#'     - `ph_y_mctq__school_001__v01`
-#'     - `ph_y_mctq__school_001__01__v1`
+#'     - `ph_y_mctq__school_001__v01` (>= 7.0.0)
+#'     - `ph_y_mctq__school_001__01__v1` (>= 7.0.0)
 #' - *Excluded values:* none
+#'
+#' @details
+#' In data release before 7.0 and 7.0.0 of the ABCDscores package,
+#' the variables `ph_y_mctq__school_001__v01` and
+#' `ph_y_mctq__school_001__01__v1` were
+#' not available. In this case, the function will create
+#' these variables internally and fill them with `NA` values.
+#' After 7.0.0, these variables are expected to be present.
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
 #' @return tbl. The input data frame with the summary score appended as
@@ -5150,8 +5158,27 @@ compute_ph_y_mctq__sd_count <- function(
     combine = TRUE) {
   chk::check_data(data)
   chk::chk_logical(combine)
+
+  data_aug <- data
+  if (utils::packageVersion("ABCDscores") < "7.0.0") {
+    optional_cols <- c(
+      "ph_y_mctq__school_001__v01",
+      "ph_y_mctq__school_001__01__v1"
+    )
+    missing_optional <- setdiff(optional_cols, names(data))
+
+    if (length(missing_optional) > 0) {
+      na_cols <- setNames(
+        rep(list(NA_real_), length(missing_optional)),
+        missing_optional
+      )
+      data_aug <- data_aug |>
+        mutate(!!!na_cols)
+    }
+  }
+
   chk::check_names(
-    data,
+    data_aug,
     c(
       "ph_y_mctq__school_001",
       "ph_y_mctq__school_001__01",
@@ -5159,9 +5186,9 @@ compute_ph_y_mctq__sd_count <- function(
       "ph_y_mctq__school_001__01__v1"
     )
   )
-  check_col_names(data, name)
+  check_col_names(data_aug, name)
 
-  data_ss <- data |>
+  data_ss <- data_aug |>
     mutate(
       across(
         all_of(
@@ -6066,7 +6093,7 @@ compute_ph_y_mctq__sd__sleep__onset__36h_t <- function(
   check_col_names(data, name)
 
   data_ss <- data |>
-    compute_ph_y_mctq__fd__sleep__start__36h_t(
+    compute_ph_y_mctq__sd__sleep__start__36h_t(
       name = "ph_y_mctq__sd__sleep__start__36h_t_internal"
     ) |>
     compute_ph_y_mctq__sd__sleep_latent(
@@ -6192,7 +6219,7 @@ compute_ph_y_mctq__sd__sleep__onset__24h_t <- function(
   check_col_names(data, name)
 
   data_ss <- data |>
-    compute_ph_y_mctq__fd__sleep__start__24h_t(
+    compute_ph_y_mctq__sd__sleep__start__24h_t(
       name = "ph_y_mctq__sd__sleep__start__24h_t_internal"
     ) |>
     compute_ph_y_mctq__sd__sleep_latent(
@@ -6697,18 +6724,18 @@ compute_ph_y_mctq__fd__sleep__mid__24h_t <- function(
     compute_ph_y_mctq__fd__sleep__onset__24h_t(
       name = "ph_y_mctq__fd__sleep__onset__24h_t_internal"
     ) |>
-    compute_ph_y_mctq__fd__sleep_dur(
-      name = "ph_y_mctq__fd__sleep_dur_internal"
+    compute_ph_y_mctq__fd__sleep_period(
+      name = "ph_y_mctq__fd__sleep_period_internal"
     ) |>
     mutate(
       "{name}" :=
         round(
           ph_y_mctq__fd__sleep__onset__24h_t_internal +
-            (ph_y_mctq__fd__sleep_dur_internal) / 2 +
+            (ph_y_mctq__fd__sleep_period_internal) / 2 +
             if_else(
               (
                 ph_y_mctq__fd__sleep__onset__24h_t_internal +
-                  ph_y_mctq__fd__sleep_dur_internal / 2
+                  ph_y_mctq__fd__sleep_period_internal / 2
               ) >= 24,
               -24,
               0
@@ -6767,7 +6794,7 @@ compute_ph_y_mctq__fd__sleep__mid__36h_t <- function(
       name = "ph_y_mctq__fd__sleep_period_internal"
     ) |>
     mutate(
-      "{name}" := # "ph_y_mctq__fd__sleep__mid__36h_t
+      "{name}" :=
         ph_y_mctq__fd__sleep__onset__36h_t_internal2 +
         (ph_y_mctq__fd__sleep_period_internal / 2) +
         if_else(
@@ -6826,18 +6853,18 @@ compute_ph_y_mctq__sd__sleep__mid__24h_t <- function(
     compute_ph_y_mctq__sd__sleep__onset__24h_t(
       name = "ph_y_mctq__sd__sleep__onset__24h_t_internal"
     ) |>
-    compute_ph_y_mctq__sd__sleep_dur(
-      name = "ph_y_mctq__sd__sleep_dur_internal"
+    compute_ph_y_mctq__sd__sleep_period(
+      name = "ph_y_mctq__sd__sleep_period_internal"
     ) |>
     mutate(
       "{name}" :=
         round(
           ph_y_mctq__sd__sleep__onset__24h_t_internal +
-            (ph_y_mctq__sd__sleep_dur_internal) / 2 +
+            (ph_y_mctq__sd__sleep_period_internal) / 2 +
             if_else(
               (
                 ph_y_mctq__sd__sleep__onset__24h_t_internal +
-                  ph_y_mctq__sd__sleep_dur_internal / 2
+                  ph_y_mctq__sd__sleep_period_internal / 2
               ) >= 24,
               -24,
               0
@@ -6919,8 +6946,8 @@ compute_ph_y_mctq__sleep_dur <- function(
 #' Munich Chronotype Questionnaire \[Youth\] (Sleep): Loss
 #'
 #' - *Summarized variables:*
-#'     - `ph_y_mctq__fd__sleep_dur` (intermediate score)
-#'     - `ph_y_mctq__sd__sleep_dur` (intermediate score)
+#'     - `ph_y_mctq__fd__sleep_period` (intermediate score)
+#'     - `ph_y_mctq__sd__sleep_period` (intermediate score)
 #'     - `ph_y_mctq__sd_count` (intermediate score)
 #' - *Excluded values:* none
 #'
@@ -6946,11 +6973,11 @@ compute_ph_y_mctq__sleep_loss <- function(
   chk::chk_logical(combine)
 
   data_ss <- data |>
-    compute_ph_y_mctq__fd__sleep_dur(
-      name = "ph_y_mctq__fd__sleep_dur_internal"
+    compute_ph_y_mctq__fd__sleep_period(
+      name = "ph_y_mctq__fd__sleep_period_internal"
     ) |>
-    compute_ph_y_mctq__sd__sleep_dur(
-      name = "ph_y_mctq__sd__sleep_dur_internal"
+    compute_ph_y_mctq__sd__sleep_period(
+      name = "ph_y_mctq__sd__sleep_period_internal"
     ) |>
     compute_ph_y_mctq__sd_count(
       name = "ph_y_mctq__sd_count_internal"
@@ -6958,8 +6985,8 @@ compute_ph_y_mctq__sleep_loss <- function(
     mutate(
       "{name}" :=
         abs(
-          ph_y_mctq__fd__sleep_dur_internal -
-            ph_y_mctq__sd__sleep_dur_internal
+          ph_y_mctq__fd__sleep_period_internal -
+            ph_y_mctq__sd__sleep_period_internal
         ) *
           (7 - ph_y_mctq__sd_count_internal) * ph_y_mctq__sd_count_internal / 7
     ) |>
@@ -7183,11 +7210,11 @@ compute_ph_y_mctq__raw__36h_chrono <- function(
 #'
 #' - *Summarized variables:*
 #'     - `ph_y_mctq__fd_007`
-#'     - `ph_y_mctq__fd__sleep_dur` (intermediate score)
-#'     - `ph_y_mctq__sd__sleep_dur` (intermediate score)
+#'     - `ph_y_mctq__fd__sleep_period` (intermediate score)
+#'     - `ph_y_mctq__sd__sleep_period` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep__mid__36h_t` (intermediate score)
 #'     - `ph_y_mctq__fd__sleep__onset__36h_t` (intermediate score)
-#'     - `ph_y_mctq__sleep_dur` (intermediate score)
+#'     - `ph_y_mctq__sleep_period` (intermediate score)
 #' - *Excluded values:* none
 #'
 #' @inheritParams compute_ph_y_mctq__fd__bed__start__36h_t
@@ -7213,11 +7240,11 @@ compute_ph_y_mctq_chrono <- function(
   check_col_names(data, name)
 
   data_ss <- data |>
-    compute_ph_y_mctq__fd__sleep_dur(
-      name = "ph_y_mctq__fd__sleep_dur_internal2"
+    compute_ph_y_mctq__fd__sleep_period(
+      name = "ph_y_mctq__fd__sleep_period_internal2"
     ) |>
-    compute_ph_y_mctq__sd__sleep_dur(
-      name = "ph_y_mctq__sd__sleep_dur_internal2"
+    compute_ph_y_mctq__sd__sleep_period(
+      name = "ph_y_mctq__sd__sleep_period_internal2"
     ) |>
     compute_ph_y_mctq__fd__sleep__mid__36h_t(
       name = "ph_y_mctq__fd__sleep__mid__36h_t_internal"
@@ -7225,23 +7252,23 @@ compute_ph_y_mctq_chrono <- function(
     compute_ph_y_mctq__fd__sleep__onset__36h_t(
       name = "ph_y_mctq__fd__sleep__onset__36h_t_internal2"
     ) |>
-    compute_ph_y_mctq__sleep_dur(
-      name = "ph_y_mctq__sleep_dur_internal"
+    compute_ph_y_mctq__sleep_period(
+      name = "ph_y_mctq__sleep_period_internal"
     ) |>
     mutate(
       "{name}" :=
         if_else(
           ph_y_mctq__fd_007 == 0,
           if_else(
-            ph_y_mctq__fd__sleep_dur_internal2 <=
-              ph_y_mctq__sd__sleep_dur_internal2,
+            ph_y_mctq__fd__sleep_period_internal2 <=
+              ph_y_mctq__sd__sleep_period_internal2,
             ph_y_mctq__fd__sleep__mid__36h_t_internal,
             ph_y_mctq__fd__sleep__onset__36h_t_internal2 +
-              ph_y_mctq__sleep_dur_internal / 2 +
+              ph_y_mctq__sleep_period_internal / 2 +
               if_else(
                 (
                   ph_y_mctq__fd__sleep__onset__36h_t_internal2 +
-                    ph_y_mctq__sleep_dur_internal / 2
+                    ph_y_mctq__sleep_period_internal / 2
                 ) >= 36,
                 -24,
                 0

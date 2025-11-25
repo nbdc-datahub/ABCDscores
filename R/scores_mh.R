@@ -4654,7 +4654,7 @@ compute_mh_p_eatq__ss__surg_nm <- function(
 #' @export
 #' @autoglobal
 #' @details
-#' Make sure the `data` is the full set of all variables from MCTQ.
+#' Make sure the `data` is the full set of all variables from EATQ
 #' @examples
 #' \dontrun{
 #' compute_mh_p_eatq_all(data)
@@ -14287,7 +14287,7 @@ compute_mh_y_pps__severity_mean <- function(
 #' @export
 #' @autoglobal
 #' @details
-#' Make sure the `data` is the full set of all variables from MCTQ.
+#' Make sure the `data` is the full set of all variables from PPS
 #' @examples
 #' \dontrun{
 #' compute_mh_y_pps_all(data)

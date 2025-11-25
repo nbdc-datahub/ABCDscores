@@ -100,6 +100,7 @@ ss_mean <- function(data,
           NA,
           .x
         ) |>
+          as.character() |>
           as.numeric()
       ),
       "{name}" := if_else(
@@ -224,6 +225,7 @@ ss_sum <- function(data,
           NA,
           .x
         ) |>
+          as.character() |>
           as.numeric()
       ),
       "{name}" := if_else(
@@ -612,6 +614,7 @@ ss_max <- function(data,
           NA,
           .x
         ) |>
+          as.character() |>
           as.numeric()
       ),
       "{name}" := if_else(
@@ -985,6 +988,7 @@ ss_count_cond <- function(data,
           NA,
           .x
         ) |>
+          as.character() |>
           as.numeric()
       )
     ) |>
@@ -1112,6 +1116,7 @@ ss_mean_pos <- function(data,
           NA,
           .x
         ) |>
+          as.character() |>
           as.numeric()
       ),
       across(
@@ -1444,10 +1449,14 @@ combine_levels <- function(data,
 #' Check an output field and assign NA when input variables all have NAs
 #'
 #' @description
-#' Checks the specified output column in a data frame and assigns NA to its value depending on the missingness of a set of input columns.
-#' If `allow_missingness = TRUE`, the output column is set to NA only when *all* the specified input columns are NA.
-#' If `allow_missingness = FALSE`, the output column is set to NA when *any* of the input columns are NA.
-#' This function is useful for propagating missingness from input variables to a derived output.
+#' Checks the specified output column in a data frame and assigns NA to its
+#' value depending on the missingness of a set of input columns.
+#' If `allow_missingness = TRUE`, the output column is set to NA only when *all*
+#' the specified input columns are NA.
+#' If `allow_missingness = FALSE`, the output column is set to NA when *any* of
+#' the input columns are NA.
+#' This function is useful for propagating missingness from input variables
+#' to a derived output.
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param output character of length 1. The name of the first variable/column.
@@ -1515,6 +1524,82 @@ check_assign_na <- function(data, output, input, allow_missingness = TRUE) {
         )
       )
   }
+}
+
+#' Creates a new column by converting session_id column into a numeric
+#'
+#' @description
+#' Creates a new column which contains the parsed numeric value for the
+#' visit. Annual visits are set to integers, where 0 = baseline, 1 = year 1,
+#' and so on. Mid-years are defined as 0.5 increments of the
+#' prior annual visits, e.g., 0.5 = between baseline and year 1,
+#' 1.5 = between year 1 and 2, and so on.
+#'
+#' @param data tbl. Data frame containing the `session_id` column.
+#' @param name character of length 1. The name of the newly created and appended
+#' column. Default: `session_num`
+#'
+#' @return tbl. The input data frame with the `name` column added.
+#' @export
+#' @autoglobal
+#'
+#' @examples
+#' # Example data
+#' dat <- tibble::tibble(
+#'   participant_id = c("A123", "A123", "A123", "A123"),
+#'   session_id = c("ses-00S", "ses-00A", "ses-00M", "ses-01A"),
+#'   a = c(1, 2, 3, 4),
+#'   b = c(10, 11, 12, NA)
+#' )
+#'
+#' # Create a new column (default: `session_num`) with numeric session
+#' create_session_num(
+#'   dat
+#' )
+#'
+#' # Create a new column called `num` that contains the session numbers
+#' create_session_num(
+#'   dat,
+#'   name = "num"
+#' )
+#'
+create_session_num <- function(data, name = "session_num") {
+  chk::chk_data(data)
+  chk::chk_character(name)
+  chk::chk_scalar(name)
+  chk::check_names(data, "session_id")
+
+  key <- data.frame(
+    session_id = unique(data$session_id)
+  ) |>
+    mutate(
+      num = stringr::str_remove(
+        session_id,
+        "ses-"
+      ),
+      num = case_when(
+        stringr::str_detect(num, stringr::fixed("S")) ~ NA,
+        stringr::str_detect(num, stringr::fixed("A")) ~ readr::parse_number(num),
+        .default = readr::parse_number(num) + 0.5
+      )
+    ) |>
+    select(
+      session_id,
+      num
+    )
+
+  data |>
+    left_join(
+      key,
+      join_by(session_id)
+    ) |>
+    relocate(
+      num,
+      .after = session_id
+    ) |>
+    rename(
+      !!name := num
+    )
 }
 
 #' Compute time interval between two dates

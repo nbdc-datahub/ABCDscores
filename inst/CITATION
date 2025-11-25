@@ -1,0 +1,27 @@
+citHeader("To cite ABCDscores in publications use:")
+
+citEntry(
+  entry    = "article",
+  title    = "ABCDscores: An R package for computing summary scores in the ABCD Study",
+  author   = c(
+    person(given = "Le", family = "Zhang"),
+    person(given = "Olivier", family = "Celhay"),
+    person(given = "Biplabendu", family = "Das"),
+    person(given = "Samantha", family = "Berman"),
+    person(given = c("Laura", "R."), family = "Ziemer"),
+    person(given = c("Calen", "J."), family = "Smith"),
+    person(given = c("Anders", "M."), family = "Dale"),
+    person(given = "Janosch", family = "Linkersdörfer")
+  ),
+  journal   = "bioRxiv",
+  year      = "2025",
+  doi       = "10.1101/2025.09.04.674066",
+  url       = "https://www.biorxiv.org/content/early/2025/09/09/2025.09.04.674066.1",
+  publisher = "Cold Spring Harbor Laboratory",
+  note      = "elocation-id: 2025.09.04.674066",
+  textVersion = paste(
+    "Zhang, L., Celhay, O., Das, B., Berman, S., Ziemer, L. R., Smith, C. J., Dale, A. M., & Linkersdörfer, J. (2025).",
+    "ABCDscores: An R package for computing summary scores in the ABCD Study.",
+    "bioRxiv. doi:10.1101/2025.09.04.674066"
+  )
+)

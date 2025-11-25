@@ -208,6 +208,7 @@ utils::globalVariables(c(
   # <combine_cols>
   # <combine_levels>
   # <check_assign_na>
+  # <create_session_num>
   # <make_static>
   ":=",
   # <compute_nt_y_stq__screen__wkdy_nm>
@@ -439,6 +440,8 @@ utils::globalVariables(c(
   "nt_p_yst__wknd__min_001",
   # <compute_nt_p_yst__screen__wknd_sum>
   "nt_p_yst__wknd__min_001__v01",
+  # <create_session_num>
+  "num",
   # <compute_ab_g_stc__cohort_ethnrace__meim>
   # <compute_ab_g_stc__cohort_ethn>
   # <compute_ab_g_stc__cohort_race__nih>
@@ -599,13 +602,10 @@ utils::globalVariables(c(
   "ph_y_mctq__fd__sleep__start__36h_t_internal",
   # <compute_ph_y_mctq__fd__sleep_dur>
   "ph_y_mctq__fd__sleep__waso_sum_internal",
-  # <compute_ph_y_mctq__fd__sleep__mid__24h_t>
   # <compute_ph_y_mctq__sleep_dur>
-  # <compute_ph_y_mctq__sleep_loss>
   # <compute_ph_y_mctq_outlier>
   "ph_y_mctq__fd__sleep_dur_internal",
   # <compute_ph_y_mctq__raw__36h_chrono>
-  # <compute_ph_y_mctq_chrono>
   "ph_y_mctq__fd__sleep_dur_internal2",
   # <compute_ph_y_mctq__fd__bed__end__36h_t>
   # <compute_ph_y_mctq__fd__bed__end__24h_t>
@@ -613,9 +613,13 @@ utils::globalVariables(c(
   # <compute_ph_y_mctq__fd__sleep__onset__36h_t>
   # <compute_ph_y_mctq__fd__sleep__onset__24h_t>
   "ph_y_mctq__fd__sleep_latent_internal",
+  # <compute_ph_y_mctq__fd__sleep__mid__24h_t>
   # <compute_ph_y_mctq__fd__sleep__mid__36h_t>
+  # <compute_ph_y_mctq__sleep_loss>
   # <compute_ph_y_mctq__sleep_period>
   "ph_y_mctq__fd__sleep_period_internal",
+  # <compute_ph_y_mctq_chrono>
+  "ph_y_mctq__fd__sleep_period_internal2",
   # <compute_ph_y_mctq__fd__sleep_latent>
   "ph_y_mctq__fd_003",
   # <compute_ph_y_mctq__fd__sleep_inertia>
@@ -655,13 +659,10 @@ utils::globalVariables(c(
   "ph_y_mctq__sd__sleep__start__36h_t_internal",
   # <compute_ph_y_mctq__sd__sleep_dur>
   "ph_y_mctq__sd__sleep__waso_sum_internal",
-  # <compute_ph_y_mctq__sd__sleep__mid__24h_t>
   # <compute_ph_y_mctq__sleep_dur>
-  # <compute_ph_y_mctq__sleep_loss>
   # <compute_ph_y_mctq_outlier>
   "ph_y_mctq__sd__sleep_dur_internal",
   # <compute_ph_y_mctq__raw__36h_chrono>
-  # <compute_ph_y_mctq_chrono>
   "ph_y_mctq__sd__sleep_dur_internal2",
   # <compute_ph_y_mctq__sd__bed__end__36h_t>
   # <compute_ph_y_mctq__sd__bed__end__24h_t>
@@ -669,9 +670,13 @@ utils::globalVariables(c(
   # <compute_ph_y_mctq__sd__sleep__onset__36h_t>
   # <compute_ph_y_mctq__sd__sleep__onset__24h_t>
   "ph_y_mctq__sd__sleep_latent_internal",
+  # <compute_ph_y_mctq__sd__sleep__mid__24h_t>
+  # <compute_ph_y_mctq__sleep_loss>
   # <compute_ph_y_mctq__sd__sleep__mid__36h_t>
   # <compute_ph_y_mctq__sleep_period>
   "ph_y_mctq__sd__sleep_period_internal",
+  # <compute_ph_y_mctq_chrono>
+  "ph_y_mctq__sd__sleep_period_internal2",
   # <compute_ph_y_mctq__sd__sleep_latent>
   "ph_y_mctq__sd_003",
   # <compute_ph_y_mctq__sd__sleep_inertia>
@@ -682,8 +687,9 @@ utils::globalVariables(c(
   # <compute_ph_y_mctq__sleep_period>
   "ph_y_mctq__sd_count_internal",
   # <compute_ph_y_mctq__raw__36h_chrono>
-  # <compute_ph_y_mctq_chrono>
   "ph_y_mctq__sleep_dur_internal",
+  # <compute_ph_y_mctq_chrono>
+  "ph_y_mctq__sleep_period_internal",
   # <compute_tlfb_mean>
   "qty",
   # <compute_tlfb_maxdose>
@@ -707,8 +713,16 @@ utils::globalVariables(c(
   "serving",
   # <compute_ab_g_stc__cohort_race__nih>
   # <compute_ab_g_stc__cohort_ethnrace__mblack>
+  # <compute_fc_p_vs__famil_mean>
+  # <compute_fc_p_vs__famil_nm>
+  # <compute_fc_p_vs__famil_mean__v01>
+  # <compute_fc_p_vs__famil_nm__v01>
   # <compute_fc_y_eut__ethn_mean>
   # <compute_fc_y_eut__ethn_nm>
+  # <compute_fc_y_vs__famil_mean>
+  # <compute_fc_y_vs__famil_nm>
+  # <compute_fc_y_vs__famil_mean__v01>
+  # <compute_fc_y_vs__famil_nm__v01>
   # <compute_ph_p_dhx_birthweight>
   # <compute_ph_p_otbi_nm>
   # <compute_ph_p_otbi__loc__30m_count>
@@ -728,7 +742,17 @@ utils::globalVariables(c(
   # <compute_tlfb_totdose>
   # <compute_tlfb_ud>
   # <filter_co_use>
+  # <create_session_num>
   "session_id",
+  # <compute_fc_p_vs__famil_mean>
+  # <compute_fc_p_vs__famil_nm>
+  # <compute_fc_p_vs__famil_mean__v01>
+  # <compute_fc_p_vs__famil_nm__v01>
+  # <compute_fc_y_vs__famil_mean>
+  # <compute_fc_y_vs__famil_nm>
+  # <compute_fc_y_vs__famil_mean__v01>
+  # <compute_fc_y_vs__famil_nm__v01>
+  "session_num",
   # <compute_mh_p_ple__severity__good_sum>
   # <compute_mh_p_ple__severity__good_mean>
   # <compute_mh_p_ple__severity__bad_sum>

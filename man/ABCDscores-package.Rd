@@ -4,9 +4,13 @@
 \name{ABCDscores-package}
 \alias{ABCDscores}
 \alias{ABCDscores-package}
-\title{ABCDscores: Summary Scores of the Adolescent Brain Cognitive Development Study}
+\title{ABCDscores: Summary Scores of the Adolescent Brain Cognitive Development (ABCD) Study}
 \description{
-This package provides functions to compute summary scores (besides proprietary ones) reported in the tabulated data resource that is released by the Adolescent Brain Cognitive Development (ABCD) study. Feldstein Ewing and Luciana (2018) \url{https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32}.
+Provides functions to compute summary scores (besides proprietary ones) reported in the tabulated data resource that is released by the Adolescent Brain Cognitive Development (ABCD) study. Feldstein Ewing and Luciana (2018) \url{https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32}. See Zhang et al. (2025) \url{https://doi.org/10.1101/2025.09.04.674066} for details about the package design and implementation.
+}
+\references{
+Zhang, L., Celhay, O., Das, B., Berman, S., Ziemer, L. R., Smith, C. J., Dale, A. M., & Linkersdörfer, J. (2025).
+ABCDscores: An R package for computing summary scores in the ABCD Study. \emph{bioRxiv}. \doi{10.1101/2025.09.04.674066}
 }
 \seealso{
 Useful links:
@@ -16,11 +20,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Janosch Linkersdoerfer \email{dairc.service@gmail.com} (\href{https://orcid.org/0000-0002-1577-1233}{ORCID})
+\strong{Maintainer}: Le Zhang \email{dairc.service@gmail.com} (\href{https://orcid.org/0009-0008-0205-2150}{ORCID})
 
 Authors:
 \itemize{
-  \item Le Zhang \email{lezhang100@gmail.com} (\href{https://orcid.org/0009-0008-0205-2150}{ORCID})
+  \item Janosch Linkersdoerfer \email{linkersdoerfer@gmail.com} (\href{https://orcid.org/0000-0002-1577-1233}{ORCID})
   \item Olivier Celhay \email{olivier.celhay@gmail.com} (\href{https://orcid.org/0000-0002-2971-9110}{ORCID})
   \item Biplabendu Das \email{biplabendu.das@gmail.com} (\href{https://orcid.org/0000-0003-0855-262X}{ORCID})
   \item Sammy Berman \email{sammyberman@gmail.com} (\href{https://orcid.org/0000-0002-9803-019X}{ORCID})

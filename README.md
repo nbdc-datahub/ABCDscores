@@ -43,8 +43,16 @@ data release, starting with the introduction of the package with release
 | Release version | Package version |
 |:----------------|:----------------|
 | 6.0             | 6.0.0           |
+| 6.1             | 6.1.0           |
 
 ## Installation
+
+To install the *latest version* of `ABCDscores` from CRAN, use the
+following command:
+
+``` r
+install.packages("ABCDscores")
+```
 
 To install the *latest version* of `ABCDscores` from
 [GitHub](https://github.com/nbdc-datahub/ABCDscores), use the following
@@ -88,9 +96,10 @@ for information on how to report issues with the data resource).
 
 ## Citation
 
-<!-- If you use any summary scores from ABCD data release or compute summary scores -->
+If you use any summary scores from ABCD data release or compute summary
+scores using this package, please kindly cite the following paper:
 
-<!-- using this package, please kindly cite the following paper: -->
-
-*We are currently preparing a paper about `ABCDscores`. The reference
-will be added here once the paper is published.*
+> Zhang, L., Celhay, O., Das, B., Berman, S., Ziemer, L. R., Smith, C.
+> J., Dale, A. M., & Linkersdörfer, J. (2025). *ABCDscores: An R package
+> for computing summary scores in the ABCD Study®*. bioRxiv.
+> <https://doi.org/10.1101/2025.09.04.674066>

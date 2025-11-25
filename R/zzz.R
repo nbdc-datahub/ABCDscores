@@ -6,14 +6,15 @@
     ))
     packageStartupMessage(glue::glue(
       "This package is developed by the ABCD Data Analysis, Informatics & ",
-      "Resource Center (DAIRC) at the J. Craig Venter Institute (JCVI)"
+      "Resource Center (DAIRC) at the J. Craig Venter Institute (JCVI)."
     ))
-    # TODO uncomment once we have a paper
-    # packageStartupMessage(glue::glue(
-    #   "If `ABCDscores` is helpful to your research, ",
-    #   "please kindly cite it as:\n",
-    #   "L Zhang, xxx & J Linkersdörfer. ABCDscores: xxx. 2025. xxx",
-    # ))
+    packageStartupMessage(glue::glue(
+      "If `ABCDscores` is helpful to your research, please cite:\n",
+      "Zhang, L., Celhay, O., Das, B., Berman, S., Ziemer, L. R., Smith, C. J., ",
+      "Dale, A. M., & Linkersd\u00f6rfer, J. (2025). ",
+      "ABCDscores: An R package for computing summary scores in the ABCD Study. ",
+      "bioRxiv. https://doi.org/10.1101/2025.09.04.674066"
+    ))
     options(abcdscores_start_msg_displayed = TRUE)
   }
 }

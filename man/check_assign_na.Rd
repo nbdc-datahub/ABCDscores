@@ -22,10 +22,14 @@ have missingness.}
 tbl. The input data frame with the \code{output} column modified.
 }
 \description{
-Checks the specified output column in a data frame and assigns NA to its value depending on the missingness of a set of input columns.
-If \code{allow_missingness = TRUE}, the output column is set to NA only when \emph{all} the specified input columns are NA.
-If \code{allow_missingness = FALSE}, the output column is set to NA when \emph{any} of the input columns are NA.
-This function is useful for propagating missingness from input variables to a derived output.
+Checks the specified output column in a data frame and assigns NA to its
+value depending on the missingness of a set of input columns.
+If \code{allow_missingness = TRUE}, the output column is set to NA only when \emph{all}
+the specified input columns are NA.
+If \code{allow_missingness = FALSE}, the output column is set to NA when \emph{any} of
+the input columns are NA.
+This function is useful for propagating missingness from input variables
+to a derived output.
 }
 \examples{
 # Example data

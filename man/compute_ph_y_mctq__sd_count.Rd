@@ -27,11 +27,19 @@ Munich Chronotype Questionnaire [Youth] (School Day): Count
 \itemize{
 \item \code{ph_y_mctq__school_001}
 \item \code{ph_y_mctq__school_001__01}
-\item \code{ph_y_mctq__school_001__v01}
-\item \code{ph_y_mctq__school_001__01__v1}
+\item \code{ph_y_mctq__school_001__v01} (>= 7.0.0)
+\item \code{ph_y_mctq__school_001__01__v1} (>= 7.0.0)
 }
 \item \emph{Excluded values:} none
 }
+}
+\details{
+In data release before 7.0 and 7.0.0 of the ABCDscores package,
+the variables \code{ph_y_mctq__school_001__v01} and
+\code{ph_y_mctq__school_001__01__v1} were
+not available. In this case, the function will create
+these variables internally and fill them with \code{NA} values.
+After 7.0.0, these variables are expected to be present.
 }
 \examples{
 \dontrun{

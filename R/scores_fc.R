@@ -1115,7 +1115,7 @@ compute_fc_p_vs__relig_nm <- function(
 #' @export
 #' @autoglobal
 #' @rdname compute_fc_p_vs__supp_mean
-#' @format vars_fc_p_vs__supp is a character vector of all column names
+#' @format a character vector of all column names
 #' used to compute summary score of `fc_p_vs__supp`.
 vars_fc_p_vs__supp <- c(
   "fc_p_vs__supp_001",
@@ -1221,6 +1221,327 @@ compute_fc_p_vs__supp_nm <- function(
 }
 
 #   ____________________________________________________________________________
+#   fc_p_vs__famil                                                        ####
+
+#' @export
+#' @autoglobal
+#' @rdname compute_fc_p_vs__famil_mean
+#' @format a character vector of all column names
+#' used to compute summary score of `fc_p_vs__famil_mean` and
+#' `fc_p_vs__famil_nm`.
+vars_fc_p_vs__famil <- c(
+  "fc_p_vs__supp_001",
+  "fc_p_vs__supp_002",
+  "fc_p_vs__supp_003",
+  "fc_p_vs__supp_004",
+  "fc_p_vs__supp_005",
+  "fc_p_vs__supp_006",
+  "fc_p_vs__ref_001",
+  "fc_p_vs__ref_002",
+  "fc_p_vs__ref_003",
+  "fc_p_vs__ref_004",
+  "fc_p_vs__ref_005",
+  "fc_p_vs__obl_001",
+  "fc_p_vs__obl_002",
+  "fc_p_vs__obl_003",
+  "fc_p_vs__obl_004",
+  "fc_p_vs__obl_005"
+)
+
+#' Compute "Values Scale \[Parent\] (Familism):
+#'   Mean - Baseline to Year 5"
+#'
+#' @description
+#' Computes the summary score `fc_p_vs__famil_mean`
+#' (Values Scale \[Parent\] (Familism): Mean - Baseline to Year 5)
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_fc_p_vs__famil |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#' - *Validation criterion:*
+#'    - maximally 3 of 16 items missing
+#'
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @param name character. Name of the summary score. Default is the name in
+#' the description.
+#' @param combine logical. If `TRUE`, the summary score is appended to the
+#' input data frame. If `FALSE`, the summary score is returned as a separate
+#' data frame. Default is `TRUE`.
+#' @param max_na numeric vector of positive whole number. Number of missing
+#'   items allowed (Default: 3).
+#' @param exclude character vector. Values to be excluded from the summary
+#'    score calculation.
+#'
+#' @return tbl. The input data frame with the summary score appended as
+#'   a new column.
+#'
+#' @export
+#' @autoglobal
+compute_fc_p_vs__famil_mean <- function(
+    data,
+    name = "fc_p_vs__famil_mean",
+    max_na = 3,
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::chk_data(data)
+  chk::chk_whole_number(max_na)
+  chk::chk_gte(max_na, 0)
+  chk::check_names(data, "session_id")
+
+  # calculate only up to `ses-05A`
+  tmp_sessions <- data |>
+    create_session_num() |>
+    filter(session_num <= 5) |>
+    pull(session_id) |>
+    unique() |>
+    as.character()
+
+  out <- data |>
+    ss_mean(
+      combine = TRUE,
+      name    = name,
+      vars    = vars_fc_p_vs__famil,
+      max_na  = max_na,
+      events  = tmp_sessions,
+      exclude = exclude
+    ) |>
+    compute_fc_p_vs__supp_mean(name = "tmp_supp") |>
+    compute_fc_p_vs__ref_mean(name = "tmp_ref") |>
+    compute_fc_p_vs__obl_mean(name = "tmp_obl") |>
+    check_assign_na(
+      output = name,
+      input = c("tmp_supp", "tmp_ref", "tmp_obl"),
+      allow_missingness = FALSE
+    ) |>
+    select(
+      -matches("^tmp_")
+    )
+
+  if (combine) {
+    out
+  } else {
+    out |> select(!!name)
+  }
+}
+
+#' Compute "Values Scale \[Parent\] (Familism): Number missing - Baseline to
+#' Year 5"
+#'
+#' @description
+#' Computes the summary score `fc_p_vs__famil_nm__v01`
+#' (Values Scale \[Parent\] (Familism): Number missing - Baseline to Year 5)
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_fc_p_vs__famil |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
+#' @inheritParams compute_fc_p_vs__famil_mean
+#'
+#' @seealso [compute_fc_p_vs__famil_mean()]
+#' @return tbl. The input data frame with the summary score appended as
+#'   a new column.
+#'
+#' @export
+#' @autoglobal
+compute_fc_p_vs__famil_nm <- function(
+    data,
+    name = "fc_p_vs__famil_nm",
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::chk_data(data)
+  chk::check_names(data, "session_id")
+
+  # calculate only up to `ses-05A`
+  tmp_sessions <- data |>
+    create_session_num() |>
+    filter(session_num <= 5) |>
+    pull(session_id) |>
+    unique() |>
+    as.character()
+
+  out <- data |>
+    ss_nm(
+      combine = TRUE,
+      name    = name,
+      vars    = vars_fc_p_vs__famil,
+      events  = tmp_sessions,
+      exclude = exclude
+    )
+
+  if (combine) {
+    out
+  } else {
+    out |> select(!!name)
+  }
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_fc_p_vs__famil_mean__v01
+#' @format a character vector of all column names
+#' used to compute summary score of `fc_p_vs__famil_mean__v01` and
+#' `fc_p_vs__famil_nm__v01`.
+vars_fc_p_vs__famil__v01 <- c(
+  "fc_p_vs__supp_001",
+  "fc_p_vs__supp_002",
+  "fc_p_vs__supp_003",
+  "fc_p_vs__supp_004",
+  "fc_p_vs__supp_005",
+  "fc_p_vs__supp_006",
+  "fc_p_vs__ref_001",
+  "fc_p_vs__ref_002",
+  "fc_p_vs__ref_003",
+  "fc_p_vs__ref_004",
+  "fc_p_vs__ref_005"
+)
+
+
+#' Compute "Values Scale \[Parent\] (Familism):
+#'   Mean - Version 1 (Year 5 onwards)"
+#'
+#' @description
+#' Computes the summary score `fc_p_vs__famil_mean__v01`
+#' (Values Scale \[Parent\] (Familism): Mean - Version 1 (Year 5 onwards))
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_fc_p_vs__famil__v01 |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#' - *Validation criterion:*
+#'    - maximally 2 of 11 items missing
+#'
+#' @inheritParams compute_fc_p_vs__famil_mean
+#' @param max_na numeric vector of positive whole number. Number of missing
+#'   items allowed (Default: 2).
+#'
+#' @seealso [compute_fc_p_vs__famil_mean()]
+#' @return tbl. The input data frame with the summary score appended as
+#'   a new column.
+#'
+#' @export
+#' @autoglobal
+compute_fc_p_vs__famil_mean__v01 <- function(
+    data,
+    name = "fc_p_vs__famil_mean__v01",
+    max_na = 2,
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::chk_data(data)
+  chk::chk_whole_number(max_na)
+  chk::chk_gte(max_na, 0)
+  chk::check_names(data, "session_id")
+
+  # calculate from `ses-06A` onwards
+  tmp_sessions <- data |>
+    create_session_num() |>
+    filter(session_num >= 6) |>
+    pull(session_id) |>
+    unique() |>
+    as.character()
+
+  out <- data |>
+    ss_mean(
+      combine = TRUE,
+      name    = name,
+      vars    = vars_fc_p_vs__famil__v01,
+      max_na  = max_na,
+      events  = tmp_sessions,
+      exclude = exclude
+    ) |>
+    compute_fc_p_vs__supp_mean(name = "tmp_supp") |>
+    compute_fc_p_vs__ref_mean(name = "tmp_ref") |>
+    check_assign_na(
+      output = name,
+      input = c("tmp_supp", "tmp_ref"),
+      allow_missingness = FALSE
+    ) |>
+    select(
+      -matches("^tmp_")
+    )
+
+  if (combine) {
+    out
+  } else {
+    out |> select(!!name)
+  }
+}
+
+#' Compute "Values Scale \[Parent\] (Familism): Number missing - Version 1
+#' (Year 5 onwards)"
+#'
+#' @description
+#' Computes the summary score `fc_p_vs__famil_nm__v01`
+#' (Values Scale \[Parent\] (Familism): Number missing - Version 1
+#' (Year 5 onwards))
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_fc_p_vs__famil__v01 |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
+#' @inheritParams compute_fc_p_vs__famil_mean
+#'
+#' @seealso [compute_fc_p_vs__famil_mean__v01()]
+#' @return tbl. The input data frame with the summary score appended as
+#'   a new column.
+#'
+#' @export
+#' @autoglobal
+compute_fc_p_vs__famil_nm__v01 <- function(
+    data,
+    name = "fc_p_vs__famil_nm__v01",
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::chk_data(data)
+  chk::check_names(data, "session_id")
+
+  # calculate from `ses-06A` onwards
+  tmp_sessions <- data |>
+    create_session_num() |>
+    filter(session_num >= 6) |>
+    pull(session_id) |>
+    unique() |>
+    as.character()
+
+  out <- data |>
+    ss_nm(
+      combine = TRUE,
+      name    = name,
+      vars    = vars_fc_p_vs__famil__v01,
+      events  = tmp_sessions,
+      exclude = exclude
+    )
+
+  if (combine) {
+    out
+  } else {
+    out |> select(!!name)
+  }
+}
+
+#   ____________________________________________________________________________
 #   fc_p_meim__explor                                                       ####
 
 #' @export
@@ -1249,12 +1570,7 @@ vars_fc_p_meim__explor <- c(
 #' - *Excluded values:* none
 #' - *Validation criterion:* none of 3 items missing
 #'
-#' @param data tbl. Data frame containing the columns to be summarized.
-#' @param name character. Name of the summary score. Default is the name in
-#' the description.
-#' @param combine logical. If `TRUE`, the summary score is appended to the
-#' input data frame. If `FALSE`, the summary score is returned as a separate
-#' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 0).
 #'
@@ -3621,6 +3937,319 @@ compute_fc_y_vs__supp_nm <- function(
       exclude = NULL
     )
 }
+#   ____________________________________________________________________________
+#   fc_y_vs__famil                                                        ####
+
+#' @export
+#' @autoglobal
+#' @rdname compute_fc_y_vs__famil_mean
+#' @format a character vector of all column names
+#' used to compute summary score of `fc_y_vs__famil_mean` and
+#' `fc_y_vs__famil_nm`.
+vars_fc_y_vs__famil <- c(
+  "fc_y_vs__supp_001",
+  "fc_y_vs__supp_002",
+  "fc_y_vs__supp_003",
+  "fc_y_vs__supp_004",
+  "fc_y_vs__supp_005",
+  "fc_y_vs__supp_006",
+  "fc_y_vs__ref_001",
+  "fc_y_vs__ref_002",
+  "fc_y_vs__ref_003",
+  "fc_y_vs__ref_004",
+  "fc_y_vs__ref_005",
+  "fc_y_vs__obl_001",
+  "fc_y_vs__obl_002",
+  "fc_y_vs__obl_003",
+  "fc_y_vs__obl_004",
+  "fc_y_vs__obl_005"
+)
+
+#' Compute "Values Scale \[Youth\] (Familism):
+#'   Mean - Baseline to Year 5"
+#'
+#' @description
+#' Computes the summary score `fc_y_vs__famil_mean`
+#' (Values Scale \[Youth\] (Familism): Mean - Baseline to Year 5)
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_fc_y_vs__famil |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#' - *Validation criterion:*
+#'    - maximally 3 of 16 items missing
+#'
+#' @inheritParams compute_fc_p_vs__famil_mean
+#' @param max_na numeric vector of positive whole number. Number of missing
+#'   items allowed (Default: 3).
+#'
+#' @return tbl. The input data frame with the summary score appended as
+#'   a new column.
+#'
+#' @export
+#' @autoglobal
+compute_fc_y_vs__famil_mean <- function(
+    data,
+    name = "fc_y_vs__famil_mean",
+    max_na = 3,
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::chk_data(data)
+  chk::chk_whole_number(max_na)
+  chk::chk_gte(max_na, 0)
+  chk::check_names(data, "session_id")
+
+  # calculate only up to `ses-05A`
+  tmp_sessions <- data |>
+    create_session_num() |>
+    filter(session_num <= 5) |>
+    pull(session_id) |>
+    unique() |>
+    as.character()
+
+  out <- data |>
+    ss_mean(
+      combine = TRUE,
+      name    = name,
+      vars    = vars_fc_y_vs__famil,
+      max_na  = max_na,
+      events  = tmp_sessions,
+      exclude = exclude
+    ) |>
+    compute_fc_y_vs__supp_mean(name = "tmp_supp") |>
+    compute_fc_y_vs__ref_mean(name = "tmp_ref") |>
+    compute_fc_y_vs__obl_mean(name = "tmp_obl") |>
+    check_assign_na(
+      output = name,
+      input = c("tmp_supp", "tmp_ref", "tmp_obl"),
+      allow_missingness = FALSE
+    ) |>
+    select(
+      -matches("^tmp_")
+    )
+
+  if (combine) {
+    out
+  } else {
+    out |> select(!!name)
+  }
+}
+
+#' Compute "Values Scale \[Youth\] (Familism): Number missing - Baseline to
+#' Year 5"
+#'
+#' @description
+#' Computes the summary score `fc_y_vs__famil_nm__v01`
+#' (Values Scale \[Youth\] (Familism): Number missing - Baseline to Year 5)
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_fc_y_vs__famil |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
+#' @inheritParams compute_fc_p_vs__famil_mean
+#'
+#' @seealso [compute_fc_y_vs__famil_mean()]
+#' @return tbl. The input data frame with the summary score appended as
+#'   a new column.
+#'
+#' @export
+#' @autoglobal
+compute_fc_y_vs__famil_nm <- function(
+    data,
+    name = "fc_y_vs__famil_nm",
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::chk_data(data)
+  chk::check_names(data, "session_id")
+
+  # calculate only up to `ses-05A`
+  tmp_sessions <- data |>
+    create_session_num() |>
+    filter(session_num <= 5) |>
+    pull(session_id) |>
+    unique() |>
+    as.character()
+
+  out <- data |>
+    ss_nm(
+      combine = TRUE,
+      name    = name,
+      vars    = vars_fc_y_vs__famil,
+      events  = tmp_sessions,
+      exclude = exclude
+    )
+
+  if (combine) {
+    out
+  } else {
+    out |> select(!!name)
+  }
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_fc_y_vs__famil_mean__v01
+#' @format a character vector of all column names
+#' used to compute summary score of `fc_y_vs__famil_mean__v01` and
+#' `fc_y_vs__famil_nm__v01`.
+vars_fc_y_vs__famil__v01 <- c(
+  "fc_y_vs__supp_001",
+  "fc_y_vs__supp_002",
+  "fc_y_vs__supp_003",
+  "fc_y_vs__supp_004",
+  "fc_y_vs__supp_005",
+  "fc_y_vs__supp_006",
+  "fc_y_vs__ref_001",
+  "fc_y_vs__ref_002",
+  "fc_y_vs__ref_003",
+  "fc_y_vs__ref_004",
+  "fc_y_vs__ref_005"
+)
+
+
+#' Compute "Values Scale \[Youth\] (Familism):
+#'   Mean - Version 1 (Year 5 onwards)"
+#'
+#' @description
+#' Computes the summary score `fc_y_vs__famil_mean__v01`
+#' (Values Scale \[Youth\] (Familism): Mean - Version 1 (Year 5 onwards))
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_fc_y_vs__famil__v01 |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#' - *Validation criterion:*
+#'    - maximally 2 of 11 items missing
+#'
+#' @inheritParams compute_fc_p_vs__famil_mean
+#' @param max_na numeric vector of positive whole number. Number of missing
+#'   items allowed (Default: 2).
+#'
+#' @seealso [compute_fc_y_vs__famil_mean()]
+#' @return tbl. The input data frame with the summary score appended as
+#'   a new column.
+#'
+#' @export
+#' @autoglobal
+compute_fc_y_vs__famil_mean__v01 <- function(
+    data,
+    name = "fc_y_vs__famil_mean__v01",
+    max_na = 2,
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::chk_data(data)
+  chk::chk_whole_number(max_na)
+  chk::chk_gte(max_na, 0)
+  chk::check_names(data, "session_id")
+
+  # calculate from `ses-06A` onwards
+  tmp_sessions <- data |>
+    create_session_num() |>
+    filter(session_num >= 6) |>
+    pull(session_id) |>
+    unique() |>
+    as.character()
+
+  out <- data |>
+    ss_mean(
+      combine = TRUE,
+      name    = name,
+      vars    = vars_fc_y_vs__famil__v01,
+      max_na  = max_na,
+      events  = tmp_sessions,
+      exclude = exclude
+    ) |>
+    compute_fc_y_vs__supp_mean(name = "tmp_supp") |>
+    compute_fc_y_vs__ref_mean(name = "tmp_ref") |>
+    check_assign_na(
+      output = name,
+      input = c("tmp_supp", "tmp_ref"),
+      allow_missingness = FALSE
+    ) |>
+    select(
+      -matches("^tmp_")
+    )
+
+  if (combine) {
+    out
+  } else {
+    out |> select(!!name)
+  }
+}
+
+#' Compute "Values Scale \[Youth\] (Familism): Number missing - Version 1
+#' (Year 5 onwards)"
+#'
+#' @description
+#' Computes the summary score `fc_y_vs__famil_nm__v01`
+#' (Values Scale \[Youth\] (Familism): Number missing - Version 1
+#' (Year 5 onwards))
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_fc_y_vs__famil__v01 |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'    - 777
+#'    - 999
+#'
+#' @inheritParams compute_fc_p_vs__famil_mean
+#'
+#' @seealso [compute_fc_y_vs__famil_mean__v01()]
+#' @return tbl. The input data frame with the summary score appended as
+#'   a new column.
+#'
+#' @export
+#' @autoglobal
+compute_fc_y_vs__famil_nm__v01 <- function(
+    data,
+    name = "fc_y_vs__famil_nm__v01",
+    exclude = c("777", "999"),
+    combine = TRUE) {
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::chk_data(data)
+  chk::check_names(data, "session_id")
+
+  # calculate from `ses-06A` onwards
+  tmp_sessions <- data |>
+    create_session_num() |>
+    filter(session_num >= 6) |>
+    pull(session_id) |>
+    unique() |>
+    as.character()
+
+  out <- data |>
+    ss_nm(
+      combine = TRUE,
+      name    = name,
+      vars    = vars_fc_y_vs__famil__v01,
+      events  = tmp_sessions,
+      exclude = exclude
+    )
+
+  if (combine) {
+    out
+  } else {
+    out |> select(!!name)
+  }
+}
 
 #   ____________________________________________________________________________
 #   fc_y_meim__commattach                                                   ####
@@ -5257,7 +5886,11 @@ compute_fc_p_vs_all <- function(data) {
     compute_fc_p_vs__relig_mean() |>
     compute_fc_p_vs__relig_nm() |>
     compute_fc_p_vs__supp_mean() |>
-    compute_fc_p_vs__supp_nm()
+    compute_fc_p_vs__supp_nm() |>
+    compute_fc_p_vs__famil_mean() |>
+    compute_fc_p_vs__famil_nm() |>
+    compute_fc_p_vs__famil_mean__v01() |>
+    compute_fc_p_vs__famil_nm__v01()
 }
 
 #' Compute all the fc_p_meim summary scores
@@ -5487,7 +6120,11 @@ compute_fc_y_vs_all <- function(data) {
     compute_fc_y_vs__relig_mean() |>
     compute_fc_y_vs__relig_nm() |>
     compute_fc_y_vs__supp_mean() |>
-    compute_fc_y_vs__supp_nm()
+    compute_fc_y_vs__supp_nm() |>
+    compute_fc_y_vs__famil_mean() |>
+    compute_fc_y_vs__famil_nm() |>
+    compute_fc_y_vs__famil_mean__v01() |>
+    compute_fc_y_vs__famil_nm__v01()
 }
 
 #' Compute all the fc_y_meim summary scores
