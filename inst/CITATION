@@ -1,9 +1,10 @@
 citHeader("To cite ABCDscores in publications use:")
 
-citEntry(
-  entry    = "article",
-  title    = "ABCDscores: An R package for computing summary scores in the ABCD Study",
-  author   = c(
+bibentry(
+  key       = "Zhang2025ABCDscores",
+  bibtype   = "Article",
+  title     = "ABCDscores: An R package for computing summary scores in the ABCD Study",
+  author    = c(
     person(given = "Le", family = "Zhang"),
     person(given = "Olivier", family = "Celhay"),
     person(given = "Biplabendu", family = "Das"),

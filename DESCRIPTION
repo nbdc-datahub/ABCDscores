@@ -3,10 +3,6 @@ Title: Summary Scores of the Adolescent Brain Cognitive Development (ABCD) Study
 Description: Provides functions to compute summary scores
   (besides proprietary ones) reported in the tabulated data resource that is
   released by the Adolescent Brain Cognitive Development (ABCD) study.
-       Feldstein Ewing and Luciana (2018)
-       <https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32>.
-       See Zhang et al. (2025) <https://doi.org/10.1101/2025.09.04.674066>
-       for details about the package design and implementation.
 URL: https://software.nbdc-datahub.org/ABCDscores/
 Version: 6.1.0
 Authors@R: c(
