@@ -5,7 +5,7 @@
 \alias{vars_mh_p_ple__v02}
 \alias{compute_mh_p_ple_count__v02}
 \title{Compute "Life Events [Parent] (Events): Count - Version 2 (Year 4 and Year
-5) [Validation: No more than 6 missing or declined]"}
+5)"}
 \format{
 vars_mh_p_ple__v02 is a character vector of all column names
 used to compute summary score of \code{mh_p_ple}.
@@ -18,7 +18,7 @@ compute_mh_p_ple_count__v02(
   name = "mh_p_ple_count__v02",
   events = c("ses-04A", "ses-05A"),
   combine = TRUE,
-  max_na = 6
+  max_na = NULL
 )
 }
 \arguments{
@@ -33,7 +33,7 @@ the name used in the ABCD data release).}
 data frame. If FALSE, the new column will be created as a new data frame.}
 
 \item{max_na}{numeric, positive whole number. Number of missing items
-allowed (Default: 6).}
+allowed. \code{NULL} means no limit (Default: NULL).}
 }
 \value{
 tbl. The input data frame with the summary score appended as
@@ -42,7 +42,6 @@ a new column.
 \description{
 Computes the summary score \code{mh_p_ple_count__v02}
 Life Events [Parent] (Events): Count - Version 2 (Year 4 and Year 5)
-[Validation: No more than 6 missing or declined]
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{
@@ -85,7 +84,6 @@ Life Events [Parent] (Events): Count - Version 2 (Year 4 and Year 5)
 \item 777
 \item 999
 }
-\item \emph{Validation criterion:} maximally 6 of 32 items missing
 }
 }
 \keyword{datasets}

@@ -4,7 +4,7 @@
 \name{vars_ph_p_sds_sum}
 \alias{vars_ph_p_sds_sum}
 \alias{compute_ph_p_sds_sum}
-\title{Compute "Sleep Disturbance Scale [Parent] (Total): Sum [Validation: No
+\title{Compute "Sleep Disturbance Scale [Parent]: Sum [Validation: No
 more than 0 missing or declined]"}
 \format{
 character vector of all column names
@@ -42,7 +42,7 @@ a new column.
 }
 \description{
 Computes the summary score \code{ph_p_sds_sum}
-Sleep Disturbance Scale [Parent] (Total): Sum [Validation: No more than 0
+Sleep Disturbance Scale [Parent]: Sum [Validation: No more than 0
 missing or declined]
 \itemize{
 \item \emph{Summarized variables:}

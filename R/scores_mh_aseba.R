@@ -11850,14 +11850,12 @@ vars_mh_y_ysr <- c(
   "mh_y_ysr__rule__cond_010",
   "mh_y_ysr__wthdep__dep_001",
   "mh_y_ysr__anxdep__dep_001",
-  "mh_y_ysr__tho__dep_001",
   "mh_y_ysr__othpr__dep_001",
   "mh_y_ysr__anxdep__dep_002",
   "mh_y_ysr__anxdep__dep_003",
   "mh_y_ysr__som__dep_001",
   "mh_y_ysr__tho__dep_002",
   "mh_y_ysr__othpr__dep_002",
-  "mh_y_ysr__anxdep__dep_004",
   "mh_y_ysr__tho__dep_003",
   "mh_y_ysr__wthdep__dep_002",
   "mh_y_ysr__wthdep__dep_003",
@@ -11902,7 +11900,6 @@ vars_mh_y_ysr <- c(
   "mh_y_ysr__othpr_004",
   "mh_y_ysr__othpr_005",
   "mh_y_ysr__othpr_006",
-  "mh_y_ysr__othpr_007",
   "mh_y_ysr__soc_001",
   "mh_y_ysr__soc_002",
   "mh_y_ysr__soc_003",
@@ -11980,7 +11977,7 @@ compute_mh_y_ysr_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 7 of 105 items missing
+#' - *Validation criterion:* maximally 5 of 102 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr_nm()]
@@ -11996,7 +11993,7 @@ compute_mh_y_ysr_nm <- function(
 compute_mh_y_ysr_sum <- function(
     data,
     name = "mh_y_ysr_sum",
-    max_na = 7,
+    max_na = 5,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
@@ -12025,7 +12022,7 @@ compute_mh_y_ysr_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 7 of 105 items missing
+#' - *Validation criterion:* maximally 5 of 102 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr_nm()]
@@ -12044,7 +12041,7 @@ compute_mh_y_ysr_tscore <- function(
     name = "mh_y_ysr_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 7,
+    max_na = 5,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
@@ -12153,19 +12150,33 @@ compute_mh_y_ysr__dsm__adhd_nm <- function(
 compute_mh_y_ysr__dsm__adhd_sum <- function(
     data,
     name = "mh_y_ysr__dsm__adhd_sum",
-    max_na = 0,
+    max_na = 1,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__dsm__adhd_nm(name = "mh_y_ysr_dsm_adhd_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__dsm__adhd,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__dsm__adhd,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_dsm_adhd_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -12182,7 +12193,8 @@ compute_mh_y_ysr__dsm__adhd_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 7 items missing
+#' - *Validation criterion:* maximally 1 of 7 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__adhd_nm()]
@@ -12201,22 +12213,37 @@ compute_mh_y_ysr__dsm__adhd_tscore <- function(
     name = "mh_y_ysr__dsm__adhd_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 0,
+    max_na = 1,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__dsm__adhd,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__dsm__adhd_nm(name = "mh_y_ysr_dsm_adhd_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__dsm__adhd,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_dsm_adhd_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -12298,7 +12325,7 @@ compute_mh_y_ysr__dsm__anx_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 9 items missing
+#' - *Validation criterion:* maximally 1 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__anx_nm()]
@@ -12314,19 +12341,33 @@ compute_mh_y_ysr__dsm__anx_nm <- function(
 compute_mh_y_ysr__dsm__anx_sum <- function(
     data,
     name = "mh_y_ysr__dsm__anx_sum",
-    max_na = 0,
+    max_na = 1,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__dsm__anx_nm(name = "mh_y_ysr_dsm_anx_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__dsm__anx,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__dsm__anx,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_dsm_anx_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -12345,7 +12386,8 @@ compute_mh_y_ysr__dsm__anx_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 9 items missing
+#' - *Validation criterion:* maximally 1 of 9 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__anx_nm()]
@@ -12364,22 +12406,37 @@ compute_mh_y_ysr__dsm__anx_tscore <- function(
     name = "mh_y_ysr__dsm__anx_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 0,
+    max_na = 1,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__dsm__anx,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__dsm__anx_nm(name = "mh_y_ysr_dsm_anx_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__dsm__anx,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_dsm_anx_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -12467,7 +12524,7 @@ compute_mh_y_ysr__dsm__cond_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 1 of 15 items missing
+#' - *Validation criterion:* maximally 3 of 15 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__cond_nm()]
@@ -12483,19 +12540,33 @@ compute_mh_y_ysr__dsm__cond_nm <- function(
 compute_mh_y_ysr__dsm__cond_sum <- function(
     data,
     name = "mh_y_ysr__dsm__cond_sum",
-    max_na = 1,
+    max_na = 3,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__dsm__cond_nm(name = "mh_y_ysr_dsm_cond_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__dsm__cond,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__dsm__cond,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_dsm_cond_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -12514,7 +12585,8 @@ compute_mh_y_ysr__dsm__cond_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 1 of 15 items missing
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__cond_nm()]
@@ -12533,22 +12605,37 @@ compute_mh_y_ysr__dsm__cond_tscore <- function(
     name = "mh_y_ysr__dsm__cond_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 1,
+    max_na = 3,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__dsm__cond,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__dsm__cond_nm(name = "mh_y_ysr_dsm_cond_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__dsm__cond,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_dsm_cond_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -12561,14 +12648,12 @@ compute_mh_y_ysr__dsm__cond_tscore <- function(
 vars_mh_y_ysr__dsm__dep <- c(
   "mh_y_ysr__wthdep__dep_001",
   "mh_y_ysr__anxdep__dep_001",
-  "mh_y_ysr__tho__dep_001",
   "mh_y_ysr__othpr__dep_001",
   "mh_y_ysr__anxdep__dep_002",
   "mh_y_ysr__anxdep__dep_003",
   "mh_y_ysr__som__dep_001",
   "mh_y_ysr__tho__dep_002",
   "mh_y_ysr__othpr__dep_002",
-  "mh_y_ysr__anxdep__dep_004",
   "mh_y_ysr__tho__dep_003",
   "mh_y_ysr__wthdep__dep_002",
   "mh_y_ysr__wthdep__dep_003"
@@ -12634,7 +12719,7 @@ compute_mh_y_ysr__dsm__dep_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 13 items missing
+#' - *Validation criterion:* maximally 2 of 11 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__dep_nm()]
@@ -12650,19 +12735,33 @@ compute_mh_y_ysr__dsm__dep_nm <- function(
 compute_mh_y_ysr__dsm__dep_sum <- function(
     data,
     name = "mh_y_ysr__dsm__dep_sum",
-    max_na = 0,
+    max_na = 2,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__dsm__dep_nm(name = "mh_y_ysr_dsm_dep_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__dsm__dep,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__dsm__dep,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_dsm_dep_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -12681,7 +12780,8 @@ compute_mh_y_ysr__dsm__dep_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 13 items missing
+#' - *Validation criterion:* maximally 2 of 11 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__dep_nm()]
@@ -12700,22 +12800,37 @@ compute_mh_y_ysr__dsm__dep_tscore <- function(
     name = "mh_y_ysr__dsm__dep_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 0,
+    max_na = 2,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__dsm__dep,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__dsm__dep_nm(name = "mh_y_ysr_dsm_dep_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__dsm__dep,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_dsm_dep_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -12793,7 +12908,7 @@ compute_mh_y_ysr__dsm__opp_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 5 items missing
+#' - *Validation criterion:* maximally 1 of 5 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__opp_nm()]
@@ -12809,19 +12924,33 @@ compute_mh_y_ysr__dsm__opp_nm <- function(
 compute_mh_y_ysr__dsm__opp_sum <- function(
     data,
     name = "mh_y_ysr__dsm__opp_sum",
-    max_na = 0,
+    max_na = 1,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__dsm__opp_nm(name = "mh_y_ysr_dsm_opp_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__dsm__opp,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__dsm__opp,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_dsm_opp_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -12840,7 +12969,8 @@ compute_mh_y_ysr__dsm__opp_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 5 items missing
+#' - *Validation criterion:* maximally 1 of 5 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__opp_nm()]
@@ -12859,22 +12989,37 @@ compute_mh_y_ysr__dsm__opp_tscore <- function(
     name = "mh_y_ysr__dsm__opp_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 0,
+    max_na = 1,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__dsm__opp,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__dsm__opp_nm(name = "mh_y_ysr_dsm_opp_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__dsm__opp,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_dsm_opp_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -12954,7 +13099,7 @@ compute_mh_y_ysr__dsm__somat_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 7 items missing
+#' - *Validation criterion:* maximally 1 of 7 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__somat_nm()]
@@ -12970,19 +13115,33 @@ compute_mh_y_ysr__dsm__somat_nm <- function(
 compute_mh_y_ysr__dsm__somat_sum <- function(
     data,
     name = "mh_y_ysr__dsm__somat_sum",
-    max_na = 0,
+    max_na = 1,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__dsm__somat_nm(name = "mh_y_ysr_dsm_somat_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__dsm__somat,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__dsm__somat,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_dsm_somat_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -13001,7 +13160,8 @@ compute_mh_y_ysr__dsm__somat_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 7 items missing
+#' - *Validation criterion:* maximally 1 of 7 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__dsm__somat_nm()]
@@ -13020,22 +13180,37 @@ compute_mh_y_ysr__dsm__somat_tscore <- function(
     name = "mh_y_ysr__dsm__somat_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 0,
+    max_na = 1,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__dsm__somat,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__dsm__somat_nm(name = "mh_y_ysr_dsm_somat_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__dsm__somat,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_dsm_somat_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -13118,7 +13293,7 @@ compute_mh_y_ysr__pos_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 14 items missing
+#' - *Validation criterion:* maximally 2 of 14 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__pos_nm()]
@@ -13134,19 +13309,33 @@ compute_mh_y_ysr__pos_nm <- function(
 compute_mh_y_ysr__pos_sum <- function(
     data,
     name = "mh_y_ysr__pos_sum",
-    max_na = 0,
+    max_na = 2,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__pos_nm(name = "mh_y_ysr_pos_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__pos,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__pos,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_pos_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -13163,7 +13352,8 @@ compute_mh_y_ysr__pos_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 14 items missing
+#' - *Validation criterion:* maximally 2 of 14 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__pos_nm()]
@@ -13182,22 +13372,37 @@ compute_mh_y_ysr__pos_tscore <- function(
     name = "mh_y_ysr__pos_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 0,
+    max_na = 2,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__pos,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__pos_nm(name = "mh_y_ysr_pos_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__pos,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_pos_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -13286,7 +13491,7 @@ compute_mh_y_ysr__synd__aggr_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 1 of 17 items missing
+#' - *Validation criterion:* maximally 3 of 17 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__aggr_nm()]
@@ -13302,19 +13507,33 @@ compute_mh_y_ysr__synd__aggr_nm <- function(
 compute_mh_y_ysr__synd__aggr_sum <- function(
     data,
     name = "mh_y_ysr__synd__aggr_sum",
-    max_na = 1,
+    max_na = 3,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__aggr_nm(name = "mh_y_ysr_aggr_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__synd__aggr,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__synd__aggr,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_aggr_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -13331,7 +13550,8 @@ compute_mh_y_ysr__synd__aggr_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 1 of 17 items missing
+#' - *Validation criterion:* maximally 3 of 17 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__aggr_nm()]
@@ -13350,22 +13570,36 @@ compute_mh_y_ysr__synd__aggr_tscore <- function(
     name = "mh_y_ysr__synd__aggr_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 1,
+    max_na = 3,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__synd__aggr,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__synd__aggr,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -13387,7 +13621,6 @@ vars_mh_y_ysr__synd__anxdep <- c(
   "mh_y_ysr__anxdep__anx_005",
   "mh_y_ysr__anxdep__dep_003",
   "mh_y_ysr__anxdep__anx_006",
-  "mh_y_ysr__anxdep__dep_004",
   "mh_y_ysr__anxdep__anx_007"
 )
 
@@ -13450,7 +13683,7 @@ compute_mh_y_ysr__synd__anxdep_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 13 items missing
+#' - *Validation criterion:* maximally 2 of 12 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__anxdep_nm()]
@@ -13466,19 +13699,33 @@ compute_mh_y_ysr__synd__anxdep_nm <- function(
 compute_mh_y_ysr__synd__anxdep_sum <- function(
     data,
     name = "mh_y_ysr__synd__anxdep_sum",
-    max_na = 0,
+    max_na = 2,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__anxdep_nm(name = "mh_y_ysr_anxdep_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__synd__anxdep,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__synd__anxdep,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_anxdep_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -13497,7 +13744,8 @@ compute_mh_y_ysr__synd__anxdep_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 13 items missing
+#' - *Validation criterion:* maximally 2 of 12 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__anxdep_nm()]
@@ -13516,22 +13764,37 @@ compute_mh_y_ysr__synd__anxdep_tscore <- function(
     name = "mh_y_ysr__synd__anxdep_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 0,
+    max_na = 2,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__synd__anxdep,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__anxdep_nm(name = "mh_y_ysr_anxdep_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__synd__anxdep,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_anxdep_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -13612,7 +13875,7 @@ compute_mh_y_ysr__synd__attn_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 9 items missing
+#' - *Validation criterion:* maximally 1 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__attn_nm()]
@@ -13628,19 +13891,33 @@ compute_mh_y_ysr__synd__attn_nm <- function(
 compute_mh_y_ysr__synd__attn_sum <- function(
     data,
     name = "mh_y_ysr__synd__attn_sum",
-    max_na = 0,
+    max_na = 1,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__attn_nm(name = "mh_y_ysr_attn_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__synd__attn,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__synd__attn,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_attn_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -13659,7 +13936,8 @@ compute_mh_y_ysr__synd__attn_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 9 items missing
+#' - *Validation criterion:* maximally 1 of 9 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__attn_nm()]
@@ -13678,22 +13956,36 @@ compute_mh_y_ysr__synd__attn_tscore <- function(
     name = "mh_y_ysr__synd__attn_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 0,
+    max_na = 1,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__synd__attn,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__synd__attn,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -13795,7 +14087,7 @@ compute_mh_y_ysr__synd__ext_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 2 of 32 items missing
+#' - *Validation criterion:* maximally 6 of 32 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__ext_nm()]
@@ -13811,19 +14103,33 @@ compute_mh_y_ysr__synd__ext_nm <- function(
 compute_mh_y_ysr__synd__ext_sum <- function(
     data,
     name = "mh_y_ysr__synd__ext_sum",
-    max_na = 2,
+    max_na = 6,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__ext_nm(name = "mh_y_ysr_ext_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__synd__ext,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__synd__ext,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_ext_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -13840,7 +14146,8 @@ compute_mh_y_ysr__synd__ext_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 2 of 32 items missing
+#' - *Validation criterion:* maximally 6 of 32 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__ext_nm()]
@@ -13859,22 +14166,37 @@ compute_mh_y_ysr__synd__ext_tscore <- function(
     name = "mh_y_ysr__synd__ext_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 2,
+    max_na = 6,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__synd__ext,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__ext_nm(name = "mh_y_ysr_ext_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__synd__ext,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_ext_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -13896,7 +14218,6 @@ vars_mh_y_ysr__synd__int <- c(
   "mh_y_ysr__anxdep__anx_005",
   "mh_y_ysr__anxdep__dep_003",
   "mh_y_ysr__anxdep__anx_006",
-  "mh_y_ysr__anxdep__dep_004",
   "mh_y_ysr__anxdep__anx_007",
   "mh_y_ysr__wthdep__dep_001",
   "mh_y_ysr__wthdep_001",
@@ -13976,7 +14297,7 @@ compute_mh_y_ysr__synd__int_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 2 of 31 items missing
+#' - *Validation criterion:* maximally 6 of 30 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__int_nm()]
@@ -13992,19 +14313,33 @@ compute_mh_y_ysr__synd__int_nm <- function(
 compute_mh_y_ysr__synd__int_sum <- function(
     data,
     name = "mh_y_ysr__synd__int_sum",
-    max_na = 2,
+    max_na = 6,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__int_nm(name = "mh_y_ysr_int_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__synd__int,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__synd__int,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_int_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -14021,7 +14356,8 @@ compute_mh_y_ysr__synd__int_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 2 of 31 items missing
+#' - *Validation criterion:* maximally 6 of 30 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__int_nm()]
@@ -14040,22 +14376,37 @@ compute_mh_y_ysr__synd__int_tscore <- function(
     name = "mh_y_ysr__synd__int_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 2,
+    max_na = 6,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__synd__int,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__int_nm(name = "mh_y_ysr_int_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__synd__int,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_int_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -14074,8 +14425,7 @@ vars_mh_y_ysr__synd__othpr <- c(
   "mh_y_ysr__othpr_005",
   "mh_y_ysr__othpr_006",
   "mh_y_ysr__othpr__dep_002",
-  "mh_y_ysr__othpr__adhd_001",
-  "mh_y_ysr__othpr_007"
+  "mh_y_ysr__othpr__adhd_001"
 )
 
 
@@ -14134,7 +14484,7 @@ compute_mh_y_ysr__synd__othpr_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 10 items missing
+#' - *Validation criterion:* maximally 1 of 9 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__othpr_nm()]
@@ -14150,19 +14500,33 @@ compute_mh_y_ysr__synd__othpr_nm <- function(
 compute_mh_y_ysr__synd__othpr_sum <- function(
     data,
     name = "mh_y_ysr__synd__othpr_sum",
-    max_na = 0,
+    max_na = 1,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__othpr_nm(name = "mh_y_ysr_othpr_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__synd__othpr,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__synd__othpr,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_othpr_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -14250,7 +14614,7 @@ compute_mh_y_ysr__synd__rule_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 1 of 15 items missing
+#' - *Validation criterion:* maximally 3 of 15 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__rule_nm()]
@@ -14266,19 +14630,33 @@ compute_mh_y_ysr__synd__rule_nm <- function(
 compute_mh_y_ysr__synd__rule_sum <- function(
     data,
     name = "mh_y_ysr__synd__rule_sum",
-    max_na = 1,
+    max_na = 3,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__rule_nm(name = "mh_y_ysr_rule_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__synd__rule,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__synd__rule,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_rule_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -14297,7 +14675,8 @@ compute_mh_y_ysr__synd__rule_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 1 of 15 items missing
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__rule_nm()]
@@ -14316,22 +14695,37 @@ compute_mh_y_ysr__synd__rule_tscore <- function(
     name = "mh_y_ysr__synd__rule_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 1,
+    max_na = 3,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__synd__rule,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__rule_nm(name = "mh_y_ysr_rule_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__synd__rule,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_rule_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -14413,7 +14807,7 @@ compute_mh_y_ysr__synd__soc_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 11 items missing
+#' - *Validation criterion:* maximally 2 of 11 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__soc_nm()]
@@ -14429,19 +14823,33 @@ compute_mh_y_ysr__synd__soc_nm <- function(
 compute_mh_y_ysr__synd__soc_sum <- function(
     data,
     name = "mh_y_ysr__synd__soc_sum",
-    max_na = 0,
+    max_na = 2,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__soc_nm(name = "mh_y_ysr_soc_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__synd__soc,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__synd__soc,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_soc_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -14458,7 +14866,8 @@ compute_mh_y_ysr__synd__soc_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 11 items missing
+#' - *Validation criterion:* maximally 2 of 11 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__soc_nm()]
@@ -14477,22 +14886,37 @@ compute_mh_y_ysr__synd__soc_tscore <- function(
     name = "mh_y_ysr__synd__soc_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 0,
+    max_na = 2,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__synd__soc,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__soc_nm(name = "mh_y_ysr_soc_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__synd__soc,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_soc_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -14574,7 +14998,7 @@ compute_mh_y_ysr__synd__som_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 10 items missing
+#' - *Validation criterion:* maximally 2 of 10 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__som_nm()]
@@ -14590,19 +15014,33 @@ compute_mh_y_ysr__synd__som_nm <- function(
 compute_mh_y_ysr__synd__som_sum <- function(
     data,
     name = "mh_y_ysr__synd__som_sum",
-    max_na = 0,
+    max_na = 2,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__som_nm(name = "mh_y_ysr_som_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__synd__som,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__synd__som,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_som_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -14621,7 +15059,8 @@ compute_mh_y_ysr__synd__som_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 10 items missing
+#' - *Validation criterion:* maximally 2 of 10 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__som_nm()]
@@ -14640,22 +15079,37 @@ compute_mh_y_ysr__synd__som_tscore <- function(
     name = "mh_y_ysr__synd__som_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 0,
+    max_na = 2,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__synd__som,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__som_nm(name = "mh_y_ysr_som_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__synd__som,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_som_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -14667,7 +15121,6 @@ compute_mh_y_ysr__synd__som_tscore <- function(
 #' used to compute summary score of `mh_y_ysr__synd__tho` scores.
 vars_mh_y_ysr__synd__tho <- c(
   "mh_y_ysr__tho_001",
-  "mh_y_ysr__tho__dep_001",
   "mh_y_ysr__tho_002",
   "mh_y_ysr__tho_003",
   "mh_y_ysr__tho_004",
@@ -14739,7 +15192,7 @@ compute_mh_y_ysr__synd__tho_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 12 items missing
+#' - *Validation criterion:* maximally 2 of 11 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__tho_nm()]
@@ -14755,19 +15208,33 @@ compute_mh_y_ysr__synd__tho_nm <- function(
 compute_mh_y_ysr__synd__tho_sum <- function(
     data,
     name = "mh_y_ysr__synd__tho_sum",
-    max_na = 0,
+    max_na = 2,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__tho_nm(name = "mh_y_ysr_tho_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__synd__tho,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__synd__tho,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_tho_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -14785,7 +15252,8 @@ compute_mh_y_ysr__synd__tho_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 12 items missing
+#' - *Validation criterion:* maximally 2 of 11 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__tho_nm()]
@@ -14804,22 +15272,37 @@ compute_mh_y_ysr__synd__tho_tscore <- function(
     name = "mh_y_ysr__synd__tho_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 0,
+    max_na = 2,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__synd__tho,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__tho_nm(name = "mh_y_ysr_tho_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__synd__tho,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_tho_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -14899,7 +15382,7 @@ compute_mh_y_ysr__synd__wthdep_nm <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 8 items missing
+#' - *Validation criterion:* maximally 1 of 8 items missing
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__wthdep_nm()]
@@ -14915,19 +15398,33 @@ compute_mh_y_ysr__synd__wthdep_nm <- function(
 compute_mh_y_ysr__synd__wthdep_sum <- function(
     data,
     name = "mh_y_ysr__synd__wthdep_sum",
-    max_na = 0,
+    max_na = 1,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__wthdep_nm(name = "mh_y_ysr_wthdep_nm_internal") |>
     ss_sum(
-      name    = name,
-      vars    = vars_mh_y_ysr__synd__wthdep,
-      max_na  = max_na,
-      exclude = exclude,
-      combine = combine
+      vars = vars_mh_y_ysr__synd__wthdep,
+      name = name,
+      max_na = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_wthdep_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
     )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 
@@ -14946,7 +15443,8 @@ compute_mh_y_ysr__synd__wthdep_sum <- function(
 #' - *Excluded values:*
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 0 of 8 items missing
+#' - *Validation criterion:* maximally 1 of 8 items missing
+#'   or `mh_y_ysr__dsm__adhd_nm` <= 5
 #'
 #' @inherit dummy_aseba params return references
 #' @seealso [compute_mh_y_ysr__synd__wthdep_nm()]
@@ -14965,22 +15463,37 @@ compute_mh_y_ysr__synd__wthdep_tscore <- function(
     name = "mh_y_ysr__synd__wthdep_tscore",
     col_age = "mh_y_ysr_age",
     col_sex = "ab_g_stc__cohort_sex",
-    max_na = 0,
+    max_na = 1,
     exclude = c("777", "999"),
     combine = TRUE) {
   check_col_names(data, name)
 
-  ss_tscore(
-    data,
-    data_norm = data_norm,
-    vars = vars_mh_y_ysr__synd__wthdep,
-    name = name,
-    max_na = max_na,
-    exclude = exclude,
-    col_age = col_age,
-    col_sex = col_sex,
-    combine = combine
-  )
+  data_ss <- data |>
+    compute_mh_y_ysr_nm(name = "mh_y_ysr_nm_internal") |>
+    compute_mh_y_ysr__synd__wthdep_nm(name = "mh_y_ysr_wthdep_nm_internal") |>
+    ss_tscore(
+      data_norm = data_norm,
+      vars = vars_mh_y_ysr__synd__wthdep,
+      name = name,
+      max_na = max_na,
+      exclude = exclude,
+      col_age = col_age,
+      col_sex = col_sex,
+      combine = TRUE
+    ) |>
+    transmute(
+      !!name := if_else(
+        mh_y_ysr_nm_internal > 5 & mh_y_ysr_wthdep_nm_internal > 0,
+        NA,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
 }
 
 

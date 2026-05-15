@@ -3,15 +3,14 @@
 \name{compute_mh_p_ple__exp__bad_count__v03}
 \alias{compute_mh_p_ple__exp__bad_count__v03}
 \title{Compute "Life Events [Parent] (Experience Bad Events): Count - Version
-3 (Year 6 ) [Validation: No more than 6 events missing and no experience
-items missing or declined]"}
+3 (Year 6)"}
 \usage{
 compute_mh_p_ple__exp__bad_count__v03(
   data,
   name = "mh_p_ple__exp__bad_count__v03",
   events = "ses-06A",
   combine = TRUE,
-  max_na = 6
+  max_na = NULL
 )
 }
 \arguments{
@@ -26,7 +25,7 @@ the name used in the ABCD data release).}
 data frame. If FALSE, the new column will be created as a new data frame.}
 
 \item{max_na}{numeric, positive whole number. Number of missing items
-allowed (Default: 6).}
+allowed. \code{NULL} means no limit (Default: NULL).}
 }
 \value{
 tbl. The input data frame with the summary score appended as
@@ -35,8 +34,7 @@ a new column.
 \description{
 Computes the summary score \code{mh_p_ple__exp__bad_count__v03}
 Life Events [Parent] (Experience Bad Events): Count - Version 3 (Year
-6 ) [Validation: No more than 6 events missing and no experience items
-missing or declined]
+6)
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{
@@ -80,6 +78,5 @@ missing or declined]
 \item 777
 \item 999
 }
-\item \emph{Validation criterion:} maximally 6 of 33 items missing
 }
 }

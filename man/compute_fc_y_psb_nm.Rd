@@ -4,13 +4,21 @@
 \alias{compute_fc_y_psb_nm}
 \title{Compute "Prosocial Behavior [Youth]: Number missing"}
 \usage{
-compute_fc_y_psb_nm(data, name = "fc_y_psb_nm", combine = TRUE)
+compute_fc_y_psb_nm(
+  data,
+  name = "fc_y_psb_nm",
+  exclude = c("777"),
+  combine = TRUE
+)
 }
 \arguments{
 \item{data}{tbl. Data frame containing the columns to be summarized.}
 
 \item{name}{character. Name of the summary score. Default is the name in
 the description.}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical. If \code{TRUE}, the summary score is appended to the
 input data frame. If \code{FALSE}, the summary score is returned as a separate
@@ -30,7 +38,10 @@ Computes the summary score \code{fc_y_psb_nm}
 \item \code{fc_y_psb_002}
 \item \code{fc_y_psb_003}
 }
-\item \emph{Excluded values:} none
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+}
 }
 }
 \seealso{

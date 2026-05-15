@@ -16,6 +16,7 @@ compute_fc_p_fes__org_mean(
   data,
   name = "fc_p_fes__org_mean",
   max_na = 1,
+  exclude = c("777", "999"),
   combine = TRUE
 )
 }
@@ -27,6 +28,9 @@ in the description.}
 
 \item{max_na}{numeric, positive whole number. Number of missing items
 allowed (Default: 1).}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical. If \code{TRUE}, the summary score is appended to the
 input data frame. If \code{FALSE}, the summary score is returned as a separate
@@ -52,7 +56,11 @@ Computes the summary score \code{fc_p_fes__org_mean}
 \item \code{fc_p_fes__org_008}
 \item \code{fc_p_fes__org_009}
 }
-\item \emph{Excluded values:} none
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 \item \emph{Validation criterion:} maximally 1 of 9 items missing
 }
 }

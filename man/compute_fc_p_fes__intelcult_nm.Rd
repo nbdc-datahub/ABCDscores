@@ -8,6 +8,7 @@ Number missing"}
 compute_fc_p_fes__intelcult_nm(
   data,
   name = "fc_p_fes__intelcult_nm",
+  exclude = c("777", "999"),
   combine = TRUE
 )
 }
@@ -16,6 +17,9 @@ compute_fc_p_fes__intelcult_nm(
 
 \item{name}{character. Name of the summary score. Default is the name in
 the description.}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical. If \code{TRUE}, the summary score is appended to the
 input data frame. If \code{FALSE}, the summary score is returned as a separate
@@ -42,7 +46,11 @@ missing)
 \item \code{fc_p_fes__intelcult_008}
 \item \code{fc_p_fes__intelcult_009}
 }
-\item \emph{Excluded values:} none
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+\item 999
+}
 }
 }
 \seealso{

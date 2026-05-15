@@ -8,7 +8,7 @@ Sum"}
 compute_mh_y_ysr__synd__anxdep_sum(
   data,
   name = "mh_y_ysr__synd__anxdep_sum",
-  max_na = 0,
+  max_na = 2,
   exclude = c("777", "999"),
   combine = TRUE
 )
@@ -47,7 +47,6 @@ Youth Self Report [Youth] (Syndrome Scale - Anxious/Depressed): Sum
 \item \code{mh_y_ysr__anxdep__anx_005}
 \item \code{mh_y_ysr__anxdep__dep_003}
 \item \code{mh_y_ysr__anxdep__anx_006}
-\item \code{mh_y_ysr__anxdep__dep_004}
 \item \code{mh_y_ysr__anxdep__anx_007}
 }
 \item \emph{Excluded values:}
@@ -55,7 +54,7 @@ Youth Self Report [Youth] (Syndrome Scale - Anxious/Depressed): Sum
 \item 777
 \item 999
 }
-\item \emph{Validation criterion:} maximally 0 of 13 items missing
+\item \emph{Validation criterion:} maximally 2 of 12 items missing
 }
 }
 \examples{

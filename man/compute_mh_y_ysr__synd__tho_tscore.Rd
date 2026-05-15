@@ -11,7 +11,7 @@ compute_mh_y_ysr__synd__tho_tscore(
   name = "mh_y_ysr__synd__tho_tscore",
   col_age = "mh_y_ysr_age",
   col_sex = "ab_g_stc__cohort_sex",
-  max_na = 0,
+  max_na = 2,
   exclude = c("777", "999"),
   combine = TRUE
 )
@@ -47,7 +47,6 @@ Youth Self Report [Youth] (Syndrome Scale - Thought problems): T-score
 \item \emph{Summarized variables:}
 \itemize{
 \item \code{mh_y_ysr__tho_001}
-\item \code{mh_y_ysr__tho__dep_001}
 \item \code{mh_y_ysr__tho_002}
 \item \code{mh_y_ysr__tho_003}
 \item \code{mh_y_ysr__tho_004}
@@ -64,7 +63,8 @@ Youth Self Report [Youth] (Syndrome Scale - Thought problems): T-score
 \item 777
 \item 999
 }
-\item \emph{Validation criterion:} maximally 0 of 12 items missing
+\item \emph{Validation criterion:} maximally 2 of 11 items missing
+or \code{mh_y_ysr__dsm__adhd_nm} <= 5
 }
 }
 \examples{

@@ -3,7 +3,7 @@
 \name{compute_ph_p_sds__swtd_nm}
 \alias{compute_ph_p_sds__swtd_nm}
 \title{Compute "Sleep Disturbance Scale [Parent] (Sleep-wake transition
-disorders) - Number missing"}
+disorders): Number missing"}
 \usage{
 compute_ph_p_sds__swtd_nm(
   data,
@@ -30,7 +30,7 @@ a new column.
 }
 \description{
 Computes the summary score \code{ph_p_sds__swtd_nm}
-Sleep Disturbance Scale [Parent] (Sleep-wake transition disorders) - Number
+Sleep Disturbance Scale [Parent] (Sleep-wake transition disorders): Number
 missing
 \itemize{
 \item \emph{Summarized variables:}

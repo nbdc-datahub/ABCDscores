@@ -10,7 +10,7 @@ compute_mh_y_ysr__synd__int_tscore(
   name = "mh_y_ysr__synd__int_tscore",
   col_age = "mh_y_ysr_age",
   col_sex = "ab_g_stc__cohort_sex",
-  max_na = 2,
+  max_na = 6,
   exclude = c("777", "999"),
   combine = TRUE
 )
@@ -56,7 +56,6 @@ Youth Self Report [Youth] (Syndrome Scale - Internaling): T-score
 \item \code{mh_y_ysr__anxdep__anx_005}
 \item \code{mh_y_ysr__anxdep__dep_003}
 \item \code{mh_y_ysr__anxdep__anx_006}
-\item \code{mh_y_ysr__anxdep__dep_004}
 \item \code{mh_y_ysr__anxdep__anx_007}
 \item \code{mh_y_ysr__wthdep__dep_001}
 \item \code{mh_y_ysr__wthdep_001}
@@ -82,7 +81,8 @@ Youth Self Report [Youth] (Syndrome Scale - Internaling): T-score
 \item 777
 \item 999
 }
-\item \emph{Validation criterion:} maximally 2 of 31 items missing
+\item \emph{Validation criterion:} maximally 6 of 30 items missing
+or \code{mh_y_ysr__dsm__adhd_nm} <= 5
 }
 }
 \examples{

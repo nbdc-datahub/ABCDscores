@@ -1044,3 +1044,93 @@ compute_ab_g_dyn_all <- function(data) {
     compute_ab_g_dyn__cohort_edu__cgs() |>
     compute_ab_g_dyn__cohort_prtnrshp__employ()
 }
+
+#   ____________________________________________________________________________
+#   ab_p_demo__ntvam                                                       ####
+
+#' @export
+#' @autoglobal
+#' @rdname compute_ab_p_demo__ntvam_mean
+#' @format vars_ab_p_demo__ntvam is a character vector of all column names
+#' used to compute summary score of `ab_p_demo__ntvam`.
+vars_ab_p_demo__ntvam <- c(
+  "ab_p_demo__ntvam_005",
+  "ab_p_demo__ntvam_006",
+  "ab_p_demo__ntvam_007"
+)
+
+
+#' Compute "Demographics \[Parent\] (Native American Acculturation):
+#'   Mean"
+#'
+#' @description
+#' Computes the summary score `ab_p_demo__ntvam_mean`
+#' (Demographics \[Parent\] (Native American Acculturation): Mean)
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_ab_p_demo__ntvam |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 3 items missing
+#'
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @param name character. Name of the summary score. Default is the name in
+#' the description.
+#' @param combine logical. If `TRUE`, the summary score is appended to the
+#' input data frame. If `FALSE`, the summary score is returned as a separate
+#' data frame. Default is `TRUE`.
+#' @param max_na numeric, positive whole number. Number of missing items
+#'   allowed.
+#' @param exclude character vector. Values to be excluded from the summary
+#'    score calculation.
+#'
+#' @return tbl. The input data frame with the summary score appended as
+#'   a new column.
+#'
+#' @export
+#' @autoglobal
+compute_ab_p_demo__ntvam_mean <- function(
+    data,
+    name = "ab_p_demo__ntvam_mean",
+    max_na = 0,
+    exclude = c("999"),
+    combine = TRUE) {
+  chk::chk_data(data)
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+
+  data_ss <- data |>
+    ss_mean(
+      combine = FALSE,
+      name    = name,
+      vars    = vars_ab_p_demo__ntvam,
+      max_na  = max_na,
+      exclude = exclude
+    )
+
+  if (combine) {
+    data_ss <- bind_cols(data, data_ss)
+  }
+
+  data_ss
+}
+
+#' Compute all the ab_p_demo__ntvam scores
+#'
+#' @description
+#' A single function to compute all scores in the above domain using
+#' **default** arguments.
+#'
+#' @param data tbl, Dataframe containing the columns to be summarized.
+#'
+#' @return tbl. The input data frame with the summary scores appended as
+#'  new columns.
+#'
+#' @export
+#' @autoglobal
+compute_ab_p_demo__ntvam_all <- function(data) {
+  data |>
+    compute_ab_p_demo__ntvam_mean()
+}

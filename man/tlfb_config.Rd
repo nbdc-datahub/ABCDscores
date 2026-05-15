@@ -5,7 +5,7 @@
 \alias{tlfb_config}
 \title{Configuration for Timeline Followback calculations}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 870 rows and 10 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 906 rows and 10 columns.
 }
 \usage{
 tlfb_config

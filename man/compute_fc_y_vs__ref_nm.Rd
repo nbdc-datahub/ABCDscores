@@ -5,13 +5,21 @@
 \title{Compute "Values Scale [Youth] (Family as referent):
 Number missing"}
 \usage{
-compute_fc_y_vs__ref_nm(data, name = "fc_y_vs__ref_nm", combine = TRUE)
+compute_fc_y_vs__ref_nm(
+  data,
+  name = "fc_y_vs__ref_nm",
+  exclude = c("777"),
+  combine = TRUE
+)
 }
 \arguments{
 \item{data}{tbl. Data frame containing the columns to be summarized.}
 
 \item{name}{character. Name of the summary score. Default is the name in
 the description.}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical. If \code{TRUE}, the summary score is appended to the
 input data frame. If \code{FALSE}, the summary score is returned as a separate
@@ -34,7 +42,10 @@ missing)
 \item \code{fc_y_vs__ref_004}
 \item \code{fc_y_vs__ref_005}
 }
-\item \emph{Excluded values:} none
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+}
 }
 }
 \seealso{

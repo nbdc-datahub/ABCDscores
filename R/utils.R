@@ -620,10 +620,12 @@ ss_max <- function(data,
       "{name}" := if_else(
         rowSums(across(all_of(vars), is.na)) > max_na,
         NA,
-        purrr::invoke(
+        do.call(
           pmax,
-          across(vars),
-          na.rm = TRUE
+          c(
+            across(all_of(vars)),
+            list(na.rm = TRUE)
+          )
         )
       )
     ) |>
@@ -1526,6 +1528,109 @@ check_assign_na <- function(data, output, input, allow_missingness = TRUE) {
   }
 }
 
+#' Combine checkbox variables into a single list column
+#'
+#' @description
+#' Takes a group of checkbox-style variables, have a common prefix
+#' and numeric suffixes representing options, and combines them into a single
+#' list column where each element is a vector of selected options (numbers).
+#'
+#' This function expects the input data to include `participant_id` and
+#' `session_id` columns, which are used to group responses. For each participant
+#' and session, it collects all checkbox numbers that were selected as a single
+#' list. The resulting column can be renamed via the `name` parameter.
+#'
+#' @param data tbl. Data frame containing the participant responses.
+#' @param var_basename character of length 1. The base name of the checkbox
+#'   field.
+#' @param var_sep character of length 1. The string separating the base name
+#'   of the checkbox and the checkbox value. Default is `"___"`.
+#'   In the default scenario, all checkbox columns to be collapsed are expected
+#'   in the format, `{ var_basename }___{ value }`, where three underscores
+#'   separate the checkbox basename and the checkbox value.
+#' @param name character of length 1 or `NULL`. Optional. The name of the
+#'   output column that will store the combined checkbox selections.
+#'   If `NULL`, the value of `var_basename` is used as the output column name.
+#'
+#' @return tbl. The input data frame with an additional column containing a list
+#'   of integers corresponding to the selected checkbox options for each
+#'   participant and session.
+#'
+#' @export
+#' @autoglobal
+#'
+#' @examples
+#' # Example data
+#' dat <- tibble::tibble(
+#'   participant_id = c(1, 1, 2),
+#'   session_id = c(1, 2, 1),
+#'   q1___1 = c(1, NA, 0),
+#'   q1___2 = c(0, 1, 1),
+#'   q1___3 = c(NA, NA, 0)
+#' )
+#'
+#' # Combine q1 checkboxes into a single list column
+#' combine_checkboxes(dat, var_basename = "q1")
+#'
+#' # Combine and rename the output column
+#' combine_checkboxes(dat, var_basename = "q1", name = "q1_combined")
+#'
+combine_checkboxes <- function(
+    data,
+    var_basename,
+    var_sep = "___",
+    name = NULL) {
+  chk::check_names(data, "participant_id")
+  chk::check_names(data, "session_id")
+  check_col_names(data, var_basename)
+
+  out <- data |>
+    select(
+      participant_id,
+      session_id,
+      all_of(matches(var_basename))
+    ) |>
+    tidyr::pivot_longer(
+      cols = matches(var_basename),
+      names_to = "bd_name",
+      values_to = "bd_value"
+    ) |>
+    mutate(
+      bd_name = stringr::str_replace(
+        bd_name,
+        glue::glue("{var_basename}{var_sep}"),
+        ""
+      ),
+      bd_name = if_else(
+        bd_value == 1,
+        bd_name,
+        NA
+      )
+    ) |>
+    group_by(
+      participant_id,
+      session_id
+    ) |>
+    reframe(
+      tmp_column = list(
+        unique(na.omit(bd_name)) |> as.integer()
+      )
+    ) |>
+    distinct()
+
+  if (!is.null(name)) {
+    out <- out |> rename(!!name := tmp_column)
+  } else {
+    out <- out |> rename(!!var_basename := tmp_column)
+  }
+
+  data |>
+    left_join(
+      out,
+      join_by(participant_id, session_id)
+    )
+}
+
 #' Creates a new column by converting session_id column into a numeric
 #'
 #' @description
@@ -1750,21 +1855,15 @@ make_static <- function(data,
 find_data_norm <- function(data_norm) {
   # for internal use we can find the data_norm automatically
   # get the n - 1 call name
-  n_call <- sys.calls()
   if (
     !is.null(data_norm) ||
       getOption("list_tscore", "") == "" ||
-      length(n_call) == 2
+      length(sys.calls()) == 2
   ) {
     return(data_norm)
   }
-
-  func_name <- n_call[[length(n_call) - 2]] |>
-    as.character() %>%
-    {
-      .[1]
-    }
-
+  # the name object must be in the ss_tscore function
+  func_name <- paste0("compute_", parent.frame()$name)
   # only works on functions that are compute_..._tscore
   if (!stringr::str_detect(func_name, "^compute_.*_tscore$")) {
     return(data_norm)
@@ -1839,6 +1938,7 @@ get_tscore_tbl <- function(
   name_forms <- c(
     "mh_p_abcl",
     "mh_p_asr",
+    "mh_y_asr",
     "mh_p_cbcl",
     "mh_t_bpm",
     "mh_y_bpm",

@@ -1,3 +1,5 @@
+# fmt: skip file
+
 #' @export
 #' @autoglobal
 #' @rdname compute_tlfb_abst
@@ -368,6 +370,57 @@ compute_tlfb_totdose <- function(data,
       {{ name }} := sum(quantity),
       .by = c(participant_id, session_id)
     )
+}
+
+#' Compute TLFB lifetime total dose
+#'
+#' @description Computes the lifetime total dose over all use day for a given
+#'   (set of) substance(s). Optionally, allows to filter by period (detailed
+#'   and/or estimated); only considering a specified number of days before the
+#'   TLFB interview; only considering specific day types (weekends or week
+#'   days); only considering days with co-use of (a)other substance(s); and/or
+#'   only binge use.
+#'
+#' @inheritParams check_args_tlfb
+#'
+#' @return A tibble with the computed score for each participant/event.
+#'
+#' @examples
+#' \dontrun{
+#' compute_tlfb_totdose_sum(
+#'   data = data_tlfb,
+#'   name = "su_y_tlfb__alc__totdose_sum",
+#'   substance = "Alcohol"
+#' )
+#' }
+#' @export
+#' @autoglobal
+compute_tlfb_totdose_sum <- function(data,
+                                     name,
+                                     substance = NULL,
+                                     period = NULL,
+                                     days = NULL,
+                                     wknd = NULL,
+                                     co_use = NULL,
+                                     binge = NULL) {
+  compute_tlfb_totdose(
+    data,
+    "tlfb_totdose",
+    substance,
+    period,
+    days,
+    wknd,
+    co_use,
+    binge
+  ) |>
+    group_by(
+      participant_id
+    ) |>
+    mutate(
+      {{ name }} := cumsum(tlfb_totdose)
+    ) |>
+    ungroup() |>
+    select(-tlfb_totdose)
 }
 
 #' Compute TLFB use days
@@ -1040,4 +1093,511 @@ compute_su_y_sui__last__day_count <- function(
   } else {
     data_ss
   }
+}
+
+
+
+#' Prepare data for applying mid-year strategy
+#'
+#' @description
+#' Clean and prepare data for Static and Dynamic Substance Use (SDSU)
+#' scoring:
+#' - derive `session_type` ("A" for annual, "M" for mid-year),
+#' - compute `session_date` and `session_age`,
+#' - fill missing session dates within each participant and sort by filled date,
+#' - map mid-year sessions to the next observed annual session (`session_id_mapped`),
+#' - compute `last_session_id`, `forecast_next_annual`, and `session_id_mapped_forecast`.
+#'
+#' @param data tibble. Dataset with columns from several tables (e.g. `su_y_lowuse`, `su_y_sui`, `su_y_mypi`, `su_y_mysu`, `su_y_tlfb`) and
+#' containing at minimum `participant_id`, `session_id`, `ab_g_dyn__visit_dtt`, `ab_g_dyn__visit_age`, and `su_y_mypi_dtt`.
+#' @return tibble. Input tibble with added/modified columns:
+#'   `session_type`, `session_date`, `session_date_filled`, `session_id_mapped`,
+#'   `last_session_id`, `forecast_next_annual`, and `session_id_mapped_forecast`.
+#' @examples
+#' \dontrun{
+#' prepare_data_sdsu(dplyr::tibble(
+#'   participant_id = "sub-1",
+#'   session_id = "ses-01A",
+#'   ab_g_dyn__visit_dtt = as.Date("2020-01-01"),
+#'   su_y_mypi_dtt = as.Date(NA)
+#' ))
+#' }
+#' @export
+#' @autoglobal
+#' @keywords internal
+prepare_data_sdsu <- function(data) {
+  data |>
+    mutate(
+      session_type = case_when(
+        stringr::str_detect(session_id, "A$") ~ "A",
+        stringr::str_detect(session_id, "M$") ~ "M",
+        .default = "UNCATEGORIZED"
+      ),
+      session_date = case_when(
+        session_type == "A" ~ ab_g_dyn__visit_dtt,
+        session_type == "M" ~ su_y_mypi_dtt,
+        .default = NA
+      ),
+      session_age = case_when(
+        session_type == "A" ~ ab_g_dyn__visit_age,
+        session_type == "M" ~ su_y_mypi_age,
+        .default = NA
+      ),
+      session_date_filled = session_date
+    ) |>
+    group_by(participant_id) |>
+    tidyr::fill(
+      session_date_filled,
+      .direction = "downup"
+    ) |>
+    arrange(
+      session_date_filled,
+      .by_group = TRUE
+    ) |>
+    mutate(
+      session_id_mapped = if_else(
+        session_type == "A",
+        session_id,
+        NA
+      )
+    ) |>
+    tidyr::fill(
+      session_id_mapped,
+      .direction = "up"
+    ) |>
+    mutate(
+      last_session_id = last(session_id),
+      forecast_next_annual = stringr::str_replace(last_session_id, "M", "A"),
+      session_id_mapped_forecast = if_else(
+        is.na(session_id_mapped),
+        forecast_next_annual,
+        session_id_mapped
+      )
+    ) |>
+    ungroup()
+}
+
+#' Strategy for dealing with mid-year sessions
+#'
+#' @description
+#' Remove or map mid-year session records to full-year sessions according to a
+#' chosen algorithm. Operations are performed per participant on data prepared
+#' by [prepare_data_sdsu()].
+#'
+#' @param data tibble. A dataframe produced by [prepare_data_sdsu()].
+#' @param algo character. Mapping algorithm to apply to mid‑year
+#'   sessions. Allowed values:
+#'   - `"next_existing_fy"`: assign a mid year to the next existing full year.
+#'     If a participant ends with mid‑year visits, those terminal mid‑year
+#'     records are dropped.
+#'   - `"next_potential_fy"`: assign a mid year to the next existing full year when
+#'     present, otherwise assign to the next forecasted full year
+#'     (that may never materialize).
+#'   - `"next_immediate_fy"`: assign a mid year to the next full year regardless of
+#'     whether that full year record exists or not.
+#'   - `"remove_my"`: drop mid-year events and keep only full-year events.
+#'   If `NULL` (default) no mapping is performed and `data` is returned unchanged.
+#'
+#' @return tibble. A tibble with `session_id` remapped or rows filtered.
+#' @examples
+#' \dontrun{
+#' map_mid_years(data, algo = "next_immediate_fy")
+#' }
+#' @export
+#' @autoglobal
+#' @keywords internal
+map_mid_years <- function(
+    data,
+    algo = NULL) {
+  chk::chk_subset(
+    algo,
+    c(
+      "next_existing_fy",
+      "next_potential_fy",
+      "next_immediate_fy",
+      "remove_my"
+    )
+  )
+
+  if (is.null(algo)) {
+    data
+  } else if (algo == "next_existing_fy") {
+    data |>
+      mutate(
+        session_id = session_id_mapped
+      ) |>
+      filter(!is.na(session_id))
+  } else if (algo == "next_potential_fy") {
+    data |>
+      mutate(
+        session_id = session_id_mapped_forecast
+      )
+  } else if (algo == "next_immediate_fy") {
+    data |>
+      mutate(
+        session_id = case_when(
+          session_type == "A" ~ session_id,
+          session_type == "M" ~
+            stringr::str_replace(
+              session_id,
+              "(\\d+)M$",
+              function(x) {
+                paste0(sprintf("%02d", as.integer(gsub("\\D", "", x)) + 1), "A")
+              }
+            )
+        )
+      )
+  } else if (algo == "remove_my") {
+    data |>
+      filter(session_type == "A")
+  }
+}
+
+
+#' Check arguments for Static and Dynamic Substance Use (SDSU) scores functions
+#'
+#' @description
+#' Validates the arguments to compute a SDSU score.
+#'
+#' @param data tibble. Input data frame to validate.
+#' @param name character(1). Name of the output score column to validate.
+#' @return invisible NULL. Throws an error if checks fail.
+#' @export
+#' @autoglobal
+#' @keywords internal
+check_args_sdsu <- function(
+    data = data,
+    name = name) {
+  chk::chk_data(data)
+  check_col_names(data, name)
+}
+
+
+#' Compute substance use Y/N for a participant
+#'
+#' @description
+#' For each participant computes a binary (1/0) indicator indicating any use
+#' of (one of) the given substance(s) at a session (or cumulatively up to and
+#' including that session when `cumulative = TRUE`).
+#' Parameter `algo` is set to "next_existing_fy".
+#'
+#' @inheritParams map_mid_years
+#' @inheritParams check_args_sdsu
+#' @param substance character (vector). The substance(s) to compute the score
+#'   for. Must be one or several of the following values:
+#'   ```{r, echo=FALSE, results='asis'}
+#'   paste0("\"", sdsu_config |> pull(substance), "\"") |> md_bullet(2, TRUE)
+#'   ```
+#' @param cumulative logical(1). If `FALSE` (default), returns use at each
+#'   session. If `TRUE`, returns 1 from the first session where use was
+#'   observed onward (i.e. ever used up to and including that session).
+#'
+#' @return A tibble with columns `participant_id`, `session_id` and a numeric
+#'   column named by `name` containing 1 (use) or 0 (no use).
+#' @seealso [map_mid_years()]
+#'
+#' @examples
+#' \dontrun{
+#' deap_data |>
+#'   prepare_data_sdsu() |>
+#'   compute_ss_use_yn(
+#'     name = "su_y_alc_use_yn",
+#'     substance = "Alcohol"
+#'   )
+#' }
+#' @export
+#' @autoglobal
+compute_ss_use_yn <- function(
+    data,
+    name,
+    substance,
+    algo = "next_existing_fy",
+    cumulative = FALSE) {
+  check_args_sdsu(
+    data = data,
+    name = name
+  )
+
+  chk::chk_subset(
+    substance,
+    ABCDscores::sdsu_config |>
+      pull(substance)
+  )
+
+  chk::chk_flag(cumulative)
+
+  substance_vars <- ABCDscores::sdsu_config |>
+    filter(substance %in% .env[["substance"]]) |>
+    pull(vars) |>
+    purrr::list_c()
+
+  result <- data |>
+    map_mid_years(algo) |>
+    mutate(
+      across(
+        all_of(substance_vars),
+        ~ as.numeric(as.character(.x))
+      ),
+      use_yn = if_else(
+        rowSums(
+          across(any_of(substance_vars), ~ .x > 0),
+          na.rm = TRUE
+        ) >
+          0,
+        1,
+        0,
+        missing = 0
+      )
+    ) |>
+    group_by(participant_id, session_id) |>
+    summarise(
+      !!name := as.numeric(any(as.logical(use_yn))),
+      .groups = "drop"
+    )
+
+  if (cumulative) {
+    result <- result |>
+      arrange(participant_id, session_id) |>
+      mutate(
+        !!name := cummax(.data[[name]]),
+        .by = participant_id
+      )
+  }
+
+  result
+}
+
+#' Compute substance use onset session for each participant
+#'
+#' @description
+#' For each participant returns the session (character `session_id`) of first
+#'  use for the requested substance(s). The function:
+#' - maps or removes mid‑year sessions according to `algo` (see [map_mid_years()]) by default no.
+#' - for each participant selects the earliest session where any use was observed.
+#'
+#' @inheritParams map_mid_years
+#' @inheritParams check_args_sdsu
+#' @param substance character (vector). The substance(s) to compute the score
+#'   for. Must be one or several of the following values:
+#'   ```{r, echo=FALSE, results='asis'}
+#'   paste0("\"", sdsu_config |> pull(substance), "\"") |> md_bullet(2, TRUE)
+#'   ```
+#'
+#' @return A tibble with columns `participant_id` and a character
+#'   column named by `name` containing the session of onset or `NA` if there was no use.
+#' @seealso [map_mid_years()]
+#'
+#' @examples
+#' \dontrun{
+#' deap_data |>
+#'   prepare_data_sdsu() |>
+#'   compute_ss_use_onset_event(
+#'     name = "su_alc_onset_event",
+#'     substance = "Alcohol"
+#'   )
+#' }
+#' @export
+#' @autoglobal
+compute_ss_use_onset_event <- function(data, name, substance, algo = NULL) {
+  check_args_sdsu(
+    data = data,
+    name = name
+  )
+
+  chk::chk_subset(
+    substance,
+    ABCDscores::sdsu_config |>
+      pull(substance)
+  )
+
+  substance_vars <- ABCDscores::sdsu_config |>
+    filter(substance %in% .env[["substance"]]) |>
+    pull(vars) |>
+    purrr::list_c()
+
+  data_1yr_yn <- data |>
+    map_mid_years(algo) |>
+    mutate(
+      across(
+        all_of(substance_vars),
+        ~ as.numeric(as.character(.x))
+      ),
+      tmp_yn = if_else(
+        rowSums(
+          across(any_of(substance_vars), ~ .x > 0),
+          na.rm = TRUE
+        ) >
+          0,
+        1,
+        0,
+        missing = 0
+      )
+    ) |>
+    group_by(participant_id, session_id) |>
+    summarise(
+      tmp_yn_ps = as.numeric(any(as.logical(tmp_yn))),
+      .groups = "drop"
+    )
+
+  data_1yr_yn |>
+    summarise(
+      !!name := if (any(tmp_yn_ps == 1)) {
+        sessions <- session_id[tmp_yn_ps == 1]
+        as.character(sessions[which.min(as.numeric(sessions))])
+      } else {
+        NA_character_
+      },
+      .by = "participant_id"
+    )
+}
+
+#' Compute annual session substance use age of onset for a participant
+#'
+#' @description
+#' For each participant returns the age of onset for the requested
+#' substance(s). The function:
+#' - determines the session of first use (via [compute_ss_use_onset_event()])
+#'   and extracts the reported age at that visit;
+#' - for substance(s) that have detailed first-use age items, also extracts the
+#'   earliest reported age of first use across the relevant substance-specific
+#'   onset items; and
+#' - returns the age of first use if available, otherwise returns the age
+#'   reported at the visit. If neither value is available the result is `NA`.
+#'
+#' @inheritParams map_mid_years
+#' @inheritParams check_args_sdsu
+#' @param substance character (vector). The substance(s) to compute the score
+#'   for. Must be one or several of the following values:
+#'   ```{r, echo=FALSE, results='asis'}
+#'   paste0("\"", sdsu_config |> pull(substance), "\"") |> md_bullet(2, TRUE)
+#'   ```
+#'
+#' @return A tibble with columns `participant_id` and a character
+#'   column named by `name` containing the age of onset or `NA` if there was no use.
+#' @seealso [map_mid_years()]
+#'
+#' @examples
+#' \dontrun{
+#' deap_data |>
+#'   prepare_data_sdsu() |>
+#'   compute_ss_use_onset_age(
+#'     name = "su_alc_onset_age",
+#'     substance = "Alcohol"
+#'   )
+#' }
+#' @export
+#' @autoglobal
+compute_ss_use_onset_age <- function(data, name, substance, algo = NULL) {
+  # Age of self report
+  onset_age_report <- compute_ss_use_onset_event(
+    data,
+    "session_onset",
+    substance,
+    algo
+  ) |>
+    left_join(
+      data,
+      by = c("participant_id", "session_onset" = "session_id")
+    ) |>
+    select(
+      participant_id,
+      age_report = session_age
+    )
+
+  # Age of first use (for substances that have detailed age items)
+  substances_with_age_fu <- ABCDscores::sdsu_config |>
+    filter(has_age_fu, substance %in% .env[["substance"]]) |>
+    pull(substance)
+
+  if (length(substances_with_age_fu) > 0) {
+    # Expand marijuana and nicotine to their component substances
+    expanded_substances <- purrr::map(substances_with_age_fu, function(subst) {
+      if (subst == "Marijuana") {
+        c(
+          "Smoking Marijuana Flower",
+          "Marijuana Edibles",
+          "Marijuana Infused Alcohol Drinks",
+          "Smoking Marijuana Oils or Concentrates",
+          "Concentrated Marijuana Tinctures",
+          "Blunts or Combined Tobacco and Marijuana in Joints",
+          "Vaped Marijuana Flower",
+          "Vaped Marijuana Oils or Concentrates",
+          "CBD (Non-Medical Use)"
+        )
+      } else if (subst == "Nicotine") {
+        c(
+          "Electronic Nicotine or Vaping Products",
+          "Tobacco Cigarette",
+          "Cigars, Little Cigars, or Cigarillos",
+          "Tobacco in a Pipe",
+          "Hookah with Tobacco",
+          "Nicotine Replacements",
+          "Smokeless Tobacco, Chew, or Snus"
+        )
+      } else {
+        subst
+      }
+    }) |>
+      purrr::list_c()
+
+    keywords <- ABCDscores::sdsu_config$keyword[
+      ABCDscores::sdsu_config$substance %in% expanded_substances
+    ]
+
+    vars <- purrr::map_chr(keywords, function(keyword) {
+      case_when(
+        keyword == "flav__vape" ~ "su_y_sui__vape__flav__onset_useage",
+        keyword == "mj__conc" ~ "su_y_sui__mj__conc__vape__onset_useage",
+        keyword == "mj__vape__flwr" ~ "su_y_sui__mj__vape__onset_useage",
+        keyword == "mj__vape__oil" ~ "su_y_sui__mj__conc__vape__onset_useage",
+        .default = glue::glue("su_y_sui__{keyword}__onset_useage")
+      )
+    })
+
+    first_use_dfs <- purrr::map(vars, function(var) {
+      data |>
+        select(participant_id, session_id, all_of(var)) |>
+        tidyr::pivot_wider(
+          names_from = session_id,
+          values_from = all_of(var)
+        ) |>
+        transmute(
+          participant_id,
+          temp_age = do.call(coalesce, across(-participant_id))
+        )
+    })
+
+    onset_age_fu <- purrr::reduce(
+      first_use_dfs,
+      left_join,
+      by = "participant_id"
+    ) |>
+      mutate(
+        age_sui = do.call(
+          pmin,
+          c(across(starts_with("temp_age")), na.rm = TRUE)
+        )
+      ) |>
+      select(participant_id, age_sui)
+
+    output <- list(
+      sui = onset_age_fu,
+      report = onset_age_report
+    ) |>
+      purrr::reduce(full_join, by = "participant_id") |>
+      transmute(
+        participant_id,
+        !!name := case_when(
+          !is.na(age_sui) ~ age_sui,
+          !is.na(age_report) ~ age_report,
+          TRUE ~ NA_real_
+        )
+      )
+  } else {
+    output <- onset_age_report |>
+      rename(
+        !!name := age_report
+      )
+  }
+  output
 }

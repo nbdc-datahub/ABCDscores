@@ -5,7 +5,7 @@
 #' @rdname compute_su_y_alchss_sum
 #' @format vars_su_y_alchss is a table of all column names
 #' used to compute summary score of `su_y_alchss`.
-vars_su_y_alchss <- tibble(
+vars_su_y_alchss <- tibble::tibble(
   baseline = c(
     "su_y_alchss_001",
     "su_y_alchss_002",
@@ -3883,4 +3883,3023 @@ compute_su_y_caff_all <- function(data) {
     compute_su_y_caff__soda_sum() |>
     compute_su_y_caff__suppl_sum() |>
     compute_su_y_caff__tea_sum()
+}
+
+
+# su_p_ksads__aud ------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__aud__pres__sx_mean
+#' @format vars_su_p_ksads__aud__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__aud__pres__sx_mean`
+vars_su_p_ksads__aud__pres__sx <- c(
+  "su_p_ksads__aud__actvdecr__pres_sx",
+  "su_p_ksads__aud__crave__pres_sx",
+  "su_p_ksads__aud__dwi__pres_sx",
+  "su_p_ksads__aud__failrespons__pres_sx",
+  "su_p_ksads__aud__haz__pres_sx",
+  "su_p_ksads__aud__negimpct__interprs__pres_sx",
+  "su_p_ksads__aud__overuse__pres_sx",
+  "su_p_ksads__aud__prob__phys__pres_sx",
+  "su_p_ksads__aud__prob__psych__pres_sx",
+  "su_p_ksads__aud__reduce__dsr__pres_sx",
+  "su_p_ksads__aud__reduce__unsucces__pres_sx",
+  "su_p_ksads__aud__time__pres_sx",
+  "su_p_ksads__aud__tol__pres_sx",
+  "su_p_ksads__aud__withdr__pres_sx"
+)
+
+#' Compute "KSADS - Alcohol Use Disorder \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__aud__pres__sx_mean`
+#' KSADS - Alcohol Use Disorder \[Parent\] (Symptom - Present): Mean
+#' \[Validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__aud__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 14 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__aud__pres__sx_mean <- function(
+    data,
+    name = "su_p_ksads__aud__pres__sx_mean",
+    max_na = 2,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__aud__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__aud__past__sx_mean
+#' @format vars_su_p_ksads__aud__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__aud__past__sx_mean`
+vars_su_p_ksads__aud__past__sx <- c(
+  "su_p_ksads__aud__actvdecr__past_sx",
+  "su_p_ksads__aud__crave__past_sx",
+  "su_p_ksads__aud__dwi__past_sx",
+  "su_p_ksads__aud__failrespons__past_sx",
+  "su_p_ksads__aud__haz__past_sx",
+  "su_p_ksads__aud__negimpct__interprs__past_sx",
+  "su_p_ksads__aud__overuse__past_sx",
+  "su_p_ksads__aud__prob__phys__past_sx",
+  "su_p_ksads__aud__prob__psych__past_sx",
+  "su_p_ksads__aud__reduce__dsr__past_sx",
+  "su_p_ksads__aud__reduce__unsucces__past_sx",
+  "su_p_ksads__aud__time__past_sx",
+  "su_p_ksads__aud__tol__past_sx",
+  "su_p_ksads__aud__withdr__past_sx"
+)
+
+#' Compute "KSADS - Alcohol Use Disorder \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__aud__past__sx_mean`
+#' KSADS - Alcohol Use Disorder \[Parent\] (Symptom - Past): Mean
+#' \[Validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__aud__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 14 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__aud__past__sx_mean <- function(
+    data,
+    name = "su_p_ksads__aud__past__sx_mean",
+    max_na = 2,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__aud__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for su_p_ksads__aud
+#' @description
+#' This function computes all summary scores for the su_p_ksads__aud table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_su_p_ksads__aud_all <- function(data) {
+  data |>
+    compute_su_p_ksads__aud__past__sx_mean() |>
+    compute_su_p_ksads__aud__pres__sx_mean()
+}
+
+# su_p_ksads__dud ------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__pres__sx_mean
+#' @format vars_su_p_ksads__dud__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__pres__sx_mean`
+vars_su_p_ksads__dud__pres__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__pres_sx",
+  "su_p_ksads__dud__crave__pres_sx",
+  "su_p_ksads__dud__dwi__pres_sx",
+  "su_p_ksads__dud__failrespons__pres_sx",
+  "su_p_ksads__dud__haz__pres_sx",
+  "su_p_ksads__dud__negimpct__interprs__pres_sx",
+  "su_p_ksads__dud__negimpct__obl__pres_sx",
+  "su_p_ksads__dud__overuse__pres_sx",
+  "su_p_ksads__dud__prob__phys__pres_sx",
+  "su_p_ksads__dud__prob__psych__pres_sx",
+  "su_p_ksads__dud__reduce__dsr__pres_sx",
+  "su_p_ksads__dud__reduce__unsucces__pres_sx",
+  "su_p_ksads__dud__time__pres_sx",
+  "su_p_ksads__dud__tol__pres_sx",
+  "su_p_ksads__dud__withdr__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__pres__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__past__sx_mean
+#' @format vars_su_p_ksads__dud__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__past__sx_mean`
+vars_su_p_ksads__dud__past__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__past_sx",
+  "su_p_ksads__dud__crave__past_sx",
+  "su_p_ksads__dud__dwi__past_sx",
+  "su_p_ksads__dud__failrespons__past_sx",
+  "su_p_ksads__dud__haz__past_sx",
+  "su_p_ksads__dud__negimpct__interprs__past_sx",
+  "su_p_ksads__dud__negimpct__obl__past_sx",
+  "su_p_ksads__dud__overuse__past_sx",
+  "su_p_ksads__dud__prob__phys__past_sx",
+  "su_p_ksads__dud__prob__psych__past_sx",
+  "su_p_ksads__dud__reduce__dsr__past_sx",
+  "su_p_ksads__dud__reduce__unsucces__past_sx",
+  "su_p_ksads__dud__tol__past_sx",
+  "su_p_ksads__dud__withdr__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom - Past): Mean
+#' \[Validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 14 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__past__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__past__sx_mean",
+    max_na = 2,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__coc__past__sx_mean
+#' @format vars_su_p_ksads__dud__coc__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__coc__past__sx_mean`
+vars_su_p_ksads__dud__coc__past__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__coc__past_sx",
+  "su_p_ksads__dud__crave__coc__past_sx",
+  "su_p_ksads__dud__dwi__coc__past_sx",
+  "su_p_ksads__dud__failrespons__coc__past_sx",
+  "su_p_ksads__dud__haz__coc__past_sx",
+  "su_p_ksads__dud__negimpct__interprs__coc__past_sx",
+  "su_p_ksads__dud__negimpct__obl__coc__past_sx",
+  "su_p_ksads__dud__overuse__coc__past_sx",
+  "su_p_ksads__dud__prob__phys__coc__past_sx",
+  "su_p_ksads__dud__prob__psych__coc__past_sx",
+  "su_p_ksads__dud__reduce__dsr__coc__past_sx",
+  "su_p_ksads__dud__reduce__unsucces__coc__past_sx",
+  "su_p_ksads__dud__time__coc__past_sx",
+  "su_p_ksads__dud__tol__coc__past_sx",
+  "su_p_ksads__dud__withdr__coc__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Cocaine - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__coc__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Cocaine - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__coc__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__coc__past__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__coc__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__coc__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__coc__pres__sx_mean
+#' @format vars_su_p_ksads__dud__coc__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__coc__pres__sx_mean`
+vars_su_p_ksads__dud__coc__pres__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__coc__pres_sx",
+  "su_p_ksads__dud__crave__coc__pres_sx",
+  "su_p_ksads__dud__dwi__coc__pres_sx",
+  "su_p_ksads__dud__failrespons__coc__pres_sx",
+  "su_p_ksads__dud__haz__coc__pres_sx",
+  "su_p_ksads__dud__negimpct__interprs__coc__pres_sx",
+  "su_p_ksads__dud__negimpct__obl__coc__pres_sx",
+  "su_p_ksads__dud__overuse__coc__pres_sx",
+  "su_p_ksads__dud__prob__phys__coc__pres_sx",
+  "su_p_ksads__dud__prob__psych__coc__pres_sx",
+  "su_p_ksads__dud__reduce__dsr__coc__pres_sx",
+  "su_p_ksads__dud__reduce__unsucces__coc__pres_sx",
+  "su_p_ksads__dud__time__coc__pres_sx",
+  "su_p_ksads__dud__tol__coc__pres_sx",
+  "su_p_ksads__dud__withdr__coc__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Cocaine - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__coc__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Cocaine - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__coc__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__coc__pres__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__coc__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__coc__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__hall__past__sx_mean
+#' @format vars_su_p_ksads__dud__hall__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__hall__past__sx_mean`
+vars_su_p_ksads__dud__hall__past__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__hall__past_sx",
+  "su_p_ksads__dud__crave__hall__past_sx",
+  "su_p_ksads__dud__dwi__hall__past_sx",
+  "su_p_ksads__dud__failrespons__hall__past_sx",
+  "su_p_ksads__dud__haz__hall__past_sx",
+  "su_p_ksads__dud__negimpct__interprs__hall__past_sx",
+  "su_p_ksads__dud__negimpct__obl__hall__past_sx",
+  "su_p_ksads__dud__overuse__hall__past_sx",
+  "su_p_ksads__dud__prob__phys__hall__past_sx",
+  "su_p_ksads__dud__prob__psych__hall__past_sx",
+  "su_p_ksads__dud__reduce__dsr__hall__past_sx",
+  "su_p_ksads__dud__reduce__unsucces__hall__past_sx",
+  "su_p_ksads__dud__time__hall__past_sx",
+  "su_p_ksads__dud__tol__hall__past_sx",
+  "su_p_ksads__dud__withdr__hall__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\]
+#' (Symptom: Hallucinogen - Past): Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__hall__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Hallucinogen - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__hall__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__hall__past__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__hall__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__hall__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__hall__pres__sx_mean
+#' @format vars_su_p_ksads__dud__hall__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__hall__pres__sx_mean`
+vars_su_p_ksads__dud__hall__pres__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__hall__pres_sx",
+  "su_p_ksads__dud__crave__hall__pres_sx",
+  "su_p_ksads__dud__dwi__hall__pres_sx",
+  "su_p_ksads__dud__failrespons__hall__pres_sx",
+  "su_p_ksads__dud__haz__hall__pres_sx",
+  "su_p_ksads__dud__negimpct__interprs__hall__pres_sx",
+  "su_p_ksads__dud__negimpct__obl__hall__pres_sx",
+  "su_p_ksads__dud__overuse__hall__pres_sx",
+  "su_p_ksads__dud__prob__phys__hall__pres_sx",
+  "su_p_ksads__dud__prob__psych__hall__pres_sx",
+  "su_p_ksads__dud__reduce__dsr__hall__pres_sx",
+  "su_p_ksads__dud__reduce__unsucces__hall__pres_sx",
+  "su_p_ksads__dud__time__hall__pres_sx",
+  "su_p_ksads__dud__tol__hall__pres_sx",
+  "su_p_ksads__dud__withdr__hall__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\]
+#' (Symptom: Hallucinogen - Present): Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__hall__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Hallucinogen - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__hall__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__hall__pres__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__hall__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__hall__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__mj__past__sx_mean
+#' @format vars_su_p_ksads__dud__mj__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__mj__past__sx_mean`
+vars_su_p_ksads__dud__mj__past__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__mj__past_sx",
+  "su_p_ksads__dud__crave__mj__past_sx",
+  "su_p_ksads__dud__dwi__mj__past_sx",
+  "su_p_ksads__dud__failrespons__mj__past_sx",
+  "su_p_ksads__dud__haz__mj__past_sx",
+  "su_p_ksads__dud__negimpct__interprs__mj__past_sx",
+  "su_p_ksads__dud__negimpct__obl__mj__past_sx",
+  "su_p_ksads__dud__overuse__mj__past_sx",
+  "su_p_ksads__dud__prob__phys__mj__past_sx",
+  "su_p_ksads__dud__prob__psych__mj__past_sx",
+  "su_p_ksads__dud__reduce__dsr__mj__past_sx",
+  "su_p_ksads__dud__reduce__unsucces__mj__past_sx",
+  "su_p_ksads__dud__time__mj__past_sx",
+  "su_p_ksads__dud__tol__mj__past_sx",
+  "su_p_ksads__dud__withdr__mj__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Cannabis - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__mj__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Cannabis - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__mj__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__mj__past__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__mj__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__mj__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__mj__pres__sx_mean
+#' @format vars_su_p_ksads__dud__mj__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__mj__pres__sx_mean`
+vars_su_p_ksads__dud__mj__pres__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__mj__pres_sx",
+  "su_p_ksads__dud__crave__mj__pres_sx",
+  "su_p_ksads__dud__dwi__mj__pres_sx",
+  "su_p_ksads__dud__failrespons__mj__pres_sx",
+  "su_p_ksads__dud__haz__mj__pres_sx",
+  "su_p_ksads__dud__negimpct__interprs__mj__pres_sx",
+  "su_p_ksads__dud__negimpct__obl__mj__pres_sx",
+  "su_p_ksads__dud__overuse__mj__pres_sx",
+  "su_p_ksads__dud__prob__phys__mj__pres_sx",
+  "su_p_ksads__dud__prob__psych__mj__pres_sx",
+  "su_p_ksads__dud__reduce__dsr__mj__pres_sx",
+  "su_p_ksads__dud__reduce__unsucces__mj__pres_sx",
+  "su_p_ksads__dud__time__mj__pres_sx",
+  "su_p_ksads__dud__tol__mj__pres_sx",
+  "su_p_ksads__dud__withdr__mj__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Cannabis - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__mj__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Cannabis - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__mj__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__mj__pres__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__mj__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__mj__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__nic__past__sx_mean
+#' @format vars_su_p_ksads__dud__nic__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__nic__past__sx_mean`
+vars_su_p_ksads__dud__nic__past__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__nic__past_sx",
+  "su_p_ksads__dud__crave__nic__past_sx",
+  "su_p_ksads__dud__dwi__nic__past_sx",
+  "su_p_ksads__dud__failrespons__nic__past_sx",
+  "su_p_ksads__dud__haz__nic__past_sx",
+  "su_p_ksads__dud__negimpct__interprs__nic__past_sx",
+  "su_p_ksads__dud__negimpct__obl__nic__past_sx",
+  "su_p_ksads__dud__overuse__nic__past_sx",
+  "su_p_ksads__dud__prob__phys__nic__past_sx",
+  "su_p_ksads__dud__prob__psych__nic__past_sx",
+  "su_p_ksads__dud__reduce__dsr__nic__past_sx",
+  "su_p_ksads__dud__reduce__unsucces__nic__past_sx",
+  "su_p_ksads__dud__time__nic__past_sx",
+  "su_p_ksads__dud__tol__nic__past_sx",
+  "su_p_ksads__dud__withdr__nic__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Tobacco - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__nic__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Tobacco - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__nic__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__nic__past__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__nic__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__nic__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__nic__pres__sx_mean
+#' @format vars_su_p_ksads__dud__nic__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__nic__pres__sx_mean`
+vars_su_p_ksads__dud__nic__pres__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__nic__pres_sx",
+  "su_p_ksads__dud__crave__nic__pres_sx",
+  "su_p_ksads__dud__dwi__nic__pres_sx",
+  "su_p_ksads__dud__failrespons__nic__pres_sx",
+  "su_p_ksads__dud__haz__nic__pres_sx",
+  "su_p_ksads__dud__negimpct__interprs__nic__pres_sx",
+  "su_p_ksads__dud__negimpct__obl__nic__pres_sx",
+  "su_p_ksads__dud__overuse__nic__pres_sx",
+  "su_p_ksads__dud__prob__phys__nic__pres_sx",
+  "su_p_ksads__dud__prob__psych__nic__pres_sx",
+  "su_p_ksads__dud__reduce__dsr__nic__pres_sx",
+  "su_p_ksads__dud__reduce__unsucces__nic__pres_sx",
+  "su_p_ksads__dud__time__nic__pres_sx",
+  "su_p_ksads__dud__tol__nic__pres_sx",
+  "su_p_ksads__dud__withdr__nic__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Tobacco - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__nic__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Tobacco - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__nic__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__nic__pres__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__nic__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__nic__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__opi__past__sx_mean
+#' @format vars_su_p_ksads__dud__opi__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__opi__past__sx_mean`
+vars_su_p_ksads__dud__opi__past__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__opi__past_sx",
+  "su_p_ksads__dud__crave__opi__past_sx",
+  "su_p_ksads__dud__dwi__opi__past_sx",
+  "su_p_ksads__dud__failrespons__opi__past_sx",
+  "su_p_ksads__dud__haz__opi__past_sx",
+  "su_p_ksads__dud__negimpct__interprs__opi__past_sx",
+  "su_p_ksads__dud__negimpct__obl__opi__past_sx",
+  "su_p_ksads__dud__overuse__opi__past_sx",
+  "su_p_ksads__dud__prob__phys__opi__past_sx",
+  "su_p_ksads__dud__prob__psych__opi__past_sx",
+  "su_p_ksads__dud__reduce__dsr__opi__past_sx",
+  "su_p_ksads__dud__reduce__unsucces__opi__past_sx",
+  "su_p_ksads__dud__time__opi__past_sx",
+  "su_p_ksads__dud__tol__opi__past_sx",
+  "su_p_ksads__dud__withdr__opi__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Opiod - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__opi__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Opiod - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__opi__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__opi__past__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__opi__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__opi__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__opi__pres__sx_mean
+#' @format vars_su_p_ksads__dud__opi__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__opi__pres__sx_mean`
+vars_su_p_ksads__dud__opi__pres__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__opi__pres_sx",
+  "su_p_ksads__dud__crave__opi__pres_sx",
+  "su_p_ksads__dud__dwi__opi__pres_sx",
+  "su_p_ksads__dud__failrespons__opi__pres_sx",
+  "su_p_ksads__dud__haz__opi__pres_sx",
+  "su_p_ksads__dud__negimpct__interprs__opi__pres_sx",
+  "su_p_ksads__dud__negimpct__obl__opi__pres_sx",
+  "su_p_ksads__dud__overuse__opi__pres_sx",
+  "su_p_ksads__dud__prob__phys__opi__pres_sx",
+  "su_p_ksads__dud__prob__psych__opi__pres_sx",
+  "su_p_ksads__dud__reduce__dsr__opi__pres_sx",
+  "su_p_ksads__dud__reduce__unsucces__opi__pres_sx",
+  "su_p_ksads__dud__time__opi__pres_sx",
+  "su_p_ksads__dud__tol__opi__pres_sx",
+  "su_p_ksads__dud__withdr__opi__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Opiod - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__opi__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Opiod - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__opi__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__opi__pres__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__opi__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__opi__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__othdrg__past__sx_mean
+#' @format vars_su_p_ksads__dud__othdrg__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__othdrg__past__sx_mean`
+vars_su_p_ksads__dud__othdrg__past__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__othdrg__past_sx",
+  "su_p_ksads__dud__crave__othdrg__past_sx",
+  "su_p_ksads__dud__dwi__othdrg__past_sx",
+  "su_p_ksads__dud__failrespons__othdrg__past_sx",
+  "su_p_ksads__dud__haz__othdrg__past_sx",
+  "su_p_ksads__dud__negimpct__interprs__othdrg__past_sx",
+  "su_p_ksads__dud__negimpct__obl__othdrg__past_sx",
+  "su_p_ksads__dud__overuse__othdrg__past_sx",
+  "su_p_ksads__dud__prob__phys__othdrg__past_sx",
+  "su_p_ksads__dud__prob__psych__othdrg__past_sx",
+  "su_p_ksads__dud__reduce__dsr__othdrg__past_sx",
+  "su_p_ksads__dud__reduce__unsucces__othdrg__past_sx",
+  "su_p_ksads__dud__time__othdrg__past_sx",
+  "su_p_ksads__dud__tol__othdrg__past_sx",
+  "su_p_ksads__dud__withdr__othdrg__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\]
+#' (Symptom: Other drugs - Past): Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__othdrg__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Other drugs - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__othdrg__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__othdrg__past__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__othdrg__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__othdrg__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__othdrg__pres__sx_mean
+#' @format vars_su_p_ksads__dud__othdrg__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__othdrg__pres__sx_mean`
+vars_su_p_ksads__dud__othdrg__pres__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__othdrg__pres_sx",
+  "su_p_ksads__dud__crave__othdrg__pres_sx",
+  "su_p_ksads__dud__dwi__othdrg__pres_sx",
+  "su_p_ksads__dud__failrespons__othdrg__pres_sx",
+  "su_p_ksads__dud__haz__othdrg__pres_sx",
+  "su_p_ksads__dud__negimpct__interprs__othdrg__pres_sx",
+  "su_p_ksads__dud__negimpct__obl__othdrg__pres_sx",
+  "su_p_ksads__dud__overuse__othdrg__pres_sx",
+  "su_p_ksads__dud__prob__phys__othdrg__pres_sx",
+  "su_p_ksads__dud__prob__psych__othdrg__pres_sx",
+  "su_p_ksads__dud__reduce__dsr__othdrg__pres_sx",
+  "su_p_ksads__dud__reduce__unsucces__othdrg__pres_sx",
+  "su_p_ksads__dud__time__othdrg__pres_sx",
+  "su_p_ksads__dud__tol__othdrg__pres_sx",
+  "su_p_ksads__dud__withdr__othdrg__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\]
+#' (Symptom: Other drugs - Present): Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__othdrg__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Other drugs - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__othdrg__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__othdrg__pres__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__othdrg__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__othdrg__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__pcp__past__sx_mean
+#' @format vars_su_p_ksads__dud__pcp__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__pcp__past__sx_mean`
+vars_su_p_ksads__dud__pcp__past__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__pcp__past_sx",
+  "su_p_ksads__dud__crave__pcp__past_sx",
+  "su_p_ksads__dud__dwi__pcp__past_sx",
+  "su_p_ksads__dud__failrespons__pcp__past_sx",
+  "su_p_ksads__dud__haz__pcp__past_sx",
+  "su_p_ksads__dud__negimpct__interprs__pcp__past_sx",
+  "su_p_ksads__dud__negimpct__obl__pcp__past_sx",
+  "su_p_ksads__dud__overuse__pcp__past_sx",
+  "su_p_ksads__dud__prob__phys__pcp__past_sx",
+  "su_p_ksads__dud__prob__psych__pcp__past_sx",
+  "su_p_ksads__dud__reduce__dsr__pcp__past_sx",
+  "su_p_ksads__dud__reduce__unsucces__pcp__past_sx",
+  "su_p_ksads__dud__time__pcp__past_sx",
+  "su_p_ksads__dud__tol__pcp__past_sx",
+  "su_p_ksads__dud__withdr__pcp__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: PCP - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__pcp__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: PCP - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__pcp__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__pcp__past__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__pcp__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__pcp__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__pcp__pres__sx_mean
+#' @format vars_su_p_ksads__dud__pcp__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__pcp__pres__sx_mean`
+vars_su_p_ksads__dud__pcp__pres__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__pcp__pres_sx",
+  "su_p_ksads__dud__crave__pcp__pres_sx",
+  "su_p_ksads__dud__dwi__pcp__pres_sx",
+  "su_p_ksads__dud__failrespons__pcp__pres_sx",
+  "su_p_ksads__dud__haz__pcp__pres_sx",
+  "su_p_ksads__dud__negimpct__interprs__pcp__pres_sx",
+  "su_p_ksads__dud__negimpct__obl__pcp__pres_sx",
+  "su_p_ksads__dud__overuse__pcp__pres_sx",
+  "su_p_ksads__dud__prob__phys__pcp__pres_sx",
+  "su_p_ksads__dud__prob__psych__pcp__pres_sx",
+  "su_p_ksads__dud__reduce__dsr__pcp__pres_sx",
+  "su_p_ksads__dud__reduce__unsucces__pcp__pres_sx",
+  "su_p_ksads__dud__time__pcp__pres_sx",
+  "su_p_ksads__dud__tol__pcp__pres_sx",
+  "su_p_ksads__dud__withdr__pcp__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: PCP - Present): Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__pcp__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: PCP - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__pcp__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__pcp__pres__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__pcp__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__pcp__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__sed__past__sx_mean
+#' @format vars_su_p_ksads__dud__sed__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__sed__past__sx_mean`
+vars_su_p_ksads__dud__sed__past__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__sed__past_sx",
+  "su_p_ksads__dud__crave__sed__past_sx",
+  "su_p_ksads__dud__dwi__sed__past_sx",
+  "su_p_ksads__dud__failrespons__sed__past_sx",
+  "su_p_ksads__dud__haz__sed__past_sx",
+  "su_p_ksads__dud__negimpct__interprs__sed__past_sx",
+  "su_p_ksads__dud__negimpct__obl__sed__past_sx",
+  "su_p_ksads__dud__overuse__sed__past_sx",
+  "su_p_ksads__dud__prob__phys__sed__past_sx",
+  "su_p_ksads__dud__prob__psych__sed__past_sx",
+  "su_p_ksads__dud__reduce__dsr__sed__past_sx",
+  "su_p_ksads__dud__reduce__unsucces__sed__past_sx",
+  "su_p_ksads__dud__time__sed__past_sx",
+  "su_p_ksads__dud__tol__sed__past_sx",
+  "su_p_ksads__dud__withdr__sed__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\]
+#' (Symptom: Sedatives - Past): Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__sed__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Sedatives - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__sed__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__sed__past__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__sed__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__sed__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__sed__pres__sx_mean
+#' @format vars_su_p_ksads__dud__sed__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__sed__pres__sx_mean`
+vars_su_p_ksads__dud__sed__pres__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__sed__pres_sx",
+  "su_p_ksads__dud__crave__sed__pres_sx",
+  "su_p_ksads__dud__dwi__sed__pres_sx",
+  "su_p_ksads__dud__failrespons__sed__pres_sx",
+  "su_p_ksads__dud__haz__sed__pres_sx",
+  "su_p_ksads__dud__negimpct__interprs__sed__pres_sx",
+  "su_p_ksads__dud__negimpct__obl__sed__pres_sx",
+  "su_p_ksads__dud__overuse__sed__pres_sx",
+  "su_p_ksads__dud__prob__phys__sed__pres_sx",
+  "su_p_ksads__dud__prob__psych__sed__pres_sx",
+  "su_p_ksads__dud__reduce__dsr__sed__pres_sx",
+  "su_p_ksads__dud__reduce__unsucces__sed__pres_sx",
+  "su_p_ksads__dud__time__sed__pres_sx",
+  "su_p_ksads__dud__tol__sed__pres_sx",
+  "su_p_ksads__dud__withdr__sed__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\]
+#' (Symptom: Sedatives - Present): Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__sed__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Sedatives - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__sed__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__sed__pres__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__sed__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__sed__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__solv__past__sx_mean
+#' @format vars_su_p_ksads__dud__solv__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__solv__past__sx_mean`
+vars_su_p_ksads__dud__solv__past__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__solv__past_sx",
+  "su_p_ksads__dud__crave__solv__past_sx",
+  "su_p_ksads__dud__dwi__solv__past_sx",
+  "su_p_ksads__dud__failrespons__solv__past_sx",
+  "su_p_ksads__dud__haz__solv__past_sx",
+  "su_p_ksads__dud__negimpct__interprs__solv__past_sx",
+  "su_p_ksads__dud__negimpct__obl__solv__past_sx",
+  "su_p_ksads__dud__overuse__solv__past_sx",
+  "su_p_ksads__dud__prob__phys__solv__past_sx",
+  "su_p_ksads__dud__prob__psych__solv__past_sx",
+  "su_p_ksads__dud__reduce__dsr__solv__past_sx",
+  "su_p_ksads__dud__reduce__unsucces__solv__past_sx",
+  "su_p_ksads__dud__time__solv__past_sx",
+  "su_p_ksads__dud__tol__solv__past_sx",
+  "su_p_ksads__dud__withdr__solv__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Solvent - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__solv__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Solvent - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__solv__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__solv__past__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__solv__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__solv__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__solv__pres__sx_mean
+#' @format vars_su_p_ksads__dud__solv__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__solv__pres__sx_mean`
+vars_su_p_ksads__dud__solv__pres__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__solv__pres_sx",
+  "su_p_ksads__dud__crave__solv__pres_sx",
+  "su_p_ksads__dud__dwi__solv__pres_sx",
+  "su_p_ksads__dud__failrespons__solv__pres_sx",
+  "su_p_ksads__dud__haz__solv__pres_sx",
+  "su_p_ksads__dud__negimpct__interprs__solv__pres_sx",
+  "su_p_ksads__dud__negimpct__obl__solv__pres_sx",
+  "su_p_ksads__dud__overuse__solv__pres_sx",
+  "su_p_ksads__dud__prob__phys__solv__pres_sx",
+  "su_p_ksads__dud__prob__psych__solv__pres_sx",
+  "su_p_ksads__dud__reduce__dsr__solv__pres_sx",
+  "su_p_ksads__dud__reduce__unsucces__solv__pres_sx",
+  "su_p_ksads__dud__time__solv__pres_sx",
+  "su_p_ksads__dud__tol__solv__pres_sx",
+  "su_p_ksads__dud__withdr__solv__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Solvent - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__solv__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Solvent - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__solv__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__solv__pres__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__solv__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__solv__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__stim__past__sx_mean
+#' @format vars_su_p_ksads__dud__stim__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__stim__past__sx_mean`
+vars_su_p_ksads__dud__stim__past__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__stim__past_sx",
+  "su_p_ksads__dud__crave__stim__past_sx",
+  "su_p_ksads__dud__dwi__stim__past_sx",
+  "su_p_ksads__dud__failrespons__stim__past_sx",
+  "su_p_ksads__dud__haz__stim__past_sx",
+  "su_p_ksads__dud__negimpct__interprs__stim__past_sx",
+  "su_p_ksads__dud__negimpct__obl__stim__past_sx",
+  "su_p_ksads__dud__overuse__stim__past_sx",
+  "su_p_ksads__dud__prob__phys__stim__past_sx",
+  "su_p_ksads__dud__prob__psych__stim__past_sx",
+  "su_p_ksads__dud__reduce__dsr__stim__past_sx",
+  "su_p_ksads__dud__reduce__unsucces__stim__past_sx",
+  "su_p_ksads__dud__time__stim__past_sx",
+  "su_p_ksads__dud__tol__stim__past_sx",
+  "su_p_ksads__dud__withdr__stim__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\]
+#' (Symptom: Stimulants - Past): Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__stim__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Stimulants - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__stim__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__stim__past__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__stim__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__stim__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_p_ksads__dud__stim__pres__sx_mean
+#' @format vars_su_p_ksads__dud__stim__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_p_ksads__dud__stim__pres__sx_mean`
+vars_su_p_ksads__dud__stim__pres__sx_mean <- c(
+  "su_p_ksads__dud__actvdecr__stim__pres_sx",
+  "su_p_ksads__dud__crave__stim__pres_sx",
+  "su_p_ksads__dud__dwi__stim__pres_sx",
+  "su_p_ksads__dud__failrespons__stim__pres_sx",
+  "su_p_ksads__dud__haz__stim__pres_sx",
+  "su_p_ksads__dud__negimpct__interprs__stim__pres_sx",
+  "su_p_ksads__dud__negimpct__obl__stim__pres_sx",
+  "su_p_ksads__dud__overuse__stim__pres_sx",
+  "su_p_ksads__dud__prob__phys__stim__pres_sx",
+  "su_p_ksads__dud__prob__psych__stim__pres_sx",
+  "su_p_ksads__dud__reduce__dsr__stim__pres_sx",
+  "su_p_ksads__dud__reduce__unsucces__stim__pres_sx",
+  "su_p_ksads__dud__time__stim__pres_sx",
+  "su_p_ksads__dud__tol__stim__pres_sx",
+  "su_p_ksads__dud__withdr__stim__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Parent\]
+#' (Symptom: Stimulants - Present): Mean"
+#' @description
+#' Computes the summary score `su_p_ksads__dud__stim__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Parent\] (Symptom: Stimulants - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_p_ksads__dud__stim__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud__stim__pres__sx_mean <- function(
+    data,
+    name = "su_p_ksads__dud__stim__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_p_ksads__dud__stim__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for su_p_ksads__dud
+#' @description
+#' This function computes all summary scores for the su_p_ksads__dud table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new
+#' columns.
+#' @export
+#' @autoglobal
+compute_su_p_ksads__dud_all <- function(data) {
+  data |>
+    compute_su_p_ksads__dud__past__sx_mean() |>
+    compute_su_p_ksads__dud__pres__sx_mean() |>
+    compute_su_p_ksads__dud__coc__past__sx_mean() |>
+    compute_su_p_ksads__dud__coc__pres__sx_mean() |>
+    compute_su_p_ksads__dud__hall__past__sx_mean() |>
+    compute_su_p_ksads__dud__hall__pres__sx_mean() |>
+    compute_su_p_ksads__dud__mj__past__sx_mean() |>
+    compute_su_p_ksads__dud__mj__pres__sx_mean() |>
+    compute_su_p_ksads__dud__nic__past__sx_mean() |>
+    compute_su_p_ksads__dud__nic__pres__sx_mean() |>
+    compute_su_p_ksads__dud__opi__past__sx_mean() |>
+    compute_su_p_ksads__dud__opi__pres__sx_mean() |>
+    compute_su_p_ksads__dud__othdrg__past__sx_mean() |>
+    compute_su_p_ksads__dud__othdrg__pres__sx_mean() |>
+    compute_su_p_ksads__dud__pcp__past__sx_mean() |>
+    compute_su_p_ksads__dud__pcp__pres__sx_mean() |>
+    compute_su_p_ksads__dud__sed__past__sx_mean() |>
+    compute_su_p_ksads__dud__sed__pres__sx_mean() |>
+    compute_su_p_ksads__dud__solv__past__sx_mean() |>
+    compute_su_p_ksads__dud__solv__pres__sx_mean() |>
+    compute_su_p_ksads__dud__stim__past__sx_mean() |>
+    compute_su_p_ksads__dud__stim__pres__sx_mean()
+}
+
+# su_y_ksads__aud ------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__aud__pres__sx_mean
+#' @format vars_su_y_ksads__aud__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__aud__pres__sx_mean`
+vars_su_y_ksads__aud__pres__sx <- c(
+  "su_y_ksads__aud__actvdecr__pres_sx",
+  "su_y_ksads__aud__crave__pres_sx",
+  "su_y_ksads__aud__dwi__pres_sx",
+  "su_y_ksads__aud__failrespons__pres_sx",
+  "su_y_ksads__aud__haz__pres_sx",
+  "su_y_ksads__aud__negimpct__interprs__pres_sx",
+  "su_y_ksads__aud__overuse__pres_sx",
+  "su_y_ksads__aud__prob__phys__pres_sx",
+  "su_y_ksads__aud__prob__psych__pres_sx",
+  "su_y_ksads__aud__reduce__dsr__pres_sx",
+  "su_y_ksads__aud__reduce__unsucces__pres_sx",
+  "su_y_ksads__aud__time__pres_sx",
+  "su_y_ksads__aud__tol__pres_sx",
+  "su_y_ksads__aud__withdr__pres_sx"
+)
+
+#' Compute "KSADS - Alcohol Use Disorder \[Youth\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__aud__pres__sx_mean`
+#' KSADS - Alcohol Use Disorder \[Youth\] (Symptom - Present): Mean
+#' \[Validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__aud__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 14 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__aud__pres__sx_mean <- function(
+    data,
+    name = "su_y_ksads__aud__pres__sx_mean",
+    max_na = 2,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__aud__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__aud__past__sx_mean
+#' @format vars_su_y_ksads__aud__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__aud__past__sx_mean`
+vars_su_y_ksads__aud__past__sx <- c(
+  "su_y_ksads__aud__actvdecr__past_sx",
+  "su_y_ksads__aud__crave__past_sx",
+  "su_y_ksads__aud__dwi__past_sx",
+  "su_y_ksads__aud__failrespons__past_sx",
+  "su_y_ksads__aud__haz__past_sx",
+  "su_y_ksads__aud__negimpct__interprs__past_sx",
+  "su_y_ksads__aud__overuse__past_sx",
+  "su_y_ksads__aud__prob__phys__past_sx",
+  "su_y_ksads__aud__prob__psych__past_sx",
+  "su_y_ksads__aud__reduce__dsr__past_sx",
+  "su_y_ksads__aud__reduce__unsucces__past_sx",
+  "su_y_ksads__aud__time__past_sx",
+  "su_y_ksads__aud__tol__past_sx",
+  "su_y_ksads__aud__withdr__past_sx"
+)
+
+#' Compute "KSADS - Alcohol Use Disorder \[Youth\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__aud__past__sx_mean`
+#' KSADS - Alcohol Use Disorder \[Youth\] (Symptom - Past): Mean
+#' \[Validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__aud__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 14 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__aud__past__sx_mean <- function(
+    data,
+    name = "su_y_ksads__aud__past__sx_mean",
+    max_na = 2,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__aud__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for su_y_ksads__aud
+#' @description
+#' This function computes all summary scores for the su_y_ksads__aud table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_su_y_ksads__aud_all <- function(data) {
+  data |>
+    compute_su_y_ksads__aud__past__sx_mean() |>
+    compute_su_y_ksads__aud__pres__sx_mean()
+}
+
+# su_y_ksads__dud ------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__pres__sx_mean
+#' @format vars_su_y_ksads__dud__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__pres__sx_mean`
+vars_su_y_ksads__dud__pres__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__pres_sx",
+  "su_y_ksads__dud__crave__pres_sx",
+  "su_y_ksads__dud__dwi__pres_sx",
+  "su_y_ksads__dud__failrespons__pres_sx",
+  "su_y_ksads__dud__haz__pres_sx",
+  "su_y_ksads__dud__negimpct__interprs__pres_sx",
+  "su_y_ksads__dud__negimpct__obl__pres_sx",
+  "su_y_ksads__dud__overuse__pres_sx",
+  "su_y_ksads__dud__prob__phys__pres_sx",
+  "su_y_ksads__dud__prob__psych__pres_sx",
+  "su_y_ksads__dud__reduce__dsr__pres_sx",
+  "su_y_ksads__dud__reduce__unsucces__pres_sx",
+  "su_y_ksads__dud__time__pres_sx",
+  "su_y_ksads__dud__tol__pres_sx",
+  "su_y_ksads__dud__withdr__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__pres__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__past__sx_mean
+#' @format vars_su_y_ksads__dud__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__past__sx_mean`
+vars_su_y_ksads__dud__past__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__past_sx",
+  "su_y_ksads__dud__crave__past_sx",
+  "su_y_ksads__dud__dwi__past_sx",
+  "su_y_ksads__dud__failrespons__past_sx",
+  "su_y_ksads__dud__haz__past_sx",
+  "su_y_ksads__dud__negimpct__interprs__past_sx",
+  "su_y_ksads__dud__negimpct__obl__past_sx",
+  "su_y_ksads__dud__overuse__past_sx",
+  "su_y_ksads__dud__prob__phys__past_sx",
+  "su_y_ksads__dud__prob__psych__past_sx",
+  "su_y_ksads__dud__reduce__dsr__past_sx",
+  "su_y_ksads__dud__reduce__unsucces__past_sx",
+  "su_y_ksads__dud__tol__past_sx",
+  "su_y_ksads__dud__withdr__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom - Past): Mean
+#' \[Validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 14 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__past__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__past__sx_mean",
+    max_na = 2,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__coc__past__sx_mean
+#' @format vars_su_y_ksads__dud__coc__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__coc__past__sx_mean`
+vars_su_y_ksads__dud__coc__past__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__coc__past_sx",
+  "su_y_ksads__dud__crave__coc__past_sx",
+  "su_y_ksads__dud__dwi__coc__past_sx",
+  "su_y_ksads__dud__failrespons__coc__past_sx",
+  "su_y_ksads__dud__haz__coc__past_sx",
+  "su_y_ksads__dud__negimpct__interprs__coc__past_sx",
+  "su_y_ksads__dud__negimpct__obl__coc__past_sx",
+  "su_y_ksads__dud__overuse__coc__past_sx",
+  "su_y_ksads__dud__prob__phys__coc__past_sx",
+  "su_y_ksads__dud__prob__psych__coc__past_sx",
+  "su_y_ksads__dud__reduce__dsr__coc__past_sx",
+  "su_y_ksads__dud__reduce__unsucces__coc__past_sx",
+  "su_y_ksads__dud__time__coc__past_sx",
+  "su_y_ksads__dud__tol__coc__past_sx",
+  "su_y_ksads__dud__withdr__coc__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Cocaine - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__coc__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Cocaine - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__coc__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__coc__past__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__coc__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__coc__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__coc__pres__sx_mean
+#' @format vars_su_y_ksads__dud__coc__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__coc__pres__sx_mean`
+vars_su_y_ksads__dud__coc__pres__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__coc__pres_sx",
+  "su_y_ksads__dud__crave__coc__pres_sx",
+  "su_y_ksads__dud__dwi__coc__pres_sx",
+  "su_y_ksads__dud__failrespons__coc__pres_sx",
+  "su_y_ksads__dud__haz__coc__pres_sx",
+  "su_y_ksads__dud__negimpct__interprs__coc__pres_sx",
+  "su_y_ksads__dud__negimpct__obl__coc__pres_sx",
+  "su_y_ksads__dud__overuse__coc__pres_sx",
+  "su_y_ksads__dud__prob__phys__coc__pres_sx",
+  "su_y_ksads__dud__prob__psych__coc__pres_sx",
+  "su_y_ksads__dud__reduce__dsr__coc__pres_sx",
+  "su_y_ksads__dud__reduce__unsucces__coc__pres_sx",
+  "su_y_ksads__dud__time__coc__pres_sx",
+  "su_y_ksads__dud__tol__coc__pres_sx",
+  "su_y_ksads__dud__withdr__coc__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Cocaine - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__coc__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Cocaine - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__coc__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__coc__pres__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__coc__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__coc__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__hall__past__sx_mean
+#' @format vars_su_y_ksads__dud__hall__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__hall__past__sx_mean`
+vars_su_y_ksads__dud__hall__past__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__hall__past_sx",
+  "su_y_ksads__dud__crave__hall__past_sx",
+  "su_y_ksads__dud__dwi__hall__past_sx",
+  "su_y_ksads__dud__failrespons__hall__past_sx",
+  "su_y_ksads__dud__haz__hall__past_sx",
+  "su_y_ksads__dud__negimpct__interprs__hall__past_sx",
+  "su_y_ksads__dud__negimpct__obl__hall__past_sx",
+  "su_y_ksads__dud__overuse__hall__past_sx",
+  "su_y_ksads__dud__prob__phys__hall__past_sx",
+  "su_y_ksads__dud__prob__psych__hall__past_sx",
+  "su_y_ksads__dud__reduce__dsr__hall__past_sx",
+  "su_y_ksads__dud__reduce__unsucces__hall__past_sx",
+  "su_y_ksads__dud__time__hall__past_sx",
+  "su_y_ksads__dud__tol__hall__past_sx",
+  "su_y_ksads__dud__withdr__hall__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\]
+#' (Symptom: Hallucinogen - Past): Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__hall__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Hallucinogen - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__hall__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__hall__past__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__hall__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__hall__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__hall__pres__sx_mean
+#' @format vars_su_y_ksads__dud__hall__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__hall__pres__sx_mean`
+vars_su_y_ksads__dud__hall__pres__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__hall__pres_sx",
+  "su_y_ksads__dud__crave__hall__pres_sx",
+  "su_y_ksads__dud__dwi__hall__pres_sx",
+  "su_y_ksads__dud__failrespons__hall__pres_sx",
+  "su_y_ksads__dud__haz__hall__pres_sx",
+  "su_y_ksads__dud__negimpct__interprs__hall__pres_sx",
+  "su_y_ksads__dud__negimpct__obl__hall__pres_sx",
+  "su_y_ksads__dud__overuse__hall__pres_sx",
+  "su_y_ksads__dud__prob__phys__hall__pres_sx",
+  "su_y_ksads__dud__prob__psych__hall__pres_sx",
+  "su_y_ksads__dud__reduce__dsr__hall__pres_sx",
+  "su_y_ksads__dud__reduce__unsucces__hall__pres_sx",
+  "su_y_ksads__dud__time__hall__pres_sx",
+  "su_y_ksads__dud__tol__hall__pres_sx",
+  "su_y_ksads__dud__withdr__hall__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\]
+#' (Symptom: Hallucinogen - Present): Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__hall__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Hallucinogen - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__hall__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__hall__pres__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__hall__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__hall__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__mj__past__sx_mean
+#' @format vars_su_y_ksads__dud__mj__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__mj__past__sx_mean`
+vars_su_y_ksads__dud__mj__past__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__mj__past_sx",
+  "su_y_ksads__dud__crave__mj__past_sx",
+  "su_y_ksads__dud__dwi__mj__past_sx",
+  "su_y_ksads__dud__failrespons__mj__past_sx",
+  "su_y_ksads__dud__haz__mj__past_sx",
+  "su_y_ksads__dud__negimpct__interprs__mj__past_sx",
+  "su_y_ksads__dud__negimpct__obl__mj__past_sx",
+  "su_y_ksads__dud__overuse__mj__past_sx",
+  "su_y_ksads__dud__prob__phys__mj__past_sx",
+  "su_y_ksads__dud__prob__psych__mj__past_sx",
+  "su_y_ksads__dud__reduce__dsr__mj__past_sx",
+  "su_y_ksads__dud__reduce__unsucces__mj__past_sx",
+  "su_y_ksads__dud__time__mj__past_sx",
+  "su_y_ksads__dud__tol__mj__past_sx",
+  "su_y_ksads__dud__withdr__mj__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Cannabis - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__mj__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Cannabis - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__mj__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__mj__past__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__mj__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__mj__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__mj__pres__sx_mean
+#' @format vars_su_y_ksads__dud__mj__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__mj__pres__sx_mean`
+vars_su_y_ksads__dud__mj__pres__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__mj__pres_sx",
+  "su_y_ksads__dud__crave__mj__pres_sx",
+  "su_y_ksads__dud__dwi__mj__pres_sx",
+  "su_y_ksads__dud__failrespons__mj__pres_sx",
+  "su_y_ksads__dud__haz__mj__pres_sx",
+  "su_y_ksads__dud__negimpct__interprs__mj__pres_sx",
+  "su_y_ksads__dud__negimpct__obl__mj__pres_sx",
+  "su_y_ksads__dud__overuse__mj__pres_sx",
+  "su_y_ksads__dud__prob__phys__mj__pres_sx",
+  "su_y_ksads__dud__prob__psych__mj__pres_sx",
+  "su_y_ksads__dud__reduce__dsr__mj__pres_sx",
+  "su_y_ksads__dud__reduce__unsucces__mj__pres_sx",
+  "su_y_ksads__dud__time__mj__pres_sx",
+  "su_y_ksads__dud__tol__mj__pres_sx",
+  "su_y_ksads__dud__withdr__mj__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Cannabis - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__mj__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Cannabis - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__mj__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__mj__pres__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__mj__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__mj__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__nic__past__sx_mean
+#' @format vars_su_y_ksads__dud__nic__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__nic__past__sx_mean`
+vars_su_y_ksads__dud__nic__past__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__nic__past_sx",
+  "su_y_ksads__dud__crave__nic__past_sx",
+  "su_y_ksads__dud__dwi__nic__past_sx",
+  "su_y_ksads__dud__failrespons__nic__past_sx",
+  "su_y_ksads__dud__haz__nic__past_sx",
+  "su_y_ksads__dud__negimpct__interprs__nic__past_sx",
+  "su_y_ksads__dud__negimpct__obl__nic__past_sx",
+  "su_y_ksads__dud__overuse__nic__past_sx",
+  "su_y_ksads__dud__prob__phys__nic__past_sx",
+  "su_y_ksads__dud__prob__psych__nic__past_sx",
+  "su_y_ksads__dud__reduce__dsr__nic__past_sx",
+  "su_y_ksads__dud__reduce__unsucces__nic__past_sx",
+  "su_y_ksads__dud__time__nic__past_sx",
+  "su_y_ksads__dud__tol__nic__past_sx",
+  "su_y_ksads__dud__withdr__nic__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Tobacco - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__nic__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Tobacco - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__nic__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__nic__past__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__nic__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__nic__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__nic__pres__sx_mean
+#' @format vars_su_y_ksads__dud__nic__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__nic__pres__sx_mean`
+vars_su_y_ksads__dud__nic__pres__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__nic__pres_sx",
+  "su_y_ksads__dud__crave__nic__pres_sx",
+  "su_y_ksads__dud__dwi__nic__pres_sx",
+  "su_y_ksads__dud__failrespons__nic__pres_sx",
+  "su_y_ksads__dud__haz__nic__pres_sx",
+  "su_y_ksads__dud__negimpct__interprs__nic__pres_sx",
+  "su_y_ksads__dud__negimpct__obl__nic__pres_sx",
+  "su_y_ksads__dud__overuse__nic__pres_sx",
+  "su_y_ksads__dud__prob__phys__nic__pres_sx",
+  "su_y_ksads__dud__prob__psych__nic__pres_sx",
+  "su_y_ksads__dud__reduce__dsr__nic__pres_sx",
+  "su_y_ksads__dud__reduce__unsucces__nic__pres_sx",
+  "su_y_ksads__dud__time__nic__pres_sx",
+  "su_y_ksads__dud__tol__nic__pres_sx",
+  "su_y_ksads__dud__withdr__nic__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Tobacco - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__nic__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Tobacco - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__nic__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__nic__pres__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__nic__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__nic__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__opi__past__sx_mean
+#' @format vars_su_y_ksads__dud__opi__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__opi__past__sx_mean`
+vars_su_y_ksads__dud__opi__past__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__opi__past_sx",
+  "su_y_ksads__dud__crave__opi__past_sx",
+  "su_y_ksads__dud__dwi__opi__past_sx",
+  "su_y_ksads__dud__failrespons__opi__past_sx",
+  "su_y_ksads__dud__haz__opi__past_sx",
+  "su_y_ksads__dud__negimpct__interprs__opi__past_sx",
+  "su_y_ksads__dud__negimpct__obl__opi__past_sx",
+  "su_y_ksads__dud__overuse__opi__past_sx",
+  "su_y_ksads__dud__prob__phys__opi__past_sx",
+  "su_y_ksads__dud__prob__psych__opi__past_sx",
+  "su_y_ksads__dud__reduce__dsr__opi__past_sx",
+  "su_y_ksads__dud__reduce__unsucces__opi__past_sx",
+  "su_y_ksads__dud__time__opi__past_sx",
+  "su_y_ksads__dud__tol__opi__past_sx",
+  "su_y_ksads__dud__withdr__opi__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Opiod - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__opi__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Opiod - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__opi__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__opi__past__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__opi__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__opi__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__opi__pres__sx_mean
+#' @format vars_su_y_ksads__dud__opi__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__opi__pres__sx_mean`
+vars_su_y_ksads__dud__opi__pres__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__opi__pres_sx",
+  "su_y_ksads__dud__crave__opi__pres_sx",
+  "su_y_ksads__dud__dwi__opi__pres_sx",
+  "su_y_ksads__dud__failrespons__opi__pres_sx",
+  "su_y_ksads__dud__haz__opi__pres_sx",
+  "su_y_ksads__dud__negimpct__interprs__opi__pres_sx",
+  "su_y_ksads__dud__negimpct__obl__opi__pres_sx",
+  "su_y_ksads__dud__overuse__opi__pres_sx",
+  "su_y_ksads__dud__prob__phys__opi__pres_sx",
+  "su_y_ksads__dud__prob__psych__opi__pres_sx",
+  "su_y_ksads__dud__reduce__dsr__opi__pres_sx",
+  "su_y_ksads__dud__reduce__unsucces__opi__pres_sx",
+  "su_y_ksads__dud__time__opi__pres_sx",
+  "su_y_ksads__dud__tol__opi__pres_sx",
+  "su_y_ksads__dud__withdr__opi__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Opiod - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__opi__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Opiod - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__opi__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__opi__pres__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__opi__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__opi__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__othdrg__past__sx_mean
+#' @format vars_su_y_ksads__dud__othdrg__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__othdrg__past__sx_mean`
+vars_su_y_ksads__dud__othdrg__past__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__othdrg__past_sx",
+  "su_y_ksads__dud__crave__othdrg__past_sx",
+  "su_y_ksads__dud__dwi__othdrg__past_sx",
+  "su_y_ksads__dud__failrespons__othdrg__past_sx",
+  "su_y_ksads__dud__haz__othdrg__past_sx",
+  "su_y_ksads__dud__negimpct__interprs__othdrg__past_sx",
+  "su_y_ksads__dud__negimpct__obl__othdrg__past_sx",
+  "su_y_ksads__dud__overuse__othdrg__past_sx",
+  "su_y_ksads__dud__prob__phys__othdrg__past_sx",
+  "su_y_ksads__dud__prob__psych__othdrg__past_sx",
+  "su_y_ksads__dud__reduce__dsr__othdrg__past_sx",
+  "su_y_ksads__dud__reduce__unsucces__othdrg__past_sx",
+  "su_y_ksads__dud__time__othdrg__past_sx",
+  "su_y_ksads__dud__tol__othdrg__past_sx",
+  "su_y_ksads__dud__withdr__othdrg__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\]
+#' (Symptom: Other drugs - Past): Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__othdrg__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Other drugs - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__othdrg__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__othdrg__past__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__othdrg__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__othdrg__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__othdrg__pres__sx_mean
+#' @format vars_su_y_ksads__dud__othdrg__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__othdrg__pres__sx_mean`
+vars_su_y_ksads__dud__othdrg__pres__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__othdrg__pres_sx",
+  "su_y_ksads__dud__crave__othdrg__pres_sx",
+  "su_y_ksads__dud__dwi__othdrg__pres_sx",
+  "su_y_ksads__dud__failrespons__othdrg__pres_sx",
+  "su_y_ksads__dud__haz__othdrg__pres_sx",
+  "su_y_ksads__dud__negimpct__interprs__othdrg__pres_sx",
+  "su_y_ksads__dud__negimpct__obl__othdrg__pres_sx",
+  "su_y_ksads__dud__overuse__othdrg__pres_sx",
+  "su_y_ksads__dud__prob__phys__othdrg__pres_sx",
+  "su_y_ksads__dud__prob__psych__othdrg__pres_sx",
+  "su_y_ksads__dud__reduce__dsr__othdrg__pres_sx",
+  "su_y_ksads__dud__reduce__unsucces__othdrg__pres_sx",
+  "su_y_ksads__dud__time__othdrg__pres_sx",
+  "su_y_ksads__dud__tol__othdrg__pres_sx",
+  "su_y_ksads__dud__withdr__othdrg__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\]
+#' (Symptom: Other drugs - Present): Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__othdrg__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Other drugs - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__othdrg__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__othdrg__pres__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__othdrg__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__othdrg__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__pcp__past__sx_mean
+#' @format vars_su_y_ksads__dud__pcp__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__pcp__past__sx_mean`
+vars_su_y_ksads__dud__pcp__past__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__pcp__past_sx",
+  "su_y_ksads__dud__crave__pcp__past_sx",
+  "su_y_ksads__dud__dwi__pcp__past_sx",
+  "su_y_ksads__dud__failrespons__pcp__past_sx",
+  "su_y_ksads__dud__haz__pcp__past_sx",
+  "su_y_ksads__dud__negimpct__interprs__pcp__past_sx",
+  "su_y_ksads__dud__negimpct__obl__pcp__past_sx",
+  "su_y_ksads__dud__overuse__pcp__past_sx",
+  "su_y_ksads__dud__prob__phys__pcp__past_sx",
+  "su_y_ksads__dud__prob__psych__pcp__past_sx",
+  "su_y_ksads__dud__reduce__dsr__pcp__past_sx",
+  "su_y_ksads__dud__reduce__unsucces__pcp__past_sx",
+  "su_y_ksads__dud__time__pcp__past_sx",
+  "su_y_ksads__dud__tol__pcp__past_sx",
+  "su_y_ksads__dud__withdr__pcp__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: PCP - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__pcp__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: PCP - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__pcp__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__pcp__past__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__pcp__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__pcp__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__pcp__pres__sx_mean
+#' @format vars_su_y_ksads__dud__pcp__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__pcp__pres__sx_mean`
+vars_su_y_ksads__dud__pcp__pres__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__pcp__pres_sx",
+  "su_y_ksads__dud__crave__pcp__pres_sx",
+  "su_y_ksads__dud__dwi__pcp__pres_sx",
+  "su_y_ksads__dud__failrespons__pcp__pres_sx",
+  "su_y_ksads__dud__haz__pcp__pres_sx",
+  "su_y_ksads__dud__negimpct__interprs__pcp__pres_sx",
+  "su_y_ksads__dud__negimpct__obl__pcp__pres_sx",
+  "su_y_ksads__dud__overuse__pcp__pres_sx",
+  "su_y_ksads__dud__prob__phys__pcp__pres_sx",
+  "su_y_ksads__dud__prob__psych__pcp__pres_sx",
+  "su_y_ksads__dud__reduce__dsr__pcp__pres_sx",
+  "su_y_ksads__dud__reduce__unsucces__pcp__pres_sx",
+  "su_y_ksads__dud__time__pcp__pres_sx",
+  "su_y_ksads__dud__tol__pcp__pres_sx",
+  "su_y_ksads__dud__withdr__pcp__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: PCP - Present): Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__pcp__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: PCP - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__pcp__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__pcp__pres__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__pcp__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__pcp__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__sed__past__sx_mean
+#' @format vars_su_y_ksads__dud__sed__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__sed__past__sx_mean`
+vars_su_y_ksads__dud__sed__past__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__sed__past_sx",
+  "su_y_ksads__dud__crave__sed__past_sx",
+  "su_y_ksads__dud__dwi__sed__past_sx",
+  "su_y_ksads__dud__failrespons__sed__past_sx",
+  "su_y_ksads__dud__haz__sed__past_sx",
+  "su_y_ksads__dud__negimpct__interprs__sed__past_sx",
+  "su_y_ksads__dud__negimpct__obl__sed__past_sx",
+  "su_y_ksads__dud__overuse__sed__past_sx",
+  "su_y_ksads__dud__prob__phys__sed__past_sx",
+  "su_y_ksads__dud__prob__psych__sed__past_sx",
+  "su_y_ksads__dud__reduce__dsr__sed__past_sx",
+  "su_y_ksads__dud__reduce__unsucces__sed__past_sx",
+  "su_y_ksads__dud__time__sed__past_sx",
+  "su_y_ksads__dud__tol__sed__past_sx",
+  "su_y_ksads__dud__withdr__sed__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\]
+#' (Symptom: Sedatives - Past): Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__sed__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Sedatives - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__sed__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__sed__past__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__sed__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__sed__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__sed__pres__sx_mean
+#' @format vars_su_y_ksads__dud__sed__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__sed__pres__sx_mean`
+vars_su_y_ksads__dud__sed__pres__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__sed__pres_sx",
+  "su_y_ksads__dud__crave__sed__pres_sx",
+  "su_y_ksads__dud__dwi__sed__pres_sx",
+  "su_y_ksads__dud__failrespons__sed__pres_sx",
+  "su_y_ksads__dud__haz__sed__pres_sx",
+  "su_y_ksads__dud__negimpct__interprs__sed__pres_sx",
+  "su_y_ksads__dud__negimpct__obl__sed__pres_sx",
+  "su_y_ksads__dud__overuse__sed__pres_sx",
+  "su_y_ksads__dud__prob__phys__sed__pres_sx",
+  "su_y_ksads__dud__prob__psych__sed__pres_sx",
+  "su_y_ksads__dud__reduce__dsr__sed__pres_sx",
+  "su_y_ksads__dud__reduce__unsucces__sed__pres_sx",
+  "su_y_ksads__dud__time__sed__pres_sx",
+  "su_y_ksads__dud__tol__sed__pres_sx",
+  "su_y_ksads__dud__withdr__sed__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\]
+#' (Symptom: Sedatives - Present): Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__sed__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Sedatives - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__sed__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__sed__pres__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__sed__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__sed__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__solv__past__sx_mean
+#' @format vars_su_y_ksads__dud__solv__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__solv__past__sx_mean`
+vars_su_y_ksads__dud__solv__past__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__solv__past_sx",
+  "su_y_ksads__dud__crave__solv__past_sx",
+  "su_y_ksads__dud__dwi__solv__past_sx",
+  "su_y_ksads__dud__failrespons__solv__past_sx",
+  "su_y_ksads__dud__haz__solv__past_sx",
+  "su_y_ksads__dud__negimpct__interprs__solv__past_sx",
+  "su_y_ksads__dud__negimpct__obl__solv__past_sx",
+  "su_y_ksads__dud__overuse__solv__past_sx",
+  "su_y_ksads__dud__prob__phys__solv__past_sx",
+  "su_y_ksads__dud__prob__psych__solv__past_sx",
+  "su_y_ksads__dud__reduce__dsr__solv__past_sx",
+  "su_y_ksads__dud__reduce__unsucces__solv__past_sx",
+  "su_y_ksads__dud__time__solv__past_sx",
+  "su_y_ksads__dud__tol__solv__past_sx",
+  "su_y_ksads__dud__withdr__solv__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Solvent - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__solv__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Solvent - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__solv__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__solv__past__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__solv__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__solv__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__solv__pres__sx_mean
+#' @format vars_su_y_ksads__dud__solv__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__solv__pres__sx_mean`
+vars_su_y_ksads__dud__solv__pres__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__solv__pres_sx",
+  "su_y_ksads__dud__crave__solv__pres_sx",
+  "su_y_ksads__dud__dwi__solv__pres_sx",
+  "su_y_ksads__dud__failrespons__solv__pres_sx",
+  "su_y_ksads__dud__haz__solv__pres_sx",
+  "su_y_ksads__dud__negimpct__interprs__solv__pres_sx",
+  "su_y_ksads__dud__negimpct__obl__solv__pres_sx",
+  "su_y_ksads__dud__overuse__solv__pres_sx",
+  "su_y_ksads__dud__prob__phys__solv__pres_sx",
+  "su_y_ksads__dud__prob__psych__solv__pres_sx",
+  "su_y_ksads__dud__reduce__dsr__solv__pres_sx",
+  "su_y_ksads__dud__reduce__unsucces__solv__pres_sx",
+  "su_y_ksads__dud__time__solv__pres_sx",
+  "su_y_ksads__dud__tol__solv__pres_sx",
+  "su_y_ksads__dud__withdr__solv__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Solvent - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__solv__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Solvent - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__solv__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__solv__pres__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__solv__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__solv__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__stim__past__sx_mean
+#' @format vars_su_y_ksads__dud__stim__past__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__stim__past__sx_mean`
+vars_su_y_ksads__dud__stim__past__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__stim__past_sx",
+  "su_y_ksads__dud__crave__stim__past_sx",
+  "su_y_ksads__dud__dwi__stim__past_sx",
+  "su_y_ksads__dud__failrespons__stim__past_sx",
+  "su_y_ksads__dud__haz__stim__past_sx",
+  "su_y_ksads__dud__negimpct__interprs__stim__past_sx",
+  "su_y_ksads__dud__negimpct__obl__stim__past_sx",
+  "su_y_ksads__dud__overuse__stim__past_sx",
+  "su_y_ksads__dud__prob__phys__stim__past_sx",
+  "su_y_ksads__dud__prob__psych__stim__past_sx",
+  "su_y_ksads__dud__reduce__dsr__stim__past_sx",
+  "su_y_ksads__dud__reduce__unsucces__stim__past_sx",
+  "su_y_ksads__dud__time__stim__past_sx",
+  "su_y_ksads__dud__tol__stim__past_sx",
+  "su_y_ksads__dud__withdr__stim__past_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\]
+#' (Symptom: Stimulants - Past): Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__stim__past__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Stimulants - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__stim__past__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__stim__past__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__stim__past__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__stim__past__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_su_y_ksads__dud__stim__pres__sx_mean
+#' @format vars_su_y_ksads__dud__stim__pres__sx_mean is a character vector
+#' of all column names used to compute summary score of
+#' `su_y_ksads__dud__stim__pres__sx_mean`
+vars_su_y_ksads__dud__stim__pres__sx_mean <- c(
+  "su_y_ksads__dud__actvdecr__stim__pres_sx",
+  "su_y_ksads__dud__crave__stim__pres_sx",
+  "su_y_ksads__dud__dwi__stim__pres_sx",
+  "su_y_ksads__dud__failrespons__stim__pres_sx",
+  "su_y_ksads__dud__haz__stim__pres_sx",
+  "su_y_ksads__dud__negimpct__interprs__stim__pres_sx",
+  "su_y_ksads__dud__negimpct__obl__stim__pres_sx",
+  "su_y_ksads__dud__overuse__stim__pres_sx",
+  "su_y_ksads__dud__prob__phys__stim__pres_sx",
+  "su_y_ksads__dud__prob__psych__stim__pres_sx",
+  "su_y_ksads__dud__reduce__dsr__stim__pres_sx",
+  "su_y_ksads__dud__reduce__unsucces__stim__pres_sx",
+  "su_y_ksads__dud__time__stim__pres_sx",
+  "su_y_ksads__dud__tol__stim__pres_sx",
+  "su_y_ksads__dud__withdr__stim__pres_sx"
+)
+
+#' Compute "KSADS - Drug Use Disorders \[Youth\]
+#' (Symptom: Stimulants - Present): Mean"
+#' @description
+#' Computes the summary score `su_y_ksads__dud__stim__pres__sx_mean`
+#' KSADS - Drug Use Disorders \[Youth\] (Symptom: Stimulants - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_su_y_ksads__dud__stim__pres__sx_mean |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 15 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud__stim__pres__sx_mean <- function(
+    data,
+    name = "su_y_ksads__dud__stim__pres__sx_mean",
+    max_na = 3,
+    exclude = c("555"),
+    combine = TRUE) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_su_y_ksads__dud__stim__pres__sx_mean,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for su_y_ksads__dud
+#' @description
+#' This function computes all summary scores for the su_y_ksads__dud table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new
+#' columns.
+#' @export
+#' @autoglobal
+compute_su_y_ksads__dud_all <- function(data) {
+  data |>
+    compute_su_y_ksads__dud__past__sx_mean() |>
+    compute_su_y_ksads__dud__pres__sx_mean() |>
+    compute_su_y_ksads__dud__coc__past__sx_mean() |>
+    compute_su_y_ksads__dud__coc__pres__sx_mean() |>
+    compute_su_y_ksads__dud__hall__past__sx_mean() |>
+    compute_su_y_ksads__dud__hall__pres__sx_mean() |>
+    compute_su_y_ksads__dud__mj__past__sx_mean() |>
+    compute_su_y_ksads__dud__mj__pres__sx_mean() |>
+    compute_su_y_ksads__dud__nic__past__sx_mean() |>
+    compute_su_y_ksads__dud__nic__pres__sx_mean() |>
+    compute_su_y_ksads__dud__opi__past__sx_mean() |>
+    compute_su_y_ksads__dud__opi__pres__sx_mean() |>
+    compute_su_y_ksads__dud__othdrg__past__sx_mean() |>
+    compute_su_y_ksads__dud__othdrg__pres__sx_mean() |>
+    compute_su_y_ksads__dud__pcp__past__sx_mean() |>
+    compute_su_y_ksads__dud__pcp__pres__sx_mean() |>
+    compute_su_y_ksads__dud__sed__past__sx_mean() |>
+    compute_su_y_ksads__dud__sed__pres__sx_mean() |>
+    compute_su_y_ksads__dud__solv__past__sx_mean() |>
+    compute_su_y_ksads__dud__solv__pres__sx_mean() |>
+    compute_su_y_ksads__dud__stim__past__sx_mean() |>
+    compute_su_y_ksads__dud__stim__pres__sx_mean()
 }

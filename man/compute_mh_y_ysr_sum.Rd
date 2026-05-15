@@ -7,7 +7,7 @@
 compute_mh_y_ysr_sum(
   data,
   name = "mh_y_ysr_sum",
-  max_na = 7,
+  max_na = 5,
   exclude = c("777", "999"),
   combine = TRUE
 )
@@ -68,14 +68,12 @@ Youth Self Report [Youth]: Sum
 \item \code{mh_y_ysr__rule__cond_010}
 \item \code{mh_y_ysr__wthdep__dep_001}
 \item \code{mh_y_ysr__anxdep__dep_001}
-\item \code{mh_y_ysr__tho__dep_001}
 \item \code{mh_y_ysr__othpr__dep_001}
 \item \code{mh_y_ysr__anxdep__dep_002}
 \item \code{mh_y_ysr__anxdep__dep_003}
 \item \code{mh_y_ysr__som__dep_001}
 \item \code{mh_y_ysr__tho__dep_002}
 \item \code{mh_y_ysr__othpr__dep_002}
-\item \code{mh_y_ysr__anxdep__dep_004}
 \item \code{mh_y_ysr__tho__dep_003}
 \item \code{mh_y_ysr__wthdep__dep_002}
 \item \code{mh_y_ysr__wthdep__dep_003}
@@ -120,7 +118,6 @@ Youth Self Report [Youth]: Sum
 \item \code{mh_y_ysr__othpr_004}
 \item \code{mh_y_ysr__othpr_005}
 \item \code{mh_y_ysr__othpr_006}
-\item \code{mh_y_ysr__othpr_007}
 \item \code{mh_y_ysr__soc_001}
 \item \code{mh_y_ysr__soc_002}
 \item \code{mh_y_ysr__soc_003}
@@ -146,7 +143,7 @@ Youth Self Report [Youth]: Sum
 \item 777
 \item 999
 }
-\item \emph{Validation criterion:} maximally 7 of 105 items missing
+\item \emph{Validation criterion:} maximally 5 of 102 items missing
 }
 }
 \examples{

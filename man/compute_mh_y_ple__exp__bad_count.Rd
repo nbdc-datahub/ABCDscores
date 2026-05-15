@@ -2,14 +2,13 @@
 % Please edit documentation in R/scores_mh.R
 \name{compute_mh_y_ple__exp__bad_count}
 \alias{compute_mh_y_ple__exp__bad_count}
-\title{Compute "Life Events [Youth] (Experience Bad Events): Count [Validation: No
-more than 5 events missing and no experience items missing or declined]"}
+\title{Compute "Life Events [Youth] (Experience Bad Events): Count"}
 \usage{
 compute_mh_y_ple__exp__bad_count(
   data,
   name = "mh_y_ple__exp__bad_count",
   combine = TRUE,
-  max_na = 5
+  max_na = NULL
 )
 }
 \arguments{
@@ -22,7 +21,7 @@ the name used in the ABCD data release).}
 data frame. If FALSE, the new column will be created as a new data frame.}
 
 \item{max_na}{numeric, positive whole number. Number of missing items
-allowed (Default: 5).}
+allowed. \code{NULL} means no limit (Default: NULL).}
 }
 \value{
 tbl. The input data frame with the summary score appended as
@@ -30,8 +29,7 @@ a new column.
 }
 \description{
 Computes the summary score \code{mh_y_ple__exp__bad_count}
-Life Events [Youth] (Experience Bad Events): Count [Validation: No
-more than 5 events missing and no experience items missing or declined]
+Life Events [Youth] (Experience Bad Events): Count
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{
@@ -67,6 +65,5 @@ more than 5 events missing and no experience items missing or declined]
 \item 777
 \item 999
 }
-\item \emph{Validation criterion:} maximally 5 of 25 items missing
 }
 }

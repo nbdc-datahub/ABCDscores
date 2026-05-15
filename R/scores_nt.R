@@ -463,6 +463,33 @@ compute_nt_p_yst_all <- function(data) {
 }
 
 #   ____________________________________________________________________________
+#   nt_y_stq__screen                                                        ####
+
+recode_stq__screen <- c(
+  "1" = "0.25",
+  "2" = "0.5",
+  "3" = "1",
+  "4" = "2",
+  "5" = "3",
+  "6" = "4"
+)
+
+vars_recode_stq__screen <- c(
+  "nt_y_stq__screen__wkdy_001",
+  "nt_y_stq__screen__wkdy_002",
+  "nt_y_stq__screen__wkdy_003",
+  "nt_y_stq__screen__wkdy_004",
+  "nt_y_stq__screen__wkdy_005",
+  "nt_y_stq__screen__wkdy_006",
+  "nt_y_stq__screen__wknd_001",
+  "nt_y_stq__screen__wknd_002",
+  "nt_y_stq__screen__wknd_003",
+  "nt_y_stq__screen__wknd_004",
+  "nt_y_stq__screen__wknd_005",
+  "nt_y_stq__screen__wknd_006"
+)
+
+#   ____________________________________________________________________________
 #   nt_y_stq__screen__wkdy                                                  ####
 
 #' @export
@@ -633,6 +660,22 @@ compute_nt_y_stq__screen__wkdy_sum <- function(
     }
 
   data_ss <- data |>
+    # recode values
+    mutate(
+      across(
+        all_of(vars_nt_y_stq__screen__wkdy),
+        ~ as.character(.x) |>
+          as.numeric() |>
+          as.character()
+      )
+    ) |>
+    recode_levels(
+      vars = vars_recode_stq__screen[1:6],
+      recode = recode_stq__screen
+    ) |>
+    mutate(
+      across(all_of(vars_nt_y_stq__screen__wkdy), ~ as.numeric(.x))
+    ) |>
     # convertion in hours
     mutate(
       across(
@@ -859,6 +902,22 @@ compute_nt_y_stq__screen__wknd_sum <- function(
     }
 
   data_ss <- data |>
+    # recode values
+    mutate(
+      across(
+        all_of(vars_nt_y_stq__screen__wknd),
+        ~ as.character(.x) |>
+          as.numeric() |>
+          as.character()
+      )
+    ) |>
+    recode_levels(
+      vars = vars_recode_stq__screen[7:12],
+      recode = recode_stq__screen
+    ) |>
+    mutate(
+      across(all_of(vars_nt_y_stq__screen__wknd), ~ as.numeric(.x))
+    ) |>
     # convertion in hours
     mutate(
       across(

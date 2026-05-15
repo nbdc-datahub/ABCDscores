@@ -59,11 +59,12 @@ vars_mh_p_ders__attun <- c(
 #'   )
 #' }
 compute_mh_p_ders__attun_mean <- function(
-    data,
-    name = "mh_p_ders__attun_mean",
-    max_na = 1,
-    exclude = c("999", "777"),
-    combine = TRUE) {
+  data,
+  name = "mh_p_ders__attun_mean",
+  max_na = 1,
+  exclude = c("999", "777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data_ss <- data |>
@@ -118,10 +119,11 @@ compute_mh_p_ders__attun_mean <- function(
 #'   )
 #' }
 compute_mh_p_ders__attun_nm <- function(
-    data,
-    name = "mh_p_ders__attun_nm",
-    exclude = c("999", "777"),
-    combine = TRUE) {
+  data,
+  name = "mh_p_ders__attun_nm",
+  exclude = c("999", "777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -185,11 +187,12 @@ vars_mh_p_ders__catast <- c(
 #'   )
 #' }
 compute_mh_p_ders__catast_mean <- function(
-    data,
-    name = "mh_p_ders__catast_mean",
-    max_na = 2,
-    exclude = c("999", "777"),
-    combine = TRUE) {
+  data,
+  name = "mh_p_ders__catast_mean",
+  max_na = 2,
+  exclude = c("999", "777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data_ss <- data |>
@@ -245,10 +248,11 @@ compute_mh_p_ders__catast_mean <- function(
 #'   )
 #' }
 compute_mh_p_ders__catast_nm <- function(
-    data,
-    name = "mh_p_ders__catast_nm",
-    exclude = c("999", "777"),
-    combine = TRUE) {
+  data,
+  name = "mh_p_ders__catast_nm",
+  exclude = c("999", "777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -303,11 +307,12 @@ vars_mh_p_ders__distract <- c(
 #'   )
 #' }
 compute_mh_p_ders__distract_mean <- function(
-    data,
-    name = "mh_p_ders__distract_mean",
-    max_na = 0,
-    exclude = c("999", "777"),
-    combine = TRUE) {
+  data,
+  name = "mh_p_ders__distract_mean",
+  max_na = 0,
+  exclude = c("999", "777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -349,10 +354,11 @@ compute_mh_p_ders__distract_mean <- function(
 #'   )
 #' }
 compute_mh_p_ders__distract_nm <- function(
-    data,
-    name = "mh_p_ders__distract_nm",
-    exclude = c("999", "777"),
-    combine = TRUE) {
+  data,
+  name = "mh_p_ders__distract_nm",
+  exclude = c("999", "777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -411,11 +417,12 @@ vars_mh_p_ders__negscnd <- c(
 #'   )
 #' }
 compute_mh_p_ders__negscnd_mean <- function(
-    data,
-    name = "mh_p_ders__negscnd_mean",
-    max_na = 1,
-    exclude = c("999", "777"),
-    combine = TRUE) {
+  data,
+  name = "mh_p_ders__negscnd_mean",
+  max_na = 1,
+  exclude = c("999", "777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -457,10 +464,11 @@ compute_mh_p_ders__negscnd_mean <- function(
 #'   )
 #' }
 compute_mh_p_ders__negscnd_nm <- function(
-    data,
-    name = "mh_p_ders__negscnd_nm",
-    exclude = c("999", "777"),
-    combine = TRUE) {
+  data,
+  name = "mh_p_ders__negscnd_nm",
+  exclude = c("999", "777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -542,10 +550,11 @@ vars_mh_p_gbi <- c(
 #'   )
 #' }
 compute_mh_p_gbi_nm <- function(
-    data,
-    name = "mh_p_gbi_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_p_gbi_nm",
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -583,11 +592,12 @@ compute_mh_p_gbi_nm <- function(
 #'   )
 #' }
 compute_mh_p_gbi_sum <- function(
-    data,
-    name = "mh_p_gbi_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_p_gbi_sum",
+  max_na = 0,
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -665,10 +675,11 @@ vars_mh_p_ssrs <- c(
 #'   )
 #' }
 compute_mh_p_ssrs_nm <- function(
-    data,
-    name = "mh_p_ssrs_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_p_ssrs_nm",
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -706,11 +717,12 @@ compute_mh_p_ssrs_nm <- function(
 #'   )
 #' }
 compute_mh_p_ssrs_sum <- function(
-    data,
-    name = "mh_p_ssrs_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_p_ssrs_sum",
+  max_na = 0,
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -783,10 +795,11 @@ vars_mh_y_bisbas__bas__dr <- c(
 #'   )
 #' }
 compute_mh_y_bisbas__bas__dr_nm <- function(
-    data,
-    name = "mh_y_bisbas__bas__dr_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_bisbas__bas__dr_nm",
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -826,11 +839,12 @@ compute_mh_y_bisbas__bas__dr_nm <- function(
 #'   )
 #' }
 compute_mh_y_bisbas__bas__dr_sum <- function(
-    data,
-    name = "mh_y_bisbas__bas__dr_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_bisbas__bas__dr_sum",
+  max_na = 0,
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -884,10 +898,11 @@ vars_mh_y_bisbas__bas__fs <- c(
 #'   )
 #' }
 compute_mh_y_bisbas__bas__fs_nm <- function(
-    data,
-    name = "mh_y_bisbas__bas__fs_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_bisbas__bas__fs_nm",
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -927,11 +942,12 @@ compute_mh_y_bisbas__bas__fs_nm <- function(
 #'   )
 #' }
 compute_mh_y_bisbas__bas__fs_sum <- function(
-    data,
-    name = "mh_y_bisbas__bas__fs_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_bisbas__bas__fs_sum",
+  max_na = 0,
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -986,10 +1002,11 @@ vars_mh_y_bisbas__bas__rr <- c(
 #'   )
 #' }
 compute_mh_y_bisbas__bas__rr_nm <- function(
-    data,
-    name = "mh_y_bisbas__bas__rr_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_bisbas__bas__rr_nm",
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1029,11 +1046,12 @@ compute_mh_y_bisbas__bas__rr_nm <- function(
 #'   )
 #' }
 compute_mh_y_bisbas__bas__rr_sum <- function(
-    data,
-    name = "mh_y_bisbas__bas__rr_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_bisbas__bas__rr_sum",
+  max_na = 0,
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1087,10 +1105,11 @@ vars_mh_y_bisbas__bas__rr__v01 <- c(
 #'   )
 #' }
 compute_mh_y_bisbas__bas__rr_nm__v01 <- function(
-    data,
-    name = "mh_y_bisbas__bas__rr_nm__v01",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_bisbas__bas__rr_nm__v01",
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1130,11 +1149,12 @@ compute_mh_y_bisbas__bas__rr_nm__v01 <- function(
 #'   )
 #' }
 compute_mh_y_bisbas__bas__rr_sum__v01 <- function(
-    data,
-    name = "mh_y_bisbas__bas__rr_sum__v01",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_bisbas__bas__rr_sum__v01",
+  max_na = 0,
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1191,10 +1211,11 @@ vars_mh_y_bisbas__bis <- c(
 #'   )
 #' }
 compute_mh_y_bisbas__bis_nm <- function(
-    data,
-    name = "mh_y_bisbas__bis_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_bisbas__bis_nm",
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1234,11 +1255,12 @@ compute_mh_y_bisbas__bis_nm <- function(
 #'   )
 #' }
 compute_mh_y_bisbas__bis_sum <- function(
-    data,
-    name = "mh_y_bisbas__bis_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_bisbas__bis_sum",
+  max_na = 0,
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1292,10 +1314,11 @@ vars_mh_y_bisbas__bis__v01 <- c(
 #'   )
 #' }
 compute_mh_y_bisbas__bis_nm__v01 <- function(
-    data,
-    name = "mh_y_bisbas__bis_nm__v01",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_bisbas__bis_nm__v01",
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1335,11 +1358,12 @@ compute_mh_y_bisbas__bis_nm__v01 <- function(
 #'   )
 #' }
 compute_mh_y_bisbas__bis_sum__v01 <- function(
-    data,
-    name = "mh_y_bisbas__bis_sum__v01",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_bisbas__bis_sum__v01",
+  max_na = 0,
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1422,11 +1446,12 @@ vars_mh_y_erq__reapp <- c(
 #'   )
 #' }
 compute_mh_y_erq__reapp_mean <- function(
-    data,
-    name = "mh_y_erq__reapp_mean",
-    max_na = 0,
-    exclude = c("777"),
-    combine = TRUE) {
+  data,
+  name = "mh_y_erq__reapp_mean",
+  max_na = 0,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1466,10 +1491,11 @@ compute_mh_y_erq__reapp_mean <- function(
 #'   )
 #' }
 compute_mh_y_erq__reapp_nm <- function(
-    data,
-    name = "mh_y_erq__reapp_nm",
-    exclude = c("777"),
-    combine = TRUE) {
+  data,
+  name = "mh_y_erq__reapp_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1521,11 +1547,12 @@ vars_mh_y_erq__suppr <- c(
 #'   )
 #' }
 compute_mh_y_erq__suppr_mean <- function(
-    data,
-    name = "mh_y_erq__suppr_mean",
-    max_na = 0,
-    exclude = c("777"),
-    combine = TRUE) {
+  data,
+  name = "mh_y_erq__suppr_mean",
+  max_na = 0,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1565,10 +1592,11 @@ compute_mh_y_erq__suppr_mean <- function(
 #'   )
 #' }
 compute_mh_y_erq__suppr_nm <- function(
-    data,
-    name = "mh_y_erq__suppr_nm",
-    exclude = c("777"),
-    combine = TRUE) {
+  data,
+  name = "mh_y_erq__suppr_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1627,7 +1655,8 @@ vars_mh_y_peq__overt__agg <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__overt__agg |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -1641,10 +1670,11 @@ vars_mh_y_peq__overt__agg <- c(
 #'   )
 #' }
 compute_mh_y_peq__overt__agg_nm <- function(
-    data,
-    name = "mh_y_peq__overt__agg_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_peq__overt__agg_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1667,7 +1697,8 @@ compute_mh_y_peq__overt__agg_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__overt__agg |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* none of 3 items missing
 #'
 #' @inherit dummy_mh params return references
@@ -1682,11 +1713,12 @@ compute_mh_y_peq__overt__agg_nm <- function(
 #'   )
 #' }
 compute_mh_y_peq__overt__agg_sum <- function(
-    data,
-    name = "mh_y_peq__overt__agg_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_peq__overt__agg_sum",
+  max_na = 0,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1725,7 +1757,8 @@ vars_mh_y_peq__overt__vict <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__overt__vict |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -1739,10 +1772,11 @@ vars_mh_y_peq__overt__vict <- c(
 #'   )
 #' }
 compute_mh_y_peq__overt__vict_nm <- function(
-    data,
-    name = "mh_y_peq__overt__vict_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_peq__overt__vict_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1765,7 +1799,8 @@ compute_mh_y_peq__overt__vict_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__overt__vict |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* none of 3 items missing
 #'
 #' @inherit dummy_mh params return references
@@ -1780,11 +1815,12 @@ compute_mh_y_peq__overt__vict_nm <- function(
 #'   )
 #' }
 compute_mh_y_peq__overt__vict_sum <- function(
-    data,
-    name = "mh_y_peq__overt__vict_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_peq__overt__vict_sum",
+  max_na = 0,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1823,7 +1859,8 @@ vars_mh_y_peq__rel__agg <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rel__agg |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -1837,10 +1874,11 @@ vars_mh_y_peq__rel__agg <- c(
 #'   )
 #' }
 compute_mh_y_peq__rel__agg_nm <- function(
-    data,
-    name = "mh_y_peq__rel__agg_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_peq__rel__agg_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1864,7 +1902,8 @@ compute_mh_y_peq__rel__agg_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rel__agg |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* none of 3 items missing
 #'
 #' @inherit dummy_mh params return references
@@ -1879,11 +1918,12 @@ compute_mh_y_peq__rel__agg_nm <- function(
 #'   )
 #' }
 compute_mh_y_peq__rel__agg_sum <- function(
-    data,
-    name = "mh_y_peq__rel__agg_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_peq__rel__agg_sum",
+  max_na = 0,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1922,7 +1962,8 @@ vars_mh_y_peq__rel__vict <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rel__vict |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -1936,10 +1977,11 @@ vars_mh_y_peq__rel__vict <- c(
 #'   )
 #' }
 compute_mh_y_peq__rel__vict_nm <- function(
-    data,
-    name = "mh_y_peq__rel__vict_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_peq__rel__vict_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -1963,7 +2005,8 @@ compute_mh_y_peq__rel__vict_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rel__vict |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* none of 3 items missing
 #'
 #' @inherit dummy_mh params return references
@@ -1978,11 +2021,12 @@ compute_mh_y_peq__rel__vict_nm <- function(
 #'   )
 #' }
 compute_mh_y_peq__rel__vict_sum <- function(
-    data,
-    name = "mh_y_peq__rel__vict_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_peq__rel__vict_sum",
+  max_na = 0,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2021,7 +2065,8 @@ vars_mh_y_peq__rep__agg <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rep__agg |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -2035,10 +2080,11 @@ vars_mh_y_peq__rep__agg <- c(
 #'   )
 #' }
 compute_mh_y_peq__rep__agg_nm <- function(
-    data,
-    name = "mh_y_peq__rep__agg_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_peq__rep__agg_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2062,7 +2108,8 @@ compute_mh_y_peq__rep__agg_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rep__agg |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* none of 3 items missing
 #'
 #' @inherit dummy_mh params return references
@@ -2077,11 +2124,12 @@ compute_mh_y_peq__rep__agg_nm <- function(
 #'   )
 #' }
 compute_mh_y_peq__rep__agg_sum <- function(
-    data,
-    name = "mh_y_peq__rep__agg_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_peq__rep__agg_sum",
+  max_na = 0,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2120,7 +2168,8 @@ vars_mh_y_peq__rep__vict <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rep__vict |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @inherit dummy_mh params return references
 #'
@@ -2134,10 +2183,11 @@ vars_mh_y_peq__rep__vict <- c(
 #'   )
 #' }
 compute_mh_y_peq__rep__vict_nm <- function(
-    data,
-    name = "mh_y_peq__rep__vict_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_peq__rep__vict_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2162,7 +2212,8 @@ compute_mh_y_peq__rep__vict_nm <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_mh_y_peq__rep__vict |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* none of 3 items missing
 #'
 #' @inherit dummy_mh params return references
@@ -2177,11 +2228,12 @@ compute_mh_y_peq__rep__vict_nm <- function(
 #'   )
 #' }
 compute_mh_y_peq__rep__vict_sum <- function(
-    data,
-    name = "mh_y_peq__rep__vict_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_peq__rep__vict_sum",
+  max_na = 0,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2265,10 +2317,11 @@ vars_mh_y_sup <- c(
 #'   )
 #' }
 compute_mh_y_sup_nm <- function(
-    data,
-    name = "mh_y_sup_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_sup_nm",
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2306,11 +2359,12 @@ compute_mh_y_sup_nm <- function(
 #'   )
 #' }
 compute_mh_y_sup_sum <- function(
-    data,
-    name = "mh_y_sup_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_sup_sum",
+  max_na = 0,
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2385,10 +2439,11 @@ vars_mh_y_upps__nurg <- c(
 #'   )
 #' }
 compute_mh_y_upps__nurg_nm <- function(
-    data,
-    name = "mh_y_upps__nurg_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_upps__nurg_nm",
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2430,11 +2485,12 @@ compute_mh_y_upps__nurg_nm <- function(
 #'   )
 #' }
 compute_mh_y_upps__nurg_sum <- function(
-    data,
-    name = "mh_y_upps__nurg_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_upps__nurg_sum",
+  max_na = 0,
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2490,10 +2546,11 @@ vars_mh_y_upps__pers <- c(
 #'   )
 #' }
 compute_mh_y_upps__pers_nm <- function(
-    data,
-    name = "mh_y_upps__pers_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_upps__pers_nm",
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2535,11 +2592,12 @@ compute_mh_y_upps__pers_nm <- function(
 #'   )
 #' }
 compute_mh_y_upps__pers_sum <- function(
-    data,
-    name = "mh_y_upps__pers_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_upps__pers_sum",
+  max_na = 0,
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2595,10 +2653,11 @@ vars_mh_y_upps__plan <- c(
 #'   )
 #' }
 compute_mh_y_upps__plan_nm <- function(
-    data,
-    name = "mh_y_upps__plan_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_upps__plan_nm",
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2640,11 +2699,12 @@ compute_mh_y_upps__plan_nm <- function(
 #'   )
 #' }
 compute_mh_y_upps__plan_sum <- function(
-    data,
-    name = "mh_y_upps__plan_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_upps__plan_sum",
+  max_na = 0,
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2700,10 +2760,11 @@ vars_mh_y_upps__purg <- c(
 #'   )
 #' }
 compute_mh_y_upps__purg_nm <- function(
-    data,
-    name = "mh_y_upps__purg_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_upps__purg_nm",
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2745,11 +2806,12 @@ compute_mh_y_upps__purg_nm <- function(
 #'   )
 #' }
 compute_mh_y_upps__purg_sum <- function(
-    data,
-    name = "mh_y_upps__purg_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_upps__purg_sum",
+  max_na = 0,
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2805,10 +2867,11 @@ vars_mh_y_upps__sens <- c(
 #'   )
 #' }
 compute_mh_y_upps__sens_nm <- function(
-    data,
-    name = "mh_y_upps__sens_nm",
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_upps__sens_nm",
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2850,11 +2913,12 @@ compute_mh_y_upps__sens_nm <- function(
 #'   )
 #' }
 compute_mh_y_upps__sens_sum <- function(
-    data,
-    name = "mh_y_upps__sens_sum",
-    max_na = 0,
-    exclude = NULL,
-    combine = TRUE) {
+  data,
+  name = "mh_y_upps__sens_sum",
+  max_na = 0,
+  exclude = NULL,
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2943,10 +3007,11 @@ vars_mh_y_pai <- c(
 #'   )
 #' }
 compute_mh_y_pai_nm <- function(
-    data,
-    name = "mh_y_pai_nm",
-    exclude = c("777", "999"),
-    combine = TRUE) {
+  data,
+  name = "mh_y_pai_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -2988,11 +3053,12 @@ compute_mh_y_pai_nm <- function(
 #'   )
 #' }
 compute_mh_y_pai_sum <- function(
-    data,
-    name = "mh_y_pai_sum",
-    max_na = 0,
-    exclude = c("777", "999"),
-    combine = TRUE) {
+  data,
+  name = "mh_y_pai_sum",
+  max_na = 0,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
 
   data |>
@@ -3090,11 +3156,12 @@ vars_mh_p_eatq__surg <- c(
 #' )
 #' }
 compute_mh_p_eatq__surg_mean <- function(
-    data,
-    name = "mh_p_eatq__surg_mean",
-    max_na = 1,
-    combine = TRUE,
-    revert = FALSE) {
+  data,
+  name = "mh_p_eatq__surg_mean",
+  max_na = 1,
+  combine = TRUE,
+  revert = FALSE
+) {
   chk::chk_data(data)
   if (!is.null(max_na)) chk::chk_whole_number(max_na)
   chk::chk_logical(combine)
@@ -3103,10 +3170,6 @@ compute_mh_p_eatq__surg_mean <- function(
   chk::check_names(data, vars_mh_p_eatq__surg)
 
   data_ss <- data |>
-    recode_levels(
-      vars = vars_mh_p_eatq__surg[c(2, 9)],
-      recode = recode_eatq
-    ) |>
     ss_mean(
       name    = name,
       vars    = vars_mh_p_eatq__surg,
@@ -3157,9 +3220,10 @@ compute_mh_p_eatq__surg_mean <- function(
 #' }
 #'
 compute_mh_p_eatq__surg_nm <- function(
-    data,
-    name = "mh_p_eatq__surg_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__surg_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   chk::check_names(data, vars_mh_p_eatq__surg)
@@ -3216,11 +3280,12 @@ vars_mh_p_eatq__actv <- c(
 #' }
 #'
 compute_mh_p_eatq__actv_mean <- function(
-    data,
-    name = "mh_p_eatq__actv_mean",
-    max_na = 1,
-    combine = TRUE,
-    revert = FALSE) {
+  data,
+  name = "mh_p_eatq__actv_mean",
+  max_na = 1,
+  combine = TRUE,
+  revert = FALSE
+) {
   chk::chk_data(data)
   if (!is.null(max_na)) chk::chk_whole_number(max_na)
   chk::chk_logical(combine)
@@ -3229,10 +3294,6 @@ compute_mh_p_eatq__actv_mean <- function(
   chk::check_names(data, vars_mh_p_eatq__actv)
 
   data_ss <- data |>
-    recode_levels(
-      vars = vars_mh_p_eatq__actv[c(1, 3, 7)],
-      recode = recode_eatq
-    ) |>
     ss_mean(
       name    = name,
       vars    = vars_mh_p_eatq__actv,
@@ -3283,9 +3344,10 @@ compute_mh_p_eatq__actv_mean <- function(
 #' }
 #'
 compute_mh_p_eatq__actv_nm <- function(
-    data,
-    name = "mh_p_eatq__actv_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__actv_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   chk::check_names(data, vars_mh_p_eatq__actv)
@@ -3342,11 +3404,12 @@ vars_mh_p_eatq__affl <- c(
 #' )
 #' }
 compute_mh_p_eatq__affl_mean <- function(
-    data,
-    name = "mh_p_eatq__affl_mean",
-    max_na = 1,
-    combine = TRUE,
-    revert = FALSE) {
+  data,
+  name = "mh_p_eatq__affl_mean",
+  max_na = 1,
+  combine = TRUE,
+  revert = FALSE
+) {
   chk::chk_data(data)
   if (!is.null(max_na)) chk::chk_whole_number(max_na)
   chk::chk_logical(combine)
@@ -3405,9 +3468,10 @@ compute_mh_p_eatq__affl_mean <- function(
 #' }
 #'
 compute_mh_p_eatq__affl_nm <- function(
-    data,
-    name = "mh_p_eatq__affl_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__affl_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   chk::check_names(data, vars_mh_p_eatq__affl)
@@ -3464,11 +3528,12 @@ vars_mh_p_eatq__depm <- c(
 #' }
 #'
 compute_mh_p_eatq__depm_mean <- function(
-    data,
-    name = "mh_p_eatq__depm_mean",
-    max_na = 1,
-    combine = TRUE,
-    revert = FALSE) {
+  data,
+  name = "mh_p_eatq__depm_mean",
+  max_na = 1,
+  combine = TRUE,
+  revert = FALSE
+) {
   chk::chk_data(data)
   if (!is.null(max_na)) chk::chk_whole_number(max_na)
   chk::chk_logical(combine)
@@ -3477,10 +3542,6 @@ compute_mh_p_eatq__depm_mean <- function(
   chk::check_names(data, vars_mh_p_eatq__depm)
 
   data_ss <- data |>
-    recode_levels(
-      vars = vars_mh_p_eatq__depm[c(4)],
-      recode = recode_eatq
-    ) |>
     ss_mean(
       name    = name,
       vars    = vars_mh_p_eatq__depm,
@@ -3531,9 +3592,10 @@ compute_mh_p_eatq__depm_mean <- function(
 #' }
 #'
 compute_mh_p_eatq__depm_nm <- function(
-    data,
-    name = "mh_p_eatq__depm_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__depm_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   chk::check_names(data, vars_mh_p_eatq__depm)
@@ -3591,11 +3653,12 @@ vars_mh_p_eatq__aggr <- c(
 #' }
 #'
 compute_mh_p_eatq__aggr_mean <- function(
-    data,
-    name = "mh_p_eatq__aggr_mean",
-    max_na = 1,
-    combine = TRUE,
-    revert = FALSE) {
+  data,
+  name = "mh_p_eatq__aggr_mean",
+  max_na = 1,
+  combine = TRUE,
+  revert = FALSE
+) {
   chk::chk_data(data)
   if (!is.null(max_na)) chk::chk_whole_number(max_na)
   chk::chk_logical(combine)
@@ -3604,10 +3667,6 @@ compute_mh_p_eatq__aggr_mean <- function(
   chk::check_names(data, vars_mh_p_eatq__aggr)
 
   data_ss <- data |>
-    recode_levels(
-      vars = vars_mh_p_eatq__aggr[c(5)],
-      recode = recode_eatq
-    ) |>
     ss_mean(
       name    = name,
       vars    = vars_mh_p_eatq__aggr,
@@ -3658,9 +3717,10 @@ compute_mh_p_eatq__aggr_mean <- function(
 #' }
 #'
 compute_mh_p_eatq__aggr_nm <- function(
-    data,
-    name = "mh_p_eatq__aggr_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__aggr_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   chk::check_names(data, vars_mh_p_eatq__aggr)
@@ -3718,11 +3778,12 @@ vars_mh_p_eatq__attn <- c(
 #' }
 #'
 compute_mh_p_eatq__attn_mean <- function(
-    data,
-    name = "mh_p_eatq__attn_mean",
-    max_na = 1,
-    combine = TRUE,
-    revert = FALSE) {
+  data,
+  name = "mh_p_eatq__attn_mean",
+  max_na = 1,
+  combine = TRUE,
+  revert = FALSE
+) {
   chk::chk_data(data)
   if (!is.null(max_na)) chk::chk_whole_number(max_na)
   chk::chk_logical(combine)
@@ -3731,10 +3792,6 @@ compute_mh_p_eatq__attn_mean <- function(
   chk::check_names(data, vars_mh_p_eatq__attn)
 
   data_ss <- data |>
-    recode_levels(
-      vars = vars_mh_p_eatq__attn[c(2, 3, 5)],
-      recode = recode_eatq
-    ) |>
     ss_mean(
       name    = name,
       vars    = vars_mh_p_eatq__attn,
@@ -3785,9 +3842,10 @@ compute_mh_p_eatq__attn_mean <- function(
 #' }
 #'
 compute_mh_p_eatq__attn_nm <- function(
-    data,
-    name = "mh_p_eatq__attn_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__attn_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   chk::check_names(data, vars_mh_p_eatq__attn)
@@ -3846,11 +3904,12 @@ vars_mh_p_eatq__fear <- c(
 #' }
 #'
 compute_mh_p_eatq__fear_mean <- function(
-    data,
-    name = "mh_p_eatq__fear_mean",
-    max_na = 1,
-    combine = TRUE,
-    revert = FALSE) {
+  data,
+  name = "mh_p_eatq__fear_mean",
+  max_na = 1,
+  combine = TRUE,
+  revert = FALSE
+) {
   chk::chk_data(data)
   if (!is.null(max_na)) chk::chk_whole_number(max_na)
   chk::chk_logical(combine)
@@ -3909,9 +3968,10 @@ compute_mh_p_eatq__fear_mean <- function(
 #' }
 #'
 compute_mh_p_eatq__fear_nm <- function(
-    data,
-    name = "mh_p_eatq__fear_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__fear_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   chk::check_names(data, vars_mh_p_eatq__fear)
@@ -3967,11 +4027,12 @@ vars_mh_p_eatq__inhib <- c(
 #' }
 #'
 compute_mh_p_eatq__inhib_mean <- function(
-    data,
-    name = "mh_p_eatq__inhib_mean",
-    max_na = 1,
-    combine = TRUE,
-    revert = FALSE) {
+  data,
+  name = "mh_p_eatq__inhib_mean",
+  max_na = 1,
+  combine = TRUE,
+  revert = FALSE
+) {
   chk::chk_data(data)
   if (!is.null(max_na)) chk::chk_whole_number(max_na)
   chk::chk_logical(combine)
@@ -3980,10 +4041,6 @@ compute_mh_p_eatq__inhib_mean <- function(
   chk::check_names(data, vars_mh_p_eatq__inhib)
 
   data_ss <- data |>
-    recode_levels(
-      vars = vars_mh_p_eatq__inhib[c(1, 2, 3)],
-      recode = recode_eatq
-    ) |>
     ss_mean(
       name = name,
       vars = vars_mh_p_eatq__inhib,
@@ -4034,9 +4091,10 @@ compute_mh_p_eatq__inhib_mean <- function(
 #' }
 #'
 compute_mh_p_eatq__inhib_nm <- function(
-    data,
-    name = "mh_p_eatq__inhib_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__inhib_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   chk::check_names(data, vars_mh_p_eatq__inhib)
@@ -4095,11 +4153,12 @@ vars_mh_p_eatq__shy <- c(
 #' }
 #'
 compute_mh_p_eatq__shy_mean <- function(
-    data,
-    name = "mh_p_eatq__shy_mean",
-    max_na = 1,
-    combine = TRUE,
-    revert = FALSE) {
+  data,
+  name = "mh_p_eatq__shy_mean",
+  max_na = 1,
+  combine = TRUE,
+  revert = FALSE
+) {
   chk::chk_data(data)
   if (!is.null(max_na)) chk::chk_whole_number(max_na)
   chk::chk_logical(combine)
@@ -4108,10 +4167,6 @@ compute_mh_p_eatq__shy_mean <- function(
   chk::check_names(data, vars_mh_p_eatq__shy)
 
   data_ss <- data |>
-    recode_levels(
-      vars = vars_mh_p_eatq__shy[c(1, 3, 4)],
-      recode = recode_eatq
-    ) |>
     ss_mean(
       name = name,
       vars = vars_mh_p_eatq__shy,
@@ -4162,9 +4217,10 @@ compute_mh_p_eatq__shy_mean <- function(
 #' }
 #'
 compute_mh_p_eatq__shy_nm <- function(
-    data,
-    name = "mh_p_eatq__shy_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__shy_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   chk::check_names(data, vars_mh_p_eatq__shy)
@@ -4222,11 +4278,12 @@ vars_mh_p_eatq__frust <- c(
 #' }
 #'
 compute_mh_p_eatq__frust_mean <- function(
-    data,
-    name = "mh_p_eatq__frust_mean",
-    max_na = 1,
-    combine = TRUE,
-    revert = FALSE) {
+  data,
+  name = "mh_p_eatq__frust_mean",
+  max_na = 1,
+  combine = TRUE,
+  revert = FALSE
+) {
   chk::chk_data(data)
   if (!is.null(max_na)) chk::chk_whole_number(max_na)
   chk::chk_logical(combine)
@@ -4285,9 +4342,10 @@ compute_mh_p_eatq__frust_mean <- function(
 #' }
 #'
 compute_mh_p_eatq__frust_nm <- function(
-    data,
-    name = "mh_p_eatq__frust_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__frust_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   chk::check_names(data, vars_mh_p_eatq__frust)
@@ -4341,9 +4399,10 @@ compute_mh_p_eatq__frust_nm <- function(
 #' }
 #'
 compute_mh_p_eatq__ss__efcon_mean <- function(
-    data,
-    name = "mh_p_eatq__ss__efcon_mean",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__ss__efcon_mean",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   check_col_names(data, name)
@@ -4397,9 +4456,10 @@ compute_mh_p_eatq__ss__efcon_mean <- function(
 #' }
 #'
 compute_mh_p_eatq__ss__efcon_nm <- function(
-    data,
-    name = "mh_p_eatq__ss__efcon_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__ss__efcon_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   chk::check_names(
@@ -4456,9 +4516,10 @@ compute_mh_p_eatq__ss__efcon_nm <- function(
 #' }
 #'
 compute_mh_p_eatq__ss__negaff_mean <- function(
-    data,
-    name = "mh_p_eatq__ss__negaff_mean",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__ss__negaff_mean",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   check_col_names(data, name)
@@ -4511,9 +4572,10 @@ compute_mh_p_eatq__ss__negaff_mean <- function(
 #' data <- compute_mh_p_eatq__ss__negaff_nm(data)
 #' }
 compute_mh_p_eatq__ss__negaff_nm <- function(
-    data,
-    name = "mh_p_eatq__ss__negaff_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__ss__negaff_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   chk::check_names(
@@ -4569,9 +4631,10 @@ compute_mh_p_eatq__ss__negaff_nm <- function(
 #' }
 #'
 compute_mh_p_eatq__ss__surg_mean <- function(
-    data,
-    name = "mh_p_eatq__ss__surg_mean",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__ss__surg_mean",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   check_col_names(data, name)
@@ -4624,9 +4687,10 @@ compute_mh_p_eatq__ss__surg_mean <- function(
 #' data <- compute_mh_p_eatq__ss__surg_nm(data)
 #' }
 compute_mh_p_eatq__ss__surg_nm <- function(
-    data,
-    name = "mh_p_eatq__ss__surg_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_p_eatq__ss__surg_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_logical(combine)
   chk::check_names(
@@ -4793,12 +4857,10 @@ vars_mh_p_ple__exp <- c(
 )
 
 
-#' Compute "Life Events \[Parent\] (Events): Count \[Validation: No more than 5
-#' missing or declined\]"
+#' Compute "Life Events \[Parent\] (Events): Count"
 #' @description
 #' Computes the summary score `mh_p_ple_count`
-#' Life Events \[Parent\] (Events): Count \[Validation: No more than 5
-#' missing or declined\]
+#' Life Events \[Parent\] (Events): Count
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -4808,7 +4870,6 @@ vars_mh_p_ple__exp <- c(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 5 of 25 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -4816,7 +4877,7 @@ vars_mh_p_ple__exp <- c(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 5).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
@@ -4824,11 +4885,13 @@ vars_mh_p_ple__exp <- c(
 compute_mh_p_ple_count <- function(data,
                                    name = "mh_p_ple_count",
                                    combine = TRUE,
-                                   max_na = 5) {
+                                   max_na = NULL) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
   data |>
     ss_sum(
@@ -4878,8 +4941,6 @@ compute_mh_p_ple_nm <- function(data,
       combine = combine
     )
 }
-
-
 
 
 #   ____________________________________________________________________________
@@ -5100,10 +5161,11 @@ compute_mh_p_ple__severity_nm <- function(data,
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__good_sum <- function(
-    data,
-    name = "mh_p_ple__severity__good_sum",
-    combine = TRUE,
-    max_na = 5) {
+  data,
+  name = "mh_p_ple__severity__good_sum",
+  combine = TRUE,
+  max_na = 5
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -5185,10 +5247,11 @@ compute_mh_p_ple__severity__good_sum <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__good_mean <- function(
-    data,
-    name = "mh_p_ple__severity__good_mean",
-    combine = TRUE,
-    max_na = 5) {
+  data,
+  name = "mh_p_ple__severity__good_mean",
+  combine = TRUE,
+  max_na = 5
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -5268,10 +5331,11 @@ compute_mh_p_ple__severity__good_mean <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__bad_sum <- function(
-    data,
-    name = "mh_p_ple__severity__bad_sum",
-    combine = TRUE,
-    max_na = 5) {
+  data,
+  name = "mh_p_ple__severity__bad_sum",
+  combine = TRUE,
+  max_na = 5
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -5352,10 +5416,11 @@ compute_mh_p_ple__severity__bad_sum <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__bad_mean <- function(
-    data,
-    name = "mh_p_ple__severity__bad_mean",
-    combine = TRUE,
-    max_na = 5) {
+  data,
+  name = "mh_p_ple__severity__bad_mean",
+  combine = TRUE,
+  max_na = 5
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -5445,12 +5510,10 @@ compute_mh_p_ple__exp_nm <- function(data,
     )
 }
 
-#' Compute "Life Events \[Parent\] (Experience Good Events): Count \[Validation:
-#' No more than 5 events missing and no experience items missing or declined\]"
+#' Compute "Life Events \[Parent\] (Experience Good Events): Count"
 #' @description
 #' Computes the summary score `mh_p_ple__exp__good_count`
-#' Life Events \[Parent\] (Experience Good Events): Count \[Validation: No
-#' more than 5 events missing and no experience items missing or declined\]
+#' Life Events \[Parent\] (Experience Good Events): Count
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -5460,7 +5523,6 @@ compute_mh_p_ple__exp_nm <- function(data,
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 5 of 25 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -5468,7 +5530,7 @@ compute_mh_p_ple__exp_nm <- function(data,
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 5).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
@@ -5476,11 +5538,13 @@ compute_mh_p_ple__exp_nm <- function(data,
 compute_mh_p_ple__exp__good_count <- function(data,
                                               name = "mh_p_ple__exp__good_count",
                                               combine = TRUE,
-                                              max_na = 5) {
+                                              max_na = NULL) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -5507,7 +5571,7 @@ compute_mh_p_ple__exp__good_count <- function(data,
       fork_vars = vars_mh_p_ple,
       fork_val  = "1",
       vars      = paste0(vars_mh_p_ple__exp, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       combine   = TRUE
     ) |>
@@ -5527,12 +5591,10 @@ compute_mh_p_ple__exp__good_count <- function(data,
 }
 
 
-#' Compute "Life Events \[Parent\] (Experience Bad Events): Count \[Validation:
-#' No more than 5 events missing and no experience items missing or declined\]"
+#' Compute "Life Events \[Parent\] (Experience Bad Events): Count"
 #' @description
 #' Computes the summary score `mh_p_ple__exp__bad_count`
-#' Life Events \[Parent\] (Experience Bad Events): Count \[Validation: No
-#' more than 5 events missing and no experience items missing or declined\]
+#' Life Events \[Parent\] (Experience Bad Events): Count
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -5542,7 +5604,6 @@ compute_mh_p_ple__exp__good_count <- function(data,
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 5 of 25 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -5550,7 +5611,7 @@ compute_mh_p_ple__exp__good_count <- function(data,
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 5).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
@@ -5558,11 +5619,13 @@ compute_mh_p_ple__exp__good_count <- function(data,
 compute_mh_p_ple__exp__bad_count <- function(data,
                                              name = "mh_p_ple__exp__bad_count",
                                              combine = TRUE,
-                                             max_na = 5) {
+                                             max_na = NULL) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -5589,7 +5652,7 @@ compute_mh_p_ple__exp__bad_count <- function(data,
       fork_vars = vars_mh_p_ple,
       fork_val  = "1",
       vars      = paste0(vars_mh_p_ple__exp, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       combine   = TRUE
     ) |>
@@ -5607,7 +5670,6 @@ compute_mh_p_ple__exp__bad_count <- function(data,
 
   data_ss
 }
-
 
 
 #   ____________________________________________________________________________
@@ -5732,12 +5794,10 @@ vars_mh_p_ple__exp__v01 <- c(
 )
 
 
-#' Compute "Life Events \[Parent\] (Events): Count - Version 1 (Year 3)
-#' \[Validation: No more than 6 missing or declined\]"
+#' Compute "Life Events \[Parent\] (Events): Count - Version 1 (Year 3)"
 #' @description
 #' Computes the summary score `mh_p_ple_count__v01`
 #' Life Events \[Parent\] (Events): Count - Version 1 (Year 3)
-#' \[Validation: No more than 6 missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -5747,7 +5807,6 @@ vars_mh_p_ple__exp__v01 <- c(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 31 items missing
 #'
 #' @inherit dummy_mh params
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -5756,7 +5815,7 @@ vars_mh_p_ple__exp__v01 <- c(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
@@ -5765,11 +5824,13 @@ compute_mh_p_ple_count__v01 <- function(data,
                                         name = "mh_p_ple_count__v01",
                                         events = "ses-03A",
                                         combine = TRUE,
-                                        max_na = 6) {
+                                        max_na = NULL) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
   data |>
     ss_sum(
@@ -5826,8 +5887,6 @@ compute_mh_p_ple_nm__v01 <- function(data,
 }
 
 
-
-
 #   ____________________________________________________________________________
 #   mh_p_ple__severity__v01                                                 ####
 
@@ -5863,11 +5922,12 @@ compute_mh_p_ple_nm__v01 <- function(data,
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity_sum__v01 <- function(
-    data,
-    name = "mh_p_ple__severity_sum__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity_sum__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -5940,11 +6000,12 @@ compute_mh_p_ple__severity_sum__v01 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity_mean__v01 <- function(
-    data,
-    name = "mh_p_ple__severity_mean__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity_mean__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -6010,10 +6071,11 @@ compute_mh_p_ple__severity_mean__v01 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity_nm__v01 <- function(
-    data,
-    name = "mh_p_ple__severity_nm__v01",
-    events = "ses-03A",
-    combine = TRUE) {
+  data,
+  name = "mh_p_ple__severity_nm__v01",
+  events = "ses-03A",
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
 
@@ -6064,11 +6126,12 @@ compute_mh_p_ple__severity_nm__v01 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__good_sum__v01 <- function(
-    data,
-    name = "mh_p_ple__severity__good_sum__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity__good_sum__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -6152,11 +6215,12 @@ compute_mh_p_ple__severity__good_sum__v01 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__good_mean__v01 <- function(
-    data,
-    name = "mh_p_ple__severity__good_mean__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity__good_mean__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -6238,11 +6302,12 @@ compute_mh_p_ple__severity__good_mean__v01 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__bad_sum__v01 <- function(
-    data,
-    name = "mh_p_ple__severity__bad_sum__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity__bad_sum__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -6325,11 +6390,12 @@ compute_mh_p_ple__severity__bad_sum__v01 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__bad_mean__v01 <- function(
-    data,
-    name = "mh_p_ple__severity__bad_mean__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity__bad_mean__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -6425,13 +6491,11 @@ compute_mh_p_ple__exp_nm__v01 <- function(data,
 }
 
 #' Compute "Life Events \[Parent\] (Experience Good Events): Count - Version 1
-#' (Year 3) \[Validation: No more than 6 events missing and no experience items
-#' missing or declined\]"
+#' (Year 3)"
 #' @description
 #' Computes the summary score `mh_p_ple__exp__good_count__v01`
 #' Life Events \[Parent\] (Experience Good Events): Count - Version 1 (Year
-#' 3) \[Validation: No more than 6 events missing and no experience items
-#' missing or declined\]
+#' 3)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -6441,7 +6505,6 @@ compute_mh_p_ple__exp_nm__v01 <- function(data,
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 31 items missing
 #'
 #' @inheritParams dummy_mh
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -6450,21 +6513,24 @@ compute_mh_p_ple__exp_nm__v01 <- function(data,
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
 #' @autoglobal
 compute_mh_p_ple__exp__good_count__v01 <- function(
-    data,
-    name = "mh_p_ple__exp__good_count__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__exp__good_count__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = NULL
+) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -6491,7 +6557,7 @@ compute_mh_p_ple__exp__good_count__v01 <- function(
       fork_vars = vars_mh_p_ple__v01,
       fork_val  = "1",
       vars      = paste0(vars_mh_p_ple__exp__v01, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       events    = events,
       combine   = TRUE
@@ -6513,13 +6579,11 @@ compute_mh_p_ple__exp__good_count__v01 <- function(
 
 
 #' Compute "Life Events \[Parent\] (Experience Bad Events): Count - Version 1
-#' (Year 3) \[Validation: No more than 6 events missing and no experience items
-#' missing or declined\]"
+#' (Year 3)"
 #' @description
 #' Computes the summary score `mh_p_ple__exp__bad_count__v01`
 #' Life Events \[Parent\] (Experience Bad Events): Count - Version 1 (Year
-#' 3) \[Validation: No more than 6 events missing and no experience items
-#' missing or declined\]
+#' 3)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -6529,7 +6593,6 @@ compute_mh_p_ple__exp__good_count__v01 <- function(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 31 items missing
 #'
 #' @inheritParams dummy_mh
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -6538,21 +6601,24 @@ compute_mh_p_ple__exp__good_count__v01 <- function(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
 #' @autoglobal
 compute_mh_p_ple__exp__bad_count__v01 <- function(
-    data,
-    name = "mh_p_ple__exp__bad_count__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__exp__bad_count__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = NULL
+) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -6579,7 +6645,7 @@ compute_mh_p_ple__exp__bad_count__v01 <- function(
       fork_vars = vars_mh_p_ple__v01,
       fork_val  = "1",
       vars      = paste0(vars_mh_p_ple__exp__v01, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       events    = events,
       combine   = TRUE
@@ -6725,13 +6791,11 @@ vars_mh_p_ple__exp__v02 <- c(
   "mh_p_ple__exp_032"
 )
 
-
 #' Compute "Life Events \[Parent\] (Events): Count - Version 2 (Year 4 and Year
-#' 5) \[Validation: No more than 6 missing or declined\]"
+#' 5)"
 #' @description
 #' Computes the summary score `mh_p_ple_count__v02`
 #' Life Events \[Parent\] (Events): Count - Version 2 (Year 4 and Year 5)
-#' \[Validation: No more than 6 missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -6741,7 +6805,6 @@ vars_mh_p_ple__exp__v02 <- c(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 32 items missing
 #'
 #' @inheritParams dummy_mh
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -6750,7 +6813,7 @@ vars_mh_p_ple__exp__v02 <- c(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
@@ -6759,11 +6822,13 @@ compute_mh_p_ple_count__v02 <- function(data,
                                         name = "mh_p_ple_count__v02",
                                         events = c("ses-04A", "ses-05A"),
                                         combine = TRUE,
-                                        max_na = 6) {
+                                        max_na = NULL) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
   data |>
     ss_sum(
@@ -6821,8 +6886,6 @@ compute_mh_p_ple_nm__v02 <- function(data,
 }
 
 
-
-
 #   ____________________________________________________________________________
 #   mh_p_ple__severity__v02                                                 ####
 
@@ -6858,11 +6921,12 @@ compute_mh_p_ple_nm__v02 <- function(data,
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity_sum__v02 <- function(
-    data,
-    name = "mh_p_ple__severity_sum__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity_sum__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -6935,11 +6999,12 @@ compute_mh_p_ple__severity_sum__v02 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity_mean__v02 <- function(
-    data,
-    name = "mh_p_ple__severity_mean__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity_mean__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -7006,10 +7071,11 @@ compute_mh_p_ple__severity_mean__v02 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity_nm__v02 <- function(
-    data,
-    name = "mh_p_ple__severity_nm__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE) {
+  data,
+  name = "mh_p_ple__severity_nm__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
 
@@ -7060,11 +7126,12 @@ compute_mh_p_ple__severity_nm__v02 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__good_sum__v02 <- function(
-    data,
-    name = "mh_p_ple__severity__good_sum__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity__good_sum__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -7148,11 +7215,12 @@ compute_mh_p_ple__severity__good_sum__v02 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__good_mean__v02 <- function(
-    data,
-    name = "mh_p_ple__severity__good_mean__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity__good_mean__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -7234,11 +7302,12 @@ compute_mh_p_ple__severity__good_mean__v02 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__bad_sum__v02 <- function(
-    data,
-    name = "mh_p_ple__severity__bad_sum__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity__bad_sum__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -7321,11 +7390,12 @@ compute_mh_p_ple__severity__bad_sum__v02 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__bad_mean__v02 <- function(
-    data,
-    name = "mh_p_ple__severity__bad_mean__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity__bad_mean__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -7422,13 +7492,11 @@ compute_mh_p_ple__exp_nm__v02 <- function(data,
 }
 
 #' Compute "Life Events \[Parent\] (Experience Good Events): Count - Version
-#' 2 (Year 4 and Year 5) \[Validation: No more than 6 events missing and no
-#' experience items missing or declined\]"
+#' 2 (Year 4 and Year 5)"
 #' @description
 #' Computes the summary score `mh_p_ple__exp__good_count__v02`
 #' Life Events \[Parent\] (Experience Good Events): Count - Version 2 (Year
-#' 4 and Year 5) \[Validation: No more than 6 events missing and no experience
-#' items missing or declined\]
+#' 4 and Year 5)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -7438,31 +7506,32 @@ compute_mh_p_ple__exp_nm__v02 <- function(data,
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 32 items missing
 #'
 #' @inheritParams dummy_mh
-#' @inherit dummy_mh params
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
 #' the name used in the ABCD data release).
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
 #' @autoglobal
 compute_mh_p_ple__exp__good_count__v02 <- function(
-    data,
-    name = "mh_p_ple__exp__good_count__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__exp__good_count__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = NULL
+) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -7489,7 +7558,7 @@ compute_mh_p_ple__exp__good_count__v02 <- function(
       fork_vars = vars_mh_p_ple__v02,
       fork_val  = "1",
       vars      = paste0(vars_mh_p_ple__exp__v02, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       events    = events,
       combine   = TRUE
@@ -7511,13 +7580,11 @@ compute_mh_p_ple__exp__good_count__v02 <- function(
 
 
 #' Compute "Life Events \[Parent\] (Experience Bad Events): Count - Version
-#' 2 (Year 4 and Year 5) \[Validation: No more than 6 events missing and no
-#' experience items missing or declined\]"
+#' 2 (Year 4 and Year 5)"
 #' @description
 #' Computes the summary score `mh_p_ple__exp__bad_count__v02`
 #' Life Events \[Parent\] (Experience Bad Events): Count - Version 2 (Year
-#' 4 and Year 5) \[Validation: No more than 6 events missing and no experience
-#' items missing or declined\]
+#' 4 and Year 5)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -7527,7 +7594,6 @@ compute_mh_p_ple__exp__good_count__v02 <- function(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 32 items missing
 #'
 #' @inheritParams dummy_mh
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -7536,21 +7602,24 @@ compute_mh_p_ple__exp__good_count__v02 <- function(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
 #' @autoglobal
 compute_mh_p_ple__exp__bad_count__v02 <- function(
-    data,
-    name = "mh_p_ple__exp__bad_count__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__exp__bad_count__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = NULL
+) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -7577,7 +7646,7 @@ compute_mh_p_ple__exp__bad_count__v02 <- function(
       fork_vars = vars_mh_p_ple__v02,
       fork_val  = "1",
       vars      = paste0(vars_mh_p_ple__exp__v02, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       events    = events,
       combine   = TRUE
@@ -7726,12 +7795,10 @@ vars_mh_p_ple__exp__v03 <- c(
 )
 
 
-#' Compute "Life Events \[Parent\] (Events): Count - Version 3 (Year 6 )
-#' \[Validation: No more than 6 missing or declined\]"
+#' Compute "Life Events \[Parent\] (Events): Count - Version 3 (Year 6)"
 #' @description
 #' Computes the summary score `mh_p_ple_count__v03`
-#' Life Events \[Parent\] (Events): Count - Version 3 (Year 6 )
-#' \[Validation: No more than 6 missing or declined\]
+#' Life Events \[Parent\] (Events): Count - Version 3 (Year 6)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -7741,7 +7808,6 @@ vars_mh_p_ple__exp__v03 <- c(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 33 items missing
 #'
 #' @inherit dummy_mh params
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -7750,7 +7816,7 @@ vars_mh_p_ple__exp__v03 <- c(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
@@ -7759,11 +7825,13 @@ compute_mh_p_ple_count__v03 <- function(data,
                                         name = "mh_p_ple_count__v03",
                                         events = "ses-06A",
                                         combine = TRUE,
-                                        max_na = 6) {
+                                        max_na = NULL) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
   data |>
     ss_sum(
@@ -7820,8 +7888,6 @@ compute_mh_p_ple_nm__v03 <- function(data,
 }
 
 
-
-
 #   ____________________________________________________________________________
 #   mh_p_ple__severity__v03                                                 ####
 
@@ -7857,11 +7923,12 @@ compute_mh_p_ple_nm__v03 <- function(data,
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity_sum__v03 <- function(
-    data,
-    name = "mh_p_ple__severity_sum__v03",
-    events = "ses-06A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity_sum__v03",
+  events = "ses-06A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -7934,11 +8001,12 @@ compute_mh_p_ple__severity_sum__v03 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity_mean__v03 <- function(
-    data,
-    name = "mh_p_ple__severity_mean__v03",
-    events = "ses-06A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity_mean__v03",
+  events = "ses-06A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -8004,10 +8072,11 @@ compute_mh_p_ple__severity_mean__v03 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity_nm__v03 <- function(
-    data,
-    name = "mh_p_ple__severity_nm__v03",
-    events = "ses-06A",
-    combine = TRUE) {
+  data,
+  name = "mh_p_ple__severity_nm__v03",
+  events = "ses-06A",
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
 
@@ -8058,11 +8127,12 @@ compute_mh_p_ple__severity_nm__v03 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__good_sum__v03 <- function(
-    data,
-    name = "mh_p_ple__severity__good_sum__v03",
-    events = "ses-06A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity__good_sum__v03",
+  events = "ses-06A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -8146,11 +8216,12 @@ compute_mh_p_ple__severity__good_sum__v03 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__good_mean__v03 <- function(
-    data,
-    name = "mh_p_ple__severity__good_mean__v03",
-    events = "ses-06A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity__good_mean__v03",
+  events = "ses-06A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -8232,11 +8303,12 @@ compute_mh_p_ple__severity__good_mean__v03 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__bad_sum__v03 <- function(
-    data,
-    name = "mh_p_ple__severity__bad_sum__v03",
-    events = "ses-06A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity__bad_sum__v03",
+  events = "ses-06A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -8319,11 +8391,12 @@ compute_mh_p_ple__severity__bad_sum__v03 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__bad_mean__v03 <- function(
-    data,
-    name = "mh_p_ple__severity__bad_mean__v03",
-    events = "ses-06A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__severity__bad_mean__v03",
+  events = "ses-06A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -8420,13 +8493,11 @@ compute_mh_p_ple__exp_nm__v03 <- function(data,
 }
 
 #' Compute "Life Events \[Parent\] (Experience Good Events): Count - Version
-#' 3 (Year 6 ) \[Validation: No more than 6 events missing and no experience
-#' items missing or declined\]"
+#' 3 (Year 6)"
 #' @description
 #' Computes the summary score `mh_p_ple__exp__good_count__v03`
 #' Life Events \[Parent\] (Experience Good Events): Count - Version 3 (Year
-#' 6 ) \[Validation: No more than 6 events missing and no experience items
-#' missing or declined\]
+#' 6)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -8436,7 +8507,6 @@ compute_mh_p_ple__exp_nm__v03 <- function(data,
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 33 items missing
 #'
 #' @inheritParams dummy_mh
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -8445,21 +8515,24 @@ compute_mh_p_ple__exp_nm__v03 <- function(data,
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
 #' @autoglobal
 compute_mh_p_ple__exp__good_count__v03 <- function(
-    data,
-    name = "mh_p_ple__exp__good_count__v03",
-    events = "ses-06A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__exp__good_count__v03",
+  events = "ses-06A",
+  combine = TRUE,
+  max_na = NULL
+) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -8486,7 +8559,7 @@ compute_mh_p_ple__exp__good_count__v03 <- function(
       fork_vars = vars_mh_p_ple__v03,
       fork_val  = "1",
       vars      = paste0(vars_mh_p_ple__exp__v03, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       events    = events,
       combine   = TRUE
@@ -8508,13 +8581,11 @@ compute_mh_p_ple__exp__good_count__v03 <- function(
 
 
 #' Compute "Life Events \[Parent\] (Experience Bad Events): Count - Version
-#' 3 (Year 6 ) \[Validation: No more than 6 events missing and no experience
-#' items missing or declined\]"
+#' 3 (Year 6)"
 #' @description
 #' Computes the summary score `mh_p_ple__exp__bad_count__v03`
 #' Life Events \[Parent\] (Experience Bad Events): Count - Version 3 (Year
-#' 6 ) \[Validation: No more than 6 events missing and no experience items
-#' missing or declined\]
+#' 6)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -8524,7 +8595,6 @@ compute_mh_p_ple__exp__good_count__v03 <- function(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 33 items missing
 #'
 #' @inheritParams dummy_mh
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -8533,21 +8603,24 @@ compute_mh_p_ple__exp__good_count__v03 <- function(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
 #' @autoglobal
 compute_mh_p_ple__exp__bad_count__v03 <- function(
-    data,
-    name = "mh_p_ple__exp__bad_count__v03",
-    events = "ses-06A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_p_ple__exp__bad_count__v03",
+  events = "ses-06A",
+  combine = TRUE,
+  max_na = NULL
+) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -8574,7 +8647,7 @@ compute_mh_p_ple__exp__bad_count__v03 <- function(
       fork_vars = vars_mh_p_ple__v03,
       fork_val  = "1",
       vars      = paste0(vars_mh_p_ple__exp__v03, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       events    = events,
       combine   = TRUE
@@ -8723,11 +8796,10 @@ vars_mh_p_ple__exp__v04 <- c(
 
 
 #' Compute "Life Events \[Parent\] (Events): Count - Version 4 (Starting at Year
-#' 7) \[Validation: No more than 4 missing or declined\]"
+#' 7)"
 #' @description
 #' Computes the summary score `mh_p_ple_count__v04`
 #' Life Events \[Parent\] (Events): Count - Version 4 (Starting at Year 7)
-#' \[Validation: No more than 4 missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -8737,7 +8809,6 @@ vars_mh_p_ple__exp__v04 <- c(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 4 of 20 items missing
 #'
 #' @inherit dummy_mh params
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -8746,7 +8817,7 @@ vars_mh_p_ple__exp__v04 <- c(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 4).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
@@ -8755,11 +8826,13 @@ compute_mh_p_ple_count__v04 <- function(data,
                                         name = "mh_p_ple_count__v04",
                                         events = "ses-07A",
                                         combine = TRUE,
-                                        max_na = 4) {
+                                        max_na = NULL) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
   data |>
     ss_sum(
@@ -8817,8 +8890,6 @@ compute_mh_p_ple_nm__v04 <- function(data,
 }
 
 
-
-
 #   ____________________________________________________________________________
 #   mh_p_ple__severity__v04                                                 ####
 
@@ -8854,11 +8925,12 @@ compute_mh_p_ple_nm__v04 <- function(data,
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity_sum__v04 <- function(
-    data,
-    name = "mh_p_ple__severity_sum__v04",
-    events = "ses-07A",
-    combine = TRUE,
-    max_na = 4) {
+  data,
+  name = "mh_p_ple__severity_sum__v04",
+  events = "ses-07A",
+  combine = TRUE,
+  max_na = 4
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -8931,11 +9003,12 @@ compute_mh_p_ple__severity_sum__v04 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity_mean__v04 <- function(
-    data,
-    name = "mh_p_ple__severity_mean__v04",
-    events = "ses-07A",
-    combine = TRUE,
-    max_na = 4) {
+  data,
+  name = "mh_p_ple__severity_mean__v04",
+  events = "ses-07A",
+  combine = TRUE,
+  max_na = 4
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -9002,10 +9075,11 @@ compute_mh_p_ple__severity_mean__v04 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity_nm__v04 <- function(
-    data,
-    name = "mh_p_ple__severity_nm__v04",
-    events = "ses-07A",
-    combine = TRUE) {
+  data,
+  name = "mh_p_ple__severity_nm__v04",
+  events = "ses-07A",
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
 
@@ -9056,11 +9130,12 @@ compute_mh_p_ple__severity_nm__v04 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__good_sum__v04 <- function(
-    data,
-    name = "mh_p_ple__severity__good_sum__v04",
-    events = "ses-07A",
-    combine = TRUE,
-    max_na = 4) {
+  data,
+  name = "mh_p_ple__severity__good_sum__v04",
+  events = "ses-07A",
+  combine = TRUE,
+  max_na = 4
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -9144,11 +9219,12 @@ compute_mh_p_ple__severity__good_sum__v04 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__good_mean__v04 <- function(
-    data,
-    name = "mh_p_ple__severity__good_mean__v04",
-    events = "ses-07A",
-    combine = TRUE,
-    max_na = 4) {
+  data,
+  name = "mh_p_ple__severity__good_mean__v04",
+  events = "ses-07A",
+  combine = TRUE,
+  max_na = 4
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -9230,11 +9306,12 @@ compute_mh_p_ple__severity__good_mean__v04 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__bad_sum__v04 <- function(
-    data,
-    name = "mh_p_ple__severity__bad_sum__v04",
-    events = "ses-07A",
-    combine = TRUE,
-    max_na = 4) {
+  data,
+  name = "mh_p_ple__severity__bad_sum__v04",
+  events = "ses-07A",
+  combine = TRUE,
+  max_na = 4
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -9317,11 +9394,12 @@ compute_mh_p_ple__severity__bad_sum__v04 <- function(
 #' @export
 #' @autoglobal
 compute_mh_p_ple__severity__bad_mean__v04 <- function(
-    data,
-    name = "mh_p_ple__severity__bad_mean__v04",
-    events = "ses-07A",
-    combine = TRUE,
-    max_na = 4) {
+  data,
+  name = "mh_p_ple__severity__bad_mean__v04",
+  events = "ses-07A",
+  combine = TRUE,
+  max_na = 4
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -9418,13 +9496,11 @@ compute_mh_p_ple__exp_nm__v04 <- function(data,
 }
 
 #' Compute "Life Events \[Parent\] (Experience Good Events): Count - Version
-#' 4 (Starting at Year 7) \[Validation: No more than 4 events missing and no
-#' experience items missing or declined\]"
+#' 4 (Starting at Year 7)"
 #' @description
 #' Computes the summary score `mh_p_ple__exp__good_count__v04`
 #' Life Events \[Parent\] (Experience Good Events): Count - Version 4
-#' (Starting at Year 7) \[Validation: No more than 4 events missing and no
-#' experience items missing or declined\]
+#' (Starting at Year 7)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -9434,7 +9510,6 @@ compute_mh_p_ple__exp_nm__v04 <- function(data,
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 4 of 20 items missing
 #'
 #' @inheritParams dummy_mh
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -9443,21 +9518,24 @@ compute_mh_p_ple__exp_nm__v04 <- function(data,
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 4).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
 #' @autoglobal
 compute_mh_p_ple__exp__good_count__v04 <- function(
-    data,
-    name = "mh_p_ple__exp__good_count__v04",
-    events = "ses-07A",
-    combine = TRUE,
-    max_na = 4) {
+  data,
+  name = "mh_p_ple__exp__good_count__v04",
+  events = "ses-07A",
+  combine = TRUE,
+  max_na = NULL
+) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -9484,7 +9562,7 @@ compute_mh_p_ple__exp__good_count__v04 <- function(
       fork_vars = vars_mh_p_ple__v04,
       fork_val  = "1",
       vars      = paste0(vars_mh_p_ple__exp__v04, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       events    = events,
       combine   = TRUE
@@ -9506,13 +9584,11 @@ compute_mh_p_ple__exp__good_count__v04 <- function(
 
 
 #' Compute "Life Events \[Parent\] (Experience Bad Events): Count - Version
-#' 4 (Starting at Year 7) \[Validation: No more than 4 events missing and no
-#' experience items missing or declined\]"
+#' 4 (Starting at Year 7)"
 #' @description
 #' Computes the summary score `mh_p_ple__exp__bad_count__v04`
 #' Life Events \[Parent\] (Experience Bad Events): Count - Version 4
-#' (Starting at Year 7) \[Validation: No more than 4 events missing and no
-#' experience items missing or declined\]
+#' (Starting at Year 7)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -9522,7 +9598,6 @@ compute_mh_p_ple__exp__good_count__v04 <- function(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 4 of 20 items missing
 #'
 #' @inheritParams dummy_mh
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -9531,21 +9606,24 @@ compute_mh_p_ple__exp__good_count__v04 <- function(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 4).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
 #' @autoglobal
 compute_mh_p_ple__exp__bad_count__v04 <- function(
-    data,
-    name = "mh_p_ple__exp__bad_count__v04",
-    events = "ses-07A",
-    combine = TRUE,
-    max_na = 4) {
+  data,
+  name = "mh_p_ple__exp__bad_count__v04",
+  events = "ses-07A",
+  combine = TRUE,
+  max_na = NULL
+) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -9572,7 +9650,7 @@ compute_mh_p_ple__exp__bad_count__v04 <- function(
       fork_vars = vars_mh_p_ple__v04,
       fork_val  = "1",
       vars      = paste0(vars_mh_p_ple__exp__v04, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       events    = events,
       combine   = TRUE
@@ -9591,7 +9669,6 @@ compute_mh_p_ple__exp__bad_count__v04 <- function(
 
   data_ss
 }
-
 
 
 #   ____________________________________________________________________________
@@ -9778,13 +9855,10 @@ vars_mh_y_ple__exp <- c(
 )
 
 
-
-#' Compute "Life Events \[Youth\] (Events): Count \[Validation: No more than 5
-#' missing or declined\]"
+#' Compute "Life Events \[Youth\] (Events): Count"
 #' @description
 #' Computes the summary score `mh_y_ple_count`
-#' Life Events \[Youth\] (Events): Count \[Validation: No more than 5
-#' missing or declined\]
+#' Life Events \[Youth\] (Events): Count
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -9794,7 +9868,6 @@ vars_mh_y_ple__exp <- c(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 5 of 25 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -9802,7 +9875,7 @@ vars_mh_y_ple__exp <- c(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 5).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
@@ -9810,11 +9883,13 @@ vars_mh_y_ple__exp <- c(
 compute_mh_y_ple_count <- function(data,
                                    name = "mh_y_ple_count",
                                    combine = TRUE,
-                                   max_na = 5) {
+                                   max_na = NULL) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
   data |>
     ss_sum(
@@ -9866,11 +9941,8 @@ compute_mh_y_ple_nm <- function(data,
 }
 
 
-
-
 #   ____________________________________________________________________________
 #   mh_y_ple__severity                                                      ####
-
 
 
 #' Compute "Life Events \[Youth\] (Severity): Sum \[Validation: No more than 5
@@ -10088,10 +10160,11 @@ compute_mh_y_ple__severity_nm <- function(data,
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__good_sum <- function(
-    data,
-    name = "mh_y_ple__severity__good_sum",
-    combine = TRUE,
-    max_na = 5) {
+  data,
+  name = "mh_y_ple__severity__good_sum",
+  combine = TRUE,
+  max_na = 5
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -10172,10 +10245,11 @@ compute_mh_y_ple__severity__good_sum <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__good_mean <- function(
-    data,
-    name = "mh_y_ple__severity__good_mean",
-    combine = TRUE,
-    max_na = 5) {
+  data,
+  name = "mh_y_ple__severity__good_mean",
+  combine = TRUE,
+  max_na = 5
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -10255,10 +10329,11 @@ compute_mh_y_ple__severity__good_mean <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__bad_sum <- function(
-    data,
-    name = "mh_y_ple__severity__bad_sum",
-    combine = TRUE,
-    max_na = 5) {
+  data,
+  name = "mh_y_ple__severity__bad_sum",
+  combine = TRUE,
+  max_na = 5
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -10339,10 +10414,11 @@ compute_mh_y_ple__severity__bad_sum <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__bad_mean <- function(
-    data,
-    name = "mh_y_ple__severity__bad_mean",
-    combine = TRUE,
-    max_na = 5) {
+  data,
+  name = "mh_y_ple__severity__bad_mean",
+  combine = TRUE,
+  max_na = 5
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -10393,7 +10469,6 @@ compute_mh_y_ple__severity__bad_mean <- function(
 #   mh_y_ple__exp                                                           ####
 
 
-
 #' Compute "Life Events \[Youth\] (Experience): Number missing"
 #' @description
 #' Computes the summary score `mh_y_ple__exp_nm`
@@ -10433,12 +10508,10 @@ compute_mh_y_ple__exp_nm <- function(data,
     )
 }
 
-#' Compute "Life Events \[Youth\] (Experience Good Events): Count \[Validation:
-#' No more than 5 events missing and no experience items missing or declined\]"
+#' Compute "Life Events \[Youth\] (Experience Good Events): Count"
 #' @description
 #' Computes the summary score `mh_y_ple__exp__good_count`
-#' Life Events \[Youth\] (Experience Good Events): Count \[Validation: No
-#' more than 5 events missing and no experience items missing or declined\]
+#' Life Events \[Youth\] (Experience Good Events): Count
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -10448,7 +10521,6 @@ compute_mh_y_ple__exp_nm <- function(data,
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 5 of 25 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -10456,7 +10528,7 @@ compute_mh_y_ple__exp_nm <- function(data,
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 5).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
@@ -10464,11 +10536,13 @@ compute_mh_y_ple__exp_nm <- function(data,
 compute_mh_y_ple__exp__good_count <- function(data,
                                               name = "mh_y_ple__exp__good_count",
                                               combine = TRUE,
-                                              max_na = 5) {
+                                              max_na = NULL) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
   data_ss <- data |>
     compute_mh_y_ple_count(
@@ -10494,7 +10568,7 @@ compute_mh_y_ple__exp__good_count <- function(data,
       fork_vars = vars_mh_y_ple,
       fork_val  = "1",
       vars      = paste0(vars_mh_y_ple__exp, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       combine   = TRUE
     ) |>
@@ -10514,12 +10588,10 @@ compute_mh_y_ple__exp__good_count <- function(data,
 }
 
 
-#' Compute "Life Events \[Youth\] (Experience Bad Events): Count \[Validation: No
-#' more than 5 events missing and no experience items missing or declined\]"
+#' Compute "Life Events \[Youth\] (Experience Bad Events): Count"
 #' @description
 #' Computes the summary score `mh_y_ple__exp__bad_count`
-#' Life Events \[Youth\] (Experience Bad Events): Count \[Validation: No
-#' more than 5 events missing and no experience items missing or declined\]
+#' Life Events \[Youth\] (Experience Bad Events): Count
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -10529,7 +10601,6 @@ compute_mh_y_ple__exp__good_count <- function(data,
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 5 of 25 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the new column to be created (Default:
@@ -10537,7 +10608,7 @@ compute_mh_y_ple__exp__good_count <- function(data,
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 5).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
@@ -10545,11 +10616,13 @@ compute_mh_y_ple__exp__good_count <- function(data,
 compute_mh_y_ple__exp__bad_count <- function(data,
                                              name = "mh_y_ple__exp__bad_count",
                                              combine = TRUE,
-                                             max_na = 5) {
+                                             max_na = NULL) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
   data_ss <- data |>
     compute_mh_y_ple_count(
@@ -10575,7 +10648,7 @@ compute_mh_y_ple__exp__bad_count <- function(data,
       fork_vars = vars_mh_y_ple,
       fork_val  = "1",
       vars      = paste0(vars_mh_y_ple__exp, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       combine   = TRUE
     ) |>
@@ -10716,12 +10789,10 @@ vars_mh_y_ple__exp__v01 <- c(
 )
 
 
-#' Compute "Life Events \[Youth\] (Events): Count - Version 1 (Year 3)
-#' \[Validation: No more than 6 missing or declined\]"
+#' Compute "Life Events \[Youth\] (Events): Count - Version 1 (Year 3)"
 #' @description
 #' Computes the summary score `mh_y_ple_count__v01`
-#' Life Events \[Youth\] (Events): Count - Version 1 (Year 3) \[Validation:
-#' No more than 6 missing or declined\]
+#' Life Events \[Youth\] (Events): Count - Version 1 (Year 3)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -10731,7 +10802,6 @@ vars_mh_y_ple__exp__v01 <- c(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 31 items missing
 #'
 #' @inherit dummy_mh params
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -10740,7 +10810,7 @@ vars_mh_y_ple__exp__v01 <- c(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
@@ -10749,11 +10819,13 @@ compute_mh_y_ple_count__v01 <- function(data,
                                         name = "mh_y_ple_count__v01",
                                         events = "ses-03A",
                                         combine = TRUE,
-                                        max_na = 6) {
+                                        max_na = NULL) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
   data |>
     ss_sum(
@@ -10809,8 +10881,6 @@ compute_mh_y_ple_nm__v01 <- function(data,
 }
 
 
-
-
 #   ____________________________________________________________________________
 #   mh_y_ple__severity__v01                                                 ####
 
@@ -10845,11 +10915,12 @@ compute_mh_y_ple_nm__v01 <- function(data,
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity_sum__v01 <- function(
-    data,
-    name = "mh_y_ple__severity_sum__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity_sum__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -10922,11 +10993,12 @@ compute_mh_y_ple__severity_sum__v01 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity_mean__v01 <- function(
-    data,
-    name = "mh_y_ple__severity_mean__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity_mean__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -10992,10 +11064,11 @@ compute_mh_y_ple__severity_mean__v01 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity_nm__v01 <- function(
-    data,
-    name = "mh_y_ple__severity_nm__v01",
-    events = "ses-03A",
-    combine = TRUE) {
+  data,
+  name = "mh_y_ple__severity_nm__v01",
+  events = "ses-03A",
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
 
@@ -11046,11 +11119,12 @@ compute_mh_y_ple__severity_nm__v01 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__good_sum__v01 <- function(
-    data,
-    name = "mh_y_ple__severity__good_sum__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity__good_sum__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -11134,11 +11208,12 @@ compute_mh_y_ple__severity__good_sum__v01 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__good_mean__v01 <- function(
-    data,
-    name = "mh_y_ple__severity__good_mean__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity__good_mean__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -11220,11 +11295,12 @@ compute_mh_y_ple__severity__good_mean__v01 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__bad_sum__v01 <- function(
-    data,
-    name = "mh_y_ple__severity__bad_sum__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity__bad_sum__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -11307,11 +11383,12 @@ compute_mh_y_ple__severity__bad_sum__v01 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__bad_mean__v01 <- function(
-    data,
-    name = "mh_y_ple__severity__bad_mean__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity__bad_mean__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -11407,13 +11484,11 @@ compute_mh_y_ple__exp_nm__v01 <- function(data,
 }
 
 #' Compute "Life Events \[Youth\] (Experience Good Events): Count - Version 1
-#' (Year 3) \[Validation: No more than 6 events missing and no experience items
-#' missing or declined\]"
+#' (Year 3)"
 #' @description
 #' Computes the summary score `mh_y_ple__exp__good_count__v01`
 #' Life Events \[Youth\] (Experience Good Events): Count - Version 1 (Year
-#' 3) \[Validation: No more than 6 events missing and no experience items
-#' missing or declined\]
+#' 3)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -11423,7 +11498,6 @@ compute_mh_y_ple__exp_nm__v01 <- function(data,
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 31 items missing
 #'
 #' @inherit dummy_mh params
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -11432,21 +11506,24 @@ compute_mh_y_ple__exp_nm__v01 <- function(data,
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
 #' @autoglobal
 compute_mh_y_ple__exp__good_count__v01 <- function(
-    data,
-    name = "mh_y_ple__exp__good_count__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__exp__good_count__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = NULL
+) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -11473,7 +11550,7 @@ compute_mh_y_ple__exp__good_count__v01 <- function(
       fork_vars = vars_mh_y_ple__v01,
       fork_val  = "1",
       vars      = paste0(vars_mh_y_ple__exp__v01, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       events    = events,
       combine   = TRUE
@@ -11495,13 +11572,11 @@ compute_mh_y_ple__exp__good_count__v01 <- function(
 
 
 #' Compute "Life Events \[Youth\] (Experience Bad Events): Count - Version 1
-#' (Year 3) \[Validation: No more than 6 events missing and no experience items
-#' missing or declined\]"
+#' (Year 3)"
 #' @description
 #' Computes the summary score `mh_y_ple__exp__bad_count__v01`
 #' Life Events \[Youth\] (Experience Bad Events): Count - Version 1 (Year
-#' 3) \[Validation: No more than 6 events missing and no experience items
-#' missing or declined\]
+#' 3)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -11511,7 +11586,6 @@ compute_mh_y_ple__exp__good_count__v01 <- function(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 31 items missing
 #'
 #' @inherit dummy_mh params
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -11520,21 +11594,24 @@ compute_mh_y_ple__exp__good_count__v01 <- function(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
 #' @autoglobal
 compute_mh_y_ple__exp__bad_count__v01 <- function(
-    data,
-    name = "mh_y_ple__exp__bad_count__v01",
-    events = "ses-03A",
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__exp__bad_count__v01",
+  events = "ses-03A",
+  combine = TRUE,
+  max_na = NULL
+) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -11561,7 +11638,7 @@ compute_mh_y_ple__exp__bad_count__v01 <- function(
       fork_vars = vars_mh_y_ple__v01,
       fork_val  = "1",
       vars      = paste0(vars_mh_y_ple__exp__v01, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       events    = events,
       combine   = TRUE
@@ -11716,11 +11793,10 @@ vars_mh_y_ple__exp__v02 <- c(
 
 
 #' Compute "Life Events \[Youth\] (Events): Count - Version 2 (Year 4 and Year
-#' 5) \[Validation: No more than 6 missing or declined\]"
+#' 5)"
 #' @description
 #' Computes the summary score `mh_y_ple_count__v02`
 #' Life Events \[Youth\] (Events): Count - Version 2 (Year 4 and Year 5)
-#' \[Validation: No more than 6 missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -11730,7 +11806,6 @@ vars_mh_y_ple__exp__v02 <- c(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 33 items missing
 #'
 #' @inherit dummy_mh params
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -11739,7 +11814,7 @@ vars_mh_y_ple__exp__v02 <- c(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
@@ -11748,11 +11823,13 @@ compute_mh_y_ple_count__v02 <- function(data,
                                         name = "mh_y_ple_count__v02",
                                         events = c("ses-04A", "ses-05A"),
                                         combine = TRUE,
-                                        max_na = 6) {
+                                        max_na = NULL) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
   data |>
     ss_sum(
@@ -11810,8 +11887,6 @@ compute_mh_y_ple_nm__v02 <- function(data,
 }
 
 
-
-
 #   ____________________________________________________________________________
 #   mh_y_ple__severity__v02                                                 ####
 
@@ -11847,11 +11922,12 @@ compute_mh_y_ple_nm__v02 <- function(data,
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity_sum__v02 <- function(
-    data,
-    name = "mh_y_ple__severity_sum__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity_sum__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -11924,11 +12000,12 @@ compute_mh_y_ple__severity_sum__v02 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity_mean__v02 <- function(
-    data,
-    name = "mh_y_ple__severity_mean__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity_mean__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -11995,10 +12072,11 @@ compute_mh_y_ple__severity_mean__v02 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity_nm__v02 <- function(
-    data,
-    name = "mh_y_ple__severity_nm__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE) {
+  data,
+  name = "mh_y_ple__severity_nm__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
 
@@ -12049,11 +12127,12 @@ compute_mh_y_ple__severity_nm__v02 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__good_sum__v02 <- function(
-    data,
-    name = "mh_y_ple__severity__good_sum__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity__good_sum__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -12137,11 +12216,12 @@ compute_mh_y_ple__severity__good_sum__v02 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__good_mean__v02 <- function(
-    data,
-    name = "mh_y_ple__severity__good_mean__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity__good_mean__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -12223,11 +12303,12 @@ compute_mh_y_ple__severity__good_mean__v02 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__bad_sum__v02 <- function(
-    data,
-    name = "mh_y_ple__severity__bad_sum__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity__bad_sum__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -12310,11 +12391,12 @@ compute_mh_y_ple__severity__bad_sum__v02 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__bad_mean__v02 <- function(
-    data,
-    name = "mh_y_ple__severity__bad_mean__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity__bad_mean__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -12411,13 +12493,11 @@ compute_mh_y_ple__exp_nm__v02 <- function(data,
 }
 
 #' Compute "Life Events \[Youth\] (Experience Good Events): Count - Version
-#' 2 (Year 4 and Year 5) \[Validation: No more than 6 events missing and no
-#' experience items missing or declined\]"
+#' 2 (Year 4 and Year 5)"
 #' @description
 #' Computes the summary score `mh_y_ple__exp__good_count__v02`
 #' Life Events \[Youth\] (Experience Good Events): Count - Version 2 (Year
-#' 4 and Year 5) \[Validation: No more than 6 events missing and no experience
-#' items missing or declined\]
+#' 4 and Year 5)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -12427,7 +12507,6 @@ compute_mh_y_ple__exp_nm__v02 <- function(data,
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 33 items missing
 #'
 #' @inherit dummy_mh params
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -12436,21 +12515,24 @@ compute_mh_y_ple__exp_nm__v02 <- function(data,
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
 #' @autoglobal
 compute_mh_y_ple__exp__good_count__v02 <- function(
-    data,
-    name = "mh_y_ple__exp__good_count__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__exp__good_count__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = NULL
+) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -12477,7 +12559,7 @@ compute_mh_y_ple__exp__good_count__v02 <- function(
       fork_vars = vars_mh_y_ple__v02 |> head(-1),
       fork_val  = "1",
       vars      = paste0(vars_mh_y_ple__exp__v02, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       events    = events,
       combine   = TRUE
@@ -12499,13 +12581,11 @@ compute_mh_y_ple__exp__good_count__v02 <- function(
 
 
 #' Compute "Life Events \[Youth\] (Experience Bad Events): Count - Version
-#' 2 (Year 4 and Year 5) \[Validation: No more than 6 events missing and no
-#' experience items missing or declined\]"
+#' 2 (Year 4 and Year 5)"
 #' @description
 #' Computes the summary score `mh_y_ple__exp__bad_count__v02`
 #' Life Events \[Youth\] (Experience Bad Events): Count - Version 2 (Year
-#' 4 and Year 5) \[Validation: No more than 6 events missing and no experience
-#' items missing or declined\]
+#' 4 and Year 5)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -12515,7 +12595,6 @@ compute_mh_y_ple__exp__good_count__v02 <- function(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 33 items missing
 #'
 #' @inherit dummy_mh params
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -12524,21 +12603,24 @@ compute_mh_y_ple__exp__good_count__v02 <- function(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
 #' @autoglobal
 compute_mh_y_ple__exp__bad_count__v02 <- function(
-    data,
-    name = "mh_y_ple__exp__bad_count__v02",
-    events = c("ses-04A", "ses-05A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__exp__bad_count__v02",
+  events = c("ses-04A", "ses-05A"),
+  combine = TRUE,
+  max_na = NULL
+) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -12565,7 +12647,7 @@ compute_mh_y_ple__exp__bad_count__v02 <- function(
       fork_vars = vars_mh_y_ple__v02 |> head(-1),
       fork_val  = "1",
       vars      = paste0(vars_mh_y_ple__exp__v02, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       events    = events,
       combine   = TRUE
@@ -12719,13 +12801,11 @@ vars_mh_y_ple__exp__v03 <- c(
   # mh_y_ple__exp_034 (anyone who has attempted suicide)
 )
 
-
 #' Compute "Life Events \[Youth\] (Events): Count - Version 3 (Starting at Year
-#' 6) \[Validation: No more than 6 missing or declined\]"
+#' 6)"
 #' @description
 #' Computes the summary score `mh_y_ple_count__v03`
 #' Life Events \[Youth\] (Events): Count - Version 3 (Starting at Year 6)
-#' \[Validation: No more than 6 missing or declined\]
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -12735,7 +12815,6 @@ vars_mh_y_ple__exp__v03 <- c(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 34 items missing
 #'
 #' @inherit dummy_mh params
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -12744,7 +12823,7 @@ vars_mh_y_ple__exp__v03 <- c(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
@@ -12753,11 +12832,13 @@ compute_mh_y_ple_count__v03 <- function(data,
                                         name = "mh_y_ple_count__v03",
                                         events = c("ses-06A", "ses-07A"),
                                         combine = TRUE,
-                                        max_na = 6) {
+                                        max_na = NULL) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
   data |>
     ss_sum(
@@ -12815,8 +12896,6 @@ compute_mh_y_ple_nm__v03 <- function(data,
 }
 
 
-
-
 #   ____________________________________________________________________________
 #   mh_y_ple__severity__v03                                                 ####
 
@@ -12852,11 +12931,12 @@ compute_mh_y_ple_nm__v03 <- function(data,
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity_sum__v03 <- function(
-    data,
-    name = "mh_y_ple__severity_sum__v03",
-    events = c("ses-06A", "ses-07A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity_sum__v03",
+  events = c("ses-06A", "ses-07A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -12929,11 +13009,12 @@ compute_mh_y_ple__severity_sum__v03 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity_mean__v03 <- function(
-    data,
-    name = "mh_y_ple__severity_mean__v03",
-    events = c("ses-06A", "ses-07A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity_mean__v03",
+  events = c("ses-06A", "ses-07A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -13000,10 +13081,11 @@ compute_mh_y_ple__severity_mean__v03 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity_nm__v03 <- function(
-    data,
-    name = "mh_y_ple__severity_nm__v03",
-    events = c("ses-06A", "ses-07A"),
-    combine = TRUE) {
+  data,
+  name = "mh_y_ple__severity_nm__v03",
+  events = c("ses-06A", "ses-07A"),
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
 
@@ -13054,11 +13136,12 @@ compute_mh_y_ple__severity_nm__v03 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__good_sum__v03 <- function(
-    data,
-    name = "mh_y_ple__severity__good_sum__v03",
-    events = c("ses-06A", "ses-07A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity__good_sum__v03",
+  events = c("ses-06A", "ses-07A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -13142,11 +13225,12 @@ compute_mh_y_ple__severity__good_sum__v03 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__good_mean__v03 <- function(
-    data,
-    name = "mh_y_ple__severity__good_mean__v03",
-    events = c("ses-06A", "ses-07A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity__good_mean__v03",
+  events = c("ses-06A", "ses-07A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -13228,11 +13312,12 @@ compute_mh_y_ple__severity__good_mean__v03 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__bad_sum__v03 <- function(
-    data,
-    name = "mh_y_ple__severity__bad_sum__v03",
-    events = c("ses-06A", "ses-07A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity__bad_sum__v03",
+  events = c("ses-06A", "ses-07A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -13315,11 +13400,12 @@ compute_mh_y_ple__severity__bad_sum__v03 <- function(
 #' @export
 #' @autoglobal
 compute_mh_y_ple__severity__bad_mean__v03 <- function(
-    data,
-    name = "mh_y_ple__severity__bad_mean__v03",
-    events = c("ses-06A", "ses-07A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__severity__bad_mean__v03",
+  events = c("ses-06A", "ses-07A"),
+  combine = TRUE,
+  max_na = 6
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
@@ -13416,13 +13502,11 @@ compute_mh_y_ple__exp_nm__v03 <- function(data,
 }
 
 #' Compute "Life Events \[Youth\] (Experience Good Events): Count - Version
-#' 3 (Starting at Year 6) \[Validation: No more than 6 events missing and no
-#' experience items missing or declined\]"
+#' 3 (Starting at Year 6)"
 #' @description
 #' Computes the summary score `mh_y_ple__exp__good_count__v03`
 #' Life Events \[Youth\] (Experience Good Events): Count - Version 3
-#' (Starting at Year 6) \[Validation: No more than 6 events missing and no
-#' experience items missing or declined\]
+#' (Starting at Year 6)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -13432,7 +13516,6 @@ compute_mh_y_ple__exp_nm__v03 <- function(data,
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 33 items missing
 #'
 #' @inherit dummy_mh params
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -13441,21 +13524,24 @@ compute_mh_y_ple__exp_nm__v03 <- function(data,
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
 #' @autoglobal
 compute_mh_y_ple__exp__good_count__v03 <- function(
-    data,
-    name = "mh_y_ple__exp__good_count__v03",
-    events = c("ses-06A", "ses-07A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__exp__good_count__v03",
+  events = c("ses-06A", "ses-07A"),
+  combine = TRUE,
+  max_na = NULL
+) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -13482,7 +13568,7 @@ compute_mh_y_ple__exp__good_count__v03 <- function(
       fork_vars = vars_mh_y_ple__v03 |> head(-1),
       fork_val  = "1",
       vars      = paste0(vars_mh_y_ple__exp__v03, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       events    = events,
       combine   = TRUE
@@ -13504,13 +13590,11 @@ compute_mh_y_ple__exp__good_count__v03 <- function(
 
 
 #' Compute "Life Events \[Youth\] (Experience Bad Events): Count - Version 3
-#' (Starting at Year 6) \[Validation: No more than 6 events missing and no
-#' experience items missing or declined\]"
+#' (Starting at Year 6)"
 #' @description
 #' Computes the summary score `mh_y_ple__exp__bad_count__v03`
 #' Life Events \[Youth\] (Experience Bad Events): Count - Version 3
-#' (Starting at Year 6) \[Validation: No more than 6 events missing and no
-#' experience items missing or declined\]
+#' (Starting at Year 6)
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -13520,7 +13604,6 @@ compute_mh_y_ple__exp__good_count__v03 <- function(
 #'   - 444
 #'   - 777
 #'   - 999
-#' - *Validation criterion:* maximally 6 of 33 items missing
 #'
 #' @inherit dummy_mh params
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -13529,21 +13612,24 @@ compute_mh_y_ple__exp__good_count__v03 <- function(
 #' @param combine logical. If TRUE, the new column will be bound to the input
 #' data frame. If FALSE, the new column will be created as a new data frame.
 #' @param max_na numeric, positive whole number. Number of missing items
-#'   allowed (Default: 6).
+#'   allowed. `NULL` means no limit (Default: NULL).
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
 #' @export
 #' @autoglobal
 compute_mh_y_ple__exp__bad_count__v03 <- function(
-    data,
-    name = "mh_y_ple__exp__bad_count__v03",
-    events = c("ses-06A", "ses-07A"),
-    combine = TRUE,
-    max_na = 6) {
+  data,
+  name = "mh_y_ple__exp__bad_count__v03",
+  events = c("ses-06A", "ses-07A"),
+  combine = TRUE,
+  max_na = NULL
+) {
   chk::chk_data(data)
   check_col_names(data, name)
-  chk::chk_whole_number(max_na)
-  chk::chk_gte(max_na, 0)
+  if (!is.null(max_na)) {
+    chk::chk_whole_number(max_na)
+    chk::chk_gte(max_na, 0)
+  }
 
 
   data_ss <- data |>
@@ -13570,7 +13656,7 @@ compute_mh_y_ple__exp__bad_count__v03 <- function(
       fork_vars = vars_mh_y_ple__v03 |> head(-1),
       fork_val  = "1",
       vars      = paste0(vars_mh_y_ple__exp__v03, "_recoded"),
-      max_na    = 0,
+      max_na    = NULL,
       exclude   = c("444", "777", "999"),
       events    = events,
       combine   = TRUE
@@ -13727,10 +13813,11 @@ vars_mh_y_pps_count <- c(
 #'   )
 #' }
 compute_mh_y_pps_count <- function(
-    data,
-    name = "mh_y_pps_count",
-    max_na = 4,
-    combine = TRUE) {
+  data,
+  name = "mh_y_pps_count",
+  max_na = 4,
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_whole_number(max_na)
   chk::chk_gte(max_na, 0)
@@ -13768,9 +13855,10 @@ compute_mh_y_pps_count <- function(
 #'   )
 #' }
 compute_mh_y_pps_nm <- function(
-    data,
-    name = "mh_y_pps_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_y_pps_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
 
@@ -13841,9 +13929,10 @@ vars_mh_y_pps__bother <- c(
 #'   )
 #' }
 compute_mh_y_pps__bother_nm <- function(
-    data,
-    name = "mh_y_pps__bother_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_y_pps__bother_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
 
@@ -13904,10 +13993,11 @@ compute_mh_y_pps__bother_nm <- function(
 #'   )
 #' }
 compute_mh_y_pps__bother__yes_count <- function(
-    data,
-    name = "mh_y_pps__bother__yes_count",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "mh_y_pps__bother__yes_count",
+  max_na = 0,
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_whole_number(max_na)
   chk::chk_gte(max_na, 0)
@@ -13984,10 +14074,11 @@ compute_mh_y_pps__bother__yes_count <- function(
 #'   )
 #' }
 compute_mh_y_pps__bother__no_count <- function(
-    data,
-    name = "mh_y_pps__bother__no_count",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "mh_y_pps__bother__no_count",
+  max_na = 0,
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::chk_whole_number(max_na)
   chk::chk_gte(max_na, 0)
@@ -14091,9 +14182,10 @@ vars_mh_y_pps__severity <- c(
 #'   )
 #' }
 compute_mh_y_pps__severity_nm <- function(
-    data,
-    name = "mh_y_pps__severity_nm",
-    combine = TRUE) {
+  data,
+  name = "mh_y_pps__severity_nm",
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_logical(combine)
@@ -14243,10 +14335,11 @@ compute_mh_y_pps__severity_score <- function(data,
 #'   )
 #' }
 compute_mh_y_pps__severity_mean <- function(
-    data,
-    name = "mh_y_pps__severity_mean",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "mh_y_pps__severity_mean",
+  max_na = 0,
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
 
@@ -14274,7 +14367,159 @@ compute_mh_y_pps__severity_mean <- function(
   data_ss
 }
 
-# -------------------------------------------------------------------------
+#' Compute "Prodromal Psychosis Scale \[Youth\] (Current Distress Score)"
+#' @description
+#' Computes the summary score `mh_y_pps__dist__curr_score`
+#' Prodromal Psychosis Scale \[Youth\] (Current Distress Score)
+#'
+#' For the current wave, if z-score of `mh_y_pps__severity_score` normalized
+#' across all current participants in the assessment wave is ≥ 1.96, set the
+#' value to "1"; else set the value to "0". If there is no score for the current
+#' assessment wave,set the value to `NA` (missing).
+#'
+#' - *Summarized variables:*
+#'   - mh_y_pps__severity_score (intermediate score)
+#'
+#' - *Excluded values:* none
+#' - *Validation criterion:*  none
+#'
+#' @seealso [compute_mh_y_pps__severity_score()]
+#' @inherit dummy_mh params return
+#' @export
+#' @autoglobal
+compute_mh_y_pps__dist__curr_score <- function(
+  data,
+  name = "mh_y_pps__dist__curr_score",
+  combine = TRUE
+) {
+  chk::chk_data(data)
+  chk::chk_logical(combine)
+  chk::check_names(data, c("participant_id", "session_id"))
+  check_col_names(data, name)
+
+  data_ss <- data |>
+    compute_mh_y_pps__severity_score(
+      name = "mh_y_pps__severity_score_internal"
+    ) |>
+    group_by(session_id) |>
+    # compute z-scores
+    mutate(
+      mh_y_pps__severity_score_z = {
+        vals <- as.numeric(mh_y_pps__severity_score_internal)
+        if (sum(!is.na(vals)) < 2) {
+          rep(NA_real_, length(vals))
+        } else {
+          base::scale(vals)[, 1]
+        }
+      },
+      # find if any z-score >= 1.96 in each event by participants
+      !!name := as.character(as.integer(mh_y_pps__severity_score_z >= 1.96))
+    ) |>
+    ungroup() |>
+    select(!!name)
+
+  if (combine) {
+    data_ss <- bind_cols(data, data_ss)
+  }
+  data_ss
+}
+
+#' Compute "Prodromal Psychosis Scale \[Youth\] (Persistent Distress Score)"
+#' @description
+#' Computes the summary score `mh_y_pps__dist__pers_score`
+#' Prodromal Psychosis Scale \[Youth\] (Persistent Distress Score)
+#'
+#' For the last 3 consecutive waves (this wave, prior annual wave, and the wave
+#' before that), if 2 or more waves have a `mh_y_pps__dist__curr_score` of "1",
+#' then score is "1", else "0";
+#' if more than 1 `NA` values in the last 3 waves, then score is `NA`.
+#'
+#' The persistent flag is derived from a padded annual timeline per participant.
+#' Missing annual visits between observed sessions are treated as `NA`,
+#' so each observed session evaluates the current wave plus the two
+#' immediately preceding annual slots, even if data were not collected for
+#' one of those visits.
+#' The special case where both `ses-00A` and `ses-01A` meet the threshold (`1`)
+#' is also treated as persistent at `ses-01A`.
+#'
+#' - *Summarized variables:*
+#'   - mh_y_pps__dist__curr_score (intermediate score)
+#'
+#' - *Excluded values:* none
+#' - *Validation criterion:*  none
+#'
+#' @seealso [compute_mh_y_pps__dist__curr_score()]
+#' @inherit dummy_mh params return
+#' @export
+#' @autoglobal
+compute_mh_y_pps__dist__pers_score <- function(
+  data,
+  name = "mh_y_pps__dist__pers_score",
+  combine = TRUE
+) {
+  chk::chk_data(data)
+  chk::chk_logical(combine)
+  chk::check_names(data, c("participant_id", "session_id"))
+  check_col_names(data, name)
+
+  data_ss <- data |>
+    # only annual sessions
+    filter(stringr::str_detect(
+      session_id,
+      "^ses-[0-9]{2}A$"
+    )) |>
+    compute_mh_y_pps__dist__curr_score(
+      name = "mh_y_pps__dist__curr_score_internal"
+    ) |>
+    mutate(
+      session_num = suppressWarnings(as.integer(stringr::str_extract(
+        session_id, "(?<=ses-)[0-9]{2}"
+      )))
+    ) |>
+    group_by(participant_id) |>
+    arrange(session_num, .by_group = TRUE) |>
+    mutate(
+      !!name := {
+        if (!length(session_num) || all(is.na(session_num))) {
+          return(rep(NA_integer_, length(session_num)))
+        }
+
+        seq_nums <- seq.int(0L, max(session_num, na.rm = TRUE))
+        idx <- match(session_num, seq_nums)
+        padded <- rep(NA_integer_, length(seq_nums))
+        padded[idx] <- as.integer(mh_y_pps__dist__curr_score_internal)
+
+        lag1 <- c(NA_integer_, padded[-length(padded)])
+        lag2 <- c(NA_integer_, lag1[-length(lag1)])
+
+        mat <- cbind(padded, lag1, lag2)
+        na_counts <- rowSums(is.na(mat))
+        pos_counts <- rowSums(mat == 1, na.rm = TRUE)
+
+        res_pad <- rep(NA_integer_, length(seq_nums))
+        eligible <- (seq_nums >= 2L) & (na_counts <= 1)
+        res_pad[eligible] <- as.integer(pos_counts[eligible] >= 2)
+
+        early_double <- (seq_nums == 1L) & (padded == 1L) & (lag1 == 1L)
+        res_pad[early_double] <- 1L
+
+        as.character(res_pad[idx])
+      }
+    ) |>
+    ungroup()
+
+  # make sure to join back to original data to keep original order and rows
+  data_ss <- data |>
+    select(participant_id, session_id) |>
+    left_join(data_ss, by = c("participant_id", "session_id")) |>
+    select(!!name)
+
+  if (combine) {
+    data_ss <- bind_cols(data, data_ss)
+  }
+  data_ss
+}
+
 #' Compute all PPS scores
 #' @description
 #' This super function computes all scores in PPS using all the
@@ -14301,8 +14546,310 @@ compute_mh_y_pps_all <- function(data) {
     compute_mh_y_pps__bother__no_count() |>
     compute_mh_y_pps__severity_nm() |>
     compute_mh_y_pps__severity_score() |>
-    compute_mh_y_pps__severity_mean()
+    compute_mh_y_pps__severity_mean() |>
+    compute_mh_y_pps__dist__curr_score() |>
+    compute_mh_y_pps__dist__pers_score()
 }
+
+# mh_y_ppsss --------------------------------------------------------------
+
+#' Compute "Prodromal Psychosis Scale \[Youth\] (Current Distress Count)"
+#' @description
+#' Computes the summary score `mh_y_ppsss__dist__curr_count`
+#' Prodromal Psychosis Scale \[Youth\] (Current Distress Count):
+#' Number of times criteria met.
+#'
+#' This function creates a static variable from longitudinal data.
+#'
+#' - *Summarized variables:*
+#'   - mh_y_pps__dist__curr_score (intermediate score)
+#'
+#' - *Excluded values:* none
+#' - *Validation criterion:* none
+#'
+#' @seealso [compute_mh_y_pps__dist__curr_score()]
+#' @inherit dummy_mh params return
+#' @return a tibble of the `participant_id` column and the new static column
+#' @export
+#' @autoglobal
+compute_mh_y_ppsss__dist__curr_count <- function(
+  data,
+  name = "mh_y_ppsss__dist__curr_count"
+) {
+  chk::chk_data(data)
+  chk::check_names(data, c("participant_id", "session_id"))
+  check_col_names(data, name)
+
+  data |>
+    compute_mh_y_pps__dist__curr_score(
+      name = "mh_y_pps__dist__curr_score_internal"
+    ) |>
+    group_by(participant_id) |>
+    summarize(
+      !!name := {
+        vals <- as.integer(mh_y_pps__dist__curr_score_internal)
+        if (all(is.na(vals))) {
+          NA_integer_
+        } else {
+          as.integer(sum(vals, na.rm = TRUE))
+        }
+      },
+      .groups = "drop"
+    )
+}
+
+#' Compute "Prodromal Psychosis Scale \[Youth\] (Persistent Distress Count)"
+#' @description
+#' Computes the summary score `mh_y_ppsss__dist__pers_count`
+#' Prodromal Psychosis Scale \[Youth\] (Persistent Distress Count):
+#' Number of times criteria met
+#'
+#' This function creates a static variable from longitudinal data.
+#'
+#' - *Summarized variables:*
+#'   - mh_y_pps__dist__pers_score (intermediate score)
+#'
+#' - *Excluded values:* none
+#' - *Validation criterion:* none
+#'
+#' @seealso [compute_mh_y_pps__dist__pers_score()]
+#' @inherit dummy_mh params return
+#' @return a tibble of the `participant_id` column and the new static column
+#' @export
+#' @autoglobal
+compute_mh_y_ppsss__dist__pers_count <- function(
+  data,
+  name = "mh_y_ppsss__dist__pers_count"
+) {
+  chk::chk_data(data)
+  chk::check_names(data, c("participant_id", "session_id"))
+  check_col_names(data, name)
+
+  data |>
+    compute_mh_y_pps__dist__pers_score(
+      name = "mh_y_pps__dist__pers_score_internal"
+    ) |>
+    group_by(participant_id) |>
+    summarize(
+      !!name := {
+        vals <- as.integer(mh_y_pps__dist__pers_score_internal)
+        if (all(is.na(vals))) {
+          NA_integer_
+        } else {
+          as.integer(sum(vals, na.rm = TRUE))
+        }
+      },
+      .groups = "drop"
+    )
+}
+
+#' Compute "Static Prodromal Psychosis Scale \[Youth\] (First Current Distress)"
+#' @description
+#' Static Prodromal Psychosis Scale \[Youth\] (First Current Distress):
+#' Session when criteria first met
+#'
+#' This function creates a static variable from longitudinal data.
+#'
+#' - *Summarized variables:*
+#'   - mh_y_pps__dist__curr_score (intermediate score)
+#'
+#' - *Excluded values:* none
+#' - *Validation criterion:* none
+#'
+#' @seealso [compute_mh_y_pps__dist__curr_score()]
+#' @inherit dummy_mh params return
+#' @return a tibble of the `participant_id` column and the new static column
+#' @export
+#' @autoglobal
+compute_mh_y_ppsss__dist__curr_first <- function(
+  data,
+  name = "mh_y_ppsss__dist__curr_first"
+) {
+  chk::chk_data(data)
+  chk::check_names(data, c("participant_id", "session_id"))
+  check_col_names(data, name)
+
+  data |>
+    compute_mh_y_pps__dist__curr_score(
+      name = "mh_y_pps__dist__curr_score_internal"
+    ) |>
+    group_by(participant_id) |>
+    summarize(
+      !!name := {
+        vals <- as.integer(mh_y_pps__dist__curr_score_internal)
+        idx <- which(vals == 1)[1]
+        if (is.na(idx)) {
+          NA_character_
+        } else {
+          as.character(session_id[idx])
+        }
+      },
+      .groups = "drop"
+    )
+}
+
+#' Compute "Prodromal Psychosis Scale \[Youth\] (First Persistent Distress)"
+#' @description
+#' Static Prodromal Psychosis Scale \[Youth\] (First Persistent Distress):
+#' Session when criteria first met
+#'
+#' - *Summarized variables:*
+#'   - mh_y_pps__dist__pers_score (intermediate score)
+#'
+#' - *Excluded values:* none
+#' - *Validation criterion:* none
+#'
+#' This function creates a static variable from longitudinal data.
+#'
+#' @seealso [compute_mh_y_pps__dist__pers_score()]
+#' @inherit dummy_mh params return
+#' @return a tibble of the `participant_id` column and the new static column
+#' @export
+#' @autoglobal
+compute_mh_y_ppsss__dist__pers_first <- function(
+  data,
+  name = "mh_y_ppsss__dist__pers_first"
+) {
+  chk::chk_data(data)
+  chk::check_names(data, c("participant_id", "session_id"))
+  check_col_names(data, name)
+
+  data |>
+    compute_mh_y_pps__dist__pers_score(
+      name = "mh_y_pps__dist__pers_score_internal"
+    ) |>
+    group_by(participant_id) |>
+    summarize(
+      !!name := {
+        vals <- as.integer(mh_y_pps__dist__pers_score_internal)
+        idx <- which(vals == 1)[1]
+        if (is.na(idx)) {
+          NA_character_
+        } else {
+          as.character(session_id[idx])
+        }
+      },
+      .groups = "drop"
+    )
+}
+
+#' Compute "Static Prodromal Psychosis Scale \[Youth\] (Current Distress Ever)"
+#' @description
+#' Static Prodromal Psychosis Scale \[Youth\] (Current Distress Ever):
+#' Indicates if criteria ever met
+#'
+#' This function creates a static variable from longitudinal data.
+#'
+#' - *Summarized variables:*
+#'   - mh_y_pps__dist__curr_score (intermediate score)
+#'
+#' - *Excluded values:* none
+#' - *Validation criterion:* none
+#'
+#' @seealso [compute_mh_y_pps__dist__curr_score()]
+#' @inherit dummy_mh params return
+#' @return a tibble of the `participant_id` column and the new static column
+#' @export
+#' @autoglobal
+compute_mh_y_ppsss__dist__curr_ever <- function(
+  data,
+  name = "mh_y_ppsss__dist__curr_ever"
+) {
+  chk::chk_data(data)
+  chk::check_names(data, c("participant_id", "session_id"))
+  check_col_names(data, name)
+
+  data |>
+    compute_mh_y_pps__dist__curr_score(
+      name = "mh_y_pps__dist__curr_score_internal"
+    ) |>
+    group_by(participant_id) |>
+    summarize(
+      !!name := {
+        vals <- mh_y_pps__dist__curr_score_internal
+        if (all(is.na(vals))) {
+          NA_character_
+        } else {
+          as.character(as.integer(any(vals == "1", na.rm = TRUE)))
+        }
+      },
+      .groups = "drop"
+    )
+}
+
+#' Compute "Static Prodromal Psychosis Scale \[Youth\] (Persistent Distress Ever)"
+#' @description
+#' Static Prodromal Psychosis Scale \[Youth\] (Persistent Distress Ever):
+#' Indicates if criteria ever met
+#'
+#' - *Summarized variables:*
+#'   - mh_y_pps__dist__pers_score (intermediate score)
+#'
+#' - *Excluded values:* none
+#' - *Validation criterion:* none
+#'
+#' This function creates a static variable from longitudinal data.
+#'
+#' @seealso [compute_mh_y_pps__dist__pers_score()]
+#' @inherit dummy_mh params return
+#' @return a tibble of the `participant_id` column and the new static column
+#' @export
+#' @autoglobal
+compute_mh_y_ppsss__dist__pers_ever <- function(
+  data,
+  name = "mh_y_ppsss__dist__pers_ever"
+) {
+  chk::chk_data(data)
+  chk::check_names(data, c("participant_id", "session_id"))
+  check_col_names(data, name)
+
+  data |>
+    compute_mh_y_pps__dist__pers_score(
+      name = "mh_y_pps__dist__pers_score_internal"
+    ) |>
+    group_by(participant_id) |>
+    summarize(
+      !!name := {
+        vals <- mh_y_pps__dist__pers_score_internal
+        if (all(is.na(vals))) {
+          NA_character_
+        } else {
+          as.character(as.integer(any(vals == "1", na.rm = TRUE)))
+        }
+      },
+      .groups = "drop"
+    )
+}
+
+#' Compute all the mh_y_ppsss scores
+#'
+#' @description
+#' A single function to compute all scores in the above domain using
+#' **default** arguments.
+#'
+#' @param data tbl, Dataframe containing the columns to be summarized.
+#'
+#' @return a tibble of the `participant_id` column and the new static columns
+#'
+#' @export
+#' @autoglobal
+compute_mh_y_ppsss_all <- function(data) {
+  purrr::map(
+    c(
+      compute_mh_y_ppsss__dist__pers_count,
+      compute_mh_y_ppsss__dist__curr_count,
+      compute_mh_y_ppsss__dist__curr_first,
+      compute_mh_y_ppsss__dist__pers_first,
+      compute_mh_y_ppsss__dist__curr_ever,
+      compute_mh_y_ppsss__dist__pers_ever
+    ),
+    ~ .x(data)
+  ) |>
+    purrr::reduce(dplyr::left_join, by = c("participant_id"))
+}
+
+
+# mh_ple ss functions -----------------------------------------------------
 
 
 #' Retain values based on conditions
@@ -14341,10 +14888,11 @@ compute_mh_y_pps_all <- function(data) {
 #' @autoglobal
 #' @keywords internal
 product_vars <- function(
-    data,
-    fork_vars,
-    vars,
-    keep_values) {
+  data,
+  fork_vars,
+  vars,
+  keep_values
+) {
   chk::chk_identical(
     length(fork_vars),
     length(vars)
@@ -14413,16 +14961,17 @@ product_vars <- function(
 #'     exclude = c("777", "999")
 #'   )
 ss_mean_mh_ple <- function(
-    data,
-    name,
-    fork_vars,
-    fork_val = "1",
-    vars,
-    max_na = NULL,
-    exclude = NULL,
-    events = NULL,
-    combine = TRUE,
-    no_na = FALSE) {
+  data,
+  name,
+  fork_vars,
+  fork_val = "1",
+  vars,
+  max_na = NULL,
+  exclude = NULL,
+  events = NULL,
+  combine = TRUE,
+  no_na = FALSE
+) {
   chk::chk_data(data)
   chk::chk_character(name)
   chk::chk_scalar(name)
@@ -14696,4 +15245,4150 @@ ss_nm_mh_ple <- function(data,
   } else {
     data_ss
   }
+}
+
+# ksads means -------------------------------------------------------------
+
+#' Internal function for all ksads summary score functions.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @param name character. Name of the summary score column.
+#' @param max_na numeric, positive whole number. Number of missing items
+#'   allowed. `NULL` means no limit.
+#' @param combine logical. If `TRUE` (default), the summary score is
+#' is appended as a new column to the input data frame. If `FALSE`, the
+#' summary score is returned as a separate one-column data frame.
+#' @param exclude character vector. Values to be excluded from the summary
+#' score calculation.
+#' @param vars character vector. Names of the columns to be summarized.
+#' @return tbl. see `combine`.
+#' @details
+#' KSADS summary scores are mostly calculating the means over variables,
+#' but there are two special codes to handle:
+#'
+#' - `"888"`: item skipped by branching. When at least one input value is
+#'   observed, any `888` value is converted to "0" prior to averaging.
+#' - `"555"`: module not administered. If any input variable is "555"
+#'   leave the score as `NA`.
+#' - `NA`: missing value. If at least one input value is observed,
+#'   any `NA` values are converted to "0" prior to averaging.
+#'   If all inputs are `NA`, the summary score remains `NA`.
+#'
+#' @keywords internal
+#' @autoglobal
+ss_mean_ksads <- function(
+  data,
+  name,
+  vars,
+  max_na,
+  exclude,
+  combine
+) {
+  chk::chk_data(data)
+  chk::chk_character(name)
+  chk::chk_scalar(name)
+  chk::chk_character(vars)
+  chk::check_names(data, vars)
+  chk::chk_flag(combine)
+
+  n_vars <- length(vars)
+
+  data_ss <- data |>
+    mutate(
+      ksads_all_na = if_all(all_of(vars), ~ is.na(.x)),
+      across(
+        all_of(vars),
+        ~ {
+          value_chr <- as.character(.x)
+          case_when(
+            value_chr == "555" ~ value_chr,
+            ksads_all_na ~ value_chr,
+            is.na(.x) ~ "0",
+            value_chr == "888" ~ "0",
+            TRUE ~ value_chr
+          )
+        }
+      ),
+      ksads_any_555 = rowSums(
+        across(all_of(vars), ~ as.numeric(as.character(.x) == "555")),
+        na.rm = TRUE
+      ) > 0
+    ) |>
+    ss_mean(
+      name    = name,
+      vars    = vars,
+      max_na  = max_na,
+      exclude = exclude
+    ) |>
+    transmute(
+      !!name := if_else(
+        ksads_any_555,
+        NA_real_,
+        .data[[name]]
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
+}
+
+
+# ksads__adhd -------------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__adhd__pres__sx_mean
+#' @format vars_mh_p_ksads__adhd__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__adhd__pres__sx_mean`
+vars_mh_p_ksads__adhd__pres__sx <- c(
+  "mh_p_ksads__adhd__avoid__task__pres_sx",
+  "mh_p_ksads__adhd__blurt__pres_sx",
+  "mh_p_ksads__adhd__distract__grdschl__pres_sx",
+  "mh_p_ksads__adhd__fidget__pres_sx",
+  "mh_p_ksads__adhd__flwinstr__pres_sx",
+  "mh_p_ksads__adhd__forget__pres_sx",
+  "mh_p_ksads__adhd__hypractv__pres_sx",
+  "mh_p_ksads__adhd__impuls__pres_sx",
+  "mh_p_ksads__adhd__interrupt__pres_sx",
+  "mh_p_ksads__adhd__loses__pres_sx",
+  "mh_p_ksads__adhd__mistake__pres_sx",
+  "mh_p_ksads__adhd__motor__pres_sx",
+  "mh_p_ksads__adhd__notlisten__pres_sx",
+  "mh_p_ksads__adhd__orgtask__pres_sx",
+  "mh_p_ksads__adhd__quiet__pres_sx",
+  "mh_p_ksads__adhd__seat__grdschl__pres_sx",
+  "mh_p_ksads__adhd__sustattn__grdschl__pres_sx",
+  "mh_p_ksads__adhd__talkexcess__pres_sx",
+  "mh_p_ksads__adhd__wait__pres_sx"
+)
+
+#' Compute "KSADS - Attention-Deficit/Hyperactivity Disorder \[Parent\]
+#' (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__adhd__pres__sx_mean`
+#' KSADS - Attention-Deficit/Hyperactivity Disorder \[Parent\]
+#' (Symptom - Present): Mean \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__adhd__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 19 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__adhd__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__adhd__pres__sx_mean",
+  max_na = 3,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__adhd__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__adhd__past__sx_mean
+#' @format vars_mh_p_ksads__adhd__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__adhd__past__sx_mean`
+vars_mh_p_ksads__adhd__past__sx <- c(
+  "mh_p_ksads__adhd__avoid__task__past_sx",
+  "mh_p_ksads__adhd__blurt__past_sx",
+  "mh_p_ksads__adhd__distract__1schlyr__past_sx",
+  "mh_p_ksads__adhd__fidget__past_sx",
+  "mh_p_ksads__adhd__flwinstr__past_sx",
+  "mh_p_ksads__adhd__forget__past_sx",
+  "mh_p_ksads__adhd__hypractv__past_sx",
+  "mh_p_ksads__adhd__impuls__past_sx",
+  "mh_p_ksads__adhd__interrupt__past_sx",
+  "mh_p_ksads__adhd__loses__past_sx",
+  "mh_p_ksads__adhd__mistake__past_sx",
+  "mh_p_ksads__adhd__motor__past_sx",
+  "mh_p_ksads__adhd__notlisten__past_sx",
+  "mh_p_ksads__adhd__orgtask__past_sx",
+  "mh_p_ksads__adhd__quiet__past_sx",
+  "mh_p_ksads__adhd__seat__1schlyr__past_sx",
+  "mh_p_ksads__adhd__sustattn__1schlyr__past_sx",
+  "mh_p_ksads__adhd__talkexcess__past_sx",
+  "mh_p_ksads__adhd__wait__past_sx"
+)
+
+#' Compute "KSADS - Attention-Deficit/Hyperactivity Disorder \[Parent\]
+#' (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__adhd__past__sx_mean`
+#' KSADS - Attention-Deficit/Hyperactivity Disorder \[Parent\] (Symptom - Past):
+#' Mean `[Validation: No more than 3 missing or declined`]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__adhd__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 19 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__adhd__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__adhd__past__sx_mean",
+  max_na = 3,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__adhd__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__adhd
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__adhd table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__adhd_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__adhd__past__sx_mean() |>
+    compute_mh_p_ksads__adhd__pres__sx_mean()
+}
+
+# mh_p_ksads__agor --------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__agor__pres__sx_mean
+#' @format vars_mh_p_ksads__agor__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__agor__pres__sx_mean`
+vars_mh_p_ksads__agor__pres__sx <- c(
+  "mh_p_ksads__agor__avoid__pres_sx",
+  "mh_p_ksads__agor__multi__pres_sx"
+)
+
+#' Compute "KSADS - Agoraphobia \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__agor__pres__sx_mean`
+#' KSADS - Agoraphobia \[Parent\] (Symptom - Present): Mean
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__agor__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 2 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__agor__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__agor__pres__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__agor__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__agor__past__sx_mean
+#' @format vars_mh_p_ksads__agor__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__agor__past__sx_mean`
+vars_mh_p_ksads__agor__past__sx <- c(
+  "mh_p_ksads__agor__avoid__past_sx",
+  "mh_p_ksads__agor__multi__past_sx"
+)
+
+#' Compute "KSADS - Agoraphobia \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__agor__past__sx_mean`
+#' KSADS - Agoraphobia \[Parent\] (Symptom - Past): Mean
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__agor__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 2 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__agor__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__agor__past__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__agor__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__agor
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__agor table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__agor_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__agor__past__sx_mean() |>
+    compute_mh_p_ksads__agor__pres__sx_mean()
+}
+
+
+# mh_p_ksads__asd --------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__asd__pres__sx_mean
+#' @format vars_mh_p_ksads__asd__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__asd__pres__sx_mean`
+vars_mh_p_ksads__asd__pres__sx <- c(
+  "mh_p_ksads__asd__hyporeact__pres_sx",
+  "mh_p_ksads__asd__hyprreact__pres_sx",
+  "mh_p_ksads__asd__pooreyecont__pres_sx",
+  "mh_p_ksads__asd__relatsh__pres_sx",
+  "mh_p_ksads__asd__restrctintrst__pres_sx",
+  "mh_p_ksads__asd__routine__pres_sx",
+  "mh_p_ksads__asd__socemotrcp__pres_sx",
+  "mh_p_ksads__asd__unusmvmnt__pres_sx"
+)
+
+#' Compute "KSADS - Autism Spectrum Disorders \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__asd__pres__sx_mean`
+#' KSADS - Autism Spectrum Disorders \[Parent\] (Symptom - Present): Mean
+#' \[Validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__asd__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 8 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__asd__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__asd__pres__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__asd__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__asd__past__sx_mean
+#' @format vars_mh_p_ksads__asd__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__asd__past__sx_mean`
+vars_mh_p_ksads__asd__past__sx <- c(
+  "mh_p_ksads__asd__hyporeact__past_sx",
+  "mh_p_ksads__asd__hyprreact__past_sx",
+  "mh_p_ksads__asd__pooreyecont__past_sx",
+  "mh_p_ksads__asd__relatsh__past_sx",
+  "mh_p_ksads__asd__restrctintrst__past_sx",
+  "mh_p_ksads__asd__routine__past_sx",
+  "mh_p_ksads__asd__socemotrcp__past_sx",
+  "mh_p_ksads__asd__unusmvmnt__past_sx"
+)
+
+#' Compute "KSADS - Autism Spectrum Disorders \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__asd__past__sx_mean`
+#' KSADS - Autism Spectrum Disorders \[Parent\] (Symptom - Past): Mean
+#' \[Validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__asd__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 8 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__asd__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__asd__past__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__asd__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__asd
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__asd table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__asd_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__asd__past__sx_mean() |>
+    compute_mh_p_ksads__asd__pres__sx_mean()
+}
+
+# mh_p_ksads__bpd --------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__bpd__pres__sx_mean
+#' @format vars_mh_p_ksads__bpd__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__bpd__pres__sx_mean`
+vars_mh_p_ksads__bpd__pres__sx <- c(
+  "mh_p_ksads__bpd__distract__incr__pres_sx",
+  "mh_p_ksads__bpd__distract__pres_sx",
+  "mh_p_ksads__bpd__enrg__incr__pres_sx",
+  "mh_p_ksads__bpd__flgtid__pres_sx",
+  "mh_p_ksads__bpd__goaldir__incr__pres_sx",
+  "mh_p_ksads__bpd__grndios__pres_sx",
+  "mh_p_ksads__bpd__hyprsex__pres_sx",
+  "mh_p_ksads__bpd__irrit__expl__pres_sx",
+  "mh_p_ksads__bpd__irrit__manic__pres_sx",
+  "mh_p_ksads__bpd__mood__elv__pres_sx",
+  "mh_p_ksads__bpd__mood__euph__pres_sx",
+  "mh_p_ksads__bpd__prspch__pres_sx",
+  "mh_p_ksads__bpd__psymot__agit__pres_sx",
+  "mh_p_ksads__bpd__ractho__pres_sx",
+  "mh_p_ksads__bpd__riskactv__pres_sx",
+  "mh_p_ksads__bpd__slpdecr__pres_sx"
+)
+
+#' Compute "KSADS - Bipolar Disorders \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__bpd__pres__sx_mean`
+#' KSADS - Bipolar Disorders \[Parent\] (Symptom - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__bpd__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 16 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__bpd__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__bpd__pres__sx_mean",
+  max_na = 3,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__bpd__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__bpd__past__sx_mean
+#' @format vars_mh_p_ksads__bpd__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__bpd__past__sx_mean`
+vars_mh_p_ksads__bpd__past__sx <- c(
+  "mh_p_ksads__bpd__distract__incr__past_sx",
+  "mh_p_ksads__bpd__distract__past_sx",
+  "mh_p_ksads__bpd__enrg__incr__past_sx",
+  "mh_p_ksads__bpd__flgtid__past_sx",
+  "mh_p_ksads__bpd__goaldir__incr__past_sx",
+  "mh_p_ksads__bpd__grndios__past_sx",
+  "mh_p_ksads__bpd__hyprsex__past_sx",
+  "mh_p_ksads__bpd__irrit__expl__past_sx",
+  "mh_p_ksads__bpd__irrit__manic__past_sx",
+  "mh_p_ksads__bpd__mood__elv__past_sx",
+  "mh_p_ksads__bpd__mood__euph__past_sx",
+  "mh_p_ksads__bpd__prspch__past_sx",
+  "mh_p_ksads__bpd__psymot__agit__past_sx",
+  "mh_p_ksads__bpd__ractho__past_sx",
+  "mh_p_ksads__bpd__riskactv__past_sx",
+  "mh_p_ksads__bpd__slpdecr__past_sx"
+)
+
+#' Compute "KSADS - Bipolar Disorders \[Parent\] (Symptom - Past): Mean "
+#' @description
+#' Computes the summary score `mh_p_ksads__bpd__past__sx_mean`
+#' KSADS - Bipolar Disorders \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__bpd__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 16 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__bpd__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__bpd__past__sx_mean",
+  max_na = 3,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__bpd__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__bpd
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__bpd table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__bpd_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__bpd__past__sx_mean() |>
+    compute_mh_p_ksads__bpd__pres__sx_mean()
+}
+
+# mh_p_ksads__cond -------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__cond__pres__sx_mean
+#' @format vars_mh_p_ksads__cond__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__cond__pres__sx_mean`
+vars_mh_p_ksads__cond__pres__sx <- c(
+  "mh_p_ksads__cond__breakin__pres_sx",
+  "mh_p_ksads__cond__bully__pres_sx",
+  "mh_p_ksads__cond__fight__pres_sx",
+  "mh_p_ksads__cond__fire__pres_sx",
+  "mh_p_ksads__cond__lies__pres_sx",
+  "mh_p_ksads__cond__outlate__pres_sx",
+  "mh_p_ksads__cond__physcruel__anml__pres_sx",
+  "mh_p_ksads__cond__physcruel__ppl__pres_sx",
+  "mh_p_ksads__cond__rob__pres_sx",
+  "mh_p_ksads__cond__runaway__pres_sx",
+  "mh_p_ksads__cond__steal__pres_sx",
+  "mh_p_ksads__cond__truant__pres_sx",
+  "mh_p_ksads__cond__vandal__pres_sx",
+  "mh_p_ksads__cond__weapon__pres_sx"
+)
+
+#' Compute "KSADS - Conduct Disorder \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__cond__pres__sx_mean`
+#' KSADS - Conduct Disorder \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__cond__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 14 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__cond__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__cond__pres__sx_mean",
+  max_na = 2,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__cond__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__cond__past__sx_mean
+#' @format vars_mh_p_ksads__cond__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__cond__past__sx_mean`
+vars_mh_p_ksads__cond__past__sx <- c(
+  "mh_p_ksads__cond__breakin__past_sx",
+  "mh_p_ksads__cond__bully__past_sx",
+  "mh_p_ksads__cond__fight__past_sx",
+  "mh_p_ksads__cond__fire__past_sx",
+  "mh_p_ksads__cond__lies__past_sx",
+  "mh_p_ksads__cond__outlate__past_sx",
+  "mh_p_ksads__cond__physcruel__anml__past_sx",
+  "mh_p_ksads__cond__physcruel__ppl__past_sx",
+  "mh_p_ksads__cond__rob__past_sx",
+  "mh_p_ksads__cond__runaway__past_sx",
+  "mh_p_ksads__cond__steal__past_sx",
+  "mh_p_ksads__cond__truant__past_sx",
+  "mh_p_ksads__cond__vandal__past_sx",
+  "mh_p_ksads__cond__weapon__past_sx"
+)
+
+#' Compute "KSADS - Conduct Disorder \[Parent\] (Symptom - Past): Mean "
+#' @description
+#' Computes the summary score `mh_p_ksads__cond__past__sx_mean`
+#' KSADS - Conduct Disorder \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__cond__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 14 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__cond__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__cond__past__sx_mean",
+  max_na = 2,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__cond__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__cond
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__cond table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__cond_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__cond__past__sx_mean() |>
+    compute_mh_p_ksads__cond__pres__sx_mean()
+}
+
+# mh_p_ksads__dep --------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__dep__pres__sx_mean
+#' @format vars_mh_p_ksads__dep__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__dep__pres__sx_mean`
+vars_mh_p_ksads__dep__pres__sx <- c(
+  "mh_p_ksads__dep__anhed__pres_sx",
+  "mh_p_ksads__dep__appdecr__pres_sx",
+  "mh_p_ksads__dep__conc__pres_sx",
+  "mh_p_ksads__dep__fatig__pres_sx",
+  "mh_p_ksads__dep__glt__pres_sx",
+  "mh_p_ksads__dep__hplss__pres_sx",
+  "mh_p_ksads__dep__hyprsom__pres_sx",
+  "mh_p_ksads__dep__incapp__pres_sx",
+  "mh_p_ksads__dep__indec__pres_sx",
+  "mh_p_ksads__dep__irrit__pres_sx",
+  "mh_p_ksads__dep__mood__pres_sx",
+  "mh_p_ksads__dep__psymot__agit__pres_sx",
+  "mh_p_ksads__dep__psymot__rtrd__pres_sx",
+  "mh_p_ksads__dep__slfestmdecr__pres_sx",
+  "mh_p_ksads__dep__wghtgain__pres_sx",
+  "mh_p_ksads__dep__wghtloss__pres_sx"
+)
+
+#' Compute "KSADS - Depressive Disorders \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__dep__pres__sx_mean`
+#' KSADS - Depressive Disorders \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__dep__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 17 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__dep__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__dep__pres__sx_mean",
+  max_na = 3,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__dep__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__dep__past__sx_mean
+#' @format vars_mh_p_ksads__dep__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__dep__past__sx_mean`
+vars_mh_p_ksads__dep__past__sx <- c(
+  "mh_p_ksads__dep__anhed__past_sx",
+  "mh_p_ksads__dep__appdecr__past_sx",
+  "mh_p_ksads__dep__conc__past_sx",
+  "mh_p_ksads__dep__fatig__past_sx",
+  "mh_p_ksads__dep__glt__past_sx",
+  "mh_p_ksads__dep__hplss__past_sx",
+  "mh_p_ksads__dep__hyprsom__past_sx",
+  "mh_p_ksads__dep__incapp__past_sx",
+  "mh_p_ksads__dep__indec__past_sx",
+  "mh_p_ksads__dep__insom__past_sx",
+  "mh_p_ksads__dep__irrit__past_sx",
+  "mh_p_ksads__dep__mood__past_sx",
+  "mh_p_ksads__dep__psymot__agit__past_sx",
+  "mh_p_ksads__dep__psymot__rtrd__past_sx",
+  "mh_p_ksads__dep__slfestmdecr__past_sx",
+  "mh_p_ksads__dep__wghtgain__past_sx",
+  "mh_p_ksads__dep__wghtloss__past_sx"
+)
+
+#' Compute "KSADS - Depressive Disorders \[Parent\] (Symptom - Past): Mean "
+#' @description
+#' Computes the summary score `mh_p_ksads__dep__past__sx_mean`
+#' KSADS - Depressive Disorders \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__dep__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 17 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__dep__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__dep__past__sx_mean",
+  max_na = 3,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__dep__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__dep
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__dep table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__dep_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__dep__past__sx_mean() |>
+    compute_mh_p_ksads__dep__pres__sx_mean()
+}
+
+# mh_p_ksads__dmdd ------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__dmdd__sx_mean
+#' @format vars_mh_p_ksads__dmdd__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__dmdd__sx_mean`
+vars_mh_p_ksads__dmdd__sx <- c(
+  "mh_p_ksads__dmdd__outbrst__3perwk_sx"
+)
+
+#' Compute "KSADS - Disruptive Mood Dysregulation Disorder \[Parent\] (Symptom):
+#' Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__dmdd__sx_mean`
+#' KSADS - Disruptive Mood Dysregulation Disorder \[Parent\] (Symptom): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__dmdd__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 1 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__dmdd__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__dmdd__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__dmdd__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__dep
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__dep table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__dmdd_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__dmdd__sx_mean()
+}
+
+# mh_p_ksads__ed ----------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__ed__pres__sx_mean
+#' @format vars_mh_p_ksads__ed__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__ed__pres__sx_mean`
+vars_mh_p_ksads__ed__pres__sx <- c(
+  "mh_p_ksads__ed__binge__distrs__pres_sx",
+  "mh_p_ksads__ed__binge__pres_sx",
+  "mh_p_ksads__ed__compbehav__pres_sx",
+  "mh_p_ksads__ed__emac__pres_sx",
+  "mh_p_ksads__ed__fear__obese__pres_sx",
+  "mh_p_ksads__ed__slfwrth__pres_sx",
+  "mh_p_ksads__ed__wghtcntrl__oth__pres_sx",
+  "mh_p_ksads__ed__wghtcntrl__vom__pres_sx"
+)
+
+#' Compute "KSADS - Eating Disorders \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__ed__pres__sx_mean`
+#' KSADS - Eating Disorders \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__ed__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 8 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__ed__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__ed__pres__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__ed__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__ed__past__sx_mean
+#' @format vars_mh_p_ksads__ed__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__ed__past__sx_mean`
+vars_mh_p_ksads__ed__past__sx <- c(
+  "mh_p_ksads__ed__binge__distrs__past_sx",
+  "mh_p_ksads__ed__binge__past_sx",
+  "mh_p_ksads__ed__compbehav__past_sx",
+  "mh_p_ksads__ed__emac__past_sx",
+  "mh_p_ksads__ed__fear__obese__past_sx",
+  "mh_p_ksads__ed__slfwrth__past_sx",
+  "mh_p_ksads__ed__wghtcntrl__oth__past_sx",
+  "mh_p_ksads__ed__wghtcntrl__vom__past_sx"
+)
+
+#' Compute "KSADS - Eating Disorders \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__ed__past__sx_mean`
+#' KSADS - Eating Disorders \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__ed__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 8 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__ed__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__ed__past__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__ed__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__ed
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__ed table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__ed_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__ed__past__sx_mean() |>
+    compute_mh_p_ksads__ed__pres__sx_mean()
+}
+
+
+# mh_p_ksads__gad -------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__gad__pres__sx_mean
+#' @format vars_mh_p_ksads__gad__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__gad__pres__sx_mean`
+vars_mh_p_ksads__gad__pres__sx <- c(
+  "mh_p_ksads__gad__worry__6mo__pres_sx",
+  "mh_p_ksads__gad__worry__diffctrl__pres_sx",
+  "mh_p_ksads__gad__worry__excess__pres_sx",
+  "mh_p_ksads__gad__worry__multi__pres_sx"
+)
+
+#' Compute "KSADS - Generalized Anxiety Disorder \[Parent\] (Symptom - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__gad__pres__sx_mean`
+#' KSADS - Generalized Anxiety Disorder \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__gad__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 4 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__gad__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__gad__pres__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__gad__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__gad__past__sx_mean
+#' @format vars_mh_p_ksads__gad__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__gad__past__sx_mean`
+vars_mh_p_ksads__gad__past__sx <- c(
+  "mh_p_ksads__gad__worry__6mo__past_sx",
+  "mh_p_ksads__gad__worry__diffctrl__past_sx",
+  "mh_p_ksads__gad__worry__excess__past_sx",
+  "mh_p_ksads__gad__worry__multi__past_sx"
+)
+
+#' Compute "KSADS - Generalized Anxiety Disorder \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__gad__past__sx_mean`
+#' KSADS - Generalized Anxiety Disorder \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__gad__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 4 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__gad__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__gad__past__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__gad__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__gad
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__gad table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__gad_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__gad__past__sx_mean() |>
+    compute_mh_p_ksads__gad__pres__sx_mean()
+}
+
+
+# mh_p_ksads__hom -------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__hom__pres__sx_mean
+#' @format vars_mh_p_ksads__hom__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__hom__pres__sx_mean`
+vars_mh_p_ksads__hom__pres__sx <- c(
+  "mh_p_ksads__hom__idea__pres_sx",
+  "mh_p_ksads__hom__plan__pres_sx"
+)
+
+#' Compute "KSADS - Homicidality \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__hom__pres__sx_mean`
+#' KSADS - Homicidality \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__hom__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 2 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__hom__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__hom__pres__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__hom__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__hom__past__sx_mean
+#' @format vars_mh_p_ksads__hom__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__hom__past__sx_mean`
+vars_mh_p_ksads__hom__past__sx <- c(
+  "mh_p_ksads__hom__idea__past_sx",
+  "mh_p_ksads__hom__plan__past_sx"
+)
+
+#' Compute "KSADS - Homicidality \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__hom__past__sx_mean`
+#' KSADS - Homicidality \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__hom__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 2 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__hom__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__hom__past__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__hom__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__hom
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__hom table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__hom_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__hom__past__sx_mean() |>
+    compute_mh_p_ksads__hom__pres__sx_mean()
+}
+
+# mh_p_ksads__ocd -------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__ocd__pres__sx_mean
+#' @format vars_mh_p_ksads__ocd__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__ocd__pres__sx_mean`
+vars_mh_p_ksads__ocd__pres__sx <- c(
+  "mh_p_ksads__ocd__compuls__pres_sx",
+  "mh_p_ksads__ocd__compuls__prvntanx__pres_sx",
+  "mh_p_ksads__ocd__compuls__tcnsm__pres_sx",
+  "mh_p_ksads__ocd__obsess__intru__pres_sx",
+  "mh_p_ksads__ocd__obsess__pres_sx",
+  "mh_p_ksads__ocd__obsess__tcnsm__pres_sx",
+  "mh_p_ksads__ocd__suprstho__pres_sx"
+)
+
+#' Compute "KSADS - Obsessive Compulsive Disorder \[Parent\] (Symptom - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__ocd__pres__sx_mean`
+#' KSADS - Obsessive Compulsive Disorder \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__ocd__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 7 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__ocd__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__ocd__pres__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__ocd__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__ocd__past__sx_mean
+#' @format vars_mh_p_ksads__ocd__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__ocd__past__sx_mean`
+vars_mh_p_ksads__ocd__past__sx <- c(
+  "mh_p_ksads__ocd__compuls__past_sx",
+  "mh_p_ksads__ocd__compuls__prvntanx__past_sx",
+  "mh_p_ksads__ocd__compuls__tcnsm__past_sx",
+  "mh_p_ksads__ocd__obsess__intru__past_sx",
+  "mh_p_ksads__ocd__obsess__past_sx",
+  "mh_p_ksads__ocd__obsess__tcnsm__past_sx",
+  "mh_p_ksads__ocd__suprstho__past_sx"
+)
+
+#' Compute "KSADS - Obsessive Compulsive Disorder \[Parent\] (Symptom - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__ocd__past__sx_mean`
+#' KSADS - Obsessive Compulsive Disorder \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__ocd__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 7 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__ocd__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__ocd__past__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__ocd__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__ocd
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__ocd table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__ocd_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__ocd__past__sx_mean() |>
+    compute_mh_p_ksads__ocd__pres__sx_mean()
+}
+
+
+# mh_p_ksads__odd -------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__odd__pres__sx_mean
+#' @format vars_mh_p_ksads__odd__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__odd__pres__sx_mean`
+vars_mh_p_ksads__odd__pres__sx <- c(
+  "mh_p_ksads__odd__angry__pres_sx",
+  "mh_p_ksads__odd__argue__pres_sx",
+  "mh_p_ksads__odd__blame__pres_sx",
+  "mh_p_ksads__odd__delibannoy__pres_sx",
+  "mh_p_ksads__odd__disobey__pres_sx",
+  "mh_p_ksads__odd__temper__pres_sx",
+  "mh_p_ksads__odd__touchy__pres_sx",
+  "mh_p_ksads__odd__vindict__pres_sx"
+)
+
+#' Compute "KSADS - Oppositional Defiant Disorder \[Parent\] (Symptom - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__odd__pres__sx_mean`
+#' KSADS - Oppositional Defiant Disorder \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__odd__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 8 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__odd__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__odd__pres__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__odd__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__odd__past__sx_mean
+#' @format vars_mh_p_ksads__odd__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__odd__past__sx_mean`
+vars_mh_p_ksads__odd__past__sx <- c(
+  "mh_p_ksads__odd__angry__past_sx",
+  "mh_p_ksads__odd__argue__past_sx",
+  "mh_p_ksads__odd__blame__past_sx",
+  "mh_p_ksads__odd__delibannoy__past_sx",
+  "mh_p_ksads__odd__disobey__past_sx",
+  "mh_p_ksads__odd__temper__past_sx",
+  "mh_p_ksads__odd__touchy__past_sx",
+  "mh_p_ksads__odd__vindict__past_sx"
+)
+
+#' Compute "KSADS - Oppositional Defiant Disorder \[Parent\] (Symptom - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__odd__past__sx_mean`
+#' KSADS - Oppositional Defiant Disorder \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__odd__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 8 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__odd__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__odd__past__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__odd__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__odd
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__odd table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__odd_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__odd__past__sx_mean() |>
+    compute_mh_p_ksads__odd__pres__sx_mean()
+}
+
+# mh_p_ksads__panic -----------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__panic__pres__sx_mean
+#' @format vars_mh_p_ksads__panic__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__panic__pres__sx_mean`
+vars_mh_p_ksads__panic__pres__sx <- c(
+  "mh_p_ksads__panic__attack__maladp__pres_sx",
+  "mh_p_ksads__panic__attack__pres_sx",
+  "mh_p_ksads__panic__sympt__pres_sx",
+  "mh_p_ksads__panic__worry__attack__pres_sx"
+)
+
+#' Compute "KSADS - Panic Disorder \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__panic__pres__sx_mean`
+#' KSADS - Panic Disorder \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__panic__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 4 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__panic__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__panic__pres__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__panic__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__panic__past__sx_mean
+#' @format vars_mh_p_ksads__panic__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__panic__past__sx_mean`
+vars_mh_p_ksads__panic__past__sx <- c(
+  "mh_p_ksads__panic__attack__maladp__past_sx",
+  "mh_p_ksads__panic__attack__past_sx",
+  "mh_p_ksads__panic__sympt__past_sx",
+  "mh_p_ksads__panic__worry__attack__past_sx"
+)
+
+#' Compute "KSADS - Panic Disorder \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__panic__past__sx_mean`
+#' KSADS - Panic Disorder \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__panic__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 4 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__panic__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__panic__past__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__panic__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__panic
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__panic table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__panic_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__panic__past__sx_mean() |>
+    compute_mh_p_ksads__panic__pres__sx_mean()
+}
+
+# mh_p_ksads__phobia ----------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__phobia__pres__sx_mean
+#' @format vars_mh_p_ksads__phobia__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__phobia__pres__sx_mean`
+vars_mh_p_ksads__phobia__pres__sx <- c(
+  "mh_p_ksads__phobia__avoid__pres_sx",
+  "mh_p_ksads__phobia__fear__pres_sx"
+)
+
+#' Compute "KSADS - Specific Phobia \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__phobia__pres__sx_mean`
+#' KSADS - Specific Phobia \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__phobia__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 2 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__phobia__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__phobia__pres__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__phobia__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__phobia__past__sx_mean
+#' @format vars_mh_p_ksads__phobia__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__phobia__past__sx_mean`
+vars_mh_p_ksads__phobia__past__sx <- c(
+  "mh_p_ksads__phobia__avoid__past_sx",
+  "mh_p_ksads__phobia__fear__past_sx"
+)
+
+#' Compute "KSADS - Specific Phobia \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__phobia__past__sx_mean`
+#' KSADS - Specific Phobia \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__phobia__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 2 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__phobia__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__phobia__past__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__phobia__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__phobia
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__phobia table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__phobia_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__phobia__past__sx_mean() |>
+    compute_mh_p_ksads__phobia__pres__sx_mean()
+}
+
+# mh_p_ksads__psych -----------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__psych__pres__sx_mean
+#' @format vars_mh_p_ksads__psych__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__psych__pres__sx_mean`
+vars_mh_p_ksads__psych__pres__sx <- c(
+  "mh_p_ksads__psych__delus__oth__2wk__pres_sx",
+  "mh_p_ksads__psych__delus__persec__2wk__pres_sx",
+  "mh_p_ksads__psych__delus__pres_sx",
+  "mh_p_ksads__psych__disorg__behav__pres_sx",
+  "mh_p_ksads__psych__disorg__speech__pres_sx",
+  "mh_p_ksads__psych__halluc__adt__pres_sx",
+  "mh_p_ksads__psych__halluc__clust__pres_sx",
+  "mh_p_ksads__psych__halluc__oth__altw__pres_sx",
+  "mh_p_ksads__psych__halluc__oth__ap__pres_sx",
+  "mh_p_ksads__psych__halluc__oth__pres_sx",
+  "mh_p_ksads__psych__halluc__pres_sx",
+  "mh_p_ksads__psych__neg__pres_sx"
+)
+
+#' Compute "KSADS - Psychosis \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__psych__pres__sx_mean`
+#' KSADS - Psychosis \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__psych__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 12 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__psych__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__psych__pres__sx_mean",
+  max_na = 2,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__psych__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__psych__past__sx_mean
+#' @format vars_mh_p_ksads__psych__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__psych__past__sx_mean`
+vars_mh_p_ksads__psych__past__sx <- c(
+  "mh_p_ksads__psych__delus__oth__past_sx",
+  "mh_p_ksads__psych__delus__persec__past_sx",
+  "mh_p_ksads__psych__delus__past_sx",
+  "mh_p_ksads__psych__halluc__adt__past_sx",
+  "mh_p_ksads__psych__halluc__clust__past_sx",
+  "mh_p_ksads__psych__halluc__oth__past_sx",
+  "mh_p_ksads__psych__halluc__past_sx"
+)
+
+#' Compute "KSADS - Psychosis \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__psych__past__sx_mean`
+#' KSADS - Psychosis \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__psych__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 7 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__psych__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__psych__past__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__psych__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__psych
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__psych table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__psych_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__psych__past__sx_mean() |>
+    compute_mh_p_ksads__psych__pres__sx_mean()
+}
+
+
+# mh_p_ksads__ptsd ------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__ptsd__pres__sx_mean
+#' @format vars_mh_p_ksads__ptsd__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__ptsd__pres__sx_mean`
+vars_mh_p_ksads__ptsd__pres__sx <- c(
+  "mh_p_ksads__ptsd__anhed__pres_sx",
+  "mh_p_ksads__ptsd__avoid__extrmnd__pres_sx",
+  "mh_p_ksads__ptsd__avoid__trmatho__pres_sx",
+  "mh_p_ksads__ptsd__concprob__pres_sx",
+  "mh_p_ksads__ptsd__depersnl__pres_sx",
+  "mh_p_ksads__ptsd__derealztn__pres_sx",
+  "mh_p_ksads__ptsd__detach__pres_sx",
+  "mh_p_ksads__ptsd__distortcog__cause__pres_sx",
+  "mh_p_ksads__ptsd__distortcog__consq__pres_sx",
+  "mh_p_ksads__ptsd__emot__neg__pres_sx",
+  "mh_p_ksads__ptsd__emot__nopos__pres_sx",
+  "mh_p_ksads__ptsd__extrmnd__distrs__pres_sx",
+  "mh_p_ksads__ptsd__flshbck__pres_sx",
+  "mh_p_ksads__ptsd__hyprvigl__pres_sx",
+  "mh_p_ksads__ptsd__intrmnd__distrs__pres_sx",
+  "mh_p_ksads__ptsd__irrit__pres_sx",
+  "mh_p_ksads__ptsd__memloss__pres_sx",
+  "mh_p_ksads__ptsd__negblf__pres_sx",
+  "mh_p_ksads__ptsd__nghtmr__pres_sx",
+  "mh_p_ksads__ptsd__physreact__pres_sx",
+  "mh_p_ksads__ptsd__rckls__pres_sx",
+  "mh_p_ksads__ptsd__sleepdistb__pres_sx",
+  "mh_p_ksads__ptsd__startle__pres_sx",
+  "mh_p_ksads__ptsd__trmatho__intru__pres_sx"
+)
+
+#' Compute "KSADS - Post-Traumatic Stress Disorder \[Parent\] (Symptom - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__ptsd__pres__sx_mean`
+#' KSADS - Post-Traumatic Stress Disorder \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 4 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__ptsd__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 4 of 24 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__ptsd__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__ptsd__pres__sx_mean",
+  max_na = 4,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__ptsd__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__ptsd__past__sx_mean
+#' @format vars_mh_p_ksads__ptsd__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__ptsd__past__sx_mean`
+vars_mh_p_ksads__ptsd__past__sx <- c(
+  "mh_p_ksads__ptsd__anhed__past_sx",
+  "mh_p_ksads__ptsd__avoid__extrmnd__past_sx",
+  "mh_p_ksads__ptsd__avoid__trmatho__past_sx",
+  "mh_p_ksads__ptsd__concprob__past_sx",
+  "mh_p_ksads__ptsd__depersnl__past_sx",
+  "mh_p_ksads__ptsd__derealztn__past_sx",
+  "mh_p_ksads__ptsd__detach__past_sx",
+  "mh_p_ksads__ptsd__distortcog__cause__past_sx",
+  "mh_p_ksads__ptsd__distortcog__consq__past_sx",
+  "mh_p_ksads__ptsd__emot__neg__past_sx",
+  "mh_p_ksads__ptsd__emot__nopos__past_sx",
+  "mh_p_ksads__ptsd__extrmnd__distrs__past_sx",
+  "mh_p_ksads__ptsd__flshbck__past_sx",
+  "mh_p_ksads__ptsd__hyprvigl__past_sx",
+  "mh_p_ksads__ptsd__intrmnd__distrs__past_sx",
+  "mh_p_ksads__ptsd__irrit__past_sx",
+  "mh_p_ksads__ptsd__memloss__past_sx",
+  "mh_p_ksads__ptsd__negblf__past_sx",
+  "mh_p_ksads__ptsd__nghtmr__past_sx",
+  "mh_p_ksads__ptsd__physreact__past_sx",
+  "mh_p_ksads__ptsd__rckls__past_sx",
+  "mh_p_ksads__ptsd__sleepdistb__past_sx",
+  "mh_p_ksads__ptsd__startle__past_sx",
+  "mh_p_ksads__ptsd__trmatho__intru__past_sx"
+)
+
+#' Compute "KSADS - Post-Traumatic Stress Disorder \[Parent\] (Symptom - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__ptsd__past__sx_mean`
+#' KSADS - Post-Traumatic Stress Disorder \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 4 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__ptsd__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 4 of 24 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__ptsd__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__ptsd__past__sx_mean",
+  max_na = 4,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__ptsd__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__ptsd
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__ptsd table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__ptsd_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__ptsd__past__sx_mean() |>
+    compute_mh_p_ksads__ptsd__pres__sx_mean()
+}
+
+# mh_p_ksads__sepanx ----------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__sepanx__pres__sx_mean
+#' @format vars_mh_p_ksads__sepanx__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__sepanx__pres__sx_mean`
+vars_mh_p_ksads__sepanx__pres__sx <- c(
+  "mh_p_ksads__sepanx__evnt__fear__pres_sx",
+  "mh_p_ksads__sepanx__fig__harm__pres_sx",
+  "mh_p_ksads__sepanx__nghtmr__pres_sx",
+  "mh_p_ksads__sepanx__nofig__fear__pres_sx",
+  "mh_p_ksads__sepanx__nofig__physympt__pres_sx",
+  "mh_p_ksads__sepanx__noschl__pres_sx",
+  "mh_p_ksads__sepanx__nosleep__pres_sx",
+  "mh_p_ksads__sepanx__sep__distrs__pres_sx"
+)
+
+#' Compute "KSADS - Separation Anxiety \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__sepanx__pres__sx_mean`
+#' KSADS - Separation Anxiety \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__sepanx__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 8 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__sepanx__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__sepanx__pres__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__sepanx__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__sepanx__past__sx_mean
+#' @format vars_mh_p_ksads__sepanx__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__sepanx__past__sx_mean`
+vars_mh_p_ksads__sepanx__past__sx <- c(
+  "mh_p_ksads__sepanx__evnt__fear__past_sx",
+  "mh_p_ksads__sepanx__fig__harm__past_sx",
+  "mh_p_ksads__sepanx__nghtmr__past_sx",
+  "mh_p_ksads__sepanx__nofig__fear__past_sx",
+  "mh_p_ksads__sepanx__nofig__physympt__past_sx",
+  "mh_p_ksads__sepanx__noschl__past_sx",
+  "mh_p_ksads__sepanx__nosleep__past_sx",
+  "mh_p_ksads__sepanx__sep__distrs__past_sx"
+)
+
+#' Compute "KSADS - Separation Anxiety \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__sepanx__past__sx_mean`
+#' KSADS - Separation Anxiety \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__sepanx__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 8 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__sepanx__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__sepanx__past__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__sepanx__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__sepanx
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__sepanx table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__sepanx_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__sepanx__past__sx_mean() |>
+    compute_mh_p_ksads__sepanx__pres__sx_mean()
+}
+
+# mh_p_ksads__sleep ----------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__sleep__pres__sx_mean
+#' @format vars_mh_p_ksads__sleep__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__sleep__pres__sx_mean`
+vars_mh_p_ksads__sleep__pres__sx <- c(
+  "mh_p_ksads__sleep__insom__pres_sx"
+)
+
+#' Compute "KSADS - Sleep Problems \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__sleep__pres__sx_mean`
+#' KSADS - Sleep Problems \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__sleep__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 1 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__sleep__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__sleep__pres__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__sleep__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__sleep__past__sx_mean
+#' @format vars_mh_p_ksads__sleep__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__sleep__past__sx_mean`
+vars_mh_p_ksads__sleep__past__sx <- c(
+  "mh_p_ksads__sleep__insom__past_sx"
+)
+
+#' Compute "KSADS - Sleep Problems \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__sleep__past__sx_mean`
+#' KSADS - Sleep Problems \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__sleep__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 1 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__sleep__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__sleep__past__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__sleep__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__sleep
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__sleep table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__sleep_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__sleep__past__sx_mean() |>
+    compute_mh_p_ksads__sleep__pres__sx_mean()
+}
+
+# mh_p_ksads__socanx ---------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__socanx__pres__sx_mean
+#' @format vars_mh_p_ksads__socanx__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__socanx__pres__sx_mean`
+vars_mh_p_ksads__socanx__pres__sx <- c(
+  "mh_p_ksads__socanx__anx__pres_sx",
+  "mh_p_ksads__socanx__avoid__pres_sx",
+  "mh_p_ksads__socanx__fear__pres_sx"
+)
+
+#' Compute "KSADS - Social Anxiety Disorder \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__socanx__pres__sx_mean`
+#' KSADS - Social Anxiety Disorder \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__socanx__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 3 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__socanx__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__socanx__pres__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__socanx__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__socanx__past__sx_mean
+#' @format vars_mh_p_ksads__socanx__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__socanx__past__sx_mean`
+vars_mh_p_ksads__socanx__past__sx <- c(
+  "mh_p_ksads__socanx__anx__past_sx",
+  "mh_p_ksads__socanx__avoid__past_sx",
+  "mh_p_ksads__socanx__fear__past_sx"
+)
+
+#' Compute "KSADS - Social Anxiety Disorder \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__socanx__past__sx_mean`
+#' KSADS - Social Anxiety Disorder \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__socanx__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 3 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__socanx__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__socanx__past__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__socanx__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__socanx
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__socanx table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__socanx_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__socanx__past__sx_mean() |>
+    compute_mh_p_ksads__socanx__pres__sx_mean()
+}
+
+# mh_p_ksads__suic -----------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__suic__pres__sx_mean
+#' @format vars_mh_p_ksads__suic__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__suic__pres__sx_mean`
+vars_mh_p_ksads__suic__pres__sx <- c(
+  "mh_p_ksads__suic__slfinj__pres_sx",
+  "mh_p_ksads__suic__slfinj__nointnt__pres_sx",
+  "mh_p_ksads__suic__slfinj__intnt__pres_sx",
+  "mh_p_ksads__suic__slfinj__psbldie__pres_sx",
+  "mh_p_ksads__suic__idea__pres_sx",
+  "mh_p_ksads__suic__intnt__pres_sx",
+  "mh_p_ksads__suic__mthd__pres_sx",
+  "mh_p_ksads__suic__plan__pres_sx",
+  "mh_p_ksads__suic__prep__pres_sx",
+  "mh_p_ksads__suic__attmpt__pres_sx",
+  "mh_p_ksads__suic__attmpt__intrpt__pres_sx",
+  "mh_p_ksads__suic__attmpt__psbldie__pres_sx",
+  "mh_p_ksads__suic__wishdead__pres_sx"
+)
+
+#' Compute "KSADS - Suicidality \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__suic__pres__sx_mean`
+#' KSADS - Suicidality \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__suic__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 13 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__suic__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__suic__pres__sx_mean",
+  max_na = 2,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__suic__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__suic__past__sx_mean
+#' @format vars_mh_p_ksads__suic__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__suic__past__sx_mean`
+vars_mh_p_ksads__suic__past__sx <- c(
+  "mh_p_ksads__suic__slfinj__past_sx",
+  "mh_p_ksads__suic__slfinj__nointnt__past_sx",
+  "mh_p_ksads__suic__slfinj__intnt__past_sx",
+  "mh_p_ksads__suic__slfinj__psbldie__past_sx",
+  "mh_p_ksads__suic__idea__past_sx",
+  "mh_p_ksads__suic__intnt__past_sx",
+  "mh_p_ksads__suic__mthd__past_sx",
+  "mh_p_ksads__suic__plan__past_sx",
+  "mh_p_ksads__suic__prep__past_sx",
+  "mh_p_ksads__suic__attmpt__past_sx",
+  "mh_p_ksads__suic__attmpt__intrpt__past_sx",
+  "mh_p_ksads__suic__attmpt__psbldie__past_sx",
+  "mh_p_ksads__suic__wishdead__past_sx"
+)
+
+#' Compute "KSADS - Suicidality \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__suic__past__sx_mean`
+#' KSADS - Suicidality \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__suic__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 13 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__suic__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__suic__past__sx_mean",
+  max_na = 2,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__suic__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__suic
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__suic table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__suic_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__suic__past__sx_mean() |>
+    compute_mh_p_ksads__suic__pres__sx_mean()
+}
+
+# mh_p_ksads__tic ------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__tic__pres__sx_mean
+#' @format vars_mh_p_ksads__tic__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__tic__pres__sx_mean`
+vars_mh_p_ksads__tic__pres__sx <- c(
+  "mh_p_ksads__tic__mtr__pres_sx",
+  "mh_p_ksads__tic__phnc__pres_sx"
+)
+
+#' Compute "KSADS - Tic Disorders \[Parent\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__tic__pres__sx_mean`
+#' KSADS - Tic Disorders \[Parent\] (Symptom - Present): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__tic__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 2 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__tic__pres__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__tic__pres__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__tic__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_p_ksads__tic__past__sx_mean
+#' @format vars_mh_p_ksads__tic__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_p_ksads__tic__past__sx_mean`
+vars_mh_p_ksads__tic__past__sx <- c(
+  "mh_p_ksads__tic__mtr__past_sx",
+  "mh_p_ksads__tic__phnc__past_sx"
+)
+
+#' Compute "KSADS - Tic Disorders \[Parent\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_p_ksads__tic__past__sx_mean`
+#' KSADS - Tic Disorders \[Parent\] (Symptom - Past): Mean
+#' \[validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_p_ksads__tic__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 2 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__tic__past__sx_mean <- function(
+  data,
+  name = "mh_p_ksads__tic__past__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_p_ksads__tic__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_p_ksads__tic
+#' @description
+#' This function computes all summary scores for the mh_p_ksads__tic table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_p_ksads__tic_all <- function(data) {
+  data |>
+    compute_mh_p_ksads__tic__past__sx_mean() |>
+    compute_mh_p_ksads__tic__pres__sx_mean()
+}
+
+
+# mh_y_ksads__bpd --------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__bpd__pres__sx_mean
+#' @format vars_mh_y_ksads__bpd__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__bpd__pres__sx_mean`
+vars_mh_y_ksads__bpd__pres__sx <- c(
+  "mh_y_ksads__bpd__distract__incr__pres_sx",
+  "mh_y_ksads__bpd__distract__pres_sx",
+  "mh_y_ksads__bpd__enrg__incr__pres_sx",
+  "mh_y_ksads__bpd__flgtid__pres_sx",
+  "mh_y_ksads__bpd__goaldir__incr__pres_sx",
+  "mh_y_ksads__bpd__grndios__pres_sx",
+  "mh_y_ksads__bpd__hyprsex__pres_sx",
+  "mh_y_ksads__bpd__irrit__expl__pres_sx",
+  "mh_y_ksads__bpd__irrit__manic__pres_sx",
+  "mh_y_ksads__bpd__mood__elv__pres_sx",
+  "mh_y_ksads__bpd__mood__euph__pres_sx",
+  "mh_y_ksads__bpd__prspch__pres_sx",
+  "mh_y_ksads__bpd__psymot__agit__pres_sx",
+  "mh_y_ksads__bpd__ractho__pres_sx",
+  "mh_y_ksads__bpd__riskactv__pres_sx",
+  "mh_y_ksads__bpd__slpdecr__pres_sx"
+)
+
+#' Compute "KSADS - Bipolar Disorders \[Youth\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__bpd__pres__sx_mean`
+#' KSADS - Bipolar Disorders \[Youth\] (Symptom - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__bpd__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 16 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__bpd__pres__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__bpd__pres__sx_mean",
+  max_na = 3,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__bpd__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__bpd__past__sx_mean
+#' @format vars_mh_y_ksads__bpd__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__bpd__past__sx_mean`
+vars_mh_y_ksads__bpd__past__sx <- c(
+  "mh_y_ksads__bpd__distract__incr__past_sx",
+  "mh_y_ksads__bpd__distract__past_sx",
+  "mh_y_ksads__bpd__enrg__incr__past_sx",
+  "mh_y_ksads__bpd__flgtid__past_sx",
+  "mh_y_ksads__bpd__goaldir__incr__past_sx",
+  "mh_y_ksads__bpd__grndios__past_sx",
+  "mh_y_ksads__bpd__hyprsex__past_sx",
+  "mh_y_ksads__bpd__irrit__expl__past_sx",
+  "mh_y_ksads__bpd__irrit__manic__past_sx",
+  "mh_y_ksads__bpd__mood__elv__past_sx",
+  "mh_y_ksads__bpd__mood__euph__past_sx",
+  "mh_y_ksads__bpd__prspch__past_sx",
+  "mh_y_ksads__bpd__psymot__agit__past_sx",
+  "mh_y_ksads__bpd__ractho__past_sx",
+  "mh_y_ksads__bpd__riskactv__past_sx",
+  "mh_y_ksads__bpd__slpdecr__past_sx"
+)
+
+#' Compute "KSADS - Bipolar Disorders \[Youth\] (Symptom - Past): Mean "
+#' @description
+#' Computes the summary score `mh_y_ksads__bpd__past__sx_mean`
+#' KSADS - Bipolar Disorders \[Youth\] (Symptom - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__bpd__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 16 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__bpd__past__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__bpd__past__sx_mean",
+  max_na = 3,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__bpd__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_y_ksads__bpd
+#' @description
+#' This function computes all summary scores for the mh_y_ksads__bpd table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__bpd_all <- function(data) {
+  data |>
+    compute_mh_y_ksads__bpd__past__sx_mean() |>
+    compute_mh_y_ksads__bpd__pres__sx_mean()
+}
+
+# mh_y_ksads__cond -------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__cond__pres__sx_mean
+#' @format vars_mh_y_ksads__cond__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__cond__pres__sx_mean`
+vars_mh_y_ksads__cond__pres__sx <- c(
+  "mh_y_ksads__cond__breakin__pres_sx",
+  "mh_y_ksads__cond__bully__pres_sx",
+  "mh_y_ksads__cond__fight__pres_sx",
+  "mh_y_ksads__cond__fire__pres_sx",
+  "mh_y_ksads__cond__lies__pres_sx",
+  "mh_y_ksads__cond__outlate__pres_sx",
+  "mh_y_ksads__cond__physcruel__anml__pres_sx",
+  "mh_y_ksads__cond__physcruel__ppl__pres_sx",
+  "mh_y_ksads__cond__rob__pres_sx",
+  "mh_y_ksads__cond__runaway__pres_sx",
+  "mh_y_ksads__cond__steal__pres_sx",
+  "mh_y_ksads__cond__truant__pres_sx",
+  "mh_y_ksads__cond__vandal__pres_sx",
+  "mh_y_ksads__cond__weapon__pres_sx"
+)
+
+#' Compute "KSADS - Conduct Disorder \[Youth\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__cond__pres__sx_mean`
+#' KSADS - Conduct Disorder \[Youth\] (Symptom - Present): Mean
+#' \[Validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__cond__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 14 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__cond__pres__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__cond__pres__sx_mean",
+  max_na = 2,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__cond__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__cond__past__sx_mean
+#' @format vars_mh_y_ksads__cond__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__cond__past__sx_mean`
+vars_mh_y_ksads__cond__past__sx <- c(
+  "mh_y_ksads__cond__breakin__past_sx",
+  "mh_y_ksads__cond__bully__past_sx",
+  "mh_y_ksads__cond__fight__past_sx",
+  "mh_y_ksads__cond__fire__past_sx",
+  "mh_y_ksads__cond__lies__past_sx",
+  "mh_y_ksads__cond__outlate__past_sx",
+  "mh_y_ksads__cond__physcruel__anml__past_sx",
+  "mh_y_ksads__cond__physcruel__ppl__past_sx",
+  "mh_y_ksads__cond__rob__past_sx",
+  "mh_y_ksads__cond__runaway__past_sx",
+  "mh_y_ksads__cond__steal__past_sx",
+  "mh_y_ksads__cond__truant__past_sx",
+  "mh_y_ksads__cond__vandal__past_sx",
+  "mh_y_ksads__cond__weapon__past_sx"
+)
+
+#' Compute "KSADS - Conduct Disorder \[Youth\] (Symptom - Past): Mean "
+#' @description
+#' Computes the summary score `mh_y_ksads__cond__past__sx_mean`
+#' KSADS - Conduct Disorder \[Youth\] (Symptom - Past): Mean
+#' \[Validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__cond__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 14 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__cond__past__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__cond__past__sx_mean",
+  max_na = 2,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__cond__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_y_ksads__cond
+#' @description
+#' This function computes all summary scores for the mh_y_ksads__cond table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__cond_all <- function(data) {
+  data |>
+    compute_mh_y_ksads__cond__past__sx_mean() |>
+    compute_mh_y_ksads__cond__pres__sx_mean()
+}
+
+# mh_y_ksads__dep --------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__dep__pres__sx_mean
+#' @format vars_mh_y_ksads__dep__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__dep__pres__sx_mean`
+vars_mh_y_ksads__dep__pres__sx <- c(
+  "mh_y_ksads__dep__anhed__pres_sx",
+  "mh_y_ksads__dep__appdecr__pres_sx",
+  "mh_y_ksads__dep__conc__pres_sx",
+  "mh_y_ksads__dep__fatig__pres_sx",
+  "mh_y_ksads__dep__glt__pres_sx",
+  "mh_y_ksads__dep__hplss__pres_sx",
+  "mh_y_ksads__dep__hyprsom__pres_sx",
+  "mh_y_ksads__dep__incapp__pres_sx",
+  "mh_y_ksads__dep__indec__pres_sx",
+  "mh_y_ksads__dep__irrit__pres_sx",
+  "mh_y_ksads__dep__mood__pres_sx",
+  "mh_y_ksads__dep__psymot__agit__pres_sx",
+  "mh_y_ksads__dep__psymot__rtrd__pres_sx",
+  "mh_y_ksads__dep__slfestmdecr__pres_sx",
+  "mh_y_ksads__dep__wghtgain__pres_sx",
+  "mh_y_ksads__dep__wghtloss__pres_sx"
+)
+
+#' Compute "KSADS - Depressive Disorders \[Youth\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__dep__pres__sx_mean`
+#' KSADS - Depressive Disorders \[Youth\] (Symptom - Present): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__dep__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 17 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__dep__pres__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__dep__pres__sx_mean",
+  max_na = 3,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__dep__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__dep__past__sx_mean
+#' @format vars_mh_y_ksads__dep__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__dep__past__sx_mean`
+vars_mh_y_ksads__dep__past__sx <- c(
+  "mh_y_ksads__dep__anhed__past_sx",
+  "mh_y_ksads__dep__appdecr__past_sx",
+  "mh_y_ksads__dep__conc__past_sx",
+  "mh_y_ksads__dep__fatig__past_sx",
+  "mh_y_ksads__dep__glt__past_sx",
+  "mh_y_ksads__dep__hplss__past_sx",
+  "mh_y_ksads__dep__hyprsom__past_sx",
+  "mh_y_ksads__dep__incapp__past_sx",
+  "mh_y_ksads__dep__indec__past_sx",
+  "mh_y_ksads__dep__insom__past_sx",
+  "mh_y_ksads__dep__irrit__past_sx",
+  "mh_y_ksads__dep__mood__past_sx",
+  "mh_y_ksads__dep__psymot__agit__past_sx",
+  "mh_y_ksads__dep__psymot__rtrd__past_sx",
+  "mh_y_ksads__dep__slfestmdecr__past_sx",
+  "mh_y_ksads__dep__wghtgain__past_sx",
+  "mh_y_ksads__dep__wghtloss__past_sx"
+)
+
+#' Compute "KSADS - Depressive Disorders \[Youth\] (Symptom - Past): Mean "
+#' @description
+#' Computes the summary score `mh_y_ksads__dep__past__sx_mean`
+#' KSADS - Depressive Disorders \[Youth\] (Symptom - Past): Mean
+#' \[Validation: No more than 3 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__dep__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 3 of 17 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__dep__past__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__dep__past__sx_mean",
+  max_na = 3,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__dep__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_y_ksads__dep
+#' @description
+#' This function computes all summary scores for the mh_y_ksads__dep table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__dep_all <- function(data) {
+  data |>
+    compute_mh_y_ksads__dep__past__sx_mean() |>
+    compute_mh_y_ksads__dep__pres__sx_mean()
+}
+
+# mh_y_ksads__dmdd ------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__dmdd__sx_mean
+#' @format vars_mh_y_ksads__dmdd__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__dmdd__sx_mean`
+vars_mh_y_ksads__dmdd__sx <- c(
+  "mh_y_ksads__dmdd__outbrst__3perwk_sx"
+)
+
+#' Compute "KSADS - Disruptive Mood Dysregulation Disorder \[Youth\] (Symptom):
+#' Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__dmdd__sx_mean`
+#' KSADS - Disruptive Mood Dysregulation Disorder \[Youth\] (Symptom): Mean
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__dmdd__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 1 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__dmdd__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__dmdd__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__dmdd__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_y_ksads__dep
+#' @description
+#' This function computes all summary scores for the mh_y_ksads__dep table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__dmdd_all <- function(data) {
+  data |>
+    compute_mh_y_ksads__dmdd__sx_mean()
+}
+
+# mh_y_ksads__ed ----------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__ed__pres__sx_mean
+#' @format vars_mh_y_ksads__ed__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__ed__pres__sx_mean`
+vars_mh_y_ksads__ed__pres__sx <- c(
+  "mh_y_ksads__ed__binge__distrs__pres_sx",
+  "mh_y_ksads__ed__binge__pres_sx",
+  "mh_y_ksads__ed__compbehav__pres_sx",
+  "mh_y_ksads__ed__emac__pres_sx",
+  "mh_y_ksads__ed__fear__obese__pres_sx",
+  "mh_y_ksads__ed__slfwrth__pres_sx",
+  "mh_y_ksads__ed__wghtcntrl__oth__pres_sx",
+  "mh_y_ksads__ed__wghtcntrl__vom__pres_sx"
+)
+
+#' Compute "KSADS - Eating Disorders \[Youth\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__ed__pres__sx_mean`
+#' KSADS - Eating Disorders \[Youth\] (Symptom - Present): Mean
+#' \[Validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__ed__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 8 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__ed__pres__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__ed__pres__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__ed__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__ed__past__sx_mean
+#' @format vars_mh_y_ksads__ed__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__ed__past__sx_mean`
+vars_mh_y_ksads__ed__past__sx <- c(
+  "mh_y_ksads__ed__binge__distrs__past_sx",
+  "mh_y_ksads__ed__binge__past_sx",
+  "mh_y_ksads__ed__compbehav__past_sx",
+  "mh_y_ksads__ed__emac__past_sx",
+  "mh_y_ksads__ed__fear__obese__past_sx",
+  "mh_y_ksads__ed__slfwrth__past_sx",
+  "mh_y_ksads__ed__wghtcntrl__oth__past_sx",
+  "mh_y_ksads__ed__wghtcntrl__vom__past_sx"
+)
+
+#' Compute "KSADS - Eating Disorders \[Youth\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__ed__past__sx_mean`
+#' KSADS - Eating Disorders \[Youth\] (Symptom - Past): Mean
+#' \[Validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__ed__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 8 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__ed__past__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__ed__past__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__ed__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_y_ksads__ed
+#' @description
+#' This function computes all summary scores for the mh_y_ksads__ed table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__ed_all <- function(data) {
+  data |>
+    compute_mh_y_ksads__ed__past__sx_mean() |>
+    compute_mh_y_ksads__ed__pres__sx_mean()
+}
+
+
+# mh_y_ksads__gad -------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__gad__pres__sx_mean
+#' @format vars_mh_y_ksads__gad__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__gad__pres__sx_mean`
+vars_mh_y_ksads__gad__pres__sx <- c(
+  "mh_y_ksads__gad__worry__6mo__pres_sx",
+  "mh_y_ksads__gad__worry__diffctrl__pres_sx",
+  "mh_y_ksads__gad__worry__excess__pres_sx",
+  "mh_y_ksads__gad__worry__multi__pres_sx"
+)
+
+#' Compute "KSADS - Generalized Anxiety Disorder \[Youth\] (Symptom - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__gad__pres__sx_mean`
+#' KSADS - Generalized Anxiety Disorder \[Youth\] (Symptom - Present): Mean
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__gad__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 4 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__gad__pres__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__gad__pres__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__gad__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__gad__past__sx_mean
+#' @format vars_mh_y_ksads__gad__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__gad__past__sx_mean`
+vars_mh_y_ksads__gad__past__sx <- c(
+  "mh_y_ksads__gad__worry__6mo__past_sx",
+  "mh_y_ksads__gad__worry__diffctrl__past_sx",
+  "mh_y_ksads__gad__worry__excess__past_sx",
+  "mh_y_ksads__gad__worry__multi__past_sx"
+)
+
+#' Compute "KSADS - Generalized Anxiety Disorder \[Youth\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__gad__past__sx_mean`
+#' KSADS - Generalized Anxiety Disorder \[Youth\] (Symptom - Past): Mean
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__gad__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 4 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__gad__past__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__gad__past__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__gad__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_y_ksads__gad
+#' @description
+#' This function computes all summary scores for the mh_y_ksads__gad table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__gad_all <- function(data) {
+  data |>
+    compute_mh_y_ksads__gad__past__sx_mean() |>
+    compute_mh_y_ksads__gad__pres__sx_mean()
+}
+
+# mh_y_ksads__ocd -------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__ocd__pres__sx_mean
+#' @format vars_mh_y_ksads__ocd__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__ocd__pres__sx_mean`
+vars_mh_y_ksads__ocd__pres__sx <- c(
+  "mh_y_ksads__ocd__compuls__pres_sx",
+  "mh_y_ksads__ocd__compuls__prvntanx__pres_sx",
+  "mh_y_ksads__ocd__compuls__tcnsm__pres_sx",
+  "mh_y_ksads__ocd__obsess__intru__pres_sx",
+  "mh_y_ksads__ocd__obsess__pres_sx",
+  "mh_y_ksads__ocd__obsess__tcnsm__pres_sx",
+  "mh_y_ksads__ocd__suprstho__pres_sx"
+)
+
+#' Compute "KSADS - Obsessive Compulsive Disorder \[Youth\] (Symptom - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__ocd__pres__sx_mean`
+#' KSADS - Obsessive Compulsive Disorder \[Youth\] (Symptom - Present): Mean
+#' \[Validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__ocd__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 7 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__ocd__pres__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__ocd__pres__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__ocd__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__ocd__past__sx_mean
+#' @format vars_mh_y_ksads__ocd__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__ocd__past__sx_mean`
+vars_mh_y_ksads__ocd__past__sx <- c(
+  "mh_y_ksads__ocd__compuls__past_sx",
+  "mh_y_ksads__ocd__compuls__prvntanx__past_sx",
+  "mh_y_ksads__ocd__compuls__tcnsm__past_sx",
+  "mh_y_ksads__ocd__obsess__intru__past_sx",
+  "mh_y_ksads__ocd__obsess__past_sx",
+  "mh_y_ksads__ocd__obsess__tcnsm__past_sx",
+  "mh_y_ksads__ocd__suprstho__past_sx"
+)
+
+#' Compute "KSADS - Obsessive Compulsive Disorder \[Youth\] (Symptom - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__ocd__past__sx_mean`
+#' KSADS - Obsessive Compulsive Disorder \[Youth\] (Symptom - Past): Mean
+#' \[Validation: No more than 1 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__ocd__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 1 of 7 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__ocd__past__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__ocd__past__sx_mean",
+  max_na = 1,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__ocd__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_y_ksads__ocd
+#' @description
+#' This function computes all summary scores for the mh_y_ksads__ocd table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__ocd_all <- function(data) {
+  data |>
+    compute_mh_y_ksads__ocd__past__sx_mean() |>
+    compute_mh_y_ksads__ocd__pres__sx_mean()
+}
+
+# mh_y_ksads__panic -----------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__panic__pres__sx_mean
+#' @format vars_mh_y_ksads__panic__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__panic__pres__sx_mean`
+vars_mh_y_ksads__panic__pres__sx <- c(
+  "mh_y_ksads__panic__attack__maladp__pres_sx",
+  "mh_y_ksads__panic__attack__pres_sx",
+  "mh_y_ksads__panic__sympt__pres_sx",
+  "mh_y_ksads__panic__worry__attack__pres_sx"
+)
+
+#' Compute "KSADS - Panic Disorder \[Youth\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__panic__pres__sx_mean`
+#' KSADS - Panic Disorder \[Youth\] (Symptom - Present): Mean
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__panic__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 4 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__panic__pres__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__panic__pres__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__panic__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__panic__past__sx_mean
+#' @format vars_mh_y_ksads__panic__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__panic__past__sx_mean`
+vars_mh_y_ksads__panic__past__sx <- c(
+  "mh_y_ksads__panic__attack__maladp__past_sx",
+  "mh_y_ksads__panic__attack__past_sx",
+  "mh_y_ksads__panic__sympt__past_sx",
+  "mh_y_ksads__panic__worry__attack__past_sx"
+)
+
+#' Compute "KSADS - Panic Disorder \[Youth\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__panic__past__sx_mean`
+#' KSADS - Panic Disorder \[Youth\] (Symptom - Past): Mean
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__panic__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 4 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__panic__past__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__panic__past__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__panic__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_y_ksads__panic
+#' @description
+#' This function computes all summary scores for the mh_y_ksads__panic table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__panic_all <- function(data) {
+  data |>
+    compute_mh_y_ksads__panic__past__sx_mean() |>
+    compute_mh_y_ksads__panic__pres__sx_mean()
+}
+
+# mh_y_ksads__ptsd ------------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__ptsd__pres__sx_mean
+#' @format vars_mh_y_ksads__ptsd__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__ptsd__pres__sx_mean`
+vars_mh_y_ksads__ptsd__pres__sx <- c(
+  "mh_y_ksads__ptsd__anhed__pres_sx",
+  "mh_y_ksads__ptsd__avoid__extrmnd__pres_sx",
+  "mh_y_ksads__ptsd__avoid__trmatho__pres_sx",
+  "mh_y_ksads__ptsd__concprob__pres_sx",
+  "mh_y_ksads__ptsd__depersnl__pres_sx",
+  "mh_y_ksads__ptsd__derealztn__pres_sx",
+  "mh_y_ksads__ptsd__detach__pres_sx",
+  "mh_y_ksads__ptsd__distortcog__cause__pres_sx",
+  "mh_y_ksads__ptsd__distortcog__consq__pres_sx",
+  "mh_y_ksads__ptsd__emot__neg__pres_sx",
+  "mh_y_ksads__ptsd__emot__nopos__pres_sx",
+  "mh_y_ksads__ptsd__extrmnd__distrs__pres_sx",
+  "mh_y_ksads__ptsd__flshbck__pres_sx",
+  "mh_y_ksads__ptsd__hyprvigl__pres_sx",
+  "mh_y_ksads__ptsd__intrmnd__distrs__pres_sx",
+  "mh_y_ksads__ptsd__irrit__pres_sx",
+  "mh_y_ksads__ptsd__memloss__pres_sx",
+  "mh_y_ksads__ptsd__negblf__pres_sx",
+  "mh_y_ksads__ptsd__nghtmr__pres_sx",
+  "mh_y_ksads__ptsd__physreact__pres_sx",
+  "mh_y_ksads__ptsd__rckls__pres_sx",
+  "mh_y_ksads__ptsd__sleepdistb__pres_sx",
+  "mh_y_ksads__ptsd__startle__pres_sx",
+  "mh_y_ksads__ptsd__trmatho__intru__pres_sx"
+)
+
+#' Compute "KSADS - Post-Traumatic Stress Disorder \[Youth\] (Symptom - Present):
+#' Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__ptsd__pres__sx_mean`
+#' KSADS - Post-Traumatic Stress Disorder \[Youth\] (Symptom - Present): Mean
+#' \[Validation: No more than 4 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__ptsd__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 4 of 24 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__ptsd__pres__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__ptsd__pres__sx_mean",
+  max_na = 4,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__ptsd__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__ptsd__past__sx_mean
+#' @format vars_mh_y_ksads__ptsd__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__ptsd__past__sx_mean`
+vars_mh_y_ksads__ptsd__past__sx <- c(
+  "mh_y_ksads__ptsd__anhed__past_sx",
+  "mh_y_ksads__ptsd__avoid__extrmnd__past_sx",
+  "mh_y_ksads__ptsd__avoid__trmatho__past_sx",
+  "mh_y_ksads__ptsd__concprob__past_sx",
+  "mh_y_ksads__ptsd__depersnl__past_sx",
+  "mh_y_ksads__ptsd__derealztn__past_sx",
+  "mh_y_ksads__ptsd__detach__past_sx",
+  "mh_y_ksads__ptsd__distortcog__cause__past_sx",
+  "mh_y_ksads__ptsd__distortcog__consq__past_sx",
+  "mh_y_ksads__ptsd__emot__neg__past_sx",
+  "mh_y_ksads__ptsd__emot__nopos__past_sx",
+  "mh_y_ksads__ptsd__extrmnd__distrs__past_sx",
+  "mh_y_ksads__ptsd__flshbck__past_sx",
+  "mh_y_ksads__ptsd__hyprvigl__past_sx",
+  "mh_y_ksads__ptsd__intrmnd__distrs__past_sx",
+  "mh_y_ksads__ptsd__irrit__past_sx",
+  "mh_y_ksads__ptsd__memloss__past_sx",
+  "mh_y_ksads__ptsd__negblf__past_sx",
+  "mh_y_ksads__ptsd__nghtmr__past_sx",
+  "mh_y_ksads__ptsd__physreact__past_sx",
+  "mh_y_ksads__ptsd__rckls__past_sx",
+  "mh_y_ksads__ptsd__sleepdistb__past_sx",
+  "mh_y_ksads__ptsd__startle__past_sx",
+  "mh_y_ksads__ptsd__trmatho__intru__past_sx"
+)
+
+#' Compute "KSADS - Post-Traumatic Stress Disorder \[Youth\] (Symptom - Past):
+#' Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__ptsd__past__sx_mean`
+#' KSADS - Post-Traumatic Stress Disorder \[Youth\] (Symptom - Past): Mean
+#' \[Validation: No more than 4 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__ptsd__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 4 of 24 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__ptsd__past__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__ptsd__past__sx_mean",
+  max_na = 4,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__ptsd__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_y_ksads__ptsd
+#' @description
+#' This function computes all summary scores for the mh_y_ksads__ptsd table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__ptsd_all <- function(data) {
+  data |>
+    compute_mh_y_ksads__ptsd__past__sx_mean() |>
+    compute_mh_y_ksads__ptsd__pres__sx_mean()
+}
+
+# mh_y_ksads__sleep ----------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__sleep__pres__sx_mean
+#' @format vars_mh_y_ksads__sleep__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__sleep__pres__sx_mean`
+vars_mh_y_ksads__sleep__pres__sx <- c(
+  "mh_y_ksads__sleep__insom__pres_sx"
+)
+
+#' Compute "KSADS - Sleep Problems \[Youth\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__sleep__pres__sx_mean`
+#' KSADS - Sleep Problems \[Youth\] (Symptom - Present): Mean
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__sleep__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 1 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__sleep__pres__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__sleep__pres__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__sleep__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__sleep__past__sx_mean
+#' @format vars_mh_y_ksads__sleep__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__sleep__past__sx_mean`
+vars_mh_y_ksads__sleep__past__sx <- c(
+  "mh_y_ksads__sleep__insom__past_sx"
+)
+
+#' Compute "KSADS - Sleep Problems \[Youth\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__sleep__past__sx_mean`
+#' KSADS - Sleep Problems \[Youth\] (Symptom - Past): Mean
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__sleep__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 1 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__sleep__past__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__sleep__past__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__sleep__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_y_ksads__sleep
+#' @description
+#' This function computes all summary scores for the mh_y_ksads__sleep table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__sleep_all <- function(data) {
+  data |>
+    compute_mh_y_ksads__sleep__past__sx_mean() |>
+    compute_mh_y_ksads__sleep__pres__sx_mean()
+}
+
+# mh_y_ksads__socanx ---------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__socanx__pres__sx_mean
+#' @format vars_mh_y_ksads__socanx__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__socanx__pres__sx_mean`
+vars_mh_y_ksads__socanx__pres__sx <- c(
+  "mh_y_ksads__socanx__anx__pres_sx",
+  "mh_y_ksads__socanx__avoid__pres_sx",
+  "mh_y_ksads__socanx__fear__pres_sx"
+)
+
+#' Compute "KSADS - Social Anxiety Disorder \[Youth\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__socanx__pres__sx_mean`
+#' KSADS - Social Anxiety Disorder \[Youth\] (Symptom - Present): Mean
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__socanx__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 3 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__socanx__pres__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__socanx__pres__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__socanx__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__socanx__past__sx_mean
+#' @format vars_mh_y_ksads__socanx__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__socanx__past__sx_mean`
+vars_mh_y_ksads__socanx__past__sx <- c(
+  "mh_y_ksads__socanx__anx__past_sx",
+  "mh_y_ksads__socanx__avoid__past_sx",
+  "mh_y_ksads__socanx__fear__past_sx"
+)
+
+#' Compute "KSADS - Social Anxiety Disorder \[Youth\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__socanx__past__sx_mean`
+#' KSADS - Social Anxiety Disorder \[Youth\] (Symptom - Past): Mean
+#' \[Validation: No more than 0 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__socanx__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 0 of 3 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__socanx__past__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__socanx__past__sx_mean",
+  max_na = 0,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__socanx__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_y_ksads__socanx
+#' @description
+#' This function computes all summary scores for the mh_y_ksads__socanx table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__socanx_all <- function(data) {
+  data |>
+    compute_mh_y_ksads__socanx__past__sx_mean() |>
+    compute_mh_y_ksads__socanx__pres__sx_mean()
+}
+
+# mh_y_ksads__suic -----------------------------------------------------
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__suic__pres__sx_mean
+#' @format vars_mh_y_ksads__suic__pres__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__suic__pres__sx_mean`
+vars_mh_y_ksads__suic__pres__sx <- c(
+  "mh_y_ksads__suic__slfinj__pres_sx",
+  "mh_y_ksads__suic__slfinj__nointnt__pres_sx",
+  "mh_y_ksads__suic__slfinj__intnt__pres_sx",
+  "mh_y_ksads__suic__slfinj__psbldie__pres_sx",
+  "mh_y_ksads__suic__idea__pres_sx",
+  "mh_y_ksads__suic__intnt__pres_sx",
+  "mh_y_ksads__suic__mthd__pres_sx",
+  "mh_y_ksads__suic__plan__pres_sx",
+  "mh_y_ksads__suic__prep__pres_sx",
+  "mh_y_ksads__suic__attmpt__pres_sx",
+  "mh_y_ksads__suic__attmpt__intrpt__pres_sx",
+  "mh_y_ksads__suic__attmpt__psbldie__pres_sx",
+  "mh_y_ksads__suic__wishdead__pres_sx"
+)
+
+#' Compute "KSADS - Suicidality \[Youth\] (Symptom - Present): Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__suic__pres__sx_mean`
+#' KSADS - Suicidality \[Youth\] (Symptom - Present): Mean
+#' \[Validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__suic__pres__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 13 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__suic__pres__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__suic__pres__sx_mean",
+  max_na = 2,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__suic__pres__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' @export
+#' @autoglobal
+#' @rdname compute_mh_y_ksads__suic__past__sx_mean
+#' @format vars_mh_y_ksads__suic__past__sx is a character vector
+#' of all column names used to compute summary score of
+#' `mh_y_ksads__suic__past__sx_mean`
+vars_mh_y_ksads__suic__past__sx <- c(
+  "mh_y_ksads__suic__slfinj__past_sx",
+  "mh_y_ksads__suic__slfinj__nointnt__past_sx",
+  "mh_y_ksads__suic__slfinj__intnt__past_sx",
+  "mh_y_ksads__suic__slfinj__psbldie__past_sx",
+  "mh_y_ksads__suic__idea__past_sx",
+  "mh_y_ksads__suic__intnt__past_sx",
+  "mh_y_ksads__suic__mthd__past_sx",
+  "mh_y_ksads__suic__plan__past_sx",
+  "mh_y_ksads__suic__prep__past_sx",
+  "mh_y_ksads__suic__attmpt__past_sx",
+  "mh_y_ksads__suic__attmpt__intrpt__past_sx",
+  "mh_y_ksads__suic__attmpt__psbldie__past_sx",
+  "mh_y_ksads__suic__wishdead__past_sx"
+)
+
+#' Compute "KSADS - Suicidality \[Youth\] (Symptom - Past): Mean"
+#' @description
+#' Computes the summary score `mh_y_ksads__suic__past__sx_mean`
+#' KSADS - Suicidality \[Youth\] (Symptom - Past): Mean
+#' \[Validation: No more than 2 missing or declined\]
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_mh_y_ksads__suic__past__sx |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 555
+#'
+#' - *Validation criterion:* maximally 2 of 13 items missing
+#'
+#' @inherit ss_mean_ksads params return details
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__suic__past__sx_mean <- function(
+  data,
+  name = "mh_y_ksads__suic__past__sx_mean",
+  max_na = 2,
+  exclude = c("555"),
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean_ksads(
+      name    = name,
+      vars    = vars_mh_y_ksads__suic__past__sx,
+      max_na  = max_na,
+      exclude = exclude,
+      combine = combine
+    )
+}
+
+#' Compute all summary scores for mh_y_ksads__suic
+#' @description
+#' This function computes all summary scores for the mh_y_ksads__suic table.
+#' Make sure to have all necessary columns in the data frame.
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @return tbl. The input data frame with the summary scores appended as new columns.
+#' @export
+#' @autoglobal
+compute_mh_y_ksads__suic_all <- function(data) {
+  data |>
+    compute_mh_y_ksads__suic__past__sx_mean() |>
+    compute_mh_y_ksads__suic__pres__sx_mean()
 }

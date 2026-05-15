@@ -29,6 +29,7 @@ Authors:
   \item Biplabendu Das \email{biplabendu.das@gmail.com} (\href{https://orcid.org/0000-0003-0855-262X}{ORCID})
   \item Sammy Berman \email{sammyberman@gmail.com} (\href{https://orcid.org/0000-0002-9803-019X}{ORCID})
   \item Laura Ziemer \email{lrziemer@gmail.com} (\href{https://orcid.org/0000-0003-0026-3823}{ORCID})
+  \item Shermaine Abad \email{shermaineabad@gmail.com} (\href{https://orcid.org/0009-0009-6013-9147}{ORCID})
 }
 
 }

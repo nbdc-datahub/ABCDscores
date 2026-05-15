@@ -4,7 +4,7 @@ Description: Provides functions to compute summary scores
   (besides proprietary ones) reported in the tabulated data resource that is
   released by the Adolescent Brain Cognitive Development (ABCD) study.
 URL: https://software.nbdc-datahub.org/ABCDscores/
-Version: 6.1.0
+Version: 7.0.0
 Authors@R: c(
   person(given = "Le",
          family = "Zhang",
@@ -35,7 +35,12 @@ Authors@R: c(
          family = "Ziemer",
          email = "lrziemer@gmail.com",
          role = c("aut"),
-         comment = c(ORCID = "0000-0003-0026-3823")))
+         comment = c(ORCID = "0000-0003-0026-3823")),
+  person(given = "Shermaine",
+         family = "Abad",
+         email = "shermaineabad@gmail.com",
+         role = c("aut"),
+         comment = c(ORCID = "0009-0009-6013-9147")))
 Depends:
   R (>= 4.3.0)
 Imports:
@@ -51,7 +56,9 @@ Imports:
     tibble,
     tidyr,
     stats,
-    utils
+    utils,
+    hms,
+    data.table
 Suggests: 
     arrow,
     rmarkdown,
@@ -65,10 +72,11 @@ License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE, roclets = c("collate", "namespace", "rd",
     "roxyglobals::global_roclet"))
-RoxygenNote: 7.3.2
 Config/testthat/edition: 3
 Config/Needs/website: rmarkdown
 VignetteBuilder: knitr
 LazyData: true
 Config/roxyglobals/filename: globals.R
 Config/roxyglobals/unique: TRUE
+Config/roxygen2/version: 8.0.0
+RoxygenNote: 7.3.3

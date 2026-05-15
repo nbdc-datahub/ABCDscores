@@ -7,7 +7,7 @@
 compute_mh_y_ysr__synd__soc_sum(
   data,
   name = "mh_y_ysr__synd__soc_sum",
-  max_na = 0,
+  max_na = 2,
   exclude = c("777", "999"),
   combine = TRUE
 )
@@ -52,7 +52,7 @@ Youth Self Report [Youth] (Syndrome Scale -Social problems): Sum
 \item 777
 \item 999
 }
-\item \emph{Validation criterion:} maximally 0 of 11 items missing
+\item \emph{Validation criterion:} maximally 2 of 11 items missing
 }
 }
 \examples{

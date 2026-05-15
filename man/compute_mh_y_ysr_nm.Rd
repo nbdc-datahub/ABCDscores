@@ -72,14 +72,12 @@ Youth Self Report [Youth]: Number missing
 \item \code{mh_y_ysr__rule__cond_010}
 \item \code{mh_y_ysr__wthdep__dep_001}
 \item \code{mh_y_ysr__anxdep__dep_001}
-\item \code{mh_y_ysr__tho__dep_001}
 \item \code{mh_y_ysr__othpr__dep_001}
 \item \code{mh_y_ysr__anxdep__dep_002}
 \item \code{mh_y_ysr__anxdep__dep_003}
 \item \code{mh_y_ysr__som__dep_001}
 \item \code{mh_y_ysr__tho__dep_002}
 \item \code{mh_y_ysr__othpr__dep_002}
-\item \code{mh_y_ysr__anxdep__dep_004}
 \item \code{mh_y_ysr__tho__dep_003}
 \item \code{mh_y_ysr__wthdep__dep_002}
 \item \code{mh_y_ysr__wthdep__dep_003}
@@ -124,7 +122,6 @@ Youth Self Report [Youth]: Number missing
 \item \code{mh_y_ysr__othpr_004}
 \item \code{mh_y_ysr__othpr_005}
 \item \code{mh_y_ysr__othpr_006}
-\item \code{mh_y_ysr__othpr_007}
 \item \code{mh_y_ysr__soc_001}
 \item \code{mh_y_ysr__soc_002}
 \item \code{mh_y_ysr__soc_003}

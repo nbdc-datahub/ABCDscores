@@ -33,7 +33,7 @@ reactable_theme <- reactable::reactableTheme(
 
 ## Introduction
 
-The Timeline Followback (TLFB) [@Sobell1996] is a semi-structured interview method used to assess specific and quantified estimates of substance use over a specified period, approxiamtely the past 12 months in ABCD. It involves participants recalling their substance use while being guided by a Research Assistant (RA). The RA fills out a TLFB calendar, documenting all reports of substance use and helping participants ground their responses to specific dates and events, ensuring accurate reporting of substance use patterns.
+The Timeline Followback (TLFB) [@Sobell1996] is a semi-structured interview method used to assess specific and quantified estimates of substance use over a specified period, approximately the past 12 months in ABCD. It involves participants recalling their substance use while being guided by a Research Assistant (RA). The RA fills out a TLFB calendar, documenting all reports of substance use and helping participants ground their responses to specific dates and events, ensuring accurate reporting of substance use patterns.
 
 ## TLFB raw data
 
@@ -78,6 +78,7 @@ The basic functions are:
 - `compute_tlfb_maxdose()`: Compute maximum dose of substance use.
 - `compute_tlfb_mean()`: Compute mean dose of substance use.
 - `compute_tlfb_totdose()`: Compute total dose of substance use.
+- `compute_tlfb_totdose_sum()`: Compute sum total dose of substance use.
 - `compute_tlfb_ud()`: Compute number of substance use days.
 
 The functions take the following parameters:
@@ -85,12 +86,12 @@ The functions take the following parameters:
 - `substance` One or several substance(s) to compute the score for.
 - `period`: The period (detailed, estimated, or both) for which the score is computed for.
 - `days`: Number of days before the TLFB interview to consider.
-- `wknd`: Whether the score should be computed only for weekends days, only for week days, or all days
+- `wknd`: Whether the score should be computed only for weekend days, only for week days, or all days
 - `co_use`: Only computes score for days on which the substance was taken with specified other substance(s).
 - `binge`: Allows to specify binge thresholds to apply, either general or by sex.
 - `position`: Whether to consider the first or last substance use
 
-Not all parameters are used by all functions and some parameters are mutally exclusive (see the function documentation for more details). The following gives an overview of which function can use which parameter:
+Not all parameters are used by all functions and some parameters are mutually exclusive (see the function documentation for more details). The following gives an overview of which function can use which parameter:
 
 ```{r, echo=FALSE}
 tribble(
@@ -100,6 +101,7 @@ tribble(
   "compute_tlfb_maxdose()", trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), NA,
   "compute_tlfb_mean()", trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), NA,
   "compute_tlfb_totdose()", trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), NA,
+  "compute_tlfb_totdose_sum()", trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), NA,
   "compute_tlfb_ud()", trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), trans_uni("<U+2713>"), NA
 ) |>
   reactable::reactable(
@@ -397,3 +399,5 @@ data_tlfb |>
     desc(alc_wks_binge)
   )
 ```
+
+## References

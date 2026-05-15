@@ -5,7 +5,7 @@
 \alias{vars_fc_p_vs__famil__v01}
 \alias{compute_fc_p_vs__famil_mean__v01}
 \title{Compute "Values Scale [Parent] (Familism):
-Mean - Version 1 (Year 5 onwards)"}
+Mean - Version 1 (Subscales: supp, ref)"}
 \format{
 a character vector of all column names
 used to compute summary score of \code{fc_p_vs__famil_mean__v01} and
@@ -44,7 +44,7 @@ a new column.
 }
 \description{
 Computes the summary score \code{fc_p_vs__famil_mean__v01}
-(Values Scale [Parent] (Familism): Mean - Version 1 (Year 5 onwards))
+(Values Scale [Parent] (Familism): Mean - Version 1 (Subscales: supp, ref))
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{
@@ -68,6 +68,7 @@ Computes the summary score \code{fc_p_vs__famil_mean__v01}
 \item \emph{Validation criterion:}
 \itemize{
 \item maximally 2 of 11 items missing
+\item all sub-scales can be calculated
 }
 }
 }

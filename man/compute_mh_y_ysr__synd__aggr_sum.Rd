@@ -8,7 +8,7 @@ Sum"}
 compute_mh_y_ysr__synd__aggr_sum(
   data,
   name = "mh_y_ysr__synd__aggr_sum",
-  max_na = 1,
+  max_na = 3,
   exclude = c("777", "999"),
   combine = TRUE
 )
@@ -59,7 +59,7 @@ Youth Self Report [Youth] (Syndrome Scale - Aggressive behavior): Sum
 \item 777
 \item 999
 }
-\item \emph{Validation criterion:} maximally 1 of 17 items missing
+\item \emph{Validation criterion:} maximally 3 of 17 items missing
 }
 }
 \examples{

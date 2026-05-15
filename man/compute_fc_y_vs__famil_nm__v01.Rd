@@ -8,7 +8,7 @@
 compute_fc_y_vs__famil_nm__v01(
   data,
   name = "fc_y_vs__famil_nm__v01",
-  exclude = c("777", "999"),
+  exclude = c("777"),
   combine = TRUE
 )
 }
@@ -51,7 +51,6 @@ Computes the summary score \code{fc_y_vs__famil_nm__v01}
 \item \emph{Excluded values:}
 \itemize{
 \item 777
-\item 999
 }
 }
 }

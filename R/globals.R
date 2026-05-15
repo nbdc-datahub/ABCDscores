@@ -99,11 +99,76 @@ utils::globalVariables(c(
   # <compute_mh_y_pps__severity_nm>
   # <compute_mh_y_pps__severity_score>
   # <compute_mh_y_pps__severity_mean>
+  # <compute_mh_y_pps__dist__curr_score>
+  # <compute_mh_y_pps__dist__pers_score>
+  # <compute_mh_y_ppsss__dist__curr_count>
+  # <compute_mh_y_ppsss__dist__pers_count>
+  # <compute_mh_y_ppsss__dist__curr_first>
+  # <compute_mh_y_ppsss__dist__pers_first>
+  # <compute_mh_y_ppsss__dist__curr_ever>
+  # <compute_mh_y_ppsss__dist__pers_ever>
   # <product_vars>
   # <ss_mean_mh_ple>
   # <ss_sum_mh_ple>
   # <ss_nm_mh_ple>
+  # <ss_mean_ksads>
   # <compute_mh_p_abcl__cg2_sex>
+  # <compute_mh_y_ysr__dsm__adhd_sum>
+  # <compute_mh_y_ysr__dsm__adhd_tscore>
+  # <compute_mh_y_ysr__dsm__anx_sum>
+  # <compute_mh_y_ysr__dsm__anx_tscore>
+  # <compute_mh_y_ysr__dsm__cond_sum>
+  # <compute_mh_y_ysr__dsm__cond_tscore>
+  # <compute_mh_y_ysr__dsm__dep_sum>
+  # <compute_mh_y_ysr__dsm__dep_tscore>
+  # <compute_mh_y_ysr__dsm__opp_sum>
+  # <compute_mh_y_ysr__dsm__opp_tscore>
+  # <compute_mh_y_ysr__dsm__somat_sum>
+  # <compute_mh_y_ysr__dsm__somat_tscore>
+  # <compute_mh_y_ysr__pos_sum>
+  # <compute_mh_y_ysr__pos_tscore>
+  # <compute_mh_y_ysr__synd__aggr_sum>
+  # <compute_mh_y_ysr__synd__aggr_tscore>
+  # <compute_mh_y_ysr__synd__anxdep_sum>
+  # <compute_mh_y_ysr__synd__anxdep_tscore>
+  # <compute_mh_y_ysr__synd__attn_sum>
+  # <compute_mh_y_ysr__synd__attn_tscore>
+  # <compute_mh_y_ysr__synd__ext_sum>
+  # <compute_mh_y_ysr__synd__ext_tscore>
+  # <compute_mh_y_ysr__synd__int_sum>
+  # <compute_mh_y_ysr__synd__int_tscore>
+  # <compute_mh_y_ysr__synd__othpr_sum>
+  # <compute_mh_y_ysr__synd__rule_sum>
+  # <compute_mh_y_ysr__synd__rule_tscore>
+  # <compute_mh_y_ysr__synd__soc_sum>
+  # <compute_mh_y_ysr__synd__soc_tscore>
+  # <compute_mh_y_ysr__synd__som_sum>
+  # <compute_mh_y_ysr__synd__som_tscore>
+  # <compute_mh_y_ysr__synd__tho_sum>
+  # <compute_mh_y_ysr__synd__tho_tscore>
+  # <compute_mh_y_ysr__synd__wthdep_sum>
+  # <compute_mh_y_ysr__synd__wthdep_tscore>
+  # <compute_famhx_endorsement>
+  # <compute_mh_p_famhx__alc__moth__fath_indicator>
+  # <compute_mh_p_famhx__drg__moth__fath_indicator>
+  # <compute_mh_p_famhx__dep__moth__fath_indicator>
+  # <compute_mh_p_famhx__mania__moth__fath_indicator>
+  # <compute_mh_p_famhx__halluc__moth__fath_indicator>
+  # <compute_mh_p_famhx__troub__moth__fath_indicator>
+  # <compute_mh_p_famhx__nerve__moth__fath_indicator>
+  # <compute_mh_p_famhx__doc__moth__fath_indicator>
+  # <compute_mh_p_famhx__hosp__moth__fath_indicator>
+  # <compute_mh_p_famhx__suic__moth__fath_indicator>
+  # <compute_mh_p_famhx__alc__moth__fath_score>
+  # <compute_mh_p_famhx__drg__moth__fath_score>
+  # <compute_mh_p_famhx__dep__moth__fath_score>
+  # <compute_mh_p_famhx__mania__moth__fath_score>
+  # <compute_mh_p_famhx__halluc__moth__fath_score>
+  # <compute_mh_p_famhx__troub__moth__fath_score>
+  # <compute_mh_p_famhx__nerve__moth__fath_score>
+  # <compute_mh_p_famhx__doc__moth__fath_score>
+  # <compute_mh_p_famhx__hosp__moth__fath_score>
+  # <compute_mh_p_famhx__suic__moth__fath_score>
   # <compute_nc_p_bdefs__sympt_count>
   # <compute_nc_y_ehis_score>
   # <compute_nt_p_yst__screen__wkdy_nm>
@@ -114,6 +179,14 @@ utils::globalVariables(c(
   # <compute_nt_y_stq__screen__wkdy_sum>
   # <compute_nt_y_stq__screen__wknd_nm>
   # <compute_nt_y_stq__screen__wknd_sum>
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <identify_hr_exclusions>
+  # <identify_hr_recovery>
+  # <add_sleep_flags>
+  # <flag_implausible_sleep>
   # <compute_ph_p_dhx_birthweight>
   # <compute_ph_p_otbi__loc__30m_count>
   # <compute_ph_p_otbi__loc__30m_nm>
@@ -172,6 +245,12 @@ utils::globalVariables(c(
   # <compute_ph_y_mctq__socjl_absl>
   # <compute_ph_y_mctq_outlier>
   # <convert_time_mctq>
+  # <compute_ph_p_anthr__fath_height__in>
+  # <compute_ph_p_anthr__fath_height__cm>
+  # <compute_ph_p_anthr__moth_height__in>
+  # <compute_ph_p_anthr__moth_height__cm>
+  # <compute_ph_meds_catg_all>
+  # <compute_ph_meds_estuse_flags_all>
   # <compute_su_y_alchss_count>
   # <compute_su_y_mjsre_sum>
   # <compute_su_y_nicsre__vape_sum>
@@ -191,10 +270,14 @@ utils::globalVariables(c(
   # <compute_tlfb_maxdose>
   # <compute_tlfb_mean>
   # <compute_tlfb_totdose>
+  # <compute_tlfb_totdose_sum>
   # <compute_tlfb_ud>
   # <compute_su_y_sui__onset_useage>
   # <compute_su_y_sui__reg_useage>
   # <compute_su_y_sui__last__day_count>
+  # <compute_ss_use_yn>
+  # <compute_ss_use_onset_event>
+  # <compute_ss_use_onset_age>
   # <ss_mean>
   # <ss_sum>
   # <ss_nm>
@@ -208,6 +291,7 @@ utils::globalVariables(c(
   # <combine_cols>
   # <combine_levels>
   # <check_assign_na>
+  # <combine_checkboxes>
   # <create_session_num>
   # <make_static>
   ":=",
@@ -221,6 +305,13 @@ utils::globalVariables(c(
   # <ss_count>
   # <get_tscore_tbl>
   ".",
+  # <compute_ss_use_yn>
+  # <compute_ss_use_onset_event>
+  # <compute_ss_use_onset_age>
+  ".env",
+  # <identify_hr_exclusions>
+  # <flag_implausible_sleep>
+  ".N",
   # <compute_su_y_sui__last__day_count>
   "ab_g_dyn__visit_dtt",
   # <compute_su_y_sui__onset_useage>
@@ -271,6 +362,14 @@ utils::globalVariables(c(
   "age_max",
   # <ss_tscore>
   "age_min",
+  # <compute_ss_use_onset_age>
+  "age_report",
+  # <compute_ss_use_onset_age>
+  "age_sui",
+  # <identify_hr_exclusions>
+  "bad_signal_day",
+  # <identify_hr_exclusions>
+  "bad_signal_sleep",
   # <compute_ph_p_dhx_birthweight>
   # <compute_ph_p_otbi__tbi1a>
   # <compute_ph_p_otbi__tbi1b>
@@ -279,6 +378,29 @@ utils::globalVariables(c(
   # <compute_ph_p_otbi__tbi4>
   # <compute_ph_p_otbi__tbi5>
   "baseline",
+  # <combine_checkboxes>
+  "bd_name",
+  # <combine_checkboxes>
+  "bd_value",
+  # <create_block_ranges>
+  # <add_sleep_flags>
+  "block_end",
+  # <create_block_ranges>
+  "block_id",
+  # <create_block_ranges>
+  # <add_sleep_flags>
+  "block_start",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "calendar_date",
+  # <compute_ph_meds_catg_all>
+  "category",
+  # <compute_ph_meds_estuse_flags_all>
+  "catg",
+  # <identify_hr_recovery>
+  "contiguous",
   # <compute_mh_p_ple__severity_sum>
   # <compute_mh_p_ple__severity_mean>
   # <compute_mh_p_ple__severity__good_sum>
@@ -352,6 +474,22 @@ utils::globalVariables(c(
   # <compute_mh_y_ple__exp__good_count__v03>
   # <compute_mh_y_ple__exp__bad_count__v03>
   "count_internal",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "day",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <compute_fitbit_score_steps>
+  "dt",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "dt_day",
   # <compute_tlfb_abst>
   # <filter_tlfb>
   "dt_tlfb",
@@ -364,6 +502,81 @@ utils::globalVariables(c(
   "dt_use",
   # <filter_tlfb>
   "dt_use_wknd",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <compute_fitbit_weekly_summary>
+  "dt_wknd",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <identify_hr_exclusions>
+  # <identify_hr_recovery>
+  # <compute_fitbit_score_steps>
+  # <compute_fitbit_intensity_scores>
+  # <create_sleep_indicator>
+  # <create_block_ranges>
+  # <compute_fitbit_min_totals>
+  # <compute_fitbit_score_minutes_exclusion>
+  # <add_sleep_flags>
+  # <join_sleep30_and_exclusions>
+  # <flag_implausible_sleep>
+  "dtt",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "dtt_end_bed",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "dtt_end_slp",
+  # <join_sleep30_and_exclusions>
+  "dtt_min",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "dtt_start_bed",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "dtt_start_slp",
+  # <add_sleep_flags>
+  # <compute_block_counts>
+  "duration_min",
+  # <add_sleep_flags>
+  "end_interval",
+  # <identify_hr_recovery>
+  "end_time",
+  # <identify_hr_recovery>
+  "ends_at_2359",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  "excl_min_lowhrate_actv",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  "excl_min_lowhrate_slp",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  "excl_min_nohrate_actv",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "excl_min_nohrate_slp",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  "excl_min_repeathrate_actv",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "excl_min_repeathrate_slp",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  "excl_min_total_actv",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "excl_min_total_slp",
   # <compute_mh_p_ple__severity__good_sum>
   # <compute_mh_p_ple__severity__good_mean>
   # <compute_mh_p_ple__severity__bad_sum>
@@ -409,12 +622,157 @@ utils::globalVariables(c(
   "fc_y_eut__ethn_nm_after",
   # <compute_fc_y_eut__ethn_nm>
   "fc_y_eut__ethn_nm_before",
+  # <identify_hr_exclusions>
+  "fill_value",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  "flg_30sec",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "flg_any",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "flg_slp",
+  # <prepare_data_sdsu>
+  "forecast_next_annual",
   # <ss_mean_mh_ple>
   # <ss_sum_mh_ple>
   # <ss_nm_mh_ple>
   "fork_vals",
   # <compute_ph_p_dhx_birthweight>
   "fouryear",
+  # <flag_implausible_sleep>
+  "gap",
+  # <create_block_ranges>
+  "gap_sec",
+  # <compute_ss_use_onset_age>
+  "has_age_fu",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <create_sleep_indicator>
+  "has_sleep_30",
+  # <identify_hr_exclusions>
+  "hr_exc_day",
+  # <identify_hr_exclusions>
+  # <add_sleep_flags>
+  "hr_exc_night",
+  # <identify_hr_exclusions>
+  "hr_filled",
+  # <identify_hr_exclusions>
+  "hr_for_repeat",
+  # <identify_hr_recovery>
+  "hr_missing",
+  # <identify_hr_exclusions>
+  "hr_missing_orig",
+  # <identify_hr_exclusions>
+  # <identify_hr_recovery>
+  # <compute_sleep_stage_hr>
+  "hrate",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <compute_fitbit_sleep_week>
+  "hrate_asleep_slp",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <compute_fitbit_sleep_week>
+  "hrate_awake_slp",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <compute_fitbit_sleep_week>
+  "hrate_deep_slp",
+  # <identify_hr_exclusions>
+  # <compute_fitbit_score_steps>
+  # <compute_fitbit_intensity_scores>
+  # <create_sleep_indicator>
+  # <create_block_ranges>
+  # <compute_fitbit_min_totals>
+  # <compute_fitbit_score_minutes_exclusion>
+  # <compute_sleep_ranges_waso>
+  # <compute_fitbit_sleep_hr_exclusions>
+  # <compute_sleep_stage_min>
+  # <compute_sleep_stage_hr>
+  "hrate_excluded",
+  # <identify_hr_exclusions>
+  # <compute_fitbit_score_minutes_exclusion>
+  # <compute_fitbit_sleep_hr_exclusions>
+  "hrate_hi",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <compute_fitbit_sleep_week>
+  "hrate_light_slp",
+  # <identify_hr_exclusions>
+  # <compute_fitbit_score_minutes_exclusion>
+  # <compute_fitbit_sleep_hr_exclusions>
+  "hrate_low",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "hrate_nap_slp",
+  # <identify_hr_exclusions>
+  # <compute_fitbit_score_minutes_exclusion>
+  # <flag_implausible_sleep>
+  # <compute_fitbit_sleep_hr_exclusions>
+  "hrate_no",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <compute_fitbit_sleep_week>
+  "hrate_rem_slp",
+  # <identify_hr_exclusions>
+  "hrate_repeat",
+  # <identify_hr_exclusions>
+  # <compute_fitbit_score_minutes_exclusion>
+  # <flag_implausible_sleep>
+  "hrate_repeat_actv",
+  # <identify_hr_exclusions>
+  "hrate_repeat_actv_init",
+  # <identify_hr_exclusions>
+  # <compute_fitbit_score_minutes_exclusion>
+  # <compute_fitbit_sleep_hr_exclusions>
+  "hrate_repeat_slp",
+  # <identify_hr_exclusions>
+  "hrate_repeat_slp_init",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <summarize_activity>
+  "hrate_rest_fitb",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <compute_fitbit_sleep_week>
+  "hrate_restless_slp",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "implaus",
+  # <flag_implausible_sleep>
+  "implausible_sleep",
+  # <compute_mh_p_famhx__alc__moth__fath_indicator>
+  # <compute_mh_p_famhx__drg__moth__fath_indicator>
+  # <compute_mh_p_famhx__alc__moth__fath_score>
+  # <compute_mh_p_famhx__drg__moth__fath_score>
+  "input_vars",
+  # <compute_fitbit_intensity_scores>
+  "intnst",
+  # <identify_hr_exclusions>
+  # <identify_hr_recovery>
+  # <compute_fitbit_score_steps>
+  # <compute_fitbit_intensity_scores>
+  # <create_block_ranges>
+  # <compute_fitbit_min_totals>
+  # <compute_fitbit_score_minutes_exclusion>
+  # <add_sleep_flags>
+  # <flag_implausible_sleep>
+  # <compute_fitbit_sleep_hr_exclusions>
+  # <compute_sleep_stage_min>
+  # <compute_sleep_stage_hr>
+  "is_slp",
+  # <add_sleep_flags>
+  "is_slp_original",
+  # <ss_mean_ksads>
+  "ksads_any_555",
+  # <prepare_data_sdsu>
+  "last_session_id",
   # <compute_ph_p_otbi__tbi1a>
   # <compute_ph_p_otbi__tbi1b>
   # <compute_ph_p_otbi__tbi2>
@@ -422,14 +780,286 @@ utils::globalVariables(c(
   # <compute_ph_p_otbi__tbi4>
   # <compute_ph_p_otbi__tbi5>
   "longitudinal",
+  # <add_sleep_flags>
+  # <compute_block_counts>
+  "main_block",
+  # <create_sleep_indicator>
+  # <create_block_ranges>
+  # <compute_fitbit_min_totals>
+  # <add_sleep_flags>
+  # <compute_sleep_ranges_waso>
+  # <compute_sleep_stage_min>
+  # <compute_sleep_stage_hr>
+  "main_slp",
+  # <compute_fitbit_activity_week>
+  "mean_mets_actv",
+  # <compute_fitbit_activity_week>
+  "mean_min_actv",
+  # <compute_fitbit_sleep_week>
+  "mean_min_asleep_slp",
+  # <compute_fitbit_activity_week>
+  "mean_min_intnst_light_actv",
+  # <compute_fitbit_activity_week>
+  "mean_min_intnst_mod_actv",
+  # <compute_fitbit_activity_week>
+  "mean_min_intnst_sed_actv",
+  # <compute_fitbit_activity_week>
+  "mean_min_intnst_vigor_actv",
+  # <compute_fitbit_sleep_week>
+  "mean_min_restless",
+  # <compute_fitbit_activity_week>
+  "mean_min_slp",
+  # <compute_fitbit_sleep_week>
+  "mean_min_slp_deep",
+  # <compute_fitbit_sleep_week>
+  "mean_min_slp_light",
+  # <compute_fitbit_sleep_week>
+  "mean_min_slp_rem",
+  # <compute_fitbit_sleep_week>
+  "mean_min_slp_total",
+  # <compute_fitbit_sleep_week>
+  "mean_min_wake",
+  # <compute_fitbit_sleep_week>
+  "mean_min_waso",
+  # <compute_fitbit_sleep_week>
+  "mean_n_waso",
+  # <compute_fitbit_activity_week>
+  "mean_rest_hrate_fitb",
+  # <compute_fitbit_activity_week>
+  "mean_steps_actv",
+  # <compute_fitbit_activity_week>
+  "mean_steps_fitb",
+  # <compute_fitbit_sleep_week>
+  "mean_t_end_bed",
+  # <compute_fitbit_sleep_week>
+  "mean_t_end_slp",
+  # <compute_fitbit_sleep_week>
+  "mean_t_start_bed",
+  # <compute_fitbit_sleep_week>
+  "mean_t_start_slp",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_intensity_scores>
+  "mets",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_intensity_scores>
+  # <summarize_activity>
+  "mets_actv",
+  # <compute_fitbit_intensity_scores>
+  "mets_dbl",
   # <compute_mh_y_pps__severity_nm>
   # <compute_mh_y_pps__severity_mean>
   "mh_y_pps__bother__yes_count_internal",
   # <compute_mh_y_pps__bother__yes_count>
   # <compute_mh_y_pps__bother__no_count>
   "mh_y_pps__bother_nm_internal",
+  # <compute_mh_y_pps__dist__pers_score>
+  # <compute_mh_y_ppsss__dist__curr_count>
+  # <compute_mh_y_ppsss__dist__curr_first>
+  "mh_y_pps__dist__curr_score_internal",
+  # <compute_mh_y_ppsss__dist__pers_count>
+  # <compute_mh_y_ppsss__dist__pers_first>
+  "mh_y_pps__dist__pers_score_internal",
+  # <compute_mh_y_pps__dist__curr_score>
+  "mh_y_pps__severity_score_internal",
+  # <compute_mh_y_pps__dist__curr_score>
+  "mh_y_pps__severity_score_z",
   # <compute_mh_y_pps__bother_nm>
   "mh_y_pps_count_internal",
+  # <compute_mh_y_ysr__synd__aggr_sum>
+  "mh_y_ysr_aggr_nm_internal",
+  # <compute_mh_y_ysr__synd__anxdep_sum>
+  # <compute_mh_y_ysr__synd__anxdep_tscore>
+  "mh_y_ysr_anxdep_nm_internal",
+  # <compute_mh_y_ysr__synd__attn_sum>
+  "mh_y_ysr_attn_nm_internal",
+  # <compute_mh_y_ysr__dsm__adhd_sum>
+  # <compute_mh_y_ysr__dsm__adhd_tscore>
+  "mh_y_ysr_dsm_adhd_nm_internal",
+  # <compute_mh_y_ysr__dsm__anx_sum>
+  # <compute_mh_y_ysr__dsm__anx_tscore>
+  "mh_y_ysr_dsm_anx_nm_internal",
+  # <compute_mh_y_ysr__dsm__cond_sum>
+  # <compute_mh_y_ysr__dsm__cond_tscore>
+  "mh_y_ysr_dsm_cond_nm_internal",
+  # <compute_mh_y_ysr__dsm__dep_sum>
+  # <compute_mh_y_ysr__dsm__dep_tscore>
+  "mh_y_ysr_dsm_dep_nm_internal",
+  # <compute_mh_y_ysr__dsm__opp_sum>
+  # <compute_mh_y_ysr__dsm__opp_tscore>
+  "mh_y_ysr_dsm_opp_nm_internal",
+  # <compute_mh_y_ysr__dsm__somat_sum>
+  # <compute_mh_y_ysr__dsm__somat_tscore>
+  "mh_y_ysr_dsm_somat_nm_internal",
+  # <compute_mh_y_ysr__synd__ext_sum>
+  # <compute_mh_y_ysr__synd__ext_tscore>
+  "mh_y_ysr_ext_nm_internal",
+  # <compute_mh_y_ysr__synd__int_sum>
+  # <compute_mh_y_ysr__synd__int_tscore>
+  "mh_y_ysr_int_nm_internal",
+  # <compute_mh_y_ysr__dsm__adhd_sum>
+  # <compute_mh_y_ysr__dsm__adhd_tscore>
+  # <compute_mh_y_ysr__dsm__anx_sum>
+  # <compute_mh_y_ysr__dsm__anx_tscore>
+  # <compute_mh_y_ysr__dsm__cond_sum>
+  # <compute_mh_y_ysr__dsm__cond_tscore>
+  # <compute_mh_y_ysr__dsm__dep_sum>
+  # <compute_mh_y_ysr__dsm__dep_tscore>
+  # <compute_mh_y_ysr__dsm__opp_sum>
+  # <compute_mh_y_ysr__dsm__opp_tscore>
+  # <compute_mh_y_ysr__dsm__somat_sum>
+  # <compute_mh_y_ysr__dsm__somat_tscore>
+  # <compute_mh_y_ysr__pos_sum>
+  # <compute_mh_y_ysr__pos_tscore>
+  # <compute_mh_y_ysr__synd__aggr_sum>
+  # <compute_mh_y_ysr__synd__aggr_tscore>
+  # <compute_mh_y_ysr__synd__anxdep_sum>
+  # <compute_mh_y_ysr__synd__anxdep_tscore>
+  # <compute_mh_y_ysr__synd__attn_sum>
+  # <compute_mh_y_ysr__synd__attn_tscore>
+  # <compute_mh_y_ysr__synd__ext_sum>
+  # <compute_mh_y_ysr__synd__ext_tscore>
+  # <compute_mh_y_ysr__synd__int_sum>
+  # <compute_mh_y_ysr__synd__int_tscore>
+  # <compute_mh_y_ysr__synd__othpr_sum>
+  # <compute_mh_y_ysr__synd__rule_sum>
+  # <compute_mh_y_ysr__synd__rule_tscore>
+  # <compute_mh_y_ysr__synd__soc_sum>
+  # <compute_mh_y_ysr__synd__soc_tscore>
+  # <compute_mh_y_ysr__synd__som_sum>
+  # <compute_mh_y_ysr__synd__som_tscore>
+  # <compute_mh_y_ysr__synd__tho_sum>
+  # <compute_mh_y_ysr__synd__tho_tscore>
+  # <compute_mh_y_ysr__synd__wthdep_sum>
+  # <compute_mh_y_ysr__synd__wthdep_tscore>
+  "mh_y_ysr_nm_internal",
+  # <compute_mh_y_ysr__synd__othpr_sum>
+  "mh_y_ysr_othpr_nm_internal",
+  # <compute_mh_y_ysr__pos_sum>
+  # <compute_mh_y_ysr__pos_tscore>
+  "mh_y_ysr_pos_nm_internal",
+  # <compute_mh_y_ysr__synd__rule_sum>
+  # <compute_mh_y_ysr__synd__rule_tscore>
+  "mh_y_ysr_rule_nm_internal",
+  # <compute_mh_y_ysr__synd__soc_sum>
+  # <compute_mh_y_ysr__synd__soc_tscore>
+  "mh_y_ysr_soc_nm_internal",
+  # <compute_mh_y_ysr__synd__som_sum>
+  # <compute_mh_y_ysr__synd__som_tscore>
+  "mh_y_ysr_som_nm_internal",
+  # <compute_mh_y_ysr__synd__tho_sum>
+  # <compute_mh_y_ysr__synd__tho_tscore>
+  "mh_y_ysr_tho_nm_internal",
+  # <compute_mh_y_ysr__synd__wthdep_sum>
+  # <compute_mh_y_ysr__synd__wthdep_tscore>
+  "mh_y_ysr_wthdep_nm_internal",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <summarize_activity>
+  "min_actv",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "min_asleep_slp",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "min_deep_slp",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "min_extra_nohrate_slp",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_intensity_scores>
+  # <summarize_activity>
+  "min_intnst_light_actv",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_intensity_scores>
+  "min_intnst_light_total",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_intensity_scores>
+  # <summarize_activity>
+  "min_intnst_mod_actv",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_intensity_scores>
+  "min_intnst_mod_total",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_intensity_scores>
+  # <summarize_activity>
+  "min_intnst_sed_actv",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_intensity_scores>
+  "min_intnst_sed_total",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_intensity_scores>
+  # <summarize_activity>
+  "min_intnst_vigor_actv",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_intensity_scores>
+  "min_intnst_vigor_total",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "min_light_slp",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "min_nap_slp",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "min_rem_slp",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "min_restless_slp",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <summarize_activity>
+  "min_slp",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  "min_total",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "min_total_slp",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "min_wake",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "min_waso",
+  # <compute_fitbit_weekly_summary>
+  # <compute_fitbit_activity_week>
+  # <compute_fitbit_sleep_week>
+  "n_day",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  "n_waso",
+  # <compute_fitbit_weekly_summary>
+  # <compute_fitbit_activity_week>
+  # <compute_fitbit_sleep_week>
+  "n_wkdy",
+  # <compute_fitbit_weekly_summary>
+  # <compute_fitbit_activity_week>
+  # <compute_fitbit_sleep_week>
+  "n_wknd",
+  # <identify_hr_exclusions>
+  "na_run",
+  # <create_block_ranges>
+  "new_block",
+  # <identify_hr_exclusions>
+  "next_hr",
+  # <identify_hr_recovery>
+  "next_hr_missing",
+  # <identify_hr_recovery>
+  "next_is_sleep",
+  # <identify_hr_recovery>
+  "next_start",
   # <compute_nt_y_stq__screen__wknd_nm>
   "nm_other",
   # <compute_nt_p_yst__screen__wkdy_sum>
@@ -448,13 +1078,62 @@ utils::globalVariables(c(
   # <compute_ab_g_stc__cohort_ethnrace__leg>
   # <compute_ab_g_stc__cohort_ethnrace__mhisp>
   # <compute_ab_g_stc__cohort_ethnrace__mblack>
+  # <compute_mh_y_pps__dist__pers_score>
+  # <compute_mh_y_ppsss__dist__curr_count>
+  # <compute_mh_y_ppsss__dist__pers_count>
+  # <compute_mh_y_ppsss__dist__curr_first>
+  # <compute_mh_y_ppsss__dist__pers_first>
+  # <compute_mh_y_ppsss__dist__curr_ever>
+  # <compute_mh_y_ppsss__dist__pers_ever>
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <compute_fitbit_weekly_summary>
+  # <compute_fitbit_activity_week>
+  # <compute_fitbit_sleep_week>
+  # <identify_hr_exclusions>
+  # <identify_hr_recovery>
+  # <compute_fitbit_score_steps>
+  # <compute_fitbit_intensity_scores>
+  # <create_sleep_indicator>
+  # <create_block_ranges>
+  # <compute_fitbit_min_totals>
+  # <compute_fitbit_score_minutes_exclusion>
+  # <add_sleep_flags>
+  # <join_sleep30_and_exclusions>
+  # <flag_implausible_sleep>
+  # <compute_sleep_ranges_waso>
+  # <compute_block_counts>
+  # <summarize_activity>
   # <compute_ph_p_dhx_birthweight>
   # <compute_tlfb_maxdose>
   # <compute_tlfb_mean>
   # <compute_tlfb_totdose>
+  # <compute_tlfb_totdose_sum>
   # <compute_tlfb_ud>
   # <filter_co_use>
+  # <prepare_data_sdsu>
+  # <compute_ss_use_yn>
+  # <compute_ss_use_onset_event>
+  # <compute_ss_use_onset_age>
+  # <combine_checkboxes>
   "participant_id",
+  # <compute_fitbit_intensity_scores>
+  # <compute_fitbit_min_totals>
+  # <compute_fitbit_score_minutes_exclusion>
+  # <compute_fitbit_sleep_hr_exclusions>
+  # <compute_sleep_stage_min>
+  # <compute_sleep_stage_hr>
+  "period",
+  # <compute_ph_p_anthr__fath_height__in>
+  "ph_p_anthr__height__fath_001",
+  # <compute_ph_p_anthr__fath_height__in>
+  "ph_p_anthr__height__fath_001__01",
+  # <compute_ph_p_anthr__moth_height__in>
+  "ph_p_anthr__height__moth_001",
+  # <compute_ph_p_anthr__moth_height__in>
+  "ph_p_anthr__height__moth_001__01",
   # <compute_ph_p_dhx_birthweight>
   "ph_p_dhx_002__01",
   # <compute_ph_p_dhx_birthweight>
@@ -690,6 +1369,23 @@ utils::globalVariables(c(
   "ph_y_mctq__sleep_dur_internal",
   # <compute_ph_y_mctq_chrono>
   "ph_y_mctq__sleep_period_internal",
+  # <create_block_ranges>
+  "prev_dt",
+  # <identify_hr_exclusions>
+  "prev_hr",
+  # <flag_implausible_sleep>
+  "prev_run_has_hr_issue",
+  # <flag_implausible_sleep>
+  "prev_run_is_sleep",
+  # <compute_fitbit_sleep_week>
+  "qc_300min",
+  # <compute_fitbit_activity_week>
+  "qc_600min",
+  # <compute_fitbit_activity_week>
+  "qc_steps",
+  # <compute_fitbit_activity_week>
+  # <compute_fitbit_sleep_week>
+  "qc_wk",
   # <compute_tlfb_mean>
   "qty",
   # <compute_tlfb_maxdose>
@@ -697,8 +1393,22 @@ utils::globalVariables(c(
   # <compute_tlfb_totdose>
   # <add_combined_substances>
   "quantity",
+  # <identify_hr_recovery>
+  # <compute_fitbit_sleep_hr_exclusions>
+  "recover_hr",
   # <insert_reference>
   "ref",
+  # <flag_implausible_sleep>
+  "run_has_hr_issue",
+  # <identify_hr_exclusions>
+  # <identify_hr_recovery>
+  # <flag_implausible_sleep>
+  "run_id",
+  # <flag_implausible_sleep>
+  "run_is_sleep",
+  # <identify_hr_exclusions>
+  # <flag_implausible_sleep>
+  "run_length",
   # <ss_tscore>
   "scale_r",
   # <ss_tscore>
@@ -711,6 +1421,12 @@ utils::globalVariables(c(
   "score_other_events",
   # <compute_caff_weekly>
   "serving",
+  # <compute_ss_use_onset_age>
+  "session_age",
+  # <prepare_data_sdsu>
+  "session_date",
+  # <prepare_data_sdsu>
+  "session_date_filled",
   # <compute_ab_g_stc__cohort_race__nih>
   # <compute_ab_g_stc__cohort_ethnrace__mblack>
   # <compute_fc_p_vs__famil_mean>
@@ -723,6 +1439,26 @@ utils::globalVariables(c(
   # <compute_fc_y_vs__famil_nm>
   # <compute_fc_y_vs__famil_mean__v01>
   # <compute_fc_y_vs__famil_nm__v01>
+  # <compute_mh_y_pps__dist__curr_score>
+  # <compute_mh_y_pps__dist__pers_score>
+  # <compute_mh_y_ppsss__dist__curr_first>
+  # <compute_mh_y_ppsss__dist__pers_first>
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <compute_fitbit_weekly_summary>
+  # <compute_fitbit_activity_week>
+  # <compute_fitbit_sleep_week>
+  # <identify_hr_exclusions>
+  # <identify_hr_recovery>
+  # <compute_fitbit_score_steps>
+  # <compute_fitbit_intensity_scores>
+  # <create_sleep_indicator>
+  # <compute_fitbit_min_totals>
+  # <compute_fitbit_score_minutes_exclusion>
+  # <compute_sleep_ranges_waso>
+  # <summarize_activity>
   # <compute_ph_p_dhx_birthweight>
   # <compute_ph_p_otbi_nm>
   # <compute_ph_p_otbi__loc__30m_count>
@@ -742,8 +1478,19 @@ utils::globalVariables(c(
   # <compute_tlfb_totdose>
   # <compute_tlfb_ud>
   # <filter_co_use>
+  # <prepare_data_sdsu>
+  # <map_mid_years>
+  # <compute_ss_use_yn>
+  # <compute_ss_use_onset_event>
+  # <compute_ss_use_onset_age>
+  # <combine_checkboxes>
   # <create_session_num>
   "session_id",
+  # <prepare_data_sdsu>
+  # <map_mid_years>
+  "session_id_mapped",
+  # <map_mid_years>
+  "session_id_mapped_forecast",
   # <compute_fc_p_vs__famil_mean>
   # <compute_fc_p_vs__famil_nm>
   # <compute_fc_p_vs__famil_mean__v01>
@@ -752,7 +1499,11 @@ utils::globalVariables(c(
   # <compute_fc_y_vs__famil_nm>
   # <compute_fc_y_vs__famil_mean__v01>
   # <compute_fc_y_vs__famil_nm__v01>
+  # <compute_mh_y_pps__dist__pers_score>
   "session_num",
+  # <prepare_data_sdsu>
+  # <map_mid_years>
+  "session_type",
   # <compute_mh_p_ple__severity__good_sum>
   # <compute_mh_p_ple__severity__good_mean>
   # <compute_mh_p_ple__severity__bad_sum>
@@ -792,19 +1543,99 @@ utils::globalVariables(c(
   "severity_internal",
   # <ss_tscore>
   "sex",
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <create_sleep_indicator>
+  # <compute_sleep_ranges_waso>
+  # <compute_fitbit_sleep_hr_exclusions>
+  # <compute_sleep_stage_min>
+  # <compute_sleep_stage_hr>
+  # <compute_block_counts>
+  "sleep_date",
+  # <join_sleep30_and_exclusions>
+  # <compute_sleep_stage_min>
+  # <compute_sleep_stage_hr>
+  "stage",
   # <add_combined_substances>
   "standard_factor",
+  # <add_sleep_flags>
+  "start_interval",
+  # <identify_hr_recovery>
+  "start_time",
+  # <flag_implausible_sleep>
+  "state",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_score_steps>
+  "steps",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <summarize_activity>
+  "steps_actv",
+  # <compute_fitbit_score_steps>
+  # <summarize_activity>
+  "steps_fitb",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  "steps_total",
   # <compute_su_y_mjsre_sum>
   "su_y_mjsre__neg_sum",
   # <compute_su_y_mjsre_sum>
   "su_y_mjsre__pos_sum",
   # <filter_co_use>
   "substance",
+  # <compute_fitbit_sleep_week>
+  "sum_min_asleep_slp",
+  # <compute_fitbit_sleep_week>
+  "sum_min_deep_slp",
+  # <compute_fitbit_activity_week>
+  "sum_min_intnst_light_actv",
+  # <compute_fitbit_activity_week>
+  "sum_min_intnst_mod_actv",
+  # <compute_fitbit_activity_week>
+  "sum_min_intnst_sed_actv",
+  # <compute_fitbit_activity_week>
+  "sum_min_intnst_vigor_actv",
+  # <compute_fitbit_sleep_week>
+  "sum_min_light_slp",
+  # <compute_fitbit_sleep_week>
+  "sum_min_rem_slp",
+  # <compute_fitbit_sleep_week>
+  "sum_min_restless_slp",
+  # <compute_fitbit_sleep_week>
+  "sum_min_total_slp",
+  # <compute_fitbit_sleep_week>
+  "sum_min_wake_slp",
+  # <compute_fitbit_sleep_week>
+  "sum_min_waso",
+  # <compute_fitbit_sleep_week>
+  "sum_n_waso",
   # <compute_nt_y_stq__screen__wkdy_sum>
   # <compute_nt_y_stq__screen__wknd_sum>
   "sum_other",
+  # <compute_fitbit_activity_week>
+  # <summarize_activity>
+  "sum_steps_actv",
+  # <compute_ph_p_meds_catg_all>
+  # <compute_ph_y_meds_catg_all>
+  # <compute_ph_p_dhx_catg_all>
+  # <compute_ph_p_meds_estuse_flags_all>
+  # <compute_ph_y_meds_estuse_flags_all>
+  "table_name",
+  # <compute_fitbit_score_steps>
+  "time_unit",
+  # <compute_tlfb_totdose_sum>
+  "tlfb_totdose",
   # <make_static>
   "tmp_col",
+  # <combine_checkboxes>
+  "tmp_column",
+  # <compute_ph_p_anthr__fath_height__in>
+  # <compute_ph_p_anthr__moth_height__in>
+  "tmp_height",
+  # <compute_ph_p_anthr__fath_height__cm>
+  # <compute_ph_p_anthr__moth_height__cm>
+  "tmp_inches",
   # <compute_ab_g_dyn__cohort_income__hhold__3lvl>
   "tmp_income",
   # <ss_prsum>
@@ -826,8 +1657,14 @@ utils::globalVariables(c(
   # <compute_ph_p_otbi__rpt_nm>
   # <compute_ph_p_otbi__loc__tbiage_nm>
   "tmp_tbi1a",
+  # <compute_ss_use_onset_event>
+  "tmp_yn",
+  # <compute_ss_use_onset_event>
+  "tmp_yn_ps",
   # <compute_tlfb_mean>
   "ud",
+  # <compute_ss_use_yn>
+  "use_yn",
   # <ss_mean_mh_ple>
   # <ss_sum_mh_ple>
   # <ss_nm_mh_ple>
@@ -838,5 +1675,19 @@ utils::globalVariables(c(
   "var2",
   # <compute_ph_p_dhx_birthweight>
   "weight",
+  # <compute_fitbit_activity_table>
+  # <compute_fitbit_activity_table_ext>
+  # <compute_fitbit_sleep_table>
+  # <compute_fitbit_sleep_table_ext>
+  # <compute_fitbit_weekly_summary>
+  # <compute_fitbit_activity_week>
+  # <compute_fitbit_sleep_week>
+  # <summarize_activity>
+  "wk",
+  # <compute_fitbit_weekly_summary>
+  # <compute_fitbit_activity_week>
+  # <compute_fitbit_sleep_week>
+  # <summarize_activity>
+  "wk_type",
   NULL
 ))

@@ -7,7 +7,7 @@
 compute_mh_y_ysr__synd__othpr_sum(
   data,
   name = "mh_y_ysr__synd__othpr_sum",
-  max_na = 0,
+  max_na = 1,
   exclude = c("777", "999"),
   combine = TRUE
 )
@@ -44,14 +44,13 @@ Youth Self Report [Youth] (Other problems): Sum
 \item \code{mh_y_ysr__othpr_006}
 \item \code{mh_y_ysr__othpr__dep_002}
 \item \code{mh_y_ysr__othpr__adhd_001}
-\item \code{mh_y_ysr__othpr_007}
 }
 \item \emph{Excluded values:}
 \itemize{
 \item 777
 \item 999
 }
-\item \emph{Validation criterion:} maximally 0 of 10 items missing
+\item \emph{Validation criterion:} maximally 1 of 9 items missing
 }
 }
 \examples{

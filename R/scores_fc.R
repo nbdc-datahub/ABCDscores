@@ -29,7 +29,9 @@ vars_fc_p_fes__cohes <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_fes__cohes |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #' - *Validation criterion:* maximally 1 of 9 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -40,6 +42,7 @@ vars_fc_p_fes__cohes <- c(
 #' frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -47,10 +50,12 @@ vars_fc_p_fes__cohes <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_fes__cohes_mean <- function(
-    data,
-    name = "fc_p_fes__cohes_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_fes__cohes_mean",
+  max_na = 1,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -63,7 +68,7 @@ compute_fc_p_fes__cohes_mean <- function(
       name    = name,
       vars    = vars_fc_p_fes__cohes,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -77,7 +82,9 @@ compute_fc_p_fes__cohes_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_fes__cohes |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -85,6 +92,7 @@ compute_fc_p_fes__cohes_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the input
 #' data frame. If `FALSE`, the summary score is returned as a separate data
 #' frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_p_fes__cohes_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -93,9 +101,11 @@ compute_fc_p_fes__cohes_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_fes__cohes_nm <- function(
-    data,
-    name = "fc_p_fes__cohes_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_fes__cohes_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -105,7 +115,7 @@ compute_fc_p_fes__cohes_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_p_fes__cohes,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -140,7 +150,9 @@ vars_fc_p_fes__confl <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_fes__confl |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #' - *Validation criterion:* maximally 1 of 9 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -151,6 +163,7 @@ vars_fc_p_fes__confl <- c(
 #' frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -158,10 +171,12 @@ vars_fc_p_fes__confl <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_fes__confl_mean <- function(
-    data,
-    name = "fc_p_fes__confl_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_fes__confl_mean",
+  max_na = 1,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -174,7 +189,7 @@ compute_fc_p_fes__confl_mean <- function(
       name    = name,
       vars    = vars_fc_p_fes__confl,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -188,7 +203,9 @@ compute_fc_p_fes__confl_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_fes__confl |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name
@@ -196,6 +213,7 @@ compute_fc_p_fes__confl_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #'  data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_p_fes__confl_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -204,9 +222,11 @@ compute_fc_p_fes__confl_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_fes__confl_nm <- function(
-    data,
-    name = "fc_p_fes__confl_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_fes__confl_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -216,7 +236,7 @@ compute_fc_p_fes__confl_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_p_fes__confl,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -251,7 +271,9 @@ vars_fc_p_fes__expr <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_fes__expr |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #' - *Validation criterion:* maximally 1 of 9 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -262,6 +284,7 @@ vars_fc_p_fes__expr <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -269,10 +292,12 @@ vars_fc_p_fes__expr <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_fes__expr_mean <- function(
-    data,
-    name = "fc_p_fes__expr_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_fes__expr_mean",
+  max_na = 1,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -285,7 +310,7 @@ compute_fc_p_fes__expr_mean <- function(
       name    = name,
       vars    = vars_fc_p_fes__expr,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -299,7 +324,9 @@ compute_fc_p_fes__expr_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_fes__expr |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -307,6 +334,7 @@ compute_fc_p_fes__expr_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_p_fes__expr_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -315,9 +343,11 @@ compute_fc_p_fes__expr_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_fes__expr_nm <- function(
-    data,
-    name = "fc_p_fes__expr_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_fes__expr_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -327,7 +357,7 @@ compute_fc_p_fes__expr_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_p_fes__expr,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -362,7 +392,9 @@ vars_fc_p_fes__intelcult <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_fes__intelcult |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #' - *Validation criterion:* maximally 1 of 9 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -373,6 +405,7 @@ vars_fc_p_fes__intelcult <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -380,10 +413,12 @@ vars_fc_p_fes__intelcult <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_fes__intelcult_mean <- function(
-    data,
-    name = "fc_p_fes__intelcult_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_fes__intelcult_mean",
+  max_na = 1,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -396,7 +431,7 @@ compute_fc_p_fes__intelcult_mean <- function(
       name    = name,
       vars    = vars_fc_p_fes__intelcult,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -412,7 +447,9 @@ compute_fc_p_fes__intelcult_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_fes__intelcult |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -420,6 +457,7 @@ compute_fc_p_fes__intelcult_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_p_fes__intelcult_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -428,9 +466,11 @@ compute_fc_p_fes__intelcult_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_fes__intelcult_nm <- function(
-    data,
-    name = "fc_p_fes__intelcult_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_fes__intelcult_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -440,7 +480,7 @@ compute_fc_p_fes__intelcult_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_p_fes__intelcult,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -475,7 +515,9 @@ vars_fc_p_fes__org <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_fes__org |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #' - *Validation criterion:* maximally 1 of 9 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -486,6 +528,7 @@ vars_fc_p_fes__org <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -493,10 +536,12 @@ vars_fc_p_fes__org <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_fes__org_mean <- function(
-    data,
-    name = "fc_p_fes__org_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_fes__org_mean",
+  max_na = 1,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -509,7 +554,7 @@ compute_fc_p_fes__org_mean <- function(
       name    = name,
       vars    = vars_fc_p_fes__org,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -523,7 +568,9 @@ compute_fc_p_fes__org_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_fes__org |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name
@@ -531,6 +578,7 @@ compute_fc_p_fes__org_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_p_fes__org_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -539,9 +587,11 @@ compute_fc_p_fes__org_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_fes__org_nm <- function(
-    data,
-    name = "fc_p_fes__org_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_fes__org_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -551,7 +601,7 @@ compute_fc_p_fes__org_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_p_fes__org,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -586,7 +636,9 @@ vars_fc_p_fes__rec <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_fes__rec |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #' - *Validation criterion:* maximally 1 of 9 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -597,6 +649,7 @@ vars_fc_p_fes__rec <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -604,10 +657,12 @@ vars_fc_p_fes__rec <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_fes__rec_mean <- function(
-    data,
-    name = "fc_p_fes__rec_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_fes__rec_mean",
+  max_na = 1,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -620,7 +675,7 @@ compute_fc_p_fes__rec_mean <- function(
       name    = name,
       vars    = vars_fc_p_fes__rec,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -636,7 +691,9 @@ compute_fc_p_fes__rec_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_fes__rec |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -644,6 +701,7 @@ compute_fc_p_fes__rec_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_p_fes__rec_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -652,9 +710,11 @@ compute_fc_p_fes__rec_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_fes__rec_nm <- function(
-    data,
-    name = "fc_p_fes__rec_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_fes__rec_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -664,7 +724,7 @@ compute_fc_p_fes__rec_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_p_fes__rec,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -697,7 +757,9 @@ vars_fc_p_vs__indselfrel <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_vs__indselfrel |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #' - *Validation criterion:* maximally 1 of 5 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -708,6 +770,7 @@ vars_fc_p_vs__indselfrel <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -715,10 +778,12 @@ vars_fc_p_vs__indselfrel <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_vs__indselfrel_mean <- function(
-    data,
-    name = "fc_p_vs__indselfrel_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_vs__indselfrel_mean",
+  max_na = 1,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -731,7 +796,7 @@ compute_fc_p_vs__indselfrel_mean <- function(
       name    = name,
       vars    = vars_fc_p_vs__indselfrel,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -747,7 +812,9 @@ compute_fc_p_vs__indselfrel_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_vs__indselfrel |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -755,6 +822,7 @@ compute_fc_p_vs__indselfrel_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_p_vs__indselfrel_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -763,9 +831,11 @@ compute_fc_p_vs__indselfrel_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_vs__indselfrel_nm <- function(
-    data,
-    name = "fc_p_vs__indselfrel_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_vs__indselfrel_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -775,7 +845,7 @@ compute_fc_p_vs__indselfrel_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_p_vs__indselfrel,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -807,7 +877,9 @@ vars_fc_p_vs__obl <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_vs__obl |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #' - *Validation criterion:* maximally 1 of 5 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -818,6 +890,7 @@ vars_fc_p_vs__obl <- c(
 #' frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -825,10 +898,12 @@ vars_fc_p_vs__obl <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_vs__obl_mean <- function(
-    data,
-    name = "fc_p_vs__obl_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_vs__obl_mean",
+  max_na = 1,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -841,7 +916,7 @@ compute_fc_p_vs__obl_mean <- function(
       name    = name,
       vars    = vars_fc_p_vs__obl,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -857,7 +932,9 @@ compute_fc_p_vs__obl_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_vs__obl |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -865,6 +942,7 @@ compute_fc_p_vs__obl_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_p_vs__obl_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -873,9 +951,11 @@ compute_fc_p_vs__obl_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_vs__obl_nm <- function(
-    data,
-    name = "fc_p_vs__obl_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_vs__obl_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -885,7 +965,7 @@ compute_fc_p_vs__obl_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_p_vs__obl,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -917,7 +997,9 @@ vars_fc_p_vs__ref <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_vs__ref |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #' - *Validation criterion:* maximally 1 of 5 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -928,6 +1010,7 @@ vars_fc_p_vs__ref <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -935,10 +1018,12 @@ vars_fc_p_vs__ref <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_vs__ref_mean <- function(
-    data,
-    name = "fc_p_vs__ref_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_vs__ref_mean",
+  max_na = 1,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -951,7 +1036,7 @@ compute_fc_p_vs__ref_mean <- function(
       name    = name,
       vars    = vars_fc_p_vs__ref,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -967,7 +1052,9 @@ compute_fc_p_vs__ref_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_vs__ref |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -975,6 +1062,7 @@ compute_fc_p_vs__ref_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_p_vs__ref_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -983,9 +1071,11 @@ compute_fc_p_vs__ref_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_vs__ref_nm <- function(
-    data,
-    name = "fc_p_vs__ref_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_vs__ref_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -995,7 +1085,7 @@ compute_fc_p_vs__ref_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_p_vs__ref,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -1028,7 +1118,9 @@ vars_fc_p_vs__relig <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_vs__relig |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #' - *Validation criterion:* maximally 1 of 7 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -1039,6 +1131,7 @@ vars_fc_p_vs__relig <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -1046,10 +1139,12 @@ vars_fc_p_vs__relig <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_vs__relig_mean <- function(
-    data,
-    name = "fc_p_vs__relig_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_vs__relig_mean",
+  max_na = 1,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1062,7 +1157,7 @@ compute_fc_p_vs__relig_mean <- function(
       name    = name,
       vars    = vars_fc_p_vs__relig,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -1077,7 +1172,9 @@ compute_fc_p_vs__relig_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_vs__relig |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -1085,6 +1182,7 @@ compute_fc_p_vs__relig_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_p_vs__relig_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -1093,9 +1191,11 @@ compute_fc_p_vs__relig_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_vs__relig_nm <- function(
-    data,
-    name = "fc_p_vs__relig_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_vs__relig_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1105,7 +1205,7 @@ compute_fc_p_vs__relig_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_p_vs__relig,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -1138,7 +1238,9 @@ vars_fc_p_vs__supp <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_vs__supp |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #' - *Validation criterion:* maximally 1 of 6 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -1149,6 +1251,7 @@ vars_fc_p_vs__supp <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -1156,10 +1259,12 @@ vars_fc_p_vs__supp <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_vs__supp_mean <- function(
-    data,
-    name = "fc_p_vs__supp_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_vs__supp_mean",
+  max_na = 1,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1172,7 +1277,7 @@ compute_fc_p_vs__supp_mean <- function(
       name    = name,
       vars    = vars_fc_p_vs__supp,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -1188,7 +1293,9 @@ compute_fc_p_vs__supp_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_vs__supp |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -1196,6 +1303,7 @@ compute_fc_p_vs__supp_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_p_vs__supp_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -1204,9 +1312,11 @@ compute_fc_p_vs__supp_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_vs__supp_nm <- function(
-    data,
-    name = "fc_p_vs__supp_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_vs__supp_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1216,7 +1326,7 @@ compute_fc_p_vs__supp_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_p_vs__supp,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -1249,11 +1359,11 @@ vars_fc_p_vs__famil <- c(
 )
 
 #' Compute "Values Scale \[Parent\] (Familism):
-#'   Mean - Baseline to Year 5"
+#'   Mean (Subscales: supp, ref, obl)"
 #'
 #' @description
 #' Computes the summary score `fc_p_vs__famil_mean`
-#' (Values Scale \[Parent\] (Familism): Mean - Baseline to Year 5)
+#' (Values Scale \[Parent\] (Familism): Mean (Subscales: supp, ref, obl))
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -1264,6 +1374,7 @@ vars_fc_p_vs__famil <- c(
 #'    - 999
 #' - *Validation criterion:*
 #'    - maximally 3 of 16 items missing
+#'    - all sub-scales can be calculated
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -1282,11 +1393,12 @@ vars_fc_p_vs__famil <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_vs__famil_mean <- function(
-    data,
-    name = "fc_p_vs__famil_mean",
-    max_na = 3,
-    exclude = c("777", "999"),
-    combine = TRUE) {
+  data,
+  name = "fc_p_vs__famil_mean",
+  max_na = 3,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1335,7 +1447,7 @@ compute_fc_p_vs__famil_mean <- function(
 #'
 #' @description
 #' Computes the summary score `fc_p_vs__famil_nm__v01`
-#' (Values Scale \[Parent\] (Familism): Number missing - Baseline to Year 5)
+#' (Values Scale \[Parent\] (Familism): Number missing (Subscales: supp, ref, obl))
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -1354,10 +1466,11 @@ compute_fc_p_vs__famil_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_vs__famil_nm <- function(
-    data,
-    name = "fc_p_vs__famil_nm",
-    exclude = c("777", "999"),
-    combine = TRUE) {
+  data,
+  name = "fc_p_vs__famil_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1409,11 +1522,11 @@ vars_fc_p_vs__famil__v01 <- c(
 
 
 #' Compute "Values Scale \[Parent\] (Familism):
-#'   Mean - Version 1 (Year 5 onwards)"
+#'   Mean - Version 1 (Subscales: supp, ref)"
 #'
 #' @description
 #' Computes the summary score `fc_p_vs__famil_mean__v01`
-#' (Values Scale \[Parent\] (Familism): Mean - Version 1 (Year 5 onwards))
+#' (Values Scale \[Parent\] (Familism): Mean - Version 1 (Subscales: supp, ref))
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -1424,6 +1537,7 @@ vars_fc_p_vs__famil__v01 <- c(
 #'    - 999
 #' - *Validation criterion:*
 #'    - maximally 2 of 11 items missing
+#'    - all sub-scales can be calculated
 #'
 #' @inheritParams compute_fc_p_vs__famil_mean
 #' @param max_na numeric vector of positive whole number. Number of missing
@@ -1436,11 +1550,12 @@ vars_fc_p_vs__famil__v01 <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_vs__famil_mean__v01 <- function(
-    data,
-    name = "fc_p_vs__famil_mean__v01",
-    max_na = 2,
-    exclude = c("777", "999"),
-    combine = TRUE) {
+  data,
+  name = "fc_p_vs__famil_mean__v01",
+  max_na = 2,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1508,10 +1623,11 @@ compute_fc_p_vs__famil_mean__v01 <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_vs__famil_nm__v01 <- function(
-    data,
-    name = "fc_p_vs__famil_nm__v01",
-    exclude = c("777", "999"),
-    combine = TRUE) {
+  data,
+  name = "fc_p_vs__famil_nm__v01",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1580,10 +1696,11 @@ vars_fc_p_meim__explor <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_meim__explor_mean <- function(
-    data,
-    name = "fc_p_meim__explor_mean",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "fc_p_meim__explor_mean",
+  max_na = 0,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1628,9 +1745,10 @@ compute_fc_p_meim__explor_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_meim__explor_nm <- function(
-    data,
-    name = "fc_p_meim__explor_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_meim__explor_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1690,10 +1808,11 @@ vars_fc_p_meim <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_meim_mean <- function(
-    data,
-    name = "fc_p_meim_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_meim_mean",
+  max_na = 1,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1737,9 +1856,10 @@ compute_fc_p_meim_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_meim_nm <- function(
-    data,
-    name = "fc_p_meim_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_meim_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1798,10 +1918,11 @@ vars_fc_p_meim__commattach <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_meim__commattach_mean <- function(
-    data,
-    name = "fc_p_meim__commattach_mean",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "fc_p_meim__commattach_mean",
+  max_na = 0,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1846,9 +1967,10 @@ compute_fc_p_meim__commattach_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_meim__commattach_nm <- function(
-    data,
-    name = "fc_p_meim__commattach_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_meim__commattach_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1915,10 +2037,11 @@ vars_fc_p_nce__cc <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_nce__cc_mean <- function(
-    data,
-    name = "fc_p_nce__cc_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_nce__cc_mean",
+  max_na = 1,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -1988,9 +2111,10 @@ compute_fc_p_nce__cc_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_nce__cc_nm <- function(
-    data,
-    name = "fc_p_nce__cc_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_nce__cc_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2052,10 +2176,11 @@ vars_fc_p_nce__isc <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_nce__isc_mean <- function(
-    data,
-    name = "fc_p_nce__isc_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_nce__isc_mean",
+  max_na = 1,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2113,9 +2238,10 @@ compute_fc_p_nce__isc_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_nce__isc_nm <- function(
-    data,
-    name = "fc_p_nce__isc_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_nce__isc_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2186,10 +2312,11 @@ vars_fc_p_nce <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_nce_mean <- function(
-    data,
-    name = "fc_p_nce_mean",
-    max_na = 2,
-    combine = TRUE) {
+  data,
+  name = "fc_p_nce_mean",
+  max_na = 2,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2257,9 +2384,10 @@ compute_fc_p_nce_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_nce_nm <- function(
-    data,
-    name = "fc_p_nce_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_nce_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2318,10 +2446,11 @@ vars_fc_p_nsc__ns <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_nsc__ns_mean <- function(
-    data,
-    name = "fc_p_nsc__ns_mean",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "fc_p_nsc__ns_mean",
+  max_na = 0,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2367,9 +2496,10 @@ compute_fc_p_nsc__ns_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_nsc__ns_nm <- function(
-    data,
-    name = "fc_p_nsc__ns_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_nsc__ns_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2434,10 +2564,11 @@ vars_fc_p_pk__knowl <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_pk__knowl_mean <- function(
-    data,
-    name = "fc_p_pk__knowl_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_p_pk__knowl_mean",
+  max_na = 1,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2521,9 +2652,10 @@ compute_fc_p_pk__knowl_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_pk__knowl_nm <- function(
-    data,
-    name = "fc_p_pk__knowl_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_pk__knowl_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2562,7 +2694,9 @@ vars_fc_p_psb <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_psb |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #' - *Validation criterion:* none of 3 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -2573,6 +2707,7 @@ vars_fc_p_psb <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 0).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -2580,10 +2715,12 @@ vars_fc_p_psb <- c(
 #' @export
 #' @autoglobal
 compute_fc_p_psb_mean <- function(
-    data,
-    name = "fc_p_psb_mean",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "fc_p_psb_mean",
+  max_na = 0,
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2596,7 +2733,7 @@ compute_fc_p_psb_mean <- function(
       name    = name,
       vars    = vars_fc_p_psb,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -2610,7 +2747,9 @@ compute_fc_p_psb_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_p_psb |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -2618,6 +2757,7 @@ compute_fc_p_psb_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_p_psb_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -2626,9 +2766,11 @@ compute_fc_p_psb_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_p_psb_nm <- function(
-    data,
-    name = "fc_p_psb_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_p_psb_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2638,7 +2780,7 @@ compute_fc_p_psb_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_p_psb,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -2685,10 +2827,11 @@ vars_fc_y_as__safe <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_as__safe_mean <- function(
-    data,
-    name = "fc_y_as__safe_mean",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "fc_y_as__safe_mean",
+  max_na = 0,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2731,9 +2874,10 @@ compute_fc_y_as__safe_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_as__safe_nm <- function(
-    data,
-    name = "fc_y_as__safe_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_as__safe_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2794,10 +2938,11 @@ vars_fc_y_crpbi__cg1 <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_crpbi__cg1_mean <- function(
-    data,
-    name = "fc_y_crpbi__cg1_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_crpbi__cg1_mean",
+  max_na = 1,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2842,9 +2987,10 @@ compute_fc_y_crpbi__cg1_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_crpbi__cg1_nm <- function(
-    data,
-    name = "fc_y_crpbi__cg1_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_crpbi__cg1_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2905,10 +3051,11 @@ vars_fc_y_crpbi__cg2 <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_crpbi__cg2_mean <- function(
-    data,
-    name = "fc_y_crpbi__cg2_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_crpbi__cg2_mean",
+  max_na = 1,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -2953,9 +3100,10 @@ compute_fc_y_crpbi__cg2_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_crpbi__cg2_nm <- function(
-    data,
-    name = "fc_y_crpbi__cg2_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_crpbi__cg2_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3025,9 +3173,10 @@ vars_fc_y_eut__ethn <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_eut__ethn_mean <- function(
-    data,
-    name = "fc_y_eut__ethn_mean",
-    combine = TRUE) {
+  data,
+  name = "fc_y_eut__ethn_mean",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3110,9 +3259,10 @@ compute_fc_y_eut__ethn_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_eut__ethn_nm <- function(
-    data,
-    name = "fc_y_eut__ethn_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_eut__ethn_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3195,7 +3345,8 @@ vars_fc_y_fes__cohes <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_fes__cohes |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* maximally 1 of 9 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -3206,6 +3357,7 @@ vars_fc_y_fes__cohes <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -3213,10 +3365,12 @@ vars_fc_y_fes__cohes <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_fes__cohes_mean <- function(
-    data,
-    name = "fc_y_fes__cohes_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_fes__cohes_mean",
+  max_na = 1,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3229,7 +3383,7 @@ compute_fc_y_fes__cohes_mean <- function(
       name    = name,
       vars    = vars_fc_y_fes__cohes,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -3243,7 +3397,8 @@ compute_fc_y_fes__cohes_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_fes__cohes |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -3251,6 +3406,7 @@ compute_fc_y_fes__cohes_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_y_fes__cohes_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -3259,9 +3415,11 @@ compute_fc_y_fes__cohes_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_fes__cohes_nm <- function(
-    data,
-    name = "fc_y_fes__cohes_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_fes__cohes_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3271,7 +3429,7 @@ compute_fc_y_fes__cohes_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_y_fes__cohes,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -3306,7 +3464,8 @@ vars_fc_y_fes__confl <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_fes__confl |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* maximally 1 of 9 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -3317,6 +3476,7 @@ vars_fc_y_fes__confl <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -3324,10 +3484,12 @@ vars_fc_y_fes__confl <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_fes__confl_mean <- function(
-    data,
-    name = "fc_y_fes__confl_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_fes__confl_mean",
+  max_na = 1,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3340,7 +3502,7 @@ compute_fc_y_fes__confl_mean <- function(
       name    = name,
       vars    = vars_fc_y_fes__confl,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -3354,7 +3516,8 @@ compute_fc_y_fes__confl_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_fes__confl |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -3362,6 +3525,7 @@ compute_fc_y_fes__confl_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_y_fes__confl_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -3370,9 +3534,11 @@ compute_fc_y_fes__confl_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_fes__confl_nm <- function(
-    data,
-    name = "fc_y_fes__confl_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_fes__confl_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3382,7 +3548,7 @@ compute_fc_y_fes__confl_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_y_fes__confl,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -3415,7 +3581,8 @@ vars_fc_y_vs__indselfrel <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_vs__indselfrel |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* maximally 1 of 5 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -3426,6 +3593,7 @@ vars_fc_y_vs__indselfrel <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -3433,10 +3601,12 @@ vars_fc_y_vs__indselfrel <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_vs__indselfrel_mean <- function(
-    data,
-    name = "fc_y_vs__indselfrel_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_vs__indselfrel_mean",
+  max_na = 1,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3449,7 +3619,7 @@ compute_fc_y_vs__indselfrel_mean <- function(
       name    = name,
       vars    = vars_fc_y_vs__indselfrel,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -3465,7 +3635,8 @@ compute_fc_y_vs__indselfrel_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_vs__indselfrel |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -3473,6 +3644,7 @@ compute_fc_y_vs__indselfrel_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_y_vs__indselfrel_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -3481,9 +3653,11 @@ compute_fc_y_vs__indselfrel_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_vs__indselfrel_nm <- function(
-    data,
-    name = "fc_y_vs__indselfrel_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_vs__indselfrel_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3493,7 +3667,7 @@ compute_fc_y_vs__indselfrel_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_y_vs__indselfrel,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -3525,7 +3699,8 @@ vars_fc_y_vs__obl <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_vs__obl |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* maximally 1 of 5 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -3536,6 +3711,7 @@ vars_fc_y_vs__obl <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -3543,10 +3719,12 @@ vars_fc_y_vs__obl <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_vs__obl_mean <- function(
-    data,
-    name = "fc_y_vs__obl_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_vs__obl_mean",
+  max_na = 1,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3559,7 +3737,7 @@ compute_fc_y_vs__obl_mean <- function(
       name    = name,
       vars    = vars_fc_y_vs__obl,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -3575,7 +3753,8 @@ compute_fc_y_vs__obl_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_vs__obl |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -3583,6 +3762,7 @@ compute_fc_y_vs__obl_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_y_vs__obl_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -3591,9 +3771,11 @@ compute_fc_y_vs__obl_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_vs__obl_nm <- function(
-    data,
-    name = "fc_y_vs__obl_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_vs__obl_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3603,7 +3785,7 @@ compute_fc_y_vs__obl_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_y_vs__obl,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -3635,7 +3817,8 @@ vars_fc_y_vs__ref <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_vs__ref |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* maximally 1 of 5 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -3646,6 +3829,7 @@ vars_fc_y_vs__ref <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -3653,10 +3837,12 @@ vars_fc_y_vs__ref <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_vs__ref_mean <- function(
-    data,
-    name = "fc_y_vs__ref_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_vs__ref_mean",
+  max_na = 1,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3669,7 +3855,7 @@ compute_fc_y_vs__ref_mean <- function(
       name    = name,
       vars    = vars_fc_y_vs__ref,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -3685,7 +3871,8 @@ compute_fc_y_vs__ref_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_vs__ref |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -3693,6 +3880,7 @@ compute_fc_y_vs__ref_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_y_vs__ref_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -3701,9 +3889,11 @@ compute_fc_y_vs__ref_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_vs__ref_nm <- function(
-    data,
-    name = "fc_y_vs__ref_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_vs__ref_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3713,7 +3903,7 @@ compute_fc_y_vs__ref_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_y_vs__ref,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -3746,7 +3936,8 @@ vars_fc_y_vs__relig <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_vs__relig |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* maximally 1 of 7 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -3757,6 +3948,7 @@ vars_fc_y_vs__relig <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -3764,10 +3956,12 @@ vars_fc_y_vs__relig <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_vs__relig_mean <- function(
-    data,
-    name = "fc_y_vs__relig_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_vs__relig_mean",
+  max_na = 1,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3780,7 +3974,7 @@ compute_fc_y_vs__relig_mean <- function(
       name    = name,
       vars    = vars_fc_y_vs__relig,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -3795,7 +3989,8 @@ compute_fc_y_vs__relig_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_vs__relig |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -3803,6 +3998,7 @@ compute_fc_y_vs__relig_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_y_vs__relig_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -3811,9 +4007,11 @@ compute_fc_y_vs__relig_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_vs__relig_nm <- function(
-    data,
-    name = "fc_y_vs__relig_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_vs__relig_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3823,7 +4021,7 @@ compute_fc_y_vs__relig_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_y_vs__relig,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -3856,7 +4054,8 @@ vars_fc_y_vs__supp <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_vs__supp |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* maximally 1 of 6 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -3867,6 +4066,7 @@ vars_fc_y_vs__supp <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -3874,10 +4074,12 @@ vars_fc_y_vs__supp <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_vs__supp_mean <- function(
-    data,
-    name = "fc_y_vs__supp_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_vs__supp_mean",
+  max_na = 1,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3890,7 +4092,7 @@ compute_fc_y_vs__supp_mean <- function(
       name    = name,
       vars    = vars_fc_y_vs__supp,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -3906,7 +4108,8 @@ compute_fc_y_vs__supp_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_vs__supp |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -3914,6 +4117,7 @@ compute_fc_y_vs__supp_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_y_vs__supp_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -3922,9 +4126,11 @@ compute_fc_y_vs__supp_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_vs__supp_nm <- function(
-    data,
-    name = "fc_y_vs__supp_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_vs__supp_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -3934,7 +4140,7 @@ compute_fc_y_vs__supp_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_y_vs__supp,
-      exclude = NULL
+      exclude = exclude
     )
 }
 #   ____________________________________________________________________________
@@ -3966,11 +4172,11 @@ vars_fc_y_vs__famil <- c(
 )
 
 #' Compute "Values Scale \[Youth\] (Familism):
-#'   Mean - Baseline to Year 5"
+#'   Mean (Subscales: supp, ref, obl)"
 #'
 #' @description
 #' Computes the summary score `fc_y_vs__famil_mean`
-#' (Values Scale \[Youth\] (Familism): Mean - Baseline to Year 5)
+#' (Values Scale \[Youth\] (Familism): Mean (Subscales: supp, ref, obl))
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -3978,9 +4184,9 @@ vars_fc_y_vs__famil <- c(
 #'   ```
 #' - *Excluded values:*
 #'    - 777
-#'    - 999
 #' - *Validation criterion:*
 #'    - maximally 3 of 16 items missing
+#'    - all sub-scales can be calculated
 #'
 #' @inheritParams compute_fc_p_vs__famil_mean
 #' @param max_na numeric vector of positive whole number. Number of missing
@@ -3992,11 +4198,12 @@ vars_fc_y_vs__famil <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_vs__famil_mean <- function(
-    data,
-    name = "fc_y_vs__famil_mean",
-    max_na = 3,
-    exclude = c("777", "999"),
-    combine = TRUE) {
+  data,
+  name = "fc_y_vs__famil_mean",
+  max_na = 3,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4045,7 +4252,7 @@ compute_fc_y_vs__famil_mean <- function(
 #'
 #' @description
 #' Computes the summary score `fc_y_vs__famil_nm__v01`
-#' (Values Scale \[Youth\] (Familism): Number missing - Baseline to Year 5)
+#' (Values Scale \[Youth\] (Familism): Number missing (Subscales: supp, ref, obl))
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -4053,7 +4260,6 @@ compute_fc_y_vs__famil_mean <- function(
 #'   ```
 #' - *Excluded values:*
 #'    - 777
-#'    - 999
 #'
 #' @inheritParams compute_fc_p_vs__famil_mean
 #'
@@ -4064,10 +4270,11 @@ compute_fc_y_vs__famil_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_vs__famil_nm <- function(
-    data,
-    name = "fc_y_vs__famil_nm",
-    exclude = c("777", "999"),
-    combine = TRUE) {
+  data,
+  name = "fc_y_vs__famil_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4119,11 +4326,11 @@ vars_fc_y_vs__famil__v01 <- c(
 
 
 #' Compute "Values Scale \[Youth\] (Familism):
-#'   Mean - Version 1 (Year 5 onwards)"
+#'   Mean - Version 1 (Subscales: supp, ref)"
 #'
 #' @description
 #' Computes the summary score `fc_y_vs__famil_mean__v01`
-#' (Values Scale \[Youth\] (Familism): Mean - Version 1 (Year 5 onwards))
+#' (Values Scale \[Youth\] (Familism): Mean - Version 1 (Subscales: supp, ref))
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -4131,9 +4338,9 @@ vars_fc_y_vs__famil__v01 <- c(
 #'   ```
 #' - *Excluded values:*
 #'    - 777
-#'    - 999
 #' - *Validation criterion:*
 #'    - maximally 2 of 11 items missing
+#'    - all sub-scales can be calculated
 #'
 #' @inheritParams compute_fc_p_vs__famil_mean
 #' @param max_na numeric vector of positive whole number. Number of missing
@@ -4146,11 +4353,12 @@ vars_fc_y_vs__famil__v01 <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_vs__famil_mean__v01 <- function(
-    data,
-    name = "fc_y_vs__famil_mean__v01",
-    max_na = 2,
-    exclude = c("777", "999"),
-    combine = TRUE) {
+  data,
+  name = "fc_y_vs__famil_mean__v01",
+  max_na = 2,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4207,7 +4415,6 @@ compute_fc_y_vs__famil_mean__v01 <- function(
 #'   ```
 #' - *Excluded values:*
 #'    - 777
-#'    - 999
 #'
 #' @inheritParams compute_fc_p_vs__famil_mean
 #'
@@ -4218,10 +4425,11 @@ compute_fc_y_vs__famil_mean__v01 <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_vs__famil_nm__v01 <- function(
-    data,
-    name = "fc_y_vs__famil_nm__v01",
-    exclude = c("777", "999"),
-    combine = TRUE) {
+  data,
+  name = "fc_y_vs__famil_nm__v01",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4296,10 +4504,11 @@ vars_fc_y_meim__commattach <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_meim__commattach_mean <- function(
-    data,
-    name = "fc_y_meim__commattach_mean",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "fc_y_meim__commattach_mean",
+  max_na = 0,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4344,9 +4553,10 @@ compute_fc_y_meim__commattach_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_meim__commattach_nm <- function(
-    data,
-    name = "fc_y_meim__commattach_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_meim__commattach_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4404,10 +4614,11 @@ vars_fc_y_meim__explor <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_meim__explor_mean <- function(
-    data,
-    name = "fc_y_meim__explor_mean",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "fc_y_meim__explor_mean",
+  max_na = 0,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4452,9 +4663,10 @@ compute_fc_y_meim__explor_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_meim__explor_nm <- function(
-    data,
-    name = "fc_y_meim__explor_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_meim__explor_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4514,10 +4726,11 @@ vars_fc_y_meim <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_meim_mean <- function(
-    data,
-    name = "fc_y_meim_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_meim_mean",
+  max_na = 1,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4561,9 +4774,10 @@ compute_fc_y_meim_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_meim_nm <- function(
-    data,
-    name = "fc_y_meim_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_meim_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4623,10 +4837,11 @@ vars_fc_y_mnbs__edusupp <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_mnbs__edusupp_mean <- function(
-    data,
-    name = "fc_y_mnbs__edusupp_mean",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "fc_y_mnbs__edusupp_mean",
+  max_na = 0,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4672,9 +4887,10 @@ compute_fc_y_mnbs__edusupp_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_mnbs__edusupp_nm <- function(
-    data,
-    name = "fc_y_mnbs__edusupp_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_mnbs__edusupp_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4735,10 +4951,11 @@ vars_fc_y_mnbs__superv <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_mnbs__superv_mean <- function(
-    data,
-    name = "fc_y_mnbs__superv_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_mnbs__superv_mean",
+  max_na = 1,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4784,9 +5001,10 @@ compute_fc_y_mnbs__superv_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_mnbs__superv_nm <- function(
-    data,
-    name = "fc_y_mnbs__superv_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_mnbs__superv_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4849,10 +5067,11 @@ vars_fc_y_mnbs <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_mnbs_mean <- function(
-    data,
-    name = "fc_y_mnbs_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_mnbs_mean",
+  max_na = 1,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4895,9 +5114,10 @@ compute_fc_y_mnbs_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_mnbs_nm <- function(
-    data,
-    name = "fc_y_mnbs_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_mnbs_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -4909,6 +5129,95 @@ compute_fc_y_mnbs_nm <- function(
       vars    = vars_fc_y_mnbs,
       exclude = c("777")
     )
+}
+
+#   ____________________________________________________________________________
+#   fc_y_naa                                                       ####
+
+#' @export
+#' @autoglobal
+#' @rdname compute_fc_y_naa_mean
+#' @format vars_fc_y_naa is a character vector of all column names
+#' used to compute summary score of `fc_y_naa`.
+vars_fc_y_naa <- c(
+  "fc_y_naa_001",
+  "fc_y_naa_002",
+  "fc_y_naa_003"
+)
+
+#' Compute "Native American Acculturation \[Youth\]: Mean"
+#'
+#' @description
+#' Computes the summary score `fc_y_naa_mean`
+#' (Native American Acculturation \[Youth\]: Mean)
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_fc_y_naa |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 999
+#' - *Validation criterion:* maximally 0 of 3 items missing
+#'
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @param name character. Name of the summary score. Default is the name in
+#' the description.
+#' @param combine logical. If `TRUE`, the summary score is appended to the
+#' input data frame. If `FALSE`, the summary score is returned as a separate
+#' data frame. Default is `TRUE`.
+#' @param max_na numeric, positive whole number. Number of missing items
+#'   allowed.
+#' @param exclude character vector. Values to be excluded from the summary
+#'    score calculation.
+#'
+#' @return tbl. The input data frame with the summary score appended as
+#'   a new column.
+#'
+#' @export
+#' @autoglobal
+compute_fc_y_naa_mean <- function(
+  data,
+  name = "fc_y_naa_mean",
+  max_na = 0,
+  exclude = c("999"),
+  combine = TRUE
+) {
+  chk::chk_data(data)
+  check_col_names(data, name)
+  chk::chk_logical(combine)
+
+  data_ss <- data |>
+    ss_mean(
+      combine = FALSE,
+      name    = name,
+      vars    = vars_fc_y_naa,
+      max_na  = max_na,
+      exclude = exclude
+    )
+
+  if (combine) {
+    data_ss <- bind_cols(data, data_ss)
+  }
+
+  data_ss
+}
+
+#' Compute all the fc_y_naa scores
+#'
+#' @description
+#' A single function to compute all scores in the above domain using
+#' **default** arguments.
+#'
+#' @param data tbl, Dataframe containing the columns to be summarized.
+#'
+#' @return tbl. The input data frame with the summary scores appended as
+#'  new columns.
+#'
+#' @export
+#' @autoglobal
+compute_fc_y_naa_all <- function(data) {
+  data |>
+    compute_fc_y_naa_mean()
 }
 
 #   ____________________________________________________________________________
@@ -4957,10 +5266,11 @@ vars_fc_y_pm <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_pm_mean <- function(
-    data,
-    name = "fc_y_pm_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_pm_mean",
+  max_na = 1,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5004,9 +5314,10 @@ compute_fc_y_pm_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_pm_nm <- function(
-    data,
-    name = "fc_y_pm_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_pm_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5047,7 +5358,8 @@ vars_fc_y_pnh <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_pnh |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* none of 5 items missing
 #' - *Notes:*
 #'   - `fc_y_pnh_001` is scored: No = 0; Yes = 3
@@ -5063,6 +5375,7 @@ vars_fc_y_pnh <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 0).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -5070,10 +5383,12 @@ vars_fc_y_pnh <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_pnh_sum <- function(
-    data,
-    name = "fc_y_pnh_sum",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "fc_y_pnh_sum",
+  max_na = 0,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5099,7 +5414,7 @@ compute_fc_y_pnh_sum <- function(
       name    = name,
       vars    = vars_fc_y_pnh,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 
   if (combine) {
@@ -5119,7 +5434,8 @@ compute_fc_y_pnh_sum <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_pnh |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -5127,6 +5443,7 @@ compute_fc_y_pnh_sum <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_y_pnh_sum()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -5135,9 +5452,11 @@ compute_fc_y_pnh_sum <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_pnh_nm <- function(
-    data,
-    name = "fc_y_pnh_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_pnh_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5147,7 +5466,7 @@ compute_fc_y_pnh_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_y_pnh,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -5176,7 +5495,8 @@ vars_fc_y_psb <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_psb |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* none of 3 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -5187,6 +5507,7 @@ vars_fc_y_psb <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 0).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -5194,10 +5515,12 @@ vars_fc_y_psb <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_psb_mean <- function(
-    data,
-    name = "fc_y_psb_mean",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "fc_y_psb_mean",
+  max_na = 0,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5210,7 +5533,7 @@ compute_fc_y_psb_mean <- function(
       name    = name,
       vars    = vars_fc_y_psb,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -5224,7 +5547,8 @@ compute_fc_y_psb_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_psb |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -5232,6 +5556,7 @@ compute_fc_y_psb_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_y_psb_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -5240,9 +5565,11 @@ compute_fc_y_psb_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_psb_nm <- function(
-    data,
-    name = "fc_y_psb_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_psb_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5252,7 +5579,7 @@ compute_fc_y_psb_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_y_psb,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -5311,10 +5638,11 @@ vars_fc_y_rpi <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_rpi_mean <- function(
-    data,
-    name = "fc_y_rpi_mean",
-    max_na = 3,
-    combine = TRUE) {
+  data,
+  name = "fc_y_rpi_mean",
+  max_na = 3,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5376,9 +5704,10 @@ compute_fc_y_rpi_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_rpi_nm <- function(
-    data,
-    name = "fc_y_rpi_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_rpi_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5417,7 +5746,8 @@ vars_fc_y_srpf__dis <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_srpf__dis |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* none of 2 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -5428,6 +5758,7 @@ vars_fc_y_srpf__dis <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 0).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -5435,10 +5766,12 @@ vars_fc_y_srpf__dis <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_srpf__dis_mean <- function(
-    data,
-    name = "fc_y_srpf__dis_mean",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "fc_y_srpf__dis_mean",
+  max_na = 0,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5451,7 +5784,7 @@ compute_fc_y_srpf__dis_mean <- function(
       name    = name,
       vars    = vars_fc_y_srpf__dis,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -5467,7 +5800,8 @@ compute_fc_y_srpf__dis_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_srpf__dis |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -5475,6 +5809,7 @@ compute_fc_y_srpf__dis_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_y_srpf__dis_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -5483,9 +5818,11 @@ compute_fc_y_srpf__dis_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_srpf__dis_nm <- function(
-    data,
-    name = "fc_y_srpf__dis_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_srpf__dis_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5495,7 +5832,7 @@ compute_fc_y_srpf__dis_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_y_srpf__dis,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -5527,7 +5864,8 @@ vars_fc_y_srpf__env <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_srpf__env |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* maximally 1 of 6 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -5538,6 +5876,7 @@ vars_fc_y_srpf__env <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 1).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -5545,10 +5884,12 @@ vars_fc_y_srpf__env <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_srpf__env_mean <- function(
-    data,
-    name = "fc_y_srpf__env_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_srpf__env_mean",
+  max_na = 1,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5561,7 +5902,7 @@ compute_fc_y_srpf__env_mean <- function(
       name    = name,
       vars    = vars_fc_y_srpf__env,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -5577,7 +5918,8 @@ compute_fc_y_srpf__env_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_srpf__env |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -5585,6 +5927,7 @@ compute_fc_y_srpf__env_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_y_srpf__env_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -5593,9 +5936,11 @@ compute_fc_y_srpf__env_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_srpf__env_nm <- function(
-    data,
-    name = "fc_y_srpf__env_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_srpf__env_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5605,7 +5950,7 @@ compute_fc_y_srpf__env_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_y_srpf__env,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -5635,7 +5980,8 @@ vars_fc_y_srpf__involv <- c(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_srpf__involv |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #' - *Validation criterion:* none of 4 items missing
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
@@ -5646,6 +5992,7 @@ vars_fc_y_srpf__involv <- c(
 #' data frame. Default is `TRUE`.
 #' @param max_na numeric, positive whole number. Number of missing items
 #'   allowed (Default: 0).
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @return tbl. The input data frame with the summary score appended as
 #'   a new column.
@@ -5653,10 +6000,12 @@ vars_fc_y_srpf__involv <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_srpf__involv_mean <- function(
-    data,
-    name = "fc_y_srpf__involv_mean",
-    max_na = 0,
-    combine = TRUE) {
+  data,
+  name = "fc_y_srpf__involv_mean",
+  max_na = 0,
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5669,7 +6018,7 @@ compute_fc_y_srpf__involv_mean <- function(
       name    = name,
       vars    = vars_fc_y_srpf__involv,
       max_na  = max_na,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -5685,7 +6034,8 @@ compute_fc_y_srpf__involv_mean <- function(
 #'   ```{r, echo=FALSE, results='asis'}
 #'   vars_fc_y_srpf__involv |> md_bullet(2, TRUE)
 #'   ```
-#' - *Excluded values:* none
+#' - *Excluded values:*
+#'   - 777
 #'
 #' @param data tbl. Data frame containing the columns to be summarized.
 #' @param name character. Name of the summary score. Default is the name in
@@ -5693,6 +6043,7 @@ compute_fc_y_srpf__involv_mean <- function(
 #' @param combine logical. If `TRUE`, the summary score is appended to the
 #' input data frame. If `FALSE`, the summary score is returned as a separate
 #' data frame. Default is `TRUE`.
+#' @inheritParams compute_fc_p_vs__famil_mean
 #'
 #' @seealso [compute_fc_y_srpf__involv_mean()]
 #' @return tbl. The input data frame with the summary score appended as
@@ -5701,9 +6052,11 @@ compute_fc_y_srpf__involv_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_srpf__involv_nm <- function(
-    data,
-    name = "fc_y_srpf__involv_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_srpf__involv_nm",
+  exclude = c("777"),
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5713,7 +6066,7 @@ compute_fc_y_srpf__involv_nm <- function(
       combine = combine,
       name    = name,
       vars    = vars_fc_y_srpf__involv,
-      exclude = NULL
+      exclude = exclude
     )
 }
 
@@ -5763,10 +6116,11 @@ vars_fc_y_wpss <- c(
 #' @export
 #' @autoglobal
 compute_fc_y_wpss_mean <- function(
-    data,
-    name = "fc_y_wpss_mean",
-    max_na = 1,
-    combine = TRUE) {
+  data,
+  name = "fc_y_wpss_mean",
+  max_na = 1,
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -5809,9 +6163,10 @@ compute_fc_y_wpss_mean <- function(
 #' @export
 #' @autoglobal
 compute_fc_y_wpss_nm <- function(
-    data,
-    name = "fc_y_wpss_nm",
-    combine = TRUE) {
+  data,
+  name = "fc_y_wpss_nm",
+  combine = TRUE
+) {
   check_col_names(data, name)
   chk::chk_logical(combine)
   chk::chk_data(data)
@@ -6305,4 +6660,130 @@ compute_fc_y_wpss_all <- function(data) {
   data |>
     compute_fc_y_wpss_mean() |>
     compute_fc_y_wpss_nm()
+}
+
+#   ____________________________________________________________________________
+#   fc_y_lone                                                               ####
+
+#' @export
+#' @rdname compute_fc_y_lone_mean
+#' @format vars_fc_y_lone is a character vector of all column names
+#' used to compute summary score of `fc_y_lone`.
+vars_fc_y_lone <- c(
+  "fc_y_lone_001",
+  "fc_y_lone_002",
+  "fc_y_lone_003",
+  "fc_y_lone_004",
+  "fc_y_lone_005",
+  "fc_y_lone_006",
+  "fc_y_lone_007"
+)
+
+#' Compute "UCLA Loneliness Scale \[Youth\]: Mean"
+#'
+#' @description
+#' Computes the summary score `fc_y_lone_mean`
+#' (UCLA Loneliness Scale \[Youth\]: Mean)
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_fc_y_lone |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#' - *Validation criterion:* maximally 1 of 7 items missing
+#'
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @param name character. Name of the summary score. Default is the name in
+#' the description.
+#' @param combine logical. If `TRUE`, the summary score is appended to the
+#' input data frame. If `FALSE`, the summary score is returned as a separate
+#' data frame. Default is `TRUE`.
+#' @param max_na numeric, positive whole number. Number of missing items
+#'   allowed (Default: 1).
+#'
+#' @return tbl. The input data frame with the summary score appended as
+#'   a new column.
+#'
+#' @export
+compute_fc_y_lone_mean <- function(
+  data,
+  name = "fc_y_lone_mean",
+  max_na = 1,
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_mean(
+      combine = combine,
+      name    = name,
+      vars    = vars_fc_y_lone,
+      max_na  = max_na,
+      exclude = c("777", "999")
+    )
+}
+
+#' Compute "UCLA Loneliness Scale \[Youth\]: Number missing"
+#'
+#' @description
+#' Computes the summary score `fc_y_lone_nm`
+#' (UCLA Loneliness Scale \[Youth\]: Number missing)
+#'
+#' - *Summarized variables:*
+#'   ```{r, echo=FALSE, results='asis'}
+#'   vars_fc_y_lone |> md_bullet(2, TRUE)
+#'   ```
+#' - *Excluded values:*
+#'   - 777
+#'   - 999
+#'
+#' @param data tbl. Data frame containing the columns to be summarized.
+#' @param name character. Name of the summary score. Default is the name in
+#' the description.
+#' @param combine logical. If `TRUE`, the summary score is appended to the
+#' input data frame. If `FALSE`, the summary score is returned as a separate
+#' data frame. Default is `TRUE`.
+#'
+#' @seealso [compute_fc_y_lone_mean()]
+#' @return tbl. The input data frame with the summary score appended as
+#'   a new column.
+#'
+#' @export
+compute_fc_y_lone_nm <- function(
+  data,
+  name = "fc_y_lone_nm",
+  combine = TRUE
+) {
+  check_col_names(data, name)
+
+  data |>
+    ss_nm(
+      combine = combine,
+      name    = name,
+      vars    = vars_fc_y_lone,
+      exclude = c("777", "999")
+    )
+}
+
+#' Compute all the fc_y_lone summary scores
+#' @description
+#' This is a high-level function that computes all summary scores in this table.
+#' Make sure the `data` contains all the necessary columns.
+#'
+#' @param data tbl, Dataframe containing the columns to be summarized.
+#'
+#' @return tbl. The input data frame with the summary scores appended as
+#'  new columns.
+#' @export
+#' @autoglobal
+#' @examples
+#' \dontrun{
+#' compute_fc_y_lone_all(data)
+#' }
+compute_fc_y_lone_all <- function(data) {
+  data |>
+    compute_fc_y_lone_mean() |>
+    compute_fc_y_lone_nm()
 }

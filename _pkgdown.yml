@@ -19,6 +19,10 @@ reference:
   contents:
   - matches("^compute_ab_g_stc_")
   - matches("^vars_ab_g_stc_")
+- subtitle: Demographics [Parent]
+  contents:
+  - matches("^compute_ab_p_demo_")
+  - matches("^vars_ab_p_demo_")
 
 - title: Friends, Family, & Community
   desc: Summary scores in the ABCD core domain "Friends, Family, & Community"
@@ -42,6 +46,10 @@ reference:
   contents:
   - matches("^compute_fc_y_fes_")
   - matches("^vars_fc_y_fes_")
+- subtitle: UCLA Loneliness Scale [Youth]
+  contents:
+  - matches("^compute_fc_y_lone_")
+  - matches("^vars_fc_y_lone_")
 - subtitle: Values Scale [Parent]
   contents:
   - matches("^compute_fc_p_vs_")
@@ -62,6 +70,10 @@ reference:
   contents:
   - matches("^compute_fc_y_mnbs_")
   - matches("^vars_fc_y_mnbs_")
+- subtitle: Native American Acculturation [Youth]
+  contents:
+  - matches("^compute_fc_y_naa_")
+  - matches("^vars_fc_y_naa")
 - subtitle: Neighborhood Collective Efficacy [Parent]
   contents:
   - matches("^compute_fc_p_nce_")
@@ -145,6 +157,10 @@ reference:
   contents:
   - matches("^compute_mh_y_pps_")
   - matches("^vars_mh_y_pps_")
+- subtitle: Static Prodromal Psychosis Scale [Youth]
+  contents:
+  - matches("^compute_mh_y_ppsss_")
+  - matches("^vars_mh_y_ppsss_")
 - subtitle: Short Social Responsiveness Scale [Parent]
   contents:
   - matches("^compute_mh_p_ssrs_")
@@ -158,6 +174,19 @@ reference:
   contents:
   - matches("^compute_mh_y_upps_")
   - matches("^vars_mh_y_upps_")
+- subtitle: Kiddie Schedule for Affective Disorders and Schizophrenia [Parent]
+  contents:
+  - matches("^compute_mh_p_ksads_")
+  - matches("^vars_mh_p_ksads_")
+- subtitle: Kiddie Schedule for Affective Disorders and Schizophrenia [Youth]
+  contents:
+  - matches("^compute_mh_y_ksads_")
+  - matches("^vars_mh_y_ksads_")
+- subtitle: Family History [Parent]
+  contents:
+  - compute_famhx_endorsement
+  - matches("^compute_mh_p_famhx_")
+  - matches("^vars_mh_p_famhx_")
 
 - title: Mental Health (ASEBA)
   desc: Summary scores in the ABCD core domain "Mental Health" (ASEBA)
@@ -214,6 +243,10 @@ reference:
   contents:
   - matches("^compute_ph_y_anthr_")
   - matches("^vars_ph_y_anthr_")
+- subtitle: Anthropometrics [Parent]
+  contents:
+  - matches("^compute_ph_p_anthr_")
+  - matches("^vars_ph_p_anthr_")
 - subtitle: Blood Pressure [Youth]
   contents:
   - matches("^compute_ph_y_bp_")
@@ -224,7 +257,7 @@ reference:
   - matches("^vars_ph_p_cna_")
 - subtitle: Developmental History [Parent]
   contents:
-  - matches("^compute_ph_p_dhx_")
+  - matches("^compute_ph_p_dhx_birth")
   - matches("^vars_ph_p_dhx_")
 - subtitle: Munich Chronotype Questionnaire [Youth]
   contents:
@@ -246,6 +279,18 @@ reference:
   contents:
   - matches("^compute_ph_y_pds_")
   - matches("^vars_ph_y_pds_")
+- subtitle: Fitbit Daily & Weekly Scores
+  contents:
+    - matches("^identify_hr")
+    - matches("^compute_fitbit")
+
+- title: Physical Health (Medication History)
+  desc: Summary scores in the ABCD core domain "Physical Health" (Medication History)
+  contents:
+  - rx_map
+  - rx_config
+  - rx_config_estuse_flags
+  - matches("^compute_ph_.*meds")
 
 - title: Substance Use
   desc: Summary scores in the ABCD core domain "Substance Use"
@@ -297,9 +342,17 @@ reference:
   contents:
   - matches("^compute_su_y_caff__")
   - matches("^vars_su_y_caff__")
+- subtitle: Kiddie Schedule for Affective Disorders and Schizophrenia [Parent]
+  contents:
+  - matches("^compute_su_p_ksads_")
+  - matches("^vars_su_p_ksads_")
+- subtitle: Kiddie Schedule for Affective Disorders and Schizophrenia [Youth]
+  contents:
+  - matches("^compute_su_y_ksads_")
+  - matches("^vars_su_y_ksads_")
 
-- title: Substance Use (SUI/TLFB)
-  desc: Summary scores in the ABCD core domain "Substance Use" (SUI/TLFB)
+- title: Substance Use (SUI/TLFB/SDSU)
+  desc: Summary scores in the ABCD core domain "Substance Use" (SUI/TLFB/SDSU)
 - subtitle: Substance Use Interview [Youth]
   contents:
   - sui_substances
@@ -311,14 +364,20 @@ reference:
   - matches("^compute_tlfb_")
   - filter_tlfb
   - check_args_tlfb
+- subtitle: Multiple Substances Use [Youth]
+  contents:
+  - compute_ss_use_yn
+  - compute_ss_use_onset_age
+  - compute_ss_use_onset_event
 
 - title: Utility functions
-  desc:  Low-level functions for computing summary scores
+  desc: Low-level functions for computing summary scores
   contents:
   - matches("^ss_")
   - recode_levels
   - combine_levels
   - combine_cols
+  - combine_checkboxes
   - make_static
 
 - title: internal

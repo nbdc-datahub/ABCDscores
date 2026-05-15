@@ -16,7 +16,7 @@ vars_mh_y_peq__overt__agg
 compute_mh_y_peq__overt__agg_nm(
   data,
   name = "mh_y_peq__overt__agg_nm",
-  exclude = NULL,
+  exclude = c("777"),
   combine = TRUE
 )
 }
@@ -46,7 +46,10 @@ missing
 \item \code{mh_y_peq__overt__agg_002}
 \item \code{mh_y_peq__overt__agg_003}
 }
-\item \emph{Excluded values:} none
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+}
 }
 }
 \examples{

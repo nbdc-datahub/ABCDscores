@@ -5,7 +5,7 @@
 \alias{vars_fc_y_vs__famil}
 \alias{compute_fc_y_vs__famil_mean}
 \title{Compute "Values Scale [Youth] (Familism):
-Mean - Baseline to Year 5"}
+Mean (Subscales: supp, ref, obl)"}
 \format{
 a character vector of all column names
 used to compute summary score of \code{fc_y_vs__famil_mean} and
@@ -18,7 +18,7 @@ compute_fc_y_vs__famil_mean(
   data,
   name = "fc_y_vs__famil_mean",
   max_na = 3,
-  exclude = c("777", "999"),
+  exclude = c("777"),
   combine = TRUE
 )
 }
@@ -44,7 +44,7 @@ a new column.
 }
 \description{
 Computes the summary score \code{fc_y_vs__famil_mean}
-(Values Scale [Youth] (Familism): Mean - Baseline to Year 5)
+(Values Scale [Youth] (Familism): Mean (Subscales: supp, ref, obl))
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{
@@ -68,11 +68,11 @@ Computes the summary score \code{fc_y_vs__famil_mean}
 \item \emph{Excluded values:}
 \itemize{
 \item 777
-\item 999
 }
 \item \emph{Validation criterion:}
 \itemize{
 \item maximally 3 of 16 items missing
+\item all sub-scales can be calculated
 }
 }
 }

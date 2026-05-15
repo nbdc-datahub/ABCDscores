@@ -3,7 +3,7 @@
 \name{compute_ph_p_sds__dims_nm}
 \alias{compute_ph_p_sds__dims_nm}
 \title{Compute "Sleep Disturbance Scale [Parent] (Disorders of initiating and
-maintaining sleep) - Number missing"}
+maintaining sleep): Number missing"}
 \usage{
 compute_ph_p_sds__dims_nm(
   data,
@@ -31,7 +31,7 @@ a new column.
 \description{
 Computes the summary score \code{ph_p_sds__dims_nm}
 Sleep Disturbance Scale [Parent] (Disorders of initiating and maintaining
-sleep) - Number missing
+sleep): Number missing
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{

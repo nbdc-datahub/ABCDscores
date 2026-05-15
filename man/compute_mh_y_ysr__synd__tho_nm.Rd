@@ -42,7 +42,6 @@ missing
 \item \emph{Summarized variables:}
 \itemize{
 \item \code{mh_y_ysr__tho_001}
-\item \code{mh_y_ysr__tho__dep_001}
 \item \code{mh_y_ysr__tho_002}
 \item \code{mh_y_ysr__tho_003}
 \item \code{mh_y_ysr__tho_004}

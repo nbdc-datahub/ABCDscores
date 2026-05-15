@@ -2,7 +2,7 @@
 % Please edit documentation in R/scores_ph.R
 \name{compute_ph_p_sds_nm}
 \alias{compute_ph_p_sds_nm}
-\title{Compute "Sleep Disturbance Scale [Parent] (Total) - Number missing"}
+\title{Compute "Sleep Disturbance Scale [Parent]: Number missing"}
 \usage{
 compute_ph_p_sds_nm(
   data,
@@ -29,7 +29,7 @@ a new column.
 }
 \description{
 Computes the summary score \code{ph_p_sds_nm}
-Sleep Disturbance Scale [Parent] (Total) - Number missing
+Sleep Disturbance Scale [Parent]: Number missing
 \itemize{
 \item \emph{Summarized variables:}
 \itemize{

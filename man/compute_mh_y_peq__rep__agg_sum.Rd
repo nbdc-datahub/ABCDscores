@@ -9,7 +9,7 @@ compute_mh_y_peq__rep__agg_sum(
   data,
   name = "mh_y_peq__rep__agg_sum",
   max_na = 0,
-  exclude = NULL,
+  exclude = c("777"),
   combine = TRUE
 )
 }
@@ -41,7 +41,10 @@ Peer Experiences Questionnaire [Youth] (Reputational Aggression): Sum
 \item \code{mh_y_peq__rep__agg_002}
 \item \code{mh_y_peq__rep__agg_003}
 }
-\item \emph{Excluded values:} none
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+}
 \item \emph{Validation criterion:} none of 3 items missing
 }
 }

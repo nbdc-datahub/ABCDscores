@@ -3,7 +3,7 @@
 \name{compute_ph_p_sds__does_nm}
 \alias{compute_ph_p_sds__does_nm}
 \title{Compute "Sleep Disturbance Scale [Parent] (Disorders of excessive
-somnolence) - Number missing"}
+somnolence): Number missing"}
 \usage{
 compute_ph_p_sds__does_nm(
   data,

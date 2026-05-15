@@ -113,7 +113,7 @@ required, i.e., we can just use the function like this:
 compute_fc_p_psb_mean(data)
 ```
 
-We can do the same using `fc_p_psb_nm()`:
+We can do the same using `compute_fc_p_psb_nm()`:
 
 ```{r}
 compute_fc_p_psb_nm(data)
@@ -146,7 +146,7 @@ documentation for each score.
 #### `name`
 
 The `name` argument is used to specify the name of the output score. The default
-default value for this parameter is the official name of the column in the
+value for this parameter is the official name of the column in the
 released data, but it can be overridden by users with a custom name.
 
 ```{r}
@@ -185,9 +185,9 @@ and not all summary score functions have this argument.
 - ...
 
 For most summary scores in the ABCD data resource, `max_na` is set to a number
-that ensures that >=80% of the variables that the given score summarizes have a
-non-missing value. Users can use the `max_na` argument if they want to compute
-the summary score in a more lenient or more restrictive manner. 
+that ensures that at least 80% of the variables that the given score summarizes
+have a non-missing value. Users can use the `max_na` argument if they want to
+compute the summary score in a more lenient or more restrictive manner. 
 
 As an example, let's explore how the summary score changes when we set `max_na`
 argument to `1` (above we used the default, which in the case of
@@ -229,8 +229,8 @@ data <- tibble::tibble(
 data
 ```
 
-When we compute the score, only the 1, 4 rows are computed, because other rows
-contain `777` or `999` or `NA` values.
+When we compute the score, only rows 1 and 4 are computed because the other rows
+contain `777`, `999`, or `NA` values.
 
 ```{r}
 compute_mh_p_abcl__afs__frnd_sum(data, exclude = c("777", "999"))

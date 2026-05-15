@@ -43,14 +43,12 @@ problems): Number missing
 \itemize{
 \item \code{mh_y_ysr__wthdep__dep_001}
 \item \code{mh_y_ysr__anxdep__dep_001}
-\item \code{mh_y_ysr__tho__dep_001}
 \item \code{mh_y_ysr__othpr__dep_001}
 \item \code{mh_y_ysr__anxdep__dep_002}
 \item \code{mh_y_ysr__anxdep__dep_003}
 \item \code{mh_y_ysr__som__dep_001}
 \item \code{mh_y_ysr__tho__dep_002}
 \item \code{mh_y_ysr__othpr__dep_002}
-\item \code{mh_y_ysr__anxdep__dep_004}
 \item \code{mh_y_ysr__tho__dep_003}
 \item \code{mh_y_ysr__wthdep__dep_002}
 \item \code{mh_y_ysr__wthdep__dep_003}

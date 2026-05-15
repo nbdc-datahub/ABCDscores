@@ -12,7 +12,13 @@ used to compute summary score of \code{fc_y_psb}.
 \usage{
 vars_fc_y_psb
 
-compute_fc_y_psb_mean(data, name = "fc_y_psb_mean", max_na = 0, combine = TRUE)
+compute_fc_y_psb_mean(
+  data,
+  name = "fc_y_psb_mean",
+  max_na = 0,
+  exclude = c("777"),
+  combine = TRUE
+)
 }
 \arguments{
 \item{data}{tbl. Data frame containing the columns to be summarized.}
@@ -22,6 +28,9 @@ the description.}
 
 \item{max_na}{numeric, positive whole number. Number of missing items
 allowed (Default: 0).}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical. If \code{TRUE}, the summary score is appended to the
 input data frame. If \code{FALSE}, the summary score is returned as a separate
@@ -41,7 +50,10 @@ Computes the summary score \code{fc_y_psb_mean}
 \item \code{fc_y_psb_002}
 \item \code{fc_y_psb_003}
 }
-\item \emph{Excluded values:} none
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+}
 \item \emph{Validation criterion:} none of 3 items missing
 }
 }

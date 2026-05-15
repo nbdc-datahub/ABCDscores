@@ -58,6 +58,10 @@ compute_ph_p_dhx_birthweight <- function(
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
+  chk::check_names(
+    data,
+    c(vars_ph_p_dhx_birthweight, "participant_id", "session_id")
+  )
 
   data_ss <- data |>
     # take only baseline and four-year data
@@ -72,6 +76,11 @@ compute_ph_p_dhx_birthweight <- function(
       )
     ) |>
     mutate(
+      across(
+        all_of(vars_ph_p_dhx_birthweight),
+        ~ as.character(.x) |>
+          as.numeric()
+      ),
       # convert ounces to lbs
       ph_p_dhx_002__02 = ph_p_dhx_002__02 / 16,
       # correct outliers
@@ -216,6 +225,7 @@ compute_ph_p_otbi_nm <- function(
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_logical(combine)
+  chk::check_names(data, c("session_id"))
 
   conditions_baseline <- c(
     "is.na(ph_p_otbi_001)",
@@ -353,6 +363,8 @@ compute_ph_p_otbi__loc__30m_count <- function(
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::check_names(data, c("session_id"))
 
   conditions_baseline <- c(
     "ph_p_otbi_001 == 1 & ph_p_otbi__loc_001 > 1",
@@ -403,9 +415,9 @@ compute_ph_p_otbi__loc__30m_count <- function(
       combine = TRUE
     ) |>
     combine_cols(
-      col_1      = "baseline",
-      col_2      = "longitudinal",
-      name       = name
+      col_1 = "baseline",
+      col_2 = "longitudinal",
+      name  = name
     ) |>
     compute_ph_p_otbi__tbi1a(name = "tmp_tbi1a") |>
     transmute(
@@ -452,6 +464,7 @@ compute_ph_p_otbi__loc__30m_nm <- function(
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_logical(combine)
+  chk::check_names(data, c("session_id"))
 
   conditions_baseline <- c(
     "ph_p_otbi_001 == 1 & is.na(ph_p_otbi__loc_001)",
@@ -502,9 +515,9 @@ compute_ph_p_otbi__loc__30m_nm <- function(
       combine = TRUE
     ) |>
     combine_cols(
-      col_1      = "baseline",
-      col_2      = "longitudinal",
-      name       = name
+      col_1 = "baseline",
+      col_2 = "longitudinal",
+      name  = name
     ) |>
     compute_ph_p_otbi__tbi1a(name = "tmp_tbi1a") |>
     transmute(
@@ -600,6 +613,8 @@ compute_ph_p_otbi__loc_count <- function(
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::check_names(data, c("session_id"))
 
   conditions_baseline <- c(
     "ph_p_otbi_001 == 1 & ph_p_otbi__loc_001 > 0",
@@ -652,9 +667,9 @@ compute_ph_p_otbi__loc_count <- function(
       combine = TRUE
     ) |>
     combine_cols(
-      col_1      = "baseline",
-      col_2      = "longitudinal",
-      name       = name
+      col_1 = "baseline",
+      col_2 = "longitudinal",
+      name  = name
     ) |>
     compute_ph_p_otbi__tbi1a(name = "tmp_tbi1a") |>
     transmute(
@@ -699,8 +714,9 @@ compute_ph_p_otbi__loc_nm <- function(
     exclude = c("777", "999"),
     combine = TRUE) {
   chk::chk_data(data)
-  chk::chk_logical(combine)
   check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::check_names(data, c("session_id"))
 
   conditions_baseline <- c(
     "ph_p_otbi_001 == 1 & is.na(ph_p_otbi__loc_001)",
@@ -753,9 +769,9 @@ compute_ph_p_otbi__loc_nm <- function(
       combine = TRUE
     ) |>
     combine_cols(
-      col_1      = "baseline",
-      col_2      = "longitudinal",
-      name       = name
+      col_1 = "baseline",
+      col_2 = "longitudinal",
+      name  = name
     ) |>
     compute_ph_p_otbi__tbi1a(name = "tmp_tbi1a") |>
     transmute(
@@ -832,6 +848,7 @@ compute_ph_p_otbi__rpt_count <- function(
   check_col_names(data, name)
   chk::chk_whole_number(max_na)
   chk::chk_gte(max_na, 0)
+  chk::chk_logical(combine)
 
   data_ss <- data |>
     ss_sum(
@@ -849,9 +866,9 @@ compute_ph_p_otbi__rpt_count <- function(
       combine = TRUE
     ) |>
     combine_cols(
-      col_1      = "baseline",
-      col_2      = "longitudinal",
-      name       = name
+      col_1 = "baseline",
+      col_2 = "longitudinal",
+      name  = name
     ) |>
     compute_ph_p_otbi__tbi1a(name = "tmp_tbi1a") |>
     transmute(
@@ -897,6 +914,7 @@ compute_ph_p_otbi__rpt_nm <- function(
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
+  chk::chk_logical(combine)
 
   conditions_baseline <- c(
     "is.na(ph_p_otbi__rpt_001)",
@@ -919,9 +937,9 @@ compute_ph_p_otbi__rpt_nm <- function(
       combine = TRUE
     ) |>
     combine_cols(
-      col_1      = "baseline",
-      col_2      = "longitudinal",
-      name       = name
+      col_1 = "baseline",
+      col_2 = "longitudinal",
+      name  = name
     ) |>
     compute_ph_p_otbi__tbi1a(name = "tmp_tbi1a") |>
     transmute(
@@ -1041,6 +1059,8 @@ compute_ph_p_otbi__loc_tbiage <- function(
     data,
     c(unlist(vars_ph_p_otbi__loc_tbiage), "ph_p_otbi_age", "session_id")
   )
+  if (!is.null(exclude)) chk::chk_character(exclude)
+  chk::chk_logical(combine)
 
   data_ss <- data |>
     mutate(
@@ -1051,6 +1071,11 @@ compute_ph_p_otbi__loc_tbiage <- function(
           NA,
           .x
         )
+      ),
+      across(
+        all_of(unlist(vars_ph_p_otbi__loc_tbiage)),
+        ~ as.character(.x) |>
+          as.numeric()
       )
     ) |>
     mutate(
@@ -1142,9 +1167,9 @@ compute_ph_p_otbi__loc_tbiage <- function(
       )
     ) |>
     combine_cols(
-      col_1      = "baseline",
-      col_2      = "longitudinal",
-      name       = name
+      col_1 = "baseline",
+      col_2 = "longitudinal",
+      name  = name
     ) |>
     compute_ph_p_otbi__tbi1a(name = "tmp_tbi1a") |>
     transmute(
@@ -1193,6 +1218,7 @@ compute_ph_p_otbi__loc__tbiage_nm <- function(
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
+  chk::chk_logical(combine)
 
   conditions_baseline <- c(
     "ph_p_otbi__loc_001 > 0 & is.na(ph_p_otbi__age_001)",
@@ -1292,15 +1318,14 @@ compute_ph_p_otbi__loc_before15 <- function(
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
+  chk::chk_logical(combine)
 
   data_ss <- data |>
     compute_ph_p_otbi__loc_tbiage(name = "temp_tbiage") |>
     transmute(
       !!name := case_when(
         is.na(temp_tbiage) ~ NA_character_,
-        # needs fix; works currently ----
-        # should be `temp_tbiage >= 0`
-        temp_tbiage >= "0" & temp_tbiage < 15 ~ "1",
+        temp_tbiage >= 0 & temp_tbiage < 15 ~ "1",
         .default = "0"
       )
     )
@@ -1371,6 +1396,8 @@ compute_ph_p_otbi__tbi1a <- function(
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::check_names(data, c("session_id"))
 
   conditions_baseline <- c(
     "ph_p_otbi_001 == 1",
@@ -1530,6 +1557,8 @@ compute_ph_p_otbi__tbi1b <- function(
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::check_names(data, c("session_id"))
 
   conditions_baseline <- paste(
     c(
@@ -1707,6 +1736,8 @@ compute_ph_p_otbi__tbi2 <- function(
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::check_names(data, c("session_id"))
 
   conditions_baseline <- c(
     "ph_p_otbi_001 == 1 & ph_p_otbi__loc_001 < 1 &
@@ -1870,6 +1901,8 @@ compute_ph_p_otbi__tbi3 <- function(
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::check_names(data, c("session_id"))
 
   conditions_baseline <- c(
     "ph_p_otbi_001 == 1 &
@@ -1982,6 +2015,8 @@ compute_ph_p_otbi__tbi4 <- function(
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::check_names(data, c("session_id"))
 
   conditions_baseline <- c(
     "ph_p_otbi_001 == 1 & ph_p_otbi__loc_001 == 2",
@@ -2094,6 +2129,8 @@ compute_ph_p_otbi__tbi5 <- function(
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
+  chk::chk_logical(combine)
+  chk::check_names(data, c("session_id"))
 
   conditions_baseline <- c(
     "ph_p_otbi_001 == 1 & ph_p_otbi__loc_001 == 3",
@@ -2233,6 +2270,7 @@ compute_ph_p_otbi_tbiworst <- function(
     combine = TRUE) {
   chk::chk_data(data)
   check_col_names(data, name)
+  chk::chk_logical(combine)
 
   temp_vars <- c(
     "ph_p_otbi__tbi1a",
@@ -5203,10 +5241,10 @@ compute_ph_y_mctq__sd_count <- function(
       ),
       "{name}" :=
         case_when(
-          ph_y_mctq__school_001 == 0 &
-            is.na(ph_y_mctq__school_001__01) &
-            ph_y_mctq__school_001__v01 == 0 &
-            is.na(ph_y_mctq__school_001__01__v1) ~ 0,
+          (ph_y_mctq__school_001 == 0 &
+            is.na(ph_y_mctq__school_001__01)) |
+            (ph_y_mctq__school_001__v01 == 0 &
+              is.na(ph_y_mctq__school_001__01__v1)) ~ 0,
           .default = pmax(
             ph_y_mctq__school_001__01,
             ph_y_mctq__school_001__01__v1,
@@ -7706,12 +7744,12 @@ vars_ph_p_sds_sum <- c(
   "ph_p_sds__does_005"
 )
 
-#' Compute "Sleep Disturbance Scale \[Parent\] (Total): Sum \[Validation: No
+#' Compute "Sleep Disturbance Scale \[Parent\]: Sum \[Validation: No
 #' more than 0 missing or declined\]"
 #'
 #' @description
 #' Computes the summary score `ph_p_sds_sum`
-#' Sleep Disturbance Scale \[Parent\] (Total): Sum \[Validation: No more than 0
+#' Sleep Disturbance Scale \[Parent\]: Sum \[Validation: No more than 0
 #' missing or declined\]
 #'
 #' - *Summarized variables:*
@@ -7764,11 +7802,11 @@ compute_ph_p_sds_sum <- function(
     )
 }
 
-#' Compute "Sleep Disturbance Scale \[Parent\] (Total) - Number missing"
+#' Compute "Sleep Disturbance Scale \[Parent\]: Number missing"
 #'
 #' @description
 #' Computes the summary score `ph_p_sds_nm`
-#' Sleep Disturbance Scale \[Parent\] (Total) - Number missing
+#' Sleep Disturbance Scale \[Parent\]: Number missing
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -7865,12 +7903,12 @@ compute_ph_p_sds__da_sum <- function(
     )
 }
 
-#' Compute "Sleep Disturbance Scale \[Parent\] (Disorder of arousal) - Number
+#' Compute "Sleep Disturbance Scale \[Parent\] (Disorder of arousal): Number
 #' missing"
 #'
 #' @description
 #' Computes the summary score `ph_p_sds__da_nm`
-#' Sleep Disturbance Scale \[Parent\] (Disorder of arousal) - Number missing
+#' Sleep Disturbance Scale \[Parent\] (Disorder of arousal): Number missing
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -7970,7 +8008,7 @@ compute_ph_p_sds__does_sum <- function(
 }
 
 #' Compute "Sleep Disturbance Scale \[Parent\] (Disorders of excessive
-#' somnolence) - Number missing"
+#' somnolence): Number missing"
 #'
 #' @description
 #' Computes the summary score `ph_p_sds__does_nm`
@@ -8071,12 +8109,12 @@ compute_ph_p_sds__hyphy_sum <- function(
     )
 }
 
-#' Compute "Sleep Disturbance Scale \[Parent\] (Sleep hyperhydrosis) - Number
+#' Compute "Sleep Disturbance Scale \[Parent\] (Sleep hyperhydrosis): Number
 #' missing"
 #'
 #' @description
 #' Computes the summary score `ph_p_sds__hyphy_nm`
-#' Sleep Disturbance Scale \[Parent\] (Sleep hyperhydrosis) - Number missing
+#' Sleep Disturbance Scale \[Parent\] (Sleep hyperhydrosis): Number missing
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -8173,12 +8211,12 @@ compute_ph_p_sds__sbd_sum <- function(
     )
 }
 
-#' Compute "Sleep Disturbance Scale \[Parent\] (Sleep breathing disorders) - Number
+#' Compute "Sleep Disturbance Scale \[Parent\] (Sleep breathing disorders): Number
 #' missing"
 #'
 #' @description
 #' Computes the summary score `ph_p_sds__sbd_nm`
-#' Sleep Disturbance Scale \[Parent\] (Sleep breathing disorders) - Number missing
+#' Sleep Disturbance Scale \[Parent\] (Sleep breathing disorders): Number missing
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -8279,11 +8317,11 @@ compute_ph_p_sds__swtd_sum <- function(
 }
 
 #' Compute "Sleep Disturbance Scale \[Parent\] (Sleep-wake transition
-#' disorders) - Number missing"
+#' disorders): Number missing"
 #'
 #' @description
 #' Computes the summary score `ph_p_sds__swtd_nm`
-#' Sleep Disturbance Scale \[Parent\] (Sleep-wake transition disorders) - Number
+#' Sleep Disturbance Scale \[Parent\] (Sleep-wake transition disorders): Number
 #' missing
 #'
 #' - *Summarized variables:*
@@ -8386,12 +8424,12 @@ compute_ph_p_sds__dims_sum <- function(
 }
 
 #' Compute "Sleep Disturbance Scale \[Parent\] (Disorders of initiating and
-#' maintaining sleep) - Number missing"
+#' maintaining sleep): Number missing"
 #'
 #' @description
 #' Computes the summary score `ph_p_sds__dims_nm`
 #' Sleep Disturbance Scale \[Parent\] (Disorders of initiating and maintaining
-#' sleep) - Number missing
+#' sleep): Number missing
 #'
 #' - *Summarized variables:*
 #'   ```{r, echo=FALSE, results='asis'}
@@ -8465,4 +8503,260 @@ compute_ph_p_sds_all <- function(data) {
     compute_ph_p_sds__swtd_nm() |>
     compute_ph_p_sds__dims_sum() |>
     compute_ph_p_sds__dims_nm()
+}
+
+#   ____________________________________________________________________________
+#   ph_p_anthr                                                              ####
+
+#' @export
+#' @autoglobal
+#' @rdname compute_ph_p_anthr__fath_height__in
+#' @format character vector of all column names
+#' used to compute summary scores of `ph_p_anthr__fath_height__in` and
+#'    `ph_p_anthr__moth_height__in`.
+vars_ph_p_anthr__height <- c(
+  "ph_p_anthr__height__fath_001",
+  "ph_p_anthr__height__fath_001__01",
+  "ph_p_anthr__height__moth_001",
+  "ph_p_anthr__height__moth_001__01"
+)
+
+#' Compute "Anthropometrics \[Parent\] (Height): Father's height (in)"
+#'
+#' @description
+#' Computes the summary score `ph_p_anthr__fath_height__in`
+#' Anthropometrics \[Parent\] (Height): Father's height (in)
+#'
+#' - *Summarized variables:*
+#'  ```{r, echo=FALSE, results='asis'}
+#'  vars_ph_p_anthr__height[1:2] |> md_bullet(2, TRUE)
+#'  ```
+#' - *Excluded values:* None
+#' - *Validation criterion:* None
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#'
+#' @export
+#' @autoglobal
+#' @examples
+#' \dontrun{
+#' compute_ph_p_anthr__fath_height__in(data) |>
+#'   select(
+#'     all_of(c("ph_p_anthr__fath_height__in", vars_ph_p_anthr__height))
+#'   )
+#' }
+compute_ph_p_anthr__fath_height__in <- function(
+    data,
+    name = "ph_p_anthr__fath_height__in",
+    combine = TRUE) {
+  chk::chk_data(data)
+  chk::chk_logical(combine)
+  check_col_names(data, name)
+  chk::check_names(data, c(vars_ph_p_anthr__height[1:2]))
+
+  data_ss <- data |>
+    mutate(
+      across(
+        all_of(vars_ph_p_anthr__height[1:2]),
+        ~ as.character(.x) |>
+          as.numeric()
+      ),
+      tmp_height = ph_p_anthr__height__fath_001 * 12
+    ) |>
+    transmute(
+      !!name := if_else(
+        is.na(ph_p_anthr__height__fath_001__01),
+        tmp_height,
+        tmp_height + ph_p_anthr__height__fath_001__01
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
+}
+
+#' Compute "Anthropometrics \[Parent\] (Height): Father's height (cm)"
+#'
+#' @description
+#' Computes the summary score `ph_p_anthr__fath_height__cm`
+#' Anthropometrics \[Parent\] (Height): Father's height (cm)
+#'
+#' - *Summarized variables:*
+#'  ```{r, echo=FALSE, results='asis'}
+#'  vars_ph_p_anthr__height[1:2] |> md_bullet(2, TRUE)
+#'  ```
+#' - *Excluded values:* None
+#' - *Validation criterion:* None
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#' @seealso [compute_ph_p_anthr__fath_height__in()]
+#'
+#' @export
+#' @autoglobal
+#' @examples
+#' \dontrun{
+#' compute_ph_p_anthr__fath_height__cm(data) |>
+#'   select(
+#'     all_of(c("ph_p_anthr__fath_height__cm", vars_ph_p_anthr__height))
+#'   )
+#' }
+compute_ph_p_anthr__fath_height__cm <- function(
+    data,
+    name = "ph_p_anthr__fath_height__cm",
+    combine = TRUE) {
+  chk::chk_data(data)
+  chk::chk_logical(combine)
+  check_col_names(data, name)
+
+  data_ss <- data |>
+    compute_ph_p_anthr__fath_height__in(
+      name = "tmp_inches"
+    ) |>
+    transmute(
+      !!name := tmp_inches * 2.54
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
+}
+
+#' Compute "Anthropometrics \[Parent\] (Height): Mother's height (in)"
+#'
+#' @description
+#' Computes the summary score `ph_p_anthr__moth_height__in`
+#' Anthropometrics \[Parent\] (Height): Mother's height (in)
+#'
+#' - *Summarized variables:*
+#'  ```{r, echo=FALSE, results='asis'}
+#'  vars_ph_p_anthr__height[3:4] |> md_bullet(2, TRUE)
+#'  ```
+#' - *Excluded values:* None
+#' - *Validation criterion:* None
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#' @seealso [compute_ph_p_anthr__fath_height__in()]
+#'
+#' @export
+#' @autoglobal
+#' @examples
+#' \dontrun{
+#' compute_ph_p_anthr__moth_height__in(data) |>
+#'   select(
+#'     all_of(c("ph_p_anthr__moth_height__in", vars_ph_p_anthr__height))
+#'   )
+#' }
+compute_ph_p_anthr__moth_height__in <- function(
+    data,
+    name = "ph_p_anthr__moth_height__in",
+    combine = TRUE) {
+  chk::chk_data(data)
+  chk::chk_logical(combine)
+  check_col_names(data, name)
+  chk::check_names(data, c(vars_ph_p_anthr__height[3:4]))
+
+  data_ss <- data |>
+    mutate(
+      across(
+        all_of(vars_ph_p_anthr__height[3:4]),
+        ~ as.character(.x) |>
+          as.numeric()
+      ),
+      tmp_height = ph_p_anthr__height__moth_001 * 12
+    ) |>
+    transmute(
+      !!name := if_else(
+        is.na(ph_p_anthr__height__moth_001__01),
+        tmp_height,
+        tmp_height + ph_p_anthr__height__moth_001__01
+      )
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
+}
+
+#' Compute "Anthropometrics \[Parent\] (Height): Mother's height (cm)"
+#'
+#' @description
+#' Computes the summary score `ph_p_anthr__moth_height__cm`
+#' Anthropometrics \[Parent\] (Height): Mother's height (cm)
+#'
+#' - *Summarized variables:*
+#'  ```{r, echo=FALSE, results='asis'}
+#'  vars_ph_p_anthr__height[3:4] |> md_bullet(2, TRUE)
+#'  ```
+#' - *Excluded values:* None
+#' - *Validation criterion:* None
+#'
+#' @inheritParams compute_ph_p_sds_sum
+#' @seealso [compute_ph_p_anthr__fath_height__in()]
+#'
+#' @export
+#' @autoglobal
+#' @examples
+#' \dontrun{
+#' compute_ph_p_anthr__moth_height__cm(data) |>
+#'   select(
+#'     all_of(c("ph_p_anthr__moth_height__cm", vars_ph_p_anthr__height))
+#'   )
+#' }
+compute_ph_p_anthr__moth_height__cm <- function(
+    data,
+    name = "ph_p_anthr__moth_height__cm",
+    combine = TRUE) {
+  chk::chk_data(data)
+  chk::chk_logical(combine)
+  check_col_names(data, name)
+
+  data_ss <- data |>
+    compute_ph_p_anthr__moth_height__in(
+      name = "tmp_inches"
+    ) |>
+    transmute(
+      !!name := tmp_inches * 2.54
+    )
+
+  if (combine) {
+    bind_cols(data, data_ss)
+  } else {
+    data_ss
+  }
+}
+
+#   ____________________________________________________________________________
+#   (ALL) ph_p_anthr                                                        ####
+
+#' Compute all the `ph_p_anthr` summary scores
+#'
+#' @description
+#' This is a high-level function that computes all summary scores in this table.
+#' Make sure the `data` contains all the necessary columns.
+#'
+#' @param data tbl. Dataframe containing the columns to be summarized.
+#'
+#' @return tbl. The input data frame with the summary scores appended as
+#'  new columns.
+#'
+#' @export
+#' @autoglobal
+#'
+#' @examples
+#' \dontrun{
+#' compute_ph_p_anthr_all(data)
+#' }
+compute_ph_p_anthr_all <- function(data) {
+  data |>
+    compute_ph_p_anthr__fath_height__in() |>
+    compute_ph_p_anthr__fath_height__cm() |>
+    compute_ph_p_anthr__moth_height__in() |>
+    compute_ph_p_anthr__moth_height__cm()
 }

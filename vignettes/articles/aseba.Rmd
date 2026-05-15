@@ -2,7 +2,7 @@
 title: "Achenbach System of Empirically Based Assessment (ASEBA) T-scores"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{tlfb}
+  %\VignetteIndexEntry{Achenbach System of Empirically Based Assessment (ASEBA) T-scores}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 bibliography: references.bib
@@ -161,8 +161,8 @@ The T-score functions have the following additional arguments:
   [reference pages](../reference/index.html#mental-health-aseba-)
   to see the default value of `col_age` for a given score.
 - `col_sex`: character, specifies the column name in the input data that
-  contains the participants' age. Similarly, this information is required to
-  look up the respective T-score. For example, for score
+  contains the participants' sex. This information is required to look up the
+  sex-specific T-score. For example, for score
   `mh_p_abcl__afs__frnd_tscore`, the default value of `col_sex` is
   `"mh_p_abcl__cg2_gi"`. Please refer to the
   [reference pages](../reference/index.html#mental-health-aseba-) to see
@@ -221,8 +221,8 @@ for the T-score. For example, in the above example, the scores for the
 following rows are `NA`:
 
 - *row 4:* because the age is 99, which is not in the age range [18, 35].
-- *row 5:* because the raw score is 5, which makes the raw score
-  sum 7, which is not in the raw score range [0, 4].
+- *row 5:* because the sum of the raw scores (2 + 5 = 7) exceeds the range
+  [0, 4].
 - *row 6:* because the sex is "2", which is not included in the 
   simulated norming table.
 

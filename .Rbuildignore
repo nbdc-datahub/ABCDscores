@@ -3,18 +3,22 @@
 ^.*\.Rproj$
 ^.devcontainer$
 ^.renvignore
+^Meta$
 ^README\.Rmd$
 ^\.RData$
 ^\.Rhistory$
 ^\.Rprofile$
 ^\.Rproj\.user$
+^\.claude$
 ^\.git$
 ^\.github$
 ^\.gitignore$
+^\.positai$
 ^\.pre-commit-config\.yaml$
 ^_pkgdown\.yml$
 ^data-raw$
 ^dev
+^doc$
 ^docs$
 ^img
 ^permissions$
@@ -24,3 +28,4 @@
 ^renv\.lock$
 ^test_data$
 ^vignettes/articles$
+air.toml

@@ -8,7 +8,7 @@ Sum"}
 compute_mh_y_ysr__synd__attn_sum(
   data,
   name = "mh_y_ysr__synd__attn_sum",
-  max_na = 0,
+  max_na = 1,
   exclude = c("777", "999"),
   combine = TRUE
 )
@@ -51,7 +51,7 @@ Youth Self Report [Youth] (Syndrome Scale - Attention problems): Sum
 \item 777
 \item 999
 }
-\item \emph{Validation criterion:} maximally 0 of 9 items missing
+\item \emph{Validation criterion:} maximally 1 of 9 items missing
 }
 }
 \examples{

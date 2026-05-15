@@ -52,7 +52,6 @@ missing
 \item \code{mh_y_ysr__anxdep__anx_005}
 \item \code{mh_y_ysr__anxdep__dep_003}
 \item \code{mh_y_ysr__anxdep__anx_006}
-\item \code{mh_y_ysr__anxdep__dep_004}
 \item \code{mh_y_ysr__anxdep__anx_007}
 }
 \item \emph{Excluded values:}

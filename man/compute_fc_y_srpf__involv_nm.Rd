@@ -8,6 +8,7 @@ Number missing"}
 compute_fc_y_srpf__involv_nm(
   data,
   name = "fc_y_srpf__involv_nm",
+  exclude = c("777"),
   combine = TRUE
 )
 }
@@ -16,6 +17,9 @@ compute_fc_y_srpf__involv_nm(
 
 \item{name}{character. Name of the summary score. Default is the name in
 the description.}
+
+\item{exclude}{character vector. Values to be excluded from the summary
+score calculation.}
 
 \item{combine}{logical. If \code{TRUE}, the summary score is appended to the
 input data frame. If \code{FALSE}, the summary score is returned as a separate
@@ -37,7 +41,10 @@ missing)
 \item \code{fc_y_srpf__involv_003}
 \item \code{fc_y_srpf__involv_004}
 }
-\item \emph{Excluded values:} none
+\item \emph{Excluded values:}
+\itemize{
+\item 777
+}
 }
 }
 \seealso{
