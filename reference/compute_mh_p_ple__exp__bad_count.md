@@ -1,8 +1,7 @@
-# Compute "Life Events \[Parent\] (Experience Bad Events): Count \[Validation: No more than 5 events missing and no experience items missing or declined\]"
+# Compute "Life Events \[Parent\] (Experience Bad Events): Count"
 
 Computes the summary score `mh_p_ple__exp__bad_count` Life Events
-\[Parent\] (Experience Bad Events): Count \[Validation: No more than 5
-events missing and no experience items missing or declined\]
+\[Parent\] (Experience Bad Events): Count
 
 - *Summarized variables:*
 
@@ -64,8 +63,6 @@ events missing and no experience items missing or declined\]
 
   - 999
 
-- *Validation criterion:* maximally 5 of 25 items missing
-
 ## Usage
 
 ``` r
@@ -73,7 +70,7 @@ compute_mh_p_ple__exp__bad_count(
   data,
   name = "mh_p_ple__exp__bad_count",
   combine = TRUE,
-  max_na = 5
+  max_na = NULL
 )
 ```
 
@@ -95,8 +92,8 @@ compute_mh_p_ple__exp__bad_count(
 
 - max_na:
 
-  numeric, positive whole number. Number of missing items allowed
-  (Default: 5).
+  numeric, positive whole number. Number of missing items allowed.
+  `NULL` means no limit (Default: NULL).
 
 ## Value
 

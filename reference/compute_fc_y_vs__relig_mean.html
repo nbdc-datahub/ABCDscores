@@ -10,7 +10,9 @@ fc_y_vs__relig_005
 fc_y_vs__relig_006
 fc_y_vs__relig_007
 
-Excluded values: none
+Excluded values:
+777
+
 Validation criterion: maximally 1 of 7 items missing
 
 "><meta property="og:description" content="Computes the summary score fc_y_vs__relig_mean
@@ -24,7 +26,9 @@ fc_y_vs__relig_005
 fc_y_vs__relig_006
 fc_y_vs__relig_007
 
-Excluded values: none
+Excluded values:
+777
+
 Validation criterion: maximally 1 of 7 items missing
 
 "></head><body>
@@ -35,7 +39,7 @@ Validation criterion: maximally 1 of 7 items missing
 
     <a class="navbar-brand me-2" href="../index.html">ABCDscores</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">7.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,6 +52,10 @@ Validation criterion: maximally 1 of 7 items missing
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/aseba.html">Achenbach System of Empirically Based Assessment (ASEBA) T-scores</a></li>
+    <li><a class="dropdown-item" href="../articles/famhx.html">Family History (FAMHX) summary scores</a></li>
+    <li><a class="dropdown-item" href="../articles/fitbit.html">Computing Daily and Weekly Fitbit Scores</a></li>
+    <li><a class="dropdown-item" href="../articles/meds.html">Medication use and history</a></li>
+    <li><a class="dropdown-item" href="../articles/sdsu.html">Static and Dynamic Substance Use (SDSU) summary scores</a></li>
     <li><a class="dropdown-item" href="../articles/sui.html">Substance Use Interview (SUI) summary scores</a></li>
     <li><a class="dropdown-item" href="../articles/tlfb.html">Timeline Followback (TLFB) summary scores</a></li>
   </ul></li>
@@ -84,7 +92,8 @@ Validation criterion: maximally 1 of 7 items missing
 <li><p><code>fc_y_vs__relig_006</code></p></li>
 <li><p><code>fc_y_vs__relig_007</code></p></li>
 </ul></li>
-<li><p><em>Excluded values:</em> none</p></li>
+<li><p><em>Excluded values:</em></p><ul><li><p>777</p></li>
+</ul></li>
 <li><p><em>Validation criterion:</em> maximally 1 of 7 items missing</p></li>
 </ul></div>
 
@@ -96,6 +105,7 @@ Validation criterion: maximally 1 of 7 items missing
 <span>  <span class="va">data</span>,</span>
 <span>  name <span class="op">=</span> <span class="st">"fc_y_vs__relig_mean"</span>,</span>
 <span>  max_na <span class="op">=</span> <span class="fl">1</span>,</span>
+<span>  exclude <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"777"</span><span class="op">)</span>,</span>
 <span>  combine <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -123,6 +133,11 @@ the description.</p></dd>
 allowed (Default: 1).</p></dd>
 
 
+<dt id="arg-exclude">exclude<a class="anchor" aria-label="anchor" href="#arg-exclude"></a></dt>
+<dd><p>character vector. Values to be excluded from the summary
+score calculation.</p></dd>
+
+
 <dt id="arg-combine">combine<a class="anchor" aria-label="anchor" href="#arg-combine"></a></dt>
 <dd><p>logical. If <code>TRUE</code>, the summary score is appended to the
 input data frame. If <code>FALSE</code>, the summary score is returned as a separate
@@ -140,7 +155,7 @@ a new column.</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer.</p>
+  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer, Shermaine Abad.</p>
 </div>
 
 <div class="pkgdown-footer-right">

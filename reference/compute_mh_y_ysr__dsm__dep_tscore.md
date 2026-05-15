@@ -9,8 +9,6 @@ Computes the summary score `mh_y_ysr__dsm__dep_tscore` Youth Self Report
 
   - `mh_y_ysr__anxdep__dep_001`
 
-  - `mh_y_ysr__tho__dep_001`
-
   - `mh_y_ysr__othpr__dep_001`
 
   - `mh_y_ysr__anxdep__dep_002`
@@ -22,8 +20,6 @@ Computes the summary score `mh_y_ysr__dsm__dep_tscore` Youth Self Report
   - `mh_y_ysr__tho__dep_002`
 
   - `mh_y_ysr__othpr__dep_002`
-
-  - `mh_y_ysr__anxdep__dep_004`
 
   - `mh_y_ysr__tho__dep_003`
 
@@ -37,7 +33,8 @@ Computes the summary score `mh_y_ysr__dsm__dep_tscore` Youth Self Report
 
   - 999
 
-- *Validation criterion:* maximally 0 of 13 items missing
+- *Validation criterion:* maximally 2 of 11 items missing or
+  `mh_y_ysr__dsm__adhd_nm` \<= 5
 
 ## Usage
 
@@ -48,7 +45,7 @@ compute_mh_y_ysr__dsm__dep_tscore(
   name = "mh_y_ysr__dsm__dep_tscore",
   col_age = "mh_y_ysr_age",
   col_sex = "ab_g_stc__cohort_sex",
-  max_na = 0,
+  max_na = 2,
   exclude = c("777", "999"),
   combine = TRUE
 )

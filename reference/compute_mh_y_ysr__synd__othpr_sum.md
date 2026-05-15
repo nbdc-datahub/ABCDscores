@@ -23,15 +23,13 @@ Computes the summary score `mh_y_ysr__synd__othpr_sum` Youth Self Report
 
   - `mh_y_ysr__othpr__adhd_001`
 
-  - `mh_y_ysr__othpr_007`
-
 - *Excluded values:*
 
   - 777
 
   - 999
 
-- *Validation criterion:* maximally 0 of 10 items missing
+- *Validation criterion:* maximally 1 of 9 items missing
 
 ## Usage
 
@@ -39,7 +37,7 @@ Computes the summary score `mh_y_ysr__synd__othpr_sum` Youth Self Report
 compute_mh_y_ysr__synd__othpr_sum(
   data,
   name = "mh_y_ysr__synd__othpr_sum",
-  max_na = 0,
+  max_na = 1,
   exclude = c("777", "999"),
   combine = TRUE
 )

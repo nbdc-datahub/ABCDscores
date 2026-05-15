@@ -1,7 +1,7 @@
-# Compute "Sleep Disturbance Scale \[Parent\] (Sleep-wake transition disorders) - Number missing"
+# Compute "Sleep Disturbance Scale \[Parent\] (Sleep-wake transition disorders): Number missing"
 
 Computes the summary score `ph_p_sds__swtd_nm` Sleep Disturbance Scale
-\[Parent\] (Sleep-wake transition disorders) - Number missing
+\[Parent\] (Sleep-wake transition disorders): Number missing
 
 - *Summarized variables:*
 

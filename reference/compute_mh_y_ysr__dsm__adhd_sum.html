@@ -41,7 +41,7 @@ Validation criterion: maximally 0 of 7 items missing
 
     <a class="navbar-brand me-2" href="../index.html">ABCDscores</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">7.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,6 +54,10 @@ Validation criterion: maximally 0 of 7 items missing
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/aseba.html">Achenbach System of Empirically Based Assessment (ASEBA) T-scores</a></li>
+    <li><a class="dropdown-item" href="../articles/famhx.html">Family History (FAMHX) summary scores</a></li>
+    <li><a class="dropdown-item" href="../articles/fitbit.html">Computing Daily and Weekly Fitbit Scores</a></li>
+    <li><a class="dropdown-item" href="../articles/meds.html">Medication use and history</a></li>
+    <li><a class="dropdown-item" href="../articles/sdsu.html">Static and Dynamic Substance Use (SDSU) summary scores</a></li>
     <li><a class="dropdown-item" href="../articles/sui.html">Substance Use Interview (SUI) summary scores</a></li>
     <li><a class="dropdown-item" href="../articles/tlfb.html">Timeline Followback (TLFB) summary scores</a></li>
   </ul></li>
@@ -101,7 +105,7 @@ Youth Self Report [Youth] (DSM-5 Oriented Scale - ADHD): Sum</p><ul><li><p><em>S
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">compute_mh_y_ysr__dsm__adhd_sum</span><span class="op">(</span></span>
 <span>  <span class="va">data</span>,</span>
 <span>  name <span class="op">=</span> <span class="st">"mh_y_ysr__dsm__adhd_sum"</span>,</span>
-<span>  max_na <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  max_na <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  exclude <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"777"</span>, <span class="st">"999"</span><span class="op">)</span>,</span>
 <span>  combine <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -158,7 +162,7 @@ summary score is returned as a separate one-column data frame.</p></dd>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer.</p>
+  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer, Shermaine Abad.</p>
 </div>
 
 <div class="pkgdown-footer-right">

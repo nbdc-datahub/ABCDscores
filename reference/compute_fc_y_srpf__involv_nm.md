@@ -13,7 +13,9 @@ Protective Factors \[Youth\] (School involvement): Number missing)
 
   - `fc_y_srpf__involv_004`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
 
 ## Usage
 
@@ -21,6 +23,7 @@ Protective Factors \[Youth\] (School involvement): Number missing)
 compute_fc_y_srpf__involv_nm(
   data,
   name = "fc_y_srpf__involv_nm",
+  exclude = c("777"),
   combine = TRUE
 )
 ```
@@ -35,6 +38,11 @@ compute_fc_y_srpf__involv_nm(
 
   character. Name of the summary score. Default is the name in the
   description.
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

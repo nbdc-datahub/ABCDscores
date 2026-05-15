@@ -11,7 +11,9 @@ Questionnaire \[Youth\] (Overt Victimization): Sum
 
   - `mh_y_peq__overt__vict_003`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
 
 - *Validation criterion:* none of 3 items missing
 
@@ -22,7 +24,7 @@ compute_mh_y_peq__overt__vict_sum(
   data,
   name = "mh_y_peq__overt__vict_sum",
   max_na = 0,
-  exclude = NULL,
+  exclude = c("777"),
   combine = TRUE
 )
 ```

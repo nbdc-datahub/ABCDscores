@@ -71,8 +71,6 @@ Number missing
 
   - `mh_y_ysr__anxdep__dep_001`
 
-  - `mh_y_ysr__tho__dep_001`
-
   - `mh_y_ysr__othpr__dep_001`
 
   - `mh_y_ysr__anxdep__dep_002`
@@ -84,8 +82,6 @@ Number missing
   - `mh_y_ysr__tho__dep_002`
 
   - `mh_y_ysr__othpr__dep_002`
-
-  - `mh_y_ysr__anxdep__dep_004`
 
   - `mh_y_ysr__tho__dep_003`
 
@@ -174,8 +170,6 @@ Number missing
   - `mh_y_ysr__othpr_005`
 
   - `mh_y_ysr__othpr_006`
-
-  - `mh_y_ysr__othpr_007`
 
   - `mh_y_ysr__soc_001`
 

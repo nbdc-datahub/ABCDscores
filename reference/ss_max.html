@@ -11,7 +11,7 @@ a maximum number of missing values."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">ABCDscores</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">7.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,6 +24,10 @@ a maximum number of missing values."></head><body>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/aseba.html">Achenbach System of Empirically Based Assessment (ASEBA) T-scores</a></li>
+    <li><a class="dropdown-item" href="../articles/famhx.html">Family History (FAMHX) summary scores</a></li>
+    <li><a class="dropdown-item" href="../articles/fitbit.html">Computing Daily and Weekly Fitbit Scores</a></li>
+    <li><a class="dropdown-item" href="../articles/meds.html">Medication use and history</a></li>
+    <li><a class="dropdown-item" href="../articles/sdsu.html">Static and Dynamic Substance Use (SDSU) summary scores</a></li>
     <li><a class="dropdown-item" href="../articles/sui.html">Substance Use Interview (SUI) summary scores</a></li>
     <li><a class="dropdown-item" href="../articles/tlfb.html">Timeline Followback (TLFB) summary scores</a></li>
   </ul></li>
@@ -128,13 +132,6 @@ column.</p>
 <span class="r-in"><span>  name <span class="op">=</span> <span class="st">"summary"</span>,</span></span>
 <span class="r-in"><span>  vars <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>There was 1 warning in `mutate()`.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> In argument: `summary = if_else(...)`.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> Caused by warning:</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> `invoke()` was deprecated in purrr 1.0.0.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Please use `exec()` instead.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> The deprecated feature was likely used in the <span style="color: #0000BB;">ABCDscores</span> package.</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span>   Please report the issue to the authors.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 7</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   id    session_id     A     B     C     D summary</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
@@ -184,7 +181,7 @@ column.</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer.</p>
+  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer, Shermaine Abad.</p>
 </div>
 
 <div class="pkgdown-footer-right">

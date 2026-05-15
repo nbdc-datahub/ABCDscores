@@ -17,7 +17,11 @@ Computes the summary score `fc_p_vs__supp_mean` (Values Scale \[Parent\]
 
   - `fc_p_vs__supp_006`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
+
+  - 999
 
 - *Validation criterion:* maximally 1 of 6 items missing
 
@@ -30,6 +34,7 @@ compute_fc_p_vs__supp_mean(
   data,
   name = "fc_p_vs__supp_mean",
   max_na = 1,
+  exclude = c("777", "999"),
   combine = TRUE
 )
 ```
@@ -54,6 +59,11 @@ a character vector of all column names used to compute summary score of
 
   numeric, positive whole number. Number of missing items allowed
   (Default: 1).
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

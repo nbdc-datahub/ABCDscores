@@ -1,7 +1,7 @@
-# Compute "Sleep Disturbance Scale \[Parent\] (Sleep hyperhydrosis) - Number missing"
+# Compute "Sleep Disturbance Scale \[Parent\] (Sleep hyperhydrosis): Number missing"
 
 Computes the summary score `ph_p_sds__hyphy_nm` Sleep Disturbance Scale
-\[Parent\] (Sleep hyperhydrosis) - Number missing
+\[Parent\] (Sleep hyperhydrosis): Number missing
 
 - *Summarized variables:*
 

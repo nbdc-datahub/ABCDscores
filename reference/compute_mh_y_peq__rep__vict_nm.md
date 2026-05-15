@@ -11,7 +11,9 @@ Questionnaire \[Youth\] (Reputational Victimization): Number missing
 
   - `mh_y_peq__rep__vict_003`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
 
 ## Usage
 
@@ -21,7 +23,7 @@ vars_mh_y_peq__rep__vict
 compute_mh_y_peq__rep__vict_nm(
   data,
   name = "mh_y_peq__rep__vict_nm",
-  exclude = NULL,
+  exclude = c("777"),
   combine = TRUE
 )
 ```

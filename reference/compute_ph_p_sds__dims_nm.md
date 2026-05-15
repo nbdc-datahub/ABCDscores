@@ -1,7 +1,7 @@
-# Compute "Sleep Disturbance Scale \[Parent\] (Disorders of initiating and maintaining sleep) - Number missing"
+# Compute "Sleep Disturbance Scale \[Parent\] (Disorders of initiating and maintaining sleep): Number missing"
 
 Computes the summary score `ph_p_sds__dims_nm` Sleep Disturbance Scale
-\[Parent\] (Disorders of initiating and maintaining sleep) - Number
+\[Parent\] (Disorders of initiating and maintaining sleep): Number
 missing
 
 - *Summarized variables:*

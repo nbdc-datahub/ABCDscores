@@ -60,6 +60,7 @@ column.
 ## Examples
 
 ``` r
+
 data <- tibble::tribble(
   ~id,    ~session_id, ~A, ~B,  ~C, ~D,
   "id1",  "1",         1,  5,   2,  NA,
@@ -74,13 +75,6 @@ ss_max(
   name = "summary",
   vars = c("A", "B", "C", "D")
 )
-#> Warning: There was 1 warning in `mutate()`.
-#> ℹ In argument: `summary = if_else(...)`.
-#> Caused by warning:
-#> ! `invoke()` was deprecated in purrr 1.0.0.
-#> ℹ Please use `exec()` instead.
-#> ℹ The deprecated feature was likely used in the ABCDscores package.
-#>   Please report the issue to the authors.
 #> # A tibble: 5 × 7
 #>   id    session_id     A     B     C     D summary
 #>   <chr> <chr>      <dbl> <dbl> <dbl> <dbl>   <dbl>

@@ -71,8 +71,6 @@ Sum
 
   - `mh_y_ysr__anxdep__dep_001`
 
-  - `mh_y_ysr__tho__dep_001`
-
   - `mh_y_ysr__othpr__dep_001`
 
   - `mh_y_ysr__anxdep__dep_002`
@@ -84,8 +82,6 @@ Sum
   - `mh_y_ysr__tho__dep_002`
 
   - `mh_y_ysr__othpr__dep_002`
-
-  - `mh_y_ysr__anxdep__dep_004`
 
   - `mh_y_ysr__tho__dep_003`
 
@@ -175,8 +171,6 @@ Sum
 
   - `mh_y_ysr__othpr_006`
 
-  - `mh_y_ysr__othpr_007`
-
   - `mh_y_ysr__soc_001`
 
   - `mh_y_ysr__soc_002`
@@ -221,7 +215,7 @@ Sum
 
   - 999
 
-- *Validation criterion:* maximally 7 of 105 items missing
+- *Validation criterion:* maximally 5 of 102 items missing
 
 ## Usage
 
@@ -229,7 +223,7 @@ Sum
 compute_mh_y_ysr_sum(
   data,
   name = "mh_y_ysr_sum",
-  max_na = 7,
+  max_na = 5,
   exclude = c("777", "999"),
   combine = TRUE
 )

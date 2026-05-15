@@ -37,6 +37,7 @@ data release, starting with the introduction of the package with release
 |:----------------|:----------------|
 | 6.0             | 6.0.0           |
 | 6.1             | 6.1.0           |
+| 7.0             | 7.0.0           |
 
 ## Installation
 
@@ -44,6 +45,7 @@ To install the *latest version* of `ABCDscores` from CRAN, use the
 following command:
 
 ``` r
+
 install.packages("ABCDscores")
 ```
 
@@ -52,6 +54,7 @@ To install the *latest version* of `ABCDscores` from
 command:
 
 ``` r
+
 if (!requireNamespace("remotes", quietly = TRUE)) {
   install.packages("remotes")
 }
@@ -64,8 +67,31 @@ number in the `remotes::install_github()` call. For example, to install
 version 6.0.0, use the following command:
 
 ``` r
+
 remotes::install_github("nbdc-datahub/ABCDscores@v6.0.0")
 ```
+
+### Using tarballs to install
+
+On every new release page of the
+[`ABCDscores`](https://github.com/nbdc-datahub/ABCDscores/releases) you
+can find the source tarballs (`tar.gz` files) for the corresponding
+release. If compute environments do not have internet access, you can
+download the tarballs on a different machine and transfer them to the
+target environment. Then, use the following command to install the
+packages from the local tarball files:
+
+``` r
+
+install.packages("path/to/ABCDscores_x.y.z.tar.gz", repos = NULL, type = "source")
+```
+
+However, please make sure that all dependencies are already installed in
+the target environment, as the installation from tarballs does not
+resolve dependencies automatically, for example, please see the list of
+dependencies in the
+[DESCRIPTION](https://github.com/nbdc-datahub/ABCDscores/blob/main/DESCRIPTION)
+Imports and Suggests fields.
 
 ## Usage
 
@@ -157,6 +183,15 @@ Summary scores in the ABCD core domain “ABCD (General)”
   longitudinal responses\]"
 - [`compute_ab_g_stc_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ab_g_stc_all.md)
   : Compute all the ab_g_stc scores
+
+### Demographics \[Parent\]
+
+- [`compute_ab_p_demo__ntvam_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ab_p_demo__ntvam_all.md)
+  : Compute all the ab_p_demo\_\_ntvam scores
+- [`vars_ab_p_demo__ntvam`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ab_p_demo__ntvam_mean.md)
+  [`compute_ab_p_demo__ntvam_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ab_p_demo__ntvam_mean.md)
+  : Compute "Demographics \[Parent\] (Native American Acculturation):
+  Mean"
 
 ## Friends, Family, & Community
 
@@ -263,16 +298,26 @@ Summary scores in the ABCD core domain “Friends, Family, & Community”
 - [`compute_fc_y_fes_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_fes_all.md)
   : Compute all the fc_y_fes summary scores
 
+### UCLA Loneliness Scale \[Youth\]
+
+- [`compute_fc_y_lone_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_lone_all.md)
+  : Compute all the fc_y_lone summary scores
+- [`vars_fc_y_lone`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_lone_mean.md)
+  [`compute_fc_y_lone_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_lone_mean.md)
+  : Compute "UCLA Loneliness Scale \[Youth\]: Mean"
+- [`compute_fc_y_lone_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_lone_nm.md)
+  : Compute "UCLA Loneliness Scale \[Youth\]: Number missing"
+
 ### Values Scale \[Parent\]
 
 - [`vars_fc_p_vs__famil`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_vs__famil_mean.md)
   [`compute_fc_p_vs__famil_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_vs__famil_mean.md)
-  : Compute "Values Scale \[Parent\] (Familism): Mean - Baseline to Year
-  5"
+  : Compute "Values Scale \[Parent\] (Familism): Mean (Subscales: supp,
+  ref, obl)"
 - [`vars_fc_p_vs__famil__v01`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_vs__famil_mean__v01.md)
   [`compute_fc_p_vs__famil_mean__v01()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_vs__famil_mean__v01.md)
-  : Compute "Values Scale \[Parent\] (Familism): Mean - Version 1 (Year
-  5 onwards)"
+  : Compute "Values Scale \[Parent\] (Familism): Mean - Version 1
+  (Subscales: supp, ref)"
 - [`compute_fc_p_vs__famil_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_vs__famil_nm.md)
   : Compute "Values Scale \[Parent\] (Familism): Number missing -
   Baseline to Year 5"
@@ -315,12 +360,12 @@ Summary scores in the ABCD core domain “Friends, Family, & Community”
 
 - [`vars_fc_y_vs__famil`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_vs__famil_mean.md)
   [`compute_fc_y_vs__famil_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_vs__famil_mean.md)
-  : Compute "Values Scale \[Youth\] (Familism): Mean - Baseline to Year
-  5"
+  : Compute "Values Scale \[Youth\] (Familism): Mean (Subscales: supp,
+  ref, obl)"
 - [`vars_fc_y_vs__famil__v01`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_vs__famil_mean__v01.md)
   [`compute_fc_y_vs__famil_mean__v01()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_vs__famil_mean__v01.md)
-  : Compute "Values Scale \[Youth\] (Familism): Mean - Version 1 (Year 5
-  onwards)"
+  : Compute "Values Scale \[Youth\] (Familism): Mean - Version 1
+  (Subscales: supp, ref)"
 - [`compute_fc_y_vs__famil_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_vs__famil_nm.md)
   : Compute "Values Scale \[Youth\] (Familism): Number missing -
   Baseline to Year 5"
@@ -434,6 +479,14 @@ Summary scores in the ABCD core domain “Friends, Family, & Community”
 - [`compute_fc_y_mnbs_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_mnbs_nm.md)
   : Compute "Multidimensional Neglectful Behavior Scale \[Youth\]:
   Number missing"
+
+### Native American Acculturation \[Youth\]
+
+- [`compute_fc_y_naa_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_naa_all.md)
+  : Compute all the fc_y_naa scores
+- [`vars_fc_y_naa`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_naa_mean.md)
+  [`compute_fc_y_naa_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_y_naa_mean.md)
+  : Compute "Native American Acculturation \[Youth\]: Mean"
 
 ### Neighborhood Collective Efficacy \[Parent\]
 
@@ -748,45 +801,33 @@ Summary scores in the ABCD core domain “Mental Health”
 ### Life Events \[Parent\]
 
 - [`compute_mh_p_ple__exp__bad_count()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple__exp__bad_count.md)
-  : Compute "Life Events \[Parent\] (Experience Bad Events): Count
-  \[Validation: No more than 5 events missing and no experience items
-  missing or declined\]"
+  : Compute "Life Events \[Parent\] (Experience Bad Events): Count"
 - [`compute_mh_p_ple__exp__bad_count__v01()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple__exp__bad_count__v01.md)
   : Compute "Life Events \[Parent\] (Experience Bad Events): Count -
-  Version 1 (Year 3) \[Validation: No more than 6 events missing and no
-  experience items missing or declined\]"
+  Version 1 (Year 3)"
 - [`compute_mh_p_ple__exp__bad_count__v02()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple__exp__bad_count__v02.md)
   : Compute "Life Events \[Parent\] (Experience Bad Events): Count -
-  Version 2 (Year 4 and Year 5) \[Validation: No more than 6 events
-  missing and no experience items missing or declined\]"
+  Version 2 (Year 4 and Year 5)"
 - [`compute_mh_p_ple__exp__bad_count__v03()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple__exp__bad_count__v03.md)
   : Compute "Life Events \[Parent\] (Experience Bad Events): Count -
-  Version 3 (Year 6 ) \[Validation: No more than 6 events missing and no
-  experience items missing or declined\]"
+  Version 3 (Year 6)"
 - [`compute_mh_p_ple__exp__bad_count__v04()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple__exp__bad_count__v04.md)
   : Compute "Life Events \[Parent\] (Experience Bad Events): Count -
-  Version 4 (Starting at Year 7) \[Validation: No more than 4 events
-  missing and no experience items missing or declined\]"
+  Version 4 (Starting at Year 7)"
 - [`compute_mh_p_ple__exp__good_count()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple__exp__good_count.md)
-  : Compute "Life Events \[Parent\] (Experience Good Events): Count
-  \[Validation: No more than 5 events missing and no experience items
-  missing or declined\]"
+  : Compute "Life Events \[Parent\] (Experience Good Events): Count"
 - [`compute_mh_p_ple__exp__good_count__v01()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple__exp__good_count__v01.md)
   : Compute "Life Events \[Parent\] (Experience Good Events): Count -
-  Version 1 (Year 3) \[Validation: No more than 6 events missing and no
-  experience items missing or declined\]"
+  Version 1 (Year 3)"
 - [`compute_mh_p_ple__exp__good_count__v02()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple__exp__good_count__v02.md)
   : Compute "Life Events \[Parent\] (Experience Good Events): Count -
-  Version 2 (Year 4 and Year 5) \[Validation: No more than 6 events
-  missing and no experience items missing or declined\]"
+  Version 2 (Year 4 and Year 5)"
 - [`compute_mh_p_ple__exp__good_count__v03()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple__exp__good_count__v03.md)
   : Compute "Life Events \[Parent\] (Experience Good Events): Count -
-  Version 3 (Year 6 ) \[Validation: No more than 6 events missing and no
-  experience items missing or declined\]"
+  Version 3 (Year 6)"
 - [`compute_mh_p_ple__exp__good_count__v04()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple__exp__good_count__v04.md)
   : Compute "Life Events \[Parent\] (Experience Good Events): Count -
-  Version 4 (Starting at Year 7) \[Validation: No more than 4 events
-  missing and no experience items missing or declined\]"
+  Version 4 (Starting at Year 7)"
 - [`compute_mh_p_ple__exp_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple__exp_nm.md)
   : Compute "Life Events \[Parent\] (Experience): Number missing"
 - [`compute_mh_p_ple__exp_nm__v01()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple__exp_nm__v01.md)
@@ -949,25 +990,23 @@ Summary scores in the ABCD core domain “Mental Health”
 - [`vars_mh_p_ple`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple_count.md)
   [`vars_mh_p_ple__exp`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple_count.md)
   [`compute_mh_p_ple_count()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple_count.md)
-  : Compute "Life Events \[Parent\] (Events): Count \[Validation: No
-  more than 5 missing or declined\]"
+  : Compute "Life Events \[Parent\] (Events): Count"
 - [`vars_mh_p_ple__v01`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple_count__v01.md)
   [`compute_mh_p_ple_count__v01()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple_count__v01.md)
-  : Compute "Life Events \[Parent\] (Events): Count - Version 1 (Year 3)
-  \[Validation: No more than 6 missing or declined\]"
+  : Compute "Life Events \[Parent\] (Events): Count - Version 1 (Year
+  3)"
 - [`vars_mh_p_ple__v02`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple_count__v02.md)
   [`compute_mh_p_ple_count__v02()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple_count__v02.md)
   : Compute "Life Events \[Parent\] (Events): Count - Version 2 (Year 4
-  and Year 5) \[Validation: No more than 6 missing or declined\]"
+  and Year 5)"
 - [`vars_mh_p_ple__v03`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple_count__v03.md)
   [`compute_mh_p_ple_count__v03()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple_count__v03.md)
-  : Compute "Life Events \[Parent\] (Events): Count - Version 3 (Year 6
-  ) \[Validation: No more than 6 missing or declined\]"
+  : Compute "Life Events \[Parent\] (Events): Count - Version 3 (Year
+  6)"
 - [`vars_mh_p_ple__v04`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple_count__v04.md)
   [`compute_mh_p_ple_count__v04()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple_count__v04.md)
   : Compute "Life Events \[Parent\] (Events): Count - Version 4
-  (Starting at Year 7) \[Validation: No more than 4 missing or
-  declined\]"
+  (Starting at Year 7)"
 - [`compute_mh_p_ple_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple_nm.md)
   : Compute "Life Events \[Parent\] (Events): Number missing"
 - [`compute_mh_p_ple_nm__v01()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ple_nm__v01.md)
@@ -986,37 +1025,27 @@ Summary scores in the ABCD core domain “Mental Health”
 ### Life Events \[Youth\]
 
 - [`compute_mh_y_ple__exp__bad_count()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple__exp__bad_count.md)
-  : Compute "Life Events \[Youth\] (Experience Bad Events): Count
-  \[Validation: No more than 5 events missing and no experience items
-  missing or declined\]"
+  : Compute "Life Events \[Youth\] (Experience Bad Events): Count"
 - [`compute_mh_y_ple__exp__bad_count__v01()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple__exp__bad_count__v01.md)
   : Compute "Life Events \[Youth\] (Experience Bad Events): Count -
-  Version 1 (Year 3) \[Validation: No more than 6 events missing and no
-  experience items missing or declined\]"
+  Version 1 (Year 3)"
 - [`compute_mh_y_ple__exp__bad_count__v02()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple__exp__bad_count__v02.md)
   : Compute "Life Events \[Youth\] (Experience Bad Events): Count -
-  Version 2 (Year 4 and Year 5) \[Validation: No more than 6 events
-  missing and no experience items missing or declined\]"
+  Version 2 (Year 4 and Year 5)"
 - [`compute_mh_y_ple__exp__bad_count__v03()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple__exp__bad_count__v03.md)
   : Compute "Life Events \[Youth\] (Experience Bad Events): Count -
-  Version 3 (Starting at Year 6) \[Validation: No more than 6 events
-  missing and no experience items missing or declined\]"
+  Version 3 (Starting at Year 6)"
 - [`compute_mh_y_ple__exp__good_count()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple__exp__good_count.md)
-  : Compute "Life Events \[Youth\] (Experience Good Events): Count
-  \[Validation: No more than 5 events missing and no experience items
-  missing or declined\]"
+  : Compute "Life Events \[Youth\] (Experience Good Events): Count"
 - [`compute_mh_y_ple__exp__good_count__v01()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple__exp__good_count__v01.md)
   : Compute "Life Events \[Youth\] (Experience Good Events): Count -
-  Version 1 (Year 3) \[Validation: No more than 6 events missing and no
-  experience items missing or declined\]"
+  Version 1 (Year 3)"
 - [`compute_mh_y_ple__exp__good_count__v02()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple__exp__good_count__v02.md)
   : Compute "Life Events \[Youth\] (Experience Good Events): Count -
-  Version 2 (Year 4 and Year 5) \[Validation: No more than 6 events
-  missing and no experience items missing or declined\]"
+  Version 2 (Year 4 and Year 5)"
 - [`compute_mh_y_ple__exp__good_count__v03()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple__exp__good_count__v03.md)
   : Compute "Life Events \[Youth\] (Experience Good Events): Count -
-  Version 3 (Starting at Year 6) \[Validation: No more than 6 events
-  missing and no experience items missing or declined\]"
+  Version 3 (Starting at Year 6)"
 - [`compute_mh_y_ple__exp_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple__exp_nm.md)
   : Compute "Life Events \[Youth\] (Experience): Number missing"
 - [`compute_mh_y_ple__exp_nm__v01()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple__exp_nm__v01.md)
@@ -1146,20 +1175,18 @@ Summary scores in the ABCD core domain “Mental Health”
   : Compute all summary scores for mh_y_ple
 - [`vars_mh_y_ple`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple_count.md)
   [`compute_mh_y_ple_count()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple_count.md)
-  : Compute "Life Events \[Youth\] (Events): Count \[Validation: No more
-  than 5 missing or declined\]"
+  : Compute "Life Events \[Youth\] (Events): Count"
 - [`vars_mh_y_ple__v01`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple_count__v01.md)
   [`compute_mh_y_ple_count__v01()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple_count__v01.md)
-  : Compute "Life Events \[Youth\] (Events): Count - Version 1 (Year 3)
-  \[Validation: No more than 6 missing or declined\]"
+  : Compute "Life Events \[Youth\] (Events): Count - Version 1 (Year 3)"
 - [`vars_mh_y_ple__v02`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple_count__v02.md)
   [`compute_mh_y_ple_count__v02()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple_count__v02.md)
   : Compute "Life Events \[Youth\] (Events): Count - Version 2 (Year 4
-  and Year 5) \[Validation: No more than 6 missing or declined\]"
+  and Year 5)"
 - [`vars_mh_y_ple__v03`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple_count__v03.md)
   [`compute_mh_y_ple_count__v03()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple_count__v03.md)
   : Compute "Life Events \[Youth\] (Events): Count - Version 3 (Starting
-  at Year 6) \[Validation: No more than 6 missing or declined\]"
+  at Year 6)"
 - [`compute_mh_y_ple_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple_nm.md)
   : Compute "Life Events \[Youth\] (Events): Number missing"
 - [`compute_mh_y_ple_nm__v01()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ple_nm__v01.md)
@@ -1243,6 +1270,12 @@ Summary scores in the ABCD core domain “Mental Health”
   [`compute_mh_y_pps__bother_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_pps__bother_nm.md)
   : Compute "Prodromal Psychosis Scale \[Youth\] (Bother responses):
   Number missing"
+- [`compute_mh_y_pps__dist__curr_score()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_pps__dist__curr_score.md)
+  : Compute "Prodromal Psychosis Scale \[Youth\] (Current Distress
+  Score)"
+- [`compute_mh_y_pps__dist__pers_score()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_pps__dist__pers_score.md)
+  : Compute "Prodromal Psychosis Scale \[Youth\] (Persistent Distress
+  Score)"
 - [`compute_mh_y_pps__severity_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_pps__severity_mean.md)
   : Compute "Prodromal Psychosis Scale \[Youth\] (Severity Score): Mean"
 - [`vars_mh_y_pps__severity`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_pps__severity_nm.md)
@@ -1260,6 +1293,29 @@ Summary scores in the ABCD core domain “Mental Health”
 - [`compute_mh_y_pps_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_pps_nm.md)
   : Compute "Prodromal Psychosis Scale \[Youth\] (number of responses):
   Number missing "
+
+### Static Prodromal Psychosis Scale \[Youth\]
+
+- [`compute_mh_y_ppsss__dist__curr_count()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ppsss__dist__curr_count.md)
+  : Compute "Prodromal Psychosis Scale \[Youth\] (Current Distress
+  Count)"
+- [`compute_mh_y_ppsss__dist__curr_ever()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ppsss__dist__curr_ever.md)
+  : Compute "Static Prodromal Psychosis Scale \[Youth\] (Current
+  Distress Ever)"
+- [`compute_mh_y_ppsss__dist__curr_first()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ppsss__dist__curr_first.md)
+  : Compute "Static Prodromal Psychosis Scale \[Youth\] (First Current
+  Distress)"
+- [`compute_mh_y_ppsss__dist__pers_count()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ppsss__dist__pers_count.md)
+  : Compute "Prodromal Psychosis Scale \[Youth\] (Persistent Distress
+  Count)"
+- [`compute_mh_y_ppsss__dist__pers_ever()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ppsss__dist__pers_ever.md)
+  : Compute "Static Prodromal Psychosis Scale \[Youth\] (Persistent
+  Distress Ever)"
+- [`compute_mh_y_ppsss__dist__pers_first()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ppsss__dist__pers_first.md)
+  : Compute "Prodromal Psychosis Scale \[Youth\] (First Persistent
+  Distress)"
+- [`compute_mh_y_ppsss_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ppsss_all.md)
+  : Compute all the mh_y_ppsss scores
 
 ### Short Social Responsiveness Scale \[Parent\]
 
@@ -1369,6 +1425,421 @@ Summary scores in the ABCD core domain “Mental Health”
   (Sensation Seeking): Sum"
 - [`compute_mh_y_upps_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_upps_all.md)
   : Compute all summary scores for mh_y_upps.
+
+### Kiddie Schedule for Affective Disorders and Schizophrenia \[Parent\]
+
+- [`vars_mh_p_ksads__adhd__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__adhd__past__sx_mean.md)
+  [`compute_mh_p_ksads__adhd__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__adhd__past__sx_mean.md)
+  : Compute "KSADS - Attention-Deficit/Hyperactivity Disorder \[Parent\]
+  (Symptom - Past): Mean"
+- [`vars_mh_p_ksads__adhd__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__adhd__pres__sx_mean.md)
+  [`compute_mh_p_ksads__adhd__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__adhd__pres__sx_mean.md)
+  : Compute "KSADS - Attention-Deficit/Hyperactivity Disorder \[Parent\]
+  (Symptom - Present): Mean"
+- [`compute_mh_p_ksads__adhd_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__adhd_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_adhd
+- [`vars_mh_p_ksads__agor__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__agor__past__sx_mean.md)
+  [`compute_mh_p_ksads__agor__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__agor__past__sx_mean.md)
+  : Compute "KSADS - Agoraphobia \[Parent\] (Symptom - Past): Mean"
+- [`vars_mh_p_ksads__agor__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__agor__pres__sx_mean.md)
+  [`compute_mh_p_ksads__agor__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__agor__pres__sx_mean.md)
+  : Compute "KSADS - Agoraphobia \[Parent\] (Symptom - Present): Mean"
+- [`compute_mh_p_ksads__agor_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__agor_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_agor
+- [`vars_mh_p_ksads__asd__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__asd__past__sx_mean.md)
+  [`compute_mh_p_ksads__asd__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__asd__past__sx_mean.md)
+  : Compute "KSADS - Autism Spectrum Disorders \[Parent\] (Symptom -
+  Past): Mean"
+- [`vars_mh_p_ksads__asd__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__asd__pres__sx_mean.md)
+  [`compute_mh_p_ksads__asd__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__asd__pres__sx_mean.md)
+  : Compute "KSADS - Autism Spectrum Disorders \[Parent\] (Symptom -
+  Present): Mean"
+- [`compute_mh_p_ksads__asd_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__asd_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_asd
+- [`vars_mh_p_ksads__bpd__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__bpd__past__sx_mean.md)
+  [`compute_mh_p_ksads__bpd__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__bpd__past__sx_mean.md)
+  : Compute "KSADS - Bipolar Disorders \[Parent\] (Symptom - Past): Mean
+  "
+- [`vars_mh_p_ksads__bpd__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__bpd__pres__sx_mean.md)
+  [`compute_mh_p_ksads__bpd__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__bpd__pres__sx_mean.md)
+  : Compute "KSADS - Bipolar Disorders \[Parent\] (Symptom - Present):
+  Mean"
+- [`compute_mh_p_ksads__bpd_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__bpd_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_bpd
+- [`vars_mh_p_ksads__cond__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__cond__past__sx_mean.md)
+  [`compute_mh_p_ksads__cond__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__cond__past__sx_mean.md)
+  : Compute "KSADS - Conduct Disorder \[Parent\] (Symptom - Past): Mean
+  "
+- [`vars_mh_p_ksads__cond__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__cond__pres__sx_mean.md)
+  [`compute_mh_p_ksads__cond__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__cond__pres__sx_mean.md)
+  : Compute "KSADS - Conduct Disorder \[Parent\] (Symptom - Present):
+  Mean"
+- [`compute_mh_p_ksads__cond_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__cond_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_cond
+- [`vars_mh_p_ksads__dep__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__dep__past__sx_mean.md)
+  [`compute_mh_p_ksads__dep__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__dep__past__sx_mean.md)
+  : Compute "KSADS - Depressive Disorders \[Parent\] (Symptom - Past):
+  Mean "
+- [`vars_mh_p_ksads__dep__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__dep__pres__sx_mean.md)
+  [`compute_mh_p_ksads__dep__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__dep__pres__sx_mean.md)
+  : Compute "KSADS - Depressive Disorders \[Parent\] (Symptom -
+  Present): Mean"
+- [`compute_mh_p_ksads__dep_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__dep_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_dep
+- [`vars_mh_p_ksads__dmdd__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__dmdd__sx_mean.md)
+  [`compute_mh_p_ksads__dmdd__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__dmdd__sx_mean.md)
+  : Compute "KSADS - Disruptive Mood Dysregulation Disorder \[Parent\]
+  (Symptom): Mean"
+- [`compute_mh_p_ksads__dmdd_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__dmdd_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_dep
+- [`vars_mh_p_ksads__ed__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ed__past__sx_mean.md)
+  [`compute_mh_p_ksads__ed__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ed__past__sx_mean.md)
+  : Compute "KSADS - Eating Disorders \[Parent\] (Symptom - Past): Mean"
+- [`vars_mh_p_ksads__ed__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ed__pres__sx_mean.md)
+  [`compute_mh_p_ksads__ed__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ed__pres__sx_mean.md)
+  : Compute "KSADS - Eating Disorders \[Parent\] (Symptom - Present):
+  Mean"
+- [`compute_mh_p_ksads__ed_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ed_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_ed
+- [`vars_mh_p_ksads__gad__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__gad__past__sx_mean.md)
+  [`compute_mh_p_ksads__gad__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__gad__past__sx_mean.md)
+  : Compute "KSADS - Generalized Anxiety Disorder \[Parent\] (Symptom -
+  Past): Mean"
+- [`vars_mh_p_ksads__gad__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__gad__pres__sx_mean.md)
+  [`compute_mh_p_ksads__gad__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__gad__pres__sx_mean.md)
+  : Compute "KSADS - Generalized Anxiety Disorder \[Parent\] (Symptom -
+  Present): Mean"
+- [`compute_mh_p_ksads__gad_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__gad_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_gad
+- [`vars_mh_p_ksads__hom__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__hom__past__sx_mean.md)
+  [`compute_mh_p_ksads__hom__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__hom__past__sx_mean.md)
+  : Compute "KSADS - Homicidality \[Parent\] (Symptom - Past): Mean"
+- [`vars_mh_p_ksads__hom__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__hom__pres__sx_mean.md)
+  [`compute_mh_p_ksads__hom__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__hom__pres__sx_mean.md)
+  : Compute "KSADS - Homicidality \[Parent\] (Symptom - Present): Mean"
+- [`compute_mh_p_ksads__hom_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__hom_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_hom
+- [`vars_mh_p_ksads__ocd__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ocd__past__sx_mean.md)
+  [`compute_mh_p_ksads__ocd__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ocd__past__sx_mean.md)
+  : Compute "KSADS - Obsessive Compulsive Disorder \[Parent\] (Symptom -
+  Past): Mean"
+- [`vars_mh_p_ksads__ocd__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ocd__pres__sx_mean.md)
+  [`compute_mh_p_ksads__ocd__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ocd__pres__sx_mean.md)
+  : Compute "KSADS - Obsessive Compulsive Disorder \[Parent\] (Symptom -
+  Present): Mean"
+- [`compute_mh_p_ksads__ocd_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ocd_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_ocd
+- [`vars_mh_p_ksads__odd__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__odd__past__sx_mean.md)
+  [`compute_mh_p_ksads__odd__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__odd__past__sx_mean.md)
+  : Compute "KSADS - Oppositional Defiant Disorder \[Parent\] (Symptom -
+  Past): Mean"
+- [`vars_mh_p_ksads__odd__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__odd__pres__sx_mean.md)
+  [`compute_mh_p_ksads__odd__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__odd__pres__sx_mean.md)
+  : Compute "KSADS - Oppositional Defiant Disorder \[Parent\] (Symptom -
+  Present): Mean"
+- [`compute_mh_p_ksads__odd_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__odd_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_odd
+- [`vars_mh_p_ksads__panic__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__panic__past__sx_mean.md)
+  [`compute_mh_p_ksads__panic__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__panic__past__sx_mean.md)
+  : Compute "KSADS - Panic Disorder \[Parent\] (Symptom - Past): Mean"
+- [`vars_mh_p_ksads__panic__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__panic__pres__sx_mean.md)
+  [`compute_mh_p_ksads__panic__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__panic__pres__sx_mean.md)
+  : Compute "KSADS - Panic Disorder \[Parent\] (Symptom - Present):
+  Mean"
+- [`compute_mh_p_ksads__panic_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__panic_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_panic
+- [`vars_mh_p_ksads__phobia__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__phobia__past__sx_mean.md)
+  [`compute_mh_p_ksads__phobia__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__phobia__past__sx_mean.md)
+  : Compute "KSADS - Specific Phobia \[Parent\] (Symptom - Past): Mean"
+- [`vars_mh_p_ksads__phobia__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__phobia__pres__sx_mean.md)
+  [`compute_mh_p_ksads__phobia__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__phobia__pres__sx_mean.md)
+  : Compute "KSADS - Specific Phobia \[Parent\] (Symptom - Present):
+  Mean"
+- [`compute_mh_p_ksads__phobia_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__phobia_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_phobia
+- [`vars_mh_p_ksads__psych__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__psych__past__sx_mean.md)
+  [`compute_mh_p_ksads__psych__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__psych__past__sx_mean.md)
+  : Compute "KSADS - Psychosis \[Parent\] (Symptom - Past): Mean"
+- [`vars_mh_p_ksads__psych__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__psych__pres__sx_mean.md)
+  [`compute_mh_p_ksads__psych__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__psych__pres__sx_mean.md)
+  : Compute "KSADS - Psychosis \[Parent\] (Symptom - Present): Mean"
+- [`compute_mh_p_ksads__psych_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__psych_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_psych
+- [`vars_mh_p_ksads__ptsd__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ptsd__past__sx_mean.md)
+  [`compute_mh_p_ksads__ptsd__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ptsd__past__sx_mean.md)
+  : Compute "KSADS - Post-Traumatic Stress Disorder \[Parent\]
+  (Symptom - Past): Mean"
+- [`vars_mh_p_ksads__ptsd__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ptsd__pres__sx_mean.md)
+  [`compute_mh_p_ksads__ptsd__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ptsd__pres__sx_mean.md)
+  : Compute "KSADS - Post-Traumatic Stress Disorder \[Parent\]
+  (Symptom - Present): Mean"
+- [`compute_mh_p_ksads__ptsd_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__ptsd_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_ptsd
+- [`vars_mh_p_ksads__sepanx__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__sepanx__past__sx_mean.md)
+  [`compute_mh_p_ksads__sepanx__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__sepanx__past__sx_mean.md)
+  : Compute "KSADS - Separation Anxiety \[Parent\] (Symptom - Past):
+  Mean"
+- [`vars_mh_p_ksads__sepanx__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__sepanx__pres__sx_mean.md)
+  [`compute_mh_p_ksads__sepanx__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__sepanx__pres__sx_mean.md)
+  : Compute "KSADS - Separation Anxiety \[Parent\] (Symptom - Present):
+  Mean"
+- [`compute_mh_p_ksads__sepanx_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__sepanx_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_sepanx
+- [`vars_mh_p_ksads__sleep__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__sleep__past__sx_mean.md)
+  [`compute_mh_p_ksads__sleep__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__sleep__past__sx_mean.md)
+  : Compute "KSADS - Sleep Problems \[Parent\] (Symptom - Past): Mean"
+- [`vars_mh_p_ksads__sleep__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__sleep__pres__sx_mean.md)
+  [`compute_mh_p_ksads__sleep__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__sleep__pres__sx_mean.md)
+  : Compute "KSADS - Sleep Problems \[Parent\] (Symptom - Present):
+  Mean"
+- [`compute_mh_p_ksads__sleep_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__sleep_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_sleep
+- [`vars_mh_p_ksads__socanx__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__socanx__past__sx_mean.md)
+  [`compute_mh_p_ksads__socanx__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__socanx__past__sx_mean.md)
+  : Compute "KSADS - Social Anxiety Disorder \[Parent\] (Symptom -
+  Past): Mean"
+- [`vars_mh_p_ksads__socanx__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__socanx__pres__sx_mean.md)
+  [`compute_mh_p_ksads__socanx__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__socanx__pres__sx_mean.md)
+  : Compute "KSADS - Social Anxiety Disorder \[Parent\] (Symptom -
+  Present): Mean"
+- [`compute_mh_p_ksads__socanx_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__socanx_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_socanx
+- [`vars_mh_p_ksads__suic__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__suic__past__sx_mean.md)
+  [`compute_mh_p_ksads__suic__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__suic__past__sx_mean.md)
+  : Compute "KSADS - Suicidality \[Parent\] (Symptom - Past): Mean"
+- [`vars_mh_p_ksads__suic__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__suic__pres__sx_mean.md)
+  [`compute_mh_p_ksads__suic__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__suic__pres__sx_mean.md)
+  : Compute "KSADS - Suicidality \[Parent\] (Symptom - Present): Mean"
+- [`compute_mh_p_ksads__suic_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__suic_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_suic
+- [`vars_mh_p_ksads__tic__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__tic__past__sx_mean.md)
+  [`compute_mh_p_ksads__tic__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__tic__past__sx_mean.md)
+  : Compute "KSADS - Tic Disorders \[Parent\] (Symptom - Past): Mean"
+- [`vars_mh_p_ksads__tic__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__tic__pres__sx_mean.md)
+  [`compute_mh_p_ksads__tic__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__tic__pres__sx_mean.md)
+  : Compute "KSADS - Tic Disorders \[Parent\] (Symptom - Present): Mean"
+- [`compute_mh_p_ksads__tic_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_ksads__tic_all.md)
+  : Compute all summary scores for mh_p_ksads\_\_tic
+
+### Kiddie Schedule for Affective Disorders and Schizophrenia \[Youth\]
+
+- [`vars_mh_y_ksads__bpd__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__bpd__past__sx_mean.md)
+  [`compute_mh_y_ksads__bpd__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__bpd__past__sx_mean.md)
+  : Compute "KSADS - Bipolar Disorders \[Youth\] (Symptom - Past): Mean
+  "
+- [`vars_mh_y_ksads__bpd__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__bpd__pres__sx_mean.md)
+  [`compute_mh_y_ksads__bpd__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__bpd__pres__sx_mean.md)
+  : Compute "KSADS - Bipolar Disorders \[Youth\] (Symptom - Present):
+  Mean"
+- [`compute_mh_y_ksads__bpd_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__bpd_all.md)
+  : Compute all summary scores for mh_y_ksads\_\_bpd
+- [`vars_mh_y_ksads__cond__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__cond__past__sx_mean.md)
+  [`compute_mh_y_ksads__cond__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__cond__past__sx_mean.md)
+  : Compute "KSADS - Conduct Disorder \[Youth\] (Symptom - Past): Mean "
+- [`vars_mh_y_ksads__cond__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__cond__pres__sx_mean.md)
+  [`compute_mh_y_ksads__cond__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__cond__pres__sx_mean.md)
+  : Compute "KSADS - Conduct Disorder \[Youth\] (Symptom - Present):
+  Mean"
+- [`compute_mh_y_ksads__cond_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__cond_all.md)
+  : Compute all summary scores for mh_y_ksads\_\_cond
+- [`vars_mh_y_ksads__dep__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__dep__past__sx_mean.md)
+  [`compute_mh_y_ksads__dep__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__dep__past__sx_mean.md)
+  : Compute "KSADS - Depressive Disorders \[Youth\] (Symptom - Past):
+  Mean "
+- [`vars_mh_y_ksads__dep__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__dep__pres__sx_mean.md)
+  [`compute_mh_y_ksads__dep__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__dep__pres__sx_mean.md)
+  : Compute "KSADS - Depressive Disorders \[Youth\] (Symptom - Present):
+  Mean"
+- [`compute_mh_y_ksads__dep_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__dep_all.md)
+  : Compute all summary scores for mh_y_ksads\_\_dep
+- [`vars_mh_y_ksads__dmdd__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__dmdd__sx_mean.md)
+  [`compute_mh_y_ksads__dmdd__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__dmdd__sx_mean.md)
+  : Compute "KSADS - Disruptive Mood Dysregulation Disorder \[Youth\]
+  (Symptom): Mean"
+- [`compute_mh_y_ksads__dmdd_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__dmdd_all.md)
+  : Compute all summary scores for mh_y_ksads\_\_dep
+- [`vars_mh_y_ksads__ed__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ed__past__sx_mean.md)
+  [`compute_mh_y_ksads__ed__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ed__past__sx_mean.md)
+  : Compute "KSADS - Eating Disorders \[Youth\] (Symptom - Past): Mean"
+- [`vars_mh_y_ksads__ed__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ed__pres__sx_mean.md)
+  [`compute_mh_y_ksads__ed__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ed__pres__sx_mean.md)
+  : Compute "KSADS - Eating Disorders \[Youth\] (Symptom - Present):
+  Mean"
+- [`compute_mh_y_ksads__ed_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ed_all.md)
+  : Compute all summary scores for mh_y_ksads\_\_ed
+- [`vars_mh_y_ksads__gad__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__gad__past__sx_mean.md)
+  [`compute_mh_y_ksads__gad__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__gad__past__sx_mean.md)
+  : Compute "KSADS - Generalized Anxiety Disorder \[Youth\] (Symptom -
+  Past): Mean"
+- [`vars_mh_y_ksads__gad__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__gad__pres__sx_mean.md)
+  [`compute_mh_y_ksads__gad__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__gad__pres__sx_mean.md)
+  : Compute "KSADS - Generalized Anxiety Disorder \[Youth\] (Symptom -
+  Present): Mean"
+- [`compute_mh_y_ksads__gad_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__gad_all.md)
+  : Compute all summary scores for mh_y_ksads\_\_gad
+- [`vars_mh_y_ksads__ocd__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ocd__past__sx_mean.md)
+  [`compute_mh_y_ksads__ocd__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ocd__past__sx_mean.md)
+  : Compute "KSADS - Obsessive Compulsive Disorder \[Youth\] (Symptom -
+  Past): Mean"
+- [`vars_mh_y_ksads__ocd__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ocd__pres__sx_mean.md)
+  [`compute_mh_y_ksads__ocd__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ocd__pres__sx_mean.md)
+  : Compute "KSADS - Obsessive Compulsive Disorder \[Youth\] (Symptom -
+  Present): Mean"
+- [`compute_mh_y_ksads__ocd_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ocd_all.md)
+  : Compute all summary scores for mh_y_ksads\_\_ocd
+- [`vars_mh_y_ksads__panic__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__panic__past__sx_mean.md)
+  [`compute_mh_y_ksads__panic__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__panic__past__sx_mean.md)
+  : Compute "KSADS - Panic Disorder \[Youth\] (Symptom - Past): Mean"
+- [`vars_mh_y_ksads__panic__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__panic__pres__sx_mean.md)
+  [`compute_mh_y_ksads__panic__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__panic__pres__sx_mean.md)
+  : Compute "KSADS - Panic Disorder \[Youth\] (Symptom - Present): Mean"
+- [`compute_mh_y_ksads__panic_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__panic_all.md)
+  : Compute all summary scores for mh_y_ksads\_\_panic
+- [`vars_mh_y_ksads__ptsd__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ptsd__past__sx_mean.md)
+  [`compute_mh_y_ksads__ptsd__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ptsd__past__sx_mean.md)
+  : Compute "KSADS - Post-Traumatic Stress Disorder \[Youth\] (Symptom -
+  Past): Mean"
+- [`vars_mh_y_ksads__ptsd__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ptsd__pres__sx_mean.md)
+  [`compute_mh_y_ksads__ptsd__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ptsd__pres__sx_mean.md)
+  : Compute "KSADS - Post-Traumatic Stress Disorder \[Youth\] (Symptom -
+  Present): Mean"
+- [`compute_mh_y_ksads__ptsd_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__ptsd_all.md)
+  : Compute all summary scores for mh_y_ksads\_\_ptsd
+- [`vars_mh_y_ksads__sleep__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__sleep__past__sx_mean.md)
+  [`compute_mh_y_ksads__sleep__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__sleep__past__sx_mean.md)
+  : Compute "KSADS - Sleep Problems \[Youth\] (Symptom - Past): Mean"
+- [`vars_mh_y_ksads__sleep__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__sleep__pres__sx_mean.md)
+  [`compute_mh_y_ksads__sleep__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__sleep__pres__sx_mean.md)
+  : Compute "KSADS - Sleep Problems \[Youth\] (Symptom - Present): Mean"
+- [`compute_mh_y_ksads__sleep_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__sleep_all.md)
+  : Compute all summary scores for mh_y_ksads\_\_sleep
+- [`vars_mh_y_ksads__socanx__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__socanx__past__sx_mean.md)
+  [`compute_mh_y_ksads__socanx__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__socanx__past__sx_mean.md)
+  : Compute "KSADS - Social Anxiety Disorder \[Youth\] (Symptom - Past):
+  Mean"
+- [`vars_mh_y_ksads__socanx__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__socanx__pres__sx_mean.md)
+  [`compute_mh_y_ksads__socanx__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__socanx__pres__sx_mean.md)
+  : Compute "KSADS - Social Anxiety Disorder \[Youth\] (Symptom -
+  Present): Mean"
+- [`compute_mh_y_ksads__socanx_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__socanx_all.md)
+  : Compute all summary scores for mh_y_ksads\_\_socanx
+- [`vars_mh_y_ksads__suic__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__suic__past__sx_mean.md)
+  [`compute_mh_y_ksads__suic__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__suic__past__sx_mean.md)
+  : Compute "KSADS - Suicidality \[Youth\] (Symptom - Past): Mean"
+- [`vars_mh_y_ksads__suic__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__suic__pres__sx_mean.md)
+  [`compute_mh_y_ksads__suic__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__suic__pres__sx_mean.md)
+  : Compute "KSADS - Suicidality \[Youth\] (Symptom - Present): Mean"
+- [`compute_mh_y_ksads__suic_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_y_ksads__suic_all.md)
+  : Compute all summary scores for mh_y_ksads\_\_suic
+
+### Family History \[Parent\]
+
+- [`compute_famhx_endorsement()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_famhx_endorsement.md)
+  : Compute Family History \[Parent\] Endorsement indicator
+
+- [`vars_mh_p_famhx__alc__moth__fath_indicator`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__alc__moth__fath_indicator.md)
+  [`compute_mh_p_famhx__alc__moth__fath_indicator()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__alc__moth__fath_indicator.md)
+  : Compute "Family History \[Parent\] (Alcohol) Endorsed: Either
+  parent"
+
+- [`vars_mh_p_famhx__alc__moth__fath_score`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__alc__moth__fath_score.md)
+  [`compute_mh_p_famhx__alc__moth__fath_score()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__alc__moth__fath_score.md)
+  : Compute "Family History \[Parent\] (Alcohol) Endorsed: Parents
+  overall"
+
+- [`vars_mh_p_famhx__dep__moth__fath_indicator`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__dep__moth__fath_indicator.md)
+  [`compute_mh_p_famhx__dep__moth__fath_indicator()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__dep__moth__fath_indicator.md)
+  : Compute "Family History \[Parent\] (Depression) Endorsed: Either
+  parent"
+
+- [`vars_mh_p_famhx__dep__moth__fath_score`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__dep__moth__fath_score.md)
+  [`compute_mh_p_famhx__dep__moth__fath_score()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__dep__moth__fath_score.md)
+  : Compute "Family History \[Parent\] (Depression) Endorsed: Parents
+  overall"
+
+- [`vars_mh_p_famhx__doc__moth__fath_indicator`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__doc__moth__fath_indicator.md)
+  [`compute_mh_p_famhx__doc__moth__fath_indicator()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__doc__moth__fath_indicator.md)
+  : Compute "Family History \[Parent\] (Doctor Visit)) Endorsed: Either
+  parent"
+
+- [`vars_mh_p_famhx__doc__moth__fath_score`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__doc__moth__fath_score.md)
+  [`compute_mh_p_famhx__doc__moth__fath_score()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__doc__moth__fath_score.md)
+  : Compute "Family History \[Parent\] (Doctor Visit) Endorsed: Parents
+  overall"
+
+- [`vars_mh_p_famhx__drg__moth__fath_indicator`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__drg__moth__fath_indicator.md)
+  [`compute_mh_p_famhx__drg__moth__fath_indicator()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__drg__moth__fath_indicator.md)
+  : Compute "Family History \[Parent\] (Drug Use) Endorsed: Either
+  parent"
+
+- [`vars_mh_p_famhx__drg__moth__fath_score`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__drg__moth__fath_score.md)
+  [`compute_mh_p_famhx__drg__moth__fath_score()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__drg__moth__fath_score.md)
+  : Compute "Family History \[Parent\] (Drug Use) Endorsed: Parents
+  overall"
+
+- [`vars_mh_p_famhx__halluc__moth__fath_indicator`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__halluc__moth__fath_indicator.md)
+  [`compute_mh_p_famhx__halluc__moth__fath_indicator()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__halluc__moth__fath_indicator.md)
+  : Compute "Family History \[Parent\] (Hallucinations) Endorsed: Either
+  parent"
+
+- [`vars_mh_p_famhx__halluc__moth__fath_score`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__halluc__moth__fath_score.md)
+  [`compute_mh_p_famhx__halluc__moth__fath_score()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__halluc__moth__fath_score.md)
+  : Compute "Family History \[Parent\] (Hallucinations) Endorsed:
+  Parents overall"
+
+- [`vars_mh_p_famhx__hosp__moth__fath_indicator`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__hosp__moth__fath_indicator.md)
+  [`compute_mh_p_famhx__hosp__moth__fath_indicator()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__hosp__moth__fath_indicator.md)
+  : Compute "Family History \[Parent\] (Hospitalized)) Endorsed: Either
+  parent"
+
+- [`vars_mh_p_famhx__hosp__moth__fath_score`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__hosp__moth__fath_score.md)
+  [`compute_mh_p_famhx__hosp__moth__fath_score()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__hosp__moth__fath_score.md)
+  : Compute "Family History \[Parent\] (Hospitalized) Endorsed: Parents
+  overall"
+
+- [`vars_mh_p_famhx__mania__moth__fath_indicator`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__mania__moth__fath_indicator.md)
+  [`compute_mh_p_famhx__mania__moth__fath_indicator()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__mania__moth__fath_indicator.md)
+  : Compute "Family History \[Parent\] (Mania) Endorsed: Either parent"
+
+- [`vars_mh_p_famhx__mania__moth__fath_score`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__mania__moth__fath_score.md)
+  [`compute_mh_p_famhx__mania__moth__fath_score()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__mania__moth__fath_score.md)
+  : Compute "Family History \[Parent\] (Mania) Endorsed: Parents
+  overall"
+
+- [`vars_mh_p_famhx__nerve__moth__fath_indicator`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__nerve__moth__fath_indicator.md)
+  [`compute_mh_p_famhx__nerve__moth__fath_indicator()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__nerve__moth__fath_indicator.md)
+  : Compute "Family History \[Parent\] (Nerves/Nervous Breakdown)
+  Endorsed: Either parent"
+
+- [`vars_mh_p_famhx__nerve__moth__fath_score`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__nerve__moth__fath_score.md)
+  [`compute_mh_p_famhx__nerve__moth__fath_score()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__nerve__moth__fath_score.md)
+  : Compute "Family History \[Parent\] (Nerves/Nervous Breakdown)
+  Endorsed: Parents overall"
+
+- [`vars_mh_p_famhx__suic__moth__fath_indicator`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__suic__moth__fath_indicator.md)
+  [`compute_mh_p_famhx__suic__moth__fath_indicator()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__suic__moth__fath_indicator.md)
+  : Compute "Family History \[Parent\] (Suicide)) Endorsed: Either
+  parent"
+
+- [`vars_mh_p_famhx__suic__moth__fath_score`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__suic__moth__fath_score.md)
+  [`compute_mh_p_famhx__suic__moth__fath_score()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__suic__moth__fath_score.md)
+  : Compute "Family History \[Parent\] (Suicide) Endorsed: Parents
+  overall"
+
+- [`vars_mh_p_famhx__troub__moth__fath_indicator`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__troub__moth__fath_indicator.md)
+  [`compute_mh_p_famhx__troub__moth__fath_indicator()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__troub__moth__fath_indicator.md)
+  : Compute "Family History \[Parent\] (Trouble/Problems) Endorsed:
+  Either parent"
+
+- [`vars_mh_p_famhx__troub__moth__fath_score`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__troub__moth__fath_score.md)
+  [`compute_mh_p_famhx__troub__moth__fath_score()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx__troub__moth__fath_score.md)
+  : Compute "Family History \[Parent\] (Trouble/Problems) Endorsed:
+  Parents overall"
+
+- [`compute_mh_p_famhx_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_mh_p_famhx_all.md)
+  :
+
+  Compute all the `mh_p_famhx` summary scores
 
 ## Mental Health (ASEBA)
 
@@ -2322,6 +2793,26 @@ Summary scores in the ABCD core domain “Physical Health”
 - [`compute_ph_y_anthr_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_y_anthr_all.md)
   : Compute all the youth anthropometric measurements.
 
+### Anthropometrics \[Parent\]
+
+- [`compute_ph_p_anthr__fath_height__cm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_anthr__fath_height__cm.md)
+  : Compute "Anthropometrics \[Parent\] (Height): Father's height (cm)"
+
+- [`vars_ph_p_anthr__height`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_anthr__fath_height__in.md)
+  [`compute_ph_p_anthr__fath_height__in()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_anthr__fath_height__in.md)
+  : Compute "Anthropometrics \[Parent\] (Height): Father's height (in)"
+
+- [`compute_ph_p_anthr__moth_height__cm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_anthr__moth_height__cm.md)
+  : Compute "Anthropometrics \[Parent\] (Height): Mother's height (cm)"
+
+- [`compute_ph_p_anthr__moth_height__in()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_anthr__moth_height__in.md)
+  : Compute "Anthropometrics \[Parent\] (Height): Mother's height (in)"
+
+- [`compute_ph_p_anthr_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_anthr_all.md)
+  :
+
+  Compute all the `ph_p_anthr` summary scores
+
 ### Blood Pressure \[Youth\]
 
 - [`vars_ph_y_bp__dia`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_y_bp__dia_mean.md)
@@ -2519,7 +3010,7 @@ Summary scores in the ABCD core domain “Physical Health”
 ### Sleep Disturbance Scale \[Parent\]
 
 - [`compute_ph_p_sds__da_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__da_nm.md)
-  : Compute "Sleep Disturbance Scale \[Parent\] (Disorder of arousal) -
+  : Compute "Sleep Disturbance Scale \[Parent\] (Disorder of arousal):
   Number missing"
 
 - [`vars_ph_p_sds__da`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__da_sum.md)
@@ -2529,7 +3020,7 @@ Summary scores in the ABCD core domain “Physical Health”
 
 - [`compute_ph_p_sds__dims_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__dims_nm.md)
   : Compute "Sleep Disturbance Scale \[Parent\] (Disorders of initiating
-  and maintaining sleep) - Number missing"
+  and maintaining sleep): Number missing"
 
 - [`vars_ph_p_sds__dims`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__dims_sum.md)
   [`compute_ph_p_sds__dims_sum()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__dims_sum.md)
@@ -2539,7 +3030,7 @@ Summary scores in the ABCD core domain “Physical Health”
 
 - [`compute_ph_p_sds__does_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__does_nm.md)
   : Compute "Sleep Disturbance Scale \[Parent\] (Disorders of excessive
-  somnolence) - Number missing"
+  somnolence): Number missing"
 
 - [`vars_ph_p_sds__does`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__does_sum.md)
   [`compute_ph_p_sds__does_sum()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__does_sum.md)
@@ -2547,7 +3038,7 @@ Summary scores in the ABCD core domain “Physical Health”
   somnolence): Sum \[Validation: No more than 0 missing or declined\]"
 
 - [`compute_ph_p_sds__hyphy_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__hyphy_nm.md)
-  : Compute "Sleep Disturbance Scale \[Parent\] (Sleep hyperhydrosis) -
+  : Compute "Sleep Disturbance Scale \[Parent\] (Sleep hyperhydrosis):
   Number missing"
 
 - [`vars_ph_p_sds__hyphy`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__hyphy_sum.md)
@@ -2557,7 +3048,7 @@ Summary scores in the ABCD core domain “Physical Health”
 
 - [`compute_ph_p_sds__sbd_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__sbd_nm.md)
   : Compute "Sleep Disturbance Scale \[Parent\] (Sleep breathing
-  disorders) - Number missing"
+  disorders): Number missing"
 
 - [`vars_ph_p_sds__sbd`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__sbd_sum.md)
   [`compute_ph_p_sds__sbd_sum()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__sbd_sum.md)
@@ -2566,7 +3057,7 @@ Summary scores in the ABCD core domain “Physical Health”
 
 - [`compute_ph_p_sds__swtd_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__swtd_nm.md)
   : Compute "Sleep Disturbance Scale \[Parent\] (Sleep-wake transition
-  disorders) - Number missing"
+  disorders): Number missing"
 
 - [`vars_ph_p_sds__swtd`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__swtd_sum.md)
   [`compute_ph_p_sds__swtd_sum()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds__swtd_sum.md)
@@ -2579,13 +3070,12 @@ Summary scores in the ABCD core domain “Physical Health”
   Compute all the `ph_p_sds` summary scores
 
 - [`compute_ph_p_sds_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds_nm.md)
-  : Compute "Sleep Disturbance Scale \[Parent\] (Total) - Number
-  missing"
+  : Compute "Sleep Disturbance Scale \[Parent\]: Number missing"
 
 - [`vars_ph_p_sds_sum`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds_sum.md)
   [`compute_ph_p_sds_sum()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_p_sds_sum.md)
-  : Compute "Sleep Disturbance Scale \[Parent\] (Total): Sum
-  \[Validation: No more than 0 missing or declined\]"
+  : Compute "Sleep Disturbance Scale \[Parent\]: Sum \[Validation: No
+  more than 0 missing or declined\]"
 
 ### Ohio State Traumatic Brain Injury Screen (Baseline) \[Parent\]
 
@@ -2717,6 +3207,42 @@ Summary scores in the ABCD core domain “Physical Health”
   :
 
   Compute all the `ph_y_pds` summary scores
+
+### Fitbit Daily & Weekly Scores
+
+- [`compute_fitbit_activity_table()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fitbit_activity_table.md)
+  : Computes Daily Activity Summaries
+- [`compute_fitbit_activity_table_ext()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fitbit_activity_table_ext.md)
+  : Computes extended daily activity summaries
+- [`compute_fitbit_activity_week()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fitbit_activity_week.md)
+  : Generates weekly activity summaries
+- [`compute_fitbit_sleep_table()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fitbit_sleep_table.md)
+  : Compute daily sleep summaries
+- [`compute_fitbit_sleep_table_ext()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fitbit_sleep_table_ext.md)
+  : Computes episode-based daily sleep summary measures.
+- [`compute_fitbit_sleep_week()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fitbit_sleep_week.md)
+  : Generates weekly sleep summaries from daily Fitbit sleep data.
+- [`compute_fitbit_weekly_summary()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fitbit_weekly_summary.md)
+  : Generates weekly summary tables
+
+## Physical Health (Medication History)
+
+Summary scores in the ABCD core domain “Physical Health” (Medication
+History)
+
+- [`rx_map`](https://software.nbdc-datahub.org/ABCDscores/reference/rx_map.md)
+  [`rx_config`](https://software.nbdc-datahub.org/ABCDscores/reference/rx_map.md)
+  [`rx_config_estuse_flags`](https://software.nbdc-datahub.org/ABCDscores/reference/rx_map.md)
+  : Medical prescription Normalized Names mapping (RxNorm) data
+- [`compute_ph_meds_catg_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_meds_catg_all.md)
+  [`compute_ph_p_meds_catg_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_meds_catg_all.md)
+  [`compute_ph_y_meds_catg_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_meds_catg_all.md)
+  [`compute_ph_p_dhx_catg_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_meds_catg_all.md)
+  : Compute all medication categories \[Parent\] \[Youth\]
+- [`compute_ph_meds_estuse_flags_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_meds_estuse_flags_all.md)
+  [`compute_ph_p_meds_estuse_flags_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_meds_estuse_flags_all.md)
+  [`compute_ph_y_meds_estuse_flags_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ph_meds_estuse_flags_all.md)
+  : Compute all medication estimated use flags \[Parent\] \[Youth\]
 
 ## Substance Use
 
@@ -2982,9 +3508,215 @@ Summary scores in the ABCD core domain “Substance Use”
   : Compute "Caffeine Use Questionnaire \[Youth\] (Tea) : Sum
   \[Validation: None\]"
 
-## Substance Use (SUI/TLFB)
+### Kiddie Schedule for Affective Disorders and Schizophrenia \[Parent\]
 
-Summary scores in the ABCD core domain “Substance Use” (SUI/TLFB)
+- [`vars_su_p_ksads__aud__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__aud__past__sx_mean.md)
+  [`compute_su_p_ksads__aud__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__aud__past__sx_mean.md)
+  : Compute "KSADS - Alcohol Use Disorder \[Parent\] (Symptom - Past):
+  Mean"
+- [`vars_su_p_ksads__aud__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__aud__pres__sx_mean.md)
+  [`compute_su_p_ksads__aud__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__aud__pres__sx_mean.md)
+  : Compute "KSADS - Alcohol Use Disorder \[Parent\] (Symptom -
+  Present): Mean"
+- [`compute_su_p_ksads__aud_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__aud_all.md)
+  : Compute all summary scores for su_p_ksads\_\_aud
+- [`vars_su_p_ksads__dud__coc__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__coc__past__sx_mean.md)
+  [`compute_su_p_ksads__dud__coc__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__coc__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Cocaine -
+  Past): Mean"
+- [`vars_su_p_ksads__dud__coc__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__coc__pres__sx_mean.md)
+  [`compute_su_p_ksads__dud__coc__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__coc__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Cocaine -
+  Present): Mean"
+- [`vars_su_p_ksads__dud__hall__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__hall__past__sx_mean.md)
+  [`compute_su_p_ksads__dud__hall__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__hall__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom:
+  Hallucinogen - Past): Mean"
+- [`vars_su_p_ksads__dud__hall__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__hall__pres__sx_mean.md)
+  [`compute_su_p_ksads__dud__hall__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__hall__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom:
+  Hallucinogen - Present): Mean"
+- [`vars_su_p_ksads__dud__mj__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__mj__past__sx_mean.md)
+  [`compute_su_p_ksads__dud__mj__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__mj__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Cannabis -
+  Past): Mean"
+- [`vars_su_p_ksads__dud__mj__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__mj__pres__sx_mean.md)
+  [`compute_su_p_ksads__dud__mj__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__mj__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Cannabis -
+  Present): Mean"
+- [`vars_su_p_ksads__dud__nic__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__nic__past__sx_mean.md)
+  [`compute_su_p_ksads__dud__nic__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__nic__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Tobacco -
+  Past): Mean"
+- [`vars_su_p_ksads__dud__nic__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__nic__pres__sx_mean.md)
+  [`compute_su_p_ksads__dud__nic__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__nic__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Tobacco -
+  Present): Mean"
+- [`vars_su_p_ksads__dud__opi__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__opi__past__sx_mean.md)
+  [`compute_su_p_ksads__dud__opi__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__opi__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Opiod -
+  Past): Mean"
+- [`vars_su_p_ksads__dud__opi__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__opi__pres__sx_mean.md)
+  [`compute_su_p_ksads__dud__opi__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__opi__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Opiod -
+  Present): Mean"
+- [`vars_su_p_ksads__dud__othdrg__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__othdrg__past__sx_mean.md)
+  [`compute_su_p_ksads__dud__othdrg__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__othdrg__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Other
+  drugs - Past): Mean"
+- [`vars_su_p_ksads__dud__othdrg__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__othdrg__pres__sx_mean.md)
+  [`compute_su_p_ksads__dud__othdrg__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__othdrg__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Other
+  drugs - Present): Mean"
+- [`vars_su_p_ksads__dud__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__past__sx_mean.md)
+  [`compute_su_p_ksads__dud__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom - Past):
+  Mean"
+- [`vars_su_p_ksads__dud__pcp__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__pcp__past__sx_mean.md)
+  [`compute_su_p_ksads__dud__pcp__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__pcp__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: PCP -
+  Past): Mean"
+- [`vars_su_p_ksads__dud__pcp__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__pcp__pres__sx_mean.md)
+  [`compute_su_p_ksads__dud__pcp__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__pcp__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: PCP -
+  Present): Mean"
+- [`vars_su_p_ksads__dud__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__pres__sx_mean.md)
+  [`compute_su_p_ksads__dud__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom - Present):
+  Mean"
+- [`vars_su_p_ksads__dud__sed__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__sed__past__sx_mean.md)
+  [`compute_su_p_ksads__dud__sed__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__sed__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Sedatives -
+  Past): Mean"
+- [`vars_su_p_ksads__dud__sed__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__sed__pres__sx_mean.md)
+  [`compute_su_p_ksads__dud__sed__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__sed__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Sedatives -
+  Present): Mean"
+- [`vars_su_p_ksads__dud__solv__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__solv__past__sx_mean.md)
+  [`compute_su_p_ksads__dud__solv__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__solv__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Solvent -
+  Past): Mean"
+- [`vars_su_p_ksads__dud__solv__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__solv__pres__sx_mean.md)
+  [`compute_su_p_ksads__dud__solv__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__solv__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom: Solvent -
+  Present): Mean"
+- [`vars_su_p_ksads__dud__stim__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__stim__past__sx_mean.md)
+  [`compute_su_p_ksads__dud__stim__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__stim__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom:
+  Stimulants - Past): Mean"
+- [`vars_su_p_ksads__dud__stim__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__stim__pres__sx_mean.md)
+  [`compute_su_p_ksads__dud__stim__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud__stim__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Parent\] (Symptom:
+  Stimulants - Present): Mean"
+- [`compute_su_p_ksads__dud_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_p_ksads__dud_all.md)
+  : Compute all summary scores for su_p_ksads\_\_dud
+
+### Kiddie Schedule for Affective Disorders and Schizophrenia \[Youth\]
+
+- [`vars_su_y_ksads__aud__past__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__aud__past__sx_mean.md)
+  [`compute_su_y_ksads__aud__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__aud__past__sx_mean.md)
+  : Compute "KSADS - Alcohol Use Disorder \[Youth\] (Symptom - Past):
+  Mean"
+- [`vars_su_y_ksads__aud__pres__sx`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__aud__pres__sx_mean.md)
+  [`compute_su_y_ksads__aud__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__aud__pres__sx_mean.md)
+  : Compute "KSADS - Alcohol Use Disorder \[Youth\] (Symptom - Present):
+  Mean"
+- [`compute_su_y_ksads__aud_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__aud_all.md)
+  : Compute all summary scores for su_y_ksads\_\_aud
+- [`vars_su_y_ksads__dud__coc__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__coc__past__sx_mean.md)
+  [`compute_su_y_ksads__dud__coc__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__coc__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Cocaine -
+  Past): Mean"
+- [`vars_su_y_ksads__dud__coc__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__coc__pres__sx_mean.md)
+  [`compute_su_y_ksads__dud__coc__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__coc__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Cocaine -
+  Present): Mean"
+- [`vars_su_y_ksads__dud__hall__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__hall__past__sx_mean.md)
+  [`compute_su_y_ksads__dud__hall__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__hall__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom:
+  Hallucinogen - Past): Mean"
+- [`vars_su_y_ksads__dud__hall__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__hall__pres__sx_mean.md)
+  [`compute_su_y_ksads__dud__hall__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__hall__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom:
+  Hallucinogen - Present): Mean"
+- [`vars_su_y_ksads__dud__mj__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__mj__past__sx_mean.md)
+  [`compute_su_y_ksads__dud__mj__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__mj__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Cannabis -
+  Past): Mean"
+- [`vars_su_y_ksads__dud__mj__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__mj__pres__sx_mean.md)
+  [`compute_su_y_ksads__dud__mj__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__mj__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Cannabis -
+  Present): Mean"
+- [`vars_su_y_ksads__dud__nic__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__nic__past__sx_mean.md)
+  [`compute_su_y_ksads__dud__nic__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__nic__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Tobacco -
+  Past): Mean"
+- [`vars_su_y_ksads__dud__nic__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__nic__pres__sx_mean.md)
+  [`compute_su_y_ksads__dud__nic__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__nic__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Tobacco -
+  Present): Mean"
+- [`vars_su_y_ksads__dud__opi__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__opi__past__sx_mean.md)
+  [`compute_su_y_ksads__dud__opi__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__opi__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Opiod -
+  Past): Mean"
+- [`vars_su_y_ksads__dud__opi__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__opi__pres__sx_mean.md)
+  [`compute_su_y_ksads__dud__opi__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__opi__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Opiod -
+  Present): Mean"
+- [`vars_su_y_ksads__dud__othdrg__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__othdrg__past__sx_mean.md)
+  [`compute_su_y_ksads__dud__othdrg__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__othdrg__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Other
+  drugs - Past): Mean"
+- [`vars_su_y_ksads__dud__othdrg__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__othdrg__pres__sx_mean.md)
+  [`compute_su_y_ksads__dud__othdrg__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__othdrg__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Other
+  drugs - Present): Mean"
+- [`vars_su_y_ksads__dud__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__past__sx_mean.md)
+  [`compute_su_y_ksads__dud__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom - Past):
+  Mean"
+- [`vars_su_y_ksads__dud__pcp__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__pcp__past__sx_mean.md)
+  [`compute_su_y_ksads__dud__pcp__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__pcp__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: PCP - Past):
+  Mean"
+- [`vars_su_y_ksads__dud__pcp__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__pcp__pres__sx_mean.md)
+  [`compute_su_y_ksads__dud__pcp__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__pcp__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: PCP -
+  Present): Mean"
+- [`vars_su_y_ksads__dud__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__pres__sx_mean.md)
+  [`compute_su_y_ksads__dud__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom - Present):
+  Mean"
+- [`vars_su_y_ksads__dud__sed__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__sed__past__sx_mean.md)
+  [`compute_su_y_ksads__dud__sed__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__sed__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Sedatives -
+  Past): Mean"
+- [`vars_su_y_ksads__dud__sed__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__sed__pres__sx_mean.md)
+  [`compute_su_y_ksads__dud__sed__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__sed__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Sedatives -
+  Present): Mean"
+- [`vars_su_y_ksads__dud__solv__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__solv__past__sx_mean.md)
+  [`compute_su_y_ksads__dud__solv__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__solv__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Solvent -
+  Past): Mean"
+- [`vars_su_y_ksads__dud__solv__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__solv__pres__sx_mean.md)
+  [`compute_su_y_ksads__dud__solv__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__solv__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Solvent -
+  Present): Mean"
+- [`vars_su_y_ksads__dud__stim__past__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__stim__past__sx_mean.md)
+  [`compute_su_y_ksads__dud__stim__past__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__stim__past__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Stimulants -
+  Past): Mean"
+- [`vars_su_y_ksads__dud__stim__pres__sx_mean`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__stim__pres__sx_mean.md)
+  [`compute_su_y_ksads__dud__stim__pres__sx_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud__stim__pres__sx_mean.md)
+  : Compute "KSADS - Drug Use Disorders \[Youth\] (Symptom: Stimulants -
+  Present): Mean"
+- [`compute_su_y_ksads__dud_all()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_su_y_ksads__dud_all.md)
+  : Compute all summary scores for su_y_ksads\_\_dud
+
+## Substance Use (SUI/TLFB/SDSU)
+
+Summary scores in the ABCD core domain “Substance Use” (SUI/TLFB/SDSU)
 
 ### Substance Use Interview \[Youth\]
 
@@ -3009,12 +3741,23 @@ Summary scores in the ABCD core domain “Substance Use” (SUI/TLFB)
   : Compute TLFB mean quantity
 - [`compute_tlfb_totdose()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_tlfb_totdose.md)
   : Compute TLFB total dose
+- [`compute_tlfb_totdose_sum()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_tlfb_totdose_sum.md)
+  : Compute TLFB lifetime total dose
 - [`compute_tlfb_ud()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_tlfb_ud.md)
   : Compute TLFB use days
 - [`filter_tlfb()`](https://software.nbdc-datahub.org/ABCDscores/reference/filter_tlfb.md)
   : Filter TLFB data
 - [`check_args_tlfb()`](https://software.nbdc-datahub.org/ABCDscores/reference/check_args_tlfb.md)
   : Check arguments for TLFB summary score functions
+
+### Multiple Substances Use \[Youth\]
+
+- [`compute_ss_use_yn()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ss_use_yn.md)
+  : Compute substance use Y/N for a participant
+- [`compute_ss_use_onset_age()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ss_use_onset_age.md)
+  : Compute annual session substance use age of onset for a participant
+- [`compute_ss_use_onset_event()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_ss_use_onset_event.md)
+  : Compute substance use onset session for each participant
 
 ## Utility functions
 
@@ -3044,6 +3787,8 @@ Low-level functions for computing summary scores
   : Combine levels from two variables to create a new variable
 - [`combine_cols()`](https://software.nbdc-datahub.org/ABCDscores/reference/combine_cols.md)
   : Combine columns
+- [`combine_checkboxes()`](https://software.nbdc-datahub.org/ABCDscores/reference/combine_checkboxes.md)
+  : Combine checkbox variables into a single list column
 - [`make_static()`](https://software.nbdc-datahub.org/ABCDscores/reference/make_static.md)
   : Create static variable, one per participant, using longitudinal
   responses
@@ -3055,6 +3800,14 @@ Low-level functions for computing summary scores
 - [ABCDscores](https://software.nbdc-datahub.org/ABCDscores/articles/ABCDscores.md):
 - [Achenbach System of Empirically Based Assessment (ASEBA)
   T-scores](https://software.nbdc-datahub.org/ABCDscores/articles/aseba.md):
+- [Family History (FAMHX) summary
+  scores](https://software.nbdc-datahub.org/ABCDscores/articles/famhx.md):
+- [Computing Daily and Weekly Fitbit
+  Scores](https://software.nbdc-datahub.org/ABCDscores/articles/fitbit.md):
+- [Medication use and
+  history](https://software.nbdc-datahub.org/ABCDscores/articles/meds.md):
+- [Static and Dynamic Substance Use (SDSU) summary
+  scores](https://software.nbdc-datahub.org/ABCDscores/articles/sdsu.md):
 - [Substance Use Interview (SUI) summary
   scores](https://software.nbdc-datahub.org/ABCDscores/articles/sui.md):
 - [Timeline Followback (TLFB) summary

@@ -15,7 +15,11 @@ Computes the summary score `fc_p_vs__obl_mean` (Values Scale \[Parent\]
 
   - `fc_p_vs__obl_005`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
+
+  - 999
 
 - *Validation criterion:* maximally 1 of 5 items missing
 
@@ -28,6 +32,7 @@ compute_fc_p_vs__obl_mean(
   data,
   name = "fc_p_vs__obl_mean",
   max_na = 1,
+  exclude = c("777", "999"),
   combine = TRUE
 )
 ```
@@ -52,6 +57,11 @@ compute summary score of `fc_p_vs__obl`.
 
   numeric, positive whole number. Number of missing items allowed
   (Default: 1).
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

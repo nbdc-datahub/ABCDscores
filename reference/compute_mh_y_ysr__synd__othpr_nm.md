@@ -23,8 +23,6 @@ Computes the summary score `mh_y_ysr__synd__othpr_nm` Youth Self Report
 
   - `mh_y_ysr__othpr__adhd_001`
 
-  - `mh_y_ysr__othpr_007`
-
 - *Excluded values:*
 
   - 777

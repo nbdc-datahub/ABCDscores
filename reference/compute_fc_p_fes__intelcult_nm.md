@@ -23,7 +23,11 @@ Scale \[Parent\] (Intellectual and cultural): Number missing)
 
   - `fc_p_fes__intelcult_009`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
+
+  - 999
 
 ## Usage
 
@@ -31,6 +35,7 @@ Scale \[Parent\] (Intellectual and cultural): Number missing)
 compute_fc_p_fes__intelcult_nm(
   data,
   name = "fc_p_fes__intelcult_nm",
+  exclude = c("777", "999"),
   combine = TRUE
 )
 ```
@@ -45,6 +50,11 @@ compute_fc_p_fes__intelcult_nm(
 
   character. Name of the summary score. Default is the name in the
   description.
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

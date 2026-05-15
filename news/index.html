@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">ABCDscores</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">7.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +20,10 @@
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/aseba.html">Achenbach System of Empirically Based Assessment (ASEBA) T-scores</a></li>
+    <li><a class="dropdown-item" href="../articles/famhx.html">Family History (FAMHX) summary scores</a></li>
+    <li><a class="dropdown-item" href="../articles/fitbit.html">Computing Daily and Weekly Fitbit Scores</a></li>
+    <li><a class="dropdown-item" href="../articles/meds.html">Medication use and history</a></li>
+    <li><a class="dropdown-item" href="../articles/sdsu.html">Static and Dynamic Substance Use (SDSU) summary scores</a></li>
     <li><a class="dropdown-item" href="../articles/sui.html">Substance Use Interview (SUI) summary scores</a></li>
     <li><a class="dropdown-item" href="../articles/tlfb.html">Timeline Followback (TLFB) summary scores</a></li>
   </ul></li>
@@ -46,7 +50,39 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="6.1.0" id="abcdscores-610">ABCDscores 6.1.0<a class="anchor" aria-label="anchor" href="#abcdscores-610"></a></h2>
+<h2 class="pkg-version" data-toc-text="7.0.0" id="abcdscores-700">ABCDscores 7.0.0<a class="anchor" aria-label="anchor" href="#abcdscores-700"></a></h2>
+<p>Date: 2026-05-13</p>
+<div class="section level3">
+<h3 id="new-features-7-0-0">New features<a class="anchor" aria-label="anchor" href="#new-features-7-0-0"></a></h3>
+<ul><li>Added KSADS parent and youth summary scores for mental health and substance-use symptom domains (<code>mh_p_ksads</code>, <code>mh_y_ksads</code>, <code>su_p_ksads</code>, <code>su_y_ksads</code>).</li>
+<li>Added family history summary scores for combining checkbox style endorsements into binary items endorsement and combined parent scores (<code>mh_p_famhx</code>).</li>
+<li>Added medication category and estimated-use flag scores using RxNorm-based medication mappings (<code>ph_p_meds</code>, <code>ph_y_meds</code>, <code>ph_p_dhx</code>).</li>
+<li>Added SU summary scores across multiple measures for lifetime use, onset age, and onset event and TLFB lifetime total-dose summary scores updates (<code>su_y_dyn</code>, <code>su_y_stc</code>, <code>su_y_tlfb</code>).</li>
+<li>Added Prodromal Psychosis Scale / SIPS distress, severity, persistence, count, first-event, and ever-event scores (<code>mh_y_pps</code>, <code>mh_y_ppsss</code>).</li>
+<li>Added UCLA Loneliness Scale summary scores (<code>fc_y_lone</code>).</li>
+<li>Added combined unit scores for parent height and birthweght (<code>ph_p_anthr</code>, <code>ph_p_dhx</code>).</li>
+<li>Added Native American Acculturation mean scores (<code>fc_y_na</code>, <code>ab_p_demo__ntvam</code>).</li>
+<li>Added Fitbit summary scores for file-based data on activity and sleep at the daily and weekly level, such as means, durations, and counts.</li>
+<li>Added vignettes (<strong>Articles</strong>) for <code>Family History (FAMHX) summary scores</code>, <code>Medication use and history</code>, <code>Static and Dynamic Substance Use (SDSU) summary scores</code>, and <code>Computing Daily and Weekly Fitbit Scores</code>.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="changes-7-0-0">Changes<a class="anchor" aria-label="anchor" href="#changes-7-0-0"></a></h3>
+<ul><li>Added documentation for installing from release tarballs.</li>
+<li>Reorganized substance-use score files and updated generated help files.</li>
+<li>Removed count validation threshold (<code>max_na</code>) from <code>mh_p_ple_count</code> and <code>mh_y_ple_count</code>, so scores are now computed regardless of the number of missing items.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="bug-fixes-7-0-0">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-7-0-0"></a></h3>
+<ul><li>Fixed <code>mh_y_ysr</code> scoring, where three obsolete variables were still included and the missingness thresholds used outdated criteria. The total score now uses 102 items with a maximum of 5 missing items, subscales use the updated 20% missing-item threshold, and T-score functions apply the same validation logic before returning a score.</li>
+<li>Fixed non-response handling in MH and FC scores. Values of 777 are now excluded from <code>mh_y_peq</code>, <code>fc_y_fes</code>, <code>fc_y_vs</code>, <code>fc_y_pnh</code>, <code>fc_y_psb</code>, and <code>fc_y_srpf</code>; values of 777 and 999 are now excluded from <code>fc_p_fes</code>, <code>fc_p_vs</code>, and <code>fc_p_psb</code>; unnecessary exclusion criteria were removed from <code>fc_y_vs__famil</code> scores.</li>
+<li>Fixed <code>compute_ph_y_mctq__sd_count</code> school-data handling to replace NAs with <code>0</code> when no school/work days endorsed and numeric.</li>
+<li>Fixed physical-health arithmetic where factor or character inputs could be used directly in numeric calculations. Birthweight, OTBI age, and parent height computations now coerce source variables to numeric before arithmetic or comparisons.</li>
+<li>Fixed EATQ mean computations where redundant <code><a href="../reference/recode_levels.html">recode_levels()</a></code> calls could alter values before computing means. The unwanted recoding step was removed.</li>
+<li>Missingnes criteria was adjust for Life Events measures (<code>mh_y_ple</code>, <code>mh_p_ple</code>).</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="6.1.0" id="abcdscores-610">ABCDscores 6.1.0<a class="anchor" aria-label="anchor" href="#abcdscores-610"></a></h2><p class="text-muted">CRAN release: 2025-11-25</p>
 <p>Date: 2025-11-30</p>
 <div class="section level3">
 <h3 id="changes-6-1-0">Changes<a class="anchor" aria-label="anchor" href="#changes-6-1-0"></a></h3>
@@ -68,7 +104,8 @@
 <div class="section level3">
 <h3 id="new-features-6-0-1">New features<a class="anchor" aria-label="anchor" href="#new-features-6-0-1"></a></h3>
 <ul><li>Added <code>ph_ph_sds</code> (Sleep Disturbance Scale) scores.</li>
-<li>Improved documentation of summary scores by providing information information about excluded values, validation criteria, and other notes for all scores.</li>
+<li>Improved documentation of summary scores by providing information<br>
+about excluded values, validation criteria, and other notes for all scores.</li>
 </ul></div>
 <div class="section level3">
 <h3 id="bug-fixes-6-0-1">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-6-0-1"></a></h3>
@@ -88,7 +125,7 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer.</p>
+  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer, Shermaine Abad.</p>
 </div>
 
 <div class="pkgdown-footer-right">

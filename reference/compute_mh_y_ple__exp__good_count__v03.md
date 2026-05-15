@@ -1,9 +1,8 @@
-# Compute "Life Events \[Youth\] (Experience Good Events): Count - Version 3 (Starting at Year 6) \[Validation: No more than 6 events missing and no experience items missing or declined\]"
+# Compute "Life Events \[Youth\] (Experience Good Events): Count - Version 3 (Starting at Year 6)"
 
 Computes the summary score `mh_y_ple__exp__good_count__v03` Life Events
 \[Youth\] (Experience Good Events): Count - Version 3 (Starting at Year
-6) \[Validation: No more than 6 events missing and no experience items
-missing or declined\]
+6)
 
 - *Summarized variables:*
 
@@ -81,8 +80,6 @@ missing or declined\]
 
   - 999
 
-- *Validation criterion:* maximally 6 of 33 items missing
-
 ## Usage
 
 ``` r
@@ -91,7 +88,7 @@ compute_mh_y_ple__exp__good_count__v03(
   name = "mh_y_ple__exp__good_count__v03",
   events = c("ses-06A", "ses-07A"),
   combine = TRUE,
-  max_na = 6
+  max_na = NULL
 )
 ```
 
@@ -117,8 +114,8 @@ compute_mh_y_ple__exp__good_count__v03(
 
 - max_na:
 
-  numeric, positive whole number. Number of missing items allowed
-  (Default: 6).
+  numeric, positive whole number. Number of missing items allowed.
+  `NULL` means no limit (Default: NULL).
 
 ## Value
 

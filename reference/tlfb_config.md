@@ -10,5 +10,5 @@ tlfb_config
 
 ## Format
 
-An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with 870
+An object of class `tbl_df` (inherits from `tbl`, `data.frame`) with 906
 rows and 10 columns.

@@ -15,7 +15,9 @@ Computes the summary score `fc_y_vs__indselfrel_nm` (Values Scale
 
   - `fc_y_vs__indselfrel_005`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
 
 ## Usage
 
@@ -23,6 +25,7 @@ Computes the summary score `fc_y_vs__indselfrel_nm` (Values Scale
 compute_fc_y_vs__indselfrel_nm(
   data,
   name = "fc_y_vs__indselfrel_nm",
+  exclude = c("777"),
   combine = TRUE
 )
 ```
@@ -37,6 +40,11 @@ compute_fc_y_vs__indselfrel_nm(
 
   character. Name of the summary score. Default is the name in the
   description.
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

@@ -7,8 +7,6 @@ Computes the summary score `mh_y_ysr__synd__tho_sum` Youth Self Report
 
   - `mh_y_ysr__tho_001`
 
-  - `mh_y_ysr__tho__dep_001`
-
   - `mh_y_ysr__tho_002`
 
   - `mh_y_ysr__tho_003`
@@ -35,7 +33,7 @@ Computes the summary score `mh_y_ysr__synd__tho_sum` Youth Self Report
 
   - 999
 
-- *Validation criterion:* maximally 0 of 12 items missing
+- *Validation criterion:* maximally 2 of 11 items missing
 
 ## Usage
 
@@ -43,7 +41,7 @@ Computes the summary score `mh_y_ysr__synd__tho_sum` Youth Self Report
 compute_mh_y_ysr__synd__tho_sum(
   data,
   name = "mh_y_ysr__synd__tho_sum",
-  max_na = 0,
+  max_na = 2,
   exclude = c("777", "999"),
   combine = TRUE
 )

@@ -15,7 +15,9 @@ Computes the summary score `fc_y_pnh_sum` (Peer Network Health
 
   - `fc_y_pnh_003__01`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
 
 - *Validation criterion:* none of 5 items missing
 
@@ -33,7 +35,13 @@ Computes the summary score `fc_y_pnh_sum` (Peer Network Health
 ``` r
 vars_fc_y_pnh
 
-compute_fc_y_pnh_sum(data, name = "fc_y_pnh_sum", max_na = 0, combine = TRUE)
+compute_fc_y_pnh_sum(
+  data,
+  name = "fc_y_pnh_sum",
+  max_na = 0,
+  exclude = c("777"),
+  combine = TRUE
+)
 ```
 
 ## Format
@@ -56,6 +64,11 @@ summary score of `fc_y_pnh`.
 
   numeric, positive whole number. Number of missing items allowed
   (Default: 0).
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

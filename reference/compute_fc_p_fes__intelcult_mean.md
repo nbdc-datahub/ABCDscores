@@ -23,7 +23,11 @@ Environment Scale \[Parent\] (Intellectual and cultural): Mean)
 
   - `fc_p_fes__intelcult_009`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
+
+  - 999
 
 - *Validation criterion:* maximally 1 of 9 items missing
 
@@ -36,6 +40,7 @@ compute_fc_p_fes__intelcult_mean(
   data,
   name = "fc_p_fes__intelcult_mean",
   max_na = 1,
+  exclude = c("777", "999"),
   combine = TRUE
 )
 ```
@@ -60,6 +65,11 @@ used to compute summary score of `fc_p_fes__intelcult`.
 
   numeric, positive whole number. Number of missing items allowed
   (Default: 1).
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

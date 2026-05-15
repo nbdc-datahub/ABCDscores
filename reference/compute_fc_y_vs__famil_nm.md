@@ -1,7 +1,7 @@
 # Compute "Values Scale \[Youth\] (Familism): Number missing - Baseline to Year 5"
 
 Computes the summary score `fc_y_vs__famil_nm__v01` (Values Scale
-\[Youth\] (Familism): Number missing - Baseline to Year 5)
+\[Youth\] (Familism): Number missing (Subscales: supp, ref, obl))
 
 - *Summarized variables:*
 
@@ -41,15 +41,13 @@ Computes the summary score `fc_y_vs__famil_nm__v01` (Values Scale
 
   - 777
 
-  - 999
-
 ## Usage
 
 ``` r
 compute_fc_y_vs__famil_nm(
   data,
   name = "fc_y_vs__famil_nm",
-  exclude = c("777", "999"),
+  exclude = c("777"),
   combine = TRUE
 )
 ```

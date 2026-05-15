@@ -13,7 +13,9 @@ Protective Factors \[Youth\] (School involvement): Mean)
 
   - `fc_y_srpf__involv_004`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
 
 - *Validation criterion:* none of 4 items missing
 
@@ -26,6 +28,7 @@ compute_fc_y_srpf__involv_mean(
   data,
   name = "fc_y_srpf__involv_mean",
   max_na = 0,
+  exclude = c("777"),
   combine = TRUE
 )
 ```
@@ -50,6 +53,11 @@ to compute summary score of `fc_y_srpf__involv`.
 
   numeric, positive whole number. Number of missing items allowed
   (Default: 0).
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

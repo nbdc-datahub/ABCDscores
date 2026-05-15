@@ -9,8 +9,6 @@ Computes the summary score `mh_y_ysr__dsm__dep_nm` Youth Self Report
 
   - `mh_y_ysr__anxdep__dep_001`
 
-  - `mh_y_ysr__tho__dep_001`
-
   - `mh_y_ysr__othpr__dep_001`
 
   - `mh_y_ysr__anxdep__dep_002`
@@ -22,8 +20,6 @@ Computes the summary score `mh_y_ysr__dsm__dep_nm` Youth Self Report
   - `mh_y_ysr__tho__dep_002`
 
   - `mh_y_ysr__othpr__dep_002`
-
-  - `mh_y_ysr__anxdep__dep_004`
 
   - `mh_y_ysr__tho__dep_003`
 

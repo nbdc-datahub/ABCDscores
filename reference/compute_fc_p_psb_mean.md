@@ -11,7 +11,11 @@ Computes the summary score `fc_p_psb_mean` (Prosocial Behavior
 
   - `fc_p_psb_003`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
+
+  - 999
 
 - *Validation criterion:* none of 3 items missing
 
@@ -20,7 +24,13 @@ Computes the summary score `fc_p_psb_mean` (Prosocial Behavior
 ``` r
 vars_fc_p_psb
 
-compute_fc_p_psb_mean(data, name = "fc_p_psb_mean", max_na = 0, combine = TRUE)
+compute_fc_p_psb_mean(
+  data,
+  name = "fc_p_psb_mean",
+  max_na = 0,
+  exclude = c("777", "999"),
+  combine = TRUE
+)
 ```
 
 ## Format
@@ -43,6 +53,11 @@ summary score of `fc_p_psb`.
 
   numeric, positive whole number. Number of missing items allowed
   (Default: 0).
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

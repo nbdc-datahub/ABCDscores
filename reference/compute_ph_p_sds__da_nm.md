@@ -1,7 +1,7 @@
-# Compute "Sleep Disturbance Scale \[Parent\] (Disorder of arousal) - Number missing"
+# Compute "Sleep Disturbance Scale \[Parent\] (Disorder of arousal): Number missing"
 
 Computes the summary score `ph_p_sds__da_nm` Sleep Disturbance Scale
-\[Parent\] (Disorder of arousal) - Number missing
+\[Parent\] (Disorder of arousal): Number missing
 
 - *Summarized variables:*
 

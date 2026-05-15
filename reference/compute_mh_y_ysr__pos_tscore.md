@@ -39,7 +39,8 @@ Computes the summary score `mh_y_ysr__pos_tscore` Youth Self Report
 
   - 999
 
-- *Validation criterion:* maximally 0 of 14 items missing
+- *Validation criterion:* maximally 2 of 14 items missing or
+  `mh_y_ysr__dsm__adhd_nm` \<= 5
 
 ## Usage
 
@@ -50,7 +51,7 @@ compute_mh_y_ysr__pos_tscore(
   name = "mh_y_ysr__pos_tscore",
   col_age = "mh_y_ysr_age",
   col_sex = "ab_g_stc__cohort_sex",
-  max_na = 0,
+  max_na = 2,
   exclude = c("777", "999"),
   combine = TRUE
 )

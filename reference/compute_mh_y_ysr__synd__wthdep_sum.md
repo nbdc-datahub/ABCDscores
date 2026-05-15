@@ -27,7 +27,7 @@ Report \[Youth\] (Syndrome Scale - Withdrawn/Depressed): Sum
 
   - 999
 
-- *Validation criterion:* maximally 0 of 8 items missing
+- *Validation criterion:* maximally 1 of 8 items missing
 
 ## Usage
 
@@ -35,7 +35,7 @@ Report \[Youth\] (Syndrome Scale - Withdrawn/Depressed): Sum
 compute_mh_y_ysr__synd__wthdep_sum(
   data,
   name = "mh_y_ysr__synd__wthdep_sum",
-  max_na = 0,
+  max_na = 1,
   exclude = c("777", "999"),
   combine = TRUE
 )

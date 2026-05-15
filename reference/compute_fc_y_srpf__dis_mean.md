@@ -9,7 +9,9 @@ Protective Factors \[Youth\] (School disengagement): Mean)
 
   - `fc_y_srpf__dis_002`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
 
 - *Validation criterion:* none of 2 items missing
 
@@ -22,6 +24,7 @@ compute_fc_y_srpf__dis_mean(
   data,
   name = "fc_y_srpf__dis_mean",
   max_na = 0,
+  exclude = c("777"),
   combine = TRUE
 )
 ```
@@ -46,6 +49,11 @@ compute summary score of `fc_y_srpf__dis`.
 
   numeric, positive whole number. Number of missing items allowed
   (Default: 0).
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

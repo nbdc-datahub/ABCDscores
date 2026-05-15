@@ -1,4 +1,4 @@
-# Compute "Sleep Disturbance Scale \[Parent\] (Disorders of excessive somnolence) - Number missing"
+# Compute "Sleep Disturbance Scale \[Parent\] (Disorders of excessive somnolence): Number missing"
 
 Computes the summary score `ph_p_sds__does_nm` Sleep Disturbance Scale
 \[Parent\] (Disorders of excessive somnolence) - Number missing

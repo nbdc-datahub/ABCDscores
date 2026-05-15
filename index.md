@@ -37,6 +37,7 @@ data release, starting with the introduction of the package with release
 |:----------------|:----------------|
 | 6.0             | 6.0.0           |
 | 6.1             | 6.1.0           |
+| 7.0             | 7.0.0           |
 
 ## Installation
 
@@ -44,6 +45,7 @@ To install the *latest version* of `ABCDscores` from CRAN, use the
 following command:
 
 ``` r
+
 install.packages("ABCDscores")
 ```
 
@@ -52,6 +54,7 @@ To install the *latest version* of `ABCDscores` from
 command:
 
 ``` r
+
 if (!requireNamespace("remotes", quietly = TRUE)) {
   install.packages("remotes")
 }
@@ -64,8 +67,31 @@ number in the `remotes::install_github()` call. For example, to install
 version 6.0.0, use the following command:
 
 ``` r
+
 remotes::install_github("nbdc-datahub/ABCDscores@v6.0.0")
 ```
+
+### Using tarballs to install
+
+On every new release page of the
+[`ABCDscores`](https://github.com/nbdc-datahub/ABCDscores/releases) you
+can find the source tarballs (`tar.gz` files) for the corresponding
+release. If compute environments do not have internet access, you can
+download the tarballs on a different machine and transfer them to the
+target environment. Then, use the following command to install the
+packages from the local tarball files:
+
+``` r
+
+install.packages("path/to/ABCDscores_x.y.z.tar.gz", repos = NULL, type = "source")
+```
+
+However, please make sure that all dependencies are already installed in
+the target environment, as the installation from tarballs does not
+resolve dependencies automatically, for example, please see the list of
+dependencies in the
+[DESCRIPTION](https://github.com/nbdc-datahub/ABCDscores/blob/main/DESCRIPTION)
+Imports and Suggests fields.
 
 ## Usage
 

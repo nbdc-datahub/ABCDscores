@@ -17,7 +17,9 @@ Computes the summary score `fc_y_vs__supp_mean` (Values Scale \[Youth\]
 
   - `fc_y_vs__supp_006`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
 
 - *Validation criterion:* maximally 1 of 6 items missing
 
@@ -30,6 +32,7 @@ compute_fc_y_vs__supp_mean(
   data,
   name = "fc_y_vs__supp_mean",
   max_na = 1,
+  exclude = c("777"),
   combine = TRUE
 )
 ```
@@ -54,6 +57,11 @@ compute summary score of `fc_y_vs__supp`.
 
   numeric, positive whole number. Number of missing items allowed
   (Default: 1).
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

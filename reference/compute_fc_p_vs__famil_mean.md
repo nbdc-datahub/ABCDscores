@@ -1,7 +1,7 @@
-# Compute "Values Scale \[Parent\] (Familism): Mean - Baseline to Year 5"
+# Compute "Values Scale \[Parent\] (Familism): Mean (Subscales: supp, ref, obl)"
 
 Computes the summary score `fc_p_vs__famil_mean` (Values Scale
-\[Parent\] (Familism): Mean - Baseline to Year 5)
+\[Parent\] (Familism): Mean (Subscales: supp, ref, obl))
 
 - *Summarized variables:*
 
@@ -46,6 +46,8 @@ Computes the summary score `fc_p_vs__famil_mean` (Values Scale
 - *Validation criterion:*
 
   - maximally 3 of 16 items missing
+
+  - all sub-scales can be calculated
 
 ## Usage
 

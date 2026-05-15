@@ -31,15 +31,13 @@ Computes the summary score `fc_y_vs__famil_nm__v01` (Values Scale
 
   - 777
 
-  - 999
-
 ## Usage
 
 ``` r
 compute_fc_y_vs__famil_nm__v01(
   data,
   name = "fc_y_vs__famil_nm__v01",
-  exclude = c("777", "999"),
+  exclude = c("777"),
   combine = TRUE
 )
 ```

@@ -23,7 +23,9 @@ Scale \[Youth\] (Conflict): Mean)
 
   - `fc_y_fes__confl_009`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
 
 - *Validation criterion:* maximally 1 of 9 items missing
 
@@ -36,6 +38,7 @@ compute_fc_y_fes__confl_mean(
   data,
   name = "fc_y_fes__confl_mean",
   max_na = 1,
+  exclude = c("777"),
   combine = TRUE
 )
 ```
@@ -60,6 +63,11 @@ compute summary score of `fc_y_fes__confl`.
 
   numeric, positive whole number. Number of missing items allowed
   (Default: 1).
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

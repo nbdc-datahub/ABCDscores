@@ -27,8 +27,6 @@ Computes the summary score `mh_y_ysr__synd__int_nm` Youth Self Report
 
   - `mh_y_ysr__anxdep__anx_006`
 
-  - `mh_y_ysr__anxdep__dep_004`
-
   - `mh_y_ysr__anxdep__anx_007`
 
   - `mh_y_ysr__wthdep__dep_001`

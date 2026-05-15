@@ -29,7 +29,8 @@ Report \[Youth\] (Syndrome Scale - Attention problems): T-score
 
   - 999
 
-- *Validation criterion:* maximally 0 of 9 items missing
+- *Validation criterion:* maximally 1 of 9 items missing or
+  `mh_y_ysr__dsm__adhd_nm` \<= 5
 
 ## Usage
 
@@ -40,7 +41,7 @@ compute_mh_y_ysr__synd__attn_tscore(
   name = "mh_y_ysr__synd__attn_tscore",
   col_age = "mh_y_ysr_age",
   col_sex = "ab_g_stc__cohort_sex",
-  max_na = 0,
+  max_na = 1,
   exclude = c("777", "999"),
   combine = TRUE
 )

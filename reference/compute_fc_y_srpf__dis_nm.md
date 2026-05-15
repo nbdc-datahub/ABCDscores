@@ -9,12 +9,19 @@ Factors \[Youth\] (School disengagement): Number missing)
 
   - `fc_y_srpf__dis_002`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
 
 ## Usage
 
 ``` r
-compute_fc_y_srpf__dis_nm(data, name = "fc_y_srpf__dis_nm", combine = TRUE)
+compute_fc_y_srpf__dis_nm(
+  data,
+  name = "fc_y_srpf__dis_nm",
+  exclude = c("777"),
+  combine = TRUE
+)
 ```
 
 ## Arguments
@@ -27,6 +34,11 @@ compute_fc_y_srpf__dis_nm(data, name = "fc_y_srpf__dis_nm", combine = TRUE)
 
   character. Name of the summary score. Default is the name in the
   description.
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

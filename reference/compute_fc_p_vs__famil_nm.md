@@ -1,7 +1,7 @@
 # Compute "Values Scale \[Parent\] (Familism): Number missing - Baseline to Year 5"
 
 Computes the summary score `fc_p_vs__famil_nm__v01` (Values Scale
-\[Parent\] (Familism): Number missing - Baseline to Year 5)
+\[Parent\] (Familism): Number missing (Subscales: supp, ref, obl))
 
 - *Summarized variables:*
 

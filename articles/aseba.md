@@ -66,6 +66,7 @@ following columns:
 Here is an example for a simulated norming table:
 
 ``` r
+
 data_norm <- tibble::tibble(
   sex = c("1", "1", "1", "1", "1"),
   age_min = 18,
@@ -105,8 +106,8 @@ The T-score functions have the following additional arguments:
   pages](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#mental-health-aseba-)
   to see the default value of `col_age` for a given score.
 - `col_sex`: character, specifies the column name in the input data that
-  contains the participants’ age. Similarly, this information is
-  required to look up the respective T-score. For example, for score
+  contains the participants’ sex. This information is required to look
+  up the sex-specific T-score. For example, for score
   `mh_p_abcl__afs__frnd_tscore`, the default value of `col_sex` is
   `"mh_p_abcl__cg2_gi"`. Please refer to the [reference
   pages](https://software.nbdc-datahub.org/ABCDscores/reference/index.html#mental-health-aseba-)
@@ -121,6 +122,7 @@ containing all needed columns called `data` and the norming table called
 `data_norm`, we can execute
 
 ``` r
+
 compute_mh_p_abcl__afs__frnd_tscore(data, data_norm)
 ```
 
@@ -143,6 +145,7 @@ values, such as `col_age` and `col_sex`.
 Create a simulated data table:
 
 ``` r
+
 data <- tibble::tibble(
   var1 = c(0, 1, NA, 1, 2, 3),
   var2 = c(1, 2, 1, 2, 5, 3),
@@ -164,6 +167,7 @@ data
 Compute T-scores using the simulated norm and data tables:
 
 ``` r
+
 ss_tscore(
   data = data,
   data_norm = data_norm,
@@ -190,8 +194,8 @@ rows are `NA`:
 
 - *row 4:* because the age is 99, which is not in the age range \[18,
   35\].
-- *row 5:* because the raw score is 5, which makes the raw score sum 7,
-  which is not in the raw score range \[0, 4\].
+- *row 5:* because the sum of the raw scores (2 + 5 = 7) exceeds the
+  range \[0, 4\].
 - *row 6:* because the sex is “2”, which is not included in the
   simulated norming table.
 
@@ -210,6 +214,7 @@ aspects of the T-score computation.
   `NA` is returned for row 3 because `var1` is `NA` in that row.
 
   ``` r
+
   ss_tscore(
     data = data,
     data_norm = data_norm,
@@ -236,6 +241,7 @@ aspects of the T-score computation.
   because `var1` is `"0"` in that row.
 
   ``` r
+
   ss_tscore(
     data = data,
     data_norm = data_norm,

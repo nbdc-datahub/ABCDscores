@@ -2,11 +2,7 @@
 
 Provides functions to compute summary scores (besides proprietary ones)
 reported in the tabulated data resource that is released by the
-Adolescent Brain Cognitive Development (ABCD) study. Feldstein Ewing and
-Luciana (2018)
-<https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32>.
-See Zhang et al. (2025) <https://doi.org/10.1101/2025.09.04.674066> for
-details about the package design and implementation.
+Adolescent Brain Cognitive Development (ABCD) study.
 
 ## References
 
@@ -42,3 +38,6 @@ Authors:
 
 - Laura Ziemer <lrziemer@gmail.com>
   ([ORCID](https://orcid.org/0000-0003-0026-3823))
+
+- Shermaine Abad <shermaineabad@gmail.com>
+  ([ORCID](https://orcid.org/0009-0009-6013-9147))

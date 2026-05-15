@@ -41,7 +41,7 @@ Computes the summary score `mh_y_ysr__dsm__cond_sum` Youth Self Report
 
   - 999
 
-- *Validation criterion:* maximally 1 of 15 items missing
+- *Validation criterion:* maximally 3 of 15 items missing
 
 ## Usage
 
@@ -49,7 +49,7 @@ Computes the summary score `mh_y_ysr__dsm__cond_sum` Youth Self Report
 compute_mh_y_ysr__dsm__cond_sum(
   data,
   name = "mh_y_ysr__dsm__cond_sum",
-  max_na = 1,
+  max_na = 3,
   exclude = c("777", "999"),
   combine = TRUE
 )

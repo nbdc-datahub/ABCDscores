@@ -9,7 +9,7 @@ context, first use date, and other details. Scientifically, this survey
 allows us to understand the initiation and patterns of substance use in
 our participants. The information provided in the SUI is also used to
 decide whether a Timeline Followback interview is done with a given
-participant to access their substance use in more detail.
+participant to assess their substance use in more detail.
 
 ## SUI summary score functions
 
@@ -46,6 +46,39 @@ requirements:
 The following table gives an overview of how each of the 100 SUI summary
 scores that are reported in the ABCD tabulated data resource have been
 computed using the three basic functions:
+
+The following function computes all SUI summary scores and appends them
+to the input dataset:
+
+``` r
+
+compute_ss_sui <- function(data, data_timestamps) {
+  check_col_names(data, c("ab_g_stc__cohort_dob"))
+
+  data_visit_dtt <- data_timestamps |>
+    select(
+      participant_id,
+      session_id,
+      ab_g_dyn__visit_dtt = dt_visit
+    )
+
+  data_sui <- data |>
+    left_join(
+      data_visit_dtt,
+      by = join_by(participant_id, session_id)
+    )
+
+  data_sui_ss <- purrr::map_dfc(
+    paste0("ABCDscores::", ABCDscores::sui_config$call),
+    ~ eval(parse(text = .x))
+  )
+
+  bind_cols(
+    data,
+    data_sui_ss
+  )
+}
+```
 
 ### Substances dictionary
 

@@ -27,8 +27,6 @@ Computes the summary score `mh_y_ysr__synd__int_sum` Youth Self Report
 
   - `mh_y_ysr__anxdep__anx_006`
 
-  - `mh_y_ysr__anxdep__dep_004`
-
   - `mh_y_ysr__anxdep__anx_007`
 
   - `mh_y_ysr__wthdep__dep_001`
@@ -73,7 +71,7 @@ Computes the summary score `mh_y_ysr__synd__int_sum` Youth Self Report
 
   - 999
 
-- *Validation criterion:* maximally 2 of 31 items missing
+- *Validation criterion:* maximally 6 of 30 items missing
 
 ## Usage
 
@@ -81,7 +79,7 @@ Computes the summary score `mh_y_ysr__synd__int_sum` Youth Self Report
 compute_mh_y_ysr__synd__int_sum(
   data,
   name = "mh_y_ysr__synd__int_sum",
-  max_na = 2,
+  max_na = 6,
   exclude = c("777", "999"),
   combine = TRUE
 )

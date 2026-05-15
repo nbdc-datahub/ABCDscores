@@ -5,6 +5,7 @@
 After installing the package, you can load it with:
 
 ``` r
+
 library(ABCDscores)
 #> Welcome to the `ABCDscores` package! For more information, visit: https://software.nbdc-datahub.org/ABCDscores/
 #> This package is developed by the ABCD Data Analysis, Informatics & Resource Center (DAIRC) at the J. Craig Venter Institute (JCVI).
@@ -35,6 +36,7 @@ file and an Excel file with the data dictionary and categorical levels.
 Load the data into R using the following command:
 
 ``` r
+
 data <- readRDS("dataset.rds")
 ```
 
@@ -48,7 +50,7 @@ structure and nomenclature of the functions in the package:
 - For any given summary score, the function to compute it is named
   `compute_<score_name>()`. For example, the function to compute the
   score `fc_p_psb_mean` is named
-  [`compute_fc_p_psb_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_psb_mean.md).[¹](#fn1)
+  [`compute_fc_p_psb_mean()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_psb_mean.md).[^1]
 - For any given measure/table, there exists a high-level
   `compute_<table_name>_all()` function that computes all scores for
   that measure/table. For example, the function to compute all scores
@@ -91,6 +93,7 @@ Here, for demonstration purposes, we will create a dummy data frame with
 these columns:
 
 ``` r
+
 data <- tibble::tibble(
   fc_p_psb_001 = c("1", "2", "3", "4", "5"),
   fc_p_psb_002 = c("1", NA, "3", "4", NA),
@@ -111,6 +114,7 @@ For most summary score functions, only the `data` argument (input data
 frame) is required, i.e., we can just use the function like this:
 
 ``` r
+
 compute_fc_p_psb_mean(data)
 #> # A tibble: 5 × 4
 #>   fc_p_psb_001 fc_p_psb_002 fc_p_psb_003 fc_p_psb_mean
@@ -122,9 +126,11 @@ compute_fc_p_psb_mean(data)
 #> 5 5            NA           NA                   NA
 ```
 
-We can do the same using `fc_p_psb_nm()`:
+We can do the same using
+[`compute_fc_p_psb_nm()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_fc_p_psb_nm.md):
 
 ``` r
+
 compute_fc_p_psb_nm(data)
 #> # A tibble: 5 × 4
 #>   fc_p_psb_001 fc_p_psb_002 fc_p_psb_003 fc_p_psb_nm
@@ -140,6 +146,7 @@ We can also compute both scores at the same time by chaining the
 function calls using the pipe operator:
 
 ``` r
+
 data |>
   compute_fc_p_psb_mean() |>
   compute_fc_p_psb_nm()
@@ -158,6 +165,7 @@ function call, we can use the `compute_<table_name>_all()` function for
 the `fc_p_psb` table:
 
 ``` r
+
 compute_fc_p_psb_all(data)
 #> # A tibble: 5 × 5
 #>   fc_p_psb_001 fc_p_psb_002 fc_p_psb_003 fc_p_psb_mean fc_p_psb_nm
@@ -180,11 +188,11 @@ the function documentation for each score.
 #### `name`
 
 The `name` argument is used to specify the name of the output score. The
-default default value for this parameter is the official name of the
-column in the released data, but it can be overridden by users with a
-custom name.
+default value for this parameter is the official name of the column in
+the released data, but it can be overridden by users with a custom name.
 
 ``` r
+
 compute_fc_p_psb_mean(data, name = "my_custom_name")
 #> # A tibble: 5 × 4
 #>   fc_p_psb_001 fc_p_psb_002 fc_p_psb_003 my_custom_name
@@ -210,6 +218,7 @@ side of the input data frame. If the argument is set to `FALSE`, the
 output score is returned as a single-column data frame:
 
 ``` r
+
 compute_fc_p_psb_mean(data, combine = FALSE)
 #> # A tibble: 5 × 1
 #>   fc_p_psb_mean
@@ -237,10 +246,10 @@ functions have this argument.
 - …
 
 For most summary scores in the ABCD data resource, `max_na` is set to a
-number that ensures that \>=80% of the variables that the given score
-summarizes have a non-missing value. Users can use the `max_na` argument
-if they want to compute the summary score in a more lenient or more
-restrictive manner.
+number that ensures that at least 80% of the variables that the given
+score summarizes have a non-missing value. Users can use the `max_na`
+argument if they want to compute the summary score in a more lenient or
+more restrictive manner.
 
 As an example, let’s explore how the summary score changes when we set
 `max_na` argument to `1` (above we used the default, which in the case
@@ -250,6 +259,7 @@ is `0`). Now a score is computed for the second row which has one
 missing value but not for the last row which has two missing values:
 
 ``` r
+
 compute_fc_p_psb_mean(data, max_na = 1)
 #> # A tibble: 5 × 4
 #>   fc_p_psb_001 fc_p_psb_002 fc_p_psb_003 fc_p_psb_mean
@@ -265,6 +275,7 @@ When we change `max_na` to `2`, a score is also computed for the last
 row:
 
 ``` r
+
 compute_fc_p_psb_mean(data, max_na = 2)
 #> # A tibble: 5 × 4
 #>   fc_p_psb_001 fc_p_psb_002 fc_p_psb_003 fc_p_psb_mean
@@ -293,6 +304,7 @@ In this example we use another score function
 first construct a dummy data frame:
 
 ``` r
+
 data <- tibble::tibble(
   mh_p_abcl__frnd_001 = c(1, 2, 3, 4, 5),
   mh_p_abcl__frnd_002 = c(1, 777, 3, 4, 777),
@@ -311,10 +323,11 @@ data
 #> # ℹ 1 more variable: mh_p_abcl__frnd_004 <dbl>
 ```
 
-When we compute the score, only the 1, 4 rows are computed, because
-other rows contain `777` or `999` or `NA` values.
+When we compute the score, only rows 1 and 4 are computed because the
+other rows contain `777`, `999`, or `NA` values.
 
 ``` r
+
 compute_mh_p_abcl__afs__frnd_sum(data, exclude = c("777", "999"))
 #> # A tibble: 5 × 5
 #>   mh_p_abcl__frnd_001 mh_p_abcl__frnd_002 mh_p_abcl__frnd_003
@@ -331,6 +344,7 @@ We can also exclude custom values, for example, we can exclude `4`, and
 then only the first row is computed.
 
 ``` r
+
 compute_mh_p_abcl__afs__frnd_sum(data, exclude = c("777", "999", "4"))
 #> # A tibble: 5 × 5
 #>   mh_p_abcl__frnd_001 mh_p_abcl__frnd_002 mh_p_abcl__frnd_003
@@ -356,9 +370,7 @@ for transparency and reproducibility. For the documentation of these
 functions, see the [reference
 page](https://software.nbdc-datahub.org/ABCDscores/reference/index.html).
 
-------------------------------------------------------------------------
-
-1.  There are a few exceptions to this rule—the summary scores in the
+[^1]: There are a few exceptions to this rule—the summary scores in the
     tables `su_y_sui` and `su_y_tlfb` are computed using higher level
     functions as explained in the
     [SUI](https://software.nbdc-datahub.org/ABCDscores/articles/sui.html)

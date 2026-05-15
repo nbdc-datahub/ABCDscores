@@ -41,7 +41,8 @@ Report \[Youth\] (DSM-5 Oriented Scale - Conduct problems): T-score
 
   - 999
 
-- *Validation criterion:* maximally 1 of 15 items missing
+- *Validation criterion:* maximally 3 of 15 items missing or
+  `mh_y_ysr__dsm__adhd_nm` \<= 5
 
 ## Usage
 
@@ -52,7 +53,7 @@ compute_mh_y_ysr__dsm__cond_tscore(
   name = "mh_y_ysr__dsm__cond_tscore",
   col_age = "mh_y_ysr_age",
   col_sex = "ab_g_stc__cohort_sex",
-  max_na = 1,
+  max_na = 3,
   exclude = c("777", "999"),
   combine = TRUE
 )

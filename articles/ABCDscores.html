@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">ABCDscores</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">7.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +35,10 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="../articles/aseba.html">Achenbach System of Empirically Based Assessment (ASEBA) T-scores</a></li>
+    <li><a class="dropdown-item" href="../articles/famhx.html">Family History (FAMHX) summary scores</a></li>
+    <li><a class="dropdown-item" href="../articles/fitbit.html">Computing Daily and Weekly Fitbit Scores</a></li>
+    <li><a class="dropdown-item" href="../articles/meds.html">Medication use and history</a></li>
+    <li><a class="dropdown-item" href="../articles/sdsu.html">Static and Dynamic Substance Use (SDSU) summary scores</a></li>
     <li><a class="dropdown-item" href="../articles/sui.html">Substance Use Interview (SUI) summary scores</a></li>
     <li><a class="dropdown-item" href="../articles/tlfb.html">Timeline Followback (TLFB) summary scores</a></li>
   </ul>
@@ -197,7 +201,7 @@ this:</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> 3            3            2                     2.67</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> 4            4            4                     4   </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> 5            <span style="color: #BB0000;">NA</span>           <span style="color: #BB0000;">NA</span>                   <span style="color: #BB0000;">NA</span></span></span></code></pre></div>
-<p>We can do the same using <code>fc_p_psb_nm()</code>:</p>
+<p>We can do the same using <code><a href="../reference/compute_fc_p_psb_nm.html">compute_fc_p_psb_nm()</a></code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/compute_fc_p_psb_nm.html">compute_fc_p_psb_nm</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 4</span></span></span>
@@ -253,9 +257,9 @@ documented in the function documentation for each score.</p>
 <code>name</code><a class="anchor" aria-label="anchor" href="#name"></a>
 </h4>
 <p>The <code>name</code> argument is used to specify the name of the
-output score. The default default value for this parameter is the
-official name of the column in the released data, but it can be
-overridden by users with a custom name.</p>
+output score. The default value for this parameter is the official name
+of the column in the released data, but it can be overridden by users
+with a custom name.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/compute_fc_p_psb_mean.html">compute_fc_p_psb_mean</a></span><span class="op">(</span><span class="va">data</span>, name <span class="op">=</span> <span class="st">"my_custom_name"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 5 × 4</span></span></span>
@@ -313,8 +317,8 @@ summary score functions have this argument.</p>
 <li>…</li>
 </ul>
 <p>For most summary scores in the ABCD data resource,
-<code>max_na</code> is set to a number that ensures that &gt;=80% of the
-variables that the given score summarizes have a non-missing value.
+<code>max_na</code> is set to a number that ensures that at least 80% of
+the variables that the given score summarizes have a non-missing value.
 Users can use the <code>max_na</code> argument if they want to compute
 the summary score in a more lenient or more restrictive manner.</p>
 <p>As an example, let’s explore how the summary score changes when we
@@ -381,8 +385,8 @@ frame:</p>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>                   4                   4                   4</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>                   5                 777                 777</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 1 more variable: mh_p_abcl__frnd_004 &lt;dbl&gt;</span></span></span></code></pre></div>
-<p>When we compute the score, only the 1, 4 rows are computed, because
-other rows contain <code>777</code> or <code>999</code> or
+<p>When we compute the score, only rows 1 and 4 are computed because the
+other rows contain <code>777</code>, <code>999</code>, or
 <code>NA</code> values.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/compute_mh_p_abcl__afs__frnd_sum.html">compute_mh_p_abcl__afs__frnd_sum</a></span><span class="op">(</span><span class="va">data</span>, exclude <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"777"</span>, <span class="st">"999"</span><span class="op">)</span><span class="op">)</span></span>
@@ -432,7 +436,7 @@ page</a>.</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer.</p>
+  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer, Shermaine Abad.</p>
 </div>
 
 <div class="pkgdown-footer-right">

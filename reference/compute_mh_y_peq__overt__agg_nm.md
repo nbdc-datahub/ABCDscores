@@ -11,7 +11,9 @@ Questionnaire \[Youth\] (Overt Aggression): Number missing
 
   - `mh_y_peq__overt__agg_003`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
 
 ## Usage
 
@@ -21,7 +23,7 @@ vars_mh_y_peq__overt__agg
 compute_mh_y_peq__overt__agg_nm(
   data,
   name = "mh_y_peq__overt__agg_nm",
-  exclude = NULL,
+  exclude = c("777"),
   combine = TRUE
 )
 ```

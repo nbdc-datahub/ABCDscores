@@ -27,8 +27,6 @@ Report \[Youth\] (Syndrome Scale - Anxious/Depressed): Sum
 
   - `mh_y_ysr__anxdep__anx_006`
 
-  - `mh_y_ysr__anxdep__dep_004`
-
   - `mh_y_ysr__anxdep__anx_007`
 
 - *Excluded values:*
@@ -37,7 +35,7 @@ Report \[Youth\] (Syndrome Scale - Anxious/Depressed): Sum
 
   - 999
 
-- *Validation criterion:* maximally 0 of 13 items missing
+- *Validation criterion:* maximally 2 of 12 items missing
 
 ## Usage
 
@@ -45,7 +43,7 @@ Report \[Youth\] (Syndrome Scale - Anxious/Depressed): Sum
 compute_mh_y_ysr__synd__anxdep_sum(
   data,
   name = "mh_y_ysr__synd__anxdep_sum",
-  max_na = 0,
+  max_na = 2,
   exclude = c("777", "999"),
   combine = TRUE
 )

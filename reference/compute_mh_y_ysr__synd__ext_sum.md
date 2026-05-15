@@ -75,7 +75,7 @@ Computes the summary score `mh_y_ysr__synd__ext_sum` Youth Self Report
 
   - 999
 
-- *Validation criterion:* maximally 2 of 32 items missing
+- *Validation criterion:* maximally 6 of 32 items missing
 
 ## Usage
 
@@ -83,7 +83,7 @@ Computes the summary score `mh_y_ysr__synd__ext_sum` Youth Self Report
 compute_mh_y_ysr__synd__ext_sum(
   data,
   name = "mh_y_ysr__synd__ext_sum",
-  max_na = 2,
+  max_na = 6,
   exclude = c("777", "999"),
   combine = TRUE
 )

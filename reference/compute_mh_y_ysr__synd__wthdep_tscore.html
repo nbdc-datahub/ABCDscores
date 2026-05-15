@@ -16,7 +16,8 @@ Excluded values:
 777
 999
 
-Validation criterion: maximally 0 of 8 items missing
+Validation criterion: maximally 1 of 8 items missing
+or mh_y_ysr__dsm__adhd_nm &amp;lt;= 5
 
 "><meta property="og:description" content="Computes the summary score mh_y_ysr__synd__wthdep_tscore
 Youth Self Report [Youth] (Syndrome Scale - Withdrawn/Depressed):
@@ -35,7 +36,8 @@ Excluded values:
 777
 999
 
-Validation criterion: maximally 0 of 8 items missing
+Validation criterion: maximally 1 of 8 items missing
+or mh_y_ysr__dsm__adhd_nm &amp;lt;= 5
 
 "></head><body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -45,7 +47,7 @@ Validation criterion: maximally 0 of 8 items missing
 
     <a class="navbar-brand me-2" href="../index.html">ABCDscores</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">7.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,6 +60,10 @@ Validation criterion: maximally 0 of 8 items missing
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/aseba.html">Achenbach System of Empirically Based Assessment (ASEBA) T-scores</a></li>
+    <li><a class="dropdown-item" href="../articles/famhx.html">Family History (FAMHX) summary scores</a></li>
+    <li><a class="dropdown-item" href="../articles/fitbit.html">Computing Daily and Weekly Fitbit Scores</a></li>
+    <li><a class="dropdown-item" href="../articles/meds.html">Medication use and history</a></li>
+    <li><a class="dropdown-item" href="../articles/sdsu.html">Static and Dynamic Substance Use (SDSU) summary scores</a></li>
     <li><a class="dropdown-item" href="../articles/sui.html">Substance Use Interview (SUI) summary scores</a></li>
     <li><a class="dropdown-item" href="../articles/tlfb.html">Timeline Followback (TLFB) summary scores</a></li>
   </ul></li>
@@ -99,7 +105,8 @@ T-score</p><ul><li><p><em>Summarized variables:</em></p><ul><li><p><code>mh_y_ys
 <li><p><em>Excluded values:</em></p><ul><li><p>777</p></li>
 <li><p>999</p></li>
 </ul></li>
-<li><p><em>Validation criterion:</em> maximally 0 of 8 items missing</p></li>
+<li><p><em>Validation criterion:</em> maximally 1 of 8 items missing
+or <code>mh_y_ysr__dsm__adhd_nm</code> &lt;= 5</p></li>
 </ul></div>
 
     <div class="section level2">
@@ -110,7 +117,7 @@ T-score</p><ul><li><p><em>Summarized variables:</em></p><ul><li><p><code>mh_y_ys
 <span>  name <span class="op">=</span> <span class="st">"mh_y_ysr__synd__wthdep_tscore"</span>,</span>
 <span>  col_age <span class="op">=</span> <span class="st">"mh_y_ysr_age"</span>,</span>
 <span>  col_sex <span class="op">=</span> <span class="st">"ab_g_stc__cohort_sex"</span>,</span>
-<span>  max_na <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  max_na <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>  exclude <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"777"</span>, <span class="st">"999"</span><span class="op">)</span>,</span>
 <span>  combine <span class="op">=</span> <span class="cn">TRUE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -180,7 +187,7 @@ summary score is returned as a separate one-column data frame.</p></dd>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer.</p>
+  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer, Shermaine Abad.</p>
 </div>
 
 <div class="pkgdown-footer-right">

@@ -15,7 +15,9 @@ Computes the summary score `fc_y_vs__indselfrel_mean` (Values Scale
 
   - `fc_y_vs__indselfrel_005`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
 
 - *Validation criterion:* maximally 1 of 5 items missing
 
@@ -28,6 +30,7 @@ compute_fc_y_vs__indselfrel_mean(
   data,
   name = "fc_y_vs__indselfrel_mean",
   max_na = 1,
+  exclude = c("777"),
   combine = TRUE
 )
 ```
@@ -52,6 +55,11 @@ used to compute summary score of `fc_y_vs__indselfrel`.
 
   numeric, positive whole number. Number of missing items allowed
   (Default: 1).
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

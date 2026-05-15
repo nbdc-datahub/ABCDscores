@@ -1,8 +1,7 @@
-# Compute "Sleep Disturbance Scale \[Parent\] (Total): Sum \[Validation: No more than 0 missing or declined\]"
+# Compute "Sleep Disturbance Scale \[Parent\]: Sum \[Validation: No more than 0 missing or declined\]"
 
 Computes the summary score `ph_p_sds_sum` Sleep Disturbance Scale
-\[Parent\] (Total): Sum \[Validation: No more than 0 missing or
-declined\]
+\[Parent\]: Sum \[Validation: No more than 0 missing or declined\]
 
 - *Summarized variables:*
 

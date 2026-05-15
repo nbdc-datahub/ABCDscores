@@ -16,6 +16,8 @@
 
 - **Laura Ziemer**. Author. [](https://orcid.org/0000-0003-0026-3823)
 
+- **Shermaine Abad**. Author. [](https://orcid.org/0009-0009-6013-9147)
+
 ## Citation
 
 Source:
@@ -26,7 +28,7 @@ Dale, A. M., & Linkersdörfer, J. (2025). ABCDscores: An R package for
 computing summary scores in the ABCD Study. bioRxiv.
 doi:10.1101/2025.09.04.674066
 
-    @Article{,
+    @Article{Zhang2025ABCDscores,
       title = {ABCDscores: An R package for computing summary scores in the ABCD Study},
       author = {Le Zhang and Olivier Celhay and Biplabendu Das and Samantha Berman and Laura R. Ziemer and Calen J. Smith and Anders M. Dale and Janosch Linkersdörfer},
       journal = {bioRxiv},

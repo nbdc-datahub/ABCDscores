@@ -1,8 +1,7 @@
-# Compute "Life Events \[Parent\] (Events): Count - Version 4 (Starting at Year 7) \[Validation: No more than 4 missing or declined\]"
+# Compute "Life Events \[Parent\] (Events): Count - Version 4 (Starting at Year 7)"
 
 Computes the summary score `mh_p_ple_count__v04` Life Events \[Parent\]
-(Events): Count - Version 4 (Starting at Year 7) \[Validation: No more
-than 4 missing or declined\]
+(Events): Count - Version 4 (Starting at Year 7)
 
 - *Summarized variables:*
 
@@ -54,8 +53,6 @@ than 4 missing or declined\]
 
   - 999
 
-- *Validation criterion:* maximally 4 of 20 items missing
-
 ## Usage
 
 ``` r
@@ -66,7 +63,7 @@ compute_mh_p_ple_count__v04(
   name = "mh_p_ple_count__v04",
   events = "ses-07A",
   combine = TRUE,
-  max_na = 4
+  max_na = NULL
 )
 ```
 
@@ -97,8 +94,8 @@ compute summary score of `mh_p_ple`.
 
 - max_na:
 
-  numeric, positive whole number. Number of missing items allowed
-  (Default: 4).
+  numeric, positive whole number. Number of missing items allowed.
+  `NULL` means no limit (Default: NULL).
 
 ## Value
 

@@ -7,8 +7,6 @@ Computes the summary score `mh_y_ysr__synd__tho_nm` Youth Self Report
 
   - `mh_y_ysr__tho_001`
 
-  - `mh_y_ysr__tho__dep_001`
-
   - `mh_y_ysr__tho_002`
 
   - `mh_y_ysr__tho_003`

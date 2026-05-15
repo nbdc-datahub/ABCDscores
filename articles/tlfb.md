@@ -4,7 +4,7 @@
 
 The Timeline Followback (TLFB) (Sobell, 1996) is a semi-structured
 interview method used to assess specific and quantified estimates of
-substance use over a specified period, approxiamtely the past 12 months
+substance use over a specified period, approximately the past 12 months
 in ABCD. It involves participants recalling their substance use while
 being guided by a Research Assistant (RA). The RA fills out a TLFB
 calendar, documenting all reports of substance use and helping
@@ -21,6 +21,7 @@ webpage). The raw data is a long-form data frame with one row per
 reported substance use instance and the following structure:
 
 ``` r
+
 glimpse(data_tlfb_sample)
 #> Rows: 8
 #> Columns: 10
@@ -106,6 +107,8 @@ The basic functions are:
   Compute mean dose of substance use.
 - [`compute_tlfb_totdose()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_tlfb_totdose.md):
   Compute total dose of substance use.
+- [`compute_tlfb_totdose_sum()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_tlfb_totdose_sum.md):
+  Compute sum total dose of substance use.
 - [`compute_tlfb_ud()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_tlfb_ud.md):
   Compute number of substance use days.
 
@@ -115,7 +118,7 @@ The functions take the following parameters:
 - `period`: The period (detailed, estimated, or both) for which the
   score is computed for.
 - `days`: Number of days before the TLFB interview to consider.
-- `wknd`: Whether the score should be computed only for weekends days,
+- `wknd`: Whether the score should be computed only for weekend days,
   only for week days, or all days
 - `co_use`: Only computes score for days on which the substance was
   taken with specified other substance(s).
@@ -124,8 +127,9 @@ The functions take the following parameters:
 - `position`: Whether to consider the first or last substance use
 
 Not all parameters are used by all functions and some parameters are
-mutally exclusive (see the function documentation for more details). The
-following gives an overview of which function can use which parameter:
+mutually exclusive (see the function documentation for more details).
+The following gives an overview of which function can use which
+parameter:
 
 ### ABCD summary scores
 
@@ -139,6 +143,7 @@ data frame `data_tlfb` in the global environment. For example, to
 compute the summary scores, one would run:
 
 ``` r
+
 # read raw data
 data_tlfb <- arrow::read_parquet("tlfb_raw.parquet")
 
@@ -190,6 +195,7 @@ that are not reported in the ABCD data resource.
 *Compute participants’ use days for all substances over all events*
 
 ``` r
+
 compute_tlfb_ud(
   data = data_tlfb,
   name = "ud_all_subst",
@@ -207,6 +213,7 @@ compute_tlfb_ud(
 *Compute participants’ marijuana or nicotine use days on week days*
 
 ``` r
+
 compute_tlfb_ud(
   data = data_tlfb,
   name = "ud_mj_nic_wkdays",
@@ -223,6 +230,7 @@ compute_tlfb_ud(
 *Compute age of first use for marijuana*
 
 ``` r
+
 #' Add age of use
 #'
 #' @description
@@ -284,6 +292,7 @@ data_tlfb |>
 drinking*
 
 ``` r
+
 #' Add week sequence
 #'
 #' @description
@@ -388,6 +397,8 @@ data_tlfb |>
     desc(alc_wks_binge)
   )
 ```
+
+## References
 
 Sobell, &. S., L. C. (1996). Timeline followback: User’s guide.
 *Addiction Research Foundation*.

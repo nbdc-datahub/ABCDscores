@@ -15,12 +15,21 @@ Computes the summary score `fc_p_vs__ref_nm` (Values Scale \[Parent\]
 
   - `fc_p_vs__ref_005`
 
-- *Excluded values:* none
+- *Excluded values:*
+
+  - 777
+
+  - 999
 
 ## Usage
 
 ``` r
-compute_fc_p_vs__ref_nm(data, name = "fc_p_vs__ref_nm", combine = TRUE)
+compute_fc_p_vs__ref_nm(
+  data,
+  name = "fc_p_vs__ref_nm",
+  exclude = c("777", "999"),
+  combine = TRUE
+)
 ```
 
 ## Arguments
@@ -33,6 +42,11 @@ compute_fc_p_vs__ref_nm(data, name = "fc_p_vs__ref_nm", combine = TRUE)
 
   character. Name of the summary score. Default is the name in the
   description.
+
+- exclude:
+
+  character vector. Values to be excluded from the summary score
+  calculation.
 
 - combine:
 

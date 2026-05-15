@@ -11,8 +11,8 @@
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Summary Scores of the Adolescent Brain Cognitive Development (ABCD) Study">
-<meta name="description" content="Provides functions to compute summary scores (besides proprietary ones) reported in the tabulated data resource that is released by the Adolescent Brain Cognitive Development (ABCD) study. Feldstein Ewing and Luciana (2018) &lt;https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32&gt;. See Zhang et al. (2025) &lt;https://doi.org/10.1101/2025.09.04.674066&gt; for details about the package design and implementation.">
-<meta property="og:description" content="Provides functions to compute summary scores (besides proprietary ones) reported in the tabulated data resource that is released by the Adolescent Brain Cognitive Development (ABCD) study. Feldstein Ewing and Luciana (2018) &lt;https://www.sciencedirect.com/journal/developmental-cognitive-neuroscience/vol/32&gt;. See Zhang et al. (2025) &lt;https://doi.org/10.1101/2025.09.04.674066&gt; for details about the package design and implementation.">
+<meta name="description" content="Provides functions to compute summary scores (besides proprietary ones) reported in the tabulated data resource that is released by the Adolescent Brain Cognitive Development (ABCD) study.">
+<meta property="og:description" content="Provides functions to compute summary scores (besides proprietary ones) reported in the tabulated data resource that is released by the Adolescent Brain Cognitive Development (ABCD) study.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">ABCDscores</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">7.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +37,10 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="articles/aseba.html">Achenbach System of Empirically Based Assessment (ASEBA) T-scores</a></li>
+    <li><a class="dropdown-item" href="articles/famhx.html">Family History (FAMHX) summary scores</a></li>
+    <li><a class="dropdown-item" href="articles/fitbit.html">Computing Daily and Weekly Fitbit Scores</a></li>
+    <li><a class="dropdown-item" href="articles/meds.html">Medication use and history</a></li>
+    <li><a class="dropdown-item" href="articles/sdsu.html">Static and Dynamic Substance Use (SDSU) summary scores</a></li>
     <li><a class="dropdown-item" href="articles/sui.html">Substance Use Interview (SUI) summary scores</a></li>
     <li><a class="dropdown-item" href="articles/tlfb.html">Timeline Followback (TLFB) summary scores</a></li>
   </ul>
@@ -86,18 +90,22 @@
 <p>The package major version number (first two digits) matches the ABCD data release version number. For example, the package version <code>6.0.0</code> and other <code>6.0.*</code> versions (e.g., <code>6.0.1</code>, <code>6.0.2</code>, etc.) are compatible with the ABCD data release 6.0, <code>7.0.*</code> package versions are compatible with the ABCD release 7.0, and so forth.</p>
 <p>The following table lists which version of the package was used to compute the summary scores in the tabulated data resource for each ABCD data release, starting with the introduction of the package with release 6.0.</p>
 <table class="table">
-<thead><tr class="header">
+<thead><tr>
 <th align="left">Release version</th>
 <th align="left">Package version</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left">6.0</td>
 <td align="left">6.0.0</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">6.1</td>
 <td align="left">6.1.0</td>
+</tr>
+<tr>
+<td align="left">7.0</td>
+<td align="left">7.0.0</td>
 </tr>
 </tbody>
 </table>
@@ -118,6 +126,14 @@
 <p>To install a <em>specific version</em> of the package, specify the version number in the <code>remotes::install_github()</code> call. For example, to install version 6.0.0, use the following command:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"nbdc-datahub/ABCDscores@v6.0.0"</span><span class="op">)</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="using-tarballs-to-install">Using tarballs to install<a class="anchor" aria-label="anchor" href="#using-tarballs-to-install"></a>
+</h3>
+<p>On every new release page of the <a href="https://github.com/nbdc-datahub/ABCDscores/releases" class="external-link"><code>ABCDscores</code></a> you can find the source tarballs (<code>tar.gz</code> files) for the corresponding release. If compute environments do not have internet access, you can download the tarballs on a different machine and transfer them to the target environment. Then, use the following command to install the packages from the local tarball files:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"path/to/ABCDscores_x.y.z.tar.gz"</span>, repos <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="st">"source"</span><span class="op">)</span></span></code></pre></div>
+<p>However, please make sure that all dependencies are already installed in the target environment, as the installation from tarballs does not resolve dependencies automatically, for example, please see the list of dependencies in the <a href="https://github.com/nbdc-datahub/ABCDscores/blob/main/DESCRIPTION" class="external-link">DESCRIPTION</a> Imports and Suggests fields.</p>
+</div>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
@@ -170,6 +186,7 @@
 <li>Biplabendu Das <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0003-0855-262X" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 <li>Sammy Berman <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-9803-019X" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 <li>Laura Ziemer <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0003-0026-3823" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
+<li>Shermaine Abad <br><small class="roles"> Author </small> <a href="https://orcid.org/0009-0009-6013-9147" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 </ul>
 </div>
 
@@ -180,7 +197,7 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer.</p>
+  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer, Shermaine Abad.</p>
 </div>
 
 <div class="pkgdown-footer-right">

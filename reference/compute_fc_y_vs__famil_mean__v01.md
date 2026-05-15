@@ -1,7 +1,7 @@
-# Compute "Values Scale \[Youth\] (Familism): Mean - Version 1 (Year 5 onwards)"
+# Compute "Values Scale \[Youth\] (Familism): Mean - Version 1 (Subscales: supp, ref)"
 
 Computes the summary score `fc_y_vs__famil_mean__v01` (Values Scale
-\[Youth\] (Familism): Mean - Version 1 (Year 5 onwards))
+\[Youth\] (Familism): Mean - Version 1 (Subscales: supp, ref))
 
 - *Summarized variables:*
 
@@ -31,11 +31,11 @@ Computes the summary score `fc_y_vs__famil_mean__v01` (Values Scale
 
   - 777
 
-  - 999
-
 - *Validation criterion:*
 
   - maximally 2 of 11 items missing
+
+  - all sub-scales can be calculated
 
 ## Usage
 
@@ -46,7 +46,7 @@ compute_fc_y_vs__famil_mean__v01(
   data,
   name = "fc_y_vs__famil_mean__v01",
   max_na = 2,
-  exclude = c("777", "999"),
+  exclude = c("777"),
   combine = TRUE
 )
 ```

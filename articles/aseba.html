@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">ABCDscores</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">6.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">7.0.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +35,10 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="../articles/aseba.html">Achenbach System of Empirically Based Assessment (ASEBA) T-scores</a></li>
+    <li><a class="dropdown-item" href="../articles/famhx.html">Family History (FAMHX) summary scores</a></li>
+    <li><a class="dropdown-item" href="../articles/fitbit.html">Computing Daily and Weekly Fitbit Scores</a></li>
+    <li><a class="dropdown-item" href="../articles/meds.html">Medication use and history</a></li>
+    <li><a class="dropdown-item" href="../articles/sdsu.html">Static and Dynamic Substance Use (SDSU) summary scores</a></li>
     <li><a class="dropdown-item" href="../articles/sui.html">Substance Use Interview (SUI) summary scores</a></li>
     <li><a class="dropdown-item" href="../articles/tlfb.html">Timeline Followback (TLFB) summary scores</a></li>
   </ul>
@@ -63,9 +67,9 @@
 
 
 
-<script src="aseba_files/core-js-2.5.3/shim.min.js"></script><script src="aseba_files/react-18.2.0/react.min.js"></script><script src="aseba_files/react-18.2.0/react-dom.min.js"></script><script src="aseba_files/reactwidget-2.0.0/react-tools.js"></script><link href="aseba_files/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-<script src="aseba_files/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="aseba_files/reactable-0.4.4/reactable.css" rel="stylesheet">
-<script src="aseba_files/reactable-binding-0.4.4/reactable.js"></script><div class="row">
+<script src="aseba_files/core-js-2.5.3/shim.min.js"></script><script src="aseba_files/react-18.2.0/react.min.js"></script><script src="aseba_files/react-18.2.0/react-dom.min.js"></script><script src="aseba_files/reactwidget-2.0.0/react-tools.js"></script><link href="aseba_files/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="aseba_files/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="aseba_files/reactable-0.4.5/reactable.css" rel="stylesheet">
+<script src="aseba_files/reactable-binding-0.4.5/reactable.js"></script><div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Achenbach System of Empirically Based Assessment (ASEBA) T-scores</h1>
@@ -200,9 +204,9 @@ the default value of <code>col_age</code> is
 to see the default value of <code>col_age</code> for a given score.</li>
 <li>
 <code>col_sex</code>: character, specifies the column name in the
-input data that contains the participants’ age. Similarly, this
-information is required to look up the respective T-score. For example,
-for score <code>mh_p_abcl__afs__frnd_tscore</code>, the default value of
+input data that contains the participants’ sex. This information is
+required to look up the sex-specific T-score. For example, for score
+<code>mh_p_abcl__afs__frnd_tscore</code>, the default value of
 <code>col_sex</code> is <code>"mh_p_abcl__cg2_gi"</code>. Please refer
 to the <a href="../reference/index.html#mental-health-aseba-">reference
 pages</a> to see the default value of <code>col_sex</code> for a given
@@ -275,8 +279,8 @@ above example, the scores for the following rows are
 <em>row 4:</em> because the age is 99, which is not in the age range
 [18, 35].</li>
 <li>
-<em>row 5:</em> because the raw score is 5, which makes the raw
-score sum 7, which is not in the raw score range [0, 4].</li>
+<em>row 5:</em> because the sum of the raw scores (2 + 5 = 7)
+exceeds the range [0, 4].</li>
 <li>
 <em>row 6:</em> because the sex is “2”, which is not included in the
 simulated norming table.</li>
@@ -371,7 +375,7 @@ Adolescent Psychiatry and Mental Health</em>, <em>13</em>(1), 30.
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer.</p>
+  <p>Developed by Le Zhang, Janosch Linkersdoerfer, Olivier Celhay, Biplabendu Das, Sammy Berman, Laura Ziemer, Shermaine Abad.</p>
 </div>
 
 <div class="pkgdown-footer-right">

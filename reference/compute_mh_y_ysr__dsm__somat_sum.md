@@ -25,7 +25,7 @@ Computes the summary score `mh_y_ysr__dsm__somat_sum` Youth Self Report
 
   - 999
 
-- *Validation criterion:* maximally 0 of 7 items missing
+- *Validation criterion:* maximally 1 of 7 items missing
 
 ## Usage
 
@@ -33,7 +33,7 @@ Computes the summary score `mh_y_ysr__dsm__somat_sum` Youth Self Report
 compute_mh_y_ysr__dsm__somat_sum(
   data,
   name = "mh_y_ysr__dsm__somat_sum",
-  max_na = 0,
+  max_na = 1,
   exclude = c("777", "999"),
   combine = TRUE
 )
