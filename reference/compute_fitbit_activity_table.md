@@ -137,7 +137,7 @@ tbl. A daily-level summarized data frame with the following components:
 
 - `hrate_rest_fitb`: Resting heart rate (Fitbit daily summary)
 
-- `qc_600min`: Indicator for ≥600 valid active minutes
+- `qc_600min`: Indicator for \>= 600 valid active minutes
 
 - `qc_steps`: Indicator for valid step counts based on Fitbit comparison
 

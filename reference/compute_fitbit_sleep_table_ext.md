@@ -132,7 +132,7 @@ tbl. A daily-level extended sleep summary table containing:
 
 **Quality control flags:**
 
-- `qc_300min`: Indicator for ≥300 minutes of sleep
+- `qc_300min`: Indicator for \>= 300 minutes of sleep
 
 - `flg_slp`: Flag for implausible sleep structure
 

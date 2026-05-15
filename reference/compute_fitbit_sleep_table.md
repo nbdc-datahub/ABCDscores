@@ -170,7 +170,7 @@ tbl. A daily-level summarized data frame with the following components:
 
 **Quality control and flags:**
 
-- `qc_300min`: Indicator for ≥300 minutes of valid sleep
+- `qc_300min`: Indicator for \>= 300 minutes of valid sleep
 
 - `flg_slp`: Indicator for implausible sleep structure
 

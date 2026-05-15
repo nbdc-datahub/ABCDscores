@@ -306,9 +306,10 @@ using `data_activity` rather than the raw sleep data `day` column, since
 the offset may shift `sleep_date` forward by one calendar day.
 
 **Implausible sleep flagging:** `flg_slp = TRUE` when a run of
-HR-flagged awake minutes (≥30 minutes by default) immediately follows a
-sleep run with no HR issues, suggesting device removal during a recorded
-sleep period. This flag is only computed when `bin_minutes = NULL`.
+HR-flagged awake minutes (\>= 30 minutes by default) immediately follows
+a sleep run with no HR issues, suggesting device removal during a
+recorded sleep period. This flag is only computed when
+`bin_minutes = NULL`.
 
 #### Extended: `compute_fitbit_sleep_table_ext()`
 

@@ -489,10 +489,10 @@ study day numbers using <code>data_activity</code> rather than the raw
 sleep data <code>day</code> column, since the offset may shift
 <code>sleep_date</code> forward by one calendar day.</p>
 <p><strong>Implausible sleep flagging:</strong>
-<code>flg_slp = TRUE</code> when a run of HR-flagged awake minutes (≥30
-minutes by default) immediately follows a sleep run with no HR issues,
-suggesting device removal during a recorded sleep period. This flag is
-only computed when <code>bin_minutes = NULL</code>.</p>
+<code>flg_slp = TRUE</code> when a run of HR-flagged awake minutes
+(&gt;= 30 minutes by default) immediately follows a sleep run with no HR
+issues, suggesting device removal during a recorded sleep period. This
+flag is only computed when <code>bin_minutes = NULL</code>.</p>
 </div>
 <div class="section level4">
 <h4 id="extended-compute_fitbit_sleep_table_ext">Extended: <code>compute_fitbit_sleep_table_ext()</code><a class="anchor" aria-label="anchor" href="#extended-compute_fitbit_sleep_table_ext"></a>
