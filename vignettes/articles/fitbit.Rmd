@@ -384,7 +384,7 @@ sleep_day <- compute_fitbit_sleep_table(
 may shift `sleep_date` forward by one calendar day.
 
 **Implausible sleep flagging:** `flg_slp = TRUE` when a run of HR-flagged
-awake minutes (≥30 minutes by default) immediately follows a sleep run with
+awake minutes (>= 30 minutes by default) immediately follows a sleep run with
 no HR issues, suggesting device removal during a recorded sleep period.
 This flag is only computed when `bin_minutes = NULL`.
 

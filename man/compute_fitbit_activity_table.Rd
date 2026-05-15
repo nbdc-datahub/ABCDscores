@@ -104,7 +104,7 @@ missing, repeated) for both activity and sleep domains
 \strong{Heart rate and QC metrics:}
 \itemize{
 \item \code{hrate_rest_fitb}: Resting heart rate (Fitbit daily summary)
-\item \code{qc_600min}: Indicator for ≥600 valid active minutes
+\item \code{qc_600min}: Indicator for >= 600 valid active minutes
 \item \code{qc_steps}: Indicator for valid step counts based on Fitbit comparison
 \item \code{pcnt_steps_fitb}: Proportion of calculated steps relative to
 Fitbit-reported steps

@@ -49,10 +49,11 @@ vars_ab_g_stc__cohort_ethnrace__meim <- c(
 #' @export
 #' @autoglobal
 compute_ab_g_stc__cohort_ethnrace__meim <- function(
-    data,
-    name = "ab_g_stc__cohort_ethnrace__meim",
-    exclude = c("777", "999"),
-    combine = TRUE) {
+  data,
+  name = "ab_g_stc__cohort_ethnrace__meim",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_logical(combine)
@@ -123,10 +124,11 @@ vars_ab_g_stc__cohort_ethn <- c(
 #' @export
 #' @autoglobal
 compute_ab_g_stc__cohort_ethn <- function(
-    data,
-    name = "ab_g_stc__cohort_ethn",
-    exclude = c("777", "999"),
-    combine = TRUE) {
+  data,
+  name = "ab_g_stc__cohort_ethn",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_logical(combine)
@@ -230,9 +232,10 @@ vars_ab_g_stc__cohort_race__nih <- tibble::tribble(
 #' @export
 #' @autoglobal
 compute_ab_g_stc__cohort_race__nih <- function(
-    data,
-    name = "ab_g_stc__cohort_race__nih",
-    combine = TRUE) {
+  data,
+  name = "ab_g_stc__cohort_race__nih",
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_logical(combine)
@@ -413,9 +416,10 @@ vars_ab_g_stc__cohort_ethnrace__leg <- c(
 #' @export
 #' @autoglobal
 compute_ab_g_stc__cohort_ethnrace__leg <- function(
-    data,
-    name = "ab_g_stc__cohort_ethnrace__leg",
-    combine = TRUE) {
+  data,
+  name = "ab_g_stc__cohort_ethnrace__leg",
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_logical(combine)
@@ -494,9 +498,10 @@ vars_ab_g_stc__cohort_ethnrace__mhisp <- vars_ab_g_stc__cohort_ethnrace__leg
 #' @export
 #' @autoglobal
 compute_ab_g_stc__cohort_ethnrace__mhisp <- function(
-    data,
-    name = "ab_g_stc__cohort_ethnrace__mhisp",
-    combine = TRUE) {
+  data,
+  name = "ab_g_stc__cohort_ethnrace__mhisp",
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_logical(combine)
@@ -581,9 +586,10 @@ vars_ab_g_stc__cohort_ethnrace__mblack <- vars_ab_g_stc__cohort_ethnrace__leg
 #' @export
 #' @autoglobal
 compute_ab_g_stc__cohort_ethnrace__mblack <- function(
-    data,
-    name = "ab_g_stc__cohort_ethnrace__mblack",
-    combine = TRUE) {
+  data,
+  name = "ab_g_stc__cohort_ethnrace__mblack",
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_logical(combine)
@@ -712,9 +718,10 @@ vars_ab_g_dyn__cohort_income__hhold__6lvl <- c(
 #' @export
 #' @autoglobal
 compute_ab_g_dyn__cohort_income__hhold__6lvl <- function(
-    data,
-    name = "ab_g_dyn__cohort_income__hhold__6lvl",
-    combine = TRUE) {
+  data,
+  name = "ab_g_dyn__cohort_income__hhold__6lvl",
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_logical(combine)
@@ -770,9 +777,10 @@ compute_ab_g_dyn__cohort_income__hhold__6lvl <- function(
 #' @export
 #' @autoglobal
 compute_ab_g_dyn__cohort_income__hhold__3lvl <- function(
-    data,
-    name = "ab_g_dyn__cohort_income__hhold__3lvl",
-    combine = TRUE) {
+  data,
+  name = "ab_g_dyn__cohort_income__hhold__3lvl",
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_logical(combine)
@@ -814,10 +822,10 @@ vars_ab_g_dyn__cohort_edu__cgs <- c(
   # parent:
   "ab_p_demo__edu__slf_001", # baseline,
   "ab_p_demo__edu__slf_001__v01", # < 2yr
-  "ab_p_demo__edu__slf_001__v02", # ≥ 2 yr
+  "ab_p_demo__edu__slf_001__v02", # >= 2 yr
   # partner:
   "ab_p_demo__edu__prtnr_001", # baseline + < 2yr
-  "ab_p_demo__edu__prtnr_001__v01" # ≥ 2yr
+  "ab_p_demo__edu__prtnr_001__v01" # >= 2yr
 )
 
 #' Compute "Cohort description: Highest education across caregivers"
@@ -843,10 +851,11 @@ vars_ab_g_dyn__cohort_edu__cgs <- c(
 #' @export
 #' @autoglobal
 compute_ab_g_dyn__cohort_edu__cgs <- function(
-    data,
-    name = "ab_g_dyn__cohort_edu__cgs",
-    exclude = c("777", "999"),
-    combine = TRUE) {
+  data,
+  name = "ab_g_dyn__cohort_edu__cgs",
+  exclude = c("777", "999"),
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_logical(combine)
@@ -948,9 +957,10 @@ vars_ab_g_dyn__cohort_prtnrshp__employ <- c(
 #' @export
 #' @autoglobal
 compute_ab_g_dyn__cohort_prtnrshp__employ <- function(
-    data,
-    name = "ab_g_dyn__cohort_prtnrshp__employ",
-    combine = TRUE) {
+  data,
+  name = "ab_g_dyn__cohort_prtnrshp__employ",
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_logical(combine)
@@ -1092,11 +1102,12 @@ vars_ab_p_demo__ntvam <- c(
 #' @export
 #' @autoglobal
 compute_ab_p_demo__ntvam_mean <- function(
-    data,
-    name = "ab_p_demo__ntvam_mean",
-    max_na = 0,
-    exclude = c("999"),
-    combine = TRUE) {
+  data,
+  name = "ab_p_demo__ntvam_mean",
+  max_na = 0,
+  exclude = c("999"),
+  combine = TRUE
+) {
   chk::chk_data(data)
   check_col_names(data, name)
   chk::chk_logical(combine)

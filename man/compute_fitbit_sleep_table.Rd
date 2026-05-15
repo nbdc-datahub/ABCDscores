@@ -122,7 +122,7 @@ components:
 
 \strong{Quality control and flags:}
 \itemize{
-\item \code{qc_300min}: Indicator for ≥300 minutes of valid sleep
+\item \code{qc_300min}: Indicator for >= 300 minutes of valid sleep
 \item \code{flg_slp}: Indicator for implausible sleep structure
 \item \code{flg_any}: Indicator that any sleep data are present
 }

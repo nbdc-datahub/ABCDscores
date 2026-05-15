@@ -97,7 +97,7 @@ tbl. A daily-level extended sleep summary table containing:
 
 \strong{Quality control flags:}
 \itemize{
-\item \code{qc_300min}: Indicator for ≥300 minutes of sleep
+\item \code{qc_300min}: Indicator for >= 300 minutes of sleep
 \item \code{flg_slp}: Flag for implausible sleep structure
 \item \code{flg_any}: Indicator for any valid sleep data
 }

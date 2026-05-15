@@ -75,7 +75,7 @@
 #'
 #' **Heart rate and QC metrics:**
 #'  - `hrate_rest_fitb`: Resting heart rate (Fitbit daily summary)
-#'  - `qc_600min`: Indicator for ≥600 valid active minutes
+#'  - `qc_600min`: Indicator for >= 600 valid active minutes
 #'  - `qc_steps`: Indicator for valid step counts based on Fitbit comparison
 #'  - `pcnt_steps_fitb`: Proportion of calculated steps relative to
 #'    Fitbit-reported steps
@@ -631,7 +631,7 @@ compute_fitbit_activity_table_ext <- function(
 #'  - `min_extra_nohrate_slp`: Additional plausible sleep minutes excluded
 #'
 #' **Quality control and flags:**
-#'  - `qc_300min`: Indicator for ≥300 minutes of valid sleep
+#'  - `qc_300min`: Indicator for >= 300 minutes of valid sleep
 #'  - `flg_slp`: Indicator for implausible sleep structure
 #'  - `flg_any`: Indicator that any sleep data are present
 #'
@@ -917,7 +917,7 @@ compute_fitbit_sleep_table <- function(
 #'  - `excl_min_repeathrate_slp`, `min_extra_nohrate_slp`
 #'
 #' **Quality control flags:**
-#'  - `qc_300min`: Indicator for ≥300 minutes of sleep
+#'  - `qc_300min`: Indicator for >= 300 minutes of sleep
 #'  - `flg_slp`: Flag for implausible sleep structure
 #'  - `flg_any`: Indicator for any valid sleep data
 #'
@@ -2723,7 +2723,7 @@ flag_implausible_sleep <- function(
   # ------------------------------------------------- #
   dt[, implausible_sleep :=
     state == 2L & # current run is HR issue awake
-      run_length >= min_rows & # ≥ required duration
+      run_length >= min_rows & # >= required duration
       prev_run_is_sleep == TRUE & # previous run was sleep
       prev_run_has_hr_issue == FALSE & # sleep had NO HR issues
       run_id != data.table::shift(run_id, fill = data.table::first(run_id)),

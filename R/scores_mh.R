@@ -14373,7 +14373,7 @@ compute_mh_y_pps__severity_mean <- function(
 #' Prodromal Psychosis Scale \[Youth\] (Current Distress Score)
 #'
 #' For the current wave, if z-score of `mh_y_pps__severity_score` normalized
-#' across all current participants in the assessment wave is ≥ 1.96, set the
+#' across all current participants in the assessment wave is >= 1.96, set the
 #' value to "1"; else set the value to "0". If there is no score for the current
 #' assessment wave,set the value to `NA` (missing).
 #'
