@@ -3,7 +3,10 @@
 ^.*\.Rproj$
 ^.devcontainer$
 ^.renvignore
+^AGENTS\.md$
+^CLAUDE\.md$
 ^Meta$
+^Plans\.md$
 ^README\.Rmd$
 ^\.RData$
 ^\.Rhistory$
@@ -21,11 +24,13 @@
 ^doc$
 ^docs$
 ^img
+^out$
 ^permissions$
 ^permissions.yml$
 ^pkgdown$
 ^renv$
 ^renv\.lock$
+^spec\.md$
 ^test_data$
 ^vignettes/articles$
 air.toml

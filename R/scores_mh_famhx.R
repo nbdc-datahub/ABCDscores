@@ -55,7 +55,7 @@ compute_famhx_endorsement <- function(
   if (sub_ncols == 0) {
     cli::cli_abort(
       message = c(
-        "x" = "`data` have no columns starting with `{vars_matches}`.",
+        "x" = "`data` have no columns starting with `{var_matches}`.",
         "Check that `data` has all the needed columns!"
       )
     )

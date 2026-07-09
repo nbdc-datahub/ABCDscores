@@ -32,6 +32,13 @@ option to exclude certain values (for non-responses like "Don't know" /
 "Decline to answer"). If all items are NA, the summary score will not be
 computed (assuming that the questionnaire was not filled out at all).
 }
+\details{
+Non-finite values (\code{Inf}, \code{-Inf}, \code{NaN}) in numeric input columns are
+converted to \code{NA} before exclusion and summarization, so they are
+treated like any other missing value (e.g., they count toward the
+allowed number of missing items). Character and factor input columns
+are not affected by this conversion.
+}
 \examples{
 data <- tibble::tribble(
   ~session_id, ~a, ~b,  ~c,  ~d,  ~e,

@@ -55,7 +55,7 @@ We compute two types of FAMHX summary scores (format: `mh_p_famhx_xxxxx`):
 1. Summarize the endorsements from one family member (input field) \
   \
   We developed one basic function, `compute_famhx_endorsement()` that can be used 
-  to compute all FAMHX summary scores by changing the value of the `vars_matches` 
+  to compute all FAMHX summary scores by changing the value of the `var_matches` 
   parameter, which sets the input variable used to compute the 
   summary score, the name of which is set by changing the value of the `name` 
   parameter. \

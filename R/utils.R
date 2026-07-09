@@ -19,6 +19,14 @@
 #' @param combine logical. Whether to combine the summary score column with the
 #'   input data frame (Default: TRUE).
 #'
+#' @details
+#' After the exclusion step, the input columns are coerced to numeric.
+#' Values that cannot be interpreted as numbers (e.g., `"abc"`) are set to
+#' `NA` with an informative warning, and non-finite values (`Inf`, `-Inf`,
+#' `NaN`) -- including character values such as `"Inf"` that only become
+#' non-finite through the coercion -- are converted to `NA` silently. Both
+#' are then treated like any other missing value (e.g., they count toward
+#' the allowed number of missing items).
 #' @return tbl. The input data frame with the summary score appended as a new
 #'   column.
 #' @export
@@ -71,6 +79,7 @@ ss_mean <- function(data,
   chk::chk_data(data)
   chk::chk_character(name)
   chk::chk_scalar(name)
+  check_col_names(data, name)
   chk::chk_character(vars)
   chk::check_names(data, vars)
   chk::chk_flag(combine)
@@ -100,9 +109,9 @@ ss_mean <- function(data,
           NA,
           .x
         ) |>
-          as.character() |>
-          as.numeric()
+          coerce_numeric_informative(cur_column())
       ),
+      across(all_of(vars), ~ if_else(is.finite(.x), .x, NA)),
       "{name}" := if_else(
         rowSums(across(all_of(vars), is.na)) > max_na,
         NA,
@@ -141,6 +150,14 @@ ss_mean <- function(data,
 #' @inheritParams ss_mean
 #' @param as_integer logical. Whether to coerce the summary score to an integer,
 #'  default is `TRUE`. If `FALSE`, the summary score will be a double.
+#' @details
+#' After the exclusion step, the input columns are coerced to numeric.
+#' Values that cannot be interpreted as numbers (e.g., `"abc"`) are set to
+#' `NA` with an informative warning, and non-finite values (`Inf`, `-Inf`,
+#' `NaN`) -- including character values such as `"Inf"` that only become
+#' non-finite through the coercion -- are converted to `NA` silently. Both
+#' are then treated like any other missing value (e.g., they count toward
+#' the allowed number of missing items).
 #' @return tbl. The input data frame with the summary score appended as a new
 #'   column.
 #' @export
@@ -194,6 +211,7 @@ ss_sum <- function(data,
   chk::chk_data(data)
   chk::chk_character(name)
   chk::chk_scalar(name)
+  check_col_names(data, name)
   chk::chk_character(vars)
   chk::check_names(data, vars)
   chk::chk_flag(as_integer)
@@ -225,9 +243,9 @@ ss_sum <- function(data,
           NA,
           .x
         ) |>
-          as.character() |>
-          as.numeric()
+          coerce_numeric_informative(cur_column())
       ),
+      across(all_of(vars), ~ if_else(is.finite(.x), .x, NA)),
       "{name}" := if_else(
         rowSums(across(all_of(vars), is.na)) > max_na,
         NA,
@@ -267,6 +285,12 @@ ss_sum <- function(data,
 #'
 #' @inheritParams ss_mean
 #'
+#' @details
+#' Non-finite values (`Inf`, `-Inf`, `NaN`) in numeric input columns are
+#' converted to `NA` before exclusion and summarization, so they are
+#' treated like any other missing value (e.g., they count toward the
+#' allowed number of missing items). Character and factor input columns
+#' are not affected by this conversion.
 #' @return tbl. The input data frame with the summary score appended as a new
 #'   column.
 #' @export
@@ -307,6 +331,7 @@ ss_nm <- function(data,
   chk::chk_data(data)
   chk::chk_character(name)
   chk::chk_scalar(name)
+  check_col_names(data, name)
   chk::chk_character(vars)
   chk::check_names(data, vars)
   if (!is.null(exclude)) chk::chk_character(exclude)
@@ -320,6 +345,7 @@ ss_nm <- function(data,
       all_of(vars)
     ) |>
     mutate(
+      across(where(is.numeric), ~ if_else(is.finite(.x), .x, NA)),
       across(
         all_of(vars),
         ~ if_else(
@@ -381,6 +407,14 @@ ss_nm <- function(data,
 #'   is a sum over all the values obtained from testing each condition
 #'   specified in `cond`.
 #'
+#' @details
+#' After the exclusion step, the input columns are coerced to numeric.
+#' Values that cannot be interpreted as numbers (e.g., `"abc"`) are set to
+#' `NA` with an informative warning, and non-finite values (`Inf`, `-Inf`,
+#' `NaN`) -- including character values such as `"Inf"` that only become
+#' non-finite through the coercion -- are converted to `NA` silently. Both
+#' are then treated like any other missing value (e.g., they count toward
+#' the allowed number of missing items).
 #' @return tbl. The input data frame with the summary score appended as a new
 #'   column.
 #'
@@ -461,6 +495,7 @@ ss_count <- function(data,
   chk::chk_data(data)
   chk::chk_character(name)
   chk::chk_scalar(name)
+  check_col_names(data, name)
   chk::chk_character(vars)
   if (!is.null(vars_temp)) chk::chk_character(vars_temp)
   chk::check_names(data, c(vars, vars_temp))
@@ -484,9 +519,9 @@ ss_count <- function(data,
       ),
       across(
         all_of(vars),
-        ~ as.character(.x) |>
-          as.numeric()
-      )
+        ~ coerce_numeric_informative(.x, cur_column())
+      ),
+      across(where(is.numeric), ~ if_else(is.finite(.x), .x, NA))
     ) %>%
     mutate(
       !!name := rowSums(
@@ -535,6 +570,14 @@ ss_count <- function(data,
 #' @param combine logical. Whether to combine the summary score column with the
 #'   input data frame (Default: TRUE).
 #'
+#' @details
+#' After the exclusion step, the input columns are coerced to numeric.
+#' Values that cannot be interpreted as numbers (e.g., `"abc"`) are set to
+#' `NA` with an informative warning, and non-finite values (`Inf`, `-Inf`,
+#' `NaN`) -- including character values such as `"Inf"` that only become
+#' non-finite through the coercion -- are converted to `NA` silently. Both
+#' are then treated like any other missing value (e.g., they count toward
+#' the allowed number of missing items).
 #' @return tbl. The input data frame with the summary score appended as a new
 #'   column.
 #'
@@ -585,6 +628,7 @@ ss_max <- function(data,
   chk::chk_data(data)
   chk::chk_character(name)
   chk::chk_scalar(name)
+  check_col_names(data, name)
   chk::chk_character(vars)
   chk::check_names(data, vars)
   chk::chk_flag(combine)
@@ -614,9 +658,9 @@ ss_max <- function(data,
           NA,
           .x
         ) |>
-          as.character() |>
-          as.numeric()
+          coerce_numeric_informative(cur_column())
       ),
+      across(all_of(vars), ~ if_else(is.finite(.x), .x, NA)),
       "{name}" := if_else(
         rowSums(across(all_of(vars), is.na)) > max_na,
         NA,
@@ -859,18 +903,21 @@ ss_prsum <- function(data,
 #'   vars = c("var1", "var2")
 #' )
 ss_tscore <- function(
-    data,
-    data_norm = NULL,
-    vars,
-    name = "tscore",
-    max_na = NULL,
-    exclude = NULL,
-    col_age = "age",
-    col_sex = "sex",
-    combine = TRUE) {
+  data,
+  data_norm = NULL,
+  vars,
+  name = "tscore",
+  max_na = NULL,
+  exclude = NULL,
+  col_age = "age",
+  col_sex = "sex",
+  combine = TRUE
+) {
   chk::chk_data(data)
   chk::check_names(data, c(col_age, col_sex))
   chk::chk_logical(combine)
+  chk::chk_character(name)
+  chk::chk_scalar(name)
   check_col_names(data, name)
   chk::chk_string(col_age)
   chk::chk_string(col_sex)
@@ -952,6 +999,14 @@ ss_tscore <- function(
 #'   specified in `cond`.
 #' @param max_na numeric, positive whole number. Number of
 #' missing items allowed.
+#' @details
+#' After the exclusion step, the input columns are coerced to numeric.
+#' Values that cannot be interpreted as numbers (e.g., `"abc"`) are set to
+#' `NA` with an informative warning, and non-finite values (`Inf`, `-Inf`,
+#' `NaN`) -- including character values such as `"Inf"` that only become
+#' non-finite through the coercion -- are converted to `NA` silently. Both
+#' are then treated like any other missing value (e.g., they count toward
+#' the allowed number of missing items).
 #' @return tbl. The input data frame with the summary score appended as a new
 #'   column.
 #'
@@ -968,6 +1023,7 @@ ss_count_cond <- function(data,
   chk::chk_data(data)
   chk::chk_character(name)
   chk::chk_scalar(name)
+  check_col_names(data, name)
   chk::chk_character(vars)
   chk::check_names(data, vars)
   if (!is.null(exclude)) chk::chk_character(exclude)
@@ -990,9 +1046,9 @@ ss_count_cond <- function(data,
           NA,
           .x
         ) |>
-          as.character() |>
-          as.numeric()
-      )
+          coerce_numeric_informative(cur_column())
+      ),
+      across(all_of(vars), ~ if_else(is.finite(.x), .x, NA))
     ) |>
     rowwise() |>
     mutate(
@@ -1011,10 +1067,10 @@ ss_count_cond <- function(data,
     )
 
   if (combine) {
-    cbind(data, data_ss)
-  } else {
-    data_ss
+    data_ss <- bind_cols(data, data_ss)
   }
+
+  data_ss
 }
 
 #' Compute mean of positive values
@@ -1037,6 +1093,14 @@ ss_count_cond <- function(data,
 #' @param combine logical. Whether to combine the summary score column with the
 #'   input data frame (Default: TRUE).
 #'
+#' @details
+#' After the exclusion step, the input columns are coerced to numeric.
+#' Values that cannot be interpreted as numbers (e.g., `"abc"`) are set to
+#' `NA` with an informative warning, and non-finite values (`Inf`, `-Inf`,
+#' `NaN`) -- including character values such as `"Inf"` that only become
+#' non-finite through the coercion -- are converted to `NA` silently. Both
+#' are then treated like any other missing value (e.g., they count toward
+#' the allowed number of missing items).
 #' @return tbl. The input data frame with the summary score appended as a new
 #'   column.
 #' @export
@@ -1089,6 +1153,7 @@ ss_mean_pos <- function(data,
   chk::chk_data(data)
   chk::chk_character(name)
   chk::chk_scalar(name)
+  check_col_names(data, name)
   chk::chk_character(vars)
   chk::check_names(data, vars)
   chk::chk_flag(combine)
@@ -1118,9 +1183,9 @@ ss_mean_pos <- function(data,
           NA,
           .x
         ) |>
-          as.character() |>
-          as.numeric()
+          coerce_numeric_informative(cur_column())
       ),
+      across(all_of(vars), ~ if_else(is.finite(.x), .x, NA)),
       across(
         all_of(vars),
         ~ if_else(
@@ -1159,6 +1224,22 @@ ss_mean_pos <- function(data,
 }
 
 # helper functions --------------------------------------------------------
+
+# Coerce values to numeric for summarization. Values that cannot be
+# interpreted as numbers are set to NA with a warning naming the column,
+# instead of R's bare "NAs introduced by coercion".
+coerce_numeric_informative <- function(x, col) {
+  chr <- as.character(x)
+  out <- suppressWarnings(as.numeric(chr))
+  n_bad <- sum(!is.na(chr) & is.na(out))
+  if (n_bad > 0) {
+    cli::cli_warn(
+      "{n_bad} value{?s} in column {.field {col}} could not be coerced \
+      to numeric and {?was/were} set to NA."
+    )
+  }
+  out
+}
 
 # helper function: compute summary scores only for specific events
 select_events <- function(data, data_ss, name, events) {
@@ -1576,13 +1657,18 @@ check_assign_na <- function(data, output, input, allow_missingness = TRUE) {
 #' combine_checkboxes(dat, var_basename = "q1", name = "q1_combined")
 #'
 combine_checkboxes <- function(
-    data,
-    var_basename,
-    var_sep = "___",
-    name = NULL) {
+  data,
+  var_basename,
+  var_sep = "___",
+  name = NULL
+) {
   chk::check_names(data, "participant_id")
   chk::check_names(data, "session_id")
+  chk::chk_character(var_basename)
+  chk::chk_scalar(var_basename)
   check_col_names(data, var_basename)
+  chk::chk_character(var_sep)
+  chk::chk_scalar(var_sep)
 
   out <- data |>
     select(
@@ -1930,8 +2016,9 @@ find_data_norm <- function(data_norm) {
 #' get_tscore_tbl(list_tscore, "compute_mh_p_abcl__afs__frnd_tscore")
 #' }
 get_tscore_tbl <- function(
-    list_tscore,
-    func_name) {
+  list_tscore,
+  func_name
+) {
   chk::chk_string(func_name)
   chk::chk_list(list_tscore)
 
@@ -2124,8 +2211,9 @@ md_bullet <- function(x,
 #' )
 #' insert_reference("score1")
 insert_reference <- function(
-    name,
-    tbl_ref_name = "tbl_ref") {
+  name,
+  tbl_ref_name = "tbl_ref"
+) {
   chk::chk_string(name)
   chk::chk_string(tbl_ref_name)
 

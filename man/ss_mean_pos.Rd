@@ -43,6 +43,15 @@ the option to exclude certain values (for non-responses like
 "Don't know"/"Decline to answer") and to set a maximum number of
 missing values.
 }
+\details{
+After the exclusion step, the input columns are coerced to numeric.
+Values that cannot be interpreted as numbers (e.g., \code{"abc"}) are set to
+\code{NA} with an informative warning, and non-finite values (\code{Inf}, \code{-Inf},
+\code{NaN}) -- including character values such as \code{"Inf"} that only become
+non-finite through the coercion -- are converted to \code{NA} silently. Both
+are then treated like any other missing value (e.g., they count toward
+the allowed number of missing items).
+}
 \examples{
 data <- tibble::tribble(
   ~session_id, ~a, ~b, ~c, ~d, ~e,

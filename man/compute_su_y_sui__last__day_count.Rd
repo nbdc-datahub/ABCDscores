@@ -12,9 +12,8 @@ compute_su_y_sui__last__day_count(data, name, substance, combine = TRUE)
 \item{name}{character. The name of the output column for the computed score.}
 
 \item{substance}{character (vector). The substance to compute the score
-for. Must be one of the following values:
+for. Must be one of the following values:  * \code{"alc"}
 \itemize{
-\item \code{"alc"}
 \item \code{"alc__sip"}
 \item \code{"rxstim"}
 \item \code{"cath"}

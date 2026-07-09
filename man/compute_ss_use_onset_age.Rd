@@ -12,9 +12,8 @@ compute_ss_use_onset_age(data, name, substance, algo = NULL)
 \item{name}{character(1). Name of the output score column to validate.}
 
 \item{substance}{character (vector). The substance(s) to compute the score
-for. Must be one or several of the following values:
+for. Must be one or several of the following values:  * \code{"Alcohol (Sipping)"}
 \itemize{
-\item \code{"Alcohol (Sipping)"}
 \item \code{"Nicotine (Puffing)"}
 \item \code{"Marijuana (Puffing)"}
 \item \code{"Alcohol"}
@@ -79,7 +78,7 @@ If \code{NULL} (default) no mapping is performed and \code{data} is returned unc
 }}
 }
 \value{
-A tibble with columns \code{participant_id} and a character
+A tibble with columns \code{participant_id} and a numeric
 column named by \code{name} containing the age of onset or \code{NA} if there was no use.
 }
 \description{

@@ -18,9 +18,8 @@ compute_ss_use_yn(
 \item{name}{character(1). Name of the output score column to validate.}
 
 \item{substance}{character (vector). The substance(s) to compute the score
-for. Must be one or several of the following values:
+for. Must be one or several of the following values:  * \code{"Alcohol (Sipping)"}
 \itemize{
-\item \code{"Alcohol (Sipping)"}
 \item \code{"Nicotine (Puffing)"}
 \item \code{"Marijuana (Puffing)"}
 \item \code{"Alcohol"}

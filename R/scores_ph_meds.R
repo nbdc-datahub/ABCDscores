@@ -309,14 +309,14 @@ compute_ph_meds_estuse_flags_all <- function(
 
   data_ss <- purrr::pmap_dfc(
     rx_config_estuse_flags,
-    \(time_point, idx, name, ...) {
+    \(time_point, table_name, idx, name, ...) {
       data_catg |>
         transmute(
           !!name := ifelse(
             if_any(
               any_of(c(
-                glue::glue("ph_p_meds__otc__{time_point}_estuse__{idx_input}"),
-                glue::glue("ph_p_meds__rx__{time_point}_estuse__{idx_input}")
+                glue::glue("{table_name}__otc__{time_point}_estuse__{idx_input}"),
+                glue::glue("{table_name}__rx__{time_point}_estuse__{idx_input}")
               )),
               ~ coalesce(as.character(.x), "") == idx
             ),

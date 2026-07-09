@@ -1,3 +1,62 @@
+# ABCDscores 7.0.1
+
+Date: 2026-07-09
+
+## New features
+
+- The `ss_*` utility functions (`ss_mean()`, `ss_sum()`, `ss_count()`,
+  `ss_max()`, `ss_count_cond()`, `ss_mean_pos()`) now convert non-finite
+  values (`Inf`, `-Inf`, `NaN`) to `NA` after coercing the input columns to
+  numeric and before summarization, so they are treated like any other
+  missing value. This includes character values such as `"Inf"` that only
+  become non-finite through the coercion. `ss_nm()`, which does not coerce
+  its inputs, applies the conversion to numeric columns only.
+- The numeric coercion in the `ss_*` utility functions now raises an
+  informative warning when values that cannot be interpreted as numbers
+  (e.g., `"abc"`) are set to `NA`, naming the affected column and the
+  number of values lost, instead of R's bare "NAs introduced by coercion"
+  warning.
+- The `ss_*` utility functions now abort when the requested score column
+  `name` already exists in the input data, instead of silently producing a
+  duplicated column name. `ss_count_cond(combine = TRUE)` now returns a
+  tibble instead of a base data frame, and `ss_tscore()` and
+  `combine_checkboxes()` gained additional input validation.
+- Added a testthat unit test suite. It covers all 12 exported
+  `ss_*` utility functions and the one-to-many compute functions behind the
+  TLFB, SUI, SDSU, medication (`rx`), and family history scores, with
+  hand-derived expected values for non-response code exclusion, missingness
+  thresholds, event filtering, and return types. Each applicable function
+  carries a regression case for the v6.1.0 factor-to-numeric coercion bug
+  (factor codes silently converted to level indices).
+- Added a *Performance & scalability* article to the package documentation,
+  reporting a reproducible single-threaded benchmark of the scoring functions on
+  the full ABCD 7.0 tabulated release. All 2,240 summary scores derivable from
+  the tabulated release are computed in about 6.5 minutes on a laptop (Intel
+  Core i7-13700H), with one-to-one and one-to-many functions timed separately.
+
+## Bug fixes
+
+- `compute_tlfb_maxdose()` now takes the maximum over per-day summed doses
+  instead of individual substance rows, and `compute_tlfb_totdose_sum()`
+  accumulates in chronological session order instead of input row order.
+  Combined-substance maximum-dose scores and cumulative total-dose scores
+  computed on unsorted data change accordingly.
+- SDSU scores: the forecast for a terminal mid-year session now maps to the
+  next annual session (e.g. `ses-06M` to `ses-07A`) instead of the already
+  elapsed one, and `compute_ss_use_onset_event()` accepts character
+  `session_id` columns (previously it required factors and errored otherwise).
+- Documentation and error messages: `compute_ss_use_onset_age()` roxygen now
+  documents the returned onset-age column as numeric (it was described as
+  character), and `compute_famhx_endorsement()` now renders its intended
+  error message when no columns match `var_matches` (a variable-name typo
+  previously surfaced as a cli interpolation error instead).
+- `compute_ph_y_meds_estuse_flags_all()` now flags youth medications
+  correctly. The internal estimated-use engine matched category columns with
+  a hardcoded `ph_p_meds__` prefix, so every `ph_y_meds` estimated-use flag
+  was returned as `"0"` regardless of the reported medications. The candidate
+  columns are now derived from each flag's `table_name`
+  (`ph_p_meds` results are unchanged).
+
 # ABCDscores 7.0.0
 
 Date: 2026-05-13

@@ -234,7 +234,11 @@ compute_tlfb_maxdose <- function(data,
   suppressWarnings(
     data_filtered |>
       summarize(
-        {{ name }} := max(quantity),
+        dt_qty = sum(quantity),
+        .by = c(participant_id, session_id, dt_use)
+      ) |>
+      summarize(
+        {{ name }} := max(dt_qty),
         .by = c(participant_id, session_id)
       )
   )
@@ -413,14 +417,13 @@ compute_tlfb_totdose_sum <- function(data,
     co_use,
     binge
   ) |>
-    group_by(
-      participant_id
-    ) |>
+    create_session_num() |>
+    arrange(participant_id, session_num) |>
     mutate(
-      {{ name }} := cumsum(tlfb_totdose)
+      {{ name }} := cumsum(tlfb_totdose),
+      .by = participant_id
     ) |>
-    ungroup() |>
-    select(-tlfb_totdose)
+    select(-tlfb_totdose, -session_num)
 }
 
 #' Compute TLFB use days
@@ -915,10 +918,11 @@ sui_substances <- c(
 #' @export
 #' @autoglobal
 compute_su_y_sui__onset_useage <- function(
-    data,
-    name,
-    substance,
-    combine = TRUE) {
+  data,
+  name,
+  substance,
+  combine = TRUE
+) {
   var <- glue::glue("su_y_sui__{substance}__onset_dt")
 
   chk::chk_data(data)
@@ -985,10 +989,11 @@ compute_su_y_sui__onset_useage <- function(
 #' @export
 #' @autoglobal
 compute_su_y_sui__reg_useage <- function(
-    data,
-    name,
-    substance,
-    combine = TRUE) {
+  data,
+  name,
+  substance,
+  combine = TRUE
+) {
   var <- glue::glue("su_y_sui__{substance}__reg_dt")
 
   chk::chk_data(data)
@@ -1056,10 +1061,11 @@ compute_su_y_sui__reg_useage <- function(
 #' @export
 #' @autoglobal
 compute_su_y_sui__last__day_count <- function(
-    data,
-    name,
-    substance,
-    combine = TRUE) {
+  data,
+  name,
+  substance,
+  combine = TRUE
+) {
   var <- glue::glue("su_y_sui__{substance}__last_dt")
 
   chk::chk_data(data)
@@ -1094,7 +1100,6 @@ compute_su_y_sui__last__day_count <- function(
     data_ss
   }
 }
-
 
 
 #' Prepare data for applying mid-year strategy
@@ -1167,7 +1172,7 @@ prepare_data_sdsu <- function(data) {
     ) |>
     mutate(
       last_session_id = last(session_id),
-      forecast_next_annual = stringr::str_replace(last_session_id, "M", "A"),
+      forecast_next_annual = next_annual_session_id(last_session_id),
       session_id_mapped_forecast = if_else(
         is.na(session_id_mapped),
         forecast_next_annual,
@@ -1207,8 +1212,9 @@ prepare_data_sdsu <- function(data) {
 #' @autoglobal
 #' @keywords internal
 map_mid_years <- function(
-    data,
-    algo = NULL) {
+  data,
+  algo = NULL
+) {
   chk::chk_subset(
     algo,
     c(
@@ -1237,20 +1243,33 @@ map_mid_years <- function(
       mutate(
         session_id = case_when(
           session_type == "A" ~ session_id,
-          session_type == "M" ~
-            stringr::str_replace(
-              session_id,
-              "(\\d+)M$",
-              function(x) {
-                paste0(sprintf("%02d", as.integer(gsub("\\D", "", x)) + 1), "A")
-              }
-            )
+          session_type == "M" ~ next_annual_session_id(session_id)
         )
       )
   } else if (algo == "remove_my") {
     data |>
       filter(session_type == "A")
   }
+}
+
+#' Compute the next annual session id following a mid-year session
+#'
+#' @description
+#' For a mid-year session id (e.g. `"ses-06M"`), returns the next annual
+#' session id (`"ses-07A"`). Session ids that do not end in a mid-year
+#' pattern are returned unchanged.
+#'
+#' @param session_id character. Session id(s) to convert.
+#' @return character. The next annual session id(s).
+#' @noRd
+next_annual_session_id <- function(session_id) {
+  stringr::str_replace(
+    session_id,
+    "(\\d+)M$",
+    function(x) {
+      paste0(sprintf("%02d", as.integer(gsub("\\D", "", x)) + 1), "A")
+    }
+  )
 }
 
 
@@ -1266,8 +1285,9 @@ map_mid_years <- function(
 #' @autoglobal
 #' @keywords internal
 check_args_sdsu <- function(
-    data = data,
-    name = name) {
+  data = data,
+  name = name
+) {
   chk::chk_data(data)
   check_col_names(data, name)
 }
@@ -1308,11 +1328,12 @@ check_args_sdsu <- function(
 #' @export
 #' @autoglobal
 compute_ss_use_yn <- function(
-    data,
-    name,
-    substance,
-    algo = "next_existing_fy",
-    cumulative = FALSE) {
+  data,
+  name,
+  substance,
+  algo = "next_existing_fy",
+  cumulative = FALSE
+) {
   check_args_sdsu(
     data = data,
     name = name
@@ -1340,7 +1361,7 @@ compute_ss_use_yn <- function(
       ),
       use_yn = if_else(
         rowSums(
-          across(any_of(substance_vars), ~ .x > 0),
+          across(any_of(substance_vars), ~ .x > 0 & !(.x %in% c(777, 888))),
           na.rm = TRUE
         ) >
           0,
@@ -1424,7 +1445,7 @@ compute_ss_use_onset_event <- function(data, name, substance, algo = NULL) {
       ),
       tmp_yn = if_else(
         rowSums(
-          across(any_of(substance_vars), ~ .x > 0),
+          across(any_of(substance_vars), ~ .x > 0 & !(.x %in% c(777, 888))),
           na.rm = TRUE
         ) >
           0,
@@ -1437,13 +1458,16 @@ compute_ss_use_onset_event <- function(data, name, substance, algo = NULL) {
     summarise(
       tmp_yn_ps = as.numeric(any(as.logical(tmp_yn))),
       .groups = "drop"
-    )
+    ) |>
+    create_session_num(name = "tmp_session_num")
 
   data_1yr_yn |>
     summarise(
       !!name := if (any(tmp_yn_ps == 1)) {
         sessions <- session_id[tmp_yn_ps == 1]
-        as.character(sessions[which.min(as.numeric(sessions))])
+        nums <- tmp_session_num[tmp_yn_ps == 1]
+        idx <- which.min(nums)
+        if (length(idx) == 0L) NA_character_ else as.character(sessions[idx])
       } else {
         NA_character_
       },
@@ -1472,7 +1496,7 @@ compute_ss_use_onset_event <- function(data, name, substance, algo = NULL) {
 #'   paste0("\"", sdsu_config |> pull(substance), "\"") |> md_bullet(2, TRUE)
 #'   ```
 #'
-#' @return A tibble with columns `participant_id` and a character
+#' @return A tibble with columns `participant_id` and a numeric
 #'   column named by `name` containing the age of onset or `NA` if there was no use.
 #' @seealso [map_mid_years()]
 #'
@@ -1559,7 +1583,8 @@ compute_ss_use_onset_age <- function(data, name, substance, algo = NULL) {
         select(participant_id, session_id, all_of(var)) |>
         tidyr::pivot_wider(
           names_from = session_id,
-          values_from = all_of(var)
+          values_from = all_of(var),
+          values_fn = first
         ) |>
         transmute(
           participant_id,

@@ -490,11 +490,14 @@ utils::globalVariables(c(
   # <compute_fitbit_sleep_table>
   # <compute_fitbit_sleep_table_ext>
   "dt_day",
+  # <compute_tlfb_maxdose>
+  "dt_qty",
   # <compute_tlfb_abst>
   # <filter_tlfb>
   "dt_tlfb",
   # <compute_tlfb_abst>
   # <compute_tlfb_dt>
+  # <compute_tlfb_maxdose>
   # <compute_tlfb_mean>
   # <compute_tlfb_ud>
   # <filter_tlfb>
@@ -1500,6 +1503,7 @@ utils::globalVariables(c(
   # <compute_fc_y_vs__famil_mean__v01>
   # <compute_fc_y_vs__famil_nm__v01>
   # <compute_mh_y_pps__dist__pers_score>
+  # <compute_tlfb_totdose_sum>
   "session_num",
   # <prepare_data_sdsu>
   # <map_mid_years>
@@ -1647,6 +1651,8 @@ utils::globalVariables(c(
   "tmp_nih",
   # <ss_prsum>
   "tmp_prsum",
+  # <compute_ss_use_onset_event>
+  "tmp_session_num",
   # <ss_prsum>
   "tmp_sum",
   # <compute_ph_p_otbi__loc__30m_count>
