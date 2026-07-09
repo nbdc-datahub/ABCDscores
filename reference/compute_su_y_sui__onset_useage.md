@@ -29,9 +29,7 @@ compute_su_y_sui__onset_useage(data, name, substance, combine = TRUE)
 - substance:
 
   character (vector). The substance to compute the score for. Must be
-  one of the following values:
-
-  - `"alc"`
+  one of the following values: \* `"alc"`
 
   - `"alc__sip"`
 

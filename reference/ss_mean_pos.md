@@ -58,6 +58,16 @@ ss_mean_pos(
 tbl. The input data frame with the summary score appended as a new
 column.
 
+## Details
+
+After the exclusion step, the input columns are coerced to numeric.
+Values that cannot be interpreted as numbers (e.g., `"abc"`) are set to
+`NA` with an informative warning, and non-finite values (`Inf`, `-Inf`,
+`NaN`) – including character values such as `"Inf"` that only become
+non-finite through the coercion – are converted to `NA` silently. Both
+are then treated like any other missing value (e.g., they count toward
+the allowed number of missing items).
+
 ## Examples
 
 ``` r

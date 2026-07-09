@@ -35,9 +35,7 @@ compute_ss_use_onset_age(data, name, substance, algo = NULL)
 - substance:
 
   character (vector). The substance(s) to compute the score for. Must be
-  one or several of the following values:
-
-  - `"Alcohol (Sipping)"`
+  one or several of the following values: \* `"Alcohol (Sipping)"`
 
   - `"Nicotine (Puffing)"`
 
@@ -153,7 +151,7 @@ compute_ss_use_onset_age(data, name, substance, algo = NULL)
 
 ## Value
 
-A tibble with columns `participant_id` and a character column named by
+A tibble with columns `participant_id` and a numeric column named by
 `name` containing the age of onset or `NA` if there was no use.
 
 ## See also

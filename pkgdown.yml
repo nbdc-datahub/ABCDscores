@@ -1,16 +1,17 @@
 pandoc: 3.8.3
-pkgdown: 2.2.0
+pkgdown: 2.2.1
 pkgdown_sha: ~
 articles:
   ABCDscores: ABCDscores.html
   articles/aseba: aseba.html
+  articles/benchmark: benchmark.html
   articles/famhx: famhx.html
   articles/fitbit: fitbit.html
   articles/meds: meds.html
   articles/sdsu: sdsu.html
   articles/sui: sui.html
   articles/tlfb: tlfb.html
-last_built: 2026-05-15T23:02Z
+last_built: 2026-07-09T21:40Z
 urls:
   reference: https://software.nbdc-datahub.org/ABCDscores/reference
   article: https://software.nbdc-datahub.org/ABCDscores/articles

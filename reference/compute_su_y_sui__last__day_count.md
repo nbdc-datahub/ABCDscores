@@ -23,9 +23,7 @@ compute_su_y_sui__last__day_count(data, name, substance, combine = TRUE)
 - substance:
 
   character (vector). The substance to compute the score for. Must be
-  one of the following values:
-
-  - `"alc"`
+  one of the following values: \* `"alc"`
 
   - `"alc__sip"`
 

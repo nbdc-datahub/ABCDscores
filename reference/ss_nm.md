@@ -45,6 +45,14 @@ ss_nm(data, name, vars, exclude = NULL, events = NULL, combine = TRUE)
 tbl. The input data frame with the summary score appended as a new
 column.
 
+## Details
+
+Non-finite values (`Inf`, `-Inf`, `NaN`) in numeric input columns are
+converted to `NA` before exclusion and summarization, so they are
+treated like any other missing value (e.g., they count toward the
+allowed number of missing items). Character and factor input columns are
+not affected by this conversion.
+
 ## Examples
 
 ``` r

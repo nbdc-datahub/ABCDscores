@@ -30,7 +30,7 @@ We compute two types of FAMHX summary scores (format:
     We developed one basic function,
     [`compute_famhx_endorsement()`](https://software.nbdc-datahub.org/ABCDscores/reference/compute_famhx_endorsement.md)
     that can be used to compute all FAMHX summary scores by changing the
-    value of the `vars_matches` parameter, which sets the input variable
+    value of the `var_matches` parameter, which sets the input variable
     used to compute the summary score, the name of which is set by
     changing the value of the `name` parameter.  
       

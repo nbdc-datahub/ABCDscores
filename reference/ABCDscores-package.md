@@ -24,6 +24,9 @@ Useful links:
 
 Authors:
 
+- Le Zhang <dairc.service@gmail.com>
+  ([ORCID](https://orcid.org/0009-0008-0205-2150))
+
 - Janosch Linkersdoerfer <linkersdoerfer@gmail.com>
   ([ORCID](https://orcid.org/0000-0002-1577-1233))
 

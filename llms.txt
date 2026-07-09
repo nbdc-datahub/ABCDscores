@@ -3800,6 +3800,8 @@ Low-level functions for computing summary scores
 - [ABCDscores](https://software.nbdc-datahub.org/ABCDscores/articles/ABCDscores.md):
 - [Achenbach System of Empirically Based Assessment (ASEBA)
   T-scores](https://software.nbdc-datahub.org/ABCDscores/articles/aseba.md):
+- [Performance & scalability
+  benchmark](https://software.nbdc-datahub.org/ABCDscores/articles/benchmark.md):
 - [Family History (FAMHX) summary
   scores](https://software.nbdc-datahub.org/ABCDscores/articles/famhx.md):
 - [Computing Daily and Weekly Fitbit

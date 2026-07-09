@@ -31,9 +31,7 @@ compute_ss_use_yn(
 - substance:
 
   character (vector). The substance(s) to compute the score for. Must be
-  one or several of the following values:
-
-  - `"Alcohol (Sipping)"`
+  one or several of the following values: \* `"Alcohol (Sipping)"`
 
   - `"Nicotine (Puffing)"`
 
