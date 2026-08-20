@@ -11,9 +11,10 @@
     packageStartupMessage(glue::glue(
       "If `ABCDscores` is helpful to your research, please cite:\n",
       "Zhang, L., Celhay, O., Das, B., Berman, S., Ziemer, L. R., Smith, C. J., ",
-      "Dale, A. M., & Linkersd\u00f6rfer, J. (2025). ",
-      "ABCDscores: An R package for computing summary scores in the ABCD Study. ",
-      "bioRxiv. https://doi.org/10.1101/2025.09.04.674066"
+      "Abad, S., Dale, A. M., & Linkersd\u00f6rfer, J. (2026). ",
+      "ABCDscores: an R package for computing summary scores in the ",
+      "ABCD Study\u00ae. Frontiers in Neuroinformatics, 20, 1858950. ",
+      "https://doi.org/10.3389/fninf.2026.1858950"
     ))
     options(abcdscores_start_msg_displayed = TRUE)
   }
