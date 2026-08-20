@@ -1,5 +1,20 @@
 # Changelog
 
+## ABCDscores 7.0.2
+
+Date: 2026-08-19
+
+### Changes
+
+- Updated the package citation to the published journal article: Zhang,
+  L., Celhay, O., Das, B., Berman, S., Ziemer, L. R., Smith, C. J.,
+  Abad, S., Dale, A. M., & Linkersdörfer, J. (2026). *ABCDscores: an R
+  package for computing summary scores in the ABCD Study®*. *Frontiers
+  in Neuroinformatics*, 20, 1858950.
+  <https://doi.org/10.3389/fninf.2026.1858950>. This replaces the
+  earlier bioRxiv preprint reference in `inst/CITATION`, the package
+  startup message, the package-level documentation, and the README.
+
 ## ABCDscores 7.0.1
 
 Date: 2026-07-09

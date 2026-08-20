@@ -119,6 +119,7 @@ If you use any summary scores from ABCD data release or compute summary
 scores using this package, please kindly cite the following paper:
 
 > Zhang, L., Celhay, O., Das, B., Berman, S., Ziemer, L. R., Smith, C.
-> J., Dale, A. M., & Linkersdörfer, J. (2025). *ABCDscores: An R package
-> for computing summary scores in the ABCD Study®*. bioRxiv.
-> <https://doi.org/10.1101/2025.09.04.674066>
+> J., Abad, S., Dale, A. M., & Linkersdörfer, J. (2026). *ABCDscores: an
+> R package for computing summary scores in the ABCD Study®*. Frontiers
+> in Neuroinformatics, 20, 1858950.
+> <https://doi.org/10.3389/fninf.2026.1858950>
