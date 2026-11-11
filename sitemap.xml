@@ -170,6 +170,7 @@
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fitbit_activity_table_ext.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fitbit_activity_week.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fitbit_intensity_scores.html</loc></url>
+<url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fitbit_mean_hrate_scores.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fitbit_min_totals.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fitbit_score_minutes_exclusion.html</loc></url>
 <url><loc>https://software.nbdc-datahub.org/ABCDscores/reference/compute_fitbit_score_steps.html</loc></url>

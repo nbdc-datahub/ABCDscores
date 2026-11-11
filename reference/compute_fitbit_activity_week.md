@@ -42,6 +42,9 @@ tbl. Weekly activity dataset containing:
 
 - Activity summary metrics (steps, METs, intensity minutes, heart rate)
 
+- Mean heart rate metrics (`mean_hrate`, `mean_hrate_actv`), present
+  only when the daily input was built with `include_mean_hrate = TRUE`
+
 - Weekly quality control flag (`qc_wk`)
 
 ## Details

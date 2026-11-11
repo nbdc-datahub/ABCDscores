@@ -18,7 +18,8 @@ compute_fitbit_activity_table_ext(
   offset = "12:00",
   min_actv_minutes,
   main_duration,
-  gap = 90
+  gap = 90,
+  include_mean_hrate = FALSE
 )
 ```
 
@@ -78,6 +79,12 @@ compute_fitbit_activity_table_ext(
 - gap:
 
   numeric. Maximum allowed gap.
+
+- include_mean_hrate:
+
+  logical. If TRUE, add `hrate_mean` and `hrate_mean_actv` columns (mean
+  heart rate, total and active-only, after heart rate exclusions).
+  Default: FALSE.
 
 ## Value
 

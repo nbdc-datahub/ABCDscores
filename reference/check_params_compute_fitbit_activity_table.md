@@ -19,7 +19,8 @@ check_params_compute_fitbit_activity_table(
   append_daily_fitbit_qc,
   qc_threshold,
   offset,
-  min_actv_minutes
+  min_actv_minutes,
+  include_mean_hrate = FALSE
 )
 ```
 
@@ -79,6 +80,12 @@ check_params_compute_fitbit_activity_table(
   numeric. Minimum number of active minutes required for a day to pass
   quality control. Used to create a `{qc_Xmin}` flag column in the
   output.
+
+- include_mean_hrate:
+
+  logical. If TRUE, add `hrate_mean` and `hrate_mean_actv` columns (mean
+  heart rate, total and active-only, after heart rate exclusions).
+  Default: FALSE.
 
 ## Value
 

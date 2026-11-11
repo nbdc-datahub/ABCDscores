@@ -400,7 +400,7 @@ are computed as duration-weighted means rather than simple means, e.g.:
 
 ``` r
 
-hrate_light_slp = sum(hrate_light_slp * min_light_slp) / sum(min_light_slp)
+mean_hrate_light_slp = sum(hrate_light_slp * min_light_slp) / sum(min_light_slp)
 ```
 
 **Circular mean for timing variables:** Bed/sleep onset and offset times

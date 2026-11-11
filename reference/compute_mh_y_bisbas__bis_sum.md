@@ -24,6 +24,9 @@ Sum
 
 - *Validation criterion:* none of 7 items missing
 
+- *Notes:* The `mh_y_bisbas__bis_005` item is reverse coded before
+  computing the summary score.
+
 ## Usage
 
 ``` r

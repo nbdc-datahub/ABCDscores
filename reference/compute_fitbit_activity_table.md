@@ -20,7 +20,8 @@ compute_fitbit_activity_table(
   append_daily_fitbit_qc,
   qc_threshold = 0.8,
   offset = "12:00",
-  min_actv_minutes
+  min_actv_minutes,
+  include_mean_hrate = FALSE
 )
 ```
 
@@ -81,6 +82,12 @@ compute_fitbit_activity_table(
   quality control. Used to create a `{qc_Xmin}` flag column in the
   output.
 
+- include_mean_hrate:
+
+  logical. If TRUE, add `hrate_mean` and `hrate_mean_actv` columns (mean
+  heart rate, total and active-only, after heart rate exclusions).
+  Default: FALSE.
+
 ## Value
 
 tbl. A daily-level summarized data frame with the following components:
@@ -127,6 +134,9 @@ tbl. A daily-level summarized data frame with the following components:
 
 - `min_intnst_*`: Minutes spent in sedentary, light, moderate, and
   vigorous activity (total and active-only variants)
+
+- `hrate_mean`, `hrate_mean_actv`: Mean heart rate, total and
+  active-only (only present if `include_mean_hrate = TRUE`)
 
 **Heart rate exclusion summaries:**
 
