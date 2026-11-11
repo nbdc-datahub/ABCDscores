@@ -21,6 +21,8 @@ tbl. Weekly activity dataset containing:
 \item Week identifiers (\code{wk}, \code{wk_type})
 \item Day counts (\code{n_day}, \code{n_wkdy}, \code{n_wknd})
 \item Activity summary metrics (steps, METs, intensity minutes, heart rate)
+\item Mean heart rate metrics (\code{mean_hrate}, \code{mean_hrate_actv}), present only
+when the daily input was built with \code{include_mean_hrate = TRUE}
 \item Weekly quality control flag (\code{qc_wk})
 }
 }

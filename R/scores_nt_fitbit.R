@@ -40,6 +40,9 @@
 #' @param min_actv_minutes numeric. Minimum number of active minutes required
 #'   for a day to pass quality control. Used to create a `{qc_Xmin}` flag
 #'   column in the output.
+#' @param include_mean_hrate logical. If TRUE, add `hrate_mean` and
+#'   `hrate_mean_actv` columns (mean heart rate, total and active-only, after
+#'   heart rate exclusions). Default: FALSE.
 #' @return tbl.  A daily-level summarized data frame with the following
 #' components:
 #'
@@ -68,6 +71,8 @@
 #'  - `mets_actv`: Mean METs during active minutes
 #'  - `min_intnst_*`: Minutes spent in sedentary, light, moderate, and
 #'    vigorous activity (total and active-only variants)
+#'  - `hrate_mean`, `hrate_mean_actv`: Mean heart rate, total and
+#'    active-only (only present if `include_mean_hrate = TRUE`)
 #'
 #' **Heart rate exclusion summaries:**
 #'  - `excl_min_*`: Minutes excluded due to heart rate criteria (low, high,
@@ -97,7 +102,8 @@ compute_fitbit_activity_table <- function(
   append_daily_fitbit_qc,
   qc_threshold = 0.8,
   offset = "12:00",
-  min_actv_minutes
+  min_actv_minutes,
+  include_mean_hrate = FALSE
 ) {
   check_params_compute_fitbit_activity_table(
     data_activity,
@@ -110,7 +116,8 @@ compute_fitbit_activity_table <- function(
     append_daily_fitbit_qc = append_daily_fitbit_qc,
     qc_threshold = qc_threshold,
     offset = offset,
-    min_actv_minutes = min_actv_minutes
+    min_actv_minutes = min_actv_minutes,
+    include_mean_hrate = include_mean_hrate
   )
 
   exclusions <- identify_hr_exclusions(
@@ -145,6 +152,17 @@ compute_fitbit_activity_table <- function(
     exclusions,
     bin_minutes = bin_minutes
   )
+
+  # Gating happens here (not in the scoring function): only compute the mean
+  # heart rate scores when the caller opts in via include_mean_hrate.
+  hrate_summary <- if (include_mean_hrate) {
+    compute_fitbit_mean_hrate_scores(
+      exclusions,
+      bin_minutes = bin_minutes
+    )
+  } else {
+    NULL
+  }
 
   heartrate <- data_daily |>
     select(participant_id, session_id, dt, hrate_rest_fitb)
@@ -219,7 +237,20 @@ compute_fitbit_activity_table <- function(
     left_join(
       slp_30_exist |> select(-any_of(c("start", "end"))),
       by = c("participant_id", "session_id", "dt" = "date")
-    ) |>
+    )
+
+  # Join the mean heart rate scores only when they were computed (see gating
+  # above). Join order does not matter: all joins share the same keys and the
+  # final select() sets the output column order explicitly.
+  if (include_mean_hrate) {
+    summary <- summary |>
+      left_join(
+        hrate_summary |> select(-any_of(c("start", "end"))),
+        by = c("participant_id", "session_id", "dt" = "date")
+      )
+  }
+
+  summary <- summary |>
     mutate(
       dt = lubridate::as_date(dt),
       flg_30sec = tidyr::replace_na(has_sleep_30, FALSE),
@@ -256,6 +287,7 @@ compute_fitbit_activity_table <- function(
       any_of("steps_fitb"),
       mets,
       mets_actv,
+      any_of(c("hrate_mean", "hrate_mean_actv")),
       min_intnst_sed_total,
       min_intnst_light_total,
       min_intnst_mod_total,
@@ -312,6 +344,9 @@ compute_fitbit_activity_table <- function(
 #'   for a day to pass quality control. Used to create a `{qc_Xmin}` flag
 #'   column in the output.
 #' @param main_duration numeric. Minimum duration in minutes.
+#' @param include_mean_hrate logical. If TRUE, add `hrate_mean` and
+#'   `hrate_mean_actv` columns (mean heart rate, total and active-only, after
+#'   heart rate exclusions). Default: FALSE.
 #'
 #' @return tbl. A daily-level extended activity summary.
 #'
@@ -336,7 +371,8 @@ compute_fitbit_activity_table_ext <- function(
   offset = "12:00",
   min_actv_minutes,
   main_duration,
-  gap = 90
+  gap = 90,
+  include_mean_hrate = FALSE
 ) {
   check_params_compute_fitbit_activity_table(
     data_activity,
@@ -349,7 +385,8 @@ compute_fitbit_activity_table_ext <- function(
     append_daily_fitbit_qc = append_daily_fitbit_qc,
     qc_threshold = qc_threshold,
     offset = offset,
-    min_actv_minutes = min_actv_minutes
+    min_actv_minutes = min_actv_minutes,
+    include_mean_hrate = include_mean_hrate
   )
   chk::chk_numeric(gap)
   chk::chk_gt(gap, 0)
@@ -405,6 +442,17 @@ compute_fitbit_activity_table_ext <- function(
     activity_blocked_hr,
     bin_minutes = bin_minutes
   )
+
+  # Gating happens here (not in the scoring function): only compute the mean
+  # heart rate scores when the caller opts in via include_mean_hrate.
+  hrate_summary <- if (include_mean_hrate) {
+    compute_fitbit_mean_hrate_scores(
+      activity_blocked_hr,
+      bin_minutes = bin_minutes
+    )
+  } else {
+    NULL
+  }
 
   heartrate <- data_daily |>
     select(participant_id, session_id, dt, hrate_rest_fitb)
@@ -471,7 +519,20 @@ compute_fitbit_activity_table_ext <- function(
     left_join(
       slp_30_exist |> select(-any_of(c("start", "end"))),
       by = c("participant_id", "session_id", "dt" = "date")
-    ) |>
+    )
+
+  # Join the mean heart rate scores only when they were computed (see gating
+  # above). Join order does not matter: all joins share the same keys and the
+  # final select() sets the output column order explicitly.
+  if (include_mean_hrate) {
+    summary <- summary |>
+      left_join(
+        hrate_summary |> select(-any_of(c("start", "end"))),
+        by = c("participant_id", "session_id", "dt" = "date")
+      )
+  }
+
+  summary <- summary |>
     mutate(
       dt = lubridate::as_date(dt),
       flg_30sec = tidyr::replace_na(has_sleep_30, FALSE),
@@ -508,6 +569,7 @@ compute_fitbit_activity_table_ext <- function(
       any_of("steps_fitb"),
       mets,
       mets_actv,
+      any_of(c("hrate_mean", "hrate_mean_actv")),
       min_intnst_sed_total,
       min_intnst_light_total,
       min_intnst_mod_total,
@@ -702,7 +764,7 @@ compute_fitbit_sleep_table <- function(
   implausible_offset <- if (is.null(bin_minutes)) {
     implausible <- flag_implausible_sleep(recovery)
     make_offset(implausible) |>
-      select(participant_id, sleep_date) |>
+      distinct(participant_id, sleep_date) |>
       mutate(implaus = TRUE)
   } else {
     tibble::tibble(
@@ -745,7 +807,7 @@ compute_fitbit_sleep_table <- function(
       distinct_day_no,
       by = c("participant_id", "session_id", "calendar_date" = "date")
     ) |>
-    # filter(day != 0) |>
+    filter(day != 0) |>
     mutate(
       dt_day  = lubridate::wday(sleep_date, label = TRUE),
       dt_wknd = as.character(dt_day) %in% c("Sat", "Sun"),
@@ -1057,7 +1119,7 @@ compute_fitbit_sleep_table_ext <- function(
       distinct_day_no,
       by = c("participant_id", "session_id", "calendar_date" = "date")
     ) |>
-    # filter(day != 0) |>
+    filter(day != 0) |>
     mutate(
       dt_day  = lubridate::wday(sleep_date, label = TRUE),
       dt_wknd = as.character(dt_day) %in% c("Sat", "Sun"),
@@ -1265,6 +1327,7 @@ compute_fitbit_weekly_summary <- function(
 
   # ---- combine ---- #
   bind_rows(whole, weekend, weekday) |>
+    mutate(wk_type = as.factor(wk_type)) |>
     arrange(participant_id, session_id, wk, wk_type)
 }
 
@@ -1291,6 +1354,8 @@ compute_fitbit_weekly_summary <- function(
 #'  - Week identifiers (`wk`, `wk_type`)
 #'  - Day counts (`n_day`, `n_wkdy`, `n_wknd`)
 #'  - Activity summary metrics (steps, METs, intensity minutes, heart rate)
+#'  - Mean heart rate metrics (`mean_hrate`, `mean_hrate_actv`), present only
+#'    when the daily input was built with `include_mean_hrate = TRUE`
 #'  - Weekly quality control flag (`qc_wk`)
 #'
 #' @details
@@ -1308,12 +1373,11 @@ compute_fitbit_activity_week <- function(
   filter_expr = qc_600min & qc_steps
 ) {
   chk::chk_data(df)
-  chk::chk_not_missing(filter_expr)
 
   compute_fitbit_weekly_summary(
     df = df,
     summarize_fn = summarize_activity,
-    filter_expr = filter_expr
+    filter_expr = {{ filter_expr }}
   ) |>
     select(
       participant_id,
@@ -1325,19 +1389,20 @@ compute_fitbit_activity_week <- function(
       n_wknd,
       mean_min_actv,
       mean_min_slp,
-      sum_steps_actv,
+      # sum_steps_actv,
       mean_steps_actv,
       mean_steps_fitb,
       mean_mets_actv,
-      sum_min_intnst_sed_actv,
-      sum_min_intnst_light_actv,
-      sum_min_intnst_mod_actv,
-      sum_min_intnst_vigor_actv,
+      # sum_min_intnst_sed_actv,
+      # sum_min_intnst_light_actv,
+      # sum_min_intnst_mod_actv,
+      # sum_min_intnst_vigor_actv,
       mean_min_intnst_sed_actv,
       mean_min_intnst_light_actv,
       mean_min_intnst_mod_actv,
       mean_min_intnst_vigor_actv,
       mean_rest_hrate_fitb,
+      any_of(c("mean_hrate", "mean_hrate_actv")),
       qc_wk
     )
 }
@@ -1382,12 +1447,11 @@ compute_fitbit_sleep_week <- function(
   filter_expr = qc_300min
 ) {
   chk::chk_data(df)
-  chk::chk_not_missing(filter_expr)
 
   compute_fitbit_weekly_summary(
     df = df,
     summarize_fn = summarize_sleep,
-    filter_expr = filter_expr
+    filter_expr = {{ filter_expr }}
   ) |>
     select(
       participant_id,
@@ -1401,30 +1465,30 @@ compute_fitbit_sleep_week <- function(
       mean_t_end_bed,
       mean_t_start_slp,
       mean_t_end_slp,
-      sum_min_total_slp,
-      sum_min_asleep_slp,
-      sum_min_restless_slp,
-      sum_min_light_slp,
-      sum_min_deep_slp,
-      sum_min_rem_slp,
-      sum_min_wake_slp,
-      sum_min_waso,
-      sum_n_waso,
+      # sum_min_total_slp,
+      # sum_min_asleep_slp,
+      # sum_min_restless_slp,
+      # sum_min_light_slp,
+      # sum_min_deep_slp,
+      # sum_min_rem_slp,
+      # sum_min_wake_slp,
+      # sum_min_waso,
+      # sum_n_waso,
       mean_min_slp_total,
       mean_min_asleep_slp,
-      mean_min_restless,
-      mean_min_slp_light,
-      mean_min_slp_deep,
-      mean_min_slp_rem,
+      mean_min_restless_slp,
+      mean_min_light_slp,
+      mean_min_deep_slp,
+      mean_min_rem_slp,
       mean_min_wake,
       mean_min_waso,
       mean_n_waso,
-      hrate_awake_slp,
-      hrate_asleep_slp,
-      hrate_restless_slp,
-      hrate_light_slp,
-      hrate_deep_slp,
-      hrate_rem_slp,
+      mean_hrate_awake_slp,
+      mean_hrate_asleep_slp,
+      mean_hrate_restless_slp,
+      mean_hrate_light_slp,
+      mean_hrate_deep_slp,
+      mean_hrate_rem_slp,
       qc_wk
     )
 }
@@ -1459,7 +1523,8 @@ check_params_compute_fitbit_activity_table <- function(
   append_daily_fitbit_qc,
   qc_threshold,
   offset,
-  min_actv_minutes
+  min_actv_minutes,
+  include_mean_hrate = FALSE
 ) {
   # Data checks
   chk::chk_data(data_activity)
@@ -1476,17 +1541,19 @@ check_params_compute_fitbit_activity_table <- function(
       "is_slp"
     )
   )
-  if (!is.null(data_daily)) chk::chk_data(data_daily)
-  chk::check_names(
-    data_daily,
-    c(
-      "participant_id",
-      "session_id",
-      "dt",
-      "steps_fitb",
-      "hrate_rest_fitb"
+  if (!is.null(data_daily)) {
+    chk::chk_data(data_daily)
+    chk::check_names(
+      data_daily,
+      c(
+        "participant_id",
+        "session_id",
+        "dt",
+        "steps_fitb",
+        "hrate_rest_fitb"
+      )
     )
-  )
+  }
   # Param checks
   if (!is.null(hr_low)) {
     chk::chk_numeric(hr_low)
@@ -1536,6 +1603,7 @@ check_params_compute_fitbit_activity_table <- function(
   chk::chk_scalar(min_actv_minutes)
   chk::chk_scalar(min_actv_minutes)
   chk::chk_gt(min_actv_minutes, 0)
+  chk::chk_flag(include_mean_hrate)
 }
 
 #' Check parameters for compute_fitbit_sleep_table
@@ -2122,6 +2190,7 @@ compute_fitbit_intensity_scores <- function(data, bin_minutes) {
     filter(!hrate_excluded) |>
     mutate(
       date = period,
+      mets = ifelse(mets < 10, 10, mets),
       mets_dbl = mets / 10
     ) |>
     group_by(participant_id, session_id, date) |>
@@ -2156,6 +2225,76 @@ compute_fitbit_intensity_scores <- function(data, bin_minutes) {
       min_intnst_light_actv,
       min_intnst_mod_actv,
       min_intnst_vigor_actv
+    ) |>
+    arrange(participant_id, session_id, date)
+
+  if (bin_minutes != 1440) {
+    result <- result |>
+      mutate(
+        start = date,
+        end   = date + bin_minutes * 60
+      )
+  }
+  result
+}
+
+#' Compute mean heart rate summary metrics
+#'
+#' @description
+#' Computes mean heart rate by day or by specified time bins, after heart
+#' rate exclusions. The mean heart rate columns are always computed here;
+#' whether they are surfaced in the final output is gated by the calling
+#' daily table function (via its `include_mean_hrate` parameter).
+#'
+#' @param data tbl. Activity dataframe with `hrate` and `is_slp` variables,
+#'  with heart rate exclusions (`hrate_excluded`).
+#' @param bin_minutes numeric, positive whole number. Number of minutes to bin
+#'  data by.
+#'
+#' @return tbl. A data frame with the following columns:
+#'  - `hrate_mean`: mean heart rate after heart rate exclusions.
+#'  - `hrate_mean_actv`: mean heart rate for non-sleep minutes after heart
+#'  rate exclusions.
+#'  - `start`: If non-daily bin selected (i.e. != 1440 minutes), start time
+#'  stamp of bin.
+#'  - `end`:  If non-daily bin selected (i.e., != 1440 minutes), end time stamp
+#'  of the bin.
+#'
+#' @note
+#' - `data`: output of identify_hr_exclusions() or identify_hr_recovery();
+#' needs exclusion flags
+#'
+#' @keywords internal
+#' @autoglobal
+compute_fitbit_mean_hrate_scores <- function(
+  data,
+  bin_minutes
+) {
+  data_binned <- data |>
+    mutate(
+      period = as.POSIXct(
+        floor(as.numeric(dtt) / (bin_minutes * 60)) * (bin_minutes * 60),
+        origin = "1970-01-01",
+        tz = attr(dtt, "tzone")
+      )
+    )
+
+  result <- data_binned |>
+    filter(!hrate_excluded) |>
+    mutate(date = period) |>
+    group_by(participant_id, session_id, date) |>
+    summarize(
+      hrate_mean = mean(hrate, na.rm = TRUE),
+      hrate_mean_actv = mean(hrate[!is_slp], na.rm = TRUE),
+      .groups = "drop"
+    ) |>
+    mutate(session_id = as.factor(session_id)) |>
+    select(
+      participant_id,
+      session_id,
+      date,
+      hrate_mean,
+      hrate_mean_actv
     ) |>
     arrange(participant_id, session_id, date)
 
@@ -3436,13 +3575,13 @@ compute_day_counts <- function(df) {
 #' @autoglobal
 summarize_activity <- function(data) {
   chk::chk_data(data)
-  data |>
+  result <- data |>
     # filter(qc_600min, qc_steps) |>
     group_by(participant_id, session_id, wk) |>
     summarize(
       mean_min_actv = mean(min_actv, na.rm = TRUE),
       mean_min_slp = mean(min_slp, na.rm = TRUE),
-      sum_steps_actv = sum(steps_actv, na.rm = TRUE),
+      # sum_steps_actv = sum(steps_actv, na.rm = TRUE),
       mean_steps_actv = mean(steps_actv, na.rm = TRUE),
       mean_steps_fitb = mean(steps_fitb, na.rm = TRUE),
       mean_mets_actv = mean(mets_actv, na.rm = TRUE),
@@ -3450,27 +3589,47 @@ summarize_activity <- function(data) {
       mean_min_intnst_light_actv = mean(min_intnst_light_actv, na.rm = TRUE),
       mean_min_intnst_mod_actv = mean(min_intnst_mod_actv, na.rm = TRUE),
       mean_min_intnst_vigor_actv = mean(min_intnst_vigor_actv, na.rm = TRUE),
-      sum_min_intnst_sed_actv = sum(min_intnst_sed_actv, na.rm = TRUE),
-      sum_min_intnst_light_actv = sum(min_intnst_light_actv, na.rm = TRUE),
-      sum_min_intnst_mod_actv = sum(min_intnst_mod_actv, na.rm = TRUE),
-      sum_min_intnst_vigor_actv = sum(min_intnst_vigor_actv, na.rm = TRUE),
+      # sum_min_intnst_sed_actv = sum(min_intnst_sed_actv, na.rm = TRUE),
+      # sum_min_intnst_light_actv = sum(min_intnst_light_actv, na.rm = TRUE),
+      # sum_min_intnst_mod_actv = sum(min_intnst_mod_actv, na.rm = TRUE),
+      # sum_min_intnst_vigor_actv = sum(min_intnst_vigor_actv, na.rm = TRUE),
       mean_rest_hrate_fitb = mean(hrate_rest_fitb, na.rm = TRUE),
       .groups = "drop"
-    ) |>
+    )
+
+  # Extend mean heart rate into the weekly summary. These daily columns are
+  # only present when the daily table was built with include_mean_hrate = TRUE,
+  # so add the weekly means only when they exist to keep the pipeline robust.
+  if (all(c("hrate_mean", "hrate_mean_actv") %in% names(data))) {
+    hrate_wk <- data |>
+      group_by(participant_id, session_id, wk) |>
+      summarize(
+        mean_hrate = mean(hrate_mean, na.rm = TRUE),
+        mean_hrate_actv = mean(hrate_mean_actv, na.rm = TRUE),
+        .groups = "drop"
+      )
+    result <- result |>
+      left_join(
+        hrate_wk,
+        by = c("participant_id", "session_id", "wk")
+      )
+  }
+
+  result |>
     mutate(
       across(contains("mean_min"), ~ round(.x, 1)),
       across(contains("hrate"), ~ round(.x, 1)),
       across(
         c(
-          session_id,
-          wk_type
+          session_id
+          # wk_type
         ),
         as.factor
       ),
       across(
         c(
-          wk,
-          sum_steps_actv
+          wk
+          # sum_steps_actv
         ),
         as.integer
       )
@@ -3501,26 +3660,21 @@ summarize_activity <- function(data) {
 #' - `mean_t_start_slp`: Circular mean sleep onset time.
 #' - `mean_t_end_slp`: Circular mean sleep end time.
 #'
-#' Total sleep metrics:
-#' - `sum_min_total_slp`, `sum_min_asleep_slp`, `sum_min_restless_slp`,
-#'   `sum_min_light_slp`, `sum_min_deep_slp`, `sum_min_rem_slp`,
-#'   `sum_min_nap_slp`, `sum_min_wake_slp`, `sum_min_waso`
-#'
 #' Mean sleep metrics:
-#' - `mean_min_slp_total`, `mean_min_asleep_slp`, `mean_min_restless`,
-#'   `mean_min_slp_light`, `mean_min_slp_deep`, `mean_min_slp_rem`,
+#' - `mean_min_slp_total`, `mean_min_asleep_slp`, `mean_min_restless_slp`,
+#'   `mean_min_light_slp`, `mean_min_deep_slp`, `mean_min_rem_slp`,
 #'   `mean_min_wake`, `mean_min_waso`
 #'
 #' Heart rate–weighted metrics:
-#' - `hrate_awake_slp`: Mean HR during awake periods (weighted by minutes awake)
-#' - `hrate_restless_slp`: Mean HR during restless sleep
-#' - `hrate_asleep_slp`: Mean HR during asleep periods
-#' - `hrate_light_slp`: Mean HR during light sleep
-#' - `hrate_deep_slp`: Mean HR during deep sleep
-#' - `hrate_rem_slp`: Mean HR during REM sleep
+#' - `mean_hrate_awake_slp`: Mean HR during awake periods (weighted by minutes
+#'   awake)
+#' - `mean_hrate_restless_slp`: Mean HR during restless sleep
+#' - `mean_hrate_asleep_slp`: Mean HR during asleep periods
+#' - `mean_hrate_light_slp`: Mean HR during light sleep
+#' - `mean_hrate_deep_slp`: Mean HR during deep sleep
+#' - `mean_hrate_rem_slp`: Mean HR during REM sleep
 #'
 #' Wake fragmentation:
-#' - `sum_n_waso`: Total number of wake-after-sleep-onset events
 #' - `mean_n_waso`: Mean number of WASO events per day
 #'
 #' @details
@@ -3545,23 +3699,23 @@ summarize_sleep <- function(data) {
       mean_t_end_slp = circular_mean_time(dtt_end_slp),
 
       # totals
-      sum_min_total_slp = sum(min_total_slp, na.rm = TRUE),
-      sum_min_asleep_slp = sum(min_asleep_slp, na.rm = TRUE),
-      sum_min_restless_slp = sum(min_restless_slp, na.rm = TRUE),
-      sum_min_light_slp = sum(min_light_slp, na.rm = TRUE),
-      sum_min_deep_slp = sum(min_deep_slp, na.rm = TRUE),
-      sum_min_rem_slp = sum(min_rem_slp, na.rm = TRUE),
-      sum_min_nap_slp = sum(min_nap_slp, na.rm = TRUE),
-      sum_min_wake_slp = sum(min_wake, na.rm = TRUE),
-      sum_min_waso = sum(min_waso, na.rm = TRUE),
+      # sum_min_total_slp = sum(min_total_slp, na.rm = TRUE),
+      # sum_min_asleep_slp = sum(min_asleep_slp, na.rm = TRUE),
+      # sum_min_restless_slp = sum(min_restless_slp, na.rm = TRUE),
+      # sum_min_light_slp = sum(min_light_slp, na.rm = TRUE),
+      # sum_min_deep_slp = sum(min_deep_slp, na.rm = TRUE),
+      # sum_min_rem_slp = sum(min_rem_slp, na.rm = TRUE),
+      # sum_min_nap_slp = sum(min_nap_slp, na.rm = TRUE),
+      # sum_min_wake_slp = sum(min_wake, na.rm = TRUE),
+      # sum_min_waso = sum(min_waso, na.rm = TRUE),
 
       # means
       mean_min_slp_total = mean(min_total_slp, na.rm = TRUE),
       mean_min_asleep_slp = mean(min_asleep_slp, na.rm = TRUE),
-      mean_min_restless = mean(min_restless_slp, na.rm = TRUE),
-      mean_min_slp_light = mean(min_light_slp, na.rm = TRUE),
-      mean_min_slp_deep = mean(min_deep_slp, na.rm = TRUE),
-      mean_min_slp_rem = mean(min_rem_slp, na.rm = TRUE),
+      mean_min_restless_slp = mean(min_restless_slp, na.rm = TRUE),
+      mean_min_light_slp = mean(min_light_slp, na.rm = TRUE),
+      mean_min_deep_slp = mean(min_deep_slp, na.rm = TRUE),
+      mean_min_rem_slp = mean(min_rem_slp, na.rm = TRUE),
       mean_min_wake = mean(min_wake, na.rm = TRUE),
       mean_min_waso = mean(min_waso, na.rm = TRUE),
 
@@ -3592,7 +3746,7 @@ summarize_sleep <- function(data) {
           sum(min_rem_slp, na.rm = TRUE),
 
       # WASO counts
-      sum_n_waso = sum(n_waso, na.rm = TRUE),
+      # sum_n_waso = sum(n_waso, na.rm = TRUE),
       mean_n_waso = mean(n_waso, na.rm = TRUE),
       .groups = "drop"
     ) |>
@@ -3601,15 +3755,15 @@ summarize_sleep <- function(data) {
       across(contains("hrate"), ~ round(.x, 1)),
       across(
         c(
-          session_id,
-          wk_type
+          session_id
+          # wk_type
         ),
         as.factor
       ),
       across(
         c(
-          wk,
-          sum_n_waso
+          wk
+          # sum_n_waso
         ),
         as.integer
       )

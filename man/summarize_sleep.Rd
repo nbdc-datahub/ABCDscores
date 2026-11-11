@@ -21,33 +21,26 @@ Time-based summaries:
 \item \code{mean_t_end_slp}: Circular mean sleep end time.
 }
 
-Total sleep metrics:
-\itemize{
-\item \code{sum_min_total_slp}, \code{sum_min_asleep_slp}, \code{sum_min_restless_slp},
-\code{sum_min_light_slp}, \code{sum_min_deep_slp}, \code{sum_min_rem_slp},
-\code{sum_min_nap_slp}, \code{sum_min_wake_slp}, \code{sum_min_waso}
-}
-
 Mean sleep metrics:
 \itemize{
-\item \code{mean_min_slp_total}, \code{mean_min_asleep_slp}, \code{mean_min_restless},
-\code{mean_min_slp_light}, \code{mean_min_slp_deep}, \code{mean_min_slp_rem},
+\item \code{mean_min_slp_total}, \code{mean_min_asleep_slp}, \code{mean_min_restless_slp},
+\code{mean_min_light_slp}, \code{mean_min_deep_slp}, \code{mean_min_rem_slp},
 \code{mean_min_wake}, \code{mean_min_waso}
 }
 
 Heart rate–weighted metrics:
 \itemize{
-\item \code{hrate_awake_slp}: Mean HR during awake periods (weighted by minutes awake)
-\item \code{hrate_restless_slp}: Mean HR during restless sleep
-\item \code{hrate_asleep_slp}: Mean HR during asleep periods
-\item \code{hrate_light_slp}: Mean HR during light sleep
-\item \code{hrate_deep_slp}: Mean HR during deep sleep
-\item \code{hrate_rem_slp}: Mean HR during REM sleep
+\item \code{mean_hrate_awake_slp}: Mean HR during awake periods (weighted by minutes
+awake)
+\item \code{mean_hrate_restless_slp}: Mean HR during restless sleep
+\item \code{mean_hrate_asleep_slp}: Mean HR during asleep periods
+\item \code{mean_hrate_light_slp}: Mean HR during light sleep
+\item \code{mean_hrate_deep_slp}: Mean HR during deep sleep
+\item \code{mean_hrate_rem_slp}: Mean HR during REM sleep
 }
 
 Wake fragmentation:
 \itemize{
-\item \code{sum_n_waso}: Total number of wake-after-sleep-onset events
 \item \code{mean_n_waso}: Mean number of WASO events per day
 }
 }

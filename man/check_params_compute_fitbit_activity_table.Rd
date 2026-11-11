@@ -15,7 +15,8 @@ check_params_compute_fitbit_activity_table(
   append_daily_fitbit_qc,
   qc_threshold,
   offset,
-  min_actv_minutes
+  min_actv_minutes,
+  include_mean_hrate = FALSE
 )
 }
 \arguments{
@@ -56,6 +57,10 @@ step count that must be met by computed active step count for QC to pass
 \item{min_actv_minutes}{numeric. Minimum number of active minutes required
 for a day to pass quality control. Used to create a \code{{qc_Xmin}} flag
 column in the output.}
+
+\item{include_mean_hrate}{logical. If TRUE, add \code{hrate_mean} and
+\code{hrate_mean_actv} columns (mean heart rate, total and active-only, after
+heart rate exclusions). Default: FALSE.}
 }
 \value{
 NULL. Called for its side effects (parameter validation).

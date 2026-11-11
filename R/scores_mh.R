@@ -1242,6 +1242,8 @@ compute_mh_y_bisbas__bis_nm <- function(
 #'   ```
 #' - *Excluded values:* none
 #' - *Validation criterion:* none of 7 items missing
+#' - *Notes:* The `mh_y_bisbas__bis_005` item is reverse coded before
+#'   computing the summary score.
 #'
 #' @inherit dummy_mh params return references
 #' @seealso [compute_mh_y_bisbas__bis_nm()]
@@ -1263,14 +1265,29 @@ compute_mh_y_bisbas__bis_sum <- function(
 ) {
   check_col_names(data, name)
 
-  data |>
+  data_ss <- data |>
+    recode_levels(
+      vars = c("mh_y_bisbas__bis_005"),
+      recode = c(
+        "0" = "3",
+        "1" = "2",
+        "2" = "1",
+        "3" = "0"
+      )
+    ) |>
     ss_sum(
       name    = name,
       vars    = vars_mh_y_bisbas__bis,
       max_na  = max_na,
       exclude = exclude,
-      combine = combine
+      combine = FALSE
     )
+
+  if (combine) {
+    data_ss <- bind_cols(data, data_ss)
+  }
+
+  data_ss
 }
 
 

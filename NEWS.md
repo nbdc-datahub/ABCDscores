@@ -1,3 +1,57 @@
+# ABCDscores 7.1.0
+
+Date: 2026-11-10
+
+## New features
+
+- Added optional mean heart rate scores to the Fitbit activity summaries,
+  controlled by a new `include_mean_hrate` parameter (default FALSE) on
+  `compute_fitbit_activity_table()` and `compute_fitbit_activity_table_ext()`.
+  When enabled, `compute_fitbit_mean_hrate_scores()` computes `hrate_mean`
+  (mean heart rate after exclusions) and `hrate_mean_actv` (mean heart rate
+  over non-sleep minutes) at the requested `bin_minutes` grouping (daily by
+  default), and these are aggregated into the weekly summaries as
+  `mean_hrate` and `mean_hrate_actv` via `summarize_activity()`/
+  `compute_fitbit_activity_week()`.
+
+## Bug fixes
+
+- Fixed `compute_fitbit_sleep_table()` and `compute_fitbit_sleep_table_ext()`
+  to exclude non-session sleep data.
+- Fixed input validation in the Fitbit activity table functions so that the
+  `data_daily` column-name check (`chk::check_names()`) is only performed
+  when `data_daily` is supplied. Previously it ran unconditionally and would
+  fail when `data_daily` was `NULL`, even though that argument is optional.
+- Fixed `compute_fitbit_weekly_summary()` to coerce `wk_type` to a factor via
+  an explicit `mutate(wk_type = as.factor(wk_type))`.
+- Fixed `summarize_sleep()` to rename weekly sleep-stage summary columns to a
+  consistent `mean_min_<stage>_slp` form (`mean_min_restless_slp`,
+  `mean_min_light_slp`, `mean_min_deep_slp`, `mean_min_rem_slp`), replacing
+  the previous inconsistent names (`mean_min_restless`, `mean_min_slp_light`,
+  `mean_min_slp_deep`, `mean_min_slp_rem`); the underlying calculations are
+  unchanged.
+- Fixed `flag_implausible_sleep()` to return distinct participant/timestamp
+  rows of sleep periods flagged with implausible structure, rather than one
+  row per flagged epoch.
+- Fixed `compute_fitbit_intensity_scores()` to floor METs values below 10
+  (1.0) to 10.
+- Removed weekly sum-of-summaries from `summarize_activity()` and
+  `summarize_sleep()`; mean aggregations remain.
+- Fixed `compute_fitbit_activity_week()` and `compute_fitbit_sleep_week()` to
+  evaluate `filter_expr`, including its default, within `df`. Previously both
+  failed with an "object not found" error (e.g., `object 'qc_600min' not
+  found`) unless `filter_expr` was a constant.
+- Fixed `compute_fitbit_sleep_week()` to select the columns that
+  `summarize_sleep()` returns: the renamed `mean_min_<stage>_slp` columns and
+  the duration-weighted heart rate means `mean_hrate_awake_slp`,
+  `mean_hrate_restless_slp`, `mean_hrate_asleep_slp`, `mean_hrate_light_slp`,
+  `mean_hrate_deep_slp`, and `mean_hrate_rem_slp`. Previously the function
+  failed with "Can't select columns that don't exist".
+- Fixed `compute_mh_y_bisbas__bis_sum()` to reverse code
+  `mh_y_bisbas__bis_005` (0-3 becomes 3-0) before summing, as the BIS scale
+  requires. Previously the item was summed as is, so BIS sum scores now differ
+  from those computed with 7.0.x wherever this item was answered.
+
 # ABCDscores 7.0.2
 
 Date: 2026-08-19

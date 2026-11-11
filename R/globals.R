@@ -519,6 +519,7 @@ utils::globalVariables(c(
   # <identify_hr_recovery>
   # <compute_fitbit_score_steps>
   # <compute_fitbit_intensity_scores>
+  # <compute_fitbit_mean_hrate_scores>
   # <create_sleep_indicator>
   # <create_block_ranges>
   # <compute_fitbit_min_totals>
@@ -671,23 +672,22 @@ utils::globalVariables(c(
   "hr_missing_orig",
   # <identify_hr_exclusions>
   # <identify_hr_recovery>
+  # <compute_fitbit_mean_hrate_scores>
   # <compute_sleep_stage_hr>
   "hrate",
   # <compute_fitbit_sleep_table>
   # <compute_fitbit_sleep_table_ext>
-  # <compute_fitbit_sleep_week>
   "hrate_asleep_slp",
   # <compute_fitbit_sleep_table>
   # <compute_fitbit_sleep_table_ext>
-  # <compute_fitbit_sleep_week>
   "hrate_awake_slp",
   # <compute_fitbit_sleep_table>
   # <compute_fitbit_sleep_table_ext>
-  # <compute_fitbit_sleep_week>
   "hrate_deep_slp",
   # <identify_hr_exclusions>
   # <compute_fitbit_score_steps>
   # <compute_fitbit_intensity_scores>
+  # <compute_fitbit_mean_hrate_scores>
   # <create_sleep_indicator>
   # <create_block_ranges>
   # <compute_fitbit_min_totals>
@@ -703,12 +703,17 @@ utils::globalVariables(c(
   "hrate_hi",
   # <compute_fitbit_sleep_table>
   # <compute_fitbit_sleep_table_ext>
-  # <compute_fitbit_sleep_week>
   "hrate_light_slp",
   # <identify_hr_exclusions>
   # <compute_fitbit_score_minutes_exclusion>
   # <compute_fitbit_sleep_hr_exclusions>
   "hrate_low",
+  # <compute_fitbit_mean_hrate_scores>
+  # <summarize_activity>
+  "hrate_mean",
+  # <compute_fitbit_mean_hrate_scores>
+  # <summarize_activity>
+  "hrate_mean_actv",
   # <compute_fitbit_sleep_table>
   # <compute_fitbit_sleep_table_ext>
   "hrate_nap_slp",
@@ -719,7 +724,6 @@ utils::globalVariables(c(
   "hrate_no",
   # <compute_fitbit_sleep_table>
   # <compute_fitbit_sleep_table_ext>
-  # <compute_fitbit_sleep_week>
   "hrate_rem_slp",
   # <identify_hr_exclusions>
   "hrate_repeat",
@@ -743,7 +747,6 @@ utils::globalVariables(c(
   "hrate_rest_fitb",
   # <compute_fitbit_sleep_table>
   # <compute_fitbit_sleep_table_ext>
-  # <compute_fitbit_sleep_week>
   "hrate_restless_slp",
   # <compute_fitbit_sleep_table>
   # <compute_fitbit_sleep_table_ext>
@@ -761,6 +764,7 @@ utils::globalVariables(c(
   # <identify_hr_recovery>
   # <compute_fitbit_score_steps>
   # <compute_fitbit_intensity_scores>
+  # <compute_fitbit_mean_hrate_scores>
   # <create_block_ranges>
   # <compute_fitbit_min_totals>
   # <compute_fitbit_score_minutes_exclusion>
@@ -794,12 +798,26 @@ utils::globalVariables(c(
   # <compute_sleep_stage_min>
   # <compute_sleep_stage_hr>
   "main_slp",
+  # <compute_fitbit_sleep_week>
+  "mean_hrate_asleep_slp",
+  # <compute_fitbit_sleep_week>
+  "mean_hrate_awake_slp",
+  # <compute_fitbit_sleep_week>
+  "mean_hrate_deep_slp",
+  # <compute_fitbit_sleep_week>
+  "mean_hrate_light_slp",
+  # <compute_fitbit_sleep_week>
+  "mean_hrate_rem_slp",
+  # <compute_fitbit_sleep_week>
+  "mean_hrate_restless_slp",
   # <compute_fitbit_activity_week>
   "mean_mets_actv",
   # <compute_fitbit_activity_week>
   "mean_min_actv",
   # <compute_fitbit_sleep_week>
   "mean_min_asleep_slp",
+  # <compute_fitbit_sleep_week>
+  "mean_min_deep_slp",
   # <compute_fitbit_activity_week>
   "mean_min_intnst_light_actv",
   # <compute_fitbit_activity_week>
@@ -809,15 +827,13 @@ utils::globalVariables(c(
   # <compute_fitbit_activity_week>
   "mean_min_intnst_vigor_actv",
   # <compute_fitbit_sleep_week>
-  "mean_min_restless",
+  "mean_min_light_slp",
+  # <compute_fitbit_sleep_week>
+  "mean_min_rem_slp",
+  # <compute_fitbit_sleep_week>
+  "mean_min_restless_slp",
   # <compute_fitbit_activity_week>
   "mean_min_slp",
-  # <compute_fitbit_sleep_week>
-  "mean_min_slp_deep",
-  # <compute_fitbit_sleep_week>
-  "mean_min_slp_light",
-  # <compute_fitbit_sleep_week>
-  "mean_min_slp_rem",
   # <compute_fitbit_sleep_week>
   "mean_min_slp_total",
   # <compute_fitbit_sleep_week>
@@ -1099,6 +1115,7 @@ utils::globalVariables(c(
   # <identify_hr_recovery>
   # <compute_fitbit_score_steps>
   # <compute_fitbit_intensity_scores>
+  # <compute_fitbit_mean_hrate_scores>
   # <create_sleep_indicator>
   # <create_block_ranges>
   # <compute_fitbit_min_totals>
@@ -1123,6 +1140,7 @@ utils::globalVariables(c(
   # <combine_checkboxes>
   "participant_id",
   # <compute_fitbit_intensity_scores>
+  # <compute_fitbit_mean_hrate_scores>
   # <compute_fitbit_min_totals>
   # <compute_fitbit_score_minutes_exclusion>
   # <compute_fitbit_sleep_hr_exclusions>
@@ -1457,6 +1475,7 @@ utils::globalVariables(c(
   # <identify_hr_recovery>
   # <compute_fitbit_score_steps>
   # <compute_fitbit_intensity_scores>
+  # <compute_fitbit_mean_hrate_scores>
   # <create_sleep_indicator>
   # <compute_fitbit_min_totals>
   # <compute_fitbit_score_minutes_exclusion>
@@ -1588,38 +1607,9 @@ utils::globalVariables(c(
   "su_y_mjsre__pos_sum",
   # <filter_co_use>
   "substance",
-  # <compute_fitbit_sleep_week>
-  "sum_min_asleep_slp",
-  # <compute_fitbit_sleep_week>
-  "sum_min_deep_slp",
-  # <compute_fitbit_activity_week>
-  "sum_min_intnst_light_actv",
-  # <compute_fitbit_activity_week>
-  "sum_min_intnst_mod_actv",
-  # <compute_fitbit_activity_week>
-  "sum_min_intnst_sed_actv",
-  # <compute_fitbit_activity_week>
-  "sum_min_intnst_vigor_actv",
-  # <compute_fitbit_sleep_week>
-  "sum_min_light_slp",
-  # <compute_fitbit_sleep_week>
-  "sum_min_rem_slp",
-  # <compute_fitbit_sleep_week>
-  "sum_min_restless_slp",
-  # <compute_fitbit_sleep_week>
-  "sum_min_total_slp",
-  # <compute_fitbit_sleep_week>
-  "sum_min_wake_slp",
-  # <compute_fitbit_sleep_week>
-  "sum_min_waso",
-  # <compute_fitbit_sleep_week>
-  "sum_n_waso",
   # <compute_nt_y_stq__screen__wkdy_sum>
   # <compute_nt_y_stq__screen__wknd_sum>
   "sum_other",
-  # <compute_fitbit_activity_week>
-  # <summarize_activity>
-  "sum_steps_actv",
   # <compute_ph_p_meds_catg_all>
   # <compute_ph_y_meds_catg_all>
   # <compute_ph_p_dhx_catg_all>
@@ -1693,7 +1683,6 @@ utils::globalVariables(c(
   # <compute_fitbit_weekly_summary>
   # <compute_fitbit_activity_week>
   # <compute_fitbit_sleep_week>
-  # <summarize_activity>
   "wk_type",
   NULL
 ))

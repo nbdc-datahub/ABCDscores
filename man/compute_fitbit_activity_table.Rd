@@ -15,7 +15,8 @@ compute_fitbit_activity_table(
   append_daily_fitbit_qc,
   qc_threshold = 0.8,
   offset = "12:00",
-  min_actv_minutes
+  min_actv_minutes,
+  include_mean_hrate = FALSE
 )
 }
 \arguments{
@@ -56,6 +57,10 @@ step count that must be met by computed active step count for QC to pass
 \item{min_actv_minutes}{numeric. Minimum number of active minutes required
 for a day to pass quality control. Used to create a \code{{qc_Xmin}} flag
 column in the output.}
+
+\item{include_mean_hrate}{logical. If TRUE, add \code{hrate_mean} and
+\code{hrate_mean_actv} columns (mean heart rate, total and active-only, after
+heart rate exclusions). Default: FALSE.}
 }
 \value{
 tbl.  A daily-level summarized data frame with the following
@@ -93,6 +98,8 @@ components:
 \item \code{mets_actv}: Mean METs during active minutes
 \item \verb{min_intnst_*}: Minutes spent in sedentary, light, moderate, and
 vigorous activity (total and active-only variants)
+\item \code{hrate_mean}, \code{hrate_mean_actv}: Mean heart rate, total and
+active-only (only present if \code{include_mean_hrate = TRUE})
 }
 
 \strong{Heart rate exclusion summaries:}

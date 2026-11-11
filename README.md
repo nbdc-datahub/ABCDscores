@@ -45,6 +45,7 @@ data release, starting with the introduction of the package with release
 | 6.0             | 6.0.0           |
 | 6.1             | 6.1.0           |
 | 7.0             | 7.0.0           |
+| 7.1             | 7.1.0           |
 
 ## Installation
 

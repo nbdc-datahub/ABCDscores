@@ -17,7 +17,8 @@ compute_fitbit_activity_table_ext(
   offset = "12:00",
   min_actv_minutes,
   main_duration,
-  gap = 90
+  gap = 90,
+  include_mean_hrate = FALSE
 )
 }
 \arguments{
@@ -49,6 +50,10 @@ column in the output.}
 \item{main_duration}{numeric. Minimum duration in minutes.}
 
 \item{gap}{numeric. Maximum allowed gap.}
+
+\item{include_mean_hrate}{logical. If TRUE, add \code{hrate_mean} and
+\code{hrate_mean_actv} columns (mean heart rate, total and active-only, after
+heart rate exclusions). Default: FALSE.}
 }
 \value{
 tbl. A daily-level extended activity summary.
